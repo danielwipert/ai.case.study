@@ -1,0 +1,72 @@
+version: 1
+controlled_fields:
+  case_type:
+    - deployment
+    - failure-incident
+    - evaluation
+    - organizational-transformation
+    - economic-case
+    - governance-regulatory
+  deployment_stage:
+    - prototype
+    - pilot
+    - evaluation
+    - limited-production
+    - scaled-production
+    - paused
+    - retired
+    - unknown
+  outcome:
+    - positive
+    - negative
+    - mixed
+    - inconclusive
+    - unknown
+  evidence_grade: [A, B, C, D]
+  causal_strength:
+    - descriptive
+    - associational
+    - plausibly-causal
+    - causal
+  environment:
+    - laboratory
+    - evaluation
+    - shadow-mode
+    - production
+    - adversarial-test
+    - mixed
+    - unknown
+  status:
+    - lead
+    - research
+    - review
+    - published
+    - archived
+tagging_rules:
+  - Use lowercase kebab-case.
+  - Prefer one primary case type and up to two secondary case types.
+  - Use the business function affected, not the vendor's product category.
+  - Add technology tags only when they improve retrieval.
+  - Do not encode evaluative judgments in freeform tags.
+suggested_industries:
+  - financial-services
+  - healthcare
+  - manufacturing
+  - retail
+  - media
+  - public-sector
+  - technology
+  - transportation-logistics
+  - energy-utilities
+  - professional-services
+suggested_business_functions:
+  - customer-service
+  - software-engineering
+  - cybersecurity
+  - operations
+  - sales-marketing
+  - research-development
+  - legal-compliance
+  - finance
+  - human-resources
+  - supply-chain

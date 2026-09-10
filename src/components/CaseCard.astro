@@ -1,0 +1,29 @@
+---
+const { entry, compact = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const d = entry.data;
+const outcomeLabels = { positive: "Positive", negative: "Negative", mixed: "Mixed", inconclusive: "Inconclusive", unknown: "Unknown" };
+---
+
+<article
+  class:list={["case-card", { compact }]}
+  data-card
+  data-industry={d.industry.join(" ")}
+  data-function={d.business_function.join(" ")}
+  data-case-type={d.case_type}
+  data-outcome={d.outcome}
+  data-grade={d.evidence_grade}
+  data-search={`${d.title} ${d.organization.join(" ")} ${d.summary} ${d.industry.join(" ")} ${d.business_function.join(" ")} ${d.tags.join(" ")}`.toLowerCase()}
+>
+  <div class="case-kicker">
+    <span>{d.case_type.replaceAll("-", " ")}</span>
+    <span class={`outcome ${d.outcome}`}>{outcomeLabels[d.outcome]}</span>
+  </div>
+  <h2><a href={`${base}/cases/${entry.id}/`}>{d.title}</a></h2>
+  <p>{d.summary}</p>
+  <div class="case-meta">
+    <span>Evidence {d.evidence_grade}</span>
+    <span>{d.deployment_stage.replaceAll("-", " ")}</span>
+    <span>{d.industry.map((item) => item.replaceAll("-", " ")).join(", ")}</span>
+  </div>
+</article>

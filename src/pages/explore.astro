@@ -1,0 +1,69 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CaseCard from "../components/CaseCard.astro";
+
+const cases = (await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status)))
+  .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
+const unique = (values) => [...new Set(values)].sort();
+const industries = unique(cases.flatMap((entry) => entry.data.industry));
+const functions = unique(cases.flatMap((entry) => entry.data.business_function));
+const types = unique(cases.map((entry) => entry.data.case_type));
+const outcomes = unique(cases.map((entry) => entry.data.outcome));
+const grades = unique(cases.map((entry) => entry.data.evidence_grade));
+---
+
+<BaseLayout title="Explore cases | Applied AI Case Study Library">
+  <header class="shell page-head">
+    <p class="eyebrow">The library</p>
+    <h1>Explore cases</h1>
+    <p class="lede">Search by organization or subject, then narrow the record by industry, business function, case type, outcome, or evidence grade.</p>
+  </header>
+  <section class="shell">
+    <div class="filters" aria-label="Case filters">
+      <label class="search">Search<input id="search" type="search" placeholder="Organization, subject, or tag" /></label>
+      <label>Industry<select id="industry"><option value="">All</option>{industries.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
+      <label>Function<select id="function"><option value="">All</option>{functions.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
+      <label>Case type<select id="case-type"><option value="">All</option>{types.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
+      <label>Outcome<select id="outcome"><option value="">All</option>{outcomes.map((v) => <option value={v}>{v}</option>)}</select></label>
+      <label>Evidence<select id="grade"><option value="">All</option>{grades.map((v) => <option value={v}>Grade {v}</option>)}</select></label>
+    </div>
+    <p class="result-status" id="result-status" aria-live="polite">Showing {cases.length} {cases.length === 1 ? "case" : "cases"}</p>
+    <div class="case-grid" id="results">
+      {cases.map((entry) => <CaseCard entry={entry} />)}
+    </div>
+    <p class="empty" id="empty" hidden>No cases match those filters. Try broadening the search.</p>
+  </section>
+
+  <script>
+    const controls = {
+      search: document.querySelector("#search"),
+      industry: document.querySelector("#industry"),
+      function: document.querySelector("#function"),
+      caseType: document.querySelector("#case-type"),
+      outcome: document.querySelector("#outcome"),
+      grade: document.querySelector("#grade")
+    };
+    const cards = [...document.querySelectorAll("[data-card]")];
+    const status = document.querySelector("#result-status");
+    const empty = document.querySelector("#empty");
+
+    function filterCases() {
+      const query = controls.search.value.trim().toLowerCase();
+      let count = 0;
+      cards.forEach((card) => {
+        const visible = (!query || card.dataset.search.includes(query))
+          && (!controls.industry.value || card.dataset.industry.split(" ").includes(controls.industry.value))
+          && (!controls.function.value || card.dataset.function.split(" ").includes(controls.function.value))
+          && (!controls.caseType.value || card.dataset.caseType === controls.caseType.value)
+          && (!controls.outcome.value || card.dataset.outcome === controls.outcome.value)
+          && (!controls.grade.value || card.dataset.grade === controls.grade.value);
+        card.hidden = !visible;
+        if (visible) count += 1;
+      });
+      status.textContent = `Showing ${count} ${count === 1 ? "case" : "cases"}`;
+      empty.hidden = count !== 0;
+    }
+    Object.values(controls).forEach((control) => control.addEventListener("input", filterCases));
+  </script>
+</BaseLayout>

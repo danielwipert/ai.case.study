@@ -1,0 +1,46 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Applied AI Case Study Library",
+  description = "Evidence-first cases about how AI changes real organizations, work, economics, and risk."
+} = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href={`${base}/`} aria-label="Applied AI Case Study Library home">
+        <span class="mark" aria-hidden="true">A²</span>
+        <span>Applied AI<br /><small>Case Study Library</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href={`${base}/explore/`}>Explore cases</a>
+        <a href={`${base}/methodology/`}>Methodology</a>
+        <a href="https://github.com/danielwipert/ai.case.study">Contribute ↗</a>
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer>
+      <p>An open, evidence-first record of AI in practice.</p>
+      <p><a href="https://github.com/danielwipert/ai.case.study">Source and revision history ↗</a></p>
+    </footer>
+  </body>
+</html>

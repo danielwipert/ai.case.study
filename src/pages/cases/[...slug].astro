@@ -1,0 +1,43 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status));
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const data = entry.data;
+const displayDate = (date) => new Intl.DateTimeFormat("en", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" }).format(date);
+---
+
+<BaseLayout title={`${data.title} | Applied AI Case Study Library`} description={data.summary}>
+  <header class="shell article-header">
+    <p class="eyebrow">{data.case_id} · {data.case_type.replaceAll("-", " ")}</p>
+    <h1>{data.title}</h1>
+    <p class="dek">{data.summary}</p>
+    <div class="case-meta">
+      <span>{data.organization.join(" · ")}</span>
+      <span>Evidence {data.evidence_grade}</span>
+      <span>{data.outcome} outcome</span>
+      <span>Verified {displayDate(data.last_verified)}</span>
+    </div>
+  </header>
+
+  <div class="shell article-grid">
+    <article class="prose"><Content /></article>
+    <aside class="sidebar" aria-label="Case metadata">
+      <dl>
+        <dt>Stage</dt><dd>{data.deployment_stage.replaceAll("-", " ")}</dd>
+        <dt>Environment</dt><dd>{data.environment.replaceAll("-", " ")}</dd>
+        <dt>Industry</dt><dd>{data.industry.map((v) => v.replaceAll("-", " ")).join(", ")}</dd>
+        <dt>Business function</dt><dd>{data.business_function.map((v) => v.replaceAll("-", " ")).join(", ")}</dd>
+        <dt>Causal strength</dt><dd>{data.causal_strength.replaceAll("-", " ")}</dd>
+        <dt>Next review</dt><dd>{data.next_review ? displayDate(data.next_review) : "Not scheduled"}</dd>
+        <dt>Geography</dt><dd>{data.geography.join(", ") || "Not material"}</dd>
+      </dl>
+    </aside>
+  </div>
+</BaseLayout>
