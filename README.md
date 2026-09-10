@@ -19,6 +19,10 @@ npm run build
 
 The build validates case IDs, publication fields, and required research sections before generating the site.
 
+## Design
+
+The interface uses self-hosted IBM Plex Serif and IBM Plex Sans in a warm, low-contrast reading-room theme. Font files are bundled with the build; the public site does not depend on a third-party font service.
+
 ## Add a case
 
 1. Open a case-lead issue with the source and why it matters.
