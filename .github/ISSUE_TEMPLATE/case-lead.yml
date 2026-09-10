@@ -1,0 +1,42 @@
+name: Propose a case
+description: Suggest a real-world AI deployment, incident, evaluation, or organizational change.
+title: "[Case lead]: "
+labels: ["case-lead"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping build an evidence-first record of applied AI.
+  - type: input
+    id: organization
+    attributes:
+      label: Organization or institution
+    validations:
+      required: true
+  - type: textarea
+    id: event
+    attributes:
+      label: What happened?
+      description: Describe the intervention or event and its real-world importance in a few sentences.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Best starting source
+      description: Link to the strongest available source, not a search result.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence notes
+      description: Who produced the source, what access did they have, and what would independently corroborate it?
+    validations:
+      required: true
+  - type: textarea
+    id: stakes
+    attributes:
+      label: Business or institutional stakes
+      description: What changed for operations, cost, revenue, workers, customers, risk, or governance?
+    validations:
+      required: true
