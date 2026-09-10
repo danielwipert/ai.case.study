@@ -1,5 +1,7 @@
 # Applied AI Case Study Library
 
+[![Deploy to GitHub Pages](https://github.com/danielwipert/ai.case.study/actions/workflows/deploy.yml/badge.svg)](https://github.com/danielwipert/ai.case.study/actions/workflows/deploy.yml)
+
 An evidence-first library about how AI changes real organizations: operations, economics, risk, work, and outcomes. The public site is generated from Markdown records in this repository and deployed through GitHub Pages.
 
 ## Work locally
