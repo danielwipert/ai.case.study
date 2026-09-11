@@ -30,6 +30,21 @@ A published case must:
 
 The grade evaluates the evidence supporting this case, not the reputation of a publisher.
 
+## Claim labels
+
+Grades assess a case; labels assess a single claim. Apply them to material outcome, scale, cost, causal, harm, and forecast claims in the case's `## Material claims` table, alongside the evidence behind the claim and what would change the label. Do not build a ledger for trivial background facts.
+
+| Label | Meaning |
+| --- | --- |
+| **Verified** | Directly supported by strong evidence and corroborated where reasonable. |
+| **Supported** | Credible evidence supports the claim, but proof, precision, or causality is incomplete. |
+| **Attributed** | A named participant made the claim; the library has not independently verified it. |
+| **Disputed** | Credible sources materially disagree. |
+| **Inference** | The case author derived the conclusion from cited facts. |
+| **Unknown** | Available evidence does not resolve the question. |
+
+A claim labelled verified, supported, attributed, or disputed must cite at least one source recorded in the front matter. Validation enforces the vocabulary, the citation, and the presence of a falsifier.
+
 ## Causal-strength labels
 
 - **Descriptive:** documents what was observed; makes no causal claim.

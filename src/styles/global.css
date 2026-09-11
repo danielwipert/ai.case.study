@@ -140,7 +140,7 @@ input:focus, select:focus { outline: 2px solid rgb(116 80 71 / 55%); outline-off
 .prose h3 { font-size: 1.35rem; font-weight: 500; margin-top: 2rem; }
 .prose a { color: var(--wine-dark); }
 .prose blockquote { margin: 2rem 0; border-left: 2px solid var(--wine); padding: .25rem 0 .25rem 1.6rem; color: var(--wine-dark); font-size: 1.3rem; font-style: italic; }
-.prose table { width: 100%; border-collapse: collapse; font: 400 .9rem/1.55 var(--sans); }
+.prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font: 400 .9rem/1.55 var(--sans); }
 .prose th, .prose td { text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); padding: .85rem .8rem .85rem 0; }
 .prose th { color: var(--wine-dark); font-weight: 600; }
 .sidebar {
@@ -198,7 +198,7 @@ input:focus, select:focus { outline: 2px solid rgb(116 80 71 / 55%); outline-off
   padding: .28rem .55rem; border: 1px solid var(--line-dark); color: var(--ink-soft);
   font: 500 .64rem var(--sans); letter-spacing: .09em; text-transform: uppercase;
 }
-.source-detail { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: .35rem .9rem; margin: 0 0 .9rem; max-width: 66ch; }
+.source-detail { display: grid; grid-template-columns: 8rem minmax(0, 1fr); gap: .35rem .9rem; margin: 0 0 .9rem; max-width: 66ch; }
 .source-detail dt { color: var(--wine); font: 600 .66rem var(--sans); letter-spacing: .1em; text-transform: uppercase; padding-top: .22rem; }
 .source-detail dd { margin: 0; color: var(--ink-soft); font: 400 .95rem/1.6 var(--serif); }
 .source-foot { display: flex; flex-wrap: wrap; gap: .9rem; margin: 0; color: var(--ink-soft); font-size: .76rem; letter-spacing: .02em; }
@@ -210,7 +210,7 @@ footer::before { top: 4px; }
 @media (max-width: 860px) {
   .site-header { align-items: flex-start; padding-block: 1.2rem; }
   nav { flex-direction: column; gap: .4rem; text-align: right; }
-  .hero, .article-grid { grid-template-columns: 1fr; gap: 2.3rem; }
+  .hero, .article-grid { grid-template-columns: minmax(0, 1fr); gap: 2.3rem; }
   .hero { padding-block: 4rem 3rem; }
   .hero-copy { max-width: 600px; }
   .signals, .principles { grid-template-columns: 1fr; }

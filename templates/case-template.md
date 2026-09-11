@@ -43,8 +43,11 @@ sources:
       - independent-reporting
     source_family: shared-origin-key
     access: "What original evidence this source could inspect."
+    method: "Whether the method is visible, and what it was."
     conflicts: "Funding, commissioning, access constraint, or incentive. Write 'None disclosed.' when none."
-    notes: "Anything a reader needs to weigh this source."
+    corroboration: "Which of its claims a genuinely separate source confirms."
+    accountability: "Named authorship, corrections channel, version history, or stable archive."
+    notes: "Anything else a reader needs to weigh this source."
 tags: []
 ---
 
@@ -78,9 +81,13 @@ State the evidence grade and explain it, including source access, conflicts, cor
 
 ## Material claims
 
-| Claim | Evidence | Confidence |
-| --- | --- | --- |
-|  |  |  |
+One row per material outcome, scale, cost, causal, harm, or forecast claim. Label each
+Verified, Supported, Attributed, Disputed, Inference, or Unknown. Every label except
+Inference and Unknown must cite a source id from the front matter.
+
+| Claim | Label | Evidence | What would change this |
+| --- | --- | --- | --- |
+|  |  |  |  |
 
 ## Direct quotations
 

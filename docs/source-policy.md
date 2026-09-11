@@ -80,6 +80,23 @@ Each case records its material sources once, as a machine-readable `sources` blo
 | `conflicts` | recommended | Funding, commissioning, access constraint, or incentive. Write `None disclosed.` when none. |
 | `notes` | optional | Anything else a reader needs in order to weigh the source. |
 
+### Where the admission test is recorded
+
+The eight admission questions map onto the structured source fields, so the test is a record rather than a habit:
+
+| Question | Field |
+| --- | --- |
+| Identity | `author`, `publisher` |
+| Access | `access` |
+| Method | `method` |
+| Provenance | `url`, `archive_url` |
+| Independence | `conflicts` |
+| Corroboration | `corroboration`, `source_family` |
+| Accountability | `accountability` |
+| Security and integrity | `url` (https is required) |
+
+The case page renders these under each source, so a reader weighs the evidence with the same information the editor used. A source carrying original evidence—`primary-investigation` or `direct-evidence`—that records no `method` is reported as an evidence gap.
+
 ### Controlled source roles
 
 - `direct-evidence` — original records, filings, logs, contracts, transcripts, data, or decisions.
