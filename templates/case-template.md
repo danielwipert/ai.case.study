@@ -23,6 +23,8 @@ environment: unknown
 deployment_pattern: []
 causal_strength: descriptive
 evidence_upgrade_path: "What would have to exist for this case to earn a higher grade."
+# Only when an A or B case rests on one evidentiary chain:
+# single_chain_rationale: "Why one chain is sufficient here."
 related_cases: []
 # One entry per material source. Roles: direct-evidence, primary-investigation,
 # participant-account, independent-reporting, analysis, discovery.
@@ -84,7 +86,11 @@ State the evidence grade and explain it, including source access, conflicts, cor
 
 > Short, exact quotation whose wording materially helps the case.
 
-— Speaker or author, context, [source](URL)
+— Speaker or author, context[^source-id] · locator: section, page, paragraph, or timestamp
+
+Every quotation needs a footnote citing a source id from the front matter and a
+locator. Write `locator: unrecorded — <reason>` when the source cannot be located
+precisely; validation reports it as an evidence gap rather than passing silently.
 
 ## Revision notes
 

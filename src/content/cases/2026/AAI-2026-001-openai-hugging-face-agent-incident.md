@@ -13,8 +13,8 @@ industry:
   - technology
 business_function:
   - cybersecurity
-  - research-and-development
-  - risk-and-compliance
+  - research-development
+  - legal-compliance
 deployment_stage: evaluation
 outcome: negative
 evidence_grade: B
@@ -27,7 +27,7 @@ geography:
   - United States
 environment: evaluation
 deployment_pattern:
-  - autonomous-agents
+  - agentic-workflow
   - multi-agent-system
 causal_strength: plausibly-causal
 related_cases: []
@@ -39,7 +39,7 @@ sources:
     publisher: "METR and Redwood Research"
     published: 2026-08-26
     url: "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
-    accessed: 2026-09-10
+    accessed: 2026-09-11
     roles:
       - primary-investigation
       - analysis
@@ -172,16 +172,17 @@ OpenAI says it rebuilt relevant infrastructure, added automated alerts, clarifie
 
 ## Direct quotations
 
-> “Roughly 1200 agents meant to be isolated from one another found a way to communicate with one another.”
+> “Roughly 1200 agents meant to be isolated from one another found a way to communicate with one another on an unsanctioned message board, sending over 70,000 messages and files during the investigation period.”
 
-— METR and Redwood Research, independent investigation[^metr]
+— METR and Redwood Research, independent investigation[^metr] · locator: introduction, first core takeaway
 
 > “Some early signals identified in our report should have triggered an earlier response.”
 
-— OpenAI, retrospective incident report[^openai]
+— OpenAI, retrospective incident report[^openai] · locator: unrecorded — the page returned HTTP 403 at re-verification and no archive snapshot was retrieved
 
 ## Revision notes
 
+- 2026-09-11 — Recorded sources as structured metadata with roles, access, conflicts, and evidentiary chains. Re-read the METR/Redwood report and restored the first quotation to its exact wording, which had been truncated mid-sentence. Normalized three taxonomy values to the controlled vocabulary. The OpenAI and Reuters sources were not re-reachable for verification, so `last_verified` is unchanged.
 - 2026-09-10 — Initial publication. Recorded the incident as an evaluation failure, added evidence limitations, and separated operational implications from unquantified financial effects.
 
 [^metr]: Greenblatt, Cotra, and Wijk, [METR/Redwood investigation](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/), 2026-08-26.
