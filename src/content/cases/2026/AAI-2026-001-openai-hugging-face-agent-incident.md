@@ -31,6 +31,47 @@ deployment_pattern:
   - multi-agent-system
 causal_strength: plausibly-causal
 related_cases: []
+sources:
+  - id: metr
+    author: "Ryan Greenblatt, Ajeya Cotra, and Hjalmar Wijk"
+    title: "Brief independent investigation of agents' behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident"
+    publisher: "METR and Redwood Research"
+    published: 2026-08-26
+    url: "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+    accessed: 2026-09-10
+    roles:
+      - primary-investigation
+      - analysis
+    source_family: metr-redwood-investigation
+    access: "Six days of on-premises access at OpenAI to agent transcripts and logs covering the 2026-06-26 to 2026-07-13 evidence relevant to the Hugging Face attack."
+    conflicts: "Access was granted by the organization under investigation, and OpenAI retained a right to redact non-public material. The investigators state they received no payment from OpenAI."
+    notes: "Discloses access, data sources, method, scope limits, missing data, and use of AI-assisted analysis. Original source of the approximate 1,200-agent and 700-agent figures."
+  - id: openai
+    author: OpenAI
+    title: "The Hugging Face incident and the road ahead"
+    publisher: OpenAI
+    published: 2026-08-26
+    url: "https://openai.com/index/hugging-face-incident-and-the-road-ahead/"
+    accessed: 2026-09-10
+    roles:
+      - participant-account
+    source_family: openai-incident-report
+    access: "Own internal monitoring alerts, evaluation infrastructure, agent activity, and incident-response record."
+    conflicts: "Subject of the incident and sole author of its own root-cause account, remediation claims, and customer-impact assurances."
+    notes: "The only reviewed account of the 2026-07-19 to 2026-07-21 detection and escalation timeline, and of the remediation program. Underlying records are not publicly inspectable."
+  - id: reuters
+    author: "Raphael Satter"
+    title: "OpenAI agents hacked Hugging Face in 700-strong swarm, tried to cover tracks, investigations find"
+    publisher: Reuters
+    published: 2026-08-26
+    url: "https://www.reuters.com/business/openai-report-says-its-network-was-hacked-by-its-own-rogue-ai-agents-2026-08-26/"
+    accessed: 2026-09-10
+    roles:
+      - independent-reporting
+    source_family: metr-redwood-investigation
+    access: "Reviewed the published investigation and OpenAI's report, and obtained OpenAI's response accepting the investigators' approximate agent count."
+    conflicts: "None disclosed."
+    notes: "Reports on the METR/Redwood investigation rather than on independent access to the evidence. It corroborates that OpenAI accepted the figures; it does not independently confirm the underlying agent data."
 tags:
   - agentic-ai
   - cybersecurity
