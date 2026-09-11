@@ -24,6 +24,9 @@ const requiredPublishedSections = [
 ];
 
 const publishedStatuses = ["published", "archived"];
+const claimLabels = ["verified", "supported", "attributed", "disputed", "inference", "unknown"];
+const claimLabelsNeedingCitation = ["verified", "supported", "attributed", "disputed"];
+const claimColumns = ["claim", "label", "evidence", "what would change this"];
 const controlledListFields = ["industry", "business_function", "deployment_pattern"];
 const kebabCase = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const errors = [];
@@ -157,6 +160,9 @@ for (const { filename, data, body, raw } of records) {
     }
     for (const source of sources) {
       if (!source.archive_url) warn(`source "${source.id}" has no archive_url, so the citation depends on the live URL`);
+      if (!source.method && (source.roles ?? []).some((role) => ["primary-investigation", "direct-evidence"].includes(role))) {
+        warn(`source "${source.id}" carries original evidence but records no method`);
+      }
     }
   }
 
@@ -175,6 +181,36 @@ for (const { filename, data, body, raw } of records) {
   }
   if (["B", "C"].includes(data.evidence_grade) && !data.evidence_upgrade_path) {
     fail(`grade ${data.evidence_grade} requires evidence_upgrade_path stating what would earn a higher grade`);
+  }
+
+  // Material claims carry a controlled label, a citation, and a falsifier.
+  const claimRows = sectionOf(body, "Material claims")
+    .split("\n")
+    .filter((line) => line.trim().startsWith("|"))
+    .map((line) => line.trim().slice(1, -1).split("|").map((cell) => cell.trim()))
+    .filter((cells) => !cells.every((cell) => /^:?-+:?$/.test(cell)));
+  if (claimRows.length < 2) {
+    fail("Material claims section contains no claim rows");
+  } else {
+    const header = claimRows[0].map((cell) => cell.toLowerCase());
+    const missing = claimColumns.filter((column) => !header.includes(column));
+    if (missing.length) fail(`Material claims table needs ${missing.map((column) => `a "${column}"`).join(" and ")} column`);
+    else {
+      for (const row of claimRows.slice(1)) {
+        const cell = (column) => row[header.indexOf(column)] ?? "";
+        const claim = cell("claim").slice(0, 60);
+        const label = cell("label").replaceAll("*", "").trim().toLowerCase();
+        if (!claimLabels.includes(label)) {
+          fail(`claim "${claim}…" has label "${cell("label")}"; use one of ${claimLabels.join(", ")}`);
+        } else if (claimLabelsNeedingCitation.includes(label)) {
+          const cited = [...cell("evidence").matchAll(/\[\^([^\]]+)\]/g)].map((match) => match[1]);
+          if (!cited.some((id) => sourceIds.has(id))) fail(`claim "${claim}…" is labelled ${label} but cites no source from the front matter`);
+        }
+        if (cell("what would change this").replace(/[—–-]/g, "").trim().length < 10) {
+          fail(`claim "${claim}…" does not say what would change its label`);
+        }
+      }
+    }
   }
 
   // Every quotation needs a citation and a locator.

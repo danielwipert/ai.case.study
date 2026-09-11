@@ -27,6 +27,20 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </tbody>
     </table>
 
+    <h2>Claim labels</h2>
+    <p>A grade describes a whole case; labels describe single claims. Every material outcome, scale, cost, causal, harm, or forecast claim carries one, together with the evidence behind it and what would change it. A case can be well supported overall and still rest on one claim nobody has verified.</p>
+    <table class="grade-table">
+      <thead><tr><th>Label</th><th>Meaning</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Verified</strong></td><td>Directly supported by strong evidence and corroborated where reasonable.</td></tr>
+        <tr><td><strong>Supported</strong></td><td>Credible evidence supports the claim, but proof, precision, or causality is incomplete.</td></tr>
+        <tr><td><strong>Attributed</strong></td><td>A named participant made the claim; the library has not independently verified it.</td></tr>
+        <tr><td><strong>Disputed</strong></td><td>Credible sources materially disagree.</td></tr>
+        <tr><td><strong>Inference</strong></td><td>The case author derived the conclusion from cited facts.</td></tr>
+        <tr><td><strong>Unknown</strong></td><td>Available evidence does not resolve the question.</td></tr>
+      </tbody>
+    </table>
+
     <h2>Causal restraint</h2>
     <p>Every case is labeled descriptive, associational, plausibly causal, or causal. Most operational reporting is descriptive rather than causal. The label prevents an observed result from quietly becoming a claim that AI produced it.</p>
 

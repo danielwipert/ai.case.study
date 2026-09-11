@@ -25,7 +25,10 @@ const source = z.object({
   roles: z.array(sourceRole).min(1),
   source_family: z.string().optional(),
   access: z.string().optional(),
+  method: z.string().optional(),
   conflicts: z.string().optional(),
+  corroboration: z.string().optional(),
+  accountability: z.string().optional(),
   notes: z.string().optional()
 });
 
