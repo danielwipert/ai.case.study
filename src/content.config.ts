@@ -84,6 +84,7 @@ const cases = defineCollection({
     related_cases: z.array(z.string()).default([]),
     sources: z.array(source).default([]),
     evidence_upgrade_path: z.string().min(20).optional(),
+    single_chain_rationale: z.string().min(40).optional(),
     tags: z.array(z.string()).default([])
   }).superRefine((data, ctx) => {
     if (["published", "archived"].includes(data.status)) {

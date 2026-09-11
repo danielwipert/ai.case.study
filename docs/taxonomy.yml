@@ -42,31 +42,47 @@ controlled_fields:
     - review
     - published
     - archived
+  industry:
+    - financial-services
+    - healthcare
+    - manufacturing
+    - retail
+    - media
+    - public-sector
+    - technology
+    - transportation-logistics
+    - energy-utilities
+    - professional-services
+  business_function:
+    - customer-service
+    - software-engineering
+    - cybersecurity
+    - operations
+    - sales-marketing
+    - research-development
+    - legal-compliance
+    - finance
+    - human-resources
+    - supply-chain
+  deployment_pattern:
+    - employee-copilot
+    - customer-facing-assistant
+    - decision-support
+    - human-in-the-loop-workflow
+    - straight-through-automation
+    - agentic-workflow
+    - multi-agent-system
+    - embedded-product-feature
+    - physical-system
 tagging_rules:
   - Use lowercase kebab-case.
   - Prefer one primary case type and up to two secondary case types.
   - Use the business function affected, not the vendor's product category.
   - Add technology tags only when they improve retrieval.
   - Do not encode evaluative judgments in freeform tags.
-suggested_industries:
-  - financial-services
-  - healthcare
-  - manufacturing
-  - retail
-  - media
-  - public-sector
-  - technology
-  - transportation-logistics
-  - energy-utilities
-  - professional-services
-suggested_business_functions:
-  - customer-service
-  - software-engineering
-  - cybersecurity
-  - operations
-  - sales-marketing
-  - research-development
-  - legal-compliance
-  - finance
-  - human-resources
-  - supply-chain
+deprecated_aliases:
+  business_function:
+    research-and-development: research-development
+    risk-and-compliance: legal-compliance
+  deployment_pattern:
+    autonomous-agents: agentic-workflow

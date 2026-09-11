@@ -51,6 +51,7 @@ Do not publish a material claim based only on an unattributed social post, conte
 - Record author or institution, title, publisher, publication date, URL or DOI, access date, and archived URL when useful.
 - Never imply that one citation supports an entire paragraph if it supports only one sentence.
 - Keep direct quotations short, exact, and contextualized; include speaker and location when available.
+- Give every quotation a footnote citing a source id from the front matter and a `locator:` naming the section, page, paragraph, or timestamp. When the passage cannot be located precisely, write `locator: unrecorded — <reason>`; validation reports that as an evidence gap instead of passing it silently.
 - Do not copy full articles, paywalled text, or source PDFs into the repository unless their license explicitly permits redistribution.
 - If a link dies, preserve the citation and add a lawful archive link; do not silently replace the source.
 

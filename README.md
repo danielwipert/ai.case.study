@@ -17,7 +17,17 @@ Before opening a pull request:
 npm run build
 ```
 
-The build validates case IDs, publication fields, and required research sections before generating the site.
+The build validates the library's evidence rules before generating the site and stops the deploy if any fail:
+
+- case IDs, filenames, publication fields, required sections, and `YYYY-MM-DD` dates in order;
+- controlled taxonomy values from `docs/taxonomy.yml`, including deprecated aliases;
+- footnotes, source ids, and the evidence ledger agreeing with each other, with no uncited sources;
+- a citation and a locator on every direct quotation;
+- two independent evidentiary chains for grade A and B cases, unless `single_chain_rationale` explains why one is enough;
+- `evidence_upgrade_path` on grade B and C cases;
+- resolving `related_cases` and internal case links.
+
+Gaps that should stay visible without blocking a deploy—missing archive snapshots, unrecorded quotation locators—are reported as evidence gaps.
 
 ## Design
 
