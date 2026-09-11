@@ -1,0 +1,137 @@
+---
+const { data } = Astro.props;
+
+const gradeMeaning = {
+  A: {
+    label: "Verified",
+    text: "Strong direct evidence, a transparent primary investigation, or a rigorous evaluation supports the central findings, with meaningful corroboration where reasonably available."
+  },
+  B: {
+    label: "Well supported",
+    text: "Credible original evidence supports the central account, but access, corroboration, measurement, completeness, or reproducibility carries a material limitation."
+  },
+  C: {
+    label: "Attributed",
+    text: "The deployment or event is credible, but central outcome claims depend mainly on a participant, vendor, or single incomplete source."
+  },
+  D: {
+    label: "Lead only",
+    text: "Evidence is promotional, anecdotal, incomplete, contradictory, or not traceable to an original source."
+  }
+};
+
+const roleLabels = {
+  "direct-evidence": "Direct evidence",
+  "primary-investigation": "Primary investigation",
+  "participant-account": "Participant account",
+  "independent-reporting": "Independent reporting",
+  analysis: "Analysis",
+  discovery: "Discovery"
+};
+
+const sources = data.sources ?? [];
+
+const chains = [];
+for (const source of sources) {
+  const key = source.source_family ?? `single:${source.id}`;
+  const existing = chains.find((chain) => chain.key === key);
+  if (existing) existing.sources.push(source);
+  else chains.push({ key, family: source.source_family ?? null, sources: [source] });
+}
+
+const grade = gradeMeaning[data.evidence_grade];
+const archived = sources.filter((source) => source.archive_url).length;
+const collapsed = chains.filter((chain) => chain.sources.length > 1);
+const displayDate = (date) =>
+  date ? new Intl.DateTimeFormat("en", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" }).format(date) : null;
+const plural = (count, word) => `${count} ${word}${count === 1 ? "" : "s"}`;
+---
+
+{sources.length > 0 && (
+  <section class="evidence" aria-labelledby="evidence-ledger">
+    <div class="evidence-head">
+      <h2 id="evidence-ledger">Evidence ledger</h2>
+      <p class="grade-badge" aria-label={`Evidence grade ${data.evidence_grade}: ${grade.label}`}>
+        <span>{data.evidence_grade}</span>
+        <small>{grade.label}</small>
+      </p>
+    </div>
+
+    <p class="evidence-grade-text">{grade.text}</p>
+
+    <dl class="evidence-stats">
+      <div>
+        <dt>Material sources</dt>
+        <dd>{sources.length}</dd>
+      </div>
+      <div>
+        <dt>Independent chains</dt>
+        <dd>{chains.length}</dd>
+      </div>
+      <div>
+        <dt>Archived</dt>
+        <dd>{archived} of {sources.length}</dd>
+      </div>
+    </dl>
+
+    <p class="evidence-triangulation">
+      {chains.length >= 2
+        ? `The ${plural(sources.length, "source")} below trace back to ${plural(chains.length, "separate origin")}, so the central account does not rest on a single evidentiary chain.`
+        : `Every source below traces back to one origin. Under the triangulation rule this counts as a single evidentiary chain, however many outlets repeat it.`}
+      {collapsed.length > 0 && ` ${plural(collapsed.length, "chain")} carries more than one source; those sources corroborate each other's reporting, not the underlying evidence.`}
+    </p>
+
+    {data.evidence_upgrade_path && (
+      <div class="evidence-note">
+        <p class="label">What would strengthen this case</p>
+        <p>{data.evidence_upgrade_path}</p>
+      </div>
+    )}
+
+    <ol class="chain-list">
+      {chains.map((chain, index) => (
+        <li class="chain">
+          <p class="chain-head">
+            <span class="label">Chain {index + 1} of {chains.length}</span>
+            {chain.family
+              ? <span class="chain-family">
+                  {chain.sources.length > 1 ? "Shared origin: " : "Origin: "}<code>{chain.family}</code>
+                </span>
+              : <span class="chain-family">Independent origin</span>}
+          </p>
+          <ul class="source-list">
+            {chain.sources.map((source) => (
+              <li class="source">
+                <h3><a href={source.url} rel="nofollow noopener">{source.title}</a></h3>
+                <p class="source-byline">
+                  {source.author}
+                  {source.publisher !== source.author && ` · ${source.publisher}`}
+                  {source.published && ` · ${displayDate(source.published)}`}
+                  {source.updated && ` · updated ${displayDate(source.updated)}`}
+                </p>
+                <p class="role-badges">
+                  {source.roles.map((role) => (
+                    <span class="role-badge">{roleLabels[role] ?? role}</span>
+                  ))}
+                </p>
+                {(source.access || source.conflicts || source.notes) && (
+                  <dl class="source-detail">
+                    {source.access && (<><dt>Access</dt><dd>{source.access}</dd></>)}
+                    {source.conflicts && (<><dt>Conflicts</dt><dd>{source.conflicts}</dd></>)}
+                    {source.notes && (<><dt>Notes</dt><dd>{source.notes}</dd></>)}
+                  </dl>
+                )}
+                <p class="source-foot">
+                  <span>Accessed {displayDate(source.accessed)}</span>
+                  {source.archive_url
+                    ? <a href={source.archive_url} rel="nofollow noopener">Archived copy</a>
+                    : <span class="missing">No archive snapshot</span>}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}

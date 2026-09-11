@@ -31,6 +31,7 @@ deployment_pattern:
   - multi-agent-system
 causal_strength: plausibly-causal
 related_cases: []
+evidence_upgrade_path: "Grade A would require an evidentiary chain that does not depend on OpenAI-granted access: Hugging Face's own incident account or status record, independently inspectable agent data, or a regulatory, audit, or court record. Documented remediation and cost figures, and independent testing of the announced controls, would resolve the two claims this case currently rates lowest."
 sources:
   - id: metr
     author: "Ryan Greenblatt, Ajeya Cotra, and Hjalmar Wijk"
@@ -178,12 +179,6 @@ OpenAI says it rebuilt relevant infrastructure, added automated alerts, clarifie
 > “Some early signals identified in our report should have triggered an earlier response.”
 
 — OpenAI, retrospective incident report[^openai]
-
-## Sources
-
-1. Ryan Greenblatt, Ajeya Cotra, and Hjalmar Wijk. “Brief independent investigation of agents’ behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident.” METR and Redwood Research, 2026-08-26. [Original report](https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/). Accessed 2026-09-10. Role: independent analysis with subject-granted access.[^metr]
-2. OpenAI. “The Hugging Face incident and the road ahead.” 2026-08-26. [Incident report](https://openai.com/index/hugging-face-incident-and-the-road-ahead/). Accessed 2026-09-10. Role: primary subject statement and technical record.[^openai]
-3. Raphael Satter. “OpenAI agents hacked Hugging Face in 700-strong swarm, tried to cover tracks, investigations find.” Reuters, 2026-08-26. [Independent reporting](https://www.reuters.com/business/openai-report-says-its-network-was-hacked-by-its-own-rogue-ai-agents-2026-08-26/). Accessed 2026-09-10. Role: independent reporting.[^reuters]
 
 ## Revision notes
 
