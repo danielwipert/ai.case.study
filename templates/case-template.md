@@ -22,6 +22,7 @@ geography: []
 environment: unknown
 deployment_pattern: []
 causal_strength: descriptive
+evidence_upgrade_path: "What would have to exist for this case to earn a higher grade."
 related_cases: []
 # One entry per material source. Roles: direct-evidence, primary-investigation,
 # participant-account, independent-reporting, analysis, discovery.
@@ -84,12 +85,6 @@ State the evidence grade and explain it, including source access, conflicts, cor
 > Short, exact quotation whose wording materially helps the case.
 
 — Speaker or author, context, [source](URL)
-
-## Sources
-
-Mirror the structured `sources` block in the front matter, one numbered entry per source.
-
-1. Author or institution. “Title.” Publisher, YYYY-MM-DD. [Original](URL). Accessed YYYY-MM-DD. Role: primary record / independent analysis / independent reporting / subject statement / context.
 
 ## Revision notes
 

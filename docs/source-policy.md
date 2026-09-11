@@ -60,7 +60,7 @@ For every central claim, seek a primary record plus independent corroboration. I
 
 ## Structured source metadata
 
-Each case records its material sources twice: as a machine-readable `sources` block in the front matter, and as the human-readable `## Sources` section in the body. The front-matter block is what validation and the site read.
+Each case records its material sources once, as a machine-readable `sources` block in the front matter. Validation reads that block, and the case page renders it as the evidence ledger: grade, source count, chain count, archive coverage, and every source grouped under its evidentiary chain. In-body footnotes still carry claim-level citations, and `evidence_upgrade_path` records what would have to exist for the case to earn a higher grade.
 
 | Field | Required | Purpose |
 | --- | --- | --- |

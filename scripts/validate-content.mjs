@@ -17,7 +17,6 @@ const requiredPublishedSections = [
   "## Evidence assessment",
   "## Material claims",
   "## Direct quotations",
-  "## Sources",
   "## Revision notes"
 ];
 
