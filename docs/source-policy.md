@@ -57,3 +57,37 @@ Do not publish a material claim based only on an unattributed social post, conte
 ## Triangulation rule
 
 For every central claim, seek a primary record plus independent corroboration. If this is impossible, publish only when the gap is itself important, downgrade the evidence grade, and say exactly what remains unverified. Multiple stories repeating the same original report count as one evidentiary chain, not multiple confirmations.
+
+## Structured source metadata
+
+Each case records its material sources twice: as a machine-readable `sources` block in the front matter, and as the human-readable `## Sources` section in the body. The front-matter block is what validation and the site read.
+
+| Field | Required | Purpose |
+| --- | --- | --- |
+| `id` | yes | Short lowercase key used to reference the source from claims and footnotes. |
+| `author` | yes | Person or responsible organization. |
+| `title` | yes | Complete title. |
+| `publisher` | yes | Publisher or issuing body. |
+| `url` | yes | Canonical https URL, DOI, docket, or stable identifier. |
+| `accessed` | yes | Date the source was last read. |
+| `roles` | yes | One or more controlled source roles. |
+| `published` | when known | Publication date. |
+| `updated` | when known | Date of a material revision. |
+| `archive_url` | when available | Lawful archive snapshot, so the citation survives link rot. |
+| `source_family` | when material | Shared-origin key, described below. |
+| `access` | recommended | What original evidence this source could actually inspect. |
+| `conflicts` | recommended | Funding, commissioning, access constraint, or incentive. Write `None disclosed.` when none. |
+| `notes` | optional | Anything else a reader needs in order to weigh the source. |
+
+### Controlled source roles
+
+- `direct-evidence` — original records, filings, logs, contracts, transcripts, data, or decisions.
+- `primary-investigation` — original investigation with access to evidence and a stated method.
+- `participant-account` — evidence or explanation from an involved organization or person.
+- `independent-reporting` — outside reporting, interviews, confirmation, contradiction, and context.
+- `analysis` — interpretation, competing explanations, and significance.
+- `discovery` — lead generation only; trace important claims to their origin.
+
+### Source families
+
+Sources that trace back to the same original evidence share one `source_family` value. Under the triangulation rule they count as a single evidentiary chain no matter how many outlets repeat them, and the count of distinct families—not the count of sources—is what supports an evidence grade.

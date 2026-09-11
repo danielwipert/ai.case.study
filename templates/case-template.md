@@ -23,6 +23,25 @@ environment: unknown
 deployment_pattern: []
 causal_strength: descriptive
 related_cases: []
+# One entry per material source. Roles: direct-evidence, primary-investigation,
+# participant-account, independent-reporting, analysis, discovery.
+# Give sources that trace back to the same original evidence the same source_family:
+# under the triangulation rule they count as one evidentiary chain, not two.
+sources:
+  - id: short-key
+    author: "Author or responsible organization"
+    title: "Complete title"
+    publisher: "Publisher or issuing body"
+    published: YYYY-MM-DD
+    url: "https://example.com/canonical-url"
+    archive_url: "https://web.archive.org/..."
+    accessed: YYYY-MM-DD
+    roles:
+      - independent-reporting
+    source_family: shared-origin-key
+    access: "What original evidence this source could inspect."
+    conflicts: "Funding, commissioning, access constraint, or incentive. Write 'None disclosed.' when none."
+    notes: "Anything a reader needs to weigh this source."
 tags: []
 ---
 
@@ -67,6 +86,8 @@ State the evidence grade and explain it, including source access, conflicts, cor
 — Speaker or author, context, [source](URL)
 
 ## Sources
+
+Mirror the structured `sources` block in the front matter, one numbered entry per source.
 
 1. Author or institution. “Title.” Publisher, YYYY-MM-DD. [Original](URL). Accessed YYYY-MM-DD. Role: primary record / independent analysis / independent reporting / subject statement / context.
 

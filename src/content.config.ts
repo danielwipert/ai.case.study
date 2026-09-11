@@ -1,6 +1,34 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 
+const sourceRole = z.enum([
+  "direct-evidence",
+  "primary-investigation",
+  "participant-account",
+  "independent-reporting",
+  "analysis",
+  "discovery"
+]);
+
+const httpsUrl = z.string().regex(/^https:\/\/\S+$/, "Use a complete https URL.");
+
+const source = z.object({
+  id: z.string().regex(/^[a-z0-9-]+$/, "Source ids use lowercase letters, digits, and hyphens."),
+  author: z.string().min(2),
+  title: z.string().min(5),
+  publisher: z.string().min(2),
+  published: z.coerce.date().optional(),
+  updated: z.coerce.date().optional(),
+  url: httpsUrl,
+  archive_url: httpsUrl.optional(),
+  accessed: z.coerce.date(),
+  roles: z.array(sourceRole).min(1),
+  source_family: z.string().optional(),
+  access: z.string().optional(),
+  conflicts: z.string().optional(),
+  notes: z.string().optional()
+});
+
 const cases = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/cases" }),
   schema: z.object({
@@ -54,6 +82,7 @@ const cases = defineCollection({
       "causal"
     ]).default("descriptive"),
     related_cases: z.array(z.string()).default([]),
+    sources: z.array(source).default([]),
     tags: z.array(z.string()).default([])
   }).superRefine((data, ctx) => {
     if (["published", "archived"].includes(data.status)) {
@@ -66,7 +95,18 @@ const cases = defineCollection({
       if (data.evidence_grade === "D") {
         ctx.addIssue({ code: "custom", path: ["evidence_grade"], message: "Grade D leads cannot be published." });
       }
+      if (data.sources.length === 0) {
+        ctx.addIssue({ code: "custom", path: ["sources"], message: "Published cases require at least one structured source." });
+      }
     }
+
+    const seen = new Set<string>();
+    data.sources.forEach((entry, index) => {
+      if (seen.has(entry.id)) {
+        ctx.addIssue({ code: "custom", path: ["sources", index, "id"], message: `Duplicate source id "${entry.id}".` });
+      }
+      seen.add(entry.id);
+    });
   })
 });
 
