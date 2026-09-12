@@ -24,7 +24,7 @@ The build validates the library's evidence rules before generating the site and 
 - footnotes, source ids, and the evidence ledger agreeing with each other, with no uncited sources;
 - a citation and a locator on every direct quotation;
 - two independent evidentiary chains for grade A and B cases, unless `single_chain_rationale` explains why one is enough;
-- `evidence_upgrade_path` on grade B and C cases;
+- `evidence_upgrade_path` on grade B and C cases, stating what would earn a higher grade;
 - resolving `related_cases` and internal case links.
 
 Gaps that should stay visible without blocking a deploy—missing archive snapshots, unrecorded quotation locators—are reported as evidence gaps.
