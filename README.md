@@ -4,6 +4,10 @@
 
 An evidence-first library about how AI changes real organizations: operations, economics, risk, work, and outcomes. The public site is generated from Markdown records in this repository and deployed through GitHub Pages.
 
+## Session continuity
+
+`HANDOFF.md` holds the last session's snapshot — current state, open items, and where to pick up. It is replaced wholesale each session and kept to about a page. Durable conventions live in `CLAUDE.md`.
+
 ## Work locally
 
 ```bash
