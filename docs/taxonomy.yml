@@ -54,6 +54,7 @@ controlled_fields:
     - energy-utilities
     - professional-services
   business_function:
+    - clinical-care
     - customer-service
     - software-engineering
     - cybersecurity
