@@ -86,7 +86,7 @@ const plural = (count, word) => `${count} ${word}${count === 1 ? "" : "s"}`;
 
     <p class="evidence-triangulation">
       {chains.length >= 2
-        ? `The ${plural(sources.length, "source")} below trace back to ${plural(chains.length, "separate origin")}, so the central account does not rest on a single evidentiary chain.`
+        ? `The ${plural(sources.length, "source")} below trace back to ${plural(chains.length, "separate origin")}. Whether those origins corroborate one another on this case's central claims is assessed in the case, not implied by the count.`
         : `Every source below traces back to one origin. Under the triangulation rule this counts as a single evidentiary chain, however many outlets repeat it.`}
       {chains.length > 1 && collapsed.length > 0 && ` ${plural(collapsed.length, "chain")} ${collapsed.length === 1 ? "carries" : "carry"} more than one source; those sources corroborate each other's reporting, not the underlying evidence.`}
     </p>
