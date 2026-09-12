@@ -22,7 +22,7 @@ geography: []
 environment: unknown
 deployment_pattern: []
 causal_strength: descriptive
-evidence_upgrade_path: "What would have to exist for this case to earn a higher grade."
+evidence_upgrade_path: "What would have to exist for this case to earn a higher grade. Required for grades B and C; at grade A, record what would still strengthen the record or force a downgrade."
 # Only when an A or B case rests on one evidentiary chain:
 # single_chain_rationale: "Why one chain is sufficient here."
 related_cases: []
