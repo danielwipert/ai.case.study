@@ -11,6 +11,10 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const data = entry.data;
+const allCases = await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status));
+const byCaseId = new Map(allCases.map((item) => [item.data.case_id, item]));
+const related = data.related_cases.map((id) => byCaseId.get(id)).filter(Boolean);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const chainCount = new Set(data.sources.map((source) => source.source_family ?? `single:${source.id}`)).size;
 const displayDate = (date) => new Intl.DateTimeFormat("en", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" }).format(date);
 ---
@@ -41,6 +45,14 @@ const displayDate = (date) => new Intl.DateTimeFormat("en", { year: "numeric", m
         <dt>Business function</dt><dd>{data.business_function.map((v) => v.replaceAll("-", " ")).join(", ")}</dd>
         <dt>Causal strength</dt><dd>{data.causal_strength.replaceAll("-", " ")}</dd>
         <dt>Sources</dt><dd>{data.sources.length} across {chainCount} independent {chainCount === 1 ? "chain" : "chains"}</dd>
+        {related.length > 0 && (
+          <>
+            <dt>Related cases</dt>
+            <dd>{related.map((item, index) => (
+              <>{index > 0 && ", "}<a href={`${base}/cases/${item.id}/`}>{item.data.case_id}</a></>
+            ))}</dd>
+          </>
+        )}
         <dt>Next review</dt><dd>{data.next_review ? displayDate(data.next_review) : "Not scheduled"}</dd>
         <dt>Geography</dt><dd>{data.geography.join(", ") || "Not material"}</dd>
       </dl>
