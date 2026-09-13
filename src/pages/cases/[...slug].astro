@@ -24,10 +24,14 @@ const displayDate = (date) => new Intl.DateTimeFormat("en", { year: "numeric", m
     <p class="eyebrow">{data.case_id} · {data.case_type.replaceAll("-", " ")}</p>
     <h1>{data.title}</h1>
     <p class="dek">{data.summary}</p>
+    <p class="article-flags">
+      <span class="grade-chip" data-grade={data.evidence_grade}>
+        <b>{data.evidence_grade}</b><small>evidence</small>
+      </span>
+      <span class={`outcome ${data.outcome}`}>{data.outcome} outcome</span>
+    </p>
     <div class="case-meta">
       <span>{data.organization.join(" · ")}</span>
-      <span>Evidence {data.evidence_grade}</span>
-      <span>{data.outcome} outcome</span>
       <span>Verified {displayDate(data.last_verified)}</span>
     </div>
   </header>
