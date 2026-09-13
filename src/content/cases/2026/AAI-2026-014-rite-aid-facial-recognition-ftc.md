@@ -33,7 +33,7 @@ related_cases:
   - AAI-2026-006
   - AAI-2026-009
   - AAI-2026-013
-evidence_upgrade_path: "The central obstacle to grade A is that the allegations were never tested: Rite Aid neither admitted nor denied them and the case settled before any evidence was weighed. Adjudicated findings would resolve that, and cannot now arise from this action. Short of it: the underlying investigative record — the internal presentations, the vendor correspondence, the employee training material the complaint quotes — would let a reader check the FTC's characterisations; the identity of the two vendors, which the complaint withholds, would allow the technology itself to be assessed against published benchmarks; and any measurement of Rite Aid's own algorithm on its own images, which on the FTC's account never existed, would settle whether the demographic differentials NIST documents in general were present in this deployment in particular."
+evidence_upgrade_path: "The central obstacle to grade A is that the allegations were never tested: Rite Aid neither admitted nor denied them and the case settled before any evidence was weighed. Adjudicated findings would resolve that, and cannot now arise from this action. Short of it: the underlying investigative record — the internal presentations, the vendor correspondence, the employee training material the complaint quotes — would let a reader check the FTC's characterisations; the identity of the two vendors, which the complaint withholds, would allow the technology itself to be assessed against published benchmarks — a 2020 Reuters investigation is reported to name them, but reuters.com is unreachable from this sandbox and the only readable account of that naming is two relays from the original, so this case does not name them and a future editor with access to the Reuters piece can close the gap in one step; and any measurement of Rite Aid's own algorithm on its own images, which on the FTC's account never existed, would settle whether the demographic differentials NIST documents in general were present in this deployment in particular."
 sources:
   - id: ftc-complaint
     author: "Federal Trade Commission"
@@ -84,6 +84,22 @@ sources:
     corroboration: "Every claim about Rite Aid in it is footnoted to a numbered paragraph of the complaint, so it is a reading of that source rather than a second one."
     accountability: "Signed, dated, published on the Commission's site with a file number and full footnotes."
     notes: "Read in full. Cited here for the 'white lady with blonde hair' incident at complaint paragraph 48, the single risk identified in Rite Aid's expansion presentation, and the absence of confidence intervals for store staff."
+  - id: riteaid-response
+    author: "Rite Aid Corporation, relayed by CNBC and read through the AI Incident Database's mirror"
+    title: "Rite Aid's press-release response to the FTC settlement, quoted in \"Rite Aid to be barred from using facial recognition under proposed FTC settlement\""
+    publisher: "AI Incident Database, report 3511, mirroring cnbc.com"
+    published: 2023-12-19
+    url: "https://incidentdatabase.ai/reports/3511/"
+    accessed: 2026-09-13
+    roles:
+      - participant-account
+    source_family: riteaid-public-response
+    access: "The accused company's own characterisation of the conduct, issued the day the complaint and settlement were filed. It is the only place in this record where Rite Aid describes the programme in its own words."
+    method: "Not an investigation. A company press statement, quoted in a news report, read here through a third-party mirror of that report. Two of its assertions are checkable against the complaint and one is not."
+    conflicts: "The defendant describing its own conduct on the day it settled, while in bankruptcy, having neither admitted nor denied the allegations. Every incentive runs toward minimisation."
+    corroboration: "Its claim that use stopped before the investigation is consistent with the complaint's own end date of 2020. Its characterisation of scale — a pilot in a limited number of stores — is not consistent with the complaint's hundreds of stores over eight years, and this case records the conflict rather than picking a side."
+    accountability: "A company press release, attributable to Rite Aid and issued publicly, but reaching this case at two removes. Neither reuters.com nor cnbc.com is reachable from this sandbox; the AI Incident Database's mirror of the CNBC report is, and is cited as the relay it is."
+    notes: "A relay of a relay, and labelled as one. It is in this record because the case otherwise contains no account of the conduct except the prosecuting party's. The same relayed report states that a 2020 Reuters investigation identified Rite Aid's two vendors by name; this case deliberately does not repeat those names, because the identification is two removes from an unreachable original and concerns third parties who were never before the Commission."
   - id: nist-8280
     author: "Patrick Grother, Mei Ngan, and Kayee Hanaoka"
     title: "Face Recognition Vendor Test (FRVT) Part 3: Demographic Effects"
@@ -118,6 +134,8 @@ For eight years a pharmacy chain used facial recognition to flag suspected shopl
 ## Case status note
 
 Almost everything below is an allegation. The FTC filed its complaint and a negotiated settlement on the same day, 19 December 2023. Rite Aid "neither admit[ted] nor den[ied] any of the allegations in the Complaint."[^ftc-order] No court weighed the evidence, no witness was cross-examined, and Rite Aid never filed an answer. What is established is the order: its terms bind, and they are labelled Verified below. What Rite Aid did is labelled Attributed throughout, and readers should hold it that way.
+
+The company did say something that day, and it is not what the complaint says. Rite Aid's press release stated that it was pleased to reach agreement but disagreed with the allegations, and characterised them as relating to "a facial recognition technology pilot program the Company deployed in a limited number of stores", adding that it had stopped using the technology more than three years earlier, before the FTC opened its investigation.[^riteaid-response] The complaint describes hundreds of stores over eight years. Both statements are in this case; neither is resolved here. The company's reaches it at two removes, through a mirror of a news report, because the outlets that carried it are unreachable from this sandbox.
 
 ## Executive summary
 
@@ -246,7 +264,9 @@ What holds the case at B is structural and cannot be repaired from this record.
 
 *The allegations were never tested.* Paragraph 5 of the stipulated order records that the defendants neither admit nor deny them.[^ftc-order] A complaint is the prosecuting party's best case, drafted to establish liability, quoting internal documents it selected. Rite Aid never answered it. Under this library's rules an unproven allegation is Attributed, never Verified, and the material claims table applies that without exception to conduct.
 
-*Three of the four sources are one chain.* The complaint, the order, and the Commissioner's statement all issue from the same action on the same day and trace to the same investigation; the statement is explicitly a reading of the complaint. NIST is a separate chain but speaks only to the general behaviour of facial recognition algorithms, not to anything Rite Aid did. So the conduct in this case has exactly one source.
+*Three of the five sources are one chain.* The complaint, the order, and the Commissioner's statement all issue from the same action on the same day and trace to the same investigation; the statement is explicitly a reading of the complaint. NIST is a separate chain but speaks only to the general behaviour of facial recognition algorithms, not to anything Rite Aid did. So the prosecuting account of the conduct still has exactly one source.
+
+*The company's side of it reaches this case at two removes.* Rite Aid's press statement is the only account of the conduct here that is not the FTC's, and it matters: it disputes the scale directly. But reuters.com and cnbc.com are both unreachable from this sandbox, so it is read through the AI Incident Database's mirror of a CNBC report quoting the release.[^riteaid-response] That is a relay of a relay and is labelled as one. It is enough to move a claim from `Attributed` to `Disputed` — recording that two parties say different things is a low bar and the right one — and nowhere near enough to settle which is right. The same relayed report names the two vendors the complaint withholds, on the authority of a 2020 Reuters investigation this review could not read; those names are deliberately not repeated in this case.
 
 *The reporting that started it is out of reach.* The FTC's action followed press investigation of Rite Aid's use of the technology. That journalism could not be read from this sandbox, so it is not cited, and the case is poorer for lacking any account of these events that is not the government's.
 
@@ -260,7 +280,8 @@ One clarification about NIST, because the shorthand version of its finding is mi
 
 | Claim | Label | Evidence | What would change this |
 | --- | --- | --- | --- |
-| Rite Aid used facial recognition in hundreds of stores from 2012 to 2020. | Attributed | Alleged in the FTC's complaint; neither admitted nor denied[^ftc-complaint][^ftc-order] | Adjudicated findings, or a Rite Aid account contradicting it |
+| Rite Aid used facial recognition in hundreds of stores from 2012 to 2020. | Disputed | Alleged in the FTC's complaint and neither admitted nor denied; Rite Aid's own statement the same day calls it "a facial recognition technology pilot program the Company deployed in a limited number of stores"[^ftc-complaint][^ftc-order][^riteaid-response] | Adjudicated findings, store-level deployment records, or the Reuters investigation that reported on the deployment's extent |
+| Rite Aid stopped using the technology before the FTC opened its investigation. | Attributed | The company's own statement; the complaint's own end date of 2020 is consistent with it but does not establish the investigation's start[^riteaid-response][^ftc-complaint] | The investigation's opening date, or an FTC response to the claim |
 | Rite Aid never implemented any procedure for tracking the false-positive rate. | Attributed | Alleged as a specific failure in the complaint's unfairness count[^ftc-complaint] | Production of a monitoring procedure, or adjudicated findings |
 | The system generated thousands of recorded false-positive alerts between December 2019 and July 2020. | Attributed | Alleged from Rite Aid's own records, which the complaint says were kept only incidentally[^ftc-complaint] | The underlying records, or adjudicated findings |
 | One enrollment produced over 900 alerts in more than 130 stores in five days. | Attributed | Alleged with locations itemised — New York, Los Angeles, Philadelphia, Baltimore, Detroit, Sacramento, Delaware, Seattle, Manchester, Norfolk[^ftc-complaint] | The alert logs, or adjudicated findings |
@@ -309,6 +330,8 @@ One clarification about NIST, because the shorthand version of its finding is mi
 
 ## Revision notes
 
+- 2026-09-13 — Source review. Added the one voice this case was missing: Rite Aid's own. Its press statement on the day of settlement disputes the complaint's scale directly, calling the programme "a facial recognition technology pilot program the Company deployed in a limited number of stores" against the complaint's hundreds of stores over eight years, and says use stopped more than three years before the FTC opened its investigation. The scale claim moves from `Attributed` to `Disputed` and a second claim is added; neither is resolved, per the rule on recording discrepancies rather than settling them. The source is a relay of a relay and says so on its face — reuters.com and cnbc.com are both unreachable from this sandbox, so the release is read through the AI Incident Database's mirror of a CNBC report. Grade stays B: a defendant's denial is a competing account, not corroboration. One thing was deliberately left out. The same relayed report states that a 2020 Reuters investigation named Rite Aid's two vendors, which this case's upgrade path asks for; the names are not repeated here, because the identification sits two removes from an unreachable original and concerns third parties who were never before the Commission. The upgrade path now records where that identification lives so a future editor with Reuters access can close it in one step.
+
 - 2026-09-13 — Initial publication at Grade B. The library's first `retail` case, and its first built primarily on an untested pleading, which shapes everything: the complaint, the stipulated order, and the Commissioner's statement are one evidentiary chain from one action on one day, and Rite Aid neither admitted nor denied any of it. Every conduct claim is therefore labelled Attributed and the case carries a status note above the executive summary saying so, rather than letting a well-sourced complaint read as findings. Only the order's own terms are Verified. NIST's FRVT Part 3 is the second chain and is cited with care: it supports demographic differentials in general and explicitly contradicts the uniform version of that claim, which is recorded as `Disputed`. The press investigation that preceded the FTC action could not be read from this sandbox and is not cited, leaving the case without any account of these events that is not the government's — a gap named in the evidence assessment. Related to AAI-2026-006 and AAI-2026-013 by the recurring absence of a precision figure, and to AAI-2026-009 by distributional harm from an unvalidated selection system.
 
 [^ftc-complaint]: Federal Trade Commission, [Complaint for Permanent Injunction and Other Relief, FTC v. Rite Aid Corporation and Rite Aid Hdqtrs. Corp., Case 2:23-cv-05023 (E.D. Pa.)](https://search.ftc.gov/system/files/ftc_gov/pdf/2023190_riteaid_complaint_filed.pdf), filed 2023-12-19.
@@ -316,5 +339,7 @@ One clarification about NIST, because the shorthand version of its finding is mi
 [^ftc-order]: Federal Trade Commission and Rite Aid Corporation, [Stipulated Order for Permanent Injunction and Other Relief, FTC v. Rite Aid Corporation, Case 2:23-cv-05023 (E.D. Pa.)](https://search.ftc.gov/system/files/ftc_gov/pdf/2023190_riteaid_stipulated_order_filed.pdf), filed 2023-12-19.
 
 [^bedoya]: Alvaro M. Bedoya, [“Statement of Commissioner Alvaro M. Bedoya On FTC v. Rite Aid Corporation & Rite Aid Headquarters Corporation”](https://www.ftc.gov/system/files/ftc_gov/pdf/2023190_commissioner_bedoya_riteaid_statement.pdf), FTC File No. 202-3190, 2023-12-19.
+
+[^riteaid-response]: Rite Aid Corporation's press-release response to the FTC settlement, quoted in “Rite Aid to be barred from using facial recognition under proposed FTC settlement”, CNBC, 2023-12-19, read through the [AI Incident Database's mirror, report 3511](https://incidentdatabase.ai/reports/3511/). A relay of a relay: neither reuters.com nor cnbc.com is reachable from this sandbox and neither original was read.
 
 [^nist-8280]: Patrick Grother, Mei Ngan, and Kayee Hanaoka, [“Face Recognition Vendor Test (FRVT) Part 3: Demographic Effects”](https://nvlpubs.nist.gov/nistpubs/ir/2019/NIST.IR.8280.pdf), NISTIR 8280, National Institute of Standards and Technology, 2019-12-19, doi:10.6028/NIST.IR.8280.
