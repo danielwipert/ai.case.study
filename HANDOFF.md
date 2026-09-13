@@ -6,7 +6,7 @@
 
 ## Where the library stands
 
-Live at <https://danielwipert.github.io/ai.case.study/> — eight published cases and one unpublished lead.
+Live at <https://danielwipert.github.io/ai.case.study/> — ten published cases and one unpublished lead.
 
 | ID | Subject | Type | Grade |
 | --- | --- | --- | --- |
@@ -19,22 +19,34 @@ Live at <https://danielwipert.github.io/ai.case.study/> — eight published case
 | AAI-2026-007 | Klarna's AI workforce reduction | organizational-transformation | B |
 | AAI-2026-008 | METR's randomized trial on experienced developers | evaluation | B |
 | AAI-2026-009 | DUO's student-grant fraud risk profile | failure-incident | A |
+| AAI-2026-010 | Cruise robotaxi disclosure failure | failure-incident | A |
+| AAI-2026-011 | Korea orders an AI model destroyed | governance-regulatory | B |
 
-All six case types, all six claim labels, and all four causal-strength labels are now in use.
+All four causal-strength labels, all six claim labels, and every `deployment_pattern` are now in use.
 
 ## What this session added
 
-- **AAI-2026-008 (METR).** A randomized trial: 16 experienced open-source maintainers were 19% slower on their own repository issues with AI allowed, and estimated afterwards that AI had made them 20% faster. Carried through to February 2026, when METR abandoned the design because developers would no longer accept a no-AI arm. First `causal` case, scoped in the causal assessment to the trial's internal validity.
-- **AAI-2026-009 (DUO).** The Dutch student finance agency scored fraud risk on age, education type, and distance to the parental address for eleven years; students with a non-European migration background received unjustified home visits 3.0x as often. The data protection regulator found the scoring itself unlawful; €80m was set aside in April 2026 for roughly 25,000 people. First public-sector case, first outside the US/UK/Sweden, second grade A.
-- **`CLAUDE.md` gained three durable sections:** European public-body reachability (including that the Dutch DPA needs a browser User-Agent), how to read PDFs here (`pymupdf`; `pdftotext` absent and `pypdf` broken), and the blockquote rule for non-English quotations.
+- **008 (METR)** — 16 experienced maintainers, 19% slower with AI, and certain they were 20% faster; METR abandoned the design in Feb 2026 when developers refused a no-AI arm. First `causal` case.
+- **009 (DUO)** — eleven years of Dutch student-grant fraud checks driven by age, education type, and distance to the parental address; 3.0x unjustified home visits for students with a non-European migration background; €80m redress. First public-sector case.
+- **010 (Cruise)** — a robotaxi dragged a pedestrian twenty feet and the company briefed three regulators without saying so; ~$2.1m in penalties against ~$2.8bn in charges and wind-down. First `physical-system` case.
+- **011 (PIPC)** — Korea fined Kakao Pay and Apple over five years of daily cross-border transfers and ordered Alipay to destroy the scoring model built from them. First case in Asia.
+- **`CLAUDE.md` gained six durable sections** across two sittings: European and non-EU regulator reachability (the Dutch DPA and Korea's PIPC both need special handling), how to read PDFs here, how to work SEC filings, CDN-hosted company reports, and the blockquote rule for non-English quotations.
 
 ## Open items
 
-1. **Archive snapshots.** Every source in all nine cases reports a missing `archive_url`; archive.org is unreachable from the sandbox. Needs a normal browser — still the largest standing gap, now across seventeen more sources.
-2. **AAI-2026-004 is blocked.** It stays at `research` until The Verge's original report can be read or Microsoft or Anthropic says something on the record.
-3. **Two claims in 009 rest on press relays.** The April 2026 compensation scheme is cited to NL Times because the ministerial letter behind it could not be retrieved. A browser, or a working route into rijksoverheid.nl document search, would move those from Supported to Verified.
-4. **Editorial calls worth revisiting:** grade C on 003; `associational` on 006 against the paper's own causal language; `descriptive` plus grade B on 007; grade B on 008 despite an exceptional design, on the ground that METR's three source families are one institution; `plausibly-causal` rather than `causal` on 009.
+1. **Archive snapshots.** Every source in all eleven cases reports a missing `archive_url`; archive.org is unreachable from the sandbox. Unchanged and now much larger — this is the one gap a browser fixes in an evening.
+2. **AAI-2026-004 is blocked** until The Verge's report is readable or someone speaks on the record.
+3. **Three cases lean on relays for a decisive document.** 009's April 2026 compensation letter, 010's NHTSA consent order and deferred prosecution agreement, and 011's Seoul Administrative Court judgment were all unreachable. Each is flagged in its own case and each would move claims from Supported to Verified.
+4. **011's headline remedy is unverified.** Nothing establishes that the ordered model destruction happened. Worth a re-check at the next review date.
+5. **Editorial calls worth revisiting:** grade C on 003; `associational` on 006; `descriptive` plus B on 007; B on 008 despite an exceptional design; `plausibly-causal` on 009; `descriptive` on 010; `deployment_stage: unknown` on 011.
 
 ## Suggested next step
 
-The taxonomy gaps that remain are narrower than they were. Nothing in the library is set in Asia, Africa, or Latin America. No case covers a physical system — `physical-system` is the only unused deployment pattern, and `manufacturing`, `energy-utilities`, `transportation-logistics`, and `supply-chain` are unused facets. And every case so far is about a system that was studied after something went wrong or after someone asked; a case where governance worked *before* deployment — an impact assessment that stopped or reshaped a rollout — would be the hardest gap to fill and the most useful.
+Remaining taxonomy gaps, in rough order of how much they would add:
+
+- **`case_type: deployment` is the only unused case type** — every case so far is an incident, an evaluation, a regulatory action, or an economic argument. A straightforward account of a deployment that simply ran, well or badly, is missing and is the most conspicuous hole.
+- **`outcome: inconclusive`** has never been used, which is suspicious in a library this size and hints at a selection bias toward cases with a verdict.
+- **Unused industries:** `manufacturing`, `retail`, `media`, `energy-utilities`, `professional-services`. Unused functions: `sales-marketing`, `supply-chain`.
+- **Unused environments:** `shadow-mode` and `adversarial-test` would both be genuinely informative — a model run silently against production, or one deliberately attacked.
+- **Geography** now spans nine entries but nothing in Africa, Latin America, South Asia, or China.
+- Still no case where **governance worked before deployment** — an impact assessment that stopped or reshaped a rollout. Hardest to find, most useful if found.

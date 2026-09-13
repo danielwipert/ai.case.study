@@ -40,9 +40,15 @@ Hard-won; saves an hour of dead ends.
 
 **Also blocked:** oecd.org (403), anao.gov.au (no route), erasmusmagazine.nl (JavaScript challenge). algorithmaudit.eu works, but only without the `www.` prefix — the certificate has no matching name for `www.algorithmaudit.eu`.
 
+**Regulators and courts outside the EU:** ftc.gov, dmv.ca.gov, cpuc.ca.gov, docs.cpuc.ca.gov, pdpc.gov.sg, mas.gov.sg, meti.go.jp, and koreajoongangdaily.com all resolve. nhtsa.gov and static.nhtsa.gov return 403 to everything tried, so US federal vehicle-safety documents — consent orders included — have to be reached through a company's own SEC filings or a relay.
+
+**pipc.go.kr (Korea's data protection regulator) is reachable but flaky.** It resets the connection on roughly half of all requests; retry two to five times and it succeeds. Its `noticeList.do` index renders its rows in JavaScript, so the list looks empty when fetched — navigate instead by `noticeDetail.do?bbsId=BBSMSTR_000000000001&nttId=<n>` and walk the "Previous"/"Next" links at the foot of each release to find neighbouring items. Its English releases state on their face that they are unofficial translations.
+
+**A company's published documents are often on a CDN that is reachable when its own site is not.** The 195-page Quinn Emanuel report on Cruise came from `assets.ctfassets.net`. When a report is announced but its host blocks you, search for the asset URL rather than the announcement.
+
 **Blocked or paywalled:** archive.org and web.archive.org (so no snapshots), theverge.com, reuters.com, bloomberg.com, fortune.com, inc.com, forbes.com, cnbc.com, apnews.com, theinformation.com, medrxiv.org, justice.gov, gao.gov. courtlistener.com search works anonymously but throttles hard, and its document endpoints need authentication.
 
-SEC filings are the most reliable primary record available here: a company's own 20-F or 10-Q often contains the audited numbers behind a claim the press only relays.
+SEC filings are the most reliable primary record available here: a company's own 20-F, 10-K, or 10-Q often contains the audited numbers behind a claim the press only relays. They also carry the terms of regulatory settlements a company has entered, under securities-law liability — GM's 10-K states the Cruise consent order, the CPUC settlement, and the deferred prosecution agreement including what was admitted, all of which were unreachable at their own sources. Fetch the filing index from `https://data.sec.gov/submissions/CIK<10-digit zero-padded CIK>.json` and send a descriptive User-Agent with a contact address, as the SEC asks. Consecutive years of the same form are worth reading together: the later one usually closes a story the earlier one leaves open.
 
 ## Reading PDFs in the sandbox
 
