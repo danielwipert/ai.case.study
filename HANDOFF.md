@@ -21,8 +21,9 @@ Live at <https://danielwipert.github.io/ai.case.study/> — ten published cases 
 | AAI-2026-009 | DUO's student-grant fraud risk profile | failure-incident | A |
 | AAI-2026-010 | Cruise robotaxi disclosure failure | failure-incident | A |
 | AAI-2026-011 | Korea orders an AI model destroyed | governance-regulatory | B |
+| AAI-2026-012 | GOV.UK Chat, two and a half years of pilots | deployment | C |
 
-All four causal-strength labels, all six claim labels, and every `deployment_pattern` are now in use.
+All six case types, all four causal-strength labels, all six claim labels, every `deployment_pattern`, and every `outcome` are now in use. Grade D is unused by rule — it is never published.
 
 ## What this session added
 
@@ -30,6 +31,7 @@ All four causal-strength labels, all six claim labels, and every `deployment_pat
 - **009 (DUO)** — eleven years of Dutch student-grant fraud checks driven by age, education type, and distance to the parental address; 3.0x unjustified home visits for students with a non-European migration background; €80m redress. First public-sector case.
 - **010 (Cruise)** — a robotaxi dragged a pedestrian twenty feet and the company briefed three regulators without saying so; ~$2.1m in penalties against ~$2.8bn in charges and wind-down. First `physical-system` case.
 - **011 (PIPC)** — Korea fined Kakao Pay and Apple over five years of daily cross-border transfers and ordered Alipay to destroy the scoring model built from them. First case in Asia.
+- **012 (GOV.UK Chat)** — a deployment that simply ran: 10,000+ users across two pilots, self-assessed accuracy from 76% to 90%, satisfaction flat at 64%. Graded C because every figure is the building team's own and nobody outside has checked one. First `deployment` case, and the one that closes the case-type set.
 - **`CLAUDE.md` gained six durable sections** across two sittings: European and non-EU regulator reachability (the Dutch DPA and Korea's PIPC both need special handling), how to read PDFs here, how to work SEC filings, CDN-hosted company reports, and the blockquote rule for non-English quotations.
 
 ## Open items
@@ -42,11 +44,10 @@ All four causal-strength labels, all six claim labels, and every `deployment_pat
 
 ## Suggested next step
 
-Remaining taxonomy gaps, in rough order of how much they would add:
+The controlled vocabulary is now almost fully exercised, so gaps are about subject matter rather than tags:
 
-- **`case_type: deployment` is the only unused case type** — every case so far is an incident, an evaluation, a regulatory action, or an economic argument. A straightforward account of a deployment that simply ran, well or badly, is missing and is the most conspicuous hole.
-- **`outcome: inconclusive`** has never been used, which is suspicious in a library this size and hints at a selection bias toward cases with a verdict.
-- **Unused industries:** `manufacturing`, `retail`, `media`, `energy-utilities`, `professional-services`. Unused functions: `sales-marketing`, `supply-chain`.
-- **Unused environments:** `shadow-mode` and `adversarial-test` would both be genuinely informative — a model run silently against production, or one deliberately attacked.
-- **Geography** now spans nine entries but nothing in Africa, Latin America, South Asia, or China.
-- Still no case where **governance worked before deployment** — an impact assessment that stopped or reshaped a rollout. Hardest to find, most useful if found.
+- **Every case is a service, a system, or a study — none is about physical goods.** `manufacturing`, `retail`, `energy-utilities`, `supply-chain`, and `sales-marketing` are all unused, and the search for a manufacturing case in this session turned up only vendor marketing and systematic reviews. A well-evidenced industrial deployment would be hard-won and genuinely new.
+- **`shadow-mode` and `adversarial-test` environments** are unused and both would be informative: a model run silently against production before go-live, or one deliberately attacked. AAI-2026-006 mentions silent-mode running in passing; a case centred on it would be better.
+- **Geography** spans ten entries with nothing in Africa, Latin America, South Asia, or China.
+- Still no case where **governance worked before deployment** — an impact assessment that stopped or reshaped a rollout. Hardest to find, most useful if found. AAI-2026-012 is the closest the library has, and it is a team publishing its own homework rather than an external control that bit.
+- **A grade A economic case** would test the library's weakest spot: the three economic cases are B, C, and C, and no case anywhere has a verified cost figure attached to a verified benefit.
