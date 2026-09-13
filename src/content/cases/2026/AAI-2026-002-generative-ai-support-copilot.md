@@ -28,9 +28,26 @@ deployment_pattern:
   - employee-copilot
 causal_strength: causal
 related_cases: []
-evidence_upgrade_path: "Grade A needs a second evidentiary chain: a replication in another firm, an independent re-analysis of the underlying chat data, or the firm's own account of the deployment. Disclosure of the tool's licence, integration, and training costs would let the case state net economics instead of leaving them unknown, and evidence on staffing and wages after the study window would resolve what the authors explicitly leave open."
-single_chain_rationale: "The two sources are the working-paper and peer-reviewed versions of a single study, so they form one evidentiary chain rather than two. No independent replication exists: the data are proprietary to an unnamed firm and no second party has had access to them. The case is published because a transparent quasi-experiment over three million chats is worth recording with its limits stated, not because its findings have been corroborated."
+evidence_upgrade_path: "Grade A needs corroboration of this study's own numbers, which does not exist. A randomized field experiment at Alibaba has since replicated the pattern in a different firm, sector, and country, but it measures different outcomes and cannot confirm the 15% figure. What would: an independent re-analysis of the underlying chat data, or the firm's own account of the deployment. Disclosure of the tool's licence, integration, and training costs would let the case state net economics instead of leaving them unknown, and evidence on staffing and wages after the study window would resolve what the authors explicitly leave open."
 sources:
+  - id: alibaba-rct
+    author: "Xiao Ni, Yiwei Wang, Tianjun Feng, Lauren Xiaoyan Lu, Yitong Wang, and Congyi Zhou"
+    title: "Generative AI in Action: Field Experimental Evidence from Alibaba's Customer Service Operations"
+    publisher: "arXiv:2603.29888"
+    published: 2026-02-08
+    updated: 2026-07-31
+    url: "https://arxiv.org/abs/2603.29888"
+    accessed: 2026-09-13
+    roles:
+      - primary-investigation
+      - analysis
+    source_family: alibaba-taobao-rct
+    access: "Platform-side operational data from Taobao: 5,940 after-sales chat agents, all with under a year's tenure, handling about 2.56 million chats and receiving about 0.39 million customer ratings over an eight-week window spanning December 2023 to February 2024. Message-level timestamps allow the authors to measure attention shifting between concurrent chats."
+    method: "A randomized field experiment, not a staggered rollout: 2,895 agents assigned to the assistant and 3,045 to control, randomized at agent level, with four weeks of pretreatment data. The assistant drafts a diagnosis and proposed solution in the opening stage only, and agents may adopt, modify, or ignore it, so the paper reports both intention-to-treat and local average treatment effects. Outcomes are split into service speed, subjective quality (customer ratings, dissatisfaction) and objective quality (three-day customer retrials)."
+    conflicts: "Conducted in collaboration with Alibaba, with an author affiliated to Alibaba Group. A preprint, not peer-reviewed. Against that, its headline findings include a quality decline among the company's best agents, which is not what a promotional analysis reports."
+    corroboration: "It is itself the corroboration this case lacked, and only partly. It reproduces the gap-narrowing result and the top-end quality cost in a different firm, sector, and country under a stronger design. It does not measure issues resolved per hour and cannot speak to the 15% figure."
+    accountability: "Named authors with institutional addresses, a stable arXiv identifier with a visible two-version history, full regression tables with significance levels, and an explicit statement that the attention-shifting mechanism is suggestive rather than causally identified."
+    notes: "Read for this case: abstract, experiment setup, and the heterogeneity and mechanism results in full; the appendices were not read line by line. Version 2 of 31 July 2026 was the one read, and its cover page is dated July 2026 while the arXiv record dates the first version to February. It disagrees with the study this case is about on one point worth keeping: on issue-identification speed the gradient is an inverted U, with mid-tier agents gaining most and both the lowest and highest performers gaining least."
   - id: qje
     author: "Erik Brynjolfsson, Danielle Li, and Lindsey R. Raymond"
     title: "Generative AI at Work"
@@ -132,13 +149,23 @@ The horizon is five months after treatment, where the sample thins.[^nber] Novel
 
 On balance the design credibly isolates the deployment's short-run effect within this firm, which is why this case carries the `causal` label. That label describes the study's internal validity. It says nothing about whether the same tool would do the same thing anywhere else.
 
+**What a second experiment adds.** A randomized field experiment run with Alibaba on Taobao's after-sales chat operation now speaks to the same proposition from a different direction: 5,940 agents, all with under a year's tenure, randomly assigned at agent level to a gen-AI assistant that drafts a diagnosis and proposed solution in the opening stage only, over four pretreatment and four treatment weeks in the winter of 2023–24.[^alibaba-rct] Randomization rather than onboarding order removes the timing threat this case has to reason around.
+
+It agrees on the thing that matters most here. Lower-performing agents gain most on quality, the assistant narrows the spread, and the best agents do not merely fail to gain — they get worse, on customer ratings *and* on the objective measure of whether a customer comes back.[^alibaba-rct] The published version of this case's own study reports small quality declines at the top, and that finding now has independent support from a stronger design.
+
+It disagrees on the shape. On issue-identification speed the Alibaba gradient is an inverted U: the local average treatment effects run 16.8%, 36.2%, 46.2%, 37.8% and 18.3% from lowest to highest pretreatment quintile, so mid-tier agents gain most and both ends gain least.[^alibaba-rct] "Novices benefit most" is not what that curve says.
+
+And it separates two things this case does not. Average subjective quality improved while objective quality — three-day customer retrials — did not move significantly.[^alibaba-rct] A satisfaction score going up is not the same event as a problem being solved, and only one of the two studies is positioned to notice.
+
+For the top-performer decline the authors offer a mechanism with evidence behind it and a caveat in front of it: among the highest quintile, using the assistant raises time spent away from the focal chat by 23.8%, raises response time by 8.6%, and raises within-ten-minute customer retrials — a pattern consistent with the assistant freeing attention that then gets spent on other concurrent chats, at the cost of continuity in this one. They state that shift-away behaviour is observational rather than randomly assigned and label the mechanism suggestive.[^alibaba-rct]
+
 ## Failures, limitations, and governance
 
 - **One firm, one period:** A single unnamed employer over roughly five months. Nothing establishes that the result travels.
-- **No independent access:** The data are proprietary. No second party has re-analysed them, and no replication exists.
+- **No independent access:** The data are proprietary. No second party has re-analysed them, and the one experiment that speaks to the same proposition uses a different firm's data and different outcome measures.[^alibaba-rct]
 - **The firm is anonymous:** Its account of the deployment, its costs, and its later staffing decisions cannot be sought or checked.
 - **Firm-defined metrics:** Productivity is measured the way the employer measures it. Resolution rate and net promoter score are operational metrics, not welfare measures.
-- **A quality cost at the top:** The published version reports small declines in quality for the most experienced agents — a real, if small, harm to a subgroup that the headline average hides.
+- **A quality cost at the top:** The published version reports small declines in quality for the most experienced agents — a real, if small, harm to a subgroup that the headline average hides. The Alibaba experiment finds the same sign on two independent quality measures, and a mechanism for it.[^alibaba-rct]
 - **Worker-side questions unasked:** The study covers an offshore, heavily monitored workforce. Effects on pay, workload intensity, surveillance, and job security are outside its scope, and the authors say so.
 - **Version drift:** The widely repeated figures — 5,179 agents, 14%, 34% for novices — come from the working paper. The peer-reviewed record reports 5,172 and 15%, and characterises the top-skill effect differently.
 
@@ -155,7 +182,8 @@ On balance the design credibly isolates the deployment's short-run effect within
 
 - It does not establish the deployment's net economics: licence, integration, and training costs are absent from the record.
 - It does not show what happened to staffing, wages, or job design after the study window, which the authors explicitly place outside their results.
-- It does not generalise to other firms, other vendors, or less structured knowledge work, and the authors make no such claim.
+- It does not generalise to other firms, other vendors, or less structured knowledge work, and the authors make no such claim. A second experiment in a different firm and sector finds a compatible pattern but a differently shaped one, which is a reason to hold the mechanism loosely rather than a licence to generalise.[^alibaba-rct]
+- It does not distinguish a satisfied customer from a solved problem. Its productivity measure is resolutions per hour and its quality measure is a satisfaction score; the Alibaba experiment, which measures both separately, finds average gains on the subjective measure and none on the objective one.[^alibaba-rct]
 - It does not show that experienced agents are unaffected: the published version reports small quality declines for that group.
 - It does not tell us how customers, as opposed to customer-satisfaction scores, fared.
 
@@ -163,9 +191,11 @@ On balance the design credibly isolates the deployment's short-run effect within
 
 **Grade B — good evidence with material limitations.** The central finding rests on a transparent quasi-experimental design applied to three million chats, peer-reviewed and published in a journal of record, with the full empirical appendix readable in the working-paper version.[^qje][^nber] The identification strategy, estimator, and assumptions are stated, the authors raise the main selection threats themselves, and the random assignment of chats removes the most obvious confounder.
 
-The limitations are structural rather than technical. The two sources are two versions of one study and therefore one evidentiary chain, not two: nothing here is corroborated by an independent party. The data belong to an unnamed firm, cannot be re-analysed by anyone else, and are measured with that firm's own metrics. The window is about five months. The published full text is paywalled and was unreachable for this review, so the journal record was verified through its bibliographic entry and the working-paper text was read in full — which is also how the discrepancy between the two versions' headline figures was found.
+The limitations are structural rather than technical. The first two sources are two versions of one study and therefore one evidentiary chain, not two. The data belong to an unnamed firm, cannot be re-analysed by anyone else, and are measured with that firm's own metrics. The window is about five months. The published full text is paywalled and was unreachable for this review, so the journal record was verified through its bibliographic entry and the working-paper text was read in full — which is also how the discrepancy between the two versions' headline figures was found.
 
-Grade B is the honest ceiling for a single unreplicated study on proprietary data, however well executed.
+A second chain now exists and it is worth being exact about its reach. The Alibaba experiment is a genuine replication of the *pattern* — different firm, different country, different sector, randomized rather than staggered, and it reproduces both the gap-narrowing and the cost to top performers.[^alibaba-rct] It is not a replication of the *result*. It never measures issues resolved per hour, so the 15% figure remains unconfirmed by anyone; it studies agents who are all new, where this study's whole point is variation in experience; and it disagrees on the shape of the gradient. It is also a company-collaborated preprint that has not been peer-reviewed.
+
+So the grade stays at B, and that is an editor's judgment worth stating. With two source families a mechanical reading of the chain count would permit A. This case declines it on the same principle applied elsewhere in the library: a second chain that corroborates the lesson but cannot touch the headline number is not corroboration of that number. What the second chain does buy is that this case's most fragile-looking finding — the small quality decline among the most experienced — is no longer resting on one study's published revision.
 
 ## Material claims
 
@@ -174,12 +204,15 @@ Each claim carries a controlled label, the evidence behind it, and what would ch
 | Claim | Label | Evidence | What would change this |
 | --- | --- | --- | --- |
 | Access to the assistant raised issues resolved per hour by about 15% on average. | Supported | Staggered difference-in-differences over three million chats with event studies[^qje][^nber] | An independent re-analysis of the chat data, a replication elsewhere, or evidence that onboarding order correlated with agents' underlying trends |
-| The gain was concentrated in novices, at roughly 34% for the least experienced and little for the most experienced. | Supported | The 34% figure and the skill gradient in the working paper[^nber]; the published version reports the same direction with small quality declines at the top[^qje] | A re-analysis finding the gradient driven by cohort timing rather than skill, or a replication without heterogeneity |
+| The gain was concentrated in novices, at roughly 34% for the least experienced and little for the most experienced. | Supported | The 34% figure and the skill gradient in the working paper[^nber]; the published version reports the same direction with small quality declines at the top[^qje]. A randomized experiment elsewhere reproduces gap-narrowing but finds an inverted-U gradient on speed, with mid-tier agents gaining most[^alibaba-rct] | A re-analysis finding the gradient driven by cohort timing rather than skill, or a replication without heterogeneity |
+| A gen-AI support assistant narrows the performance spread between agents in at least one other firm and sector. | Supported | Randomized field experiment at Alibaba: 5,940 agents, 2,895 treated, about 2.56 million chats, lower-performing agents gaining most on quality[^alibaba-rct] | Peer review overturning the result, or a further experiment finding no heterogeneity |
+| Using such an assistant makes the highest-performing agents worse. | Supported | The published version of this study reports small quality declines at the top[^qje]; the Alibaba experiment finds declines in both subjective and objective quality for the top quintile, with a suggestive workflow-disruption mechanism the authors decline to call causally identified[^alibaba-rct] | A third study finding no top-end cost, or evidence that the Alibaba top quintile differed systematically in case mix |
+| Improvements in customer-satisfaction scores correspond to problems actually being resolved. | Unknown | This study's quality measure is a satisfaction score; the Alibaba experiment measures both and finds average gains on customer ratings with no significant change in three-day customer retrials[^alibaba-rct] | A study reporting both measures for the same deployment |
 | Attrition fell after deployment, driven by newer workers staying. | Supported | Attrition results in both versions[^nber][^qje] | Evidence that the retention shift tracked labour-market conditions or firm policy changes rather than the tool |
 | Part of the productivity gain persisted during unexpected software outages. | Supported | Outage analysis comparing treated agents to their pre-AI baseline[^nber] | Evidence that outages were anticipated or non-random, or a re-analysis finding no persistence |
 | The published and working-paper versions report different headline figures. | Verified | 5,172 agents and 15% in the journal record[^qje]; 5,179 agents and 14% in the working paper[^nber] | A correction to either record |
 | The deployment produced a positive return on investment. | Unknown | Neither version reports licence, integration, or training costs, and the firm is unnamed | Cost disclosure by the firm, or a replication that reports net economics |
-| The result generalises to other firms, vendors, or less structured work. | Unknown | One firm, one workflow, one five-month window; the authors claim no external validity | A replication in a different firm or occupation |
+| The result generalises to other firms, vendors, or less structured work. | Unknown | One firm, one workflow, one five-month window; the authors claim no external validity. A different firm shows a compatible but differently shaped pattern, which is not the same as the result travelling[^alibaba-rct] | A replication measuring the same outcome — issues resolved per hour — in a different firm or occupation |
 
 ## Direct quotations
 
@@ -193,7 +226,11 @@ Each claim carries a controlled label, the evidence behind it, and what would ch
 
 ## Revision notes
 
+- 2026-09-13 — Source review. The `single_chain_rationale` said "no independent replication exists". One does now, and it is removed. A randomized field experiment run with Alibaba on Taobao's after-sales chat operation — 5,940 agents, 2,895 treated, about 2.56 million chats, randomized at agent level over four pretreatment and four treatment weeks — is added as a third source and a second source family. It agrees where it counts: lower performers gain most, the spread narrows, and the best agents get worse on customer ratings and on the objective retrial measure alike, which independently supports the small top-end quality decline this case had resting on one study's published revision. It disagrees on shape, finding an inverted-U gradient on issue-identification speed with mid-tier agents gaining most, and that disagreement is recorded in the claims rather than averaged away. It also separates subjective from objective quality and finds movement in only one, which produced a new `Unknown` claim this case did not previously carry. Three claims added, three revised. Grade stays B and the reasoning is stated in the evidence assessment: the second chain replicates the pattern, never measures issues resolved per hour, studies only agents with under a year's tenure, and is a company-collaborated preprint. A chain that corroborates the lesson but not the headline number does not lift the grade — the same principle applied to AAI-2026-006 in this review.
+
 - 2026-09-12 — Initial publication. Recorded the deployment as an economic case with a quasi-experimental causal label, separated the average effect from its distribution, left the net economics unknown rather than inferred, and noted that the widely cited headline figures come from the working paper rather than the peer-reviewed record.
+
+[^alibaba-rct]: Ni, Wang, Feng, Lu, Wang, and Zhou, [“Generative AI in Action: Field Experimental Evidence from Alibaba's Customer Service Operations”](https://arxiv.org/abs/2603.29888), arXiv:2603.29888, v1 2026-02-08, v2 2026-07-31 (the version read; its cover page is dated July 2026). A preprint, not peer-reviewed.
 
 [^qje]: Brynjolfsson, Li, and Raymond, [“Generative AI at Work”](https://academic.oup.com/qje/article/140/2/889/7990658), The Quarterly Journal of Economics 140(2), 2025.
 [^nber]: Brynjolfsson, Li, and Raymond, [“Generative AI at Work”](https://www.nber.org/papers/w31161), NBER Working Paper 31161, April 2023, revised November 2023.
