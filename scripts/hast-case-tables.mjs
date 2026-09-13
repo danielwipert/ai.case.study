@@ -1,6 +1,12 @@
 /**
- * Wraps the claim labels in a case's "Material claims" table so they can be
- * styled. The library's claim vocabulary is its core editorial signal, and in
+ * Two small table treatments for case pages.
+ *
+ * 1. Wide tables are marked so the stylesheet can let them break out of the
+ *    prose column into the gutter. A four-column claim ledger is unreadable
+ *    squeezed into 720px, and only the build step knows the column count.
+ * 2. Claim labels are wrapped so they can be styled.
+ *
+ * On (2): wraps the claim labels in a case's "Material claims" table. The library's claim vocabulary is its core editorial signal, and in
  * a long table of prose it is otherwise invisible.
  *
  * A Sätteri HAST plugin, not a rehype one: Astro's default Markdown processor
@@ -38,7 +44,7 @@ const cellsOf = (row) =>
   (row.children ?? []).filter((cell) => isElement(cell, "td") || isElement(cell, "th"));
 
 export default {
-  name: "claim-labels",
+  name: "case-tables",
   element: {
     filter: ["table"],
     visit(table, ctx) {
@@ -48,7 +54,12 @@ export default {
       );
       if (!header) return;
 
-      const labelIndex = cellsOf(header.row).findIndex(
+      const headerCells = cellsOf(header.row);
+
+      // Four or more columns of prose needs more room than the prose column has.
+      if (headerCells.length >= 4) ctx.setProperty(table, "className", ["wide-table"]);
+
+      const labelIndex = headerCells.findIndex(
         (cell) => ctx.textContent(cell).trim().toLowerCase() === "label"
       );
       if (labelIndex === -1) return;
