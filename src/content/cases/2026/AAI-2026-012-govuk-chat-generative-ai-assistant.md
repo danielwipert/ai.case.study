@@ -12,7 +12,7 @@ industry:
 business_function:
   - customer-service
   - operations
-deployment_stage: pilot
+deployment_stage: limited-production
 outcome: inconclusive
 evidence_grade: C
 status: published
@@ -30,7 +30,7 @@ causal_strength: descriptive
 related_cases:
   - AAI-2026-009
   - AAI-2026-008
-evidence_upgrade_path: "Grade B needs one thing above all: somebody outside the team measuring the same system. The specific candidates are an audit by the National Audit Office or scrutiny by the Public Accounts Committee reaching this deployment by name, which as of this writing neither has; publication of the accuracy rubric and the ground-truth dataset so the 76%-to-90% movement can be checked or reproduced; or an independent evaluation against the consumer assistants the team says it outperforms. Grade A would additionally need an outcome measure — evidence about whether users who received an answer went on to do the right thing — which no source here attempts."
+evidence_upgrade_path: "Grade B needs one thing above all: somebody outside the team measuring the same system, and public launch has not changed that. The specific candidates are an audit by the National Audit Office or scrutiny by the Public Accounts Committee reaching this deployment by name, neither of which had happened when this was last checked in September 2026; publication of any output of the AI Security Institute's pre-release safety testing, which is named in two GDS posts and has produced nothing public; publication of the accuracy rubric and the ground-truth dataset so the 76%-to-90% movement can be checked or reproduced; or an independent evaluation against the consumer assistants the team says it outperforms. Grade A would additionally need an outcome measure — evidence about whether users who received an answer went on to do the right thing — which no source here attempts."
 sources:
   - id: gds-2024-findings
     author: "Matthew Gregory, Alessia Tosi, Sharon McDonald, and Robert Sewell"
@@ -99,6 +99,22 @@ sources:
     corroboration: "Consistent with the other posts on architecture and chronology; adds no independent measurement."
     accountability: "Two named authors, dated, official blog, with links to the system prompt and to the red-teaming partners."
     notes: "Read in full. Source of the architecture, the evaluation framework, the six criteria, and the fact that red teaming was run with the Incubator for Artificial Intelligence and the AI Security Institute — the closest thing in this record to outside involvement, though no output of it is published."
+  - id: gds-2026-launch
+    author: "Shelina Hargrove, Deputy Director for GOV.UK AI, Government Digital Service"
+    title: "Answers in seconds, 24/7: GOV.UK Chat launches in the GOV.UK app"
+    publisher: "Government Digital Service blog"
+    published: 2026-05-14
+    url: "https://gds.blog.gov.uk/2026/05/14/gov-uk-chat-launches/"
+    accessed: 2026-09-13
+    roles:
+      - participant-account
+    source_family: gds-govuk-chat
+    access: "The team's own announcement that the service left pilot, with usage figures from the seven weeks between a quiet soft launch and the public one."
+    method: "A launch post, not a findings post. It reports two usage counts and asserts that performance held, without repeating any of the six evaluation criteria or giving a single figure for any of them."
+    conflicts: "The delivering team announcing its own launch, written by the deputy director responsible for it. Of all the sources in this record it is the one with the least measurement in it and the most to announce."
+    corroboration: "None. Its usage counts are the team's own and appear nowhere else."
+    accountability: "Named author with a stated role, on an official government blog, dated, with the soft-launch and launch dates both given."
+    notes: "Read in full. The reason it is in this record is that it moves the deployment out of pilot, and that its performance claim — 'the same level of performance that we achieved in our recent pilot' — carries no number, in a case whose subject is a number nobody outside the team has checked."
   - id: nao-ai-government
     author: "National Audit Office"
     title: "Use of artificial intelligence in government"
@@ -143,6 +159,8 @@ By March 2026 the team reported the totals: two public pilots over 18 months, 10
 
 Those last two figures are worth holding against the first pilot's "nearly 70%" useful and "just under 65%" satisfied.[^gds-2024-findings] Two years and fourteen points of accuracy later, user satisfaction is where it started.
 
+On 26 March 2026 the assistant went live in the GOV.UK app with no announcement, and on 14 May it was announced. In between, more than 7,800 people asked more than 15,000 questions, and the team reported that it was seeing "the same level of performance that we achieved in our recent pilot" — a sentence containing no number.[^gds-2026-launch]
+
 Every number in this case comes from the team that built the system. The National Audit Office examined government AI adoption in the same period and does not mention GOV.UK Chat once.[^nao-ai-government]
 
 ## Research question
@@ -174,6 +192,10 @@ The stack moved from Langchain and Gradio to a Ruby application on AWS, using An
 **Privacy.** A data protection impact assessment was conducted, safeguards were put in place to stop users submitting personal data, and GOV.UK pages containing personal data were removed from the system so they could not be sent to the model.[^gds-2024-findings]
 
 **The pilots.** Late 2023: 1,000 invited users. November 2024: a private beta linked from selected business pages, using a waiting list, estimated at four weeks.[^gds-2024-beta] Then the app pilot via iOS TestFlight. Cumulatively, more than 10,000 users and 26,000 questions.[^gds-2026-findings]
+
+**The launch.** GOV.UK Chat went live in the GOV.UK app quietly on 26 March 2026, with no proactive communications, so that the team could watch it under real conditions; it was announced publicly on 14 May 2026. In the weeks between, more than 7,800 people asked more than 15,000 questions. The team calls this the biggest change to how people interact with government content since GOV.UK launched in 2012, and says safety checks were carried out before release with the AI Security Institute.[^gds-2026-launch]
+
+The launch post's only statement about quality is that the team is "seeing the same level of performance that we achieved in our recent pilot."[^gds-2026-launch] Which level, measured how, against which of the six criteria, is not said. The service left pilot on a claim with no number in it.
 
 ## Outcomes and economics
 
@@ -231,7 +253,8 @@ The satisfaction figures deserve a competing explanation too, because the obviou
 - It does not show the deployment saved money or staff time. No cost or call-deflection figure appears anywhere.
 - It does not establish that the improvement came from the team's engineering rather than from better underlying models. The team credits both without separating them.[^gds-2026-findings]
 - It does not show the system is safe against jailbreaking in general — only that the team judged 508 specific attempts to have been blocked.
-- It does not tell you whether GOV.UK Chat is now generally available. The sources describe a decision to widen access to GOV.UK app users and an intention to test on the website later in 2026;[^gds-2026-findings] nothing read here confirms a public launch, which is why this case records the deployment stage as `pilot`.
+- It does not tell you that GOV.UK Chat is generally available across GOV.UK. It launched in the GOV.UK app on 14 May 2026, and the team's stated intention to test it on the website is unconfirmed in anything read here, which is why the deployment stage is `limited-production` rather than `scaled-production`.[^gds-2026-launch]
+- It does not establish that performance held at launch. The launch post says the team is seeing the same level of performance as in the pilot and gives no figure, no criterion, and no method.[^gds-2026-launch]
 - It does not report any independent assessment, because none exists in the record.
 - It does not describe harm. No source read here reports a user acting on a wrong answer, and the absence of such a report is not evidence that none occurred.
 
@@ -304,6 +327,8 @@ One small discrepancy is recorded rather than resolved: the January 2024 post gi
 
 ## Revision notes
 
+- 2026-09-13 — Source review, and a correction. This case recorded at publication that "nothing read here confirms a public launch", and set `deployment_stage: pilot` on that basis. GOV.UK Chat had in fact launched: quietly in the GOV.UK app on 26 March 2026 and publicly on 14 May 2026, announced on the GDS blog rather than the Inside GOV.UK blog the case's other sources come from, which is why the earlier sweep missed it. Stage corrected to `limited-production` — live to everyone using the GOV.UK app, not on the GOV.UK website. Added the launch post as a sixth source in the existing `gds-govuk-chat` family, a new claim, and a new section. `outcome` stays `inconclusive`: shipping is a decision, not a measurement, and the launch post's only quality claim is that the team is seeing "the same level of performance that we achieved in our recent pilot", with no figure, criterion, or method attached — which is the case's own subject appearing once more. The upgrade path is narrowed rather than met: a search in September 2026 found no National Audit Office or Public Accounts Committee work naming this deployment, and the AI Security Institute's pre-release testing, now named in two GDS posts, has produced nothing public. That last one is the most specific outside assessment known to exist, and it is the one to ask for.
+
 - 2026-09-13 — Initial publication at Grade C, and the grade is the main editorial call in this case. The record is the most methodologically transparent in the library — eleven named research methods with sample sizes, a published evaluation framework, and the worst findings published first — but every figure was produced and scored by the team whose work it evaluates, the accuracy rubric and ground-truth dataset are unpublished, and no independent party has measured the system. Under the library's own definitions that is C, not B, and the case says so rather than rewarding good faith with a grade the evidence does not carry. The NAO report is cited for governance context and explicitly not as a second evidentiary chain; the four GDS posts are one family, consistent with the reasoning applied to METR in AAI-2026-008. `outcome` is `inconclusive` because the deployment reports positive indicators and no outcome measure for citizens; `deployment_stage` is `pilot` because no source confirms general availability. The observation that satisfaction did not move while accuracy rose fourteen points is labelled `Inference` and its confounds are stated. First `deployment` case in the library, which had covered incidents, evaluations, regulatory actions, and economic arguments but never a deployment that simply ran.
 
 [^gds-2024-findings]: Matthew Gregory, Alessia Tosi, Sharon McDonald, and Robert Sewell, [“The findings of our first generative AI experiment: GOV.UK Chat”](https://insidegovuk.blog.gov.uk/2024/01/18/the-findings-of-our-first-generative-ai-experiment-gov-uk-chat/), Inside GOV.UK, Government Digital Service, 2024-01-18.
@@ -313,5 +338,7 @@ One small discrepancy is recorded rather than resolved: the January 2024 post gi
 [^gds-2026-findings]: Sam Dub and Sharon McDonald, [“5 things we learned testing GOV.UK Chat: an AI assistant for government”](https://insidegovuk.blog.gov.uk/2026/03/16/5-things-we-learned-testing-gov-uk-chat-an-ai-assistant-for-government/), Inside GOV.UK, Government Digital Service, 2026-03-16.
 
 [^gds-2026-engineering]: Alessia Tosi and Nick Lange, [“Developing GOV.UK Chat: Our data science and AI engineering journey”](https://insidegovuk.blog.gov.uk/2026/05/15/developing-gov-uk-chat-our-data-science-and-ai-engineering-journey/), Inside GOV.UK, Government Digital Service, 2026-05-15.
+
+[^gds-2026-launch]: Shelina Hargrove, [“Answers in seconds, 24/7: GOV.UK Chat launches in the GOV.UK app”](https://gds.blog.gov.uk/2026/05/14/gov-uk-chat-launches/), Government Digital Service blog, 2026-05-14.
 
 [^nao-ai-government]: National Audit Office, [“Use of artificial intelligence in government”](https://www.nao.org.uk/reports/use-of-artificial-intelligence-in-government/), HC 612 Session 2023-24, 2024-03-15.
