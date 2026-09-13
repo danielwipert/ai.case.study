@@ -23,6 +23,7 @@ Live at <https://danielwipert.github.io/ai.case.study/> — ten published cases 
 | AAI-2026-011 | Korea orders an AI model destroyed | governance-regulatory | B |
 | AAI-2026-012 | GOV.UK Chat, two and a half years of pilots | deployment | C |
 | AAI-2026-013 | Seagate's sputter-station leak detector | deployment | C |
+| AAI-2026-014 | Rite Aid facial recognition, FTC action | failure-incident | B |
 
 All six case types, all four causal-strength labels, all six claim labels, every `deployment_pattern`, and every `outcome` are now in use. Grade D is unused by rule — it is never published.
 
@@ -34,6 +35,7 @@ All six case types, all four causal-strength labels, all six claim labels, every
 - **011 (PIPC)** — Korea fined Kakao Pay and Apple over five years of daily cross-border transfers and ordered Alipay to destroy the scoring model built from them. First case in Asia.
 - **012 (GOV.UK Chat)** — a deployment that simply ran: 10,000+ users across two pilots, self-assessed accuracy from 76% to 90%, satisfaction flat at 64%. Graded C because every figure is the building team's own and nobody outside has checked one. First `deployment` case, and the one that closes the case-type set.
 - **013 (Seagate)** — an unsupervised leak detector across thousands of vacuum stations; 15 of 16 leaks caught, false-alarm rate never published. First `manufacturing` case. Its evidence assessment records that this was the best-evidenced manufacturing deployment findable at all, which should colour how the next session reads manufacturing AI claims.
+- **014 (Rite Aid)** — eight years of in-store facial recognition with no false-positive tracking, per the FTC; settled with a five-year ban and no admission. First `retail` case, and the first built on an untested pleading, so every conduct claim is `Attributed` and the case carries a status note saying so above the executive summary. NIST's FRVT Part 3 is the second chain and is used carefully: it supports demographic differentials in general and contradicts the uniform version, recorded as `Disputed`.
 - **`CLAUDE.md` gained six durable sections** across two sittings: European and non-EU regulator reachability (the Dutch DPA and Korea's PIPC both need special handling), how to read PDFs here, how to work SEC filings, CDN-hosted company reports, and the blockquote rule for non-English quotations.
 
 ## Open items
@@ -48,8 +50,9 @@ All six case types, all four causal-strength labels, all six claim labels, every
 
 The controlled vocabulary is now almost fully exercised, so gaps are about subject matter rather than tags:
 
-- **`retail`, `media`, `energy-utilities`, `professional-services`, `supply-chain`, and `sales-marketing` remain unused.** Manufacturing is now covered but only at grade C; the search behind AAI-2026-013 found that industrial AI evidence is overwhelmingly vendor material. Expect the same for retail and energy, and budget accordingly.
+- **`media`, `energy-utilities`, `professional-services`, `supply-chain`, and `sales-marketing` remain unused.** Two sessions of searching have established the pattern: industry-specific AI evidence is overwhelmingly vendor material, and the usable cases come from regulators, courts, standards bodies, or SEC filings rather than from the industry itself. Look there first for energy and professional services.
 - **`shadow-mode` and `adversarial-test` environments** are unused and both would be informative: a model run silently against production before go-live, or one deliberately attacked. AAI-2026-006 mentions silent-mode running in passing; a case centred on it would be better.
 - **Geography** spans ten entries with nothing in Africa, Latin America, South Asia, or China.
 - Still no case where **governance worked before deployment** — an impact assessment that stopped or reshaped a rollout. Hardest to find, most useful if found. AAI-2026-012 is the closest the library has, and it is a team publishing its own homework rather than an external control that bit.
 - **A grade A economic case** would test the library's weakest spot: the three economic cases are B, C, and C, and no case anywhere has a verified cost figure attached to a verified benefit.
+- **A pattern now worth writing up in `docs/`.** Four cases — 006, 013, 014, and arguably 012 — turn on the same omission: an organisation publishing or knowing one side of its error rate and not the other. That recurrence is a finding about the field, not a coincidence of case selection, and the methodology doc has no place that says so.
