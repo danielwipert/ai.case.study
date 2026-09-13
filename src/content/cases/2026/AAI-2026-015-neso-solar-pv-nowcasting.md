@@ -30,7 +30,7 @@ causal_strength: descriptive
 related_cases:
   - AAI-2026-012
   - AAI-2026-013
-evidence_upgrade_path: "Grade B needs the measurement the project's own third success criterion demanded and did not deliver: an observed change in balancing costs and carbon attributable to the forecast, rather than a rule-of-thumb multiplication. Failing that, three cheaper things would each help — the underlying error series so the reported MAE improvements can be recomputed, an evaluation by a party that neither built nor commissioned the system, and the staff and training costs the published running-cost estimate explicitly excludes. Verification of the open-source claim would also strengthen the record; github.com is unreachable from this sandbox, so the code's existence, licence, and completeness were not checked here."
+evidence_upgrade_path: "Grade B needs the measurement the project's own third success criterion demanded and did not deliver: an observed change in balancing costs and carbon attributable to the forecast, rather than a rule-of-thumb multiplication. Failing that, three cheaper things would each help — the underlying error series so the reported MAE improvements can be recomputed, an evaluation by a party that neither built nor commissioned the system, and the staff and training costs the published running-cost estimate explicitly excludes. The open-source claim is now partly verified — MIT-licensed model weights and training configurations are published on Hugging Face, which is reachable where github.com is not — but the source repositories the model card names remain uninspected, and the published artefacts postdate the project."
 sources:
   - id: nia-closedown
     author: "National Energy System Operator"
@@ -83,6 +83,23 @@ sources:
     corroboration: "None. The costs are not restated or updated in the close-down report."
     accountability: "A named organisation's report published as a project deliverable through the licensee's document register, dated, with costs itemised by line."
     notes: "Read for the cost sections. Its figures are the only running-cost disclosure in this record, they are estimates rather than actuals, they date from June 2022, and they exclude the two largest likely cost lines."
+  - id: ocf-huggingface
+    author: "Open Climate Fix"
+    title: "PVNet_summation model repository, openclimatefix-models/pvnet_uk_summation, with the Open Climate Fix model and dataset repositories on Hugging Face"
+    publisher: "Hugging Face"
+    published: 2026-04-07
+    updated: 2026-08-21
+    url: "https://huggingface.co/openclimatefix-models/pvnet_uk_summation"
+    accessed: 2026-09-13
+    roles:
+      - direct-evidence
+    source_family: nia2-ngeso002
+    access: "The artefact rather than a description of it: trained model weights as a safetensors file, the model, datamodule, and full experiment configurations as YAML, a model card naming the software packages and their pinned versions, and a link to the public Weights & Biases run for the training job. Alongside it, five Open Climate Fix dataset repositories including the UK PV generation data and the Met Office deterministic solar feed."
+    method: "Not a report and not a measurement. This is a public code and weights repository, read through the Hugging Face API and by fetching the raw files, and used here for exactly one purpose: to check whether an open-release claim made in a report corresponds to anything a reader can actually download."
+    conflicts: "Published by the delivery partner, about its own work, and therefore not an independent chain. Its value is that it is inspectable rather than asserted — a licence field and a file listing cannot be written persuasively — not that anyone disinterested vouched for it."
+    corroboration: "The published configuration is consistent with the close-down report on two checkable points: 331 input locations, matching the grid supply point level the report describes, and a 480-minute forecast horizon, matching the eight hours the report gives for the national service before its later extension. It is not corroboration of the report's performance figures, which these files do not contain."
+    accountability: "Organisation-scoped repositories carrying an MIT licence declaration, a dated commit history, a model card naming pinned package versions, and a public training-run log. The companion organisation openclimatefix, holding the datasets, carries Hugging Face's verified badge; the openclimatefix-models organisation holding the weights does not, and its identity rests on a shared avatar, overlapping membership, and model cards that name the same repositories."
+    notes: "Consulted because github.com returns 403 from this sandbox and huggingface.co does not, which made it the only available route to check an open-release claim. Read: the organisation and repository metadata for both Open Climate Fix organisations, the model card, and the model configuration. Not read: the source repositories the model card names, which are on GitHub. The repositories were created in 2025 and 2026, after the project closed, so they establish that Open Climate Fix publishes PVNet openly — not that the project-era code was released at the time."
 tags:
   - solar-forecasting
   - grid-operations
@@ -123,7 +140,7 @@ Solar is the awkward case. Britain has around a million PV systems, most of them
 
 The Network Innovation Allowance is the funding route: licensees may recover a defined allowance for innovation projects from consumers, on condition that they register each project and publish its learning. That condition is what produces the documents this case rests on, and it is also what makes them a filing rather than a press release.
 
-Open Climate Fix, the delivery partner, is a non-profit that develops open-source forecasting models.[^neso-project]
+Open Climate Fix, the delivery partner, is a non-profit that develops open-source forecasting models.[^neso-project] That description holds up to inspection, at least in part: the PVNet-summation model is published on Hugging Face under an MIT licence with its weights, its model and training configurations, a model card naming pinned package versions, and a link to the public training run, and Open Climate Fix maintains five open dataset repositories alongside it under MIT and CC-BY-4.0.[^ocf-huggingface]
 
 ## The situation before AI
 
@@ -226,7 +243,7 @@ An alternative reading deserves stating: the measurement may be genuinely hard. 
 - It does not show that reserve settings actually changed in operation.
 - It does not independently establish the accuracy figures. Every one was measured by the parties who built the system, and the underlying error series is not published.
 - It does not give the true operating cost, which excludes staff and training by the source's own statement.
-- It does not verify the open-source claim. The report says the forecast was delivered "completely open and documented"; github.com is unreachable from this sandbox, so the code was not inspected.
+- It does not fully verify the open-source claim. MIT-licensed model weights and configurations are published and were inspected, but the source repositories the model card names are on GitHub, which returns 403 from this sandbox, so the code itself was not read and its completeness was not assessed. The published repositories also postdate the project, so they show that Open Climate Fix publishes PVNet openly today rather than that the project-era code was released when the report said it was.
 - It does not show what the control room did differently. Daily consultation is recorded; changed decisions are not.
 - It does not generalise to other system operators, other geographies, or other renewables.
 
@@ -243,6 +260,8 @@ Four things hold it at C.
 *The headline benefit is an extrapolation presented among measurements.* The £40m figure sits in a Net Benefit Statement alongside genuine error measurements, in the same register and without a change of tone. A reader skimming would not distinguish "MAE fell from 650 MW to 233 MW" from "over £40M per year", and only the first is a measurement.
 
 *The success criterion and the conclusion do not match.* Criterion three asked for a measured change in balancing costs and CO2. The report supplies estimates and records the criteria as met.[^nia-closedown] This case records the discrepancy rather than resolving it: it is possible NESO judged the estimate sufficient, and it is possible the criterion was quietly relaxed, and the document does not say which.
+
+*One claim moved, and the grade did not.* The open-release assertion is now partly checked against the artefact rather than taken on the report's word, because huggingface.co is reachable from this sandbox where github.com is not. That is worth having, and it is worth being clear about what it is not: Open Climate Fix published those files, Open Climate Fix wrote the feasibility report, and Open Climate Fix helped write the close-down report. Inspecting a party's own repository is a better class of evidence than reading its own prose — a licence field and a file listing cannot be written persuasively — but it is the same party, so the source is filed in the same chain and the grade stays at C. Nothing here was measured by anyone who did not build the system.
 
 *The report declines to stand behind itself.* Its disclaimer asks viewers not to rely on any of its data, recommendations, or conclusions and to verify independently.[^nia-closedown] That is boilerplate on many licensee publications, and it would be unfair to read it as an admission — but a case that rests almost entirely on one document should note that the document's author disclaims it, and that independent verification is exactly what is unavailable.
 
@@ -266,7 +285,8 @@ On the `outcome` field: `positive` records the measured error reduction, which i
 | The forecast will deliver up to £30m a year and hundreds of thousands of tonnes of CO2 through dynamic reserve setting. | Attributed | Projected from a backtest of a separate NIA project's reserve-setting model, stated as "up to" and in future tense[^nia-closedown] | Measured reserve settings and costs before and after operational deployment |
 | Any change in balancing costs or carbon emissions was measured. | Unknown | The project's third success criterion required it; the report supplies estimates and records the criteria as met[^nia-closedown] | Publication of the measurement, or an acknowledgement that it was not made |
 | Weather-ensemble methods improved deterministic accuracy by 5% and reduced large errors by up to 12%. | Attributed | Reported from the fourth work package's research; not integrated into the running service[^nia-closedown] | Integration and operational measurement |
-| The forecast and its code were delivered fully open. | Attributed | Stated in the close-down report; github.com is unreachable from this sandbox so the repository, its licence, and its completeness were not inspected[^nia-closedown] | Inspection of the published code and licence |
+| Trained PVNet-summation weights and their full training configuration are published under an MIT licence, with a public training log. | Verified | Inspected directly: the repository's licence field, file listing, model card, and model configuration[^ocf-huggingface] | The repository being withdrawn or relicensed |
+| The forecast and its code were delivered fully open, as the report claims. | Supported | The weights, configurations, and five dataset repositories are open and were inspected; the source repositories named in the model card are on GitHub, which is unreachable here, and the published artefacts postdate the project[^nia-closedown][^ocf-huggingface] | Inspection of the named source repositories, or evidence that the project-era code was never released |
 | The service is used by eight energy traders and smart home operators. | Attributed | Stated in the net benefit statement with no supporting detail[^nia-closedown] | API usage records, or statements from the users |
 
 ## Direct quotations
@@ -301,7 +321,10 @@ On the `outcome` field: `positive` records the measured error reduction, which i
 
 ## Revision notes
 
+- 2026-09-13 — Source review. The open-source claim, recorded at publication as uncheckable because github.com returns 403 from this sandbox, is now partly verified through Hugging Face, which is reachable: the PVNet-summation model is published by Open Climate Fix under an MIT licence with weights, model and training configurations, a model card naming pinned package versions, and a public training-run log, alongside five open dataset repositories. The `Attributed` claim is replaced by two — a `Verified` one about what was actually inspected and a `Supported` one about the broader assertion, which still rests partly on the report. Two consistency checks fell out of the configuration and are recorded: 331 input locations matching the report's grid supply point level, and a 480-minute horizon matching the eight-hour national service. Also recorded: the repositories postdate the project, so they show current practice rather than a project-era release, and the organisation holding the weights does not carry Hugging Face's verified badge while the one holding the datasets does. A judgment call, flagged as such: the new source is filed under the existing `nia2-ngeso002` family rather than given its own, because it is Open Climate Fix again and a new family id would make the chain count read as corroboration that does not exist. Grade unchanged at C for the same reason.
 - 2026-09-13 — Initial publication at Grade C. The library's first `energy-utilities` case, and the closest it has to a case with both sides of a cost-benefit ledger — which is why the asymmetry between the two sides is the case's subject rather than a footnote: £1,038,500 of disclosed development cost against a benefit derived by multiplying a planning rule of thumb. Held at C because the three sources are deliverables of one project describing itself, notwithstanding that Network Innovation Allowance reporting is a licence obligation rather than voluntary publicity, which makes it a better class of self-report than a blog post. Records the discrepancy between a success criterion demanding a "Measured change in balancing costs & CO2 emissions" and a close-down report that supplies estimates while recording the criteria as met, without resolving which of the two possible explanations applies. `outcome: positive` records the measured error reduction and not the monetary claims, and the evidence assessment says a reader preferring `inconclusive` would have a reasonable argument. The open-source claim could not be checked because github.com returns 403 from this sandbox. Related to AAI-2026-012 and AAI-2026-013 as the third self-reported deployment in the library, and to the methodology's new section on measuring the proxy rather than the outcome.
+
+[^ocf-huggingface]: Open Climate Fix, [PVNet_summation model repository, `openclimatefix-models/pvnet_uk_summation`](https://huggingface.co/openclimatefix-models/pvnet_uk_summation), Hugging Face, created 2026-04-07, last modified 2026-08-21, MIT licence. Dataset repositories at [`openclimatefix`](https://huggingface.co/openclimatefix).
 
 [^nia-closedown]: National Energy System Operator, [“NIA Project Close Down Report: Solar PV Nowcasting, NIA2_NGESO002”](https://www.neso.energy/document/375656/download), submitted January 2026, published under Ofgem Network Innovation Allowance reporting obligations.
 
