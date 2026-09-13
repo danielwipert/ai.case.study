@@ -61,7 +61,7 @@ const plural = (count, word) => `${count} ${word}${count === 1 ? "" : "s"}`;
   <section class="evidence" aria-labelledby="evidence-ledger">
     <div class="evidence-head">
       <h2 id="evidence-ledger">Evidence ledger</h2>
-      <p class="grade-badge" aria-label={`Evidence grade ${data.evidence_grade}: ${grade.label}`}>
+      <p class="grade-badge" data-grade={data.evidence_grade} aria-label={`Evidence grade ${data.evidence_grade}: ${grade.label}`}>
         <span>{data.evidence_grade}</span>
         <small>{grade.label}</small>
       </p>
@@ -128,7 +128,7 @@ const plural = (count, word) => `${count} ${word}${count === 1 ? "" : "s"}`;
                 </p>
                 <p class="role-badges">
                   {source.roles.map((role) => (
-                    <span class="role-badge">{roleLabels[role] ?? role}</span>
+                    <span class="role-badge" data-role={role}>{roleLabels[role] ?? role}</span>
                   ))}
                 </p>
                 {admissionTest.some(([, key]) => source[key]) && (
