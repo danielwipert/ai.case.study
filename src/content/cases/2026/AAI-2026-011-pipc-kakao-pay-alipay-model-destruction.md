@@ -36,7 +36,7 @@ causal_strength: descriptive
 related_cases:
   - AAI-2026-009
   - AAI-2026-005
-evidence_upgrade_path: "Grade A needs three things this record lacks. First, evidence that the destruction order was carried out — no source establishes that the NSF model was destroyed, who verified it, or what verification of a destroyed model even consists of. Second, the Seoul Administrative Court's written judgment, which reaches this case only through a single press account and which Kakao Pay itself said it had not yet reviewed. Third, the Korean originals: the PIPC's English release states on its face that it is an unofficial translation, and no Korean-language document was read here. The Financial Services Commission's separate review under the Credit Information Use and Protection Act, when it concludes, would add a second regulator's independent findings on the same facts."
+evidence_upgrade_path: "Grade A needs three things this record lacks. First, evidence that the destruction order was carried out — no source establishes that the NSF model was destroyed, who verified it, or what verification of a destroyed model even consists of. Second, the Seoul Administrative Court's written judgment, which reaches this case only through a single press account and which Kakao Pay itself said it had not yet reviewed. Third, the Korean originals: the PIPC's English release states on its face that it is an unofficial translation, and no Korean-language document was read here. The financial regulator's parallel action is now partly visible — the Financial Supervisory Service recommended a penalty in April 2025 — but the Financial Services Commission's final determination, and the FSS's own decision document rather than press reporting of it, are both still unread."
 sources:
   - id: pipc-release
     author: "Personal Information Protection Commission"
@@ -55,6 +55,22 @@ sources:
     corroboration: "The sanction against Kakao Pay was upheld on judicial review in June 2026, as reported by Korean press. No independent source confirms the destruction order was carried out."
     accountability: "Published on the Commission's official English press page with a stable page URL, a dated attachment, and a named issuing body."
     notes: "Read in full. The page states on its face: 'This is an unofficial translation of a press release, originally prepared in Korean.' The Korean original was not read. The translation's word for the remedy is 'destruct'; this case quotes it exactly and otherwise writes 'destroy'."
+  - id: koreatimes-fss
+    author: "Lee Kyung-min"
+    title: "FSS fines Kakao Pay $10 mil. for illegally transferring customer data to Alipay"
+    publisher: "The Korea Times"
+    published: 2025-04-09
+    url: "https://www.koreatimes.co.kr/economy/20250409/fss-fines-kakao-pay-10-mil-for-illegally-transferring-customer-data-to-alipay"
+    accessed: 2026-09-13
+    roles:
+      - independent-reporting
+    source_family: fss-credit-information
+    access: "The Financial Supervisory Service's announcement of its sanction recommendation, plus a statement from Kakao Pay."
+    method: "News reporting of a regulator's announcement. The FSS's own decision document is not linked or reproduced."
+    conflicts: "None disclosed."
+    corroboration: "Concerns the same conduct the PIPC sanctioned, found by a different regulator under a different statute — the closest thing in this record to an independent second finding, though it reaches the case through press rather than through the regulator's own text."
+    accountability: "Named reporter, dated, established English-language Korean daily, with publication and update timestamps."
+    notes: "Read in full. Source of the FSS's 15 billion won recommendation and of the fact that the final amount rests with the FSC, which is why this case does not treat the figure as final. It gives the PIPC's January 2025 fine as 5.9 billion won where the PIPC's own release says 5.97 billion — another rounding variant, recorded with the others."
   - id: joongang-court
     author: "Shin Hye-yeon"
     title: "Court upholds near-6 billion won penalty on Kakao Pay over user data sent to Alipay"
@@ -180,7 +196,9 @@ The scale on the other side of the ledger: 40 million people's data, moved daily
 
 Kakao Pay sued to overturn the sanctions. In June 2026 the Seoul Administrative Court dismissed every claim.[^joongang-court] Kakao Pay maintained it had transferred the data under lawful procedures and with strong encryption to meet a duty to prevent fraudulent payments, said it regretted the judgment, and said it would decide its response after reviewing the written ruling.[^joongang-court]
 
-A separate review of the same conduct by the Financial Services Commission, under the Credit Information Use and Protection Act, was noted as pending when the PIPC decided.[^pipc-release] No outcome from it appears in any source read here.
+A separate review of the same conduct under the Credit Information Use and Protection Act was noted as pending when the PIPC decided.[^pipc-release] It has since produced a larger number than the privacy regulator's. In April 2025 the Financial Supervisory Service announced a 15 billion won (about $10 million) sanction recommendation against Kakao Pay for handing roughly 40 million users' data to Alipay without consent — a finding it drew from an inspection of the company's foreign exchange trading. The final amount rests with the Financial Services Commission, and no source read here confirms the FSC's determination, so this case treats the 15 billion won as recommended rather than imposed.[^koreatimes-fss]
+
+Two details from that action are worth keeping. The FSS can set a penalty at up to 3% of revenue under the credit-information law, a ceiling well above what the PIPC applied. And Kakao Pay's position to the financial regulator is the same one it later argued in court: that the data went across to provide Apple App Store payment services to its own users.[^koreatimes-fss]
 
 On the destruction order there is no economic figure and no confirmation. Nobody has published what the model was worth, whether it was destroyed, or what became of the scores already generated.
 
@@ -202,7 +220,7 @@ A second reading — that this is really a cross-border data case with an AI mod
 - **Responsibility diffused across three companies in three jurisdictions.** The collector, the beneficiary, and the builder were separate entities, and only the collector and beneficiary were fined. The builder — the one holding the asset — paid nothing.
 - **The remedy has no published verification.** An order to destroy a model raises an obvious question that no source in this record answers: how would anyone know? Weights can be copied, derived scores persist, and successor models trained on the same signal are not obviously covered.
 - **Derived outputs are not addressed.** The order concerns the model. Scores already generated and delivered to Apple are not discussed in the release read here.[^pipc-release]
-- **The second regulator has not reported.** The Financial Services Commission's parallel review was pending in January 2025 and no conclusion appears in this record.[^pipc-release]
+- **The second regulator's action is recommended, not final.** The FSS proposed 15 billion won in April 2025 — more than twice the PIPC's penalty — but the Financial Services Commission sets the final figure, and no source read here records it.[^koreatimes-fss]
 
 ## What this case demonstrates
 
@@ -222,7 +240,7 @@ A second reading — that this is really a cross-border data case with an AI mod
 - It does not establish what Apple did with the scores it received beyond requesting them.
 - It does not resolve the case as to Apple or Alipay. The June 2026 ruling read here concerns Kakao Pay's suit; nothing in this record says whether the other two challenged their orders.
 - It does not settle the matter finally even for Kakao Pay, which said it would decide its response after reviewing the written judgment.[^joongang-court]
-- It does not report the Financial Services Commission's separate review under credit-information law.
+- It does not establish the final penalty under credit-information law. The FSS recommended 15 billion won; the FSC's determination is not in any source read here.[^koreatimes-fss]
 - It does not describe machine learning architecture. The sources say a model was built, fed daily, and updated; none says what kind.
 - It does not establish that model destruction is an effective remedy. This case is evidence that a regulator will order it, not that ordering it accomplishes anything.
 
@@ -239,6 +257,8 @@ Four things hold it at B.
 *The judicial review is a single relay.* The Seoul Administrative Court's written judgment was not read. It reaches this case through one newspaper report, which quotes the ruling but does not reproduce it, and which discloses that it was translated from Korean with the help of generative AI tools before editing. Kakao Pay's own statement in that article notes it had not yet reviewed the written judgment either.[^joongang-court]
 
 *Everything is in translation, and the regulator says so.* The PIPC's English release states on its face that it is an unofficial translation of a Korean original. No Korean-language source was read for this case. Figures and legal characterisations should be read with that in mind.
+
+*A second regulator has now been heard, through press.* The Financial Supervisory Service's April 2025 sanction recommendation is the closest thing in this record to an independent finding on the same conduct: a different regulator, a different statute, a larger number.[^koreatimes-fss] It is reported rather than read — the FSS's own decision document is not in this record — and it is a recommendation, not a final penalty. It does not move the grade, because the case's central fact remains an unverified destruction order, but it does retire the claim this case previously had to label Unknown.
 
 *The figures disagree at the margins.* The PIPC gives Kakao Pay's penalty as KRW 5.97 billion; the Korean press report gives 5.96 billion in its headline and 5.97 billion in its body; a policy tracker cited during research gives 5.968 billion and a combined total of KRW 8.3752 billion, against the PIPC's itemised KRW 2.4 billion for Apple where the press gives 2.41 billion. The differences are rounding, and this case uses the regulator's own numbers throughout, but they should be recorded rather than smoothed. The decision date is similarly reported as both 22 and 23 January 2025; the PIPC's release states the plenary decided on 22 January and is itself headed 23 January.
 
@@ -261,7 +281,8 @@ Conflicts are ordinary and disclosed. The PIPC is describing its own action and 
 | Kakao Pay's transfers were lawful, encrypted, and necessary for fraud prevention. | Attributed | The company's own statement after the ruling; the court rejected the consent argument[^joongang-court] | A successful appeal establishing the necessity basis |
 | Any user was harmed by an NSF score. | Unknown | No source describes a declined transaction, an adverse decision, or the model's accuracy | Evidence of individual outcomes, or disclosure of how Apple used the scores |
 | Model deletion as a remedy is unprecedented internationally. | Disputed | A practitioner analysis frames Korea as leading; the FTC required deletion of models and algorithms in its 2021 Everalbum settlement[^iapp][^ftc-everalbum] | A survey of enforcement practice establishing how common the remedy is |
-| The Financial Services Commission's parallel review found violations. | Unknown | Noted as pending in January 2025; no outcome appears in any source read[^pipc-release] | Publication of the FSC's decision |
+| The financial regulator found violations in the same conduct. | Supported | The Financial Supervisory Service announced a 15 billion won sanction recommendation in April 2025, reported by an established daily; the FSS's own decision document was not read[^koreatimes-fss] | The FSS decision itself, or a contrary FSC determination |
+| The final penalty under the Credit Information Use and Protection Act is 15 billion won. | Unknown | That figure is the FSS's recommendation; the Financial Services Commission sets the final amount and no source read here records it[^koreatimes-fss] | Publication of the FSC's determination |
 
 ## Direct quotations
 
@@ -291,10 +312,12 @@ Conflicts are ordinary and disclosed. The PIPC is describing its own action and 
 
 ## Revision notes
 
+- 2026-09-13 — Source review. Added the Financial Supervisory Service's April 2025 sanction recommendation, which retires the claim this case had recorded as Unknown: the financial regulator did find violations in the same conduct, and proposed 15 billion won — more than twice the PIPC's penalty — under a statute allowing up to 3% of revenue. The figure is treated as recommended rather than imposed, because the Financial Services Commission sets the final amount and no source read here records its determination; a February 2026 report of a final figure was found only behind a paywall and is therefore not cited. The grade stays at B: the case's central fact is still an unverified order to destroy a model. A further rounding variant is recorded — the Korea Times gives the PIPC fine as 5.9 billion won against the PIPC's own 5.97 billion.
 - 2026-09-13 — Initial publication at Grade B. Built on the Commission's own English press release, which states on its face that it is an unofficial translation of a Korean original; no Korean-language source was read. Held at B rather than A for four reasons stated in the evidence assessment, the first being that the case's headline fact is a destruction order whose execution nothing in the record verifies. `deployment_stage` is recorded as `unknown` rather than `retired` for the same reason: the model was ordered destroyed and no source says it was. Labelled `descriptive` — the record concerns how the model was built and fed, not what it did to anyone. Records the figure and date discrepancies rather than smoothing them, and corrects one analytical claim by reading the FTC precedent directly: model deletion had precedent, and what distinguishes the Korean order is that it fell on a third-party processor rather than on the company that misled its own users. First case in the library set in Asia.
 
 [^pipc-release]: Personal Information Protection Commission, [“The PIPC Sanctions Kakao Pay and Apple for Unlawful Cross-Border Data Transfer”](https://www.pipc.go.kr/eng/user/ltn/new/noticeDetail.do?bbsId=BBSMSTR_000000000001&nttId=2771), 2025-01-31, unofficial English translation of the Korean release; decision taken at the Commission's second plenary meeting of 2025 on 2025-01-22.
 
+[^koreatimes-fss]: Lee Kyung-min, [“FSS fines Kakao Pay $10 mil. for illegally transferring customer data to Alipay”](https://www.koreatimes.co.kr/economy/20250409/fss-fines-kakao-pay-10-mil-for-illegally-transferring-customer-data-to-alipay), The Korea Times, 2025-04-09.
 [^joongang-court]: Shin Hye-yeon, [“Court upholds near-6 billion won penalty on Kakao Pay over user data sent to Alipay”](https://www.koreajoongangdaily.com/business/court-upholds-near6-billion-won-penalty-on-kakao-pay-over-user-data-sent-to-alipay/12705262), Korea JoongAng Daily, 2026-06-11.
 
 [^iapp]: Kyoungsic Min, [“South Korea's PIPC flexes its muscles: What to know about AI model deletion, cross-border transfers and more”](https://iapp.org/news/a/south-korea-s-pipc-flexes-its-muscles-what-to-know-about-ai-model-deletion-cross-border-transfers-and-more), IAPP, 2025-06-04; only the ungated opening section was read.
