@@ -38,11 +38,15 @@ Hard-won; saves an hour of dead ends.
 
 **Reachable only with a browser User-Agent:** autoriteitpersoonsgegevens.nl returns 403 to WebFetch and to curl's default agent, and 200 to `curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) ... Chrome/126.0"`. Try this before concluding a regulator is blocked.
 
-**Also blocked:** oecd.org (403), anao.gov.au (no route), erasmusmagazine.nl (JavaScript challenge). algorithmaudit.eu works, but only without the `www.` prefix — the certificate has no matching name for `www.algorithmaudit.eu`.
+**Also blocked:** oecd.org (403), anao.gov.au (no route), erasmusmagazine.nl (JavaScript challenge), github.com and api.github.com (403, so an open-source claim cannot be checked by inspecting the repository), publications.parliament.uk and committees.parliament.uk (403), ferc.gov and energysafety.ca.gov (403). algorithmaudit.eu works, but only without the `www.` prefix — the certificate has no matching name for `www.algorithmaudit.eu`.
 
 **Regulators and courts outside the EU:** ftc.gov, dmv.ca.gov, cpuc.ca.gov, docs.cpuc.ca.gov, pdpc.gov.sg, mas.gov.sg, meti.go.jp, and koreajoongangdaily.com all resolve. nhtsa.gov and static.nhtsa.gov return 403 to everything tried, so US federal vehicle-safety documents — consent orders included — have to be reached through a company's own SEC filings or a relay.
 
 **pipc.go.kr (Korea's data protection regulator) is reachable but flaky.** It resets the connection on roughly half of all requests; retry two to five times and it succeeds. Its `noticeList.do` index renders its rows in JavaScript, so the list looks empty when fetched — navigate instead by `noticeDetail.do?bbsId=BBSMSTR_000000000001&nttId=<n>` and walk the "Previous"/"Next" links at the foot of each release to find neighbouring items. Its English releases state on their face that they are unofficial translations.
+
+**Regulator-mandated innovation reporting is an underused seam.** Ofgem's Network Innovation Allowance obliges GB network licensees to register each project and publish its learning, which produces close-down reports carrying a project reference, itemised costs, measured results, and candid lessons — filed rather than promoted. They live at `neso.energy/document/<id>/download` and on the ENA Smarter Networks Portal. Comparable obligations exist for other regulated utilities and are worth checking before concluding a sector has no usable evidence. Treat them as self-reports all the same: the measurements are the licensee's own.
+
+**Do not confuse a filing obligation with corroboration.** Several sectors publish a great deal that looks official and is entirely the deploying party describing itself. Ask who else measured the thing.
 
 **A company's published documents are often on a CDN that is reachable when its own site is not.** The 195-page Quinn Emanuel report on Cruise came from `assets.ctfassets.net`. When a report is announced but its host blocks you, search for the asset URL rather than the announcement.
 
