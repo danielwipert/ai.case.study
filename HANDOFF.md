@@ -1,61 +1,57 @@
-# Session handoff
+# Handoff
 
-**This file is a snapshot, not a log.** Replace it wholesale at the end of every session, keep it to about a page, and delete anything the next session does not need. Durable rules belong in `CLAUDE.md`, not here.
+## Where things stand
 
-*Last updated: 2026-09-13*
+Fifteen published cases, AAI-2026-001 through 015 (004 is an unpublished lead). The site builds clean and deploys to https://danielwipert.github.io/ai.case.study/. The design pass — colour, grade-keyed cards, claim-label chips, tables breaking into the gutter — merged as PR #15 and is live.
 
-## Where the library stands
+This session did a **source review across the whole library** rather than adding cases. Eleven of the fifteen cases were changed. No grade moved.
 
-Live at <https://danielwipert.github.io/ai.case.study/> — ten published cases and one unpublished lead.
+## What the review changed
 
-| ID | Subject | Type | Grade |
-| --- | --- | --- | --- |
-| AAI-2026-001 | OpenAI evaluation agents breached Hugging Face | failure-incident | A |
-| AAI-2026-002 | Customer-support copilot productivity | economic-case | B |
-| AAI-2026-003 | Uber's AI coding budget overrun | economic-case | C |
-| AAI-2026-004 | Microsoft pulls internal Claude Code licences | — | `research` lead, off-site |
-| AAI-2026-005 | Workday bias-testing data held privileged | governance-regulatory | B |
-| AAI-2026-006 | Pediatric sepsis model against vendor claims | evaluation | B |
-| AAI-2026-007 | Klarna's AI workforce reduction | organizational-transformation | B |
-| AAI-2026-008 | METR's randomized trial on experienced developers | evaluation | B |
-| AAI-2026-009 | DUO's student-grant fraud risk profile | failure-incident | A |
-| AAI-2026-010 | Cruise robotaxi disclosure failure | failure-incident | A |
-| AAI-2026-011 | Korea orders an AI model destroyed | governance-regulatory | B |
-| AAI-2026-012 | GOV.UK Chat, two and a half years of pilots | deployment | C |
-| AAI-2026-013 | Seagate's sputter-station leak detector | deployment | C |
-| AAI-2026-014 | Rite Aid facial recognition, FTC action | failure-incident | B |
-| AAI-2026-015 | NESO solar PV nowcasting | deployment | C |
+| Case | What was added | Grade |
+| --- | --- | --- |
+| 005 Workday | The discovery order itself, from Duane Morris' copy | B → **A** |
+| 010 Cruise | The deferred prosecution agreement, from the court docket | A, deepened |
+| 011 PIPC | Korea's financial regulator recommending a ₩15bn fine | B |
+| 002 Support copilot | A randomized replication at Alibaba/Taobao | B |
+| 003 Uber | A relay that block-quotes Bloomberg; a date corrected | C |
+| 006 Sepsis alert | Multicentre validation of the same vendor's adult model | B |
+| 007 Klarna | The CEO's on-the-record reversal, via a named relay | B |
+| 008 METR | An enterprise trial at Google pointing the other way | B |
+| 012 GOV.UK Chat | **It launched.** Stage corrected from `pilot` | C |
+| 014 Rite Aid | The company's own account, disputing the FTC's scale | B |
+| 015 NESO | MIT-licensed PVNet weights on Hugging Face | C |
 
-All six case types, all four causal-strength labels, all six claim labels, every `deployment_pattern`, and every `outcome` are now in use. Grade D is unused by rule — it is never published.
+Unchanged: **001** (already A; the one new thing found was a Cloud Security Alliance synthesis that adds no primary evidence and misdates the exploitation window), **013 Seagate** (nothing exists), **009 DUO**, **004** (still an unpublished lead).
 
-## What this session added
+Three corrections are worth knowing about, because they were errors this library published:
+- **012** said "nothing read here confirms a public launch". It had launched two months earlier, announced on `gds.blog.gov.uk` rather than the `insidegovuk` blog every other source came from.
+- **006**'s `single_chain_rationale` said no second chain was reasonably available. One was, in the adjacent adult literature, and had simply not been looked for. Same for **002**.
+- **003** said the Uber cap began in June. Bloomberg's own wording is "instituted in recent months" as of 3 June.
 
-- **008 (METR)** — 16 experienced maintainers, 19% slower with AI, and certain they were 20% faster; METR abandoned the design in Feb 2026 when developers refused a no-AI arm. First `causal` case.
-- **009 (DUO)** — eleven years of Dutch student-grant fraud checks driven by age, education type, and distance to the parental address; 3.0x unjustified home visits for students with a non-European migration background; €80m redress. First public-sector case.
-- **010 (Cruise)** — a robotaxi dragged a pedestrian twenty feet and the company briefed three regulators without saying so; ~$2.1m in penalties against ~$2.8bn in charges and wind-down. First `physical-system` case.
-- **011 (PIPC)** — Korea fined Kakao Pay and Apple over five years of daily cross-border transfers and ordered Alipay to destroy the scoring model built from them. First case in Asia.
-- **012 (GOV.UK Chat)** — a deployment that simply ran: 10,000+ users across two pilots, self-assessed accuracy from 76% to 90%, satisfaction flat at 64%. Graded C because every figure is the building team's own and nobody outside has checked one. First `deployment` case, and the one that closes the case-type set.
-- **013 (Seagate)** — an unsupervised leak detector across thousands of vacuum stations; 15 of 16 leaks caught, false-alarm rate never published. First `manufacturing` case. Its evidence assessment records that this was the best-evidenced manufacturing deployment findable at all, which should colour how the next session reads manufacturing AI claims.
-- **015 (NESO)** — a deep-learning solar forecast in Britain's control room: national MAE from 650 MW down, £1,038,500 of disclosed cost, and a benefit derived by multiplying a planning rule of thumb. First `energy-utilities` case. Its third success criterion demanded a *measured* change in balancing costs and carbon; the close-down report supplies estimates and records the criteria as met.
-- **Methodology gained a section on missing error rates**, drawn from the recurrence across 006, 013 and 014, plus a matching public-facing summary. `src/pages/methodology.astro` is a hand-maintained mirror of `docs/methodology.md`, not generated from it — the two drift unless both are edited.
-- **014 (Rite Aid)** — eight years of in-store facial recognition with no false-positive tracking, per the FTC; settled with a five-year ban and no admission. First `retail` case, and the first built on an untested pleading, so every conduct claim is `Attributed` and the case carries a status note saying so above the executive summary. NIST's FRVT Part 3 is the second chain and is used carefully: it supports demographic differentials in general and contradicts the uniform version, recorded as `Disputed`.
-- **`CLAUDE.md` gained six durable sections** across two sittings: European and non-EU regulator reachability (the Dutch DPA and Korea's PIPC both need special handling), how to read PDFs here, how to work SEC filings, CDN-hosted company reports, and the blockquote rule for non-English quotations.
+## The principle the review settled
 
-## Open items
+Three cases (002, 006, 008) gained a second chain that corroborates the *lesson* but cannot test the *headline numbers* — different firm, different population, different outcome measure. All three stayed where they were, and each evidence assessment says why. A mechanical reading of the source-family count would have promoted all three. Written up in CLAUDE.md under "Grading against a second chain that does not reach the numbers"; follow it rather than re-deciding it.
 
-1. **Archive snapshots.** Every source in all eleven cases reports a missing `archive_url`; archive.org is unreachable from the sandbox. Unchanged and now much larger — this is the one gap a browser fixes in an evening.
-2. **AAI-2026-004 is blocked** until The Verge's report is readable or someone speaks on the record.
-3. **Three cases lean on relays for a decisive document.** 009's April 2026 compensation letter, 010's NHTSA consent order and deferred prosecution agreement, and 011's Seoul Administrative Court judgment were all unreachable. Each is flagged in its own case and each would move claims from Supported to Verified.
-4. **011's headline remedy is unverified.** Nothing establishes that the ordered model destruction happened. Worth a re-check at the next review date.
-5. **Editorial calls worth revisiting:** grade C on 003; `associational` on 006; `descriptive` plus B on 007; B on 008 despite an exceptional design; `plausibly-causal` on 009; `descriptive` on 010; `deployment_stage: unknown` on 011.
+## Gaps that stayed shut
 
-## Suggested next step
+Recorded in each case's `evidence_upgrade_path` so nobody re-runs the search:
+- **008** — no independent re-analysis of either METR dataset exists, and no replication of the task-level design. Both datasets are public, so this could appear at any time.
+- **012** — no NAO or PAC work names this deployment. The **AI Security Institute's pre-release testing is now named in two GDS posts and has produced nothing public**; that is the most specific outside assessment known to exist and the one to ask for.
+- **013** — the other half of the confusion matrix. One arXiv version, no journal, no follow-up.
+- **010** — NHTSA's consent order (nhtsa.gov 403) and the DMV's Order of Suspension. The Information and penalty sheet are behind PACER on the same docket.
+- **014** — a 2020 Reuters investigation reportedly names Rite Aid's two vendors. reuters.com is blocked and the only readable account is two relays deep, so **the names are deliberately not in the case**. A future editor with Reuters access closes this in one step.
+- **007** — no union or works-council reporting, no independent measurement of the assistant, no KCO transfer headcount.
+- **001** — openai.com still returns 403, so one quotation locator stays `unrecorded`. That is the library's only non-`archive_url` evidence gap.
 
-The controlled vocabulary is now almost fully exercised, so gaps are about subject matter rather than tags:
+## New technique, now in CLAUDE.md
 
-- **`media`, `professional-services`, `supply-chain`, and `sales-marketing` remain unused.** Two sessions of searching have established the pattern: industry-specific AI evidence is overwhelmingly vendor material, and the usable cases come from regulators, courts, standards bodies, or SEC filings rather than from the industry itself. Look there first for energy and professional services.
-- **`shadow-mode` and `adversarial-test` environments** are unused and both would be informative: a model run silently against production before go-live, or one deliberately attacked. AAI-2026-006 mentions silent-mode running in passing; a case centred on it would be better.
-- **Geography** spans ten entries with nothing in Africa, Latin America, South Asia, or China.
-- Still no case where **governance worked before deployment** — an impact assessment that stopped or reshaped a rollout. Hardest to find, most useful if found. AAI-2026-012 is the closest the library has, and it is a team publishing its own homework rather than an external control that bit.
-- **A grade A economic case** remains the library's weakest spot. AAI-2026-015 gets closest — a disclosed £1.04m cost against an estimated benefit — and the asymmetry is the case's subject. Still nothing with a verified cost attached to a verified benefit.
-- **`docs/methodology.md` now has a "Reading a reported error rate" section** with a matching short section on the public methodology page. Apply it to new cases: name the metric precisely, say which half is missing, compute implied precision from prevalence where the figures allow, interrogate the denominator, and put the missing measurement in `evidence_upgrade_path`. It is editorial only — the validator does not enforce it, and a warning for cases that report one rate without its complement is a plausible next addition if it can be made without false positives of its own.
+A new section, "Routes around a blocked host", covers how most of this session's sources were actually obtained: CourtListener docket pages and free RECAP PDFs instead of its authenticated API; rendering scanned filings to grayscale PNGs and reading them with vision, since no OCR is installed; NCBI E-utilities instead of PMC web pages, which now serve a reCAPTCHA; the Hugging Face API to verify an open-source claim github.com would have answered; arXiv abstract pages instead of its rate-limiting API; and relays that block-quote rather than paraphrase.
+
+## Branch
+
+Work is on **`claude/optimistic-goodall-s4n0c4`**, not the `claude/loving-ride-c4lddg` named in CLAUDE.md's git workflow — the branch is assigned per session, so read the session's own instruction before starting. Eight commits are pushed and ahead of `main`; **no PR is open yet**. The workflow itself still holds: PRs merge with rebase, so restart the branch from `main` after every merge.
+
+## Next
+
+Back to adding cases. The unused taxonomy values are worth checking before picking a story, and 004 is still a lead that cannot be published until a source closer than The Verge is in hand.

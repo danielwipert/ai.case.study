@@ -32,7 +32,7 @@ Skipping this makes the next PR's merge base stale, so its diff replays already-
 
 Hard-won; saves an hour of dead ends.
 
-**Reachable:** sec.gov and data.sec.gov (EDGAR full text), ftc.gov, govinfo.gov, pmc.ncbi.nlm.nih.gov, arxiv.org, nber.org, metr.org, huggingface.co, techcrunch.com, the-decoder.com, blogs.duanemorris.com, insidetechlaw.com, klarna.com, nao.org.uk, gov.uk, eur-lex.europa.eu.
+**Reachable:** sec.gov and data.sec.gov (EDGAR full text), ftc.gov, govinfo.gov, eutils.ncbi.nlm.nih.gov (PMC article *pages* now serve a reCAPTCHA — see below), arxiv.org, nber.org, metr.org, huggingface.co, techcrunch.com, the-decoder.com, blogs.duanemorris.com, insidetechlaw.com, klarna.com, nao.org.uk, gov.uk, eur-lex.europa.eu.
 
 **Also reachable, European public bodies and their auditors:** open.overheid.nl (the Dutch open-documents register, which carries ministry annexes as PDFs), duo.nl, platform-investico.nl, nltimes.nl, eca.europa.eu, digital-strategy.ec.europa.eu, garanteprivacy.it, datatilsynet.dk, amnesty.org, rijksoverheid.nl (article pages; its document *search* returns 404 and open.overheid.nl search returns 401, so reach Dutch government documents through a search engine result, not by browsing).
 
@@ -50,9 +50,40 @@ Hard-won; saves an hour of dead ends.
 
 **A company's published documents are often on a CDN that is reachable when its own site is not.** The 195-page Quinn Emanuel report on Cruise came from `assets.ctfassets.net`. When a report is announced but its host blocks you, search for the asset URL rather than the announcement.
 
-**Blocked or paywalled:** archive.org and web.archive.org (so no snapshots), theverge.com, reuters.com, bloomberg.com, fortune.com, inc.com, forbes.com, cnbc.com, apnews.com, theinformation.com, medrxiv.org, justice.gov, gao.gov. courtlistener.com search works anonymously but throttles hard, and its document endpoints need authentication.
+**Blocked or paywalled:** archive.org and web.archive.org (so no snapshots), theverge.com, reuters.com, bloomberg.com, fortune.com, inc.com, forbes.com, cnbc.com, apnews.com, theinformation.com, medrxiv.org, justice.gov, gao.gov, openai.com. courtlistener.com search works anonymously but throttles hard and its REST API needs authentication; its docket pages and free RECAP documents do not — see below.
 
 SEC filings are the most reliable primary record available here: a company's own 20-F, 10-K, or 10-Q often contains the audited numbers behind a claim the press only relays. They also carry the terms of regulatory settlements a company has entered, under securities-law liability — GM's 10-K states the Cruise consent order, the CPUC settlement, and the deferred prosecution agreement including what was admitted, all of which were unreachable at their own sources. Fetch the filing index from `https://data.sec.gov/submissions/CIK<10-digit zero-padded CIK>.json` and send a descriptive User-Agent with a contact address, as the SEC asks. Consecutive years of the same form are worth reading together: the later one usually closes a story the earlier one leaves open.
+
+## Routes around a blocked host
+
+Several of this library's best sources were reached by a second route after the obvious one failed. The pattern is worth trying before recording a gap.
+
+**Federal court filings: CourtListener's public docket, not its API.** The REST API returns `Authentication credentials were not provided` to everything. The docket *page* returns 200 to a browser User-Agent, and free RECAP documents are linked from it at `storage.courtlistener.com/recap/gov.uscourts.<court>.<docket-id>/gov.uscourts.<court>.<docket-id>.<doc>.<att>.pdf`. Two docket pages can exist for one case and show different things — one listed the Cruise deferred prosecution agreement with no download link, the other with one — so check every docket id the search returns. This is how the DPA in AAI-2026-010 was obtained after justice.gov and nhtsa.gov refused.
+
+**Scanned filings have no text layer, and there is no OCR installed.** `tesseract` and `ocrmypdf` are absent and `pytesseract` is not importable. Render the pages and read them with vision instead:
+
+```python
+pix = page.get_pixmap(dpi=130, colorspace=pymupdf.csGRAY)
+pix.save(f"p{i+1:02d}.png")
+```
+
+130 dpi grayscale keeps a 28-page court filing under 7 MB and stays legible for line-numbered pleading paper. Cite the ECF page stamp ("Page 17 of 28") alongside the paragraph number: it is stable across copies in a way that the document's own pagination is not, since exhibits restart their numbering.
+
+**PubMed Central: E-utilities, not the web page.** `pmc.ncbi.nlm.nih.gov/articles/PMC…` serves a reCAPTCHA challenge. `eutils.ncbi.nlm.nih.gov` is reachable and unauthenticated: `esearch.fcgi?db=pubmed`, `esummary.fcgi` for citation metadata and the author list, and `efetch.fcgi?db=pmc&id=PMC…&retmode=xml` for the full text as JATS. `www.ncbi.nlm.nih.gov/pmc/utils/idconv/v1.0/?ids=<pmids>` converts PMIDs to PMC ids and tells you which have no PMC copy at all.
+
+**Hugging Face's API verifies open-source claims that github.com would.** `api/models?author=<org>`, `api/models/<repo>` (the `cardData.license` field and the `siblings` file list), `api/datasets?author=<org>`, and `api/organizations/<org>/overview`, which carries an `isVerified` flag worth reporting when it is absent. This is how the MIT licence and published weights behind AAI-2026-015's open-release claim were checked.
+
+**arXiv: the abstract page, not the API.** `export.arxiv.org/api/query` rate-limits this sandbox hard, returning 429 and 503 on repeated attempts even with long gaps. `arxiv.org/abs/<id>` and `arxiv.org/pdf/<id>` are reliable with a browser User-Agent. Take metadata from the `citation_title`, `citation_author` and `citation_date` meta tags, and the version history from the `submission-history` block — a v2 can be months newer than the arXiv record's date and carry a different cover date.
+
+**A blocked outlet's words sometimes survive in a relay that quotes rather than paraphrases.** Bloomberg's Uber report reached AAI-2026-003 through a link blog that block-quoted it, which carried a fact the paraphrasing relay had dropped: that the figure came from a company spokesperson. The AI Incident Database at `incidentdatabase.ai` mirrors the full text of news articles, including from outlets blocked here, which is how Rite Aid's own response to the FTC reached AAI-2026-014. Both are relays and must be labelled as such; a relay that quotes is worth more than a relay that summarises.
+
+**Additionally reachable**, found during the September 2026 source review: storage.courtlistener.com and www.courtlistener.com docket pages (browser UA), eutils.ncbi.nlm.nih.gov, incidentdatabase.ai, simonwillison.net, entrepreneur.com, gds.blog.gov.uk, labs.cloudsecurityalliance.org.
+
+**Additionally blocked:** openai.com returns 403. `insidegovuk.blog.gov.uk`'s search endpoint returns 202 with an empty body, though its article pages load — so find its posts through a search engine, not its own search.
+
+## Grading against a second chain that does not reach the numbers
+
+A recurring decision in this library, settled the same way three times and worth settling the same way again. When a second, independent source corroborates a case's *lesson* but cannot test its *headline figures* — a different firm, a different population, a different outcome measure — it does not lift the grade. AAI-2026-002 has a randomized replication at another company that never measures issues resolved per hour; AAI-2026-006 has a multicentre validation of the same vendor's adult model that says nothing about the pediatric numbers; AAI-2026-008 has an enterprise trial pointing the other way that tests nothing METR claimed. All three stayed where they were. Add the source, say in the evidence assessment exactly what it reaches and what it does not, and flag the decision as a judgment call — a mechanical reading of the source-family count would allow a promotion in each case, and the count is not the argument.
 
 ## Reading PDFs in the sandbox
 
