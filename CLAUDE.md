@@ -34,6 +34,28 @@ Hard-won; saves an hour of dead ends.
 
 **Reachable:** sec.gov and data.sec.gov (EDGAR full text), ftc.gov, govinfo.gov, pmc.ncbi.nlm.nih.gov, arxiv.org, nber.org, metr.org, huggingface.co, techcrunch.com, the-decoder.com, blogs.duanemorris.com, insidetechlaw.com, klarna.com, nao.org.uk, gov.uk, eur-lex.europa.eu.
 
+**Also reachable, European public bodies and their auditors:** open.overheid.nl (the Dutch open-documents register, which carries ministry annexes as PDFs), duo.nl, platform-investico.nl, nltimes.nl, eca.europa.eu, digital-strategy.ec.europa.eu, garanteprivacy.it, datatilsynet.dk, amnesty.org, rijksoverheid.nl (article pages; its document *search* returns 404 and open.overheid.nl search returns 401, so reach Dutch government documents through a search engine result, not by browsing).
+
+**Reachable only with a browser User-Agent:** autoriteitpersoonsgegevens.nl returns 403 to WebFetch and to curl's default agent, and 200 to `curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) ... Chrome/126.0"`. Try this before concluding a regulator is blocked.
+
+**Also blocked:** oecd.org (403), anao.gov.au (no route), erasmusmagazine.nl (JavaScript challenge). algorithmaudit.eu works, but only without the `www.` prefix — the certificate has no matching name for `www.algorithmaudit.eu`.
+
 **Blocked or paywalled:** archive.org and web.archive.org (so no snapshots), theverge.com, reuters.com, bloomberg.com, fortune.com, inc.com, forbes.com, cnbc.com, apnews.com, theinformation.com, medrxiv.org, justice.gov, gao.gov. courtlistener.com search works anonymously but throttles hard, and its document endpoints need authentication.
 
 SEC filings are the most reliable primary record available here: a company's own 20-F or 10-Q often contains the audited numbers behind a claim the press only relays.
+
+## Reading PDFs in the sandbox
+
+Primary sources from regulators and auditors arrive as PDFs, and the obvious tools are broken here. `pdftotext` is not installed. `pypdf` imports `cryptography`, whose Rust binding panics, so it fails on any file. `pip install pymupdf` works and extracts reliably:
+
+```python
+import pymupdf
+d = pymupdf.open("report.pdf")
+text = "\n".join(f"\n=== PAGE {i+1} ===\n" + p.get_text() for i, p in enumerate(d))
+```
+
+Keep the page markers: quotation locators in this library are expected to cite a page, and reconstructing them afterwards is guesswork.
+
+## Quoting non-English sources
+
+Give the quotation in the original inside the blockquote and put the English rendering in the attribution line, before the footnote. The validator splits the quotations section on every newline that begins with `>`, so a blockquote spanning more than one line is parsed as several quotations and all but the last will fail for a missing citation and locator.
