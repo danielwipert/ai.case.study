@@ -30,7 +30,7 @@ causal_strength: causal
 related_cases:
   - AAI-2026-002
   - AAI-2026-003
-evidence_upgrade_path: "Grade A needs a chain that does not run through METR. The strongest candidate is an independent re-analysis of the released dataset by a team with no stake in the result, which is possible today because both datasets are public; second-best is a replication of the task-level randomization by a different group, ideally in a setting with the same repository maturity. The 2025 paper's numeric confidence interval reaching print in the paper itself rather than in a later blog post, and peer review of the paper at a venue that scrutinises the regression specification, would each close a specific hole named in the evidence assessment below."
+evidence_upgrade_path: "Grade A needs a chain that does not run through METR. A search of arXiv and the wider literature in September 2026 found none: no independent re-analysis of either released dataset has been published, and no group has replicated the task-level randomization in mature repositories. The strongest candidate is an independent re-analysis of the released dataset by a team with no stake in the result, which is possible today because both datasets are public; second-best is a replication of the task-level randomization by a different group, ideally in a setting with the same repository maturity. The 2025 paper's numeric confidence interval reaching print in the paper itself rather than in a later blog post, and peer review of the paper at a venue that scrutinises the regression specification, would each close a specific hole named in the evidence assessment below. What this review did add is a second contrast rather than a corroboration: an enterprise randomized trial at Google finding a speedup, useful for bounding the claim and useless for confirming it."
 sources:
   - id: metr-rct
     author: "Joel Becker, Nate Rush, Beth Barnes, and David Rein"
@@ -102,6 +102,23 @@ sources:
     corroboration: "The author places the results alongside public self-report research and states they are consistent with it, while noting survey estimates generally exceed experimental ones."
     accountability: "Single named author, dated, BibTeX citation, the survey instrument published in full, and an anomalies section describing excluded responses."
     notes: "Read for this case. Cited here for the self-report side of the perception gap and for METR's own statement that its 2025 study found people overestimating AI's effect on their time by about 40 percentage points."
+  - id: paradis-google
+    author: "Elise Paradis, Kate Grey, Quinn Madison, Daye Nam, Andrew Macvean, Vahid Meimand, Nan Zhang, Ben Ferrari-Church, and Satish Chandra"
+    title: "How much does AI impact development speed? An enterprise-based randomized controlled trial"
+    publisher: "arXiv:2410.12944"
+    published: 2024-10-16
+    url: "https://arxiv.org/abs/2410.12944"
+    accessed: 2026-09-13
+    roles:
+      - primary-investigation
+      - analysis
+    source_family: google-enterprise-rct
+    access: "96 full-time Google software engineers, randomized 48 and 48, each completing one enterprise-grade task inside Google's own proprietary infrastructure in the summer of 2024. Time on task was instrumented rather than self-reported, and ranged from 4.4 to 271.1 minutes with a mean of 104.4."
+    method: "Randomized controlled trial on a single designed task: patch and edit a pre-existing change list of ten files and 474 lines to implement a new logging service. Randomization was at the participant level, not the task level. Analysis by t-test on log time on task, then four linear regressions with developer- and task-level covariates. Balance on covariates across arms is reported and holds."
+    conflicts: "Every author works for Google, the trial measures Google's own internal AI features, and the participants are Google engineers. The paper is candid about two of the three: it calls itself a lab study in its own abstract and limits its claims to internal tooling in one season."
+    corroboration: "None for its own estimate. It stands opposite the METR trial in direction and, more usefully, in design — participant-level randomization on one designed task against task-level randomization on real issues in repositories the developers maintain."
+    accountability: "Named authors with institutional email addresses, a stable arXiv identifier, a full regression table with standard errors and significance markers, and reported covariate balance."
+    notes: "Read in full for this case, including the regression table. Cited here for the design contrast and for a discrepancy inside it: the abstract says AI 'significantly shortened' time on task and gives 'about 21%', but the 21% comes from the adjusted model whose estimate is not significant at p < 0.05, while the significant result is the unadjusted t-test. Both statements are individually defensible; the abstract puts them together."
   - id: peng-copilot
     author: "Sida Peng, Eirini Kalliamvakou, Peter Cihon, and Mert Demirer"
     title: "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot"
@@ -210,6 +227,10 @@ Four competing explanations deserve to be named.
 
 **It is about these repositories and these people.** METR agrees, and this is the explanation with real force. Developers were slowed more on issues where they had high prior exposure, and developers who forecast a large speedup for a particular issue were not slowed on it.[^metr-rct] One developer with more than 50 hours of Cursor experience showed a speedup. The authors state their results are consistent with greenfield projects or unfamiliar codebases seeing substantial speedup.[^metr-rct]
 
+**Other trials find a speedup, so one of them must be wrong.** They need not be. The most directly comparable one is a randomized trial at Google: 96 full-time engineers, randomly assigned, instrumented time on a single enterprise-grade task inside Google's own infrastructure in summer 2024. It found the AI arm finished in 96 minutes against 114, a difference significant on an unadjusted test of log time (p = .038), and estimated the adjusted effect at about 21% faster.[^paradis-google] Set beside METR, the two are a near-perfect illustration of the moderator METR names rather than a contradiction of it: Google's participants worked one designed task — a pre-existing change list of ten files and 474 lines — with a mean completion time of 104 minutes, while METR's worked real issues they had chosen in repositories they maintain. Unfamiliar, bounded, specified work against familiar, open-ended, self-owned work. METR's own statement that its results are consistent with substantial speedup on greenfield or unfamiliar code predicts the Google finding.
+
+Two further things about that paper are worth recording rather than passing over, because this case is partly about how productivity numbers are built. The 21% comes from the adjusted model, whose estimate is *not* significant at the conventional threshold — β₁ = −0.24, 95% CI [−0.51, 0.03], p = 0.086 — while the significant result is the unadjusted t-test, which the paper reports without a percentage attached. The abstract says AI "significantly shortened" time on task and gives "about 21%" in the next sentence. Each statement is defensible alone; together they read as a significant 21%, which is not what the regression table shows.[^paradis-google] And the paper describes itself as a "lab study" in the same abstract whose title calls it "enterprise-based" — a candour that most readers of the headline figure will never reach.
+
 The perception gap is a separate finding with a separate basis: it is a comparison of elicited forecasts against measured times, and it does not depend on the causal design at all.
 
 ## Failures, limitations, and governance
@@ -235,7 +256,8 @@ The perception gap is a separate finding with a separate basis: it is a comparis
 
 ## What this case does not demonstrate
 
-- It does not show that AI tools slow down software developers generally. METR says so explicitly, and the moderators it identifies are absent from most software work.
+- It does not show that AI tools slow down software developers generally. METR says so explicitly, the moderators it identifies are absent from most software work, and a randomized trial at Google on a bounded enterprise task found the opposite sign.[^paradis-google]
+- It does not resolve the disagreement in the literature, and neither does the Google trial. The two differ in setting, task design, tools, year, and unit of randomization all at once, so nothing can be attributed to any one of those differences.
 - It does not measure AI's effect on work quality, only on time. The follow-up notes participants reporting quality differences between conditions that the design never captured.[^metr-2026-update]
 - It does not describe current tools. The trial ran on Cursor Pro with Claude 3.5 and 3.7 Sonnet, before the agentic tools that reshaped the follow-up.
 - It does not show that developers are still slowed down. METR's own reading in February 2026 is that developers are probably faster now, on evidence it calls very weak.[^metr-2026-update]
@@ -259,7 +281,7 @@ Three things hold it at B rather than A.
 
 Conflicts run in both directions and are worth stating plainly. METR's remit gives it an interest in evidence that in-the-wild capability lags benchmarks, and this result serves that interest. Against that: it published a null-signal follow-up that wrote off an expensive experiment, it reports that its own staff give the lowest AI-uplift estimates of any group it surveyed and offers "METR staff overindex on METR's previous findings" among the explanations,[^metr-2026-survey] and it released the data. That is not the behaviour of a team protecting a result.
 
-The fifth source is a contrast, not a corroboration, and only its abstract was read; three of its four authors worked for the vendor of the tool it evaluated.[^peng-copilot] Nothing in this case rests on it beyond the design contrast it illustrates.
+Two sources here are contrasts, not corroborations, and neither moves the grade. The GitHub Copilot trial was read in abstract only, and three of its four authors worked for the vendor of the tool it evaluated.[^peng-copilot] The Google enterprise trial was read in full and is the more useful of the two, because its design sits much closer to METR's: a randomized trial, instrumented time, professional engineers doing work of a kind they actually do. Its conflicts are as structural as they are obvious — Google authors, Google engineers, Google's own AI features, one season — and it is candid about being a lab study. What it supplies is a bound on how far METR's finding travels, and a worked example of the same gap this case is about, appearing this time between a paper's abstract and its own regression table.[^paradis-google] Nothing in this case's central claims rests on either.
 
 Finally, the `causal` label applies to the 2025 trial's internal validity only. Everything about 2026 in this case is `Unknown` or `Attributed`, and the ledger below reflects that.
 
@@ -280,6 +302,9 @@ Finally, the `causal` label applies to the 2025 trial's internal validity only. 
 | Technical workers in early 2026 self-report a 1.4x to 2x gain in the value of their work. | Supported | Survey of 349 respondents with internal consistency checks, on a convenience sample with roughly 2% response rate[^metr-2026-survey] | A probability sample reaching a different median, or evidence the value question was misread |
 | Those 2026 self-reports reflect actual productivity change. | Unknown | No counterfactual was measured; the author flags that the same population's self-reports were off by about 40 percentage points in 2025[^metr-2026-survey] | A trial that measures the same population's actual output against their self-reports |
 | The contrast with earlier 55.8% speedup findings is explained by task realism rather than by tool differences. | Inference | Drawn from the design difference between a single specified synthetic task[^peng-copilot] and real issues in mature repositories, plus METR's own familiarity and complexity findings | An experiment holding tools constant while varying task realism, or holding realism constant while varying tools |
+| A randomized trial of 96 Google engineers on a single enterprise task found the AI arm finished in 96 minutes against 114, significant on an unadjusted test of log time. | Verified | Reported in the results with N, standard errors, and the test statistic: t(83.6) = 2.11, p = .038[^paradis-google] | A correction to the paper, or release of the underlying times showing otherwise |
+| That trial's headline "about 21%" figure is statistically significant. | Disputed | The 21% is derived from the adjusted best-fit model, whose estimate is β₁ = −0.24, 95% CI [−0.51, 0.03], p = 0.086, described in the paper's own results as not significant at p < 0.05 — while the abstract says AI "significantly shortened" time on task[^paradis-google] | A corrected abstract, or a reader's argument that the abstract's "significantly" refers only to the unadjusted test |
+| No independent re-analysis or replication of the METR trial has been published. | Supported | A search of arXiv and the wider literature in September 2026 found none, which is absence of evidence rather than evidence of absence[^metr-rct] | Publication of a re-analysis, which both datasets being public makes possible at any time |
 
 ## Direct quotations
 
@@ -315,7 +340,13 @@ Finally, the `causal` label applies to the 2025 trial's internal validity only. 
 
 — METR, answering the anticipated objection that sixteen developers is too few[^metr-blog] · locator: Anticipated objections, "You only had 16 developers"
 
+> “However, our confidence intervals are large, and as a result the estimate is not statistically significant at the p < 0.05 level (estimate of experimental condition on best-fit Model 2, β1 = −0.24; 95%CI = [−0.51, 0.03], p = 0.086, NS).”
+
+— Paradis and colleagues, in the results section reporting the adjusted model that the abstract's "about 21%" is derived from[^paradis-google] · locator: Results, RQ2, page 8
+
 ## Revision notes
+
+- 2026-09-13 — Source review. The gap this case named — a chain that does not run through METR — is still open, and the review recorded why: a search of arXiv and the wider literature in September 2026 turned up no independent re-analysis of either released dataset and no replication of the task-level design. What it did turn up is a second contrast, added as a fifth source and a fourth source family: a randomized trial of 96 full-time Google engineers on a single enterprise-grade task, finding the AI arm faster, read in full including its regression table. It is a far better contrast than the GitHub Copilot trial already cited, because its design sits closer to METR's, and it bounds how far METR's finding travels rather than testing it. Two things inside it are recorded as discrepancies rather than smoothed: its headline "about 21%" comes from the adjusted model its own results call not significant at p < 0.05, while the significant result is the unadjusted t-test with no percentage attached; and the abstract that calls the study "enterprise-based" in its title calls it a "lab study" in its text. Three claims and one quotation added, one "does not demonstrate" bullet split in two. Grade unchanged at B: a contrast is not a corroboration, and nothing here tests METR's estimate.
 
 - 2026-09-13 — Initial publication at Grade B. First case in the library labelled `causal`, and the label is scoped in the causal assessment to the 2025 trial's internal validity rather than to any general claim about AI and developer productivity. Held at B rather than A despite an exceptional design: all three data collections are METR's own, so the three source families are not three independent chains, and the case says so rather than letting the count stand. Two discrepancies recorded — METR describing its own 19% finding as 20% in February 2026, and the 21-versus-20 factor count between the v2 abstract and the blog summary. The confidence interval on the headline estimate is cited to the February 2026 post because the paper states it only graphically. `peng-copilot` is cited from its abstract alone, which its source note states, and carries no claim in this case.
 
@@ -326,5 +357,7 @@ Finally, the `causal` label applies to the 2025 trial's internal validity only. 
 [^metr-2026-update]: Becker, Rush, Cunningham, Rein, and Mahamud, [“We are Changing our Developer Productivity Experiment Design”](https://metr.org/blog/2026-02-24-uplift-update/), METR, 2026-02-24.
 
 [^metr-2026-survey]: Becker, [“Measuring the Self-Reported Impact of Early-2026 AI on Technical Worker Productivity”](https://metr.org/blog/2026-05-11-ai-usage-survey/), METR, 2026-05-11.
+
+[^paradis-google]: Paradis, Grey, Madison, Nam, Macvean, Meimand, Zhang, Ferrari-Church, and Chandra, [“How much does AI impact development speed? An enterprise-based randomized controlled trial”](https://arxiv.org/abs/2410.12944), arXiv:2410.12944, 2024-10-16, 12 pages.
 
 [^peng-copilot]: Peng, Kalliamvakou, Cihon, and Demirer, [“The Impact of AI on Developer Productivity: Evidence from GitHub Copilot”](https://arxiv.org/abs/2302.06590), arXiv:2302.06590, 2023-02-13.
