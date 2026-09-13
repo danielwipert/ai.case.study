@@ -208,6 +208,11 @@ input:focus, select:focus { outline: 2px solid rgb(116 80 71 / 55%); outline-off
 }
 .prose blockquote p:last-child { margin-bottom: 0; }
 .prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font: 400 .9rem/1.55 var(--sans); }
+/* Four-column ledgers break out of the prose column into the gutter between it
+   and the sidebar. Marked at build time by scripts/hast-case-tables.mjs, which
+   is the only place the column count is known. The 4rem stops short of the
+   5.5rem gap so the table never runs flush against the sidebar. */
+.prose .wide-table { width: calc(100% + 4rem); max-width: none; }
 .prose th, .prose td { text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); padding: .85rem .8rem; }
 .prose th {
   color: var(--wine-dark); font-weight: 600; background: var(--wine-wash);
@@ -339,6 +344,7 @@ footer::before { top: 4px; }
   .filters { grid-template-columns: 1fr 1fr; }
   .filters .search { grid-column: 1 / -1; }
   .sidebar { position: static; grid-row: 1; }
+  .prose .wide-table { width: 100%; }
   .evidence-stats { grid-template-columns: 1fr; }
   .evidence-stats > div, .evidence-stats > div + div { border-right: 0; border-bottom: 1px solid var(--line); padding: .9rem 0; }
   .evidence-stats > div:last-child { border-bottom: 0; }
