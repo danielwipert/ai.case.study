@@ -34,9 +34,27 @@ causal_strength: descriptive
 related_cases:
   - AAI-2026-002
   - AAI-2026-003
-evidence_upgrade_path: "Grade A needs a chain Klarna does not control: an independent measurement of assistant quality, a regulator or auditor attesting to the AI savings estimates rather than the financial statements they sit beside, union or works-council reporting on what happened to the roles that went, or disclosure of how many employees transferred with the KCO divestment so the headcount claim can be netted out. Reporting from an accountable newsroom on the mid-2025 change of course would let the case test a narrative it currently cannot source."
+evidence_upgrade_path: "Grade A needs a chain Klarna does not control: an independent measurement of assistant quality, a regulator or auditor attesting to the AI savings estimates rather than the financial statements they sit beside, union or works-council reporting on what happened to the roles that went, or disclosure of how many employees transferred with the KCO divestment so the headcount claim can be netted out. The mid-2025 change of course is no longer unsourced — a named staff writer at a masthead outlet relays a Bloomberg interview in which the chief executive says so himself — but that is still Klarna's voice reaching this case through two hands, and it sharpens the contradiction with the annual report rather than resolving it. What would resolve it is Klarna addressing the two accounts together."
 single_chain_rationale: "The company's own annual report is the only chain available. Every readable alternative for the counter-narrative — Forbes, CNBC, the Associated Press — was unreachable from this environment, and the remaining coverage found was vendor blogs and syndicated aggregators the source policy excludes outright. The case is published because a company stating under securities law that AI cut a third of its workforce, with audited cost lines beside the claim, is a primary record worth entering into evidence with its limits marked, not because anyone has checked it."
 sources:
+  - id: entrepreneur-reversal
+    author: "Sherin Shibu"
+    title: "Klarna CEO Reverses Course By Hiring More Humans, Not AI"
+    publisher: "Entrepreneur"
+    published: 2025-05-09
+    updated: 2026-01-30
+    url: "https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396"
+    accessed: 2026-09-13
+    roles:
+      - independent-reporting
+      - participant-account
+    source_family: klarna-2025-reversal
+    access: "No independent access to Klarna. What it carries is direct quotation of Sebastian Siemiatkowski from a Bloomberg interview given on 8 May 2025, including his own characterisation of the AI-first customer service approach as producing lower quality."
+    method: "A news brief relaying a Bloomberg interview, with the quotations attributed to that interview and the surrounding history sourced to Klarna's own earlier disclosures. It reports; it does not measure. Nothing in it is an assessment of the assistant."
+    conflicts: "Two layers. The substance is the chief executive's account of his own company's strategy, so it is Klarna's voice, not an outside check on it — which is why this source carries `participant-account` alongside `independent-reporting`. And it reaches this case through a relay, because bloomberg.com is unreachable from this sandbox."
+    corroboration: "It contradicts, rather than corroborates, the picture in Klarna's own annual report filed nine months later, which describes no reversal and still presents the assistant as handling 80% of chats. This case records both and resolves neither."
+    accountability: "A named staff writer at an outlet with a masthead and a corrections process, dated, with the originating interview identified and the quotations marked as the outlet's own relay of it."
+    notes: "Read in full. It is in this record for one reason: the case previously recorded the mid-2025 change of course as untestable because every outlet that carried it was unreachable. This one is reachable, names its source, and quotes the chief executive directly. It is a relay of a Bloomberg interview, and a company statement rather than an independent measurement — so it moves a claim from `Unknown` to `Attributed` and moves nothing else."
   - id: klarna20f
     author: "Klarna Group plc"
     title: "Annual report on Form 20-F for the fiscal year ended December 31, 2025"
@@ -145,7 +163,7 @@ None of this means the attribution is wrong. It means the record supports "Klarn
 - **The confounder it discloses but does not apply:** KCO was divested in the middle of the headcount trend.
 - **Aggregate satisfaction only:** the filing reports satisfaction parity overall and says nothing about disputes, fraud claims, or hardship cases, which are where an assistant is most likely to fail and a customer least able to absorb it.
 - **The workforce is absent from the account:** the people who left appear only as a falling number, in a company that also discloses significant union and works-council representation.
-- **The reported change of course is missing:** an annual report filed in February 2026 describes no reversal of the customer-service strategy, and still presents 80% of chats as assistant-handled.
+- **The company's two accounts do not agree.** In May 2025 the chief executive told Bloomberg that the AI-first approach to customer service produced "lower quality", that it "wasn't the right path", and that Klarna was recruiting human agents again, saying "investing in the quality of human support is the way of the future for us."[^entrepreneur-reversal] The annual report filed nine months later describes no reversal and still presents the assistant as handling 80% of chats in the year to 31 December 2025.[^klarna20f] Both are Klarna speaking. Only one of them is filed under securities-law liability, and it is not the one that concedes a problem.
 - **The company names its own risk:** it warns that generative AI may produce inaccurate, incomplete, misleading, or biased output that may not be easily detectable — in the same document that reports satisfaction parity.[^klarna20f]
 
 ## What this case demonstrates
@@ -172,7 +190,11 @@ None of this means the attribution is wrong. It means the record supports "Klarn
 
 The limitation is that one party wrote all of it. The operational figures are management estimates over data only Klarna holds; the causal attribution is Klarna's; and the filing is written to persuade investors that AI is a structural advantage. The case handles this by splitting the claims: audited figures carry `Verified`, and everything the company asserts about why those figures moved carries `Attributed`.
 
-Two absences shape the grade. Klarna discloses the KCO divestment as a caveat on revenue comparisons and never applies it to the workforce statement, so the central attribution has an unquantified confounder sitting inside the same document. And the mid-2025 reports that Klarna had changed course on customer-service automation could not be tested: Forbes, CNBC, and the Associated Press were all unreachable from the environment used for this review, and the remaining coverage was vendor blogs and syndicated aggregators that the source policy excludes. The filing's silence on any reversal is recorded as what the record says, not as a refutation of what was reported.
+Two absences shaped the grade at publication, and one of them has partly closed. Klarna discloses the KCO divestment as a caveat on revenue comparisons and never applies it to the workforce statement, so the central attribution still has an unquantified confounder sitting inside the same document.
+
+The other was the mid-2025 change of course, which this case recorded as untestable because Forbes, CNBC, Bloomberg, and the Associated Press were all unreachable and the remaining coverage was vendor blogs and syndicated aggregators the source policy excludes. A reachable account has since been found: a named staff writer at Entrepreneur relaying the Bloomberg interview and quoting the chief executive directly.[^entrepreneur-reversal] That is enough to move the claim off `Unknown`, and it is important to be clear why it is not more. It is Klarna's own chief executive describing Klarna's own strategy, reaching this case through a relay because the original is paywalled. It is a company statement, not an outside measurement, so it does nothing for the thing this case actually needs — a chain Klarna does not control. It is also, for exactly that reason, more interesting than a favourable statement would be: a chief executive conceding lower quality is speaking against interest.
+
+What it produces is a contradiction inside the company's own record rather than a resolution of one. The May 2025 interview and the February 2026 annual report describe different worlds, and this case now states both instead of one. The grade stays at B.
 
 ## Material claims
 
@@ -189,7 +211,9 @@ Each claim carries a controlled label, the evidence behind it, and what would ch
 | AI delivered $39 million of cost savings in 2024. | Attributed | Company estimate presented alongside, not within, the audited statements[^klarna20f] | An auditor attestation or a published breakdown |
 | Service quality held up for disputes, fraud claims, and hardship cases. | Unknown | The filing reports aggregate satisfaction only, with no breakdown by case type | Segment-level quality data, or a regulator's complaints analysis |
 | What happened to the roughly 1,500 people whose roles ended. | Unknown | Not addressed in the filing, which reports only the falling count | Union, works-council, or regulator reporting |
-| Klarna reversed its customer-service automation in 2025. | Unknown | Widely circulated but untestable here: no source meeting the source policy was reachable, and the FY2025 filing describes no reversal while still claiming 80% of chats | A readable account from an accountable newsroom, or a company statement on the record |
+| Klarna changed course on customer-service automation in 2025 and began recruiting human agents again. | Attributed | The chief executive said so to Bloomberg on 8 May 2025, quoted directly in a named staff writer's report; the original interview is paywalled and was not read[^entrepreneur-reversal] | Reading Bloomberg's original, a Klarna filing or release addressing the change, or evidence the quotations were inaccurate |
+| Klarna's AI-first customer service produced lower-quality outcomes. | Attributed | The chief executive's own characterisation — "lower quality", and that the approach "wasn't the right path" — relayed from the Bloomberg interview; no measurement of assistant quality by anyone exists in this record[^entrepreneur-reversal] | Any independent measurement of the assistant, or a Klarna disclosure quantifying the quality change |
+| Klarna's own two accounts of its customer-service strategy are consistent. | Disputed | The May 2025 interview describes a reversal on quality grounds; the annual report filed February 2026 describes none and still presents 80% of chats as assistant-handled[^entrepreneur-reversal][^klarna20f] | Klarna addressing the two accounts together, or a reading that reconciles the 80% figure with the rehiring |
 
 ## Direct quotations
 
@@ -201,8 +225,16 @@ Each claim carries a controlled label, the evidence behind it, and what would ch
 
 — Klarna Group plc, annual report on Form 20-F[^klarna20f] · locator: Risk Factors
 
+> “Really, investing in the quality of human support is the way of the future for us.”
+
+— Sebastian Siemiatkowski to Bloomberg on 2025-05-08, quoted in Entrepreneur's relay of the interview; the original is paywalled and was not read[^entrepreneur-reversal] · locator: paragraph beginning "So now Klarna is recruiting a new batch of customer service employees"
+
 ## Revision notes
 
+- 2026-09-13 — Source review. The mid-2025 change of course, recorded at publication as untestable because every outlet carrying it was unreachable, is now sourced. A named staff writer at Entrepreneur relays the Bloomberg interview of 8 May 2025 and quotes Sebastian Siemiatkowski directly, including his characterisation of the AI-first approach as producing "lower quality" and "not the right path". One claim moves from `Unknown` to `Attributed` and two more are added. What this does not do is supply the chain the case actually needs: it is Klarna's chief executive describing Klarna's own strategy, arriving through a relay because bloomberg.com is unreachable, so the source carries `participant-account` alongside `independent-reporting` and the grade stays at B. Its real value is the contradiction it creates inside the company's own record — a chief executive conceding lower quality in May 2025 against an annual report filed nine months later that describes no reversal and still presents the assistant as handling 80% of chats. A new `Disputed` claim records that the two accounts do not agree, per the rule on recording discrepancies rather than resolving them. Nothing was found on the other named gaps: no union or works-council reporting, no independent measurement of assistant quality, and no disclosure of KCO transfer headcount.
+
 - 2026-09-12 — Initial publication at Grade B. Single chain, the company's own Form 20-F, read in full and cited with `single_chain_rationale`: no independent measurement was reachable and the alternative coverage found was vendor blogs the source policy excludes. Audited figures are labelled `Verified` and the company's characterisations `Attributed`, including the attribution of the workforce reduction to AI, because the same filing discloses the KCO divestment of 2024-10-01 without applying it to the headcount trend. The widely circulated account that Klarna reversed its customer-service automation is recorded as `Unknown` rather than denied, since the filing's silence is not a refutation.
+
+[^entrepreneur-reversal]: Sherin Shibu, [“Klarna CEO Reverses Course By Hiring More Humans, Not AI”](https://www.entrepreneur.com/business-news/klarna-ceo-reverses-course-by-hiring-more-humans-not-ai/491396), Entrepreneur, 2025-05-09, updated 2026-01-30. A relay: it quotes an interview Sebastian Siemiatkowski gave Bloomberg on 2025-05-08, and bloomberg.com is unreachable from this sandbox, so the original was not read.
 
 [^klarna20f]: Klarna Group plc, [Annual report on Form 20-F for the fiscal year ended December 31, 2025](https://www.sec.gov/Archives/edgar/data/2003292/000200329226000007/klar-20251231.htm), filed 2026-02-26.
