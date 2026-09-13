@@ -215,6 +215,28 @@ input:focus, select:focus { outline: 2px solid rgb(116 80 71 / 55%); outline-off
   font-size: .72rem; letter-spacing: .08em;
 }
 .prose tbody tr:nth-child(even) { background: rgb(159 141 118 / 7%); }
+
+/* Claim labels in the material-claims ledger. Wrapped at build time by
+   scripts/rehype-claim-labels.mjs, which only touches the "Label" column.
+   The colour carries the editorial meaning: green corroborated, blue credible
+   but incomplete, amber one party's word, wine contested — and a dashed rule
+   for the two that are not findings at all. */
+.claim-cell { white-space: nowrap; }
+.claim-label {
+  display: inline-block; padding: .26rem .5rem; border: 1px solid var(--line-dark);
+  color: var(--ink-soft); background: rgb(159 141 118 / 10%);
+  font: 600 .64rem/1 var(--sans); letter-spacing: .09em; text-transform: uppercase;
+}
+.claim-label[data-label="verified"] { border-color: rgb(102 112 90 / 60%); color: var(--moss-ink); background: var(--moss-wash); }
+.claim-label[data-label="supported"] { border-color: rgb(79 93 120 / 55%); color: var(--indigo-ink); background: var(--indigo-wash); }
+.claim-label[data-label="attributed"] { border-color: rgb(157 113 60 / 55%); color: var(--amber-ink); background: var(--amber-wash); }
+.claim-label[data-label="disputed"] {
+  border-color: var(--wine); color: var(--wine-dark); background: var(--wine-wash);
+  box-shadow: inset 0 -2px 0 rgb(116 80 71 / 30%);
+}
+.claim-label[data-label="inference"], .claim-label[data-label="unknown"] {
+  border-style: dashed; border-color: var(--line-dark); color: var(--ink-soft); background: transparent;
+}
 .sidebar {
   position: sticky; top: 1.5rem; padding: 1.5rem 1.4rem; color: var(--ink);
   background: rgb(233 223 207 / 62%); border: 1px solid var(--line-dark);
