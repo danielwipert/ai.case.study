@@ -2,9 +2,9 @@
 
 ## Where things stand
 
-Seventeen case records, sixteen published (004 is still an unpublished lead), plus the synthesis layer at `/propositions/` — seven propositions and three tensions. The site builds clean and deploys to https://danielwipert.github.io/ai.case.study/.
+Nineteen case records, eighteen published (004 is still an unpublished lead), plus the synthesis layer at `/propositions/` — seven propositions and three tensions. The site builds clean and deploys to https://danielwipert.github.io/ai.case.study/.
 
-Merged: PR #16 (library-wide source review), PR #17 (synthesis layer). Unmerged on this branch: two new cases, 016 and 017.
+Merged: PR #16 (library-wide source review), PR #17 (synthesis layer). Unmerged on this branch: three new cases, 016, 017 and 018.
 
 **The industry axis is now complete.** All ten controlled `industry` values have at least one case.
 
@@ -26,6 +26,15 @@ Adding the cases moved `/propositions/` without anyone editing it: 8 industries 
 - **016 is filed `deployment_stage: unknown`** deliberately, not as a placeholder. There is no deployment to stage.
 - **017 is filed `business_function: research-development`** under protest. The taxonomy has no value for editorial or content work, which a media-heavy library will hit again.
 
+## The `paused` gap is still open
+
+A `paused` case was asked for and not delivered, deliberately. Two candidates were checked and neither is one:
+
+- **Amsterdam Smart Check** (now published as AAI-2026-018) is `retired` — the city's own algorithm register records it as *Buiten gebruik*, out of use. Labelling it `paused` to fill the gap would have put a wrong value in the taxonomy the whole library is graded against.
+- **OpenAI's Astra training pause** (August 2026) is genuinely a pause, but of a model that was never deployed, so `deployment_stage` does not apply to it — and its primary source is openai.com, which returns 403 from this sandbox, so it would be a relay case at grade C.
+
+A real `paused` case is a system that was running, has stopped, and may resume. The most promising seam is regulator-ordered provisional suspension: the Italian Garante issues *provvedimenti di limitazione provvisoria*, garanteprivacy.it is reachable, and the order itself is a published primary document. Korea's PIPC does the same, though the library already has a PIPC case.
+
 ## Candidate proposition, needing a second case
 
 016 and 017 together suggest something neither says alone: **the quality of a record and the disinterest of its keeper trade against each other.** Courts are disinterested and record no measurement; publishers measure well and own the outcome. That is two cases, which is enough for `emerging` — but they are two halves of one observation rather than two instances, so it is left unwritten. A third case where a genuinely disinterested party measured well would settle it.
@@ -42,4 +51,4 @@ Work is on `claude/optimistic-goodall-s4n0c4` — assigned per session, not the 
 
 ## Next
 
-Remaining taxonomy gaps are thinner than the industry axis was: `deployment_stage` has no `prototype`, `pilot` or `paused` case; `environment` has no `laboratory`, `shadow-mode` or `adversarial-test`; `business_function` has no `sales-marketing` or `supply-chain`. A `paused` case would be the most interesting of those — a deployment stopped and not restarted is a shape the library does not hold.
+Remaining taxonomy gaps: `deployment_stage` has no `prototype`, `pilot` or `paused` case; `environment` has no `laboratory`, `shadow-mode` or `adversarial-test`; `business_function` has no `sales-marketing` or `supply-chain`. The `paused` seam is described above.
