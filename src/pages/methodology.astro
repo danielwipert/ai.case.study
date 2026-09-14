@@ -1,5 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <BaseLayout title="Methodology | Applied AI Case Study Library">
@@ -44,6 +46,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <h2>Which half of the error rate is missing?</h2>
     <p>Cases in this library from healthcare, manufacturing, and retail independently turn on the same omission: an organization knowing or publishing one side of its error rate and not the other. A vendor reports how many cases its model catches; nobody reports how often its alerts are wrong. That recurrence is a finding about the field, not a coincidence of what we chose to write about.</p>
     <p>So every case involving a system that flags, scores, or classifies asks the same two questions. Which half is missing—and who bears the cost of the error that went uncounted? A false negative is usually absorbed by the organization. A false positive lands on whoever receives the alert: a clinician's attention, an engineer's wasted inspection, or a member of the public who is searched or refused. Where that cost falls outside the organization, the measurement is most often the one nobody took.</p>
+
+    <h2>Propositions</h2>
+    <p>A proposition is a claim that holds across more than one case, published with stable identifiers at <a href={`${base}/propositions/`}>Propositions</a>. Each one names the cases it rests on; case pages derive their citation from that rather than restating it, so the two cannot drift apart.</p>
+    <p>Propositions carry their own strength labels — <strong>recurrent</strong>, <strong>emerging</strong>, <strong>conjecture</strong> — deliberately separate from the claim labels above, so that a count of cases is never mistaken for a grade of evidence. A proposition can never outrank the cases beneath it, and the content validator enforces that: a label whose supporting cases are too few, too narrow, or too weakly graded fails the build rather than reaching the page.</p>
+    <p>Where two cases point in different directions, the disagreement is published as a tension rather than dropped, and the validator warns when a published case is cited by neither.</p>
 
     <h2>Causal restraint</h2>
     <p>Every case is labeled descriptive, associational, plausibly causal, or causal. Most operational reporting is descriptive rather than causal. The label prevents an observed result from quietly becoming a claim that AI produced it.</p>

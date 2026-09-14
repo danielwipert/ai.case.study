@@ -17,6 +17,18 @@ const related = data.related_cases.map((id) => byCaseId.get(id)).filter(Boolean)
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const chainCount = new Set(data.sources.map((source) => source.source_family ?? `single:${source.id}`)).size;
 const displayDate = (date) => new Intl.DateTimeFormat("en", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" }).format(date);
+
+// Derived, never restated. The propositions collection is the single source of
+// truth for which cases support which claim, so this list cannot drift out of
+// step with the synthesis page.
+const propositions = (await getCollection("propositions")).sort((a, b) => a.data.order - b.data.order);
+const citedIn = propositions
+  .map((proposition) => {
+    const supporting = proposition.data.supporting_cases.includes(data.case_id);
+    const counter = proposition.data.counter_cases.includes(data.case_id);
+    return supporting || counter ? { proposition, role: supporting ? "supports" : "counter-case to" } : null;
+  })
+  .filter(Boolean);
 ---
 
 <BaseLayout title={`${data.title} | Applied AI Case Study Library`} description={data.summary}>
@@ -40,6 +52,20 @@ const displayDate = (date) => new Intl.DateTimeFormat("en", { year: "numeric", m
     <article class="prose">
       <Content />
       <EvidencePanel data={data} />
+      {citedIn.length > 0 && (
+        <section class="cited-in">
+          <h2>Cited in the synthesis</h2>
+          <ul>
+            {citedIn.map(({ proposition, role }) => (
+              <li>
+                <span class="pid">{proposition.data.proposition_id}</span>
+                <a href={`${base}/propositions/#${proposition.data.proposition_id}`}>{proposition.data.statement}</a>
+                <span class="pid"> · {role}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
     </article>
     <aside class="sidebar" aria-label="Case metadata">
       <dl>
