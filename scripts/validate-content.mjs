@@ -3,6 +3,8 @@ import path from "node:path";
 import { load as parseYaml } from "js-yaml";
 
 const root = new URL("../src/content/cases/", import.meta.url);
+const propositionRoot = new URL("../src/content/propositions/", import.meta.url);
+const tensionRoot = new URL("../src/content/tensions/", import.meta.url);
 const taxonomyPath = new URL("../docs/taxonomy.yml", import.meta.url);
 
 const requiredPublishedSections = [
@@ -29,6 +31,18 @@ const claimLabelsNeedingCitation = ["verified", "supported", "attributed", "disp
 const claimColumns = ["claim", "label", "evidence", "what would change this"];
 const controlledListFields = ["industry", "business_function", "deployment_pattern"];
 const kebabCase = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+
+// A proposition's strength is a claim about its own support, so it is checked
+// rather than asserted. "Recurrent" is the only label that promises breadth:
+// several cases, more than one industry, and at least one of them better than
+// self-reported. The floor on grades is the executable form of the rule that a
+// proposition can never outrank the cases beneath it.
+const strengthRules = {
+  recurrent: { minCases: 3, minIndustries: 2, bestGrade: "B" },
+  emerging: { minCases: 2, minIndustries: 1, bestGrade: "C" },
+  conjecture: { minCases: 1, minIndustries: 1, bestGrade: "C" }
+};
+const gradeRank = { A: 3, B: 2, C: 1, D: 0 };
 const errors = [];
 const warnings = [];
 
@@ -229,6 +243,141 @@ for (const { filename, data, body, raw } of records) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Propositions: the cross-case synthesis.
+//
+// A proposition names the cases it rests on; case pages derive their "cited in"
+// list from here rather than restating it, so the two cannot drift apart. That
+// makes this the only place the link is written, and the only place it can be
+// wrong.
+// ---------------------------------------------------------------------------
+
+const caseByIdentifier = new Map(records.map((record) => [record.data.case_id, record.data]));
+const propositionFiles = await walk(propositionRoot).catch(() => []);
+const propositions = [];
+
+for (const file of propositionFiles) {
+  const filename = path.basename(file.pathname);
+  const record = splitRecord(await readFile(file, "utf8"));
+  if (!record) {
+    errors.push(`${filename}: could not read YAML front matter`);
+    continue;
+  }
+  propositions.push({ filename, data: record.frontMatter, body: record.body });
+}
+
+const propositionIds = new Map();
+for (const { filename, data } of propositions) {
+  const id = data.proposition_id;
+  if (typeof id !== "string" || !/^P\d+$/.test(id)) {
+    errors.push(`${filename}: missing or malformed proposition_id`);
+    continue;
+  }
+  if (!filename.startsWith(`${id}-`)) errors.push(`${filename}: filename must begin with ${id}-`);
+  if (propositionIds.has(id)) errors.push(`${filename}: duplicate proposition_id also used by ${propositionIds.get(id)}`);
+  else propositionIds.set(id, filename);
+}
+
+const orders = new Map();
+const citedCases = new Set();
+
+for (const { filename, data, body } of propositions) {
+  const fail = (message) => errors.push(`${filename}: ${message}`);
+  const warn = (message) => warnings.push(`${filename}: ${message}`);
+  const supporting = Array.isArray(data.supporting_cases) ? data.supporting_cases : [];
+  const counter = Array.isArray(data.counter_cases) ? data.counter_cases : [];
+
+  if (orders.has(data.order)) fail(`order ${data.order} is also used by ${orders.get(data.order)}`);
+  else orders.set(data.order, filename);
+
+  // Every cited case resolves, is published, and appears on one side only.
+  const resolved = [];
+  for (const [field, list] of [["supporting_cases", supporting], ["counter_cases", counter]]) {
+    for (const id of list) {
+      const found = caseByIdentifier.get(id);
+      if (!found) { fail(`${field} references unknown case ${id}`); continue; }
+      if (!publishedStatuses.includes(found.status)) fail(`${field} references ${id}, which is not published`);
+      citedCases.add(id);
+      if (field === "supporting_cases") resolved.push(found);
+    }
+  }
+  for (const id of supporting) {
+    if (counter.includes(id)) fail(`${id} is listed as both a supporting and a counter case`);
+  }
+
+  // The strength label is checked against the support it claims.
+  const rule = strengthRules[data.strength];
+  if (rule && resolved.length) {
+    const industries = new Set(resolved.flatMap((entry) => entry.industry ?? []));
+    const best = resolved.reduce((top, entry) => Math.max(top, gradeRank[entry.evidence_grade] ?? 0), 0);
+    if (resolved.length < rule.minCases) {
+      fail(`strength "${data.strength}" needs at least ${rule.minCases} supporting cases, found ${resolved.length}`);
+    }
+    if (industries.size < rule.minIndustries) {
+      fail(`strength "${data.strength}" needs cases from at least ${rule.minIndustries} industries, found ${industries.size}`);
+    }
+    if (best < gradeRank[rule.bestGrade]) {
+      fail(`strength "${data.strength}" needs at least one supporting case graded ${rule.bestGrade} or better; the best here is grade ${Object.keys(gradeRank).find((key) => gradeRank[key] === best) ?? "none"}`);
+    }
+  }
+
+  // A proposition that reaches past this library has to be falsifiable by
+  // something outside it. A library-scoped one is a statement about the
+  // collection and says so.
+  if (data.scope === "deployment" && /this library/i.test(data.statement ?? "")) {
+    fail("a deployment-scoped statement should not be about the library; set scope: library");
+  }
+
+  if (body.trim().length < 200) fail("body is too short to explain the proposition");
+
+  // Staleness: a synthesis is only as current as the cases under it.
+  const reviewed = asDate(data.last_reviewed);
+  for (const entry of resolved) {
+    const verified = asDate(entry.last_verified);
+    if (reviewed && verified && verified > reviewed) {
+      warn(`${entry.case_id} was verified after this proposition was last reviewed; the synthesis may be stale`);
+    }
+  }
+}
+
+// Tensions: the cases that disagree with each other, kept rather than dropped.
+const tensionFiles = await walk(tensionRoot).catch(() => []);
+const tensions = [];
+
+for (const file of tensionFiles) {
+  const filename = path.basename(file.pathname);
+  const record = splitRecord(await readFile(file, "utf8"));
+  if (!record) { errors.push(`${filename}: could not read YAML front matter`); continue; }
+  tensions.push({ filename, data: record.frontMatter, body: record.body });
+}
+
+const tensionIds = new Map();
+const tensionOrders = new Map();
+for (const { filename, data, body } of tensions) {
+  const fail = (message) => errors.push(`${filename}: ${message}`);
+  const id = data.tension_id;
+  if (typeof id !== "string" || !/^T\d+$/.test(id)) { fail("missing or malformed tension_id"); continue; }
+  if (!filename.startsWith(`${id}-`)) fail(`filename must begin with ${id}-`);
+  if (tensionIds.has(id)) fail(`duplicate tension_id also used by ${tensionIds.get(id)}`);
+  else tensionIds.set(id, filename);
+  if (tensionOrders.has(data.order)) fail(`order ${data.order} is also used by ${tensionOrders.get(data.order)}`);
+  else tensionOrders.set(data.order, filename);
+
+  for (const caseId of Array.isArray(data.cases) ? data.cases : []) {
+    const found = caseByIdentifier.get(caseId);
+    if (!found) fail(`cases references unknown case ${caseId}`);
+    else if (!publishedStatuses.includes(found.status)) fail(`cases references ${caseId}, which is not published`);
+    else citedCases.add(caseId);
+  }
+  if (body.trim().length < 120) fail("body is too short to explain the tension");
+}
+
+for (const { filename, data } of records) {
+  if (publishedStatuses.includes(data.status) && !citedCases.has(data.case_id)) {
+    warnings.push(`${filename}: no proposition or tension cites this case`);
+  }
+}
+
 if (warnings.length) {
   console.warn(`Evidence gaps (${warnings.length}):\n- ${warnings.join("\n- ")}\n`);
 }
@@ -238,4 +387,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`Validated ${records.length} case record${records.length === 1 ? "" : "s"}.`);
+console.log(`Validated ${records.length} case record${records.length === 1 ? "" : "s"}, ${propositions.length} proposition${propositions.length === 1 ? "" : "s"}, and ${tensions.length} tension${tensions.length === 1 ? "" : "s"}.`);

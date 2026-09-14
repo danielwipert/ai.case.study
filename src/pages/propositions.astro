@@ -1,0 +1,230 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const cases = await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status));
+const byId = new Map(cases.map((entry) => [entry.data.case_id, entry]));
+
+const propositions = (await getCollection("propositions")).sort((a, b) => a.data.order - b.data.order);
+const tensions = (await getCollection("tensions")).sort((a, b) => a.data.order - b.data.order);
+
+// Every figure on this page is computed from the case records at build time, so
+// adding or regrading a case moves the page without anyone remembering to.
+const outcomes = ["positive", "mixed", "inconclusive", "negative", "unknown"];
+const grades = ["A", "B", "C"];
+const matrix = grades.map((grade) => ({
+  grade,
+  cells: outcomes.map((outcome) => ({
+    outcome,
+    n: cases.filter((entry) => entry.data.evidence_grade === grade && entry.data.outcome === outcome).length
+  }))
+}));
+// The finding P1 rests on: the region of the matrix that is empty.
+const positiveHighGrade = matrix
+  .filter((row) => row.grade === "A")
+  .flatMap((row) => row.cells.filter((cell) => cell.outcome === "positive"));
+const p1Holds = positiveHighGrade.every((cell) => cell.n === 0);
+
+const uniqueCount = (values) => new Set(values.filter(Boolean)).size;
+const stats = {
+  cases: cases.length,
+  industries: uniqueCount(cases.flatMap((entry) => entry.data.industry)),
+  geographies: uniqueCount(cases.flatMap((entry) => entry.data.geography)),
+  patterns: uniqueCount(cases.flatMap((entry) => entry.data.deployment_pattern))
+};
+
+const lastReviewed = [...propositions, ...tensions]
+  .map((entry) => entry.data.last_reviewed)
+  .sort((a, b) => b.valueOf() - a.valueOf())[0];
+const longDate = (value) =>
+  value?.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) ?? "";
+
+// Strength definitions are the validator's rules restated for the reader. If the
+// two ever disagree, the build is the one telling the truth.
+const strengthNotes = [
+  { key: "recurrent", note: "Three or more cases, in at least two industries, with at least one graded A or B. Strong enough to plan against." },
+  { key: "emerging", note: "Two or three cases. The pattern is real in the record and the record is thin. Strong enough to watch for." },
+  { key: "conjecture", note: "Resting on grade C cases, on self-reported evidence, or on how this library was assembled. Strong enough to argue about." }
+];
+
+const bodies = new Map();
+for (const entry of [...propositions, ...tensions]) {
+  const { Content } = await render(entry);
+  bodies.set(entry.id, Content);
+}
+
+const chipFor = (id) => {
+  const entry = byId.get(id);
+  if (!entry) return null;
+  return {
+    id,
+    number: id.split("-").pop(),
+    grade: entry.data.evidence_grade,
+    organization: entry.data.organization[0],
+    title: entry.data.title,
+    href: `${base}/cases/${entry.id}/`
+  };
+};
+---
+
+<BaseLayout
+  title="Propositions | Applied AI Case Study Library"
+  description="Claims that hold across more than one case in the library, each with its supporting cases, their evidence grades, and the finding that would break it."
+>
+  <header class="shell page-head">
+    <p class="eyebrow">Cross-case synthesis</p>
+    <h1>Propositions</h1>
+    <p class="lede">
+      Claims that hold across more than one case in this library, each with the cases underneath it, the evidence grade
+      of each, and the finding that would break it. A proposition is a standing invitation to be proved wrong, not a
+      conclusion.
+    </p>
+    <p class="synthesis-meta">
+      Derived from {stats.cases} published cases across {stats.industries} industries, {stats.geographies} countries
+      and {stats.patterns} deployment patterns. Recomputed at every build; last editorial review {longDate(lastReviewed)}.
+    </p>
+  </header>
+
+  <section class="shell contract">
+    <h2>How to read a proposition</h2>
+    <div class="contract-grid">
+      {strengthNotes.map(({ key, note }) => (
+        <div>
+          <h3><span class="strength" data-s={key}>{key}</span></h3>
+          <p>{note}</p>
+        </div>
+      ))}
+    </div>
+    <p class="rule-note">
+      <strong>A proposition can never outrank the cases beneath it.</strong> Case claims carry their own labels —
+      Verified, Supported, Attributed, Disputed, Inference, Unknown — and a proposition does not upgrade them by counting
+      them. These strength rules are enforced by the content validator, so a label that has outgrown its evidence fails
+      the build rather than reaching this page.
+    </p>
+  </section>
+
+  <section class="shell">
+    <ol class="props">
+      {propositions.map((entry) => {
+        const Body = bodies.get(entry.id);
+        const supporting = entry.data.supporting_cases.map(chipFor).filter(Boolean);
+        const counter = entry.data.counter_cases.map(chipFor).filter(Boolean);
+        const lead = supporting.map((chip) => chip.grade).sort()[0] ?? "C";
+        const isP1 = entry.data.proposition_id === "P1";
+        return (
+          <li class:list={["prop", { feature: isP1 }]} data-lead={lead} id={entry.data.proposition_id}>
+            <div class="prop-head">
+              <a class="pid" href={`#${entry.data.proposition_id}`}>{entry.data.proposition_id}</a>
+              <h2>{entry.data.statement}</h2>
+              <span class="strength" data-s={entry.data.strength}>{entry.data.strength}</span>
+              {entry.data.scope === "library" && <span class="scope">About the library</span>}
+            </div>
+
+            <div class="prop-body"><Body /></div>
+
+            {isP1 && (
+              <figure class="matrix-wrap">
+                <figcaption>Evidence grade × reported outcome, {stats.cases} published cases</figcaption>
+                <table class="matrix">
+                  <thead>
+                    <tr>
+                      <th scope="col">Grade</th>
+                      {outcomes.map((outcome) => <th scope="col">{outcome}</th>)}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {matrix.map((row) => (
+                      <tr data-grade={row.grade}>
+                        <th scope="row">{row.grade}</th>
+                        {row.cells.map((cell) => (
+                          <td
+                            class:list={[
+                              cell.n === 0 ? "zero" : "n",
+                              { gap: p1Holds && row.grade === "A" && cell.outcome === "positive" }
+                            ]}
+                          >{cell.n === 0 ? "—" : cell.n}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <p class="matrix-key">
+                  <span aria-hidden="true"></span>
+                  {p1Holds
+                    ? "The empty cell that carries the finding. No case graded A reports a positive outcome."
+                    : "A grade A case now reports a positive outcome, and this proposition needs rewriting."}
+                </p>
+              </figure>
+            )}
+
+            <p class="operator">
+              <strong>What an operator should take from it</strong>
+              {entry.data.operator_takeaway}
+            </p>
+
+            <div class="ledger">
+              <section>
+                <h3>Support</h3>
+                <ul class="cases">
+                  {supporting.map((chip) => (
+                    <li>
+                      <a class="chip" data-grade={chip.grade} href={chip.href} title={chip.title}>
+                        <b>{chip.grade}</b><span>{chip.number} · {chip.organization}</span>
+                      </a>
+                    </li>
+                  ))}
+                  {counter.map((chip) => (
+                    <li>
+                      <a class="chip counter" data-grade={chip.grade} href={chip.href} title={chip.title}>
+                        <b>{chip.grade}</b><span>{chip.number} · {chip.organization} — counter</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+              <section>
+                <h3>What would break it</h3>
+                <p>{entry.data.falsifier}</p>
+              </section>
+              <section>
+                <h3>Where it strains</h3>
+                <p>{entry.data.limits}</p>
+              </section>
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+
+  <section class="shell disagree">
+    <h2>Where the library disagrees with itself</h2>
+    <p class="lede">
+      A synthesis that only finds agreement is not reading carefully. These are the places where the record points in
+      two directions, kept on the page rather than dropped from it.
+    </p>
+    <div class="pairs">
+      {tensions.map((entry) => {
+        const Body = bodies.get(entry.id);
+        const chips = entry.data.cases.map(chipFor).filter(Boolean);
+        return (
+          <article id={entry.data.tension_id}>
+            <h3>{entry.data.title}</h3>
+            <Body />
+            <ul class="cases">
+              {chips.map((chip) => (
+                <li>
+                  <a class="chip" data-grade={chip.grade} href={chip.href} title={chip.title}>
+                    <b>{chip.grade}</b><span>{chip.number} · {chip.organization}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+</BaseLayout>

@@ -108,6 +108,26 @@ This check is editorial and is not enforced by `scripts/validate-content.mjs`; i
 
 Do not force every gap into this shape. A system can report both sides of its error rate and still leave the *composition* of its errors uncharacterized — a chatbot assessed at 90% accuracy whose residual 10% is described only as "often" answering some but not all of a question is a different failure, of error taxonomy rather than of the confusion matrix. Both belong in a case; they are not the same finding and should not be written as though they were.
 
+## Propositions
+
+A proposition is a claim that holds across more than one case. Propositions live in `src/content/propositions/`, carry stable identifiers (`P1`, `P2`, …), and are rendered at `/propositions/`. They exist because the overlap between cases is itself a finding, and because the alternative — leaving readers to notice the overlap themselves — means nobody does.
+
+A proposition names the cases it rests on. Case pages derive their "cited in the synthesis" list from that, rather than restating it in their own front matter, so the two can never drift apart. The proposition is the single place the link is written and the single place it can be wrong.
+
+Each proposition carries its own strength label, deliberately *not* drawn from the claim-label vocabulary, so that a count of cases is never mistaken for a grade of evidence:
+
+| Strength | Requires |
+| --- | --- |
+| `recurrent` | Three or more supporting cases, in at least two industries, at least one graded A or B |
+| `emerging` | Two or more supporting cases |
+| `conjecture` | One or more, with no floor on grade |
+
+**A proposition can never outrank the cases beneath it.** `scripts/validate-content.mjs` enforces the table above and fails the build when a label has outgrown its support — including the grade floor, which is the executable form of that rule. A proposition whose supporting cases are all grade C cannot be `recurrent` however many of them there are.
+
+Two further rules apply. A proposition's `scope` is `deployment` when it says something about AI in practice and `library` when it says something about this collection's own evidence; the distinction matters because a library-scoped proposition cannot be falsified by a deployment. And every proposition must state what would break it, in the same spirit as a claim's "what would change this" column.
+
+Where two cases point in different directions, the disagreement is modelled as a `tension` (`T1`, `T2`, …) and published alongside the propositions rather than dropped. The validator warns when a published case is cited by no proposition and no tension, so cases cannot quietly fall out of the synthesis.
+
 ## Workflow
 
 Cases move through `lead → research → review → published → archived`. Draft states remain in Git but are excluded from the public site. Review checks sourcing, quote accuracy, taxonomy, fairness, and whether conclusions fit the evidence. Every published record has a `last_verified` date and a scheduled review date.

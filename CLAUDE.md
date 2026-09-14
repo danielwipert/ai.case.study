@@ -81,6 +81,18 @@ pix.save(f"p{i+1:02d}.png")
 
 **Additionally blocked:** openai.com returns 403. `insidegovuk.blog.gov.uk`'s search endpoint returns 202 with an empty body, though its article pages load — so find its posts through a search engine, not its own search.
 
+## The synthesis layer
+
+`/propositions/` collects claims that hold across more than one case. Three collections back it: `cases`, `propositions` (`P1`, `P2`, …) and `tensions` (`T1`, `T2`, …), all validated by `scripts/validate-content.mjs`.
+
+**The proposition owns the link.** It names its supporting and counter cases; case pages derive their "cited in the synthesis" list from that. Never add a `supports_propositions` field to a case — one direction only, so the two cannot disagree.
+
+**Strength labels are checked, not asserted.** `recurrent` needs three or more supporting cases, two or more industries, and at least one case graded A or B; `emerging` needs two. The grade floor is the executable form of the rule that a proposition can never outrank the cases beneath it, and it bites: a proposition supported only by grade C cases fails the build if labelled `recurrent`. Test any change to those rules by deliberately breaking one and watching the build fail.
+
+**Everything numeric on the page is computed at build time** from the case records — the grade × outcome matrix, the case and industry counts, which cell is highlighted, and the sentence describing it. Hand figures were wrong on two of four counts when this was first drafted from a mock, which is the reason for the rule. If a proposition's headline finding depends on a computed value, make the page render the alternative sentence when the value changes, as P1 does.
+
+**Second-tier warnings cover the synthesis too:** a published case cited by no proposition and no tension, and a proposition whose supporting cases were verified after it was last reviewed. Neither fails the build; both mean the synthesis has drifted behind the library.
+
 ## Grading against a second chain that does not reach the numbers
 
 A recurring decision in this library, settled the same way three times and worth settling the same way again. When a second, independent source corroborates a case's *lesson* but cannot test its *headline figures* — a different firm, a different population, a different outcome measure — it does not lift the grade. AAI-2026-002 has a randomized replication at another company that never measures issues resolved per hour; AAI-2026-006 has a multicentre validation of the same vendor's adult model that says nothing about the pediatric numbers; AAI-2026-008 has an enterprise trial pointing the other way that tests nothing METR claimed. All three stayed where they were. Add the source, say in the evidence assessment exactly what it reaches and what it does not, and flag the decision as a judgment call — a mechanical reading of the source-family count would allow a promotion in each case, and the count is not the argument.

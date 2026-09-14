@@ -368,3 +368,142 @@ footer::before { top: 4px; }
   html { scroll-behavior: auto; }
   .case-card { transition: none; }
 }
+
+/* ---------------------------------------------------------------------------
+   Propositions — the cross-case synthesis.
+
+   Strength chips reuse the grade palette deliberately: recurrent reads moss
+   like grade A, emerging indigo like B, conjecture is unfilled and dashed like
+   the Inference and Unknown claim labels. A reader who has learned the case
+   pages already knows how to read this page.
+   --------------------------------------------------------------------------- */
+
+.synthesis-meta { color: var(--ink-soft); font-size: .88rem; margin-top: 1.4rem; max-width: 62ch; }
+
+.contract { border-block: 1px solid var(--line-dark); padding-block: 2.4rem; margin-block: 1.5rem 4rem; }
+.contract > h2 { font-size: 1.35rem; font-weight: 500; margin: 0 0 1.4rem; }
+.contract-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 2rem 2.6rem; }
+.contract-grid h3 { margin: 0 0 .55rem; }
+.contract-grid p { margin: 0; font-size: .92rem; color: var(--ink-soft); }
+.rule-note { margin: 2.2rem 0 0; padding: 1rem 1.3rem; background: var(--wine-wash); border-left: 3px solid var(--wine); font-size: .95rem; }
+
+.strength {
+  display: inline-block; padding: .3rem .65rem; border: 1px solid; border-radius: 2px;
+  font: 600 .68rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase;
+}
+.strength[data-s="recurrent"] { border-color: var(--moss); color: var(--moss-ink); background: var(--moss-wash); }
+.strength[data-s="emerging"] { border-color: var(--indigo); color: var(--indigo-ink); background: var(--indigo-wash); }
+.strength[data-s="conjecture"] { border-color: var(--line-dark); color: var(--ink-soft); border-style: dashed; }
+.scope { font: 500 .68rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+
+.cases { display: flex; flex-wrap: wrap; gap: .45rem; margin: .7rem 0 0; padding: 0; list-style: none; }
+.chip {
+  display: inline-flex; align-items: baseline; gap: .4rem; padding: .26rem .6rem; max-width: 26rem;
+  border: 1px solid; border-radius: 2px; font: 500 .75rem/1.35 var(--sans); text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+.chip span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chip b { font: 600 .66rem var(--sans); letter-spacing: .06em; flex: none; }
+.chip[data-grade="A"] { border-color: var(--moss); color: var(--moss-ink); background: var(--moss-wash); }
+.chip[data-grade="B"] { border-color: var(--indigo); color: var(--indigo-ink); background: var(--indigo-wash); }
+.chip[data-grade="C"] { border-color: var(--amber); color: var(--amber-ink); background: var(--amber-wash); }
+.chip:hover { text-decoration: underline; }
+.chip.counter { border-style: dashed; }
+
+.props { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 3.6rem; }
+.prop { border-left: 3px solid var(--line-dark); padding-left: 2rem; }
+.prop[data-lead="A"] { border-left-color: var(--moss); }
+.prop[data-lead="B"] { border-left-color: var(--indigo); }
+.prop[data-lead="C"] { border-left-color: var(--amber); }
+.prop.feature {
+  border-left: 1px solid var(--line-dark); border-block: 1px solid var(--line-dark); border-right: 1px solid var(--line-dark);
+  background: var(--card); padding: 2.6rem; box-shadow: 9px 9px 0 rgb(116 80 71 / 12%);
+}
+.prop-head { display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: .9rem; }
+.prop-head .pid {
+  font: 500 .95rem var(--sans); letter-spacing: .08em; color: var(--ink-soft);
+  text-decoration: none; font-variant-numeric: tabular-nums;
+}
+.prop-head h2 { font-size: clamp(1.35rem, 2.6vw, 1.72rem); font-weight: 400; flex: 1 1 24ch; margin: 0; }
+.prop-body { max-width: 68ch; }
+.prop-body p { margin: 0 0 1rem; }
+.prop-body p:last-child { margin-bottom: 0; }
+
+.operator {
+  background: var(--paper-deep); padding: 1rem 1.25rem; border: 1px solid var(--line);
+  margin: 1.6rem 0; font-size: .96rem; max-width: 68ch;
+}
+.operator strong {
+  font: 500 .72rem var(--sans); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--wine); display: block; margin-bottom: .3rem;
+}
+
+.ledger {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem 2.4rem; padding-top: 1.3rem; border-top: 1px solid var(--line);
+}
+.ledger h3 {
+  font: 500 .72rem/1.45 var(--sans); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-soft); margin: 0 0 .5rem;
+}
+.ledger p { margin: 0; font-size: .92rem; }
+
+.matrix-wrap { margin: 1.8rem 0; overflow-x: auto; }
+.matrix-wrap figcaption {
+  font: 500 .72rem var(--sans); letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-soft); padding-bottom: .8rem;
+}
+table.matrix { border-collapse: collapse; font-size: .9rem; font-variant-numeric: tabular-nums; min-width: 30rem; }
+table.matrix th, table.matrix td { border: 1px solid var(--line); padding: .6rem .85rem; text-align: center; }
+table.matrix thead th {
+  font: 500 .7rem var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-soft);
+}
+table.matrix tbody th { text-align: left; font-weight: 600; }
+table.matrix tbody tr[data-grade="A"] th { color: var(--moss-ink); background: var(--moss-wash); }
+table.matrix tbody tr[data-grade="B"] th { color: var(--indigo-ink); background: var(--indigo-wash); }
+table.matrix tbody tr[data-grade="C"] th { color: var(--amber-ink); background: var(--amber-wash); }
+table.matrix td.n { font-weight: 600; }
+table.matrix td.zero { color: var(--line-dark); }
+table.matrix td.gap { background: var(--wine-wash); }
+.matrix-key { font-size: .86rem; color: var(--ink-soft); margin: .9rem 0 0; }
+.matrix-key span {
+  display: inline-block; width: .8rem; height: .8rem; background: var(--wine-wash);
+  border: 1px solid rgb(116 80 71 / 45%); vertical-align: -.05em; margin-right: .35rem;
+}
+
+.disagree { border-top: 1px solid var(--line-dark); margin-top: 4.5rem; padding-top: 2.6rem; }
+.disagree > h2 { font-size: 1.6rem; font-weight: 400; margin: 0 0 .8rem; }
+.pairs { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 2rem; margin-top: 2rem; }
+.pairs article { border-top: 2px solid var(--wine); padding-top: 1rem; }
+.pairs h3 { font: 500 1.02rem/1.35 var(--serif); margin: 0 0 .5rem; }
+.pairs p { margin: 0 0 .7rem; font-size: .92rem; }
+
+/* Derived on each case page from the propositions collection — never restated
+   in the case's own front matter, so the two cannot disagree. */
+.cited-in { margin-top: 2.5rem; padding-top: 1.4rem; border-top: 1px solid var(--line); }
+.cited-in h2 { font: 500 .72rem/1.45 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 .6rem; }
+.cited-in ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .5rem; }
+.cited-in a { font-size: .92rem; }
+.cited-in .pid { font: 600 .72rem var(--sans); letter-spacing: .08em; color: var(--ink-soft); margin-right: .5rem; }
+
+@media (max-width: 860px) {
+  .prop { padding-left: 1.2rem; }
+  .prop.feature { padding: 1.6rem; box-shadow: 6px 6px 0 rgb(116 80 71 / 12%); }
+}
+
+/* On wide screens the operator takeaway moves into the column the reading
+   measure leaves empty, so the page fills without the body text growing past a
+   comfortable line length. P1 keeps a single column: its matrix already fills
+   the space. */
+@media (min-width: 1000px) {
+  .prop:not(.feature) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, .52fr);
+    column-gap: 2.8rem;
+    align-items: start;
+  }
+  .prop:not(.feature) .prop-head,
+  .prop:not(.feature) .ledger { grid-column: 1 / -1; }
+  .prop:not(.feature) .prop-body { grid-column: 1; }
+  .prop:not(.feature) .operator { grid-column: 2; grid-row: 2; margin: 0; }
+}

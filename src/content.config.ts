@@ -115,4 +115,44 @@ const cases = defineCollection({
   })
 });
 
-export const collections = { cases };
+const propositions = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/propositions" }),
+  schema: z.object({
+    proposition_id: z.string().regex(/^P\d+$/, "Proposition ids look like P1, P2, P12."),
+    statement: z.string().min(20),
+    // How far the proposition reaches. "deployment" says something about AI in
+    // practice; "library" says something about this collection's own evidence.
+    // The distinction matters because a library-scoped proposition cannot be
+    // falsified by a deployment and should not be read as one.
+    scope: z.enum(["deployment", "library"]).default("deployment"),
+    strength: z.enum(["recurrent", "emerging", "conjecture"]),
+    // The proposition is the single source of truth for its own support set.
+    // Case pages derive their "cited in" list from here rather than restating
+    // it, so the two can never drift apart.
+    supporting_cases: z.array(z.string()).min(1),
+    counter_cases: z.array(z.string()).default([]),
+    operator_takeaway: z.string().min(40),
+    falsifier: z.string().min(30),
+    limits: z.string().min(30),
+    order: z.number().int().positive(),
+    created: z.coerce.date(),
+    last_reviewed: z.coerce.date()
+  })
+});
+
+// Where two cases in the library point in different directions. Modelled rather
+// than written into the page, for the same reason as propositions: a synthesis
+// that quietly drops its inconvenient cases is not one.
+const tensions = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/tensions" }),
+  schema: z.object({
+    tension_id: z.string().regex(/^T\d+$/, "Tension ids look like T1, T2, T12."),
+    title: z.string().min(10),
+    cases: z.array(z.string()).min(1),
+    order: z.number().int().positive(),
+    created: z.coerce.date(),
+    last_reviewed: z.coerce.date()
+  })
+});
+
+export const collections = { cases, propositions, tensions };
