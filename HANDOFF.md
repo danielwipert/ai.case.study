@@ -2,40 +2,39 @@
 
 ## Where things stand
 
-Twenty case records, nineteen published (004 is still an unpublished lead), plus the synthesis layer at `/propositions/` — seven propositions and three tensions. The site builds clean and deploys to https://danielwipert.github.io/ai.case.study/.
+Twenty-one case records, twenty published (004 is still an unpublished lead), plus the synthesis layer at `/propositions/` — seven propositions and three tensions. The site builds clean and deploys to https://danielwipert.github.io/ai.case.study/.
 
-Merged: PR #16 (source review), PR #17 (synthesis layer), PR #18 (cases 016–019). **Unmerged on this branch: AAI-2026-020 and the P3 edit it forced. No PR open.**
-
-The `industry` axis is complete, `paused` was filled by 019, and **`shadow-mode` is now filled by 020**.
+Merged: PR #16 (source review), PR #17 (synthesis layer), PR #18 (cases 016–019), PR #19 (case 020). **Unmerged on this branch: AAI-2026-021 and the P1, P3 and P4 edits it forced. No PR open.**
 
 ## The new case
 
-**AAI-2026-020 — a dialysis forecast that ran twice in shadow mode and disagreed with itself.** Grade C, `healthcare`, `operations`, `environment: shadow-mode`, `deployment_stage: evaluation`, `outcome: inconclusive`, `causal_strength: descriptive`. Four Toronto hospitals ran a seven-day forecast of urgent dialysis demand live, twice, with the output withheld from the nurse managers who would have used it. The published result is a 26.7% improvement over a static average at the main site.
+**AAI-2026-021 — LungIMPACT.** Grade **A**, `healthcare`, `environment: production`, `causal_strength: causal`, `outcome: negative`. A randomized controlled trial across five NHS trusts, 93,326 chest X-rays from 86,945 patients, testing whether AI worklist prioritization shortens the lung cancer pathway. The AI ran in both arms, so prioritization alone was randomized.
 
-The finding is not in the paper's text but in its Table 2. The two silent periods disagree: in November 2023 the model's error exactly equalled the static benchmark's (2.1 vs 2.1) and the deep learning model was worse than both; in June 2024 it beat a benchmark that had itself degraded from 2.1 to 4.0. The published figure is their average, and no sentence in the paper mentions the first period alone.
+Prioritization did exactly what it was built to do — median time from X-ray to report fell significantly, 47 hours to 34.1 — and nothing else moved. Time to CT was 53 days in both arms against a national standard of 72 hours; time to diagnosis 44 against 46. Both null, tight intervals, adequately powered. Of 13,347 CT scans, 172 were same-day. **The step the AI accelerated was not the step that was slow.**
 
-Two other things fell out of reading it properly. **The simplest model won** — 1970s ARIMA beat a temporal convolutional network in every live comparison, having tied it retrospectively — while the conference presentation eight months earlier was titled "Using deep learning to forecast acute dialysis needs" and the trade-press headline followed suit. And **the staffing numbers travelled while the caveat did not**: a 67% reduction in overstaffing and 79% in understaffing were reported to Healio in March 2025 and appear nowhere in the November 2025 paper, which closes by saying whether the model saves anything is unresolved.
+The null is interpretable because the same team had already run the adjacent experiment: in radioX, a radiographer reading the image immediately with direct triage to same-day CT halved time to diagnosis, 63 days to 32.
+
+## Why this is the library's most important case so far
+
+It is the first grade A case whose evidence comes from a **trial** rather than a regulator, a court, a prosecutor or an audited filing — and that broke P1's stated mechanism, which argued good evidence only exists where an adversary was in the room. P1's body is rewritten: grade A does not require an adversary, it requires somebody to fund a trial, and the one trial here came back null. That strengthens P1's headline while correcting its explanation.
+
+P4 closed by saying the benefit "needs an experiment nobody has run." Somebody ran it. The benefit was measured to a confidence interval and there was none; the cost half is registered as the trial's seventh secondary outcome and remains unpublished. P4's closing paragraph now says so.
+
+P3 gains its **first counter case** — the one deployment here that measured both halves properly and found them to move apart.
+
+P1 still holds on the computed matrix: the grade A row is four negative, one unknown, zero positive.
 
 ## Editorial calls made, worth revisiting
 
-- **Grade C, not B, and the case argues why at length.** There are two source families, so a mechanical count would allow B. It should not: the second family is a trade-press report of the same investigators' conference talk, which tests none of the paper's numbers and disagrees with them. This is the fourth time the library has declined a promotion on the rule that a second chain lifts a grade only when it tests the first one's figures — now recorded in the case rather than only in CLAUDE.md.
-- **Every performance number comes from the team that built the model**, three of whom hold a provisional patent on it, funded by their own division, with the ethics requirement waived by that division's leadership. All disclosed by the authors; all recorded in the case.
-- **Three discrepancies between the conference account and the paper are recorded, not resolved** — the error figures, which modelling family deserves credit, and the staffing estimates.
-- **`outcome: inconclusive`.** The model beat a static average over the two periods combined and tied it in one of them, and nothing downstream was measured.
-
-## The case I found and did not write
-
-Chasing shadow mode surfaced something stronger that belongs in the library on its own merits: **AI triage of chest X-rays in the NHS lung cancer pathway**, where the record contains a genuine contradiction.
-
-- An NHS trust of five hospitals in South West London ran a commercial CXR AI in a **silent trial** (63,083 radiographs, 12 months, 97% sensitivity against 35% specificity, 31 clinically significant misses), then deployed it and reported time from X-ray to CT report for suspected lung cancer falling from 6.0 to 3.6 days.
-- **LungIMPACT**, a randomized controlled trial in Nature Medicine (93,326 CXRs, prioritization randomized by day, ISRCTN 78987039), found no effect on any primary outcome — time to CT 53 days in both arms — and concludes "CXR AI deployments should not include worklist prioritization in this context." Its authors add that future research "should differentiate between primary pathway changes and the direct impact of AI," which is precisely the critique of the before/after study.
-- An earlier RCT found that *human* radiographer immediate reporting does cut the time.
-
-The obstacle is access, and it is one-sided: **the RCT is fully readable at nature.com**, while both South West London papers are abstract-only (pubs.rsna.org and ai.nejm.org both 403; Ovid serves the NEJM AI abstract). So the case would be strong on the null result and thin on the deployment that claims benefit. Worth attempting anyway — it would be the library's first case with a randomized trial at its centre, and its natural `environment` is `production`, so it fills nothing taxonomically and should be judged on merit.
+- **The case declines the tempting reading.** A South West London trust reported time from X-ray to CT report falling 6.0 → 3.6 days after deploying AI triage; it is *not* treated as debunked by this trial. That trust changed its pathway at the same time, and LungIMPACT randomized the prioritization function alone. Different interventions. Saying otherwise would repeat exactly the confound the trial's authors warn about.
+- **Both South West London papers are abstract-only** (RSNA and NEJM AI both 403 here). Every claim from them is labelled `Attributed`, and the figure that matters most is also reported inside LungIMPACT's discussion, which was read in full.
+- **`outcome: negative`, not `mixed` or `inconclusive`.** Argued in the case: `inconclusive` would be wrong because the question was settled; `mixed` is arguable because report turnaround improved and there is a post hoc detection signal.
+- **The pre-registration was checked, not assumed.** Retrieved through the ISRCTN XML API — the registry asks users not to scrape its pages and points there. The two primary outcomes reported are the two registered. Three discrepancies of scope surfaced (seven registered trusts vs five reported, enrolment target 150,000 vs 97,731 performed, recruitment start a fortnight earlier than registered) and are recorded rather than resolved, along with a site name that appears to be wrong in the paper.
+- **The post hoc finding is reported and not adopted.** 53 cancers sat in the radiologist-normal/AI-abnormal group with a median 106 days to diagnosis. It hints that *detection* may have value even though *prioritization* does not. Not randomized; the authors call for evaluation rather than a rule, and so does the case.
 
 ## Candidate proposition, still needing a second case
 
-016 and 017 together suggest that **the quality of a record and the disinterest of its keeper trade against each other**. Two halves of one observation rather than two instances, so it stays unwritten. 020 does not settle it either: the investigators are disinterested commercially in the ordinary sense and hold a patent on what they measured.
+016 and 017 suggest that **the quality of a record and the disinterest of its keeper trade against each other**. Still two halves of one observation. 021 is relevant but does not settle it: here a disinterested party measured superbly, which is the combination the candidate proposition says is rare — one more case like it would make the pattern arguable in the other direction.
 
 ## Still open from the synthesis work
 
@@ -45,8 +44,8 @@ The obstacle is access, and it is one-sided: **the RCT is fully readable at natu
 
 ## Branch
 
-Work is on `claude/optimistic-goodall-s4n0c4` — assigned per session, not the `claude/loving-ride-c4lddg` named in CLAUDE.md's git workflow, so read the session's own instruction first. PRs merge with rebase; the branch was restarted from `main` after PR #18 and carries only the 020 work.
+Work is on `claude/optimistic-goodall-s4n0c4` — assigned per session, not the `claude/loving-ride-c4lddg` named in CLAUDE.md's git workflow, so read the session's own instruction first. PRs merge with rebase; the branch was restarted from `main` after PR #19 and carries only the 021 work.
 
 ## Next
 
-Remaining taxonomy gaps, recomputed after 020: `deployment_stage` has no `prototype` and no `pilot`; `environment` has no `laboratory` and no `adversarial-test` case (16 of 19 published cases are `production`); `business_function` has no `sales-marketing` and no `supply-chain`. `adversarial-test` is the interesting one — red-teaming and jailbreak evaluations are abundantly published, but almost always by the model's own vendor, which is the grade problem in a different costume.
+Taxonomy gaps after 021: `deployment_stage` has no `prototype` and no `pilot`; `environment` has no `laboratory` and no `adversarial-test`; `business_function` has no `sales-marketing` and no `supply-chain`. `adversarial-test` carries a trap worth naming in advance — red-teaming and jailbreak evaluations are abundantly published but nearly always by the model's own vendor, which is the grade problem in 020 wearing different clothes. The better seam is a third party running the adversarial evaluation: a regulator, a standards body, or a procurement authority testing something it did not build.
