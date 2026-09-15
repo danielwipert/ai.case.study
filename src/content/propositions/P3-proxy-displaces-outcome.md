@@ -10,7 +10,8 @@ supporting_cases:
   - AAI-2026-012
   - AAI-2026-015
   - AAI-2026-020
-counter_cases: []
+counter_cases:
+  - AAI-2026-021
 operator_takeaway: "Write down the outcome before choosing the proxy, and put a date on when the outcome will be measured. A proxy that improves while its outcome is never checked is indistinguishable from one that does not work."
 falsifier: "A deployment that measured its outcome and let the proxy go unmeasured, or one that measured both and found them to move together."
 limits: "Four of the six supporting cases are grade C, and in two of them the proxy genuinely improved by a large margin. The proposition is about what was left unmeasured and should not be read as saying the proxies were worthless. The dialysis case also shows the pattern is not only about what an organisation measures but about which measurements survive the journey to an audience: the staffing estimate was public eight months before the accuracy figure, and it is the accuracy figure that reached peer review."
@@ -24,5 +25,7 @@ A national grid operator cut its solar forecasting error by two thirds and never
 A seven-day forecast of urgent dialysis demand was run live twice at four Toronto hospitals and measured on one quantity only — mean absolute error in procedures per day. Nurse hours, backfill decisions, overtime and cost were the reason the forecast existed and none of them was measured; the paper closes by saying whether the model would save anything is an open question. The staffing estimate that did exist survives only in a trade-press report of a conference talk given eight months before publication.
 
 In each, the measured quantity was the tractable one and the quantity that justified the spend went unmeasured. The pattern is not dishonesty. It is that proxies are cheap, immediate and attributable, while outcomes are slow, confounded and owned by somebody else in the organisation.
+
+The counter-case is the one deployment here where somebody measured the outcome properly, and it shows why the proposition matters rather than refuting it. A randomized trial of AI chest X-ray prioritization measured both halves: the proxy the feature was built to move — time from X-ray to report — improved significantly, from 47 hours to 34.1. Every clinical outcome it was installed to improve stayed flat, in an adequately powered trial with tight intervals. The proposition's falsifier asks for a case that measured both and found them to move together. This one measured both and found them to move apart.
 
 The failure mode it produces is specific: a deployment can report a real, large, correctly measured improvement and still have no evidence that it did the thing it was bought to do.
