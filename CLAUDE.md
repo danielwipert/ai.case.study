@@ -1,6 +1,18 @@
 # Working on this repository
 
-**Read `HANDOFF.md` first.** It is the previous session's snapshot: current state, open items, and where to pick up. At the end of each session, replace it wholesale — it is never appended to and never grows past a page. Durable knowledge belongs in this file or in `docs/`, because `HANDOFF.md` is erased every time.
+**Read `PROJECT_GUIDE.md` first**, then `HANDOFF.md`. The guide is the single
+orientation for the whole project and is identical in the private repo.
+
+> **Current state, 2026-09-25.** This repo is in **maintenance only.** The live
+> site and its 22 records use the **legacy** case format, specified in
+> `docs/library-spec-v3.md`. The case format is being rebuilt under Case Study
+> Spec v0.7, piloted by hand in the private repo `ai.case.study.private`.
+> **Do not add a new case in the legacy format** (spec v0.7 §13: every new case
+> is written in the new format only). Corrections to existing cases, and fixes
+> to the site, are still fine. Everything below describes the legacy workflow
+> and the sandbox, and stays accurate for that.
+
+**`HANDOFF.md`** It is the previous session's snapshot: current state, open items, and where to pick up. At the end of each session, replace it wholesale — it is never appended to and never grows past a page. Durable knowledge belongs in this file or in `docs/`, because `HANDOFF.md` is erased every time.
 
 ## Editorial rules that are not negotiable
 
@@ -18,15 +30,22 @@ A second tier prints **evidence gaps** without failing: missing `archive_url`, a
 
 ## Git workflow
 
-Work on `claude/loving-ride-c4lddg`. PRs merge with **rebase**, which means the branch's commits get new SHAs on `main`.
+Work on the branch the session names; branches are assigned per session. (An
+older version of this file named `claude/loving-ride-c4lddg`; ignore it.) PRs
+merge with **rebase**, which means the branch's commits get new SHAs on `main`.
 
 **Restart the branch from `main` after every merge**, before starting new work:
 
 ```
-git fetch origin main && git checkout -B claude/loving-ride-c4lddg origin/main
+git fetch origin main && git checkout -B <your-branch> origin/main
 ```
 
 Skipping this makes the next PR's merge base stale, so its diff replays already-merged work. After a merge the remote branch still points at the pre-merge SHA; `git push --force-with-lease` resolves it. Check with `git cherry origin/main origin/<branch>` first — every line prefixed `-` means the content is already on `main` and nothing is at risk.
+
+**`main` is protected** (ruleset `protect-main`, since 2026-09-22): no force
+pushes, no deletion, and no bypass, including for the admin. That is deliberate:
+the public history is the proof the record is never silently rewritten.
+Force-with-lease on your own branch is unaffected.
 
 ## Network reachability from the sandbox
 
