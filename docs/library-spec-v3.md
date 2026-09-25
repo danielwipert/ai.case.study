@@ -1,5 +1,13 @@
 # Applied AI Case Study Library
 
+> **Legacy — read before relying on this document (added 2026-09-25).**
+> This specification describes the case format of the live site and its
+> validator, and it stays accurate for them. It **does not govern new work.**
+> The case format is being rebuilt under Case Study Spec v0.7 (held privately
+> until the relaunch). No new case is added in this format. See
+> `PROJECT_GUIDE.md` at the repo root.
+
+
 **Specification:** v3.0
 
 **Architecture:** Git repository + GitHub Pages

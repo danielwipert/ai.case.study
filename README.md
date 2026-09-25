@@ -6,7 +6,7 @@ An evidence-first library about how AI changes real organizations: operations, e
 
 ## Session continuity
 
-`HANDOFF.md` holds the last session's snapshot — current state, open items, and where to pick up. It is replaced wholesale each session and kept to about a page. Durable conventions live in `CLAUDE.md`.
+`PROJECT_GUIDE.md` is the orientation for the whole project: what it is, what governs it, and where the work stands. `HANDOFF.md` holds the last session's snapshot — current state, open items, and where to pick up. It is replaced wholesale each session and kept to about a page. Durable conventions live in `CLAUDE.md`.
 
 ## Work locally
 
@@ -39,12 +39,9 @@ The interface uses self-hosted IBM Plex Serif and IBM Plex Sans in a warm, low-c
 
 ## Add a case
 
-1. Open a case-lead issue with the source and why it matters.
-2. Copy `templates/case-template.md` to `src/content/cases/YYYY/AAI-YYYY-NNN-short-slug.md`.
-3. Research and draft the record. Keep unsupported claims out; mark unknowns explicitly.
-4. Submit a pull request. Published cases require editorial review and evidence grade A, B, or C.
+**Adding new cases is paused.** The case format is being rebuilt so that every statement in a case traces to an exact quote in an archived copy of its source. Until the new format is finished, no new case is added in the current one. Corrections to existing cases are still welcome: open an issue with the source.
 
-See [the methodology](docs/methodology.md), [source policy](docs/source-policy.md), [taxonomy](docs/taxonomy.yml), and [full library specification](docs/library-spec-v3.md).
+See [the methodology](docs/methodology.md), [source policy](docs/source-policy.md), [taxonomy](docs/taxonomy.yml), and the [v3 library specification](docs/library-spec-v3.md), which describes the current (legacy) case format.
 
 ## Storage policy
 
