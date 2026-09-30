@@ -1,0 +1,111 @@
+---
+// PREVIEW ONLY — fictional data. The ledger: every row with its code, kind,
+// statement, computed label and conflict, and every claim it links to with
+// the quote, locator and check-mark status. Labels come from
+// src/preview/lib/record.mjs; nothing on this page is typed by hand.
+import PreviewLayout from "../../../../preview/PreviewLayout.astro";
+import { listFixtureCodes, loadCase, shortCode, HEADING_NAMES } from "../../../../preview/lib/record.mjs";
+
+export function getStaticPaths() {
+  return listFixtureCodes().map((code) => ({ params: { code } }));
+}
+
+const record = loadCase(Astro.params.code);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const docket = `${base}/preview/cases/${record.code}/docket/`;
+
+const kindFields = {
+  event: [["Date", "date"], ["Precision", "precision"], ["Timezone", "timezone"]],
+  state: [["Start", "start"], ["End", "end"]],
+  quantity: [["Unit", "unit"], ["Counts", "counts"]],
+  statement: [["Speaker", "speaker"], ["Quote", "quote"]],
+  computed: [["Working", "working"]],
+  absence: [["As of", "as_of"]]
+};
+const howKnown = { "first-hand": "First-hand", "told-by-someone": "Told by someone", "does-not-say": "Does not say" };
+const markText = (mark) =>
+  mark.state === "valid" ? `Signed ${mark.by}, ${mark.date} · fingerprint matches`
+  : mark.state === "void" ? `Void · signed ${mark.by}, ${mark.date}, but the row or quote has changed since`
+  : "Not signed · contributes nothing to the label";
+const counts = (label) => label.route === "examiners" || label.route === "single"
+  ? `${label.origins} origin${label.origins === 1 ? "" : "s"}, ${label.examiners} examiner${label.examiners === 1 ? "" : "s"}`
+  : "—";
+const items = [...record.rows, ...record.context];
+---
+
+<PreviewLayout title={`Ledger · ${record.code}`} record={record} active="ledger">
+  <section class="shell pv-ledger">
+    <div class="pv-intro">
+      <h2>Ledger</h2>
+      <p>{record.rows.length} rows and {record.context.length} Context {record.context.length === 1 ? "statement" : "statements"}. Each label is computed from the row's signed links, the claims' interest and how-known fields, and the source grades on the Docket. A link that is not signed, or whose mark is void, is shown but counts for nothing.</p>
+    </div>
+
+    <ol class="pv-rows">
+      {items.map((row) => {
+        const short = shortCode(row.code);
+        const isRow = "kind" in row;
+        return (
+          <li class="pv-row" id={short}>
+            <header class="pv-row-head">
+              <a class="pv-row-code" href={`#${short}`}>{row.code}</a>
+              <span class="pv-kind">{isRow ? row.kind : "context"}</span>
+              {isRow && <span class="pv-row-heading">Heading {row.heading} · {HEADING_NAMES[row.heading - 1]}</span>}
+              {isRow && <span class="claim-label pv-label" data-label={row.label.word}>{row.label.display}</span>}
+            </header>
+            <p class="pv-statement">{row.statement}</p>
+
+            {isRow && (
+              <dl class="pv-meta">
+                <div><dt>Support</dt><dd>{row.label.support === "None" ? "None (shown as Unknown)" : row.label.support}</dd></div>
+                <div><dt>Conflict</dt><dd>{row.label.conflict}</dd></div>
+                <div><dt>Origins, examiners</dt><dd>{counts(row.label)}</dd></div>
+                {row.label.conflict === "Disputed" && <div><dt>Support beneath the dispute</dt><dd>{row.label.beneath}</dd></div>}
+                <div><dt>Plain voice</dt><dd>{row.plainVoiceAllowed ? "Allowed (Verified, no live conflict)" : "Not allowed: the sentence must name who says so"}</dd></div>
+                {(kindFields[row.kind] ?? []).map(([term, key]) => row[key] != null && (
+                  <div><dt>{term}</dt><dd>{String(row[key])}</dd></div>
+                ))}
+                {row.kind === "computed" && (
+                  <div><dt>Inputs</dt><dd>{row.inputs.map((c, i) => <>{i > 0 && ", "}<a href={`#${shortCode(c)}`}>{shortCode(c)}</a></>)} · takes the weakest support and strongest conflict among them</dd></div>
+                )}
+                {row.kind === "absence" && (
+                  <div class="pv-wide"><dt>Documents read</dt><dd><ul>{row.documents_read.map((d) => <li>{d}</li>)}</ul></dd></div>
+                )}
+                {(row.kind === "computed" || row.kind === "absence") && (
+                  <div><dt>Row-level mark</dt><dd>{row.check ? `Signed ${row.check.by}, ${row.check.date}` : "Not signed"}</dd></div>
+                )}
+              </dl>
+            )}
+
+            {row.links.length > 0 && (
+              <ul class="pv-links">
+                {row.links.map((link) => {
+                  const c = link.claimData;
+                  return (
+                    <li class="pv-link" data-relation={link.relation} data-mark={link.mark.state}>
+                      <p class="pv-link-head">
+                        <span class="pv-relation">{link.relation}</span>
+                        <code>{c.code}</code>
+                        <a href={`${docket}#${shortCode(link.doc.code)}`}>{shortCode(link.doc.code)} · {link.doc.grade} · {link.doc.type.replaceAll("-", " ")}</a>
+                        <span class="pv-mark" data-mark={link.mark.state}>{markText(link.mark)}</span>
+                      </p>
+                      <blockquote class="pv-quote">{c.quote}</blockquote>
+                      <dl class="pv-claim">
+                        <div><dt>Locator</dt><dd>{c.locator} · capture {c.capture}</dd></div>
+                        <div><dt>Speaker</dt><dd>{c.speaker}</dd></div>
+                        <div><dt>How known</dt><dd>{howKnown[c.how_known] ?? c.how_known} ({c.how_known_basis})</dd></div>
+                        <div><dt>Interest</dt><dd>{c.interest}{c.interest_reason && ` — ${c.interest_reason}`}</dd></div>
+                        <div><dt>Hedge</dt><dd>{c.hedge ? "Yes: the row must keep it" : "No"}</dd></div>
+                        <div><dt>Dependence</dt><dd>{link.dependence ?? "none"}{link.relays && ` (relays ${shortCode(link.relays)})`}</dd></div>
+                        {c.inspectable && <div class="pv-wide"><dt>Inspectable</dt><dd>{c.inspectable_reason}</dd></div>}
+                      </dl>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+</PreviewLayout>

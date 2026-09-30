@@ -1,0 +1,29 @@
+# FICTIONAL EXAMPLE FOR LAYOUT TESTING. An invented document; the URL uses a
+# reserved example domain and the fingerprints are hashes of placeholder text.
+# Shape: a docket entry (spec 5.1) with its captures (decision 27).
+
+code: EX001.D02
+title: "EXR-0001: ExampleAI queue triage trial, registry entry (fictional)"
+publisher: example-registry
+type: registry-record
+format: html
+grade: R1
+published: 2025-01-10
+original_url: https://example.org/registry/EXR-0001
+licence: unknown
+evidence_origin: example-registry-entry
+examiner: example-trials-registry
+how_known_default: first-hand
+how_known_default_basis: inferred      # a registry entry is the record itself
+interest_default: neutral
+captures:
+  - capture: V01
+    captured_on: 2026-09-21
+    captured_by: ED
+    tool: browser capture extension
+    access: logged out
+    transformations: scripts removed
+    completeness: complete
+    public_snapshot: none
+    capture_sha256: 91800666a53aac8d51585abf5a131d9728067e575372a13fe06eed7d1b970d40
+    text_sha256: 1f7ace5b66a89eade6571bc32bdc026e1e64da160297f2c8e0055098afa7f141

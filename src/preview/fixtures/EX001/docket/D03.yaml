@@ -1,0 +1,30 @@
+# FICTIONAL EXAMPLE FOR LAYOUT TESTING. An invented document; the URL uses a
+# reserved example domain and the fingerprints are hashes of placeholder text.
+# Shape: a docket entry (spec 5.1) with its captures (decision 27).
+
+code: EX001.D03
+title: "ExampleAI trial results announced (fictional press release)"
+publisher: exampleai-ltd
+type: official-statement
+format: html
+grade: R2
+published: 2026-04-16
+original_url: https://example.com/exampleai/press/trial-results
+licence: all rights reserved
+evidence_origin: exampleai-ltd-statements
+examiner: exampleai-ltd
+how_known_default: does-not-say
+how_known_default_basis: stated
+interest_default: self-serving
+interest_default_reason: The vendor gains if its product's results are accepted.
+captures:
+  - capture: V01
+    captured_on: 2026-09-21
+    captured_by: ED
+    tool: browser capture extension
+    access: logged out
+    transformations: scripts removed
+    completeness: complete
+    public_snapshot: none
+    capture_sha256: 395990f255da3cb9852ebc5c205af1a2f01166c341025a799b9199f7a333fdf4
+    text_sha256: c9fc0b23ff6d540e2c0bbbe3dad583115b167f44bec1a1dc19c09a373cfbde9d

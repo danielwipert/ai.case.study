@@ -1,0 +1,190 @@
+# FICTIONAL EXAMPLE FOR LAYOUT TESTING. Invented quotes from invented documents.
+#
+# A claim is the document's own assertion, in its own words (spec 5.2).
+# Fields left out inherit the document's defaults (spec 5.7 rule 1).
+# `inspectable: true` marks a claim where the record is the act (spec 6.2,
+# decision 21) — the registry entry itself, or a party's own published saying.
+
+- code: EX001.D01.C01
+  capture: V01
+  locator: Results, paragraph 1, sentence 1 (p. 3)
+  quote: A total of 4,812 patients were randomised.
+  speaker: the investigators
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+
+- code: EX001.D01.C02
+  capture: V01
+  locator: Results, paragraph 1, sentence 2 (p. 3)
+  quote: Of these, 2,401 were allocated to ExampleAI queue ordering.
+  speaker: the investigators
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+
+- code: EX001.D01.C03
+  capture: V01
+  locator: Results, 'Primary outcome', sentence 1 (p. 4)
+  quote: >-
+    The median time from arrival to first clinical assessment was 38 minutes
+    with ExampleAI and 52 minutes with usual triage.
+  speaker: the investigators
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+
+- code: EX001.D01.C04
+  capture: V01
+  locator: Results, 'Safety', sentence 1 (p. 5)
+  quote: >-
+    Under-triage occurred in 3.1% of encounters with ExampleAI and 3.0% of
+    encounters with usual triage.
+  speaker: the investigators
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+
+- code: EX001.D01.C05
+  capture: V01
+  locator: Results, 'Safety', sentence 3 (p. 5)
+  quote: No serious adverse events were attributed to ExampleAI.
+  speaker: the investigators
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+
+- code: EX001.D01.C06
+  capture: V01
+  locator: Methods, 'Intervention', sentence 2 (p. 2)
+  quote: >-
+    In the intervention arm, ExampleAI ordered the waiting queue, and triage
+    nurses could override its order at any time.
+  speaker: the investigators
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+
+- code: EX001.D01.C07
+  capture: V01
+  locator: Methods, 'Setting', sentence 1 (p. 2)
+  quote: Enrolment ran from 1 February 2025 to 31 July 2025.
+  speaker: the investigators
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+
+- code: EX001.D02.C01
+  capture: V01
+  locator: "'Sponsor information' panel"
+  quote: "Sponsor: Example Hospital. Collaborator: ExampleAI Ltd."
+  speaker: Example Trials Registry
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  inspectable: true
+  inspectable_reason: The registry entry is the registration; the row claims only what the entry lists.
+
+- code: EX001.D02.C02
+  capture: V01
+  locator: "'Record history' panel, first line"
+  quote: "Date registered: 10/01/2025"
+  speaker: Example Trials Registry
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  inspectable: true
+  inspectable_reason: The registration date is part of the registry record itself.
+
+- code: EX001.D02.C03
+  capture: V01
+  locator: "'Study dates' panel"
+  quote: "Overall study end date: 30/06/2025"
+  speaker: Example Trials Registry
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  inspectable: true
+  inspectable_reason: The row states only what the entry lists, not when the study ended.
+
+- code: EX001.D03.C01
+  capture: V01
+  locator: Headline
+  quote: ExampleAI cuts emergency waiting times in half.
+  speaker: ExampleAI Ltd
+  hedge: false
+  how_known: does-not-say
+  how_known_basis: stated
+  interest: self-serving
+  interest_reason: The vendor gains if the claim is believed.
+  inspectable: true
+  inspectable_reason: >-
+    For a Statement row, the saying is the act. The press release on the
+    vendor's own site shows that the vendor said it, not that it is true.
+
+- code: EX001.D03.C02
+  capture: V01
+  locator: Paragraph 4
+  quote: ExampleAI is now used in 40 hospitals.
+  speaker: ExampleAI Ltd
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: A larger customer count flatters the product.
+
+- code: EX001.D03.C03
+  capture: V01
+  locator: Paragraph 2
+  quote: In the trial, patients were first assessed 14 minutes sooner with ExampleAI.
+  speaker: ExampleAI Ltd
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: stated
+  relays: EX001.D01
+  interest: self-serving
+  interest_reason: The vendor gains if its product's results are accepted.
+
+- code: EX001.D04.C01
+  capture: V01
+  locator: Section 3, 'Primary outcome', sentence 2 (p. 6)
+  quote: >-
+    Our re-analysis of the patient-level data reproduces the reported medians of
+    38 and 52 minutes.
+  speaker: the Example University audit group
+  hedge: false
+  how_known: first-hand
+  how_known_basis: stated
+  interest: neutral
+
+- code: EX001.D04.C02
+  capture: V01
+  locator: Section 4, 'Safety', sentence 1 (p. 8)
+  quote: >-
+    We identified two serious adverse events in the ExampleAI arm in which the
+    queue position assigned by ExampleAI was recorded as a contributing factor.
+  speaker: the Example University audit group
+  hedge: false
+  how_known: first-hand
+  how_known_basis: stated
+  interest: neutral
+
+- code: EX001.D05.C01
+  capture: V01
+  locator: Paragraph 1
+  quote: Median emergency department waits in Exampleland rose to 61 minutes in 2024.
+  speaker: the Exampleland health statistics office, as reported by the Example Gazette
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: stated
+  interest: neutral

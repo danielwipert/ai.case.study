@@ -1,0 +1,30 @@
+# FICTIONAL EXAMPLE FOR LAYOUT TESTING. An invented document; the URL uses a
+# reserved example domain and the fingerprints are hashes of placeholder text.
+# Shape: a docket entry (spec 5.1) with its captures (decision 27).
+
+code: EX001.D01
+title: "ExampleAI queue triage in an emergency department: a randomized trial (fictional)"
+publisher: example-journal
+type: peer-reviewed-paper
+format: pdf
+grade: R1                              # inherited from the register
+published: 2026-04-15
+original_url: https://example.org/journal/exampleai-trial
+licence: unknown
+evidence_origin: exampleai-trial
+examiner: example-hospital-investigators
+how_known_default: first-hand
+how_known_default_basis: inferred      # a paper is first-hand about its own methods and results
+interest_default: neutral
+method_note: A two-arm trial randomized by day. Fictional.
+captures:
+  - capture: V01
+    captured_on: 2026-09-21
+    captured_by: ED
+    tool: direct download
+    access: logged out
+    transformations: none
+    completeness: complete
+    public_snapshot: none
+    capture_sha256: c73cb3266925f217db4832a211e33954a9a0ef28336ddf93a2c920b9e8cb8038
+    text_sha256: a75325bf59da4cdad806989b7a3c180f2611c3d27b0952847bd85ce32e80f8ec

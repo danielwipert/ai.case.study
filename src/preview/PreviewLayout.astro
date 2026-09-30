@@ -1,0 +1,91 @@
+---
+/**
+ * PREVIEW ONLY. A copy of BaseLayout's shell with three differences:
+ * `noindex`, a banner that says the data is fictional, and the case header
+ * block with its sub-navigation (spec items E2 and H1). BaseLayout itself is
+ * left untouched so the live pages cannot change because of the preview.
+ */
+import "../styles/global.css";
+import "./preview.css";
+import "@fontsource/ibm-plex-sans/400.css";
+import "@fontsource/ibm-plex-sans/500.css";
+import "@fontsource/ibm-plex-sans/600.css";
+import "@fontsource/ibm-plex-serif/400.css";
+import "@fontsource/ibm-plex-serif/400-italic.css";
+import "@fontsource/ibm-plex-serif/500.css";
+import "@fontsource/ibm-plex-serif/600.css";
+
+interface Props {
+  title: string;
+  record: any;
+  active: "record" | "ledger" | "docket";
+}
+
+const { title, record, active } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const root = `${base}/preview/cases/${record.code}`;
+const h = record.header;
+const longDate = (value) =>
+  value ? new Date(`${value}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : "Not set";
+const tabs = [
+  { key: "record", label: "Record of Fact", href: `${root}/` },
+  { key: "ledger", label: "Ledger", href: `${root}/ledger/` },
+  { key: "docket", label: "Docket", href: `${root}/docket/` }
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Preview of the new case format, built from fictional test data. Not part of the library." />
+    <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <title>{title} | Preview, fictional data</title>
+  </head>
+  <body class="preview">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="preview-banner" role="note">
+      <strong>Preview — fictional data — not part of the library.</strong>
+      <span>A layout test of the new case format. Every organization, number, quote and fingerprint on this page is invented.</span>
+    </div>
+    <header class="site-header">
+      <a class="wordmark" href={`${base}/`} aria-label="Applied AI Case Study Library home">
+        <span class="mark" aria-hidden="true"><span>A</span><small>AI</small></span>
+        <span>Applied AI<br /><small>Case Study Library</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href={`${base}/explore/`}>Explore cases</a>
+        <a href={`${base}/propositions/`}>Propositions</a>
+        <a href={`${base}/methodology/`}>Methodology</a>
+      </nav>
+    </header>
+
+    <header class="shell article-header pv-header">
+      <p class="eyebrow">{record.code} · {h.fixture_note}</p>
+      <h1>{h.title}</h1>
+      <p class="dek">{h.summary}</p>
+      <dl class="pv-facts">
+        <div><dt>Status</dt><dd>{h.status}</dd></div>
+        <div><dt>Version</dt><dd>{h.version}</dd></div>
+        <div><dt>Case grade</dt><dd>{h.case_grade ?? "Not set (rule open)"}</dd></div>
+        <div><dt>Verified</dt><dd>{longDate(h.verified)}</dd></div>
+        <div><dt>Next review</dt><dd>{longDate(h.next_review)}</dd></div>
+        <div><dt>Evidence cutoff</dt><dd>{longDate(h.charter.evidence_cutoff)}</dd></div>
+      </dl>
+      <nav class="pv-tabs" aria-label="Case views">
+        {tabs.map((tab) => (
+          <a href={tab.href} aria-current={tab.key === active ? "page" : undefined}>{tab.label}</a>
+        ))}
+        <a href={`${root}/ledger.json`} download={`${record.code}-ledger.json`}>Download ledger (JSON)</a>
+      </nav>
+    </header>
+
+    <main id="main"><slot /></main>
+    <footer>
+      <p>Preview of the new case format. Fictional data. Not part of the library.</p>
+      <p><a href={`${base}/`}>Back to the library</a></p>
+    </footer>
+  </body>
+</html>

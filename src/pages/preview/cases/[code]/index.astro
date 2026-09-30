@@ -1,0 +1,80 @@
+---
+// PREVIEW ONLY — fictional data. The case page of the new format (spec item H1):
+// the header block, then the twelve fixed headings in order, each with its
+// status and the narrative that retells its rows. Every row code links to the
+// row in the ledger. Not linked from any live page.
+import PreviewLayout from "../../../../preview/PreviewLayout.astro";
+import { listFixtureCodes, loadCase } from "../../../../preview/lib/record.mjs";
+
+export function getStaticPaths() {
+  return listFixtureCodes().map((code) => ({ params: { code } }));
+}
+
+const record = loadCase(Astro.params.code);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const ledger = `${base}/preview/cases/${record.code}/ledger/`;
+const charter = record.header.charter;
+const statusNote = {
+  "not-yet-investigated": "Nothing under this heading has been researched yet. The heading stays on the page so the reader can see what is unfinished.",
+  "nothing-found": "Investigated within the charter's scope and cutoff. What was looked for and not found is recorded as an Absence row."
+};
+---
+
+<PreviewLayout title={record.header.title} record={record} active="record">
+  <div class="shell article-grid">
+    <article class="prose pv-record">
+      {record.headings.map((heading) => {
+        const narrative = record.narrative[heading.n - 1];
+        return (
+          <section class="pv-heading" id={`h${heading.n}`} data-status={heading.status}>
+            <h2><span class="pv-num">{heading.n}</span> {heading.name}</h2>
+            <p class="pv-status"><span class="pv-status-chip" data-status={heading.status}>{heading.statusText}</span>
+              {heading.status === "not-applicable" && <span class="pv-status-reason">{heading.reason}</span>}
+              {statusNote[heading.status] && <span class="pv-status-reason">{statusNote[heading.status]}</span>}
+            </p>
+            {narrative.paragraphs.map((paragraph) => (
+              <p class={paragraph.declaration ? "pv-declaration" : undefined}>
+                {paragraph.tokens.map((token) =>
+                  token.text !== undefined ? token.text : (
+                    <span class="pv-cite">[{token.codes.map((c, i) => (
+                      <>{i > 0 && ", "}<a
+                        class="pv-code"
+                        data-label={c.row.label.word}
+                        href={`${ledger}#${c.short}`}
+                        title={`${c.short} · ${c.row.label.display}`}
+                      >{c.short}</a></>
+                    ))}]</span>
+                  )
+                )}
+              </p>
+            ))}
+            {heading.rows.length > 0 && (
+              <p class="pv-heading-rows">
+                <span class="label">Rows under this heading</span>
+                {heading.rows.map((code) => {
+                  const row = record.rows.find((r) => r.code === code);
+                  const short = code.split(".").slice(1).join(".");
+                  return <a class="pv-code" data-label={row.label.word} href={`${ledger}#${short}`} title={row.label.display}>{short}</a>;
+                })}
+              </p>
+            )}
+          </section>
+        );
+      })}
+    </article>
+
+    <aside class="sidebar pv-sidebar" aria-label="Charter">
+      <dl>
+        <dt>Event</dt><dd>{charter.event}</dd>
+        <dt>Actors</dt><dd><ul>{charter.actors.map((a) => <li>{a}</li>)}</ul></dd>
+        <dt>Place and period</dt><dd>{charter.place_and_period}</dd>
+        <dt>Exclusions</dt><dd><ul>{charter.exclusions.map((a) => <li>{a}</li>)}</ul></dd>
+        <dt>Evidence cutoff</dt><dd>{charter.evidence_cutoff}</dd>
+        <dt>Why chosen</dt><dd>{charter.selection_reason}</dd>
+        <dt>Stopping rule</dt><dd>{charter.stopping_rule}</dd>
+        <dt>Reading the codes</dt>
+        <dd>A bracketed code such as <span class="pv-code" data-label="supported">F008</span> is a row in the ledger. Its colour is the row's computed label: green Verified, blue Supported, amber Attributed, wine Disputed, dashed Unknown.</dd>
+      </dl>
+    </aside>
+  </div>
+</PreviewLayout>

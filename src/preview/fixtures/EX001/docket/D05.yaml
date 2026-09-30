@@ -1,0 +1,30 @@
+# FICTIONAL EXAMPLE FOR LAYOUT TESTING. An invented document; the URL uses a
+# reserved example domain and the fingerprints are hashes of placeholder text.
+# Shape: a docket entry (spec 5.1) with its captures (decision 27).
+
+code: EX001.D05
+title: "Emergency waits rise across Exampleland (fictional news report)"
+publisher: example-gazette
+type: news-report
+format: html
+grade: R1
+published: 2025-03-03
+original_url: https://example.net/gazette/emergency-waits-2024
+licence: all rights reserved
+evidence_origin: exampleland-health-statistics
+examiner: example-gazette
+how_known_default: told-by-someone
+how_known_default_basis: stated
+interest_default: neutral
+captures:
+  - capture: V01
+    captured_on: 2026-09-22
+    captured_by: ED
+    tool: browser capture extension
+    access: logged out
+    transformations: scripts removed
+    completeness: partial
+    completeness_note: Article text only; the embedded chart was not captured.
+    public_snapshot: none
+    capture_sha256: 31e02aad7abfdd84ccd7e4397c5053868149b67d25b355924cb61b8b8d7a81e8
+    text_sha256: 7ec3353ec447f723905aec39be0bc0e48ed46024187913eb66ca661efad17170

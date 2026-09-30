@@ -1,0 +1,65 @@
+# EX001 — FICTIONAL EXAMPLE FOR LAYOUT TESTING
+#
+# Everything in this folder is invented. Example Hospital, ExampleAI,
+# ExampleAI Ltd, the Example Journal of Emergency Care, the Example Trials
+# Registry, the Example University audit group, the Example Gazette and
+# Exampleland do not exist. Every number, date, quote and fingerprint is made
+# up. It exists only to test the page layout of the new case format (Case
+# Study Spec v0.7). It is not a case, and it is not read by the content
+# collections or by scripts/validate-content.mjs.
+#
+# Shape: the header block (spec item E2), the charter (spec §3), and the
+# twelve fixed headings with one of four statuses each (spec 6.8).
+
+code: EX001
+fictional: true
+fixture_note: Fictional example for layout testing
+
+title: ExampleAI queue triage in the Example Hospital emergency department (fictional)
+summary: >-
+  A fictional randomized trial in which an invented tool, ExampleAI, ordered the
+  emergency-department waiting queue at an invented hospital, with one outcome
+  in dispute.
+status: preview                  # E2 open: the status vocabulary is not yet set
+version: "0.1"                   # F1 open: what counts as a major or minor change
+case_grade: null                 # E1 open: the grade rule is not written
+verified: 2026-09-28
+next_review: 2027-03-28
+
+charter:
+  event: >-
+    A fictional randomized trial of ExampleAI, an invented queue-ordering tool,
+    in the emergency department of the invented Example Hospital.
+  actors:
+    - Example Hospital, the sponsor
+    - The Example Hospital trial investigators
+    - ExampleAI Ltd, the vendor
+    - The Example University audit group, which re-analysed the trial data
+  place_and_period: >-
+    Exampleton, Exampleland (fictional). Enrolment February to July 2025.
+    Published April 2026.
+  exclusions:
+    - Other ExampleAI deployments, which are Context, not Record.
+  evidence_cutoff: 2026-09-28
+  selection_reason: fill a gap
+  stopping_rule: >-
+    Fixture version. Every document the trial report cites about the trial
+    itself, plus searches for the trial's name and registry number, as of the
+    cutoff.
+
+# statuses: populated | not-applicable | not-yet-investigated | nothing-found
+headings:
+  - { n: 1,  name: Summary of the record,               status: populated }
+  - { n: 2,  name: Parties and roles,                    status: populated }
+  - { n: 3,  name: The system and its configuration,     status: populated }
+  - { n: 4,  name: Conditions before the event,          status: nothing-found }
+  - { n: 5,  name: Sequence of events,                   status: not-applicable,
+      reason: "The fictional trial ran as a design, not a chain of events; its design is under heading 6." }
+  - { n: 6,  name: How the facts were established,       status: populated }
+  - { n: 7,  name: Detection and response,               status: not-applicable,
+      reason: "Nothing in the trial was detected or responded to as an incident." }
+  - { n: 8,  name: Outcomes and measured effects,        status: populated }
+  - { n: 9,  name: Statements by the parties,            status: populated }
+  - { n: 10, name: Discrepancies in the record,          status: populated }
+  - { n: 11, name: What the record does not establish,   status: populated }
+  - { n: 12, name: Evidence still awaited,               status: not-yet-investigated }

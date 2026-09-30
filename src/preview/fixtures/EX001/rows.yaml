@@ -1,0 +1,259 @@
+# FICTIONAL EXAMPLE FOR LAYOUT TESTING. Invented rows about an invented trial.
+#
+# A row is the library's statement: one plain sentence, a kind (spec 6.5),
+# and links to claims (spec 5.3). Support, conflict, origins and examiners are
+# NEVER typed here. src/preview/lib/record.mjs computes them from the links,
+# the claims and the docket (spec 6.2).
+#
+# Check marks: `by` is the initials of a fictional editor ("ED"). The
+# fingerprint binds the row text and the quote together (decision 26); if
+# either changes, the mark reads as void.
+
+- code: EX001.F001
+  kind: state
+  heading: 2
+  statement: >-
+    The Example Trials Registry entry EXR-0001 lists Example Hospital as the
+    sponsor of the trial and ExampleAI Ltd as a collaborator.
+  start: null
+  end: null
+  links:
+    - claim: EX001.D02.C01
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: aba717727ea720f1 }
+
+- code: EX001.F002
+  kind: state
+  heading: 3
+  statement: >-
+    The Example Hospital investigators report that in the intervention arm
+    ExampleAI ordered the emergency-department waiting queue and that triage
+    nurses could override the ExampleAI order at any time.
+  start: 2025-02-01
+  end: 2025-07-31
+  links:
+    - claim: EX001.D01.C06
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: edc198d04bd5f8ca }
+
+- code: EX001.F003
+  kind: event
+  heading: 6
+  statement: >-
+    The Example Trials Registry entry EXR-0001 records that the ExampleAI trial
+    was registered on 10 January 2025.
+  date: 2025-01-10
+  precision: day
+  timezone: not stated
+  links:
+    - claim: EX001.D02.C02
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: e7a39f80787f0cc6 }
+
+- code: EX001.F004
+  kind: quantity
+  heading: 6
+  statement: The Example Hospital investigators report that 4,812 patients were randomised in the ExampleAI trial.
+  unit: patients
+  counts: patients randomised across both arms, before any exclusion
+  links:
+    - claim: EX001.D01.C01
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: 7a5ee4bcd2b24a53 }
+
+- code: EX001.F005
+  kind: quantity
+  heading: 6
+  statement: >-
+    The Example Hospital investigators report that 2,401 patients in the
+    ExampleAI trial were allocated to ExampleAI queue ordering.
+  unit: patients
+  counts: patients allocated to the intervention arm
+  links:
+    - claim: EX001.D01.C02
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: faad660a35f0fc19 }
+
+- code: EX001.F006
+  kind: computed
+  heading: 6
+  statement: >-
+    2,411 patients in the ExampleAI trial were allocated to usual triage,
+    computed as the 4,812 randomised patients less the 2,401 allocated to
+    ExampleAI queue ordering.
+  inputs: [EX001.F004, EX001.F005]
+  working: 4,812 − 2,401 = 2,411
+  links: []
+  check: { by: ED, date: 2026-09-25, kind: row-level }
+
+- code: EX001.F007
+  kind: absence
+  heading: 6
+  statement: >-
+    As of 28 September 2026, the library has found no statement in D01 of how
+    many patients in the ExampleAI trial had no recorded time of first
+    clinical assessment.
+  documents_read:
+    - "EX001.D01 capture V01: the full text, searched for missing or incomplete assessment times"
+  as_of: 2026-09-28
+  links: []
+  check: { by: ED, date: 2026-09-28, kind: row-level }
+
+- code: EX001.F008
+  kind: quantity
+  heading: 8
+  statement: >-
+    The median time from arrival to first clinical assessment in the ExampleAI
+    trial was 38 minutes with ExampleAI queue ordering and 52 minutes with usual
+    triage.
+  unit: minutes
+  counts: median time from arrival to first clinical assessment, by arm
+  links:
+    - claim: EX001.D01.C03
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: 0c26a58b49be2b15 }
+    - claim: EX001.D04.C01
+      relation: supports
+      dependence: shared-evidence        # the same trial data, examined again
+      check: { by: ED, date: 2026-09-26, fingerprint: 535f16e34338fcae }
+    - claim: EX001.D03.C03
+      relation: relays
+      relays: EX001.D01
+      dependence: relays
+      check: null                          # not yet reviewed; adds nothing either way
+
+- code: EX001.F009
+  kind: quantity
+  heading: 8
+  statement: >-
+    The Example Hospital investigators report that under-triage occurred in 3.1
+    percent of encounters with ExampleAI queue ordering and 3.0 percent of
+    encounters with usual triage.
+  unit: percent of encounters
+  counts: encounters assessed as under-triaged, by arm
+  links:
+    - claim: EX001.D01.C04
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: e4b47574bf64c4d5 }
+
+- code: EX001.F010
+  kind: quantity
+  heading: 8
+  statement: >-
+    The Example Hospital investigators report that no serious adverse events in
+    the ExampleAI trial were attributed to ExampleAI.
+  unit: serious adverse events
+  counts: serious adverse events attributed to ExampleAI, intervention arm
+  links:
+    - claim: EX001.D01.C05
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: b0e3fd04a27124f0 }
+    - claim: EX001.D04.C02
+      relation: contradicts
+      dependence: shared-evidence
+      check: { by: ED, date: 2026-09-26, fingerprint: ff54d1656423ae33 }
+
+- code: EX001.F011
+  kind: statement
+  heading: 9
+  statement: >-
+    ExampleAI Ltd stated in a press release on 16 April 2026 that "ExampleAI
+    cuts emergency waiting times in half."
+  speaker: ExampleAI Ltd
+  quote: ExampleAI cuts emergency waiting times in half.
+  links:
+    - claim: EX001.D03.C01
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: 0baadec9a3809b33 }
+
+- code: EX001.F012
+  kind: quantity
+  heading: 3
+  statement: ExampleAI Ltd reports that ExampleAI is used in 40 hospitals.
+  unit: hospitals
+  counts: hospitals using ExampleAI, as of the press release; the vendor does not define "used"
+  links:
+    - claim: EX001.D03.C02
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: 995f37e58110acd2 }
+
+- code: EX001.F013
+  kind: state
+  heading: 6
+  statement: >-
+    The Example Hospital investigators report that enrolment in the ExampleAI
+    trial ran from 1 February 2025 to 31 July 2025.
+  start: 2025-02-01
+  end: 2025-07-31
+  links:
+    - claim: EX001.D01.C07
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: 9301b784c1c3b65c }
+
+- code: EX001.F014
+  kind: state
+  heading: 10
+  statement: >-
+    The Example Trials Registry entry EXR-0001 lists the overall end date of the
+    ExampleAI trial as 30 June 2025.
+  start: null
+  end: 2025-06-30
+  links:
+    - claim: EX001.D02.C03
+      relation: supports
+      dependence: none
+      check: { by: ED, date: 2026-09-25, fingerprint: b11369cfe48cba9f }
+
+- code: EX001.F015
+  kind: absence
+  heading: 4
+  statement: >-
+    As of 28 September 2026, the library has found no description in D01 to D04
+    of how the Example Hospital emergency department ordered its waiting queue
+    before the ExampleAI trial.
+  documents_read:
+    - "EX001.D01 capture V01: full text"
+    - "EX001.D02 capture V01: the whole entry"
+    - "EX001.D03 capture V01: full text"
+    - "EX001.D04 capture V01: full text"
+  as_of: 2026-09-28
+  links: []
+  check: { by: ED, date: 2026-09-28, kind: row-level }
+
+- code: EX001.F016
+  kind: absence
+  heading: 11
+  statement: >-
+    As of 28 September 2026, the library has found no statement in D01 to D04 of
+    what ExampleAI cost Example Hospital.
+  documents_read:
+    - "EX001.D01 capture V01: full text"
+    - "EX001.D02 capture V01: the whole entry"
+    - "EX001.D03 capture V01: full text"
+    - "EX001.D04 capture V01: full text"
+  as_of: 2026-09-28
+  links: []
+  check: null                              # row-level mark not yet recorded
+
+- code: EX001.F017
+  kind: computed
+  heading: 8
+  statement: >-
+    The median time to first clinical assessment in the ExampleAI trial was 14
+    minutes shorter with ExampleAI queue ordering than with usual triage,
+    computed as 52 minutes less 38 minutes.
+  inputs: [EX001.F008]
+  working: 52 − 38 = 14
+  links: []
+  check: { by: ED, date: 2026-09-25, kind: row-level }

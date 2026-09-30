@@ -1,0 +1,15 @@
+# FICTIONAL EXAMPLE FOR LAYOUT TESTING. An invented Context statement.
+# A CX statement links to a claim the same way a row does. Pointing at D05
+# from here is what makes D05 a Context document on the Docket page (spec §4
+# rule 9: the citing side shows the use).
+
+- code: EX001.CX01
+  statement: >-
+    The Example Gazette reports, relaying the Exampleland health statistics
+    office, that median emergency-department waits across Exampleland rose to
+    61 minutes in 2024.
+  links:
+    - claim: EX001.D05.C01
+      relation: relays
+      dependence: relays
+      check: { by: ED, date: 2026-09-26, fingerprint: 0b49c8907863a652 }

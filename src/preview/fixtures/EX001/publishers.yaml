@@ -1,0 +1,24 @@
+# FICTIONAL EXAMPLE FOR LAYOUT TESTING. Invented publishers.
+# Publisher register (spec 5.6): a grade belongs to a publisher plus a
+# document type, and every document of that kind inherits it.
+
+- id: example-journal
+  name: Example Journal of Emergency Care (fictional)
+  grades: { peer-reviewed-paper: R1 }
+  graded: 2026-09-20
+- id: example-registry
+  name: Example Trials Registry (fictional)
+  grades: { registry-record: R1 }
+  graded: 2026-09-20
+- id: exampleai-ltd
+  name: ExampleAI Ltd (fictional)
+  grades: { official-statement: R2 }
+  graded: 2026-09-20
+- id: example-university
+  name: Example University audit group (fictional)
+  grades: { organization-report: R2 }
+  graded: 2026-09-20
+- id: example-gazette
+  name: The Example Gazette (fictional)
+  grades: { news-report: R1 }
+  graded: 2026-09-20
