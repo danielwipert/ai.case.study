@@ -1,6 +1,6 @@
 # Project guide — Applied AI Case Study Library
 
-**Current as of 2026-09-25.** Read this first, in any session, in either repo.
+**Current as of 2026-09-30.** Read this first, in any session, in either repo.
 It says what the project is, which documents govern it, where the work stands,
 and which older instructions to ignore.
 
@@ -80,8 +80,8 @@ decided by Dan on 2026-09-22.
 | --- | --- | --- |
 | 0 | Stabilize the evidence: private repo, protected `main`, Hugging Face sources captured, second copy, restore test | **Done** 2026-09-22 |
 | 1 | Five pilot decisions (numbering, second copy, scripts, readers, hostile reader) | **4 of 5 done.** Still open: who the 3–5 readers are for the label test. Needed by stage 3 |
-| 2 | The slice: one document of the control case, CS021 (the LungIMPACT trial), from capture to narrative | **In progress.** Steps 1–8 done: charter, capture, publisher grade, docket entry, 10 claims, 12 rows, seeded-error planting, hostile read. **Step 9, Dan's timed review, is under way** |
-| 3 | The full control Record: all twelve headings, the registry record | Not started |
+| 2 | The slice: one document of the control case, CS021 (the LungIMPACT trial), from capture to narrative | **Done** 2026-09-30. 10 claims, 12 rows, all 11 links signed. Seeded-error test: Dan caught 4 of 5, the hostile reader 5 of 5, the automated checks 0. Heading 8 narrative drafted, hostile-read and signed. The three checks pass. Mock release `r0` written. 16 findings logged for spec v0.8. See `pilot/log/stage2.md` |
+| 3 | The full control Record: all twelve headings, the registry record | **Next.** Starts by adding claim 11, the paper's significance test (findings F4, F11). Needs the stage 1 readers for the label test |
 | 4 | The paradigm: the OpenAI agents' intrusion into Hugging Face, CS001 | Captures done and safe (8 files in the private repo's `inbox/`). Record not started |
 
 **Case numbering:** `CSnnn` is the same number as the live site's
@@ -111,8 +111,8 @@ decided by Dan on 2026-09-22.
 5. **Record discrepancies; do not resolve them by judgment.**
 6. **Blind tests stay blind.** During a seeded-error test, nobody opens the
    planter's branch or the hostile reader's branch before the reveal. The
-   current test's branches are `claude/cs021-seed` and `claude/cs021-hostile`
-   in the private repo.
+   stage 2 test was revealed on 2026-09-30; its branches, `claude/cs021-seed`
+   and `claude/cs021-hostile` in the private repo, stay as the record.
 7. **Whatever breaks is the result.** A rule that fails on real material is
    logged as a finding (`pilot/log/findings.md`), not worked around quietly.
 
