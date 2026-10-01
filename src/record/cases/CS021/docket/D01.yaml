@@ -1,0 +1,34 @@
+# CS021 (AAI-2026-021): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS021.D01
+title: 'AI-based chest X-ray prioritization in the lung cancer diagnostic pathway: the LungIMPACT randomized
+  controlled trial'
+publisher: nature-medicine
+type: peer-reviewed-paper
+format: pdf
+grade: R1
+published: 2026-03-24
+original_url: https://www.nature.com/articles/s41591-026-04253-5
+licence: Creative Commons Attribution 4.0 International License
+evidence_origin: lungimpact-trial
+examiner: the LungIMPACT investigators
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: The investigators' own report of the LungIMPACT trial, peer-reviewed and published open access
+  in Nature Medicine. It includes the Extended Data and the journal's Reporting Summary; five Extended
+  Data tables and the Reporting Summary are images, read by eye. Saved by the editor on 22 September 2026,
+  as the journal's PDF.
+captures:
+- capture: V01
+  captured_on: 2026-09-22
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page (open access)
+  transformations: one '===== page N =====' marker inserted before each page's text; nothing else changed
+  completeness: complete as a file; partial as a text layer (five Extended Data tables are graphics)
+  public_snapshot: none
+  capture_sha256: 08b530d9f17212646d2fac6d50ee24ce58154ffb1a15e792bc145141aa11f4b6
+  text_sha256: 3e132fa5118d87a8d7baf9fbce61dd799b7340dfb9248b2167f93a4f9fc97ba2

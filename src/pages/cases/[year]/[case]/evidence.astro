@@ -96,7 +96,7 @@ const items = [...record.rows, ...record.context];
                         <div><dt>Locator</dt><dd>{c.locator} · capture {c.capture}</dd></div>
                         <div><dt>Speaker</dt><dd>{c.speaker}</dd></div>
                         <div><dt>How known</dt><dd>{howKnown[c.how_known] ?? c.how_known} ({c.how_known_basis})</dd></div>
-                        <div><dt>Interest</dt><dd>{c.interest}{c.interest_reason && ` — ${c.interest_reason}`}</dd></div>
+                        <div><dt>Interest</dt><dd>{c.interest_display ?? c.interest}{c.interest_reason && ` — ${c.interest_reason}`}</dd></div>
                         <div><dt>Hedge</dt><dd>{c.hedge ? "Yes: the row must keep it" : "No"}</dd></div>
                         <div><dt>Dependence</dt><dd>{link.dependence ?? "none"}{link.relays && ` (relays ${shortCode(link.relays)})`}</dd></div>
                         {c.inspectable && <div class="pv-wide"><dt>Inspectable</dt><dd>{c.inspectable_reason}</dd></div>}

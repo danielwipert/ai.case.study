@@ -40,7 +40,7 @@ export function GET({ props }) {
     },
     publishers: record.publishers,
     documents: record.documents.map(({ claims, citedBy, publisherName, ...doc }) => ({ ...doc, cited_by: citedBy })),
-    claims: record.claims.map(({ document, ...claim }) => ({ ...claim, document })),
+    claims: record.claims.map(({ document, interest_display, ...claim }) => ({ ...claim, interest: interest_display ?? claim.interest, document })),
     rows: record.rows.map(({ links, label, plainVoiceAllowed, ...row }) => ({
       ...row,
       label: {

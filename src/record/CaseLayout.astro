@@ -87,7 +87,7 @@ const layerDek = {
           <p class="md-kicker"><a href={`${root}/`}>{h.title}</a></p>
           <h1>{layerTitle}</h1>
           <p class="md-dek">{layerDek}</p>
-          <p class="md-meta">Grade {h.grade?.value} · {h.grade?.dashboard ? "well established" : ""} · evidence cutoff {longDate(h.charter.evidence_cutoff)} · <a href={`${root}/ledger.json`} download={`${record.code}-ledger.json`}>download the data (JSON)</a></p>
+          <p class="md-meta">Grade {h.grade?.value} · {h.grade?.plain ?? ""} · evidence cutoff {longDate(h.charter.evidence_cutoff)} · <a href={`${root}/ledger.json`} download={`${record.code}-ledger.json`}>download the data (JSON)</a></p>
         </div>
       </section>
     )}

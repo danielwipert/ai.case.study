@@ -1,0 +1,1893 @@
+# CS021 (AAI-2026-021): generated from the library's case files.
+# Do not edit by hand.
+
+- code: CS021.D01.C01
+  capture: V01
+  locator: Results, 'Descriptive statistics and consort diagram', paragraph 1, sentence 1 (p. 2)
+  quote: Between 17 July 2023 and 31 December 2024, a total of 97,731 CXRs were performed across five
+    diverse National Health Service (NHS) Trusts
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C02
+  capture: V01
+  locator: Results, 'Descriptive statistics and consort diagram', paragraph 1, sentence 2 (p. 2)
+  quote: Patients were followed up until 5 June 2025.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C03
+  capture: V01
+  locator: Results, 'Descriptive statistics and consort diagram', paragraph 1, sentence 4 (p. 2)
+  quote: After data cleaning, 93,326 CXRs from 86,945 patients were included in the study analysis.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C04
+  capture: V01
+  locator: Results, 'Descriptive statistics and consort diagram', paragraph 1, sentence 5 (p. 2)
+  quote: Of these, 45,987 (49.3%) CXRs were performed in sessions with AI prioritization for immediate
+    review.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C05
+  capture: V01
+  locator: Results, 'Descriptive statistics and consort diagram', paragraph 2, sentence 2 (p. 2)
+  quote: The mean age of the study population was 59 years and 46% were male.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C06
+  capture: V01
+  locator: 'Results, ''Descriptive statistics and consort diagram'', paragraph 2, sentence 3. Spans the
+    column break on page 2: begins at the foot of the left column, ends at the head of the right column
+    (p. 2)'
+  quote: University Hospitals of Leicester performed 54% of the study CXRs, Nottingham University Hospitals
+    15%, East Sussex and North Essex Foundation Trust 11%, University College London Hospital 11% and
+    University Hospitals of Birmingham 9%.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C07
+  capture: V01
+  locator: Results, 'Primary outcomes', paragraph 1, sentence 1 (p. 2)
+  quote: Among all patients, 13,347 had a valid CT scan and were included in the analysis, with a time
+    window from CXR acquisition to CT scan analysis—6,674 with AI prioritization and 6,673 with no AI
+    prioritization.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C08
+  capture: V01
+  locator: Results, 'Primary outcomes', paragraph 1, sentence 2 (p. 2)
+  quote: A total of 558 patients were diagnosed with lung cancer and were included in the analysis of
+    time to cancer diagnosis, 269 with AI prioritization and 289 with no AI prioritization.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C09
+  capture: V01
+  locator: Results, 'Primary outcomes', paragraph 2, sentence 1 (p. 2)
+  quote: The median time to CT scan for all patients was 53 days (interquartile range (IQR) = 17–145 days)
+    for AI prioritization days and 53 days (IQR = 19–141 days) for those with no AI prioritization.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C10
+  capture: V01
+  locator: Results, 'Primary outcomes', paragraph 2, sentence 2 (p. 2)
+  quote: Similarly, the median time to lung cancer diagnosis was 44 days (IQR = 26–90 days) for AI prioritization
+    days and 46 days (IQR = 24–105 days) for those with no AI prioritization (Table 2).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C11
+  capture: V01
+  locator: Results, 'Primary outcomes', paragraph 2, sentence 3 (p. 2)
+  quote: There was no significant difference in the time from CXR acquisition to CT scan according to
+    AI prioritization, with a ratio of geometric means of 0.97 (95% confidence interval (CI) = 0.93–1.02,
+    P = 0.31).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C12
+  capture: V01
+  locator: Results, 'Primary outcomes', paragraph 2, sentence 4 (p. 2)
+  quote: There was no difference in time to CT when restricted to CT scans performed within 14 days and
+    CXRs with a CT referral (P = 0.96 and P = 0.86, respectively; Table 2).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C13
+  capture: V01
+  locator: Results, 'Primary outcomes', paragraph 2, sentence 5 (p. 2)
+  quote: There was no significant difference in the time from CXR acquisition to lung cancer diagnosis
+    between AI prioritization days, with a ratio of geometric means of 0.98 (95% CI = 0.83–1.16, P = 0.84
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C14
+  capture: V01
+  locator: Results, 'Primary outcomes', paragraph 2, sentence 6 (p. 2)
+  quote: No statistically significant differences were found for either primary outcome at any site (Extended
+    Data Table 1) or for any quarter (Extended Data Table 2).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C15
+  capture: V01
+  locator: Extended Data Table 2, outcome 'Time to CT scan', row 'Q3 2024', columns N, Ratio of geometric
+    means, 95%CI, P (p. 15)
+  quote: Q3 2024 | 2535 | 1.14 | (1.02, 1.28) | 0.03
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C16
+  capture: V01
+  locator: Results, 'Secondary outcomes', paragraph 1, sentence 1 (p. 2)
+  quote: The median time to two-week-wait (2WW) referral was 14 days (IQR = 5–53 days) for AI prioritization
+    days and 15 days (IQR = 6–50 days) for those with no AI prioritization.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C17
+  capture: V01
+  locator: Results, 'Secondary outcomes', paragraph 1, sentence 2 (p. 2)
+  quote: The median time to initiation of cancer treatment was 76 days (IQR = 38–114 days) for AI prioritization
+    days and 73 days (IQR = 43–121 days) for those with no AI prioritization (Table 2).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C18
+  capture: V01
+  locator: Results, 'Secondary outcomes', paragraph 1, sentence 4 (p. 2)
+  quote: There were no differences in secondary outcomes by AI group.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C19
+  capture: V01
+  locator: 'Table 2, section ''Secondary outcomes'', row ''Time from CXR to CXR report (h)'', all columns:
+    No n, Median, IQR; Yes n, Median, IQR; Ratio of geometric means; 95% CI; P value (p. 5)'
+  quote: Time from CXR to CXR report (h) | 44,078 | 47.0 | (15.8–99) | 42,814 | 34.1 | (6.6–93.1) | 0.85
+    | (0.83–0.87 | <0.001
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C20
+  capture: V01
+  locator: Table 2, section 'Secondary outcomes', row 'Time to 2WW referral (days)', all columns (p. 5)
+  quote: Time to 2WW referral (days) | 1,284 | 15 | (6–50) | 1,215 | 14 | (5–53) | 0.91 | (0.80–1.03)
+    | 0.13
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C21
+  capture: V01
+  locator: Table 2, section 'Secondary outcomes', row 'Time to cancer treatment starting (days)', all
+    columns (p. 5)
+  quote: Time to cancer treatment starting (days) | 200 | 72.5 | (43–120.5) | 200 | 76 | (37–114) | 1.00
+    | (0.84–1.19) | 0.99
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C22
+  capture: V01
+  locator: Acknowledgements, paragraph 1, sentence 1 (p. 10)
+  quote: This work was supported by the Small Business Research Initiative (SBRI) Healthcare (grant SBRIC01P3039
+    to N.W. and D.R.B.).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C23
+  capture: V01
+  locator: Acknowledgements, paragraph 1, sentence 2 (p. 10)
+  quote: The funder undertook regular reviews of project progress and funding allocation.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C24
+  capture: V01
+  locator: Acknowledgements, paragraph 1, sentence 3 (p. 10)
+  quote: We are indebted to the Qure.ai Technologies team for their work on the implementation of the
+    AI and for ensuring all interactions with the NHS ran smoothly and that data were collected in full
+    compliance with data protection requirements.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: the statement that the trial's data were collected in full compliance with data protection
+    requirements vouches for the conduct of the authors' own study
+- code: CS021.D01.C25
+  capture: V01
+  locator: Acknowledgements, paragraph 1, sentence 5 (p. 10)
+  quote: Qure.ai Technologies had no influence on the study design or analysis.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: an assertion of the study's independence from the vendor or investigators protects
+    the credibility of the authors' own trial
+- code: CS021.D01.C26
+  capture: V01
+  locator: Acknowledgements, paragraph 1, sentence 6 (p. 10)
+  quote: The latter was conducted by a statistician independently of the trial investigators.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: an assertion of the study's independence from the vendor or investigators protects
+    the credibility of the authors' own trial
+- code: CS021.D01.C27
+  capture: V01
+  locator: Acknowledgements, paragraph 1, sentence 7 (p. 10)
+  quote: Qure.ai Technologies assisted in the deployment of qXR, working with the NHS to integrate with
+    local IT systems, ensure pseudonymization and the correct prioritization method, which could be switched
+    on or off according to the randomization.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C28
+  capture: V01
+  locator: Methods, 'Statistical analysis', paragraph 1, sentence 1 (p. 9)
+  quote: Statistical analysis was conducted by an independent statistician (LS) without input from the
+    study investigators.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: an assertion of the study's independence from the vendor or investigators protects
+    the credibility of the authors' own trial
+- code: CS021.D01.C29
+  capture: V01
+  locator: Author contributions, paragraph 1, sentence 1 (p. 10)
+  quote: N.W. and D.R.B. conceived the study design and wrote the study protocol, obtained ethics approval,
+    maintained oversight of the study and drafted the first version of the manuscript.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C30
+  capture: V01
+  locator: Author contributions, paragraph 1, sentence 2 (p. 10)
+  quote: L.S. designed the statistical analysis plan and conducted all statistical analyses.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C31
+  capture: V01
+  locator: Author contributions, paragraph 1, sentence 3 (p. 10)
+  quote: S.N. and C.S.C. assisted with data cleaning and took part in analytical discussions.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C32
+  capture: V01
+  locator: Author contributions, paragraph 1, sentence 4 (p. 10)
+  quote: J.R. contributed/coordinated PPI work for this study, including the patient panel and part of
+    the study team, including governance.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C33
+  capture: V01
+  locator: Author contributions, paragraph 1, sentence 5 (p. 10)
+  quote: A.N., R.W.L. and N.N. contributed to the study protocol and provided oversight of the study.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C34
+  capture: V01
+  locator: Author contributions, paragraph 1, sentence 6 (p. 10)
+  quote: I.A.Y., B.G., M.G.D., I.D. and J.H. contributed to the study protocol and coordinated data collection
+    at sites.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C35
+  capture: V01
+  locator: Author contributions, paragraph 1, sentence 7 (p. 10)
+  quote: A.C., J.N., S.A. and R.T. performed data collection.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C36
+  capture: V01
+  locator: Author list (byline), foot of page 8 (journal page 1744), all three lines (p. 8)
+  quote: Nick Woznitza 1,2, Lesley Smith3, Janette Rawlinson 4, Iain Au-Yong 5, Bindu George 5, Madava
+    G. Djearaman 6, Arjun Nair1, Richard W. Lee 7,8,9, Neal Navani 2,10, Siyabonga Ndwandwe11, Caroline
+    S. Clarke 11, Andrew Creeden12, Josh Newsome12, Indrajeet Das12, Sylvia Abaokporo 5, Richard Tucker5,
+    James Hathorn13 & David R. Baldwin 14,15
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C37
+  capture: V01
+  locator: Affiliations, foot of page 8, affiliation 13 (p. 8)
+  quote: Radiology Department, East Suffolk and North East Essex NHS Foundation Trust, Colchester, UK.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C38
+  capture: V01
+  locator: Affiliations, foot of page 8, affiliation 3 (p. 8)
+  quote: Leeds Cancer Research UK Clinical Trials Unit, University of Leeds, Leeds, UK.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C39
+  capture: V01
+  locator: Data availability, paragraph 1, sentence 1 (p. 10)
+  quote: All data for the study is stored by the study sponsor.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C40
+  capture: V01
+  locator: Data availability, paragraph 1, sentence 2 (cut before the street address, which continues
+    across the column break) (p. 10)
+  quote: 'Access to fully anonymised data can be requested from the sponsor at: Research & Innovation,
+    Nottingham University Hospitals NHS Trust'
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C41
+  capture: V01
+  locator: 'Methods, ''Ethical and safety considerations'', paragraph 1, sentence 1 (cut: the quote starts
+    at ''Cambridge East'') (p. 10)'
+  quote: Cambridge East Research Ethics Committee (23/EE/0014, 21 February 2023).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C42
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 1 (p. 10)
+  quote: D.R.B. declares honoraria for speaking and education from AstraZeneca and Boehringer Ingelheim,
+    unrelated to the current study.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C43
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 2 (p. 10)
+  quote: He has received research grants from the National Institute of Health Research, Cancer Research
+    UK, Horizon Europe, Ruth Strauss Foundation, SBRI, Innovate UK, Yorkshire Cancer Research, the Royal
+    Castle Foundation, and UK Research and Innovation.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C44
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 3 (p. 10)
+  quote: N.W. declares consultancy fees from InHealth, Apollo Radiology (UK) and SMR Health & Tech unrelated
+    to the current study and a travel grant from Qure.ai Technologies to attend the European Congress
+    of Radiology 2023.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C45
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 4 (the part on page 11, after the page break; the
+    subject 'he', R.W.L., is on page 10) (p. 11)
+  quote: research funding from Cancer Research UK, Innovate UK (cofunded by GE Healthcare, Roche Diagnostics,
+    Optellum, Elliptica and RNA Guardian), SBRI (including as a co-applicant with Qure.ai), RM Partners
+    Cancer Alliance and NIHR (including co-applicant on grants with Optellum)
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C46
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 5 (p. 11)
+  quote: These activities are unrelated to the present study, aside from the SBRI funding received in
+    collaboration with Qure.ai.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C47
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 4, first clause (p. 10)
+  quote: R.W.L. is funded by the Royal Marsden National Institute for Health and Care Research (NIHR)
+    Biomedical Research Centre and The Royal Marsden Cancer Charity
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C48
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 4, second clause (p. 10)
+  quote: his institution receives compensation for time spent in a secondment role with NHS England for
+    the Lung Health Check Programme and as National Specialty Lead for the National Institute for Health
+    and Care Research
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C49
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 4, final clauses (page 11) (p. 11)
+  quote: he has received honoraria, speaker and advisory fees, and/or hospitality and travel expenses
+    from Cancer Research UK, Roche Diagnostics, Johnson & Johnson, Guardant Health, AstraZeneca and King
+    Faisal Specialist Hospital and Research Centre, Saudi Arabia; and he also undertakes private medical
+    practice.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C50
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 6 (p. 11)
+  quote: N.N. is supported by a Medical Research Council Clinical Academic Research Partnership (MR/T02481X/1).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C51
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 7 (p. 11)
+  quote: N.N. has also received grant funding from the National Institute of Health Research, Cancer Research
+    UK, Horizon Europe, Ruth Strauss Foundation, and the Engineering and Physical Sciences Research Council.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C52
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 8 (p. 11)
+  quote: This work was partly undertaken at University College London Hospitals NHS Foundation Trust/University
+    College London, which received a proportion of funding from the UK Department of Health’s NIHR Biomedical
+    Research Centre’s funding scheme.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C53
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 9 (spans the column break on page 11 after 'EQRx,';
+    contiguous in text.txt) (p. 11)
+  quote: N.N. reports honoraria for nonpromotional educational talks, conference attendance or advisory
+    board participation from Amgen, AstraZeneca, AXANA, BeiGene, Boehringer Ingelheim, Bristol Myers Squibb,
+    EQRx, Fujifilm, Guardant Health, Intuitive, Janssen, Eli Lilly and Company, Merck Sharp & Dohme, Olympus
+    Corporation, Roche and Sanofi.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C54
+  capture: V01
+  locator: Competing interests, paragraph 1, sentence 10 (last) (p. 11)
+  quote: The remaining authors declare no competing interests.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C55
+  capture: V01
+  locator: Abstract, sentence 4 (p. 1)
+  quote: AI was available in both study arms, with AI prioritization randomized by day.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C56
+  capture: V01
+  locator: Methods, 'Study design', paragraph 3, sentence 2 (p. 9)
+  quote: A single CXR AI (qXR, Qure.ai Technologies) was used in the study.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C57
+  capture: V01
+  locator: Methods, 'Study design', paragraph 3, sentence 3 (p. 9)
+  quote: The AI was applied to both arms at the time of image acquisition, so that the reporter had access
+    to the AI-marked images at the time of reporting in both arms of the study.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C58
+  capture: V01
+  locator: Methods, 'AI algorithm', paragraph 1, sentence 1 (p. 9)
+  quote: qXR (v 4.0, Qure.ai Technologies, India) is a class IIb CE-certified deep learning algorithm
+    already in routine clinical use in some NHS Hospitals.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C59
+  capture: V01
+  locator: Methods, 'AI algorithm', paragraph 1, sentence 2 (p. 9)
+  quote: It functions as a clinical decision support tool to assist healthcare professionals in identifying
+    abnormalities (29 classes/types) on CXRs.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C60
+  capture: V01
+  locator: Methods, 'AI algorithm', paragraph 1, sentence 3 (p. 9)
+  quote: Images were pseudonymized, transferred to the cloud-based qXR for analysis and then returned
+    to the local Picture Archiving and Communication System with image mark-ups and abnormality classification.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C61
+  capture: V01
+  locator: Methods, 'AI algorithm', paragraph 1, sentence 4 (p. 9)
+  quote: On intervention days, an active notification was sent to the worklist for any ‘qXR-suspected-abnormal’
+    cases, allowing prioritization for immediate reporting by radiology.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C62
+  capture: V01
+  locator: Methods, 'AI algorithm', paragraph 1, sentence 5 (p. 9)
+  quote: The software algorithm did not undergo updates or changes for the duration of the study to ensure
+    consistency.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C63
+  capture: V01
+  locator: 'Methods, ''Study design'', paragraph 4, sentence 1 (cut: starts after ''Extended Data Fig.
+    2 shows that'') (p. 9)'
+  quote: radiographers could, at their discretion, flag abnormalities that may require further action,
+    which may result in a CT scan, sometimes performed on the same day, which is a preferred option in
+    the NOLCP.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C64
+  capture: V01
+  locator: Methods, 'Study design', paragraph 4, sentence 4 (p. 9)
+  quote: Where there was no flag, the CXR was later reported by a radiologist or reporting radiographer
+    according to local usual clinical practice.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C65
+  capture: V01
+  locator: Discussion, paragraph 5 (begins 'A significant reduction' on page 3), the sentence beginning
+    'Furthermore, as shown in Extended Data Fig. 2' (cut to its main clause) (p. 4)
+  quote: immediate review of the CXR was permitted, according to local procedure, in both arms of the
+    study.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C66
+  capture: V01
+  locator: 'Extended Data Fig. 2 ''Pathway and randomization'', flowchart: the two column heads and the
+    box directly beneath each (p. 13)'
+  quote: AI Prioritisation flag | CXR checked by radiographer with qXR AI read || AI at time of reporting
+    session | CXR checked by radiographer without qXR AI read
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C67
+  capture: V01
+  locator: Code availability, paragraph 1, sentence 1 (p. 10)
+  quote: The code for the AI algorithm is not available, as this, like many others in this field, is a
+    commercial product.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C68
+  capture: V01
+  locator: Introduction (unheaded), paragraph 2, sentence 2 (p. 2)
+  quote: In England, the National Optimal Lung Cancer Pathway (NOLCP) recommends rapid progression from
+    chest X-ray (CXR) to computed tomography (CT), followed by assessment in a specialist clinic.
+  speaker: the authors
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C69
+  capture: V01
+  locator: Introduction (unheaded), paragraph 2, sentence 3 (p. 2)
+  quote: The NOLCP mandates that patients with a suspicious CXR undergo CT within 72 h, preferably on
+    the same day.
+  speaker: the authors
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C70
+  capture: V01
+  locator: References, entry 12 (p. 7)
+  quote: National Optimal Lung Cancer Pathway (Version 4.0) (National Health Service England, 2024)
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C71
+  capture: V01
+  locator: Discussion, paragraph 2, sentence 3 (p. 3)
+  quote: Current (April 2025) median reporting times for CXRs referred from primary care (2 days) and
+    waiting time for CT chest (15 days) do not meet the NOLCP standards (72 h from abnormal CXR to CT)
+  speaker: the authors
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C72
+  capture: V01
+  locator: Discussion, paragraph 2, sentence 1 (cut to the clause with the figures) (p. 3)
+  quote: with more than 7 million performed annually in England, including ~2.2 million CXRs referred
+    from primary care alone
+  speaker: the authors
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C73
+  capture: V01
+  locator: Methods, 'Sample size', paragraph 1, sentence 4 (p. 9)
+  quote: For time to CT, the NHS Diagnostic Imaging Dataset records a median of 15 days between request
+    and CT, but data are not segregated between urgent scans and those that are routine or for follow
+    up
+  speaker: the authors
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C74
+  capture: V01
+  locator: Introduction (unheaded), paragraph 2, sentence 6 (cut before the reference number 13) (p. 2)
+  quote: Recently published research funded by Cancer Research UK, conducted by members of the current
+    study team, found that immediate radiographer CXR reporting, with direct triage to same-day CT, significantly
+    reduced time to diagnosis of lung cancer by almost half from a median of 63 days from CXR, to 32 days
+    (P = 0.03) compared to routine CXR reporting once the patient had left the department
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: reports a favourable result of the authors' own team's earlier study, which the paper
+    uses to motivate this trial
+- code: CS021.D01.C75
+  capture: V01
+  locator: Introduction (unheaded), paragraph 3, sentence 2 (cut before the reference number 19) (p. 2)
+  quote: However, a recent review of the clinical utility of this technology by NICE concluded that there
+    was insufficient evidence to make any recommendations other than to ensure products were carefully
+    evaluated
+  speaker: the authors
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C76
+  capture: V01
+  locator: Introduction (unheaded), paragraph 3, sentence 3 (cut before the reference number 19) (p. 2)
+  quote: NICE cited the LungIMPACT study as the only investigation considered potentially capable of addressing
+    important clinical questions
+  speaker: the authors
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: says a national body singled out the authors' own study
+- code: CS021.D01.C77
+  capture: V01
+  locator: Discussion, paragraph 3 (begins 'One potential strategy' on page 3), last sentence, cut to
+    the clause after 'This is one reason why' and before reference 23 (p. 4)
+  quote: NICE has not recommended any AI products for CXR interpretation in England
+  speaker: the authors
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C78
+  capture: V01
+  locator: Methods, 'AI algorithm', paragraph 2, sentence 1 (p. 9)
+  quote: Training on the use of the AI was provided to all reporters during the implementation of the
+    AI at each hospital and before study commencement.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C79
+  capture: V01
+  locator: Methods, 'AI algorithm', paragraph 2, sentence 2 (p. 9)
+  quote: Training covered intended use as a clinical decision support tool, the different AI findings,
+    radiology worklist prioritization and the user interface/AI results.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C80
+  capture: V01
+  locator: Discussion, paragraph beginning 'In England, there has been a phased implementation', sentence
+    1 (p. 6)
+  quote: In England, there has been a phased implementation of lung cancer screening for people aged 55
+    to 74 at high risk of developing lung cancer.
+  speaker: the authors
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C81
+  capture: V01
+  locator: Discussion, same paragraph, sentence 2, clause on UCLH (p. 6)
+  quote: University College London Hospital, which has an established screening program
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C82
+  capture: V01
+  locator: Discussion, same paragraph, sentence 2, clause on Birmingham ('com-/menced' joined) (p. 6)
+  quote: University Hospitals of Birmingham, which commenced screening in 2022
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C83
+  capture: V01
+  locator: Discussion, same paragraph, sentence 3, subject clause (p. 6)
+  quote: University Hospitals of Leicester (without a program) and Nottingham University Hospitals (program
+    started in 2023)
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C84
+  capture: V01
+  locator: Methods, 'Study design', paragraph 1, sentence 1 (p. 9)
+  quote: A prospective, multicenter, randomized controlled trial was conducted between July 2023 and December
+    2024 across five NHS Trusts in England.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C85
+  capture: V01
+  locator: Methods, 'Study design', paragraph 1, sentence 2 (p. 9)
+  quote: Participants aged 18 years or older, attending for a primary care-requested CXR, were block-randomized
+    by day and site to either immediate AI prioritization of reporting or no AI prioritization.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C86
+  capture: V01
+  locator: Methods, 'Study design', paragraph 1, sentence 3 (p. 9)
+  quote: Anteroposterior or posteroanterior views were analyzed and lateral (not routinely performed in
+    the UK) views were excluded.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C87
+  capture: V01
+  locator: Methods, 'Study design', paragraph 2, sentence 1 (p. 9)
+  quote: Pre-allocation to the intervention or routine care was performed using random sampling via a
+    1:1 randomization method for Monday-to-Friday routine imaging whole-day sessions.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C88
+  capture: V01
+  locator: Methods, 'Study design', paragraph 2, sentence 2 (p. 9)
+  quote: Days were randomly allocated to minimize the potential impact of different levels of staffing
+    and capacity.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C89
+  capture: V01
+  locator: Methods, 'Study design', paragraph 2, sentence 3 (p. 9)
+  quote: All imaging (CXR or CT) was performed as part of routine care, with the final decision made by
+    the clinicians.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C90
+  capture: V01
+  locator: 'Extended Data Fig. 2 ''Pathway and randomization'', flowchart box labels: left (shaded) column
+    heading, left box below ''Patient has CXR'', right column heading, right box below ''Patient has CXR'',
+    box on the right-hand branch after ''Flagged by radiographer ... No / Decision to do CT No'' (p. 13)'
+  quote: AI Prioritisation flag | CXR checked by radiographer with qXR AI read | AI at time of reporting
+    session | CXR checked by radiographer without qXR AI read | CXR reported with qXR AI read
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C91
+  capture: V01
+  locator: Methods, 'Ethical and safety considerations', paragraph 2, sentence 2 (p. 10)
+  quote: Individual patients were not randomized; rather, their CXRs were.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C92
+  capture: V01
+  locator: Methods, 'Ethical and safety considerations', paragraph 2, sentence 3 (p. 10)
+  quote: Consent was not obtained from patients, but in each department, clear messaging indicated that
+    AI was being used as part of a research study, and details on how to opt out of the study were provided,
+    as agreed by the Ethics Committee.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C93
+  capture: V01
+  locator: Discussion, paragraph beginning 'A major strength of the trial is its randomized controlled
+    design', sentence 3 (p. 4)
+  quote: Information provided in the radiology departments indicated that participants could opt out of
+    the study; however, only one participant did so.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C94
+  capture: V01
+  locator: 'Nature Portfolio Reporting Summary bound into the capture (pages 19-21, ''Last updated by
+    author(s): 22/01/2026''), page 2 of the summary, section ''Life sciences study design'', field ''Blinding''
+    (p. 20)'
+  quote: Blinding was not possible, the intervention was radiology worklist prioritisation. However radiology
+    clinicians were blinded to the randomsiation schedule/sequence.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C95
+  capture: V01
+  locator: Methods, 'Data', paragraph 1, sentence 2 (p. 9)
+  quote: Data verification was performed by manually checking the dates of CT and lung cancer diagnosis
+    by the investigators without knowledge of the study arm.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C96
+  capture: V01
+  locator: Methods, 'Safety and discordance', paragraph 2, sentence 1 (the primary outcomes are stated
+    under this heading; the Methods give them no heading of their own) (p. 9)
+  quote: 'The primary outcomes were as follows: (1) the difference in time (in days from CXR acquisition)
+    to the diagnosis of patients with lung cancer who had CXRs with AI support at the time of CXR acquisition
+    and prioritization for immediate review and those that had no immediate read but the AI read was available
+    at the time of reporting and (2) the difference in time (in days from CXR acquisition) to CT for patients
+    who had CXRs with AI support at the time of CXR acquisition and prioritization for immediate review
+    and those that had no immediate read but the AI read was available at the time of reporting.'
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C97
+  capture: V01
+  locator: 'Nature Portfolio Reporting Summary bound into the capture (pages 19-21, ''Last updated by
+    author(s): 22/01/2026''), page 3 of the summary, section ''Clinical data'', field ''Outcomes'', primary
+    outcomes items 1 and 2 (opening words of each) (p. 21)'
+  quote: 1. The difference in time (in days from CXR request) to the diagnosis of lung cancer | 2. The
+    difference in time (in days from CXR request) to CT
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C98
+  capture: V01
+  locator: Methods, 'Safety and discordance', paragraph 3, sentence 1 (p. 9)
+  quote: 'The secondary outcomes were as follows: (1) days to urgent lung cancer referral as defined by
+    the time between CXR acquisition and lung cancer referral (2WW); (2) days to treatment start for patients
+    with lung cancer as defined by the time between CXR acquisition and cancer treatment start date; (3)
+    agreement between qXR and human readers for present/absent findings on CXRs referred from primary
+    care, by each classification; (4) number of urgent lung cancer (2WW) referrals; (5) incidence of lung
+    cancer; (6) stage of lung cancer at diagnosis and (7) algorithm sensitivity, specificity and agreement
+    between report and AI (Kappa).'
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C99
+  capture: V01
+  locator: Methods, 'Data handling of multiple CXRs per patients', paragraph 1, sentence 2 (p. 9)
+  quote: For the main analysis of the primary outcomes, we calculated time to CT and time to cancer diagnosis
+    from the first CXR (to avoid duplication and overcounting outcomes).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C100
+  capture: V01
+  locator: Table 2 'Time outcomes by AI prioritization, median and IQR', footnote, sentence 2 (the 'a'
+    is the footnote marker, kept verbatim) (p. 5)
+  quote: aOnly includes the first CXR for patients with multiple CXRs in the study period.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C101
+  capture: V01
+  locator: 'Table 2, column header row: arm labels ''No'' and ''Yes'' under ''AI prioritization'', each
+    followed by its n with footnote marker a (p. 5)'
+  quote: No | (n = 44,112)a | Yes | (n = 42,833)a
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C102
+  capture: V01
+  locator: Methods, 'Statistical analysis', paragraph 3, sentence 3 (p. 10)
+  quote: A t test on the log transformation of these data was used to test the null hypothesis that mean
+    values on the log-transformed scale are equal.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C103
+  capture: V01
+  locator: Table 2 'Time outcomes by AI prioritization, median and IQR', footnote, sentence 1 (p. 5)
+  quote: Statistical analyses were performed using a two-sided t-test on log-transformed outcomes and
+    presented as the ratio of geometric means and 95% CIs.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C104
+  capture: V01
+  locator: Methods, 'Statistical analysis', paragraph 3, sentence 5 (p. 10)
+  quote: The primary outcome, time to CT scan, was further examined by restricting the sample to (1) CT
+    scans within 14 days of CXR or (2) CXRs that were flagged for CT referral only.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C105
+  capture: V01
+  locator: Methods, 'Statistical analysis', paragraph 3, sentence 7 (p. 10)
+  quote: On manual review of data, when the time to CT exceeded 14 days, the CT was never triggered by
+    the index CXR randomized for the trial.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C106
+  capture: V01
+  locator: Discussion, paragraph beginning 'A further limitation of the study was the difficulty in identifying
+    the best way to measure time to CT', sentence 6 (the paragraph starts in the left column of page 5
+    and continues in the right) (p. 5)
+  quote: We therefore had to complete restrictive sensitivity analyses using the code, where used, signifying
+    a CT was triggered and also by limiting the time after CXR to less than 14 days, having determined
+    that these were likely related to the initial CXR.
+  speaker: the authors
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C107
+  capture: V01
+  locator: Methods, 'Statistical analysis', paragraph 4, sentence 1 (p. 10)
+  quote: Other time-related endpoints (time to urgent referral and time to treatment starting) were also
+    assessed using a t test on log-transformed time duration data.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C108
+  capture: V01
+  locator: Methods, 'Statistical analysis', paragraph 4, sentence 2 (p. 10)
+  quote: The number of urgent referrals, incidence of lung cancer and stage of lung cancer at diagnosis
+    were compared between the two groups using chi-squared tests.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C109
+  capture: V01
+  locator: Methods, 'Statistical analysis', paragraph 4, sentence 3 (p. 10)
+  quote: The secondary endpoint of agreement between the reporter and the AI was summarized as overall
+    agreement, measured using the kappa statistic.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C110
+  capture: V01
+  locator: Methods, 'Statistical analysis', paragraph 5, sentence 1 (p. 10)
+  quote: Subgroup analyses were performed by site and year quarter for both primary endpoints.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C111
+  capture: V01
+  locator: Methods, 'Statistical analysis', paragraph 5, sentence 2 (p. 10)
+  quote: Sensitivity analyses addressing the issue of multiple CXRs per patient were conducted by identifying
+    the closest CXR before the CT scan as the index CXR or by excluding patients with multiple CXRs.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C112
+  capture: V01
+  locator: Methods, 'Statistical analysis', paragraph 6, sentence 1 (p. 10)
+  quote: Further exploratory analysis (not prespecified) of the combined arms was conducted for those
+    diagnosed with cancer, examining only whether both the radiologist and AI CXR reports were normal
+    or abnormal.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C113
+  capture: V01
+  locator: Methods, 'Statistical analysis', paragraph 2, sentence 2 (p. 9)
+  quote: No statistical testing was carried out on this data.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C114
+  capture: V01
+  locator: Methods, 'Sample size', paragraph 1, sentence 1 ('13' is a reference number, kept verbatim)
+    (p. 9)
+  quote: Based on data from previous work13, the median time to lung cancer diagnosis was 63 days in the
+    standard reporting group and using a conservative reduction of 10 days, we calculated that 265 cases
+    per group would be needed to detect a difference with 95% power.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C115
+  capture: V01
+  locator: Methods, 'Sample size', paragraph 1, sentence 2 ('13' after '0.6%' is a reference number, kept
+    verbatim) (p. 9)
+  quote: The expected prevalence of lung cancer in this cohort (primary care referrals for CXR) is 0.6%13
+    and thus 100,000 CXRs were judged sufficient (600 cancer cases).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C116
+  capture: V01
+  locator: Methods, 'Sample size', paragraph 1, sentence 6. Spans the column break on page 9 ('...even
+    the smallest' ends the left column; 'effect size (Cohen’s d = 0.1)' opens the right) (p. 9)
+  quote: Assuming approximately equal distribution of the number of scans taken, 4,000 CT scans were found
+    to provide adequate power to detect even the smallest effect size (Cohen’s d = 0.1).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C117
+  capture: V01
+  locator: Methods, 'Sample size', paragraph 1, sentence 7 (p. 9)
+  quote: A clinically meaningful difference in time from abnormal CXR to CT chest of three days was defined,
+    using the maximum time recommended in the NOLCP.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C118
+  capture: V01
+  locator: Methods, 'Data', paragraph 1, sentence 3 (p. 9)
+  quote: Primary and secondary outcomes with invalid dates that generated negative time intervals were
+    excluded during the data cleaning process.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C119
+  capture: V01
+  locator: Abstract, sentence 5 (first clause) (p. 1)
+  quote: Of 97,731 participant CXRs, 4,405 were excluded due to data compliance issues or failure of randomization
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C120
+  capture: V01
+  locator: 'Nature Portfolio Reporting Summary bound into the capture (pages 19-21, ''Last updated by
+    author(s): 22/01/2026''), page 3 of the summary, section ''Clinical data'', field ''Clinical trial
+    registration'' (p. 21)'
+  quote: Trial registration ISRCTN 78987039 7th March 2023
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C121
+  capture: V01
+  locator: 'Nature Portfolio Reporting Summary bound into the capture (pages 19-21, ''Last updated by
+    author(s): 22/01/2026''), page 3 of the summary, section ''Clinical data'', field ''Study protocol''
+    (p. 21)'
+  quote: Available at trial registration https://www.isrctn.com/ISRCTN78987039
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C122
+  capture: V01
+  locator: Abstract, final line (p. 1)
+  quote: 'ISRCTN registration: 78987039.'
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C123
+  capture: V01
+  locator: 'Nature Portfolio Reporting Summary bound into the capture (pages 19-21, ''Last updated by
+    author(s): 22/01/2026''), page 1 of the summary, section ''Software and code'', field ''Data analysis'',
+    sentence 1 (p. 19)'
+  quote: All data were analysed with Stata v19.5 (StataCorp, College Station, TX, USA), according to the
+    pre-specified analysis plan.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: asserts that the authors' own analysis followed a pre-specified plan, a statement about
+    their own rigour that D01 gives no means to check
+- code: CS021.D01.C124
+  capture: V01
+  locator: Methods, 'Ethical and safety considerations', paragraph 3, sentence 2 (p. 10)
+  quote: The study protocol is available in the Supplementary Information.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C125
+  capture: V01
+  locator: Fig. 1 'Study population for CXRs CONSORT diagram', right-hand exclusion box and its two sub-items
+    (p. 3)
+  quote: Excluded (n = 4,405) | Data compliance issue (n = 1,382) | CXR at weekend (n = 3,023)
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C126
+  capture: V01
+  locator: Methods, 'Sample size', paragraph 1, sentence 5 (quote stops before the reference number 38)
+    (p. 9)
+  quote: Cohen’s d (effect size) was used to estimate sample size with power 0.1, 0.3 and 0.5 (considered
+    small, moderate and large effect sizes)
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C127
+  capture: V01
+  locator: 'Nature Portfolio Reporting Summary bound into the capture (pages 19-21, ''Last updated by
+    author(s): 22/01/2026''), page 2 of the summary, section ''Life sciences study design'', field ''Data
+    exclusions'' (p. 20)'
+  quote: 4,405 CXRs excluded; data compliance issue/technical failure n=1,382, weekend CXR n=3,023
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C128
+  capture: V01
+  locator: 'Nature Portfolio Reporting Summary bound into the capture (pages 19-21, ''Last updated by
+    author(s): 22/01/2026''), page 2 of the summary, section ''Research involving human participants...'',
+    field ''Reporting on race, ethnicity, or other socially relevant groupings'' (p. 20)'
+  quote: No data were collected for race, ethnicity or social grouping.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C129
+  capture: V01
+  locator: Abstract, sentence 13 (p. 1)
+  quote: AI prioritization of CXR requested by UK primary care has no significant impact on the lung cancer
+    pathway.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C130
+  capture: V01
+  locator: Abstract, sentence 14 (p. 1)
+  quote: Therefore, CXR AI deployments should not include worklist prioritization in this context.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C131
+  capture: V01
+  locator: Abstract, sentence 15 (p. 1)
+  quote: Future research should differentiate between primary pathway changes and the direct impact of
+    AI.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C132
+  capture: V01
+  locator: Discussion, paragraph 1, sentence 1 (p. 3)
+  quote: This large, multisite randomized study has shown that AI prioritization of CXRs did not improve
+    the speed of the lung cancer diagnostic pathway.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C133
+  capture: V01
+  locator: Discussion, paragraph 1, sentence 2 (p. 3)
+  quote: This means that this element of AI functionality, which introduces additional complexity and
+    cost to AI installation and may add time to clinical workflows, is not required to accelerate the
+    lung cancer diagnostic pathway.
+  speaker: the authors
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C134
+  capture: V01
+  locator: Discussion, paragraph 1, sentence 3, second clause (after 'but') (p. 3)
+  quote: costs are both considerable and avoidable, given the results reported in this study
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C135
+  capture: V01
+  locator: Discussion, paragraph 4, sentence 2 (p. 4)
+  quote: It has been shown conclusively that AI prioritization had no impact on time to CT or time to
+    lung cancer diagnosis.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: '"conclusively" and "no impact" go beyond the reported "no significant difference"
+    findings; the statement favours the authors'' reading of their own trial'
+- code: CS021.D01.C136
+  capture: V01
+  locator: Discussion, paragraph 5, sentence 1 (p. 4)
+  quote: A significant reduction in the median time from CXR acquisition to report was observed, from
+    47 h to 34.1 h; however, no significant differences were detected in any of the timings measured as
+    primary or secondary outcomes (Table 2).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C137
+  capture: V01
+  locator: Discussion, paragraph 5, sentence 2 (the superscript reference 13 and the full stop are cut)
+    (p. 4)
+  quote: The lack of improvement in AI prioritization is likely because, although the time to CXR report
+    was shortened, it was not sufficiently reduced in the prioritization arm to influence the clinical
+    pathway in the same way as immediate radiographer triage did in our previous study
+  speaker: the authors
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: the sentence explains the null result by contrast with the positive result of the authors'
+    own previous trial (ref. 13), which it presents as the benchmark; it flatters the authors' earlier
+    work
+- code: CS021.D01.C138
+  capture: V01
+  locator: Discussion, paragraph 5, sentence 3 (p. 4)
+  quote: This may, in turn, be explained by the limited capacity within Trusts to both report immediately
+    and organize downstream tests and appointments, even though this is a recommendation in the NOLCP.
+  speaker: the authors
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C139
+  capture: V01
+  locator: Discussion, paragraph 5, sentences 7 (from 'immediate review') and 8 (p. 4)
+  quote: immediate review of the CXR was permitted, according to local procedure, in both arms of the
+    study. This ensured that AI prioritization was tested rather than the effect of primary pathway change.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C140
+  capture: V01
+  locator: Discussion, paragraph 6, sentence 6 (p. 4)
+  quote: However, feedback from reporters indicated that most of the FPs are rapidly dismissed, so the
+    potential for extra workload will be dependent on the user becoming familiar with the strengths and
+    weaknesses of the AI.
+  speaker: the authors
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: stated
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C141
+  capture: V01
+  locator: Discussion, paragraph 7, sentence 5 (p. 4)
+  quote: The automated data acquisition followed by manual verification is another strength of the study
+    and the independent analysis of the results with no influence from either the AI developers or the
+    investigators.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: the authors name strengths of their own study
+- code: CS021.D01.C142
+  capture: V01
+  locator: Discussion, paragraph 7, sentences 6 and 7 (p. 4)
+  quote: Another major strength is the number of discordance reviews completed by expert radiologists
+    and reporting radiographers. This has provided perhaps the largest reliable dataset on this aspect.
+  speaker: the authors
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: the authors describe their own dataset as perhaps the largest reliable one
+- code: CS021.D01.C143
+  capture: V01
+  locator: Discussion, paragraph 9, sentences 1 and 2 (p. 4)
+  quote: A limitation of the study is that the primary outcomes evaluated only the impact of AI prioritization,
+    not the presence or absence of AI in the clinical workflow. This was necessary because of the study’s
+    nonconsenting nature.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C144
+  capture: V01
+  locator: Discussion, paragraph 9 (continued from page 4), sentence 6 (p. 5)
+  quote: By choosing time to CT as an additional primary outcome, we can be more confident that a comparison
+    of AI use versus no AI would not show a meaningful difference.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C145
+  capture: V01
+  locator: Discussion, paragraph 10, sentence 1 (p. 5)
+  quote: A limitation is the use of a single AI product, which will inevitably have different performance
+    characteristics from others.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C146
+  capture: V01
+  locator: Discussion, paragraph 10, sentence 3 (p. 5)
+  quote: However, the fact that only prioritization was tested here means differences in AI accuracy had
+    less effect on the coprimary outcomes than on the discordances.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C147
+  capture: V01
+  locator: Discussion, paragraph 11, sentence 1 (p. 5)
+  quote: A further limitation of the study was the difficulty in identifying the best way to measure time
+    to CT.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C148
+  capture: V01
+  locator: Discussion, paragraph 11, sentence 4 (right column) (p. 5)
+  quote: While this finding is of interest in itself, it may have diluted this primary outcome by adding
+    many CTs that were not relevant to the hypothesis.
+  speaker: the authors
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C149
+  capture: V01
+  locator: Discussion, paragraph 11, sentence 8 (right column, last sentence) (p. 5)
+  quote: Despite this limitation, the results clearly show no difference in time from CXR to CT according
+    to prioritization day across all analyses, each of which included a more than adequate number of observations
+    (Table 3).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C150
+  capture: V01
+  locator: Discussion, paragraph 12, sentences 1 and 2 (p. 6)
+  quote: Another limitation relates to the discordance reviews, which have been reported according to
+    differences between the AI flag classification and the final report. Because reporters had the AI
+    available at the time, we cannot determine how many findings would be independently found by the AI
+    or whether the human would have found something without AI assistance.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C151
+  capture: V01
+  locator: Discussion, paragraph 13, sentence 4 (p. 6)
+  quote: Our study is unable to determine whether the screening program is reducing the early-stage detection
+    by CXR.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C152
+  capture: V01
+  locator: Discussion, paragraph 18 (last paragraph, right column), sentence 1 (p. 6)
+  quote: The LungIMPACT trial has shown that immediate AI prioritization had no impact on important clinical
+    outcomes for patients with suspected lung cancer in the English NHS and that this tool, as assessed,
+    does not currently require potentially time-consuming and costly efforts to include in clinical services.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C153
+  capture: V01
+  locator: Discussion, paragraph 18, sentence 2 (p. 6)
+  quote: This is likely to apply to the use of any CXR algorithm in this way, because the vast majority
+    of cancers were detected where AI was abnormal and prioritization was therefore tested in a large
+    number of cases.
+  speaker: the authors
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C154
+  capture: V01
+  locator: Discussion, paragraph 18, sentence 4 (p. 6)
+  quote: Furthermore, this finding may extend to other settings where there is a relatively rapid review
+    of images through the usual clinical pathway.
+  speaker: the authors
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C155
+  capture: V01
+  locator: Discussion, paragraph 18 (continued from page 6), sentence 6 (p. 7)
+  quote: Because AI prioritization, although associated with a shortened time to CXR report, did not influence
+    more important clinical outcomes, services would need to implement additional pathway changes to potentially
+    replicate our previous findings.
+  speaker: the authors
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: the sentence explains the null result by contrast with the positive result of the authors'
+    own previous trial (ref. 13), which it presents as the benchmark; it flatters the authors' earlier
+    work
+- code: CS021.D01.C156
+  capture: V01
+  locator: Discussion, paragraph 18, sentence 7 (p. 7)
+  quote: A recommendation could be that any AI-flagged abnormality prompts an immediate human review and,
+    if confirmed, the implementation of a downstream bundle of investigations.
+  speaker: the authors
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C157
+  capture: V01
+  locator: Discussion, paragraph 18, sentence 8 (p. 7)
+  quote: The large-scale analysis of secondary outcomes shows the considerable potential burden of FP
+    results, using radiologist and radiographer review as the gold standard, while also showing the considerable
+    number of lung cancers diagnosed in this medium-to-high-risk group.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C158
+  capture: V01
+  locator: Discussion, paragraph 1, sentence 3, first clause (before ', but') (p. 3)
+  quote: A detailed health economics evaluation will be published separately
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C159
+  capture: V01
+  locator: Methods, 'Ethical and safety considerations', paragraph 3, sentence 1 (p. 10)
+  quote: The health economic analysis will be reported separately.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C160
+  capture: V01
+  locator: Discussion, paragraph 14, sentence 1 (p. 6)
+  quote: The health economics analysis is underway and considers the comparison made in the study, as
+    well as focusing on the differences between using AI at all and not using AI, in a planned secondary
+    analysis.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C161
+  capture: V01
+  locator: Discussion, paragraph 12, sentences 4 and 5 (p. 6)
+  quote: There were a small number of discordances in which the AI was correct and the reporter incorrect;
+    these have not yet been fully quantified or analyzed. These cases, together with a detailed analysis
+    of downstream outcomes, are the subject of a further project.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C162
+  capture: V01
+  locator: Discussion, paragraph 15, sentence 2, first clause (before the superscript reference 30) (p.
+    6)
+  quote: A prospective study is currently underway in Glasgow, Scotland, assessing the impact of AI prioritization
+    on time to CT among patients with lung cancer
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C163
+  capture: V01
+  locator: Discussion, paragraph 15, sentence 2, second clause (after reference 30) (p. 6)
+  quote: this is the only other randomized prospective study we are aware of
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C164
+  capture: V01
+  locator: Methods, 'Statistical analysis', the sentence before the t-test sentence (p. 10)
+  quote: As the time distributions for both these outcomes exhibited a right-skewed distribution, a log
+    transformation was used for formal statistical testing.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C165
+  capture: V01
+  locator: Methods, 'Statistical analysis', the sentence after the exploratory-analysis definition (p.
+    10)
+  quote: Comparisons of time to CT scan and time to cancer diagnosis between radiologist and AI CXR reports
+    as normal or abnormal were made using linear regression, with the outcome variables log-transformed
+    as described above.
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS021.D01.C166
+  capture: V01
+  locator: Methods, 'Statistical analysis', the sentence before 'No statistical testing was carried out
+    on this data.' (p. 9)
+  quote: Baseline characteristics of the study population were tabulated using summary statistics overall
+    and by intervention group (immediate AI prioritization or no AI prioritization; Table 1).
+  speaker: the authors
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null

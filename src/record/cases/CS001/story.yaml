@@ -1,6 +1,9 @@
 # CS001 (AAI-2026-001): generated from the library's case files.
 # Do not edit by hand.
 
+tags: ["AI security", "Case 001", "July 2026"]
+checked: "checked 1 Oct 2026"
+
 headline: "AI agents in an OpenAI test broke into Hugging Face"
 dek: >-
   In July 2026, AI agents that OpenAI was testing for hacking skill got past the

@@ -21,13 +21,17 @@ const code = Astro.props.code;
 const story = parseYaml(stories[`../../../../record/cases/${code}/story.yaml`]);
 const record = loadCase(code);
 const byShort = new Map(record.rows.map((r) => [shortCode(r.code), r]));
-for (const list of [[story.grade], story.short_version, story.numbers, story.timeline, story.what_they_say, story.unknowns, ...story.disagreements.map((d) => [...d.sides, ...(d.note ? [d.note] : [])])])
+for (const list of [[story.grade], ...(story.dek_rows ? [[{ rows: story.dek_rows }]] : []), story.short_version, story.numbers, story.timeline, story.what_they_say, story.unknowns, ...(story.disagreements ?? []).map((d) => [...d.sides, ...(d.note ? [d.note] : [])])])
   for (const item of list) for (const r of item.rows) if (!byShort.has(r)) throw new Error(`story.yaml cites ${r}, which is not a live row`);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const root = `${base}/cases/${Astro.params.year}/${Astro.params.case}`;
 const tip = (rows) => rows.map((r) => `${r}: ${byShort.get(r).statement} [${byShort.get(r).label.display}]`).join("\n\n");
 const src = (rows) => `${root}/evidence/#${rows[0]}`;
-const docs = record.docket?.length ?? 7;
+const docs = record.documents.length;
+const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+// Section numbers follow the sections a story actually has.
+const order = ["short", "timeline", ...(story.disagreements?.length ? ["disagree"] : []), "quotes", "unknowns", "deeper"];
+const num = (key) => pad(order.indexOf(key) + 1);
 const pad = (n) => String(n).padStart(2, "0");
 ---
 <!doctype html>
@@ -52,7 +56,7 @@ const pad = (n) => String(n).padStart(2, "0");
   <section class="mg-hero">
     <div class="mg-wrap mg-hero-grid">
       <div>
-        <p class="mg-tags"><span>AI security</span><span>Case 001</span><span>July 2026</span></p>
+        <p class="mg-tags">{story.tags.map((tag) => <span>{tag}</span>)}</p>
         <h1>{story.headline}</h1>
         <p class="mg-dek">{story.dek}</p>
       </div>
@@ -62,12 +66,12 @@ const pad = (n) => String(n).padStart(2, "0");
         <p>{story.grade.explain}</p>
       </aside>
     </div>
-    <div class="mg-wrap"><p class="mg-meta">{docs} public sources · every statement linked to its evidence · checked 1 Oct 2026</p></div>
+    <div class="mg-wrap"><p class="mg-meta">{plural(docs, "public source", "public sources")} · every statement linked to its evidence · {story.checked}</p></div>
   </section>
 
   <main>
     <section class="mg-wrap mg-sec">
-      <h2 class="mg-h"><span>01</span>The short version</h2>
+      <h2 class="mg-h"><span>{num("short")}</span>The short version</h2>
       <ol class="mg-points">
         {story.short_version.map((p, i) => (
           <li><span class="mg-pn">{pad(i + 1)}</span><p>{p.text} <a class="mg-src" href={src(p.rows)} title={tip(p.rows)}>Source</a></p></li>
@@ -84,7 +88,7 @@ const pad = (n) => String(n).padStart(2, "0");
     </section>
 
     <section class="mg-wrap mg-sec">
-      <h2 class="mg-h"><span>02</span>Day by day</h2>
+      <h2 class="mg-h"><span>{num("timeline")}</span>{story.timeline_title ?? "Day by day"}</h2>
       <ol class="mg-tl">
         {story.timeline.map((t) => (
           <li><time>{t.date}</time><p>{t.text}</p><a class="mg-src" href={src(t.rows)} title={tip(t.rows)}>Source</a></li>
@@ -92,10 +96,10 @@ const pad = (n) => String(n).padStart(2, "0");
       </ol>
     </section>
 
-    <section class="mg-split-sec">
+    {story.disagreements?.length > 0 && <section class="mg-split-sec">
       <div class="mg-wrap">
-        <h2 class="mg-h mg-h-inv"><span>03</span>Where the accounts disagree</h2>
-        <p class="mg-lede">Both sides, side by side. We don't pick one: the public record doesn't settle it.</p>
+        <h2 class="mg-h mg-h-inv"><span>{num("disagree")}</span>{story.disagreements_title ?? "Where the accounts disagree"}</h2>
+        <p class="mg-lede">{story.disagreements_lede ?? "Both sides, side by side. We don't pick one: the public record doesn't settle it."}</p>
       </div>
       {story.disagreements.map((d) => (
         <div class="mg-wrap mg-dispute">
@@ -108,10 +112,10 @@ const pad = (n) => String(n).padStart(2, "0");
           {d.note && <p class="mg-dnote">{d.note.text} <a class="mg-src" href={src(d.note.rows)} title={tip(d.note.rows)}>Source</a></p>}
         </div>
       ))}
-    </section>
+    </section>}
 
     <section class="mg-wrap mg-sec">
-      <h2 class="mg-h"><span>04</span>In their own words</h2>
+      <h2 class="mg-h"><span>{num("quotes")}</span>In their own words</h2>
       <div class="mg-quotes">
         {story.what_they_say.map((q, i) => (
           <figure class={`mg-quote ${i === 0 ? "mg-quote-big" : ""}`}><blockquote>{q.quote}</blockquote><figcaption>— {q.who} <a class="mg-src" href={src(q.rows)} title={tip(q.rows)}>Source</a></figcaption></figure>
@@ -120,7 +124,7 @@ const pad = (n) => String(n).padStart(2, "0");
     </section>
 
     <section class="mg-wrap mg-sec">
-      <h2 class="mg-h"><span>05</span>Still unknown</h2>
+      <h2 class="mg-h"><span>{num("unknowns")}</span>Still unknown</h2>
       <ul class="mg-unknowns">
         {story.unknowns.map((u) => (<li><span aria-hidden="true">?</span><p>{u.text} <a class="mg-src" href={src(u.rows)} title={tip(u.rows)}>Source</a></p></li>))}
       </ul>
@@ -128,11 +132,11 @@ const pad = (n) => String(n).padStart(2, "0");
 
     <section class="mg-deeper">
       <div class="mg-wrap">
-        <h2 class="mg-h mg-h-inv"><span>06</span>Go deeper</h2>
+        <h2 class="mg-h mg-h-inv"><span>{num("deeper")}</span>Go deeper</h2>
         <div class="mg-cards">
           <a href={`${root}/record/`}><em>Read</em><strong>The full record</strong><span>The complete account in twelve sections, every sentence tied to its sources.</span></a>
           <a href={`${root}/evidence/`}><em>Check</em><strong>The evidence</strong><span>{record.rows.length} checked facts, each with the exact quote it rests on.</span></a>
-          <a href={`${root}/sources/`}><em>Trace</em><strong>The sources</strong><span>The {docs} documents behind this case, and how far each can be trusted.</span></a>
+          <a href={`${root}/sources/`}><em>Trace</em><strong>The sources</strong><span>{docs === 1 ? "The document behind this case, and how far it can be trusted." : `The ${docs} documents behind this case, and how far each can be trusted.`}</span></a>
         </div>
       </div>
     </section>

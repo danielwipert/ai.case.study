@@ -25,6 +25,7 @@ grade:
   - 'Scale, about 700 agents: rests on OpenAI''s own data as examined by METR and Redwood, which the library
     does not count as independent of OpenAI (F094)'
   decided: 2026-10-01
+  plain: well established
 verified: '2026-10-01'
 next_review: '2027-01-01'
 charter:
@@ -93,3 +94,5 @@ headings:
   name: Evidence still awaited
   status: populated
 public_id: AAI-2026-001
+interest_words:
+  self-serving: about the speaker's own conduct

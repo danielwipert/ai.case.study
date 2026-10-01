@@ -1,0 +1,3072 @@
+# CS021 (AAI-2026-021): generated from the library's case files.
+# Do not edit by hand.
+
+- code: CS021.F001
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report that between 17 July 2023 and 31 December 2024, 97,731
+    chest X-rays were performed across five NHS trusts.
+  unit: chest X-rays
+  counts: CXRs performed at the five participating trusts in the recruitment period 17 Jul 2023 to 31
+    Dec 2024, before any exclusion
+  links:
+  - claim: CS021.D01.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 46fd54e7450067e2
+- code: CS021.F002
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that patients were followed up until 5 June 2025.
+  start: null
+  end: '2025-06-05'
+  links:
+  - claim: CS021.D01.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 30c04ae0e56839b6
+- code: CS021.F003
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report that after data cleaning, 93,326 chest X-rays from 86,945
+    patients were included in the analysis.
+  unit: chest X-rays; patients
+  counts: CXRs and distinct patients remaining after data cleaning and included in the study analysis
+  links:
+  - claim: CS021.D01.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 5423ab87d87de57e
+- code: CS021.F004
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report that 45,987 of the 93,326 analysed chest X-rays, 49.3
+    percent, were performed in sessions with AI prioritization for immediate review.
+  unit: chest X-rays
+  counts: CXRs among the 93,326 analysed that fell in AI-prioritization sessions; the denominator is F003's
+    CXR count
+  links:
+  - claim: CS021.D01.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 178062f1d91c17ba
+- code: CS021.F005
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report that the mean age of the study population was 59 years.
+  unit: years
+  counts: mean age of the analysed study population
+  links:
+  - claim: CS021.D01.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 29e1e0f973e0b8f6
+- code: CS021.F006
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report that the study chest X-rays were performed 54 percent
+    at University Hospitals of Leicester, 15 percent at Nottingham University Hospitals, 11 percent at
+    East Sussex and North Essex Foundation Trust, 11 percent at University College London Hospital and
+    9 percent at University Hospitals of Birmingham.
+  unit: percent
+  counts: share of the study CXRs performed at each of the five trusts
+  links:
+  - claim: CS021.D01.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: b9c58d3a94f08d8e
+- code: CS021.F007
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report that 13,347 patients had a valid CT scan and were included
+    in the time-to-CT analysis, 6,674 with AI prioritization and 6,673 without.
+  unit: patients
+  counts: patients with a valid CT scan included in the analysis of time from CXR to CT, by arm
+  links:
+  - claim: CS021.D01.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 95303910ce145d19
+- code: CS021.F008
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report that 558 patients were diagnosed with lung cancer and
+    were included in the time-to-diagnosis analysis, 269 with AI prioritization and 289 without.
+  unit: patients
+  counts: patients diagnosed with lung cancer and included in the analysis of time from CXR to cancer
+    diagnosis, by arm
+  links:
+  - claim: CS021.D01.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 0c36afe1a53c395e
+- code: CS021.F009
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report that the median time from chest X-ray to CT scan was
+    53 days, interquartile range 17 to 145, on AI-prioritization days and 53 days, interquartile range
+    19 to 141, on days without AI prioritization.
+  unit: days
+  counts: median and IQR of time from CXR acquisition to CT scan, for all 13,347 analysed patients, by
+    arm
+  links:
+  - claim: CS021.D01.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 1c26699cbdd86024
+- code: CS021.F010
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report that the median time from chest X-ray to lung cancer
+    diagnosis was 44 days, interquartile range 26 to 90, on AI-prioritization days and 46 days, interquartile
+    range 24 to 105, on days without AI prioritization.
+  unit: days
+  counts: median and IQR of time from CXR acquisition to lung cancer diagnosis, for the 558 analysed patients,
+    by arm
+  links:
+  - claim: CS021.D01.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: abed3ca1c704471b
+- code: CS021.F011
+  kind: computed
+  heading: 6
+  statement: 47,339 of the analysed chest X-rays were performed in sessions without AI prioritization,
+    computed as the 93,326 analysed chest X-rays less the 45,987 in AI-prioritization sessions.
+  inputs:
+  - CS021.F003
+  - CS021.F004
+  working: 93,326 − 45,987 = 47,339
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F012
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report that 46 percent of the study population were male.
+  unit: percent
+  counts: share male among the analysed study population
+  links:
+  - claim: CS021.D01.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: fd05fed64457b2e1
+- code: CS021.F013
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report no significant difference in the time from chest X-ray
+    to CT scan according to AI prioritization, with a ratio of geometric means of 0.97, 95 percent confidence
+    interval 0.93 to 1.02, P = 0.31.
+  unit: ratio of geometric means (dimensionless), with 95% confidence interval and P value
+  counts: the between-arm comparison of time from CXR acquisition to CT scan; the direction of the ratio
+    is not stated in the quote
+  links:
+  - claim: CS021.D01.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 22e2f24d56723193
+- code: CS021.F014
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report no difference in time to CT scan between AI-prioritization
+    days and days without AI prioritization when the analysis was restricted to CT scans performed within
+    14 days, P = 0.96.
+  unit: P value
+  counts: the between-arm comparison of time to CT scan, restricted to CT scans performed within 14 days
+  links:
+  - claim: CS021.D01.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 35637fff3725945d
+- code: CS021.F015
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report no difference in time to CT scan between AI-prioritization
+    days and days without AI prioritization when the analysis was restricted to chest X-rays with a CT
+    referral, P = 0.86.
+  unit: P value
+  counts: the between-arm comparison of time to CT scan, restricted to CXRs with a CT referral
+  links:
+  - claim: CS021.D01.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 508ce2f43e1783d7
+- code: CS021.F016
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report no significant difference in the time from chest X-ray
+    to lung cancer diagnosis between AI-prioritization days and days without AI prioritization, with a
+    ratio of geometric means of 0.98, 95 percent confidence interval 0.83 to 1.16, P = 0.84.
+  unit: ratio of geometric means (dimensionless), with 95% confidence interval and P value
+  counts: the between-arm comparison of time from CXR acquisition to lung cancer diagnosis; the direction
+    of the ratio is not stated in the quote
+  links:
+  - claim: CS021.D01.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 1d3c628dcfd8e6ed
+- code: CS021.F017
+  kind: state
+  heading: 8
+  statement: The LungIMPACT investigators report that no statistically significant differences were found
+    for either primary outcome, time to CT scan or time to lung cancer diagnosis, at any trial site or
+    in any quarter.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: f2d7423baa95e6c9
+  - claim: CS021.D01.C15
+    relation: contradicts
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 8c16458f06d0a365
+- code: CS021.F018
+  kind: absence
+  heading: 11
+  statement: D01 does not state which arm of the trial is the numerator of the ratios of geometric means
+    it reports, in its text, its Table 2, or its Extended Data Tables 1, 2 and 4.
+  documents_read:
+  - 'CS021.D01 capture V01: the full text layer (text.txt), searched for the ratios and for any statement
+    of direction'
+  - 'CS021.D01 capture V01: Extended Data Tables 1, 2 and 4 (pages 14, 15, 17), read by eye from page
+    images, as they have no text layer'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-09-30'
+- code: CS021.F019
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report, in Extended Data Table 2, a ratio of geometric means
+    of 1.14, 95 percent confidence interval 1.02 to 1.28, P = 0.03, for time to CT scan in the third quarter
+    of 2024, with N = 2,535.
+  unit: ratio of geometric means (dimensionless), with 95% confidence interval and P value
+  counts: the between-arm comparison of time to CT scan in year quarter Q3 2024; direction not stated
+    (F018)
+  links:
+  - claim: CS021.D01.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 1f2e1638501eddb9
+- code: CS021.F020
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report that the median time to two-week-wait referral was 14
+    days, interquartile range 5 to 53, on AI-prioritization days and 15 days, interquartile range 6 to
+    50, on days without AI prioritization.
+  unit: days
+  counts: median and IQR of time to two-week-wait (2WW) referral, by arm
+  links:
+  - claim: CS021.D01.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 2f5b059e68e360fe
+- code: CS021.F021
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report that the median time to initiation of cancer treatment
+    was 76 days, interquartile range 38 to 114, on AI-prioritization days and 73 days, interquartile range
+    43 to 121, on days without AI prioritization.
+  unit: days
+  counts: median and IQR of time to initiation of cancer treatment, by arm
+  links:
+  - claim: CS021.D01.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 5e42703eb8a9ef04
+  - claim: CS021.D01.C21
+    relation: contradicts
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 2fdc64c3d1ad53d6
+- code: CS021.F022
+  kind: state
+  heading: 8
+  statement: The LungIMPACT investigators report that there were no differences in secondary outcomes
+    by AI group.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C18
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 73bba8b71576593a
+  - claim: CS021.D01.C19
+    relation: contradicts
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 1cb5d1b160c12494
+- code: CS021.F023
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report, in Table 2 under secondary outcomes, that the median
+    time from chest X-ray to chest X-ray report was 34.1 hours, interquartile range 6.6 to 93.1, over
+    42,814 chest X-rays on AI-prioritization days and 47.0 hours, interquartile range 15.8 to 99, over
+    44,078 chest X-rays on days without AI prioritization, with a ratio of geometric means of 0.85, 95
+    percent confidence interval 0.83 to 0.87, P < 0.001.
+  unit: hours; ratio of geometric means (dimensionless) with 95% CI and P value
+  counts: median and IQR of time from CXR acquisition to CXR report, by arm; n = 44,078 without and 42,814
+    with (Table 2). The column totals, 44,112 and 42,833, carry footnote a (first CXR per patient only);
+    the report-time n values fall within them
+  links:
+  - claim: CS021.D01.C19
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 06d8062350246745
+- code: CS021.F024
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report, in Table 2, a ratio of geometric means of 0.91, 95 percent
+    confidence interval 0.80 to 1.03, P = 0.13, for time to two-week-wait referral between AI-prioritization
+    days and days without AI prioritization.
+  unit: ratio of geometric means (dimensionless), with 95% CI and P value
+  counts: the between-arm comparison of time to 2WW referral; n = 1,215 with and 1,284 without (Table
+    2)
+  links:
+  - claim: CS021.D01.C20
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 0ba70e61ed9bb35a
+- code: CS021.F025
+  kind: quantity
+  heading: 8
+  statement: The LungIMPACT investigators report, in Table 2, that the median time to cancer treatment
+    starting was 76 days, interquartile range 37 to 114, on AI-prioritization days and 72.5 days, interquartile
+    range 43 to 120.5, on days without AI prioritization, with a ratio of geometric means of 1.00, 95
+    percent confidence interval 0.84 to 1.19, P = 0.99.
+  unit: days; ratio of geometric means (dimensionless) with 95% CI and P value
+  counts: median and IQR of time to cancer treatment starting, by arm, and the between-arm comparison;
+    n = 200 in each arm (Table 2)
+  links:
+  - claim: CS021.D01.C21
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-09-30'
+      fingerprint: 64a44adf422a5882
+- code: CS021.F026
+  kind: state
+  heading: 2
+  statement: The LungIMPACT paper lists its authors as Nick Woznitza, Lesley Smith, Janette Rawlinson,
+    Iain Au-Yong, Bindu George, Madava G. Djearaman, Arjun Nair, Richard W. Lee, Neal Navani, Siyabonga
+    Ndwandwe, Caroline S. Clarke, Andrew Creeden, Josh Newsome, Indrajeet Das, Sylvia Abaokporo, Richard
+    Tucker, James Hathorn and David R. Baldwin.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 3c5d50af3d277f2f
+- code: CS021.F027
+  kind: state
+  heading: 2
+  statement: The LungIMPACT investigators report that the LungIMPACT trial was supported by Small Business
+    Research Initiative (SBRI) Healthcare, under grant SBRIC01P3039 to Nick Woznitza and David R. Baldwin.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C22
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 7a8e5093c32522d2
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 7b34c1afb78e3de4
+- code: CS021.F028
+  kind: state
+  heading: 2
+  statement: The LungIMPACT investigators report that SBRI Healthcare, the funder of the LungIMPACT trial,
+    undertook regular reviews of project progress and funding allocation.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C23
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 77117f0f912db0ac
+- code: CS021.F029
+  kind: state
+  heading: 2
+  statement: The LungIMPACT investigators report that part of the LungIMPACT work was undertaken at University
+    College London Hospitals NHS Foundation Trust/University College London, which received a proportion
+    of funding from the UK Department of Health’s NIHR Biomedical Research Centre’s funding scheme.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C52
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 60b83068e6461a4d
+- code: CS021.F030
+  kind: state
+  heading: 2
+  statement: The LungIMPACT investigators state that all data for the LungIMPACT study are stored by the
+    study sponsor, and give the sponsor's contact for data access requests as Research & Innovation, Nottingham
+    University Hospitals NHS Trust.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C39
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 57de9dfc5402c1cd
+  - claim: CS021.D01.C40
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c815b6f5143592a9
+- code: CS021.F031
+  kind: state
+  heading: 2
+  statement: 'The LungIMPACT investigators report that one AI product was used in the LungIMPACT trial:
+    qXR, from Qure.ai Technologies.'
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C56
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: d688171ea1d00d7a
+  - claim: CS021.D01.C58
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 063f16d627260f52
+- code: CS021.F032
+  kind: state
+  heading: 2
+  statement: The LungIMPACT investigators report that Qure.ai Technologies assisted in the deployment
+    of qXR in the LungIMPACT trial, working with the NHS to integrate with local IT systems, to ensure
+    pseudonymization, and to ensure the correct prioritization method, which could be switched on or off
+    according to the randomization.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C27
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: fac5e3a334bd0e6b
+- code: CS021.F033
+  kind: statement
+  heading: 2
+  statement: The LungIMPACT investigators state that they are "indebted to the Qure.ai Technologies team
+    for their work on the implementation of the AI and for ensuring all interactions with the NHS ran
+    smoothly and that data were collected in full compliance with data protection requirements."
+  speaker: the LungIMPACT investigators
+  quote: We are indebted to the Qure.ai Technologies team for their work on the implementation of the
+    AI and for ensuring all interactions with the NHS ran smoothly and that data were collected in full
+    compliance with data protection requirements.
+  links:
+  - claim: CS021.D01.C24
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: bc03ac7bb3f9c80b
+- code: CS021.F034
+  kind: statement
+  heading: 2
+  statement: The LungIMPACT investigators state that "Qure.ai Technologies had no influence on the study
+    design or analysis."
+  speaker: the LungIMPACT investigators
+  quote: Qure.ai Technologies had no influence on the study design or analysis.
+  links:
+  - claim: CS021.D01.C25
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: cdb465320c0fda56
+- code: CS021.F035
+  kind: state
+  heading: 2
+  statement: The LungIMPACT investigators report that Lesley Smith designed the statistical analysis plan
+    for the LungIMPACT trial and conducted all statistical analyses.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C30
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8ea79d3fdff6fde2
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 2ae82d5152f01dbe
+- code: CS021.F036
+  kind: state
+  heading: 2
+  statement: The LungIMPACT investigators report that Nick Woznitza and David R. Baldwin conceived the
+    LungIMPACT study design, wrote the study protocol, obtained ethics approval, maintained oversight
+    of the study and drafted the first version of the manuscript.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C29
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 37f76bee4c6b3e52
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 6e7e20fabd49cced
+- code: CS021.F038
+  kind: state
+  heading: 2
+  statement: The LungIMPACT paper gives Lesley Smith's affiliation as the Leeds Cancer Research UK Clinical
+    Trials Unit, University of Leeds, and James Hathorn's as the Radiology Department, East Suffolk and
+    North East Essex NHS Foundation Trust, Colchester.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 65b87deadbc316aa
+  - claim: CS021.D01.C37
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: dcd315f6488427e8
+  - claim: CS021.D01.C38
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: f0a4898873194002
+- code: CS021.F039
+  kind: statement
+  heading: 2
+  statement: The LungIMPACT investigators state, in the competing-interests section, that Nick Woznitza
+    "declares consultancy fees from InHealth, Apollo Radiology (UK) and SMR Health & Tech unrelated to
+    the current study and a travel grant from Qure.ai Technologies to attend the European Congress of
+    Radiology 2023."
+  speaker: the LungIMPACT investigators
+  quote: N.W. declares consultancy fees from InHealth, Apollo Radiology (UK) and SMR Health & Tech unrelated
+    to the current study and a travel grant from Qure.ai Technologies to attend the European Congress
+    of Radiology 2023.
+  links:
+  - claim: CS021.D01.C44
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8e7705f071e425a9
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 15a1e7a1d163cb41
+- code: CS021.F040
+  kind: statement
+  heading: 2
+  statement: The LungIMPACT investigators state, in the competing-interests section, that Richard W. Lee
+    has received research funding from, among others, "SBRI (including as a co-applicant with Qure.ai)",
+    and that his declared activities "are unrelated to the present study, aside from the SBRI funding
+    received in collaboration with Qure.ai."
+  speaker: the LungIMPACT investigators
+  quote: research funding from Cancer Research UK, Innovate UK (cofunded by GE Healthcare, Roche Diagnostics,
+    Optellum, Elliptica and RNA Guardian), SBRI (including as a co-applicant with Qure.ai), RM Partners
+    Cancer Alliance and NIHR (including co-applicant on grants with Optellum)
+  links:
+  - claim: CS021.D01.C45
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 3580e3b83aa14764
+  - claim: CS021.D01.C46
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 9bc32992ee734466
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8002374ae280b32e
+- code: CS021.F041
+  kind: statement
+  heading: 2
+  statement: The LungIMPACT investigators state, in the competing-interests section, that David R. Baldwin
+    "declares honoraria for speaking and education from AstraZeneca and Boehringer Ingelheim, unrelated
+    to the current study", and that he has received research grants from the National Institute of Health
+    Research, Cancer Research UK, Horizon Europe, Ruth Strauss Foundation, SBRI, Innovate UK, Yorkshire
+    Cancer Research, the Royal Castle Foundation, and UK Research and Innovation.
+  speaker: the LungIMPACT investigators
+  quote: D.R.B. declares honoraria for speaking and education from AstraZeneca and Boehringer Ingelheim,
+    unrelated to the current study.
+  links:
+  - claim: CS021.D01.C42
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c42335238a1d7d5f
+  - claim: CS021.D01.C43
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 56964e3ce857ddf7
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 80fda8402c6aa725
+- code: CS021.F042
+  kind: statement
+  heading: 2
+  statement: 'The LungIMPACT investigators state, in the competing-interests section, further declarations
+    with no Qure.ai tie named: Richard W. Lee is funded by the Royal Marsden NIHR Biomedical Research
+    Centre and The Royal Marsden Cancer Charity, his institution receives compensation for his secondment
+    with NHS England for the Lung Health Check Programme and as National Specialty Lead for the NIHR,
+    he has received honoraria, speaker and advisory fees, and/or hospitality and travel expenses from
+    named bodies, and he undertakes private medical practice; Neal Navani is supported by a Medical Research
+    Council Clinical Academic Research Partnership (MR/T02481X/1), has received grant funding from five
+    named bodies and reports honoraria from sixteen named companies; and "The remaining authors declare
+    no competing interests."'
+  speaker: the LungIMPACT investigators
+  quote: R.W.L. is funded by the Royal Marsden National Institute for Health and Care Research (NIHR)
+    Biomedical Research Centre and The Royal Marsden Cancer Charity
+  links:
+  - claim: CS021.D01.C47
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: eb4ebff836f2fb6f
+  - claim: CS021.D01.C48
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: e92391287ce6acf4
+  - claim: CS021.D01.C45
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 424cfee25010b80c
+  - claim: CS021.D01.C49
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 60fa3b39cc86c5af
+  - claim: CS021.D01.C50
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: f6777910248da4ac
+  - claim: CS021.D01.C51
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 56e210fda3b97fd9
+  - claim: CS021.D01.C53
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: b9c812fc4bdc38ce
+  - claim: CS021.D01.C54
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 967760a57ecd059b
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 93ea8cc1efbaa742
+- code: CS021.F043
+  kind: absence
+  heading: 2
+  statement: D01 does not state whether Qure.ai Technologies received any part of SBRI Healthcare grant
+    SBRIC01P3039, whether it was paid for the use of qXR in the LungIMPACT trial, or whether the 'SBRI
+    funding received in collaboration with Qure.ai' in Richard W. Lee's declaration is that grant.
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages; text.txt)
+  - 'CS021.D01 capture V01, Reporting Summary, pages 19-21 (image-only, no text layer): read by eye by
+    the editor on 2026-10-01; nothing found that changes this row'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F044
+  kind: state
+  heading: 3
+  statement: The LungIMPACT investigators report that the qXR algorithm used in the LungIMPACT trial was
+    version 4.0.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C58
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 4523a16510b7f30d
+- code: CS021.F045
+  kind: state
+  heading: 3
+  statement: The LungIMPACT investigators report that qXR is a class IIb CE-certified deep learning algorithm.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C58
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: ab853a9458a1e595
+- code: CS021.F046
+  kind: state
+  heading: 3
+  statement: The LungIMPACT investigators report that qXR functions as a clinical decision support tool
+    to assist healthcare professionals in identifying abnormalities on chest X-rays, in 29 classes or
+    types.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C59
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: edc25630d39d885c
+- code: CS021.F047
+  kind: state
+  heading: 3
+  statement: The LungIMPACT investigators report that in the LungIMPACT trial chest X-ray images were
+    pseudonymized, transferred to the cloud-based qXR for analysis and returned to the local Picture Archiving
+    and Communication System with image mark-ups and abnormality classification.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C60
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 4d9d5f86051c8e5f
+- code: CS021.F048
+  kind: state
+  heading: 3
+  statement: The LungIMPACT investigators report that on intervention days of the LungIMPACT trial an
+    active notification was sent to the worklist for any 'qXR-suspected-abnormal' case, allowing prioritization
+    for immediate reporting by radiology.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C61
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 45832b3fb21507e1
+- code: CS021.F049
+  kind: state
+  heading: 3
+  statement: The LungIMPACT investigators report that the qXR software algorithm did not undergo updates
+    or changes for the duration of the LungIMPACT study.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C62
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c5a966118ee70fd3
+- code: CS021.F050
+  kind: state
+  heading: 3
+  statement: The LungIMPACT investigators report that in the LungIMPACT trial radiographers could, at
+    their discretion, flag abnormalities that may require further action, which may result in a CT scan,
+    sometimes performed on the same day; and that where there was no flag, the chest X-ray was later reported
+    by a radiologist or reporting radiographer according to local usual clinical practice.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C63
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: a9683ebcce09279d
+  - claim: CS021.D01.C64
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 76ecb78765b35b36
+- code: CS021.F051
+  kind: state
+  heading: 3
+  statement: The LungIMPACT investigators show, in Extended Data Fig. 2, the chest X-ray checked by the
+    radiographer with the qXR AI read in the column headed 'AI Prioritisation flag', and checked by the
+    radiographer without the qXR AI read in the column headed 'AI at time of reporting session'.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C66
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: d4d46bb19527f749
+- code: CS021.F052
+  kind: absence
+  heading: 3
+  statement: D01 does not state the score or threshold at which qXR classed a chest X-ray as 'qXR-suspected-abnormal',
+    the time within which a prioritized chest X-ray was to be reported, whether prioritized chest X-rays
+    were reported by radiologists or reporting radiographers, or what proportion of notified cases were
+    reported immediately.
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages; text.txt)
+  - 'CS021.D01 capture V01, Reporting Summary, pages 19-21 (image-only, no text layer): read by eye by
+    the editor on 2026-10-01; nothing found that changes this row'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F053
+  kind: absence
+  heading: 3
+  statement: D01 does not state a UKCA marking, an MHRA registration, a CE certificate number or date,
+    or a notified body for qXR.
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages; text.txt)
+  - 'CS021.D01 capture V01, Reporting Summary, pages 19-21 (image-only, no text layer): read by eye by
+    the editor on 2026-10-01; nothing found that changes this row'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F054
+  kind: state
+  heading: 3
+  statement: The LungIMPACT investigators report that the code for the qXR algorithm is not available,
+    as it is a commercial product.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C67
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8de05b9f68759cb4
+- code: CS021.F055
+  kind: state
+  heading: 4
+  statement: The LungIMPACT investigators report that in England the National Optimal Lung Cancer Pathway
+    (NOLCP) recommends rapid progression from chest X-ray to CT, followed by assessment in a specialist
+    clinic.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C68
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 6d872b76b3114089
+- code: CS021.F056
+  kind: state
+  heading: 4
+  statement: The LungIMPACT investigators report that the National Optimal Lung Cancer Pathway mandates
+    that patients with a suspicious chest X-ray undergo CT within 72 hours, preferably on the same day.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C69
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: baefbcf45b537196
+- code: CS021.F057
+  kind: state
+  heading: 4
+  statement: The LungIMPACT paper cites, as its source for the National Optimal Lung Cancer Pathway, version
+    4.0, published by NHS England in 2024.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C70
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 784677d1206f55e3
+- code: CS021.F058
+  kind: quantity
+  heading: 4
+  statement: The LungIMPACT investigators report that, as of April 2025, the median reporting time for
+    chest X-rays referred from primary care (2 days) and the waiting time for CT chest (15 days) do not
+    meet the NOLCP standards (72 hours from abnormal chest X-ray to CT).
+  unit: days
+  counts: national median reporting time for primary-care-referred chest X-rays, April 2025 (England is
+    the paper's context; the sentence itself does not say 'England')
+  links:
+  - claim: CS021.D01.C71
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 902645a4206fc66d
+- code: CS021.F060
+  kind: quantity
+  heading: 4
+  statement: The LungIMPACT investigators report that more than 7 million chest X-rays are performed annually
+    in England, including about 2.2 million referred from primary care.
+  unit: chest X-rays per year
+  counts: annual national volume of CXRs in England, and the primary-care-referred subset; no year given
+  links:
+  - claim: CS021.D01.C72
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 0e9b22765acdf167
+- code: CS021.F061
+  kind: quantity
+  heading: 4
+  statement: The LungIMPACT investigators report that the NHS Diagnostic Imaging Dataset records a median
+    of 15 days between request and CT, and that these data are not segregated between urgent scans and
+    those that are routine or for follow up.
+  unit: days
+  counts: median time between CT request and CT in the NHS Diagnostic Imaging Dataset, all urgencies combined;
+    no date given
+  links:
+  - claim: CS021.D01.C73
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 076ea29b28474d7d
+- code: CS021.F062
+  kind: statement
+  heading: 4
+  statement: The LungIMPACT investigators state that "Recently published research funded by Cancer Research
+    UK, conducted by members of the current study team, found that immediate radiographer CXR reporting,
+    with direct triage to same-day CT, significantly reduced time to diagnosis of lung cancer by almost
+    half from a median of 63 days from CXR, to 32 days (P = 0.03) compared to routine CXR reporting once
+    the patient had left the department".
+  speaker: the LungIMPACT investigators
+  quote: Recently published research funded by Cancer Research UK, conducted by members of the current
+    study team, found that immediate radiographer CXR reporting, with direct triage to same-day CT, significantly
+    reduced time to diagnosis of lung cancer by almost half from a median of 63 days from CXR, to 32 days
+    (P = 0.03) compared to routine CXR reporting once the patient had left the department
+  links:
+  - claim: CS021.D01.C74
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8428fbb503850fc0
+- code: CS021.F063
+  kind: state
+  heading: 4
+  statement: The LungIMPACT investigators report that a recent NICE review of the clinical utility of
+    AI algorithms for assisted reporting of chest X-rays concluded that there was insufficient evidence
+    to make any recommendations other than to ensure products were carefully evaluated, and that NICE
+    has not recommended any AI products for chest X-ray interpretation in England.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C75
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 314df3ae956a0cf6
+  - claim: CS021.D01.C77
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 64950bb291d1b427
+- code: CS021.F064
+  kind: statement
+  heading: 4
+  statement: The LungIMPACT investigators state that "NICE cited the LungIMPACT study as the only investigation
+    considered potentially capable of addressing important clinical questions".
+  speaker: the LungIMPACT investigators
+  quote: NICE cited the LungIMPACT study as the only investigation considered potentially capable of addressing
+    important clinical questions
+  links:
+  - claim: CS021.D01.C76
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 598868d228898bba
+- code: CS021.F065
+  kind: state
+  heading: 4
+  statement: The LungIMPACT investigators report that qXR was already in routine clinical use in some
+    NHS hospitals.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C58
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 7e7f813336012040
+- code: CS021.F066
+  kind: state
+  heading: 4
+  statement: The LungIMPACT investigators report that training on the use of the AI was provided to all
+    reporters during the implementation of the AI at each hospital and before the LungIMPACT study commenced,
+    covering intended use as a clinical decision support tool, the different AI findings, radiology worklist
+    prioritization and the user interface and AI results.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C78
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c7f2d18209bcbbad
+  - claim: CS021.D01.C79
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c1890a32791fb02f
+- code: CS021.F067
+  kind: state
+  heading: 4
+  statement: The LungIMPACT investigators report that in England there has been a phased implementation
+    of lung cancer screening for people aged 55 to 74 at high risk of developing lung cancer.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C80
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: d71636ff5b5beccc
+- code: CS021.F068
+  kind: state
+  heading: 4
+  statement: 'The LungIMPACT investigators report the lung cancer screening status of four of the five
+    trial trusts: University College London Hospital has an established screening program, University
+    Hospitals of Birmingham commenced screening in 2022, Nottingham University Hospitals'' program started
+    in 2023, and University Hospitals of Leicester is without a program.'
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C81
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 98be1f09ed79447d
+  - claim: CS021.D01.C82
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 0f180bc8335a28cc
+  - claim: CS021.D01.C83
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 7a0bee34e286f876
+- code: CS021.F069
+  kind: absence
+  heading: 4
+  statement: D01 does not report, for any of the five trial trusts, chest X-ray reporting times, CT waiting
+    times, reporting backlogs or radiology staffing before the LungIMPACT trial began.
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages; text.txt)
+  - 'CS021.D01 capture V01, Reporting Summary, pages 19-21 (image-only, no text layer): read by eye by
+    the editor on 2026-10-01; nothing found that changes this row'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F070
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that the LungIMPACT trial was a prospective, multicenter,
+    randomized controlled trial conducted between July 2023 and December 2024 across five NHS Trusts in
+    England.
+  start: 2023-07
+  end: 2024-12
+  links:
+  - claim: CS021.D01.C84
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8d986c5188756586
+- code: CS021.F071
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that participants in the LungIMPACT trial were aged 18
+    years or older and were attending for a primary care-requested chest X-ray.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C85
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: cc3488fe7beb47dd
+- code: CS021.F072
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that anteroposterior or posteroanterior chest X-ray views
+    were analyzed in the LungIMPACT trial and lateral views were excluded.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C86
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: ba00cf62ae675501
+- code: CS021.F073
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that no data on race, ethnicity or social grouping were
+    collected in the LungIMPACT trial.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C128
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 97025f16b6cc6458
+- code: CS021.F074
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that LungIMPACT participants aged 18 years or older,
+    attending for a primary care-requested chest X-ray, were block-randomized by day and site to either
+    immediate AI prioritization of reporting or no AI prioritization.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C85
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: ef64d5ee32004f23
+  - claim: CS021.D01.C91
+    relation: contradicts
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 361d3f3721cec61a
+- code: CS021.F075
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that allocation of Monday-to-Friday routine imaging whole-day
+    sessions to AI prioritization or routine care was made in advance, by random sampling with a 1:1 randomization
+    method.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C87
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 349a192785e9e0ad
+- code: CS021.F076
+  kind: statement
+  heading: 6
+  statement: The LungIMPACT investigators state that "Days were randomly allocated to minimize the potential
+    impact of different levels of staffing and capacity."
+  speaker: the authors
+  quote: Days were randomly allocated to minimize the potential impact of different levels of staffing
+    and capacity.
+  links:
+  - claim: CS021.D01.C88
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 2ef03f8f5ad320b0
+- code: CS021.F077
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that in the LungIMPACT trial individual patients were
+    not randomized; their chest X-rays were.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C91
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 2b63cdec35035655
+  - claim: CS021.D01.C85
+    relation: contradicts
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 0037f3a73c81edaa
+- code: CS021.F078
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that consent was not obtained from LungIMPACT patients;
+    in each radiology department, messaging stated that AI was being used as part of a research study
+    and gave details of how to opt out, as agreed by the Ethics Committee.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C92
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: b792fb4c3e6c9e4d
+- code: CS021.F079
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report that one participant opted out of the LungIMPACT study.
+  unit: participants
+  counts: participants who opted out of the study after the opt-out information in the radiology departments,
+    over the whole trial
+  links:
+  - claim: CS021.D01.C93
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c90c82ea714f1182
+- code: CS021.F080
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that blinding was not possible in the LungIMPACT trial,
+    the intervention being radiology worklist prioritisation, and that radiology clinicians were blinded
+    to the randomisation schedule/sequence.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C94
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c73253cf4a255e1d
+- code: CS021.F081
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that dates of CT scans and of lung cancer diagnosis in
+    the LungIMPACT data were verified by the investigators manually and without knowledge of the study
+    arm.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C95
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: dd08fe29b254c88a
+- code: CS021.F082
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that the LungIMPACT statistical analysis was conducted
+    by an independent statistician (LS) without input from the study investigators.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C28
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: d23f50865226fe5c
+  - claim: CS021.D01.C26
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 1152a060b4e2a25b
+- code: CS021.F083
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that in the LungIMPACT trial the AI was applied in both
+    arms at the time of image acquisition, so that the reporter had access to the AI-marked images at
+    the time of reporting in both arms.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C57
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 134416e0684a55fa
+  - claim: CS021.D01.C55
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 370b0a6916c0311c
+- code: CS021.F084
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that immediate review of the chest X-ray was permitted,
+    according to local procedure, in both arms of the LungIMPACT trial.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C65
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: fc8f695c12a47d88
+- code: CS021.F085
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report, in Extended Data Fig. 2, a pathway in which, under "AI
+    Prioritisation flag", the chest X-ray is checked by the radiographer with the qXR AI read, and under
+    "AI at time of reporting session", it is checked by the radiographer without the qXR AI read and later
+    reported with the qXR AI read.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C90
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 84df27d31e483c35
+- code: CS021.F086
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that all imaging (chest X-ray or CT) in the LungIMPACT
+    trial was performed as part of routine care, with the final decision made by the clinicians.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C89
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 2012ba8e3be458e4
+- code: CS021.F087
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that the LungIMPACT primary outcomes were the difference
+    in time, in days from chest X-ray acquisition, to lung cancer diagnosis and to CT, between chest X-rays
+    with AI support at acquisition and prioritization for immediate review and those with no immediate
+    read but the AI read available at the time of reporting.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C96
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: ca7ecac52d7bd9e1
+  - claim: CS021.D01.C97
+    relation: contradicts
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 587e2a84d3d39442
+- code: CS021.F088
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report, in the Reporting Summary, that the LungIMPACT primary
+    outcomes were the difference in time, in days from chest X-ray request, to the diagnosis of lung cancer
+    and to CT.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C97
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 805bf2bb6630e0eb
+  - claim: CS021.D01.C96
+    relation: contradicts
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: f23642cfbc03f172
+- code: CS021.F089
+  kind: state
+  heading: 6
+  statement: 'The LungIMPACT investigators report that the LungIMPACT secondary outcomes were: days from
+    chest X-ray acquisition to urgent lung cancer (2WW) referral; days from chest X-ray acquisition to
+    cancer treatment start; agreement between qXR and human readers for present/absent findings, by classification;
+    number of urgent lung cancer (2WW) referrals; incidence of lung cancer; stage of lung cancer at diagnosis;
+    and algorithm sensitivity, specificity and agreement between report and AI (Kappa).'
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C98
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 0e02a683f5c40826
+- code: CS021.F090
+  kind: absence
+  heading: 6
+  statement: The library read D01 and found that its Methods and its Reporting Summary do not list time
+    from chest X-ray to chest X-ray report among the LungIMPACT outcomes, although Table 2 reports that
+    time under "Secondary outcomes".
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages, incl. Extended Data pp 12-18 and Reporting Summary pp 19-21)
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F091
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that the LungIMPACT time outcomes were log-transformed
+    because of right skew and compared with a two-sided t test of the null hypothesis that means on the
+    log scale are equal, presented as the ratio of geometric means with 95 percent confidence intervals.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C102
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 39b08a89cf0e9cca
+  - claim: CS021.D01.C103
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 1844679d3ed7a81b
+  - claim: CS021.D01.C164
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 89fd00c90b3ff979
+- code: CS021.F092
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that for the main LungIMPACT analysis of the primary
+    outcomes, time to CT and time to cancer diagnosis were calculated from each patient's first chest
+    X-ray, to avoid duplication and overcounting of outcomes.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C99
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 1bc497ba3010cd18
+  - claim: CS021.D01.C100
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8357796e21ec4cc5
+- code: CS021.F093
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report, in Table 2, 44,112 first chest X-rays on days without
+    AI prioritization and 42,833 on AI-prioritization days.
+  unit: chest X-rays (first per patient)
+  counts: the column n in the header of Table 2, which the footnote says includes only the first chest
+    X-ray for patients with multiple chest X-rays in the study period
+  links:
+  - claim: CS021.D01.C101
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: acbba044cb56fb6e
+- code: CS021.F094
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that the LungIMPACT primary outcome time to CT scan was
+    further examined by restricting the sample to CT scans within 14 days of the chest X-ray, or to chest
+    X-rays flagged for CT referral only.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C104
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 552c9e009d56980c
+- code: CS021.F095
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that on manual review of the LungIMPACT data, when the
+    time to CT exceeded 14 days, the CT was never triggered by the index chest X-ray randomized for the
+    trial.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C105
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: eedcdbb4b51ec2cf
+- code: CS021.F096
+  kind: statement
+  heading: 6
+  statement: The LungIMPACT investigators state, in the Discussion, that "We therefore had to complete
+    restrictive sensitivity analyses using the code, where used, signifying a CT was triggered and also
+    by limiting the time after CXR to less than 14 days, having determined that these were likely related
+    to the initial CXR."
+  speaker: the authors
+  quote: We therefore had to complete restrictive sensitivity analyses using the code, where used, signifying
+    a CT was triggered and also by limiting the time after CXR to less than 14 days, having determined
+    that these were likely related to the initial CXR.
+  links:
+  - claim: CS021.D01.C106
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: e7a64acee11c8268
+- code: CS021.F097
+  kind: absence
+  heading: 6
+  statement: The library read D01 and found no statement of whether the two restricted analyses of time
+    to CT in the LungIMPACT trial (CT within 14 days of chest X-ray; chest X-rays coded for CT referral)
+    were prespecified.
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages, incl. Extended Data pp 12-18 and Reporting Summary pp 19-21)
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F098
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that the LungIMPACT secondary time endpoints, time to
+    urgent referral and time to treatment starting, were assessed with a t test on log-transformed time
+    data.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C107
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 6de6714ad05a4715
+- code: CS021.F099
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that the number of urgent referrals, the incidence of
+    lung cancer and the stage of lung cancer at diagnosis were compared between the two LungIMPACT groups
+    using chi-squared tests.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C108
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c18e56f97ed0c0a5
+- code: CS021.F100
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that agreement between the reporter and the AI in the
+    LungIMPACT trial was summarized as overall agreement, measured with the kappa statistic.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C109
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 27c6dd8178293cb0
+- code: CS021.F101
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that LungIMPACT subgroup analyses were performed by site
+    and by year quarter for both primary endpoints.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C110
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 70f9d2ba692b6f4c
+- code: CS021.F102
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that LungIMPACT sensitivity analyses on multiple chest
+    X-rays per patient were conducted by taking the closest chest X-ray before the CT scan as the index
+    chest X-ray, or by excluding patients with multiple chest X-rays.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C111
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 809dec9a2965287d
+- code: CS021.F103
+  kind: absence
+  heading: 6
+  statement: The library read D01 and found no reported results for the LungIMPACT sensitivity analyses
+    on multiple chest X-rays per patient (closest chest X-ray before the CT as index; exclusion of patients
+    with multiple chest X-rays).
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages, incl. Extended Data pp 12-18 and Reporting Summary pp 19-21)
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F104
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that a further LungIMPACT exploratory analysis, stated
+    to be not prespecified, was conducted on the combined arms for patients diagnosed with cancer, comparing
+    cases by whether the radiologist and AI chest X-ray reports were both normal or abnormal, using linear
+    regression on log-transformed outcomes.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C112
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 83620fd6cbb51f71
+  - claim: CS021.D01.C165
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 5c0b0de9699f06f2
+- code: CS021.F105
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that no statistical testing was carried out on the LungIMPACT
+    baseline characteristics, which were tabulated overall and by intervention group in Table 1.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C113
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: ac97d6fdf19d45ae
+  - claim: CS021.D01.C166
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 49ef6b0d3b88cc5b
+- code: CS021.F106
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that the LungIMPACT data were analysed with Stata v19.5
+    according to the pre-specified analysis plan.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C123
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 25774258491be44f
+- code: CS021.F107
+  kind: absence
+  heading: 6
+  statement: The library read D01 and found no date for the LungIMPACT statistical analysis plan and no
+    statement of where it can be read.
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages, incl. Extended Data pp 12-18 and Reporting Summary pp 19-21)
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F108
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report that the LungIMPACT sample size for time to lung cancer
+    diagnosis was 265 cases per group, calculated using a conservative 10-day reduction from a median
+    of 63 days in the standard reporting group of previous work, with 95 percent power.
+  unit: lung cancer cases per group
+  counts: planned number of lung cancer cases per arm needed for the time-to-diagnosis calculation
+  links:
+  - claim: CS021.D01.C114
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: e394936a051af6a4
+- code: CS021.F109
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report that 100,000 chest X-rays were judged sufficient for
+    the LungIMPACT trial, giving 600 lung cancer cases at an expected lung cancer prevalence of 0.6 percent
+    in primary care chest X-ray referrals.
+  unit: chest X-rays
+  counts: planned total number of chest X-rays; 600 is the expected cancer count the paper derives from
+    it
+  links:
+  - claim: CS021.D01.C115
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 0d9a50b5d75c8b61
+- code: CS021.F110
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report that 4,000 CT scans were found to give the LungIMPACT
+    trial adequate power to detect even the smallest effect size (Cohen's d = 0.1) in time to CT, assuming
+    approximately equal numbers of scans in each arm.
+  unit: CT scans
+  counts: planned number of CT scans for the time-to-CT sample-size calculation
+  links:
+  - claim: CS021.D01.C116
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 6040215dbe4e2452
+  - claim: CS021.D01.C126
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: aa8db3de36b60779
+- code: CS021.F111
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report that a clinically meaningful difference in time from
+    abnormal chest X-ray to CT chest of three days was defined for the LungIMPACT trial, using the maximum
+    time recommended in the National Optimal Lung Cancer Pathway.
+  unit: days
+  counts: prespecified clinically meaningful difference in time from abnormal chest X-ray to CT chest
+  links:
+  - claim: CS021.D01.C117
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 481c4aeaaa219418
+- code: CS021.F112
+  kind: absence
+  heading: 6
+  statement: The library read D01 and found no significance level (alpha) stated for the LungIMPACT sample-size
+    calculations, and no standard deviation assumed for the time-to-diagnosis calculation.
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages, incl. Extended Data pp 12-18 and Reporting Summary pp 19-21)
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F113
+  kind: quantity
+  heading: 6
+  statement: 'The LungIMPACT investigators report, in Figure 1 (the CONSORT diagram), that 4,405 of the
+    97,731 LungIMPACT chest X-rays were excluded: 1,382 for a data compliance issue and 3,023 because
+    the chest X-ray was taken at a weekend.'
+  unit: chest X-rays
+  counts: chest X-rays excluded between the 97,731 performed (F001) and the 93,326 analysed (F003), by
+    reason
+  links:
+  - claim: CS021.D01.C125
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 90fba7c3760acee8
+- code: CS021.F114
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that LungIMPACT primary and secondary outcomes with invalid
+    dates that generated negative time intervals were excluded during data cleaning.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C118
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 0eebe47dec70cab8
+- code: CS021.F115
+  kind: absence
+  heading: 6
+  statement: The library read D01 and found no count of LungIMPACT outcome records excluded during data
+    cleaning for invalid dates.
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages, incl. Extended Data pp 12-18 and Reporting Summary pp 19-21)
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F116
+  kind: absence
+  heading: 6
+  statement: The library read D01 and found no description of how the LungIMPACT analysis handled chest
+    X-rays whose follow-up ended without a CT scan or a lung cancer diagnosis.
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages, incl. Extended Data pp 12-18 and Reporting Summary pp 19-21)
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F117
+  kind: absence
+  heading: 6
+  statement: The library read D01 and found no report of the LungIMPACT randomization block size or of
+    the number of days or sessions allocated to each arm.
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages, incl. Extended Data pp 12-18 and Reporting Summary pp 19-21)
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F118
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that the LungIMPACT trial is registered with ISRCTN under
+    number 78987039.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C122
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: bddc3344bdd86460
+  - claim: CS021.D01.C120
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 53ff68d3a155ee34
+- code: CS021.F119
+  kind: event
+  heading: 6
+  statement: The LungIMPACT investigators report, in the Reporting Summary, that the LungIMPACT trial
+    was registered on 7 March 2023.
+  date: '2023-03-07'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS021.D01.C120
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 541a3497db9e00a9
+- code: CS021.F120
+  kind: event
+  heading: 6
+  statement: The LungIMPACT investigators report that the LungIMPACT trial received favourable ethical
+    approval from the East of England Cambridge East Research Ethics Committee, reference 23/EE/0014,
+    on 21 February 2023.
+  date: '2023-02-21'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS021.D01.C41
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 5ddbe5830ccef4ab
+- code: CS021.F121
+  kind: computed
+  heading: 6
+  statement: The LungIMPACT registration date reported in D01, 7 March 2023, is 132 days before 17 July
+    2023, the first day of the chest X-ray period reported in D01.
+  inputs:
+  - CS021.F119
+  - CS021.F001
+  working: '7 Mar 2023 to 17 Jul 2023: 24 (rest of March) + 30 (April) + 31 (May) + 30 (June) + 17 (July)
+    = 132 days'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F122
+  kind: state
+  heading: 6
+  statement: The LungIMPACT investigators report that the LungIMPACT study protocol is available in the
+    Supplementary Information, and, in the Reporting Summary, that it is available at the trial registration,
+    https://www.isrctn.com/ISRCTN78987039.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C124
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c52d5d88043401e9
+  - claim: CS021.D01.C121
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8247f632052940e8
+- code: CS021.F123
+  kind: absence
+  heading: 6
+  statement: The library read D01 and found no statement of whether any LungIMPACT outcome, or the sample
+    size, was changed after registration, and no comparison of the reported outcomes with the registered
+    ones.
+  documents_read:
+  - CS021.D01.V01 (capture.pdf, all 21 pages, incl. Extended Data pp 12-18 and Reporting Summary pp 19-21)
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F124
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the abstract of D01, that "AI prioritization of CXR
+    requested by UK primary care has no significant impact on the lung cancer pathway."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: AI prioritization of CXR requested by UK primary care has no significant impact on the lung cancer
+    pathway.
+  links:
+  - claim: CS021.D01.C129
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 2d1116f426249d70
+- code: CS021.F125
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the abstract of D01, that "Therefore, CXR AI deployments
+    should not include worklist prioritization in this context."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: Therefore, CXR AI deployments should not include worklist prioritization in this context.
+  links:
+  - claim: CS021.D01.C130
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: e64124ba1584cfa8
+- code: CS021.F126
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the abstract of D01, that "Future research should
+    differentiate between primary pathway changes and the direct impact of AI."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: Future research should differentiate between primary pathway changes and the direct impact of
+    AI.
+  links:
+  - claim: CS021.D01.C131
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: f3bbbbbe13d96d9a
+- code: CS021.F127
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "This large, multisite
+    randomized study has shown that AI prioritization of CXRs did not improve the speed of the lung cancer
+    diagnostic pathway."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: This large, multisite randomized study has shown that AI prioritization of CXRs did not improve
+    the speed of the lung cancer diagnostic pathway.
+  links:
+  - claim: CS021.D01.C132
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: bf429b37882eb8e4
+- code: CS021.F128
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "This means that this
+    element of AI functionality, which introduces additional complexity and cost to AI installation and
+    may add time to clinical workflows, is not required to accelerate the lung cancer diagnostic pathway."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: This means that this element of AI functionality, which introduces additional complexity and
+    cost to AI installation and may add time to clinical workflows, is not required to accelerate the
+    lung cancer diagnostic pathway.
+  links:
+  - claim: CS021.D01.C133
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 49bb18f96bd094a7
+- code: CS021.F129
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "costs are both considerable
+    and avoidable, given the results reported in this study".
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: costs are both considerable and avoidable, given the results reported in this study
+  links:
+  - claim: CS021.D01.C134
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 675c801324e20816
+- code: CS021.F130
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "It has been shown conclusively
+    that AI prioritization had no impact on time to CT or time to lung cancer diagnosis."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: It has been shown conclusively that AI prioritization had no impact on time to CT or time to
+    lung cancer diagnosis.
+  links:
+  - claim: CS021.D01.C135
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8850e0819c9061d6
+- code: CS021.F131
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "A significant reduction
+    in the median time from CXR acquisition to report was observed, from 47 h to 34.1 h; however, no significant
+    differences were detected in any of the timings measured as primary or secondary outcomes (Table 2)."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: A significant reduction in the median time from CXR acquisition to report was observed, from
+    47 h to 34.1 h; however, no significant differences were detected in any of the timings measured as
+    primary or secondary outcomes (Table 2).
+  links:
+  - claim: CS021.D01.C136
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 3f227c31d72b2700
+- code: CS021.F132
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "The lack of improvement
+    in AI prioritization is likely because, although the time to CXR report was shortened, it was not
+    sufficiently reduced in the prioritization arm to influence the clinical pathway in the same way as
+    immediate radiographer triage did in our previous study".
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: The lack of improvement in AI prioritization is likely because, although the time to CXR report
+    was shortened, it was not sufficiently reduced in the prioritization arm to influence the clinical
+    pathway in the same way as immediate radiographer triage did in our previous study
+  links:
+  - claim: CS021.D01.C137
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: f528746fee900fff
+- code: CS021.F133
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, after proposing that the time
+    to chest X-ray report was not reduced enough in the prioritization arm to influence the clinical pathway,
+    that "This may, in turn, be explained by the limited capacity within Trusts to both report immediately
+    and organize downstream tests and appointments, even though this is a recommendation in the NOLCP."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: This may, in turn, be explained by the limited capacity within Trusts to both report immediately
+    and organize downstream tests and appointments, even though this is a recommendation in the NOLCP.
+  links:
+  - claim: CS021.D01.C138
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 3aca7d3c24d0f96c
+  - claim: CS021.D01.C137
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: afb4929ccc98f98e
+- code: CS021.F134
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "immediate review of the
+    CXR was permitted, according to local procedure, in both arms of the study. This ensured that AI prioritization
+    was tested rather than the effect of primary pathway change."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: immediate review of the CXR was permitted, according to local procedure, in both arms of the
+    study. This ensured that AI prioritization was tested rather than the effect of primary pathway change.
+  links:
+  - claim: CS021.D01.C139
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 888814cd14a5227e
+- code: CS021.F135
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "However, feedback from
+    reporters indicated that most of the FPs are rapidly dismissed, so the potential for extra workload
+    will be dependent on the user becoming familiar with the strengths and weaknesses of the AI."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: However, feedback from reporters indicated that most of the FPs are rapidly dismissed, so the
+    potential for extra workload will be dependent on the user becoming familiar with the strengths and
+    weaknesses of the AI.
+  links:
+  - claim: CS021.D01.C140
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c2723137de3ccf3f
+- code: CS021.F136
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "The automated data acquisition
+    followed by manual verification is another strength of the study and the independent analysis of the
+    results with no influence from either the AI developers or the investigators."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: The automated data acquisition followed by manual verification is another strength of the study
+    and the independent analysis of the results with no influence from either the AI developers or the
+    investigators.
+  links:
+  - claim: CS021.D01.C141
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 01baf283203d7b43
+- code: CS021.F137
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "Another major strength
+    is the number of discordance reviews completed by expert radiologists and reporting radiographers.
+    This has provided perhaps the largest reliable dataset on this aspect."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: Another major strength is the number of discordance reviews completed by expert radiologists
+    and reporting radiographers. This has provided perhaps the largest reliable dataset on this aspect.
+  links:
+  - claim: CS021.D01.C142
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: ddfe7c1a9eb32f72
+- code: CS021.F138
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "A limitation of the study
+    is that the primary outcomes evaluated only the impact of AI prioritization, not the presence or absence
+    of AI in the clinical workflow. This was necessary because of the study’s nonconsenting nature."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: A limitation of the study is that the primary outcomes evaluated only the impact of AI prioritization,
+    not the presence or absence of AI in the clinical workflow. This was necessary because of the study’s
+    nonconsenting nature.
+  links:
+  - claim: CS021.D01.C143
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 9e8bdd49aadef47f
+- code: CS021.F139
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "By choosing time to CT
+    as an additional primary outcome, we can be more confident that a comparison of AI use versus no AI
+    would not show a meaningful difference."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: By choosing time to CT as an additional primary outcome, we can be more confident that a comparison
+    of AI use versus no AI would not show a meaningful difference.
+  links:
+  - claim: CS021.D01.C144
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c2976387aac3fe36
+- code: CS021.F140
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "A limitation is the use
+    of a single AI product, which will inevitably have different performance characteristics from others."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: A limitation is the use of a single AI product, which will inevitably have different performance
+    characteristics from others.
+  links:
+  - claim: CS021.D01.C145
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 7a19bd162761e85b
+- code: CS021.F141
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "However, the fact that
+    only prioritization was tested here means differences in AI accuracy had less effect on the coprimary
+    outcomes than on the discordances."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: However, the fact that only prioritization was tested here means differences in AI accuracy had
+    less effect on the coprimary outcomes than on the discordances.
+  links:
+  - claim: CS021.D01.C146
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: be71d73416759f6c
+- code: CS021.F142
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "A further limitation
+    of the study was the difficulty in identifying the best way to measure time to CT."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: A further limitation of the study was the difficulty in identifying the best way to measure time
+    to CT.
+  links:
+  - claim: CS021.D01.C147
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: efc89a7633304de5
+- code: CS021.F143
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "While this finding is
+    of interest in itself, it may have diluted this primary outcome by adding many CTs that were not relevant
+    to the hypothesis."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: While this finding is of interest in itself, it may have diluted this primary outcome by adding
+    many CTs that were not relevant to the hypothesis.
+  links:
+  - claim: CS021.D01.C148
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 7f0c90ed6056fa6b
+- code: CS021.F144
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "Despite this limitation,
+    the results clearly show no difference in time from CXR to CT according to prioritization day across
+    all analyses, each of which included a more than adequate number of observations (Table 3)."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: Despite this limitation, the results clearly show no difference in time from CXR to CT according
+    to prioritization day across all analyses, each of which included a more than adequate number of observations
+    (Table 3).
+  links:
+  - claim: CS021.D01.C149
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 6b377ec81e6213ce
+- code: CS021.F145
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "Another limitation relates
+    to the discordance reviews, which have been reported according to differences between the AI flag
+    classification and the final report. Because reporters had the AI available at the time, we cannot
+    determine how many findings would be independently found by the AI or whether the human would have
+    found something without AI assistance."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: Another limitation relates to the discordance reviews, which have been reported according to
+    differences between the AI flag classification and the final report. Because reporters had the AI
+    available at the time, we cannot determine how many findings would be independently found by the AI
+    or whether the human would have found something without AI assistance.
+  links:
+  - claim: CS021.D01.C150
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: aab753eba4994166
+- code: CS021.F146
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "Our study is unable to
+    determine whether the screening program is reducing the early-stage detection by CXR."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: Our study is unable to determine whether the screening program is reducing the early-stage detection
+    by CXR.
+  links:
+  - claim: CS021.D01.C151
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: a98ec9519ce605cf
+- code: CS021.F147
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "The LungIMPACT trial
+    has shown that immediate AI prioritization had no impact on important clinical outcomes for patients
+    with suspected lung cancer in the English NHS and that this tool, as assessed, does not currently
+    require potentially time-consuming and costly efforts to include in clinical services."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: The LungIMPACT trial has shown that immediate AI prioritization had no impact on important clinical
+    outcomes for patients with suspected lung cancer in the English NHS and that this tool, as assessed,
+    does not currently require potentially time-consuming and costly efforts to include in clinical services.
+  links:
+  - claim: CS021.D01.C152
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 5db90937e9a3ed3e
+- code: CS021.F148
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "This is likely to apply
+    to the use of any CXR algorithm in this way, because the vast majority of cancers were detected where
+    AI was abnormal and prioritization was therefore tested in a large number of cases."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: This is likely to apply to the use of any CXR algorithm in this way, because the vast majority
+    of cancers were detected where AI was abnormal and prioritization was therefore tested in a large
+    number of cases.
+  links:
+  - claim: CS021.D01.C153
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 71092148c8aa7af7
+- code: CS021.F149
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "Furthermore, this finding
+    may extend to other settings where there is a relatively rapid review of images through the usual
+    clinical pathway."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: Furthermore, this finding may extend to other settings where there is a relatively rapid review
+    of images through the usual clinical pathway.
+  links:
+  - claim: CS021.D01.C154
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 9d3439f8ce933734
+- code: CS021.F150
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "Because AI prioritization,
+    although associated with a shortened time to CXR report, did not influence more important clinical
+    outcomes, services would need to implement additional pathway changes to potentially replicate our
+    previous findings."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: Because AI prioritization, although associated with a shortened time to CXR report, did not influence
+    more important clinical outcomes, services would need to implement additional pathway changes to potentially
+    replicate our previous findings.
+  links:
+  - claim: CS021.D01.C155
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 58668443dfcfa114
+- code: CS021.F151
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "A recommendation could
+    be that any AI-flagged abnormality prompts an immediate human review and, if confirmed, the implementation
+    of a downstream bundle of investigations."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: A recommendation could be that any AI-flagged abnormality prompts an immediate human review and,
+    if confirmed, the implementation of a downstream bundle of investigations.
+  links:
+  - claim: CS021.D01.C156
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 58914b3b4dd86a02
+- code: CS021.F152
+  kind: statement
+  heading: 9
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "The large-scale analysis
+    of secondary outcomes shows the considerable potential burden of FP results, using radiologist and
+    radiographer review as the gold standard, while also showing the considerable number of lung cancers
+    diagnosed in this medium-to-high-risk group."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: The large-scale analysis of secondary outcomes shows the considerable potential burden of FP
+    results, using radiologist and radiographer review as the gold standard, while also showing the considerable
+    number of lung cancers diagnosed in this medium-to-high-risk group.
+  links:
+  - claim: CS021.D01.C157
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 9de78e8aa0668fe3
+- code: CS021.F153
+  kind: absence
+  heading: 11
+  statement: D01 reports no cost, cost-effectiveness or other monetary figure for AI prioritization or
+    for the AI software in the LungIMPACT trial.
+  documents_read:
+  - 'CS021.D01 capture V01: the full text layer (text.txt), normalized as in the brief and searched for:
+    "cost", "econom", "£", "price"'
+  - 'CS021.D01 capture V01: Extended Data Table 3 (page 16) and the Nature Portfolio Reporting Summary
+    (pages 19 to 21), read by eye from page images, as they have no text layer'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F154
+  kind: absence
+  heading: 11
+  statement: D01 reports no count of adverse events or patient harms in either arm of the LungIMPACT trial.
+  documents_read:
+  - 'CS021.D01 capture V01: the full text layer (text.txt), normalized as in the brief and searched for:
+    "harm", "adverse", "safety", "complication", "unnecessary", "overdiagnos", "radiation", "biopsy",
+    "admission"'
+  - 'CS021.D01 capture V01: Extended Data Table 3 (page 16) and the Nature Portfolio Reporting Summary
+    (pages 19 to 21), read by eye from page images, as they have no text layer'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F155
+  kind: absence
+  heading: 11
+  statement: D01 reports no measure of active reporting time per image, reporter workload, or time spent
+    reviewing AI flags, in either arm of the LungIMPACT trial. This does not concern the time from chest
+    X-ray to chest X-ray report, a turnaround time that D01 does report by arm.
+  documents_read:
+  - 'CS021.D01 capture V01: the full text layer (text.txt), normalized as in the brief and searched for:
+    "workload", "reading time", "reporter time", "time spent", "minutes", "hours", "staff", "burden"'
+  - 'CS021.D01 capture V01: Extended Data Table 3 (page 16) and the Nature Portfolio Reporting Summary
+    (pages 19 to 21), read by eye from page images, as they have no text layer'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F156
+  kind: absence
+  heading: 11
+  statement: D01 reports no survival or mortality outcome for the patients in the LungIMPACT trial.
+  documents_read:
+  - 'CS021.D01 capture V01: the full text layer (text.txt), normalized as in the brief and searched for:
+    "surviv", "mortal", "death"'
+  - 'CS021.D01 capture V01: Extended Data Table 3 (page 16) and the Nature Portfolio Reporting Summary
+    (pages 19 to 21), read by eye from page images, as they have no text layer'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F157
+  kind: absence
+  heading: 11
+  statement: D01 does not report how many chest X-rays flagged by the AI on AI-prioritization days were
+    reported immediately, nor the time to report for flagged chest X-rays separately from all chest X-rays.
+  documents_read:
+  - 'CS021.D01 capture V01: the full text layer (text.txt), normalized as in the brief and searched for:
+    "immediate review", "immediately", "notification", "flag", "prioritized", "worklist", "time to CXR
+    report", "report was"'
+  - 'CS021.D01 capture V01: Extended Data Table 3 (page 16) and the Nature Portfolio Reporting Summary
+    (pages 19 to 21), read by eye from page images, as they have no text layer'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F158
+  kind: absence
+  heading: 11
+  statement: D01 reports no outcomes for the LungIMPACT trial's patients after follow-up ended on 5 June
+    2025.
+  documents_read:
+  - 'CS021.D01 capture V01: the full text layer (text.txt), normalized as in the brief and searched for:
+    "follow", "5 June", "long-term", "longer", "beyond", "censor", "time-to-event", "Kaplan", "survival
+    analysis"'
+  - 'CS021.D01 capture V01: Extended Data Table 3 (page 16) and the Nature Portfolio Reporting Summary
+    (pages 19 to 21), read by eye from page images, as they have no text layer'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F159
+  kind: absence
+  heading: 11
+  statement: D01 reports no method, number of participants or findings for the patient focus groups it
+    says were conducted during the LungIMPACT study, beyond one sentence that their feedback "supports
+    the need for timely reporting".
+  documents_read:
+  - 'CS021.D01 capture V01: the full text layer (text.txt), normalized as in the brief and searched for:
+    "focus group", "patient feedback", "PPI", "patient panel", "satisf", "anxiety", "experience", "qualitative",
+    "interview", "survey"'
+  - 'CS021.D01 capture V01: Extended Data Table 3 (page 16) and the Nature Portfolio Reporting Summary
+    (pages 19 to 21), read by eye from page images, as they have no text layer'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F160
+  kind: statement
+  heading: 12
+  statement: The LungIMPACT investigators state, in the Discussion and again in the Methods of D01, that
+    a health economics evaluation of the LungIMPACT trial will be published separately ("A detailed health
+    economics evaluation will be published separately"; "The health economic analysis will be reported
+    separately.").
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: A detailed health economics evaluation will be published separately
+  links:
+  - claim: CS021.D01.C158
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 2ec043b372ecb065
+  - claim: CS021.D01.C159
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 6dd941c24b901c4a
+- code: CS021.F161
+  kind: statement
+  heading: 12
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "The health economics
+    analysis is underway and considers the comparison made in the study, as well as focusing on the differences
+    between using AI at all and not using AI, in a planned secondary analysis."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: The health economics analysis is underway and considers the comparison made in the study, as
+    well as focusing on the differences between using AI at all and not using AI, in a planned secondary
+    analysis.
+  links:
+  - claim: CS021.D01.C160
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 3b2ef52c9fe0bdbd
+- code: CS021.F162
+  kind: statement
+  heading: 12
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "There were a small number
+    of discordances in which the AI was correct and the reporter incorrect; these have not yet been fully
+    quantified or analyzed. These cases, together with a detailed analysis of downstream outcomes, are
+    the subject of a further project."
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: There were a small number of discordances in which the AI was correct and the reporter incorrect;
+    these have not yet been fully quantified or analyzed. These cases, together with a detailed analysis
+    of downstream outcomes, are the subject of a further project.
+  links:
+  - claim: CS021.D01.C161
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: e39e3f39305f4ce5
+- code: CS021.F163
+  kind: statement
+  heading: 12
+  statement: The LungIMPACT investigators state, in the Discussion of D01, that "A prospective study is
+    currently underway in Glasgow, Scotland, assessing the impact of AI prioritization on time to CT among
+    patients with lung cancer" and that "this is the only other randomized prospective study we are aware
+    of".
+  speaker: the LungIMPACT investigators (the authors of D01)
+  quote: A prospective study is currently underway in Glasgow, Scotland, assessing the impact of AI prioritization
+    on time to CT among patients with lung cancer
+  links:
+  - claim: CS021.D01.C162
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 35ef70859edf1131
+  - claim: CS021.D01.C163
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: a9a6d295f47f6702
+- code: CS021.F164
+  kind: absence
+  heading: 12
+  statement: D01 does not state that any follow-up of the trial's patients beyond 5 June 2025 is planned
+    or under way.
+  documents_read:
+  - 'CS021.D01 capture V01: the full text layer (text.txt), normalized as in the brief and searched for:
+    "follow", "5 June", "long-term", "longer", "beyond", "future", "planned", "underway", "ongoing", "will
+    be", "further project"'
+  - 'CS021.D01 capture V01: Extended Data Table 3 (page 16) and the Nature Portfolio Reporting Summary
+    (pages 19 to 21), read by eye from page images, as they have no text layer'
+  as_of: '2026-09-30'
+  links: []
+  check:
+    by: the editor
+    date: '2026-10-01'
+- code: CS021.F165
+  kind: state
+  heading: 2
+  statement: The LungIMPACT investigators report, in the author contributions, that Siyabonga Ndwandwe
+    and Caroline S. Clarke assisted with data cleaning and took part in analytical discussions.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C31
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c81cb5f1f2c63375
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: f436bd74eb36c1f9
+- code: CS021.F166
+  kind: statement
+  heading: 2
+  statement: 'The author contributions of D01 state: "J.R. contributed/coordinated PPI work for this study,
+    including the patient panel and part of the study team, including governance." J.R. is Janette Rawlinson
+    in the byline.'
+  speaker: the authors
+  quote: J.R. contributed/coordinated PPI work for this study, including the patient panel and part of
+    the study team, including governance.
+  links:
+  - claim: CS021.D01.C32
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 96a6c6bf8ed22846
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 7722a699278fc6c5
+- code: CS021.F167
+  kind: state
+  heading: 2
+  statement: The LungIMPACT investigators report, in the author contributions, that Arjun Nair, Richard
+    W. Lee and Neal Navani contributed to the study protocol and provided oversight of the study.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C33
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 5d7346effebbfb2e
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: d8eaab56086924c3
+- code: CS021.F168
+  kind: state
+  heading: 2
+  statement: The LungIMPACT investigators report, in the author contributions, that Iain Au-Yong, Bindu
+    George, Madava G. Djearaman, Indrajeet Das and James Hathorn contributed to the study protocol and
+    coordinated data collection at sites.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C34
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 0bd4078924722123
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: b398acb873ba7a71
+- code: CS021.F169
+  kind: state
+  heading: 2
+  statement: The LungIMPACT investigators report, in the author contributions, that Andrew Creeden, Josh
+    Newsome, Sylvia Abaokporo and Richard Tucker performed data collection.
+  start: null
+  end: null
+  links:
+  - claim: CS021.D01.C35
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 52e55187a4edb672
+  - claim: CS021.D01.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 6fb8f905cb8da43a
+- code: CS021.F170
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report, in the Reporting Summary, that 4,405 chest X-rays were
+    excluded, giving the reasons as "data compliance issue/technical failure n=1,382, weekend CXR n=3,023".
+  unit: chest X-rays
+  counts: chest X-rays excluded after randomization, with the reasons as this passage states them
+  links:
+  - claim: CS021.D01.C127
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c732e4bf01b4ef74
+- code: CS021.F171
+  kind: quantity
+  heading: 6
+  statement: The LungIMPACT investigators report, in the abstract, that of 97,731 participant chest X-rays,
+    4,405 were excluded "due to data compliance issues or failure of randomization", without giving counts
+    by reason.
+  unit: chest X-rays
+  counts: chest X-rays excluded after randomization, with the reasons as this passage states them
+  links:
+  - claim: CS021.D01.C119
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 46f8cb087dbf085b

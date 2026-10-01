@@ -1,0 +1,8 @@
+# CS021 (AAI-2026-021): generated from the library's case files.
+# Do not edit by hand.
+
+- id: nature-medicine
+  name: Nature Medicine (Springer Nature)
+  grades:
+    peer-reviewed-paper: R1
+  graded: '2026-09-22'

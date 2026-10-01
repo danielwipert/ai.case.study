@@ -1,0 +1,170 @@
+# CS021 (AAI-2026-021): generated from the library's case files.
+# Do not edit by hand.
+
+tags:
+- Healthcare
+- Case 021
+- Trial
+checked: checked 1 Oct 2026
+headline: An AI that flagged chest X-rays sped up reports, not lung cancer diagnosis
+dek: In a randomized trial across five NHS trusts in England, an AI tool flagged chest X-rays it judged
+  abnormal so they could be reported first. Reports came back sooner. The trial found no significant difference
+  in how soon patients got a CT scan or a lung cancer diagnosis.
+dek_rows:
+- F001
+- F070
+- F048
+- F023
+- F013
+- F016
+grade:
+  letter: B
+  plain: Good evidence
+  explain: A randomized trial, registered before it began and reported in a peer-reviewed journal. That
+    starts at B. It would reach A with a clean match against the trial's registry record (not yet checked)
+    and the paper's internal disagreements resolved, or with a second independent examination.
+  rows:
+  - F119
+  - F121
+  - F001
+short_version:
+- text: Between July 2023 and December 2024, five NHS trusts in England took part in a trial of chest
+    X-rays requested by GPs. Of 97,731 X-rays taken, 93,326 were analysed.
+  rows:
+  - F001
+  - F003
+  - F070
+  - F071
+  - F113
+- text: On days chosen at random, an AI tool, qXR from Qure.ai, sent a notice to the reporting list for
+    each X-ray it judged abnormal, so it could be reported first. On the other days the AI still marked
+    up the X-rays, but sent no notice. On both kinds of day, staff could still review an X-ray straight
+    away under local procedure.
+  rows:
+  - F074
+  - F031
+  - F048
+  - F083
+  - F084
+- text: 'On the AI days, X-rays were reported sooner: a median of 34.1 hours, against 47.0 hours on the
+    other days.'
+  rows:
+  - F023
+- text: The trial found no significant difference in how soon patients got a CT scan or a lung cancer
+    diagnosis. The median time from X-ray to CT scan was 53 days either way.
+  rows:
+  - F013
+  - F016
+  - F009
+- text: The investigators conclude that X-ray AI should not include this kind of prioritization in this
+    setting.
+  rows:
+  - F125
+numbers:
+- figure: 97,731
+  label: chest X-rays performed during the trial period
+  rows:
+  - F001
+- figure: 86,945
+  label: patients whose X-rays were analysed
+  rows:
+  - F003
+- figure: 34.1 h
+  label: median time to an X-ray report on AI days, against 47.0 hours on the other days
+  rows:
+  - F023
+- figure: 53 days
+  label: median time from X-ray to CT scan, with or without AI prioritization
+  rows:
+  - F009
+timeline_title: How the trial ran
+timeline:
+- date: 21 Feb 2023
+  text: A research ethics committee (Cambridge East) approves the trial
+  rows:
+  - F120
+- date: 7 Mar 2023
+  text: The trial report gives this as the registration date, 132 days before its first X-ray
+  rows:
+  - F119
+  - F121
+- date: 17 Jul 2023
+  text: The first chest X-rays in the trial
+  rows:
+  - F001
+- date: 31 Dec 2024
+  text: The last chest X-rays in the trial
+  rows:
+  - F001
+- date: 5 Jun 2025
+  text: Follow-up of the trial's patients ends
+  rows:
+  - F002
+disagreements_title: Where the paper disagrees with itself
+disagreements_lede: In a few places the trial report says two different things about the same matter.
+  We show both and don't pick one.
+disagreements:
+- title: Did any quarter show a difference?
+  sides:
+  - who: The paper's text
+    says: No statistically significant difference for either main outcome in any quarter.
+    rows:
+    - F017
+  - who: Its Extended Data Table 2
+    says: Time to CT scan differed in the third quarter of 2024 (P = 0.03).
+    rows:
+    - F019
+- title: Did any secondary outcome differ?
+  sides:
+  - who: The paper's text
+    says: No differences in secondary outcomes by AI group.
+    rows:
+    - F022
+  - who: Its Table 2
+    says: Time to an X-ray report, listed as a secondary outcome, was shorter on AI days (P < 0.001).
+    rows:
+    - F023
+- title: What was randomized?
+  sides:
+  - who: The Methods, in one place
+    says: Participants were randomized in blocks, by day and site.
+    rows:
+    - F074
+  - who: The Methods, elsewhere
+    says: Individual patients were not randomized; their X-rays were.
+    rows:
+    - F077
+what_they_say:
+- who: The investigators
+  quote: AI prioritization of CXR requested by UK primary care has no significant impact on the lung cancer
+    pathway.
+  rows:
+  - F124
+- who: The investigators
+  quote: Therefore, CXR AI deployments should not include worklist prioritization in this context.
+  rows:
+  - F125
+- who: The investigators
+  quote: A limitation is the use of a single AI product, which will inevitably have different performance
+    characteristics from others.
+  rows:
+  - F140
+unknowns:
+- text: What AI prioritization costs. The paper reports no cost figures for this trial; the investigators
+    say a health economics evaluation will be published separately.
+  rows:
+  - F153
+  - F160
+- text: The paper does not state whether Qure.ai received any part of the trial's grant or was paid for
+    the use of qXR.
+  rows:
+  - F043
+- text: How many of the X-rays the AI flagged were in fact reported straight away. The paper does not
+    report it.
+  rows:
+  - F157
+- text: Harms and survival. The paper reports no count of adverse events or harms, and no survival or
+    mortality outcome.
+  rows:
+  - F154
+  - F156
