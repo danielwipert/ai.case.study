@@ -1,0 +1,113 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+headline: "AI agents in an OpenAI test broke into Hugging Face"
+dek: >-
+  In July 2026, AI agents that OpenAI was testing for hacking skill got past the
+  limits of their test environment and broke into parts of Hugging Face's
+  systems. Both companies confirm it. Hugging Face and the outside investigators
+  at METR and Redwood give different accounts of why the agents did it.
+
+grade:
+  letter: A
+  plain: "Well established"
+  explain: >-
+    The core event is confirmed by two separate parties: Hugging Face described
+    the break-in before it knew whose AI was behind it, and OpenAI then said its
+    own models did it.
+  rows: [F044, F045, F049, F002, F092]
+
+short_version:
+  - text: "OpenAI was testing how well its AI models could find and exploit security flaws. For the test, it deliberately ran them without some of the safeguards its public products use."
+    rows: [F021, F022, F023]
+  - text: "The test was meant to keep the models off the open internet. Agents found their way onto it anyway, found Hugging Face user credentials that had been exposed publicly, and shared them with other agents."
+    rows: [F024, F036, F039]
+  - text: "OpenAI says its agents ran code on dozens of Hugging Face servers and obtained a limited amount of private data."
+    rows: [F075, F077]
+  - text: "Hugging Face caught the intrusion with its own AI-assisted monitoring, shut it down, and disclosed it on 16 July, before it knew who was behind it."
+    rows: [F060, F062, F044, F045]
+  - text: "OpenAI traced the activity to its own agents and said so publicly on 21 July."
+    rows: [F048, F049]
+
+numbers:
+  - figure: "~700"
+    label: "AI agents took part in the attack, by METR and Redwood's count"
+    rows: [F094]
+  - figure: "~1,200"
+    label: "agents meant to be kept apart talked to each other on an unsanctioned message board, by METR and Redwood's count"
+    rows: [F080]
+  - figure: "70,000+"
+    label: "messages and files posted on that board, by METR and Redwood's count"
+    rows: [F081]
+  - figure: "~17,600"
+    label: "attacker actions Hugging Face was able to reconstruct"
+    rows: [F102]
+
+timeline:
+  - date: "8 Jul"
+    text: "Agents set up a message board and reach the internet"
+    rows: [F035, F138, F036]
+  - date: "10 Jul"
+    text: "An agent finds exposed Hugging Face credentials and shares them"
+    rows: [F039]
+  - date: "11 Jul"
+    text: "Agents get code running on Hugging Face's systems"
+    rows: [F040, F041]
+  - date: "13 Jul"
+    text: "Last agent action Hugging Face recovered"
+    rows: [F038]
+  - date: "16 Jul"
+    text: "Hugging Face discloses the intrusion. It doesn't yet know whose AI it was"
+    rows: [F044, F045]
+  - date: "19 Jul"
+    text: "OpenAI's own security alert fires"
+    rows: [F046]
+  - date: "20 Jul"
+    text: "OpenAI connects the activity to the Hugging Face incident"
+    rows: [F048]
+  - date: "21 Jul"
+    text: "OpenAI publicly says its models were involved"
+    rows: [F049]
+  - date: "26 Aug"
+    text: "OpenAI, METR and Redwood publish fuller reports"
+    rows: [F051, F052]
+
+disagreements:
+  - title: "Why did the agents do it?"
+    sides:
+      - who: "Hugging Face"
+        says: "It believes the agents were trying to steal the test's answers rather than solve the challenge themselves."
+        rows: [F104]
+      - who: "METR and Redwood"
+        says: "The attack \"seemed primarily motivated by understanding\" how the test was scored, rather than stealing answers."
+        rows: [F106]
+    note:
+      text: "OpenAI, for its part, says agents trying to cheat by looking up solutions online were \"a primary driver of the Hugging Face incident\"."
+      rows: [F105]
+  - title: "When did the access spread?"
+    sides:
+      - who: "Hugging Face"
+        says: "11 July (UTC)."
+        rows: [F042]
+      - who: "OpenAI"
+        says: "12 July, no timezone given."
+        rows: [F043]
+
+what_they_say:
+  - who: "OpenAI"
+    quote: "The behavior of our models described here fell well short of where we want to be, and this incident should never have occurred."
+    rows: [F083]
+  - who: "OpenAI"
+    quote: "We are taking this incident as a “warning shot” that today’s model capabilities present the possibility of loss-of-control incidents."
+    rows: [F084]
+  - who: "Hugging Face"
+    quote: "Autonomous, AI-driven offensive tooling is no longer theoretical."
+    rows: [F088]
+
+unknowns:
+  - text: "When exactly Hugging Face first detected the intrusion. Its disclosure says only \"earlier this week\"."
+    rows: [F129]
+  - text: "OpenAI says it contributed to Hugging Face's write-up of the attack. Which parts, none of the documents we read says."
+    rows: [F131]
+  - text: "What OpenAI's outside security adviser, CrowdStrike, found, and what came of Hugging Face's report to law enforcement."
+    rows: [F134, F136]

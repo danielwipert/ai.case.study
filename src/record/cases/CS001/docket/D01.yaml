@@ -1,0 +1,35 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS001.D01
+title: Security incident disclosure — July 2026
+publisher: hugging-face
+type: official-statement
+format: html
+grade: R3
+published: 2026-07-16
+original_url: https://huggingface.co/blog/security-incident-july-2026
+licence: unknown
+evidence_origin: huggingface-incident-records
+examiner: Hugging Face
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: 'Hugging Face''s first public account of the intrusion. It was written before Hugging Face
+  knew who was behind the attack: OpenAI''s own report dates its first contact with Hugging Face to the
+  day after this post. Saved by the editor on 22 September 2026. Complete for the article; the saved page
+  also holds reader comments, which are not part of the document and are not used.'
+captures:
+- capture: V01
+  captured_on: 2026-09-22
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete for the article; the capture also holds the reader-comment thread, which is not
+    part of the document
+  public_snapshot: not recorded
+  capture_sha256: 182a7ef2c117f197d4422d189cd8fbd3d4e83d31e3e879e9a69ca93fb13ec7ef
+  text_sha256: fb4e1f9e24f37d88e8125c0d311668b792f2d93be170570e0b6e2f6ceb18d126

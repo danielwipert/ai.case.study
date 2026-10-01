@@ -1,0 +1,78 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS001.D04
+title: The Hugging Face incident and the road ahead
+publisher: openai
+type: official-statement
+format: html
+grade: R3
+published: 2026-08-26
+original_url: https://openai.com/index/hugging-face-incident-and-the-road-ahead/
+licence: unknown
+evidence_origin: openai-internal-records
+examiner: OpenAI
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: 'OpenAI''s main public account, published with its technical report and on the same day as
+  METR and Redwood''s investigation. It describes itself as a summary of the technical report. Saved twice
+  by the editor: on 22 September 2026, and again on 30 September 2026 with its three "Read more" panels
+  opened.'
+captures:
+- capture: V01
+  captured_on: 2026-09-22
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: partial (three "Read more" panels closed when saved)
+  public_snapshot: not recorded
+  capture_sha256: 5b57ac2eaae4b944c4615d099270bf3a85c44074f0a1bcbdf1368b3de2e8ce13
+  text_sha256: 5b4a01ec3e031e1343ee3510f1cfd0a3cd2c0eacd1520ff72ec6d1ce802d939d
+- capture: V02/base
+  captured_on: &id001 2026-09-30
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete as a set; each panel file holds one dialog open
+  public_snapshot: not recorded
+  capture_sha256: a1e55d5c94bab00e1354be65a26575fab7cf9eac8b2c3e9c7a45eec9e0aa5e5c
+  text_sha256: 3aa81e7c68ab0f4eccdb56819cf9c323f9ececa02995b326cda8a17ba0056cc3
+- capture: V02/panel1
+  captured_on: *id001
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete as a set; each panel file holds one dialog open
+  public_snapshot: not recorded
+  capture_sha256: 11903586b27366bc0899d5faf8dc284d48ddd4aab12de0620227608eb9d6e812
+  text_sha256: 977e7d30858b22e9afb83ae819fd3718e671295ee15a486375ec517ed0c3e7fa
+- capture: V02/panel2
+  captured_on: *id001
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete as a set; each panel file holds one dialog open
+  public_snapshot: not recorded
+  capture_sha256: 249407b90d4b3133be0116371a4f969ee2b1de80ca88d8f014bc62a7c7ef75f9
+  text_sha256: 5f3f1c59830877535ba96b7065e3e029dff5bb0c590deaefd8f6dec028429003
+- capture: V02/panel3
+  captured_on: *id001
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete as a set; each panel file holds one dialog open
+  public_snapshot: not recorded
+  capture_sha256: 794f1e1d85d34f3ec08c4c54a6734f699477dcaf7b98e85500fa072e13da93ed
+  text_sha256: 768215e68d9c5217783b1b29583529a51139c1bd188f6397a27176431ae9ebf5

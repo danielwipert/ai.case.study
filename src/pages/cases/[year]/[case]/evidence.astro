@@ -1,0 +1,114 @@
+---
+// The evidence page (the ledger): every row with its code, kind,
+// statement, computed label and conflict, and every claim it links to with
+// the quote, locator and check-mark status. Labels come from
+// src/preview/lib/record.mjs; nothing on this page is typed by hand.
+import CaseLayout from "../../../../record/CaseLayout.astro";
+import { loadCase, shortCode, HEADING_NAMES } from "../../../../record/lib/record.mjs";
+import { recordRoutes } from "../../../../record/lib/routes.mjs";
+
+export function getStaticPaths() {
+  return recordRoutes();
+}
+
+
+const record = loadCase(Astro.props.code);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const root = `${base}/cases/${Astro.params.year}/${Astro.params.case}`;
+const docket = `${root}/sources/`;
+
+const kindFields = {
+  event: [["Date", "date"], ["Precision", "precision"], ["Timezone", "timezone"]],
+  state: [["Start", "start"], ["End", "end"]],
+  quantity: [["Unit", "unit"], ["Counts", "counts"]],
+  statement: [["Speaker", "speaker"], ["Quote", "quote"]],
+  computed: [["Working", "working"]],
+  absence: [["As of", "as_of"]]
+};
+const howKnown = { "first-hand": "First-hand", "told-by-someone": "Told by someone", "does-not-say": "Does not say" };
+const markText = (mark) =>
+  mark.state === "valid" ? `Checked by ${mark.by}, ${mark.date}`
+  : mark.state === "void" ? `Check out of date: the fact or quote changed after ${mark.by} checked it`
+  : "Not yet checked";
+const counts = (label) => label.route === "examiners" || label.route === "single"
+  ? (label.origins ? `${label.origins} independent source${label.origins === 1 ? "" : "s"}, ${label.examiners} examiner${label.examiners === 1 ? "" : "s"}` : "Rests on the party's own account")
+  : "—";
+const items = [...record.rows, ...record.context];
+---
+
+<CaseLayout title={`Evidence · ${record.header.title}`} record={record} active="ledger" root={root}>
+  <section class="shell pv-ledger">
+    <div class="pv-intro">
+      <h2>Ledger</h2>
+      <p>{record.rows.length} checked facts. Each one shows the exact quote it rests on and where that quote comes from. Its label (Supported, Attributed, Disputed and so on) is worked out from the quotes and from how far each source can be trusted, never typed by hand.</p>
+    </div>
+
+    <ol class="pv-rows">
+      {items.map((row) => {
+        const short = shortCode(row.code);
+        const isRow = "kind" in row;
+        return (
+          <li class="pv-row" id={short}>
+            <header class="pv-row-head">
+              <a class="pv-row-code" href={`#${short}`}>{row.code}</a>
+              <span class="pv-kind">{isRow ? row.kind : "context"}</span>
+              {isRow && <span class="pv-row-heading">Heading {row.heading} · {HEADING_NAMES[row.heading - 1]}</span>}
+              {isRow && <span class="claim-label pv-label" data-label={row.label.word}>{row.label.display}</span>}
+            </header>
+            <p class="pv-statement">{row.statement}</p>
+
+            {isRow && (
+              <dl class="pv-meta">
+                <div><dt>How well supported</dt><dd>{row.label.support === "None" ? "None (shown as Unknown)" : row.label.support}</dd></div>
+                <div><dt>Contested?</dt><dd>{row.label.conflict}</dd></div>
+                <div><dt>Independent sources</dt><dd>{counts(row.label)}</dd></div>
+                {row.label.conflict === "Disputed" && <div><dt>Support beneath the dispute</dt><dd>{row.label.beneath}</dd></div>}
+                <div><dt>How we word it</dt><dd>{row.plainVoiceAllowed ? "As a plain fact (verified, not disputed)" : "Always says who says so"}</dd></div>
+                {(kindFields[row.kind] ?? []).map(([term, key]) => row[key] != null && (
+                  <div><dt>{term}</dt><dd>{String(row[key])}</dd></div>
+                ))}
+                {row.kind === "computed" && (
+                  <div><dt>Inputs</dt><dd>{row.inputs.map((c, i) => <>{i > 0 && ", "}<a href={`#${shortCode(c)}`}>{shortCode(c)}</a></>)} · takes the weakest support and strongest conflict among them</dd></div>
+                )}
+                {row.kind === "absence" && (
+                  <div class="pv-wide"><dt>Documents read</dt><dd><ul>{row.documents_read.map((d) => <li>{d}</li>)}</ul></dd></div>
+                )}
+                {(row.kind === "computed" || row.kind === "absence") && (
+                  <div><dt>Checked</dt><dd>{row.check ? `Checked by ${row.check.by}, ${row.check.date}` : "Not yet checked"}</dd></div>
+                )}
+              </dl>
+            )}
+
+            {row.links.length > 0 && (
+              <ul class="pv-links">
+                {row.links.map((link) => {
+                  const c = link.claimData;
+                  return (
+                    <li class="pv-link" data-relation={link.relation} data-mark={link.mark.state}>
+                      <p class="pv-link-head">
+                        <span class="pv-relation">{link.relation}</span>
+                        <code>{c.code}</code>
+                        <a href={`${docket}#${shortCode(link.doc.code)}`}>{shortCode(link.doc.code)} · {link.doc.grade} · {link.doc.type.replaceAll("-", " ")}</a>
+                        <span class="pv-mark" data-mark={link.mark.state}>{markText(link.mark)}</span>
+                      </p>
+                      <blockquote class="pv-quote">{c.quote}</blockquote>
+                      <dl class="pv-claim">
+                        <div><dt>Locator</dt><dd>{c.locator} · capture {c.capture}</dd></div>
+                        <div><dt>Speaker</dt><dd>{c.speaker}</dd></div>
+                        <div><dt>How known</dt><dd>{howKnown[c.how_known] ?? c.how_known} ({c.how_known_basis})</dd></div>
+                        <div><dt>Interest</dt><dd>{c.interest}{c.interest_reason && ` — ${c.interest_reason}`}</dd></div>
+                        <div><dt>Hedge</dt><dd>{c.hedge ? "Yes: the row must keep it" : "No"}</dd></div>
+                        <div><dt>Dependence</dt><dd>{link.dependence ?? "none"}{link.relays && ` (relays ${shortCode(link.relays)})`}</dd></div>
+                        {c.inspectable && <div class="pv-wide"><dt>Inspectable</dt><dd>{c.inspectable_reason}</dd></div>}
+                      </dl>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+</CaseLayout>

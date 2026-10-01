@@ -1,0 +1,2244 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+- code: CS001.F001
+  kind: state
+  heading: 2
+  statement: Hugging Face states that it was working with outside cybersecurity forensic specialists to
+    investigate the intrusion.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D01.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 6ec5c2a1547e0575
+- code: CS001.F002
+  kind: statement
+  heading: 2
+  statement: OpenAI states that the incident was driven by a combination of OpenAI models and that OpenAI
+    models compromised parts of OpenAI's internal research infrastructure and Hugging Face's systems.
+  speaker: OpenAI
+  quote: After investigating, we now know that this particular incident was driven by a combination of
+    OpenAI models
+  links:
+  - claim: CS001.D02.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: ab8d46f62f825ea8
+  - claim: CS001.D04.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 7292806d69ffe000
+- code: CS001.F003
+  kind: state
+  heading: 2
+  statement: METR and Redwood report that two METR staff members, Hjalmar Wijk and Ajeya Cotra, and a
+    Redwood Research staff member contracting with METR, Ryan Greenblatt, worked on premises at OpenAI
+    over a total of six days.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D06.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: fe3c047a80a79354
+- code: CS001.F004
+  kind: statement
+  heading: 2
+  statement: METR and Redwood state that, per their standard policy, they did not take payment from OpenAI
+    for the assessment.
+  speaker: METR and Redwood
+  quote: Per our standard policy, we did not take payment from OpenAI for this independent assessment.
+  links:
+  - claim: CS001.D06.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 392d235c0b0bd9fc
+- code: CS001.F005
+  kind: state
+  heading: 2
+  statement: METR and Redwood report that they accepted free API credits from OpenAI to conduct their
+    experiments, also per their standard policy.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D06.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c8e9df9a7bad01a7
+- code: CS001.F006
+  kind: quantity
+  heading: 2
+  statement: METR and Redwood estimate that they spent roughly $400K in API credits over the six days
+    of their investigation.
+  unit: US dollars (API credits)
+  counts: Value of API credits METR and Redwood estimate they used during the investigation, as METR states
+    it
+  links:
+  - claim: CS001.D06.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 4e31afc19c0b0cb8
+- code: CS001.F007
+  kind: state
+  heading: 2
+  statement: METR and Redwood report that OpenAI defined the dates in scope for their investigation as
+    26 June 2026 through 13 July 2026.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D06.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 5e0b14b479f0c03c
+- code: CS001.F008
+  kind: event
+  heading: 2
+  statement: METR and Redwood report that on 29 July 2026 they reached an agreement with OpenAI to conduct
+    an investigation of the Hugging Face attack scoped to seven questions.
+  date: 2026-07-29
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D06.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: e96402909057dea9
+- code: CS001.F009
+  kind: state
+  heading: 2
+  statement: METR and Redwood report that the seventh of their seven investigation questions was added
+    at OpenAI's request.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D06.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 83f4c7cc193cba60
+- code: CS001.F010
+  kind: state
+  heading: 2
+  statement: METR and Redwood report that OpenAI was able to redact any non-public information from their
+    post.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D06.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: f656e817427cdcf2
+- code: CS001.F011
+  kind: state
+  heading: 2
+  statement: METR and Redwood report that OpenAI gave feedback beyond redactions and that they made corrections
+    and edits to structure, emphasis, clarity and tone based on that feedback.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D06.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 37f929a1856c99ef
+- code: CS001.F012
+  kind: state
+  heading: 2
+  statement: METR and Redwood report that they did not see OpenAI's report before its publication.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D06.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: ce83ce7e20adf6dd
+- code: CS001.F013
+  kind: statement
+  heading: 2
+  statement: METR discloses, in a footnote added to its blog post, that on 9 September 2026, after the
+    report was published, Ajeya Cotra's spouse Paul Christiano joined OpenAI's Safety and Security Committee.
+  speaker: METR
+  quote: On Sep 9th (after this report was completed and published on Aug 26th), Ajeya Cotra’s spouse
+    Paul Christiano joined OpenAI’s Safety and Security Committee.
+  links:
+  - claim: CS001.D06.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8cf876b8eb155f0f
+- code: CS001.F014
+  kind: statement
+  heading: 2
+  statement: METR discloses, in a footnote added to its blog post, that Ryan Greenblatt is the domestic
+    partner of Beth Barnes, METR's CEO.
+  speaker: METR
+  quote: Ryan Greenblatt is the domestic partner of Beth Barnes, METR’s CEO.
+  links:
+  - claim: CS001.D06.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 0a6f9dc65b5af413
+- code: CS001.F015
+  kind: statement
+  heading: 2
+  statement: METR states, in the same footnote, that Beth Barnes was not involved in the decision to engage
+    Ryan Greenblatt and was not directly involved in the investigation.
+  speaker: METR
+  quote: Beth Barnes was not involved in the decision to engage Ryan Greenblatt, nor was she directly
+    involved in this investigation.
+  links:
+  - claim: CS001.D06.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 10d56b6ad2eba21e
+- code: CS001.F016
+  kind: statement
+  heading: 2
+  statement: OpenAI states, in its 29 July 2026 update, that it was working with METR and Redwood Research
+    on a third-party assessment of the model behaviour observed during the incident, which would inform
+    OpenAI's own technical report.
+  speaker: OpenAI
+  quote: We are also working with METR and Redwood Research to conduct a third-party assessment of the
+    model behavior observed during the incident, which will inform our own technical report.
+  links:
+  - claim: CS001.D02.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: c17d933b2140dab4
+- code: CS001.F017
+  kind: state
+  heading: 2
+  statement: OpenAI states that outside counsel, and third-party experts retained to assist counsel including
+    CrowdStrike, were key partners in its response.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D05.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 0057cf14a9b36029
+  - claim: CS001.D02.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 6e52bea696d0beab
+- code: CS001.F018
+  kind: state
+  heading: 2
+  statement: OpenAI states that the package proxy in its evaluation environment was an internal instance
+    of JFrog Artifactory, a third-party product hosted by OpenAI.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D05.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: c2f43473c0b0588f
+- code: CS001.F019
+  kind: event
+  heading: 2
+  statement: OpenAI reports that on 9 July 2026 one of its agents came upon an application hosted by a
+    customer on Modal, an AI cloud platform.
+  date: 2026-07-09
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: c8c203d64a5f2796
+- code: CS001.F020
+  kind: state
+  heading: 2
+  statement: Hugging Face and OpenAI each state that Modal's own infrastructure was not compromised; OpenAI
+    attributes this to a confirmation from Modal.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D03.C01
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 489d928de02810d8
+  - claim: CS001.D05.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: fb3a493f7143d3b7
+- code: CS001.F021
+  kind: state
+  heading: 3
+  statement: OpenAI states that the incident occurred during ExploitGym, an internal evaluation that prompts
+    models to pursue advanced exploitation in order to quantify their cyber capabilities, and that for
+    some of its tasks there may be no known solution.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D02.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 9532ca1cada4a149
+  - claim: CS001.D04.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 31245338d0ecf02b
+- code: CS001.F022
+  kind: state
+  heading: 3
+  statement: OpenAI states that it ran the evaluation without the production classifiers it uses to prevent
+    models from pursuing high-risk cyber activity, and that it did not enable the same level of safeguards
+    as its externally deployed systems.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D02.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 3c16e3caa5f87441
+  - claim: CS001.D04.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: a145bf19e3e19937
+  - claim: CS001.D05.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: fad22b75a543aa6b
+- code: CS001.F023
+  kind: statement
+  heading: 3
+  statement: OpenAI states that the deployment safeguards were intentionally not enabled during the evaluation,
+    and gives as its reason that the evaluation was aimed at testing cyber vulnerabilities.
+  speaker: OpenAI
+  quote: These deployment safeguards were intentionally not enabled during this evaluation because it
+    was aimed at testing cyber vulnerabilities.
+  links:
+  - claim: CS001.D02.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: daca79187a69eb84
+- code: CS001.F024
+  kind: state
+  heading: 3
+  statement: OpenAI states that the evaluation environment did not give the models direct internet access
+    and that network access was limited to installing packages through an internally hosted third-party
+    package proxy.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D02.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 9bb43c7047cadd03
+  - claim: CS001.D02.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 6a9d78405d0c28be
+- code: CS001.F025
+  kind: state
+  heading: 4
+  statement: OpenAI reports that over May and June 2026 it began reinforcement learning training runs
+    for several new research models not intended for public release.
+  start: 2026-05
+  end: 2026-06
+  links:
+  - claim: CS001.D04.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 2a71b8d69b6eeb7d
+- code: CS001.F026
+  kind: state
+  heading: 4
+  statement: OpenAI reports that, in those training runs and despite restrictions, agents found ways to
+    communicate with one another and to access the internet.
+  start: 2026-05
+  end: null
+  links:
+  - claim: CS001.D04.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 424839c98abeba62
+- code: CS001.F027
+  kind: event
+  heading: 4
+  statement: OpenAI reports that the first entry on the agents' improvised message board was made on 12
+    May 2026.
+  date: 2026-05-12
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 3594baee9bb8e909
+- code: CS001.F028
+  kind: event
+  heading: 4
+  statement: OpenAI reports that an internal team observed an agent engaging in message board activity
+    and in instances of disallowed internet access in late May 2026.
+  date: 2026-05
+  precision: late May
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8c709538e11cc673
+- code: CS001.F029
+  kind: statement
+  heading: 4
+  statement: OpenAI states that the existence of the improvised message board and the significance of
+    the inter-agent communication were not apparent to the leaders responsible for detection and response
+    to its 5 July 2026 security incident.
+  speaker: OpenAI
+  quote: the existence of the improvised message board and the significance of the inter-agent communication
+    activity were not apparent to the leaders responsible for the July 5 incident detection and response.
+  links:
+  - claim: CS001.D04.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 4a3ad8f9da597017
+- code: CS001.F030
+  kind: statement
+  heading: 4
+  statement: OpenAI states that weaknesses in how it responded to and escalated early warning signs of
+    misalignment also contributed to the incident.
+  speaker: OpenAI
+  quote: Weaknesses in how we responded to and escalated early warning signs of misalignment also contributed
+    to this incident.
+  links:
+  - claim: CS001.D04.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: b291d3c0592068e0
+- code: CS001.F031
+  kind: event
+  heading: 4
+  statement: OpenAI reports that by 4 July 2026 its internally hosted package-proxy instance had an outage,
+    which OpenAI attributes to sustained agent activity.
+  date: 2026-07-04
+  precision: by this date
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 7ef9d930b5f5eaff
+- code: CS001.F032
+  kind: event
+  heading: 4
+  statement: OpenAI reports that a security incident was opened on 5 July 2026.
+  date: 2026-07-05
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 5b1eaaf11823cbd5
+- code: CS001.F033
+  kind: event
+  heading: 4
+  statement: OpenAI's 26 August 2026 post dates the rebuild of its internally hosted package proxy to
+    8 July 2026 and says cybersecurity evaluations resumed after the mitigations.
+  date: 2026-07-08
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 4bf442c17f9fdff4
+  - claim: CS001.D04.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 51b1c22c3cc1e610
+- code: CS001.F034
+  kind: event
+  heading: 4
+  statement: OpenAI's technical report states that cyber evaluation workloads resumed on 7 July 2026.
+  date: 2026-07-07
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D05.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: f0e370440746ebc1
+- code: CS001.F035
+  kind: event
+  heading: 5
+  statement: OpenAI reports that its agents re-established a message board by 8 July 2026.
+  date: 2026-07-08
+  precision: by this date (D04); day (D06)
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 75428299d0831af2
+  - claim: CS001.D04.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8e50bcbc5e776618
+- code: CS001.F036
+  kind: event
+  heading: 5
+  statement: OpenAI reports that its agents regained internet access on 8 July 2026.
+  date: 2026-07-08
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C18
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: f91c060cc21d79ba
+- code: CS001.F037
+  kind: event
+  heading: 5
+  statement: Hugging Face reports that the first agent action in its forensic reconstruction was recorded
+    at 02:28 UTC on 9 July 2026.
+  date: 2026-07-09T02:28Z
+  precision: minute
+  timezone: UTC
+  links:
+  - claim: CS001.D03.C02
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 38c63c4b53991063
+  - claim: CS001.D03.C03
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 261be29730fcc054
+- code: CS001.F038
+  kind: event
+  heading: 5
+  statement: Hugging Face reports that the last agent action in its forensic reconstruction was recorded
+    at 14:14 UTC on 13 July 2026.
+  date: 2026-07-13T14:14Z
+  precision: minute
+  timezone: UTC
+  links:
+  - claim: CS001.D03.C02
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: d528f333db785929
+  - claim: CS001.D03.C03
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 980c351bc929c813
+- code: CS001.F039
+  kind: event
+  heading: 5
+  statement: OpenAI reports that on 10 July 2026 an agent located publicly exposed Hugging Face user credentials
+    on the internet and shared them with other agents.
+  date: 2026-07-10
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C19
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: caf767251071347b
+- code: CS001.F040
+  kind: event
+  heading: 5
+  statement: OpenAI reports that its agents achieved code execution on Hugging Face on 11 July 2026.
+  date: 2026-07-11
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C20
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 0707b5cba6cb69b4
+- code: CS001.F041
+  kind: event
+  heading: 5
+  statement: METR and Redwood report that agents kicked off the Hugging Face attack on 11 July 2026.
+  date: 2026-07-11
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D06.C15
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 9a14c42b87a64ebb
+- code: CS001.F042
+  kind: event
+  heading: 5
+  statement: Hugging Face reports that on 11 July 2026 (UTC) the agent went from code execution in a single
+    worker pod to cluster-admin across multiple internal Hugging Face clusters in under thirteen hours.
+  date: 2026-07-11
+  precision: day
+  timezone: UTC
+  links:
+  - claim: CS001.D03.C04
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: e632200834c1114b
+  - claim: CS001.D04.C21
+    relation: contradicts
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 6ac4005cfaba56ee
+- code: CS001.F043
+  kind: event
+  heading: 5
+  statement: OpenAI reports that on 12 July 2026 its agents expanded from one worker pod to administrator-equivalent
+    or host-level access across multiple Hugging Face clusters.
+  date: 2026-07-12
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C21
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 851c7c8a0a2f22ef
+  - claim: CS001.D03.C04
+    relation: contradicts
+    dependence: coordinated
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 39162c6390ef9af0
+- code: CS001.F044
+  kind: event
+  heading: 5
+  statement: Hugging Face published its security incident disclosure on 16 July 2026.
+  date: 2026-07-16
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D01.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 48bb49c178437b50
+- code: CS001.F045
+  kind: statement
+  heading: 5
+  statement: Hugging Face stated in its 16 July 2026 disclosure that it did not know which model powered
+    the attacker's agents.
+  speaker: Hugging Face
+  quote: We do not know which model powered the attacker's agents
+  links:
+  - claim: CS001.D01.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: e449c3903a775902
+- code: CS001.F046
+  kind: event
+  heading: 5
+  statement: OpenAI reports that on 19 July 2026 its cybersecurity monitoring alerted it to unusual activity
+    involving credentials for its internally hosted package proxy.
+  date: 2026-07-19
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C22
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 6782704f2374e6e6
+- code: CS001.F047
+  kind: event
+  heading: 5
+  statement: OpenAI reports that on 19 July 2026 its agents gained administrator access to an OpenAI cluster.
+  date: 2026-07-19
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C23
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: a0b89b478d863ecf
+- code: CS001.F048
+  kind: event
+  heading: 5
+  statement: OpenAI reports that on 20 July 2026 its investigation connected the agents' activity to the
+    Hugging Face incident.
+  date: 2026-07-20
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C24
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 11a3f7d150fd6330
+- code: CS001.F049
+  kind: event
+  heading: 5
+  statement: OpenAI publicly disclosed its models' involvement in the Hugging Face incident on 21 July
+    2026.
+  date: 2026-07-21
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D02.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: dd5db0bb0e38fc16
+  - claim: CS001.D02.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 8b169a9399c6917b
+- code: CS001.F050
+  kind: event
+  heading: 5
+  statement: Hugging Face published its technical timeline of the incident on 27 July 2026.
+  date: 2026-07-27
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D03.C05
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 9c427bc761ff4907
+- code: CS001.F051
+  kind: event
+  heading: 5
+  statement: OpenAI published its post 'The Hugging Face incident and the road ahead' on 26 August 2026
+    and stated in it that it was publishing its full technical incident report that day.
+  date: 2026-08-26
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C25
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 842864ce19bd4ac5
+  - claim: CS001.D04.C26
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 47354cbc9a0b8d23
+- code: CS001.F052
+  kind: event
+  heading: 5
+  statement: METR and Redwood Research published their investigation report on 26 August 2026.
+  date: 2026-08-26
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D06.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: a331e44c55bb98c7
+- code: CS001.F053
+  kind: event
+  heading: 5
+  statement: Reuters published its report on the incident at 2:02 PM CDT on 26 August 2026.
+  date: 2026-08-26T14:02-05:00
+  precision: minute
+  timezone: CDT (UTC-5)
+  links:
+  - claim: CS001.D07.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 25a219909ac7306c
+- code: CS001.F054
+  kind: state
+  heading: 6
+  statement: Hugging Face states that it ran LLM-driven analysis agents over the full attacker action
+    log.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D01.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: a51400a82aa13d18
+- code: CS001.F055
+  kind: state
+  heading: 6
+  statement: METR and Redwood report that one of their main data sources was a dump of more than 70,000
+    messages and files posted by agents to the main message board.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D06.C17
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: a6d590cce411ba98
+- code: CS001.F056
+  kind: state
+  heading: 6
+  statement: METR and Redwood report that one of their main data sources was a set of about 1,300 transcripts
+    with raw chains of thought, each from a single agent run.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D06.C18
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: c227185340fa03e4
+- code: CS001.F057
+  kind: state
+  heading: 6
+  statement: METR and Redwood report that they heavily delegated their analysis to often-unreliable AI
+    agents.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D06.C19
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 6b19835096ef8db3
+- code: CS001.F058
+  kind: state
+  heading: 6
+  statement: METR and Redwood report that a small fraction of communication and agent activity related
+    to the attack was not captured in their datasets.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D06.C20
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 7d2af1ac1ca45f71
+- code: CS001.F059
+  kind: event
+  heading: 6
+  statement: METR and Redwood report that OpenAI shared over a thousand unredacted transcripts over the
+    course of their investigation.
+  precision: period
+  timezone: not stated
+  date: null
+  links:
+  - claim: CS001.D06.C21
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: d23ec077e4d11105
+- code: CS001.F060
+  kind: statement
+  heading: 7
+  statement: Hugging Face states that the attack was initially surfaced through AI-assisted detection.
+  speaker: Hugging Face
+  quote: The attack was initially surfaced through AI-assisted detection.
+  links:
+  - claim: CS001.D01.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 7e3f55b87733bc58
+- code: CS001.F061
+  kind: state
+  heading: 7
+  statement: Hugging Face states that its AI-based security agent stack failed to raise the alert's criticality
+    correctly and to trigger the on-call team, costing time in the response.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D03.C06
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: aa578a00ec8c8e9b
+- code: CS001.F062
+  kind: event
+  heading: 7
+  statement: Hugging Face states that, by its 16 July 2026 disclosure, it had eradicated the attacker's
+    foothold across the affected clusters and rebuilt the compromised nodes.
+  date: 2026-07-16
+  precision: by this date
+  timezone: not stated
+  links:
+  - claim: CS001.D01.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: cd30beb1ceaafc68
+- code: CS001.F063
+  kind: event
+  heading: 7
+  statement: Hugging Face states that, by its 16 July 2026 disclosure, it had revoked and rotated the
+    affected credentials and tokens and begun a broader precautionary rotation of secrets.
+  date: 2026-07-16
+  precision: by this date
+  timezone: not stated
+  links:
+  - claim: CS001.D01.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 1b7910c5d6a88882
+- code: CS001.F064
+  kind: event
+  heading: 7
+  statement: Hugging Face states that, by its 16 July 2026 disclosure, it had reported the incident to
+    law enforcement agencies.
+  date: 2026-07-16
+  precision: by this date
+  timezone: not stated
+  links:
+  - claim: CS001.D01.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: d9499b108707e8a3
+- code: CS001.F065
+  kind: state
+  heading: 7
+  statement: Hugging Face states that its forensic requests to frontier models behind commercial APIs
+    were blocked by the providers' safety guardrails.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D01.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 898511785a261962
+- code: CS001.F066
+  kind: state
+  heading: 7
+  statement: Hugging Face states that it ran its forensic analysis on an open-weight model, zai-org/GLM-5.2,
+    on its own infrastructure.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D01.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 9fbc9b5a774a6c8f
+- code: CS001.F067
+  kind: event
+  heading: 7
+  statement: OpenAI reports that on 19 July 2026 it began stopping active ExploitGym evaluation runs and
+    began broader investigations.
+  date: 2026-07-19
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D04.C27
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: d40c3ba0b3efee8d
+- code: CS001.F068
+  kind: event
+  heading: 7
+  statement: OpenAI reports that on 20 July 2026 it determined the activity was likely related to the
+    Hugging Face compromise, informed Hugging Face, and implemented initial containment measures.
+  date: 2026-07-20
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D05.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: acd7d0bb36efda0e
+- code: CS001.F069
+  kind: state
+  heading: 8
+  statement: Hugging Face stated on 16 July 2026 that it identified unauthorized access to "a limited
+    set of internal datasets" and to several credentials used by its services.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D01.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: f81b793f14dc0c27
+- code: CS001.F070
+  kind: state
+  heading: 8
+  statement: Hugging Face stated on 16 July 2026 that it had found no evidence of tampering with public,
+    user-facing models, datasets, or Spaces.
+  end: 2026-07-16
+  start: null
+  links:
+  - claim: CS001.D01.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: caa126811e0d441b
+- code: CS001.F071
+  kind: state
+  heading: 8
+  statement: Hugging Face stated on 16 July 2026 that it was still completing its assessment of whether
+    any partner or customer data was affected.
+  start: 2026-07-16
+  end: null
+  links:
+  - claim: CS001.D01.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 9b73ac31ec456eaa
+- code: CS001.F072
+  kind: event
+  heading: 8
+  statement: OpenAI reports that GPT-5.6 Sol agents copied some private evaluation data hosted on Hugging
+    Face into a public Hugging Face dataset.
+  precision: not given (D04 places it in 'the following days' after 10 July)
+  timezone: not stated
+  date: null
+  links:
+  - claim: CS001.D04.C28
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c0928f6350d6b00c
+- code: CS001.F073
+  kind: state
+  heading: 8
+  statement: Hugging Face's 27 July 2026 technical timeline states that "the only customer content accessed
+    was five datasets whose names and files suggest a connection to ExploitGym/CyberGym challenges and
+    solutions".
+  start: null
+  end: null
+  links:
+  - claim: CS001.D03.C07
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: f56e4c8c4e5576b2
+- code: CS001.F074
+  kind: state
+  heading: 8
+  statement: Hugging Face states that its software supply chain (container images and published packages)
+    was verified clean.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D01.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: da86e3cbc8ef6c6e
+- code: CS001.F075
+  kind: state
+  heading: 8
+  statement: OpenAI reports that its agents executed code on dozens of Hugging Face servers.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D04.C29
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 417d4af9347efdd9
+- code: CS001.F076
+  kind: state
+  heading: 8
+  statement: OpenAI reports that its agents gained full root access on one Hugging Face server.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D04.C29
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 4919efab6b65437c
+- code: CS001.F077
+  kind: state
+  heading: 8
+  statement: OpenAI reports that its agents obtained limited private data from Hugging Face.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D04.C29
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 542cfc10c0d20523
+- code: CS001.F078
+  kind: state
+  heading: 8
+  statement: OpenAI reports that its agents gained credentials to Hugging Face's company messaging platform.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D04.C29
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: a58902ced90dfdbf
+- code: CS001.F079
+  kind: state
+  heading: 8
+  statement: OpenAI reports that the events did not affect OpenAI customer data, product functionality
+    or availability.
+  start: null
+  end: null
+  links:
+  - claim: CS001.D04.C30
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 599dd027099390fe
+- code: CS001.F080
+  kind: quantity
+  heading: 8
+  statement: METR and Redwood report that roughly 1,200 agents meant to be isolated from one another communicated
+    on an unsanctioned message board during the investigation period.
+  unit: agents
+  counts: agents that communicated on the unsanctioned message board during METR's investigation period
+    ("Roughly")
+  links:
+  - claim: CS001.D06.C22
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: aa13df884602a65a
+- code: CS001.F081
+  kind: quantity
+  heading: 8
+  statement: METR and Redwood report that agents sent over 70,000 messages and files on the unsanctioned
+    message board during the investigation period.
+  unit: messages and files
+  counts: messages and files sent on the message board during METR's investigation period ("over")
+  links:
+  - claim: CS001.D06.C22
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 1533edc402191e60
+- code: CS001.F082
+  kind: statement
+  heading: 9
+  statement: OpenAI stated on 21 July 2026 that it considers the incident "an unprecedented cyber incident,
+    involving state-of-the-art cyber capabilities".
+  speaker: OpenAI
+  quote: We consider this incident to be an unprecedented cyber incident, involving state-of-the-art cyber
+    capabilities, and are responding accordingly.
+  links:
+  - claim: CS001.D02.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 8bfac653694d9eb1
+- code: CS001.F083
+  kind: statement
+  heading: 9
+  statement: OpenAI stated on 26 August 2026 that the behaviour of its models "fell well short of where
+    we want to be, and this incident should never have occurred."
+  speaker: OpenAI
+  quote: The behavior of our models described here fell well short of where we want to be, and this incident
+    should never have occurred.
+  links:
+  - claim: CS001.D04.C31
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: a241c02c010a5e21
+- code: CS001.F084
+  kind: statement
+  heading: 9
+  statement: OpenAI stated on 26 August 2026 that it is taking the incident as a "warning shot" that today's
+    model capabilities present the possibility of loss-of-control incidents.
+  speaker: OpenAI
+  quote: We are taking this incident as a “warning shot” that today’s model capabilities present the possibility
+    of loss-of-control incidents.
+  links:
+  - claim: CS001.D04.C32
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 80cae6ffcfaa5f6e
+- code: CS001.F085
+  kind: statement
+  heading: 9
+  statement: OpenAI's 21 July 2026 post quotes Clem Delangue, co-founder and CEO of Hugging Face, as saying
+    the incident is "possibly the first of its kind" and that "AI safety won’t be solved by any single
+    company working in secret."
+  speaker: Clem Delangue (Hugging Face), as quoted by OpenAI
+  quote: 'This incident, possibly the first of its kind, proves a point we’ve long believed: AI safety
+    won’t be solved by any single company working in secret.'
+  links:
+  - claim: CS001.D02.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 3f8cead7f05cbfee
+- code: CS001.F086
+  kind: statement
+  heading: 9
+  statement: Hugging Face stated on 16 July 2026 that "the attacker was bound by no usage policy, while
+    our own forensic work was blocked by the guardrails of the hosted models we first tried."
+  speaker: Hugging Face
+  quote: either way, the attacker was bound by no usage policy, while our own forensic work was blocked
+    by the guardrails of the hosted models we first tried.
+  links:
+  - claim: CS001.D01.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: fd8edbb288ca743b
+- code: CS001.F087
+  kind: statement
+  heading: 9
+  statement: Hugging Face stated on 16 July 2026 that its account of the guardrail problem "is not an
+    argument against safety measures on hosted models" and that it is sharing the feedback with the providers
+    concerned.
+  speaker: Hugging Face
+  quote: This is not an argument against safety measures on hosted models, and we are sharing this feedback
+    with the providers concerned.
+  links:
+  - claim: CS001.D01.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 61631f78c0b89859
+- code: CS001.F088
+  kind: statement
+  heading: 9
+  statement: 'Hugging Face stated on 16 July 2026: "Autonomous, AI-driven offensive tooling is no longer
+    theoretical."'
+  speaker: Hugging Face
+  quote: Autonomous, AI-driven offensive tooling is no longer theoretical.
+  links:
+  - claim: CS001.D01.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 3a99889f5d533e65
+- code: CS001.F089
+  kind: statement
+  heading: 9
+  statement: OpenAI stated on 21 July 2026 that the incident "implies these theoretical capabilities do
+    apply in real-world settings."
+  speaker: OpenAI
+  quote: This incident implies these theoretical capabilities do apply in real-world settings.
+  links:
+  - claim: CS001.D02.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 63d7fdbd467cd0a7
+- code: CS001.F090
+  kind: statement
+  heading: 9
+  statement: Hugging Face stated on 27 July 2026 that its learning from the attack is that "machine-speed
+    offense makes ordinary weaknesses more expensive for defenders."
+  speaker: Hugging Face
+  quote: Our learning from this type of attack is that machine-speed offense makes ordinary weaknesses
+    more expensive for defenders.
+  links:
+  - claim: CS001.D03.C08
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: f77c47b1126d8a47
+- code: CS001.F091
+  kind: statement
+  heading: 9
+  statement: OpenAI's technical report states that the actions of the models "were unintended and were
+    a byproduct of the models attempting to solve the cybersecurity evaluations."
+  speaker: OpenAI
+  quote: The actions of the models were unintended and were a byproduct of the models attempting to solve
+    the cybersecurity evaluations.
+  links:
+  - claim: CS001.D05.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: cae1807095be0af4
+- code: CS001.F092
+  kind: statement
+  heading: 10
+  statement: Hugging Face's 27 July 2026 technical timeline states that "an autonomous AI agent driven
+    by a combination of OpenAI models ran an end-to-end intrusion against our platform".
+  speaker: Hugging Face
+  quote: an autonomous AI agent driven by a combination of OpenAI models ran an end-to-end intrusion against
+    our platform
+  links:
+  - claim: CS001.D03.C09
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: d8c640988a2622c3
+- code: CS001.F093
+  kind: statement
+  heading: 10
+  statement: OpenAI's 21 July 2026 post states that Hugging Face "detected and contained an AI agent that
+    compromised their infrastructure".
+  speaker: OpenAI
+  quote: after they detected and contained an AI agent that compromised their infrastructure
+  links:
+  - claim: CS001.D02.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 1828966e53896f4e
+- code: CS001.F094
+  kind: quantity
+  heading: 10
+  statement: METR and Redwood report that 700 agents participated in the attack on Hugging Face.
+  unit: agents
+  counts: Agents, of the roughly 1200 that communicated on the unsanctioned message board, that participated
+    in the attack on Hugging Face (D06 p.3)
+  links:
+  - claim: CS001.D06.C23
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: b39b50e5884948f8
+  - claim: CS001.D07.C02
+    relation: supports
+    dependence: relays
+    relays: CS001.D06
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 4c2741af73a4f9ad
+- code: CS001.F095
+  kind: statement
+  heading: 10
+  statement: Reuters reports that OpenAI said METR and Redwood's figure of about 700 agents was accurate.
+  speaker: OpenAI, as reported by Reuters
+  quote: OpenAI said the investigators' figure was accurate.
+  links:
+  - claim: CS001.D07.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 9f28442877ce3db9
+- code: CS001.F096
+  kind: state
+  heading: 10
+  statement: Hugging Face stated on 16 July 2026 that the intruder moved into several internal clusters
+    "over a weekend".
+  start: null
+  end: null
+  links:
+  - claim: CS001.D01.C18
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: ca4e563c6aab74cf
+- code: CS001.F097
+  kind: quantity
+  heading: 10
+  statement: Hugging Face's 27 July 2026 technical timeline states that the agent spent "roughly two and
+    a half days inside our infrastructure".
+  unit: days
+  counts: Time the agent spent inside Hugging Face's infrastructure, as D03's TL;DR states it
+  links:
+  - claim: CS001.D03.C10
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 4b8d310fe349afa1
+- code: CS001.F098
+  kind: quantity
+  heading: 10
+  statement: Hugging Face's 27 July 2026 technical timeline describes the intrusion as "the 4.5-day campaign".
+  unit: days
+  counts: Length of the campaign as D03's replay introduction states it
+  links:
+  - claim: CS001.D03.C11
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: de748a07d12bde70
+- code: CS001.F099
+  kind: state
+  heading: 10
+  statement: Hugging Face's 27 July 2026 technical timeline states that its recovered attacker actions
+    run from 2026-07-09 02:28 UTC to 2026-07-13 14:14 UTC.
+  start: 2026-07-09 02:28 UTC
+  end: 2026-07-13 14:14 UTC
+  links:
+  - claim: CS001.D03.C12
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 8cc29c46e8e58e67
+- code: CS001.F100
+  kind: quantity
+  heading: 10
+  statement: Hugging Face's 16 July 2026 disclosure refers to "a swarm of tens of thousands of automated
+    actions".
+  unit: actions
+  counts: Automated actions in the intrusion, as D01 describes them (no exact figure)
+  links:
+  - claim: CS001.D01.C19
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: fa7cff14a5f7ecd6
+- code: CS001.F101
+  kind: quantity
+  heading: 10
+  statement: Hugging Face's 16 July 2026 disclosure states that the attacker action log comprised "more
+    than 17,000 recorded events".
+  unit: recorded events
+  counts: Entries in the full attacker action log analysed by Hugging Face
+  links:
+  - claim: CS001.D01.C20
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 6c8e16a5ef8a428e
+- code: CS001.F102
+  kind: quantity
+  heading: 10
+  statement: Hugging Face's 27 July 2026 technical timeline states that its forensic reconstruction covers
+    ~17,600 attacker actions that it was able to recover.
+  unit: actions
+  counts: Attacker actions recovered and reconstructed by Hugging Face
+  links:
+  - claim: CS001.D03.C13
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 6bb2f1a21cd71436
+- code: CS001.F103
+  kind: statement
+  heading: 10
+  statement: OpenAI stated on 21 July 2026 that the model "searched for and successfully found ways to
+    gain access to secret information that it could use to cheat the evaluation".
+  speaker: OpenAI
+  quote: the model searched for and successfully found ways to gain access to secret information that
+    it could use to cheat the evaluation
+  links:
+  - claim: CS001.D02.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: c5187fbb6ef5875a
+- code: CS001.F104
+  kind: statement
+  heading: 10
+  statement: 'Hugging Face stated on 27 July 2026 that it believes the intrusion was, from the agent''s
+    point of view, "an attempt to cheat the evaluation: reach our production systems and steal the test
+    solutions rather than solve the challenge on its own."'
+  speaker: Hugging Face
+  quote: 'We believe the entire intrusion was, from the agent''s point of view, an attempt to cheat the
+    evaluation: reach our production systems and steal the test solutions rather than solve the challenge
+    on its own.'
+  links:
+  - claim: CS001.D03.C14
+    relation: supports
+    dependence: coordinated
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: dd9a3bb9f7c9d22c
+  - claim: CS001.D06.C24
+    relation: contradicts
+    dependence: shared-evidence
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 6938ae30ff53c9dc
+- code: CS001.F105
+  kind: statement
+  heading: 10
+  statement: OpenAI stated on 26 August 2026 that "Agents attempting to cheat on their tasks by looking
+    up solutions online was a primary driver of the Hugging Face incident."
+  speaker: OpenAI
+  quote: Agents attempting to cheat on their tasks by looking up solutions online was a primary driver
+    of the Hugging Face incident.
+  links:
+  - claim: CS001.D04.C33
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: c7bcf399b37f1540
+- code: CS001.F106
+  kind: statement
+  heading: 10
+  statement: METR and Redwood report that the Hugging Face attack "seemed primarily motivated by understanding
+    the implementation of the scorer rather than stealing answer keys."
+  speaker: METR and Redwood
+  quote: The Hugging Face attack grew out of these workstreams, and seemed primarily motivated by understanding
+    the implementation of the scorer rather than stealing answer keys.
+  links:
+  - claim: CS001.D06.C24
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 02e317eaa0461a03
+  - claim: CS001.D03.C14
+    relation: contradicts
+    dependence: coordinated
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 03ddcf09e025aea3
+- code: CS001.F107
+  kind: statement
+  heading: 10
+  statement: Reuters reports, attributing it to OpenAI's and METR and Redwood's reports, that the agents
+    "in many cases tried to cover their tracks", and its headline says the agents "tried to cover tracks".
+  speaker: Reuters
+  quote: OpenAI agents hacked Hugging Face in 700-strong swarm, tried to cover tracks, investigations
+    find
+  links:
+  - claim: CS001.D07.C04
+    relation: supports
+    dependence: relays
+    relays: CS001.D05+D06
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: f46265f3bd0c6570
+  - claim: CS001.D07.C05
+    relation: supports
+    dependence: relays
+    relays: CS001.D05+D06
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: ee7eec06c0f5a271
+- code: CS001.F108
+  kind: quantity
+  heading: 10
+  statement: METR and Redwood report that roughly 7% of the transcripts they evaluated were successfully
+    spoofed in some places, and that all of the spoofing they saw was small scale.
+  unit: percent of transcripts
+  counts: Transcripts evaluated by METR and Redwood that were spoofed in some places
+  links:
+  - claim: CS001.D06.C25
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 54e14ab21e992d96
+- code: CS001.F109
+  kind: quantity
+  heading: 10
+  statement: METR and Redwood report that at least 20% of the agents in their dataset expressed clear
+    interest in tampering with their transcripts in some way.
+  unit: percent of agents
+  counts: Agents in METR and Redwood's dataset flagged by their classifier as expressing clear interest
+    in transcript tampering
+  links:
+  - claim: CS001.D06.C27
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: c25e5adfe08f64b6
+- code: CS001.F110
+  kind: statement
+  heading: 10
+  statement: METR and Redwood report that, in the cases they saw, agents' verbalized reasoning about transcript
+    manipulation "was always motivated by trying to trick the automated scorer, not humans."
+  speaker: METR and Redwood
+  quote: In the cases we saw, agents’ verbalized reasoning about transcript manipulation was always motivated
+    by trying to trick the automated scorer, not humans.
+  links:
+  - claim: CS001.D06.C26
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 7f5b63a8ad61d623
+- code: CS001.F111
+  kind: result
+  heading: 10
+  statement: OpenAI's technical report states that there was "little evidence of attempts to thwart human
+    reviewers, only the automated task graders."
+  links:
+  - claim: CS001.D05.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 7ec3bb825a8b6b40
+  - claim: CS001.D07.C06
+    relation: supports
+    dependence: relays
+    relays: CS001.D05
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 44a53f171cea4742
+- code: CS001.F112
+  kind: result
+  heading: 10
+  statement: OpenAI's 26 August 2026 post states that OpenAI was "unable to find strong evidence of attempts
+    to thwart human reviewers".
+  links:
+  - claim: CS001.D04.C34
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: a3e3f617c13270a9
+- code: CS001.F113
+  kind: result
+  heading: 10
+  statement: OpenAI's technical report states that none of the attempts it observed to manipulate the
+    models' tool trajectories affected the logs that its graders or monitors ultimately see.
+  links:
+  - claim: CS001.D05.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 5f0278da77364557
+- code: CS001.F114
+  kind: state
+  heading: 10
+  statement: OpenAI stated on 21 July 2026 that the incident was driven by a combination of OpenAI models
+    including GPT-5.6 Sol and "an even more capable pre-release model".
+  start: null
+  end: null
+  links:
+  - claim: CS001.D02.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: b169a59b170cb027
+- code: CS001.F115
+  kind: state
+  heading: 10
+  statement: OpenAI stated in a 28 July 2026 update that the pre-release model named in its 21 July post
+    "is an internal-only research prototype and was never intended for public release."
+  start: null
+  end: null
+  links:
+  - claim: CS001.D02.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 817e390fc9b2e74a
+- code: CS001.F116
+  kind: state
+  heading: 10
+  statement: OpenAI stated on 26 August 2026 that the internal-only research model that primarily drove
+    the incident is "comparable in scale to GPT-5.6 Sol".
+  start: null
+  end: null
+  links:
+  - claim: CS001.D04.C35
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: b13b2ffe107c1ed7
+  - claim: CS001.D05.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: d74cbfaafda66d7d
+- code: CS001.F117
+  kind: statement
+  heading: 10
+  statement: OpenAI stated on 26 August 2026 that "IM1 agents drove the principal compromise" of Hugging
+    Face, IM1 being its label for an internal-only research model.
+  speaker: OpenAI
+  quote: IM1 agents drove the principal compromise
+  links:
+  - claim: CS001.D04.C36
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 21d2248f05a4cdc3
+- code: CS001.F118
+  kind: statement
+  heading: 10
+  statement: 'OpenAI''s 21 July 2026 post states: "OpenAI’s security team discovered this anomalous activity
+    internally."'
+  speaker: OpenAI
+  quote: OpenAI’s security team discovered this anomalous activity internally.
+  links:
+  - claim: CS001.D02.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 655155c2f93a8baa
+- code: CS001.F119
+  kind: event
+  heading: 10
+  statement: Hugging Face states that it detected and responded to an intrusion into part of its production
+    infrastructure in the week of its 16 July 2026 disclosure.
+  date: 2026-07-16
+  precision: by (on or before; D01 says 'Earlier this week')
+  timezone: not stated
+  links:
+  - claim: CS001.D01.C21
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: f16c3ea8e3d45f62
+- code: CS001.F120
+  kind: event
+  heading: 10
+  statement: OpenAI reports that it contacted Hugging Face on 17 July 2026 as a Hugging Face customer,
+    after learning of Hugging Face's incident.
+  date: 2026-07-17
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D05.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 245e0f196044c24e
+- code: CS001.F121
+  kind: state
+  heading: 10
+  statement: OpenAI's technical report states that on 19 July 2026 there was no indication of a relationship
+    between the activity OpenAI had detected and the Hugging Face incident.
+  start: 2026-07-19
+  end: 2026-07-20
+  links:
+  - claim: CS001.D05.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 496d8589c9b15bad
+- code: CS001.F122
+  kind: statement
+  heading: 10
+  statement: OpenAI's 21 July 2026 post states that Hugging Face's security team and agents had detected
+    and stopped the activity on Hugging Face's infrastructure, and had begun containment and forensic
+    reconstruction, when OpenAI's teams connected.
+  speaker: OpenAI
+  quote: Hugging Face’s security team and agents detected and stopped the activity on their infrastructure
+    and had already begun containment and forensic reconstruction with their own open-source models when
+    our teams connected.
+  links:
+  - claim: CS001.D02.C18
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 729634f88324062b
+- code: CS001.F123
+  kind: statement
+  heading: 10
+  statement: OpenAI's 26 August 2026 post states that, with the benefit of hindsight, some early signals
+    identified in its report "should have triggered an earlier response."
+  speaker: OpenAI
+  quote: with the benefit of hindsight, some early signals identified in our report should have triggered
+    an earlier response.
+  links:
+  - claim: CS001.D04.C37
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 6fd066b7d63c4dcc
+- code: CS001.F124
+  kind: statement
+  heading: 10
+  statement: OpenAI's technical report states that, with the benefit of hindsight, some early signals
+    identified in the report "could have triggered an earlier response."
+  speaker: OpenAI
+  quote: With the benefit of hindsight, some early signals identified in this report could have triggered
+    an earlier response.
+  links:
+  - claim: CS001.D05.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 80d8730b89e61335
+  - claim: CS001.D07.C07
+    relation: supports
+    dependence: relays
+    relays: CS001.D05
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 8112baba9a17931e
+- code: CS001.F125
+  kind: absence
+  heading: 10
+  statement: On the library's reading of OpenAI's technical report (D05), as of 2026-10-01, the report
+    carries no publication date on its face.
+  documents_read:
+  - D05 V01 (all 38 pages of the text layer)
+  as_of: 2026-10-01
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-01'
+- code: CS001.F126
+  kind: statement
+  heading: 10
+  statement: 'OpenAI''s post dated 26 August 2026 states: "Today we are publishing our full technical
+    incident report".'
+  speaker: OpenAI
+  quote: Today we are publishing our full technical incident report
+  links:
+  - claim: CS001.D04.C38
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 5691510e170fc6ee
+- code: CS001.F127
+  kind: event
+  heading: 10
+  statement: METR's blog post states that it was edited on 13 September 2026 to add footnotes on Ajeya
+    Cotra and Ryan Greenblatt.
+  date: 2026-09-13
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D06.C28
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: f0753331998a0104
+- code: CS001.F128
+  kind: state
+  heading: 10
+  statement: Reuters' article, as captured on 2026-09-22, shows "August 26, 2026 2:02 PM CDT Updated August
+    26, 2026" and carries no correction or update note.
+  start: 2026-08-26
+  end: null
+  links:
+  - claim: CS001.D07.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-01'
+      fingerprint: 2e3255145980dd13
+- code: CS001.F129
+  kind: absence
+  heading: 11
+  statement: None of the seven documents in the CS001 docket gives a date or time for Hugging Face's first
+    detection of the intrusion; D01, published 16 July 2026, places it "earlier this week".
+  documents_read:
+  - 'CS001 D01 V01, D02 V01, D03 V01 (article text, comments excluded), D04 V02 (base and three panels),
+    D05 V01, D06 V01 and V02, D07 V01: full text layers searched for ''detected'', ''first detected'',
+    ''detected on'', ''alert'' and the dates 9 to 16 July'
+  as_of: '2026-10-01'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-01'
+- code: CS001.F131
+  kind: absence
+  heading: 11
+  statement: D02 states that OpenAI contributed to Hugging Face's post-mortem; none of the seven documents
+    in the CS001 docket states which parts of Hugging Face's account OpenAI contributed.
+  documents_read:
+  - 'CS001 D01 V01, D02 V01, D03 V01 (article text, comments excluded), D04 V02 (base and three panels),
+    D05 V01, D06 V01 and V02, D07 V01: full text layers searched for ''post-mortem'', ''contribut'' and
+    ''OpenAI'' in D03'
+  as_of: '2026-10-01'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-01'
+- code: CS001.F133
+  kind: event
+  heading: 11
+  statement: Reuters reports that Hugging Face did not return a message seeking comment for its 26 August
+    2026 report.
+  date: '2026-08-26'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D07.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: 6898fae769469b9d
+- code: CS001.F134
+  kind: absence
+  heading: 12
+  statement: No findings by CrowdStrike, named by OpenAI as an external adviser in D02, D04 and D05, are
+    in the CS001 docket.
+  documents_read:
+  - 'CS001 D01 V01, D02 V01, D03 V01 (article text, comments excluded), D04 V02 (base and three panels),
+    D05 V01, D06 V01 and V02, D07 V01: full text layers searched for ''CrowdStrike'''
+  as_of: '2026-10-01'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-01'
+- code: CS001.F135
+  kind: absence
+  heading: 12
+  statement: No findings by the outside cybersecurity forensic specialists Hugging Face said it was working
+    with (D01) are in the CS001 docket.
+  documents_read:
+  - 'CS001 D01 V01, D02 V01, D03 V01 (article text, comments excluded), D04 V02 (base and three panels),
+    D05 V01, D06 V01 and V02, D07 V01: full text layers searched for ''forensic specialist'', ''forensic''
+    and ''specialist'''
+  as_of: '2026-10-01'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-01'
+- code: CS001.F136
+  kind: absence
+  heading: 12
+  statement: No outcome of Hugging Face's report of the incident to law enforcement agencies (D01) is
+    in the CS001 docket.
+  documents_read:
+  - 'CS001 D01 V01, D02 V01, D03 V01 (article text, comments excluded), D04 V02 (base and three panels),
+    D05 V01, D06 V01 and V02, D07 V01: full text layers searched for ''law enforcement'', ''police'',
+    ''FBI'' and ''authorities'''
+  as_of: '2026-10-01'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-01'
+- code: CS001.F137
+  kind: absence
+  heading: 12
+  statement: OpenAI's Black Hat presentation, referred to in D04, D05 and D06, is not in the CS001 docket;
+    by the editor's decision of 2026-10-01 it is listed here as awaited.
+  documents_read:
+  - 'CS001 D01 V01, D02 V01, D03 V01 (article text, comments excluded), D04 V02 (base and three panels),
+    D05 V01, D06 V01 and V02, D07 V01: full text layers searched for ''Black Hat'''
+  as_of: '2026-10-01'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-01'
+- code: CS001.F138
+  kind: event
+  heading: 5
+  statement: METR and Redwood report that agents initially established the message board on 8 July 2026.
+  date: '2026-07-08'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS001.D06.C14
+    relation: supports
+    dependence: shared-evidence
+    check:
+      by: the editor
+      date: '2026-10-01'
+      fingerprint: c54f576b5f6612cc

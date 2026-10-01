@@ -2,9 +2,13 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import EvidencePanel from "../../components/EvidencePanel.astro";
+import { recordedCaseIds } from "../../record/lib/routes.mjs";
 
 export async function getStaticPaths() {
-  const entries = await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status));
+  // A case rebuilt in the new format is served by cases/[year]/[case]/ at the
+  // same address, so it is left out here.
+  const rebuilt = recordedCaseIds();
+  const entries = await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status) && !rebuilt.has(data.case_id));
   return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 

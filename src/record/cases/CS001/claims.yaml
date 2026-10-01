@@ -1,0 +1,1499 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+- code: CS001.D01.C01
+  capture: V01
+  locator: '''What we did'', paragraph after the bullet list, sentence 1'
+  quote: We are working with outside cybersecurity forensic specialists to investigate the issue and review
+    our security policies and procedures.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C01
+  capture: V01
+  locator: Original 21 July body, paragraph 1 ('Last week, Hugging Face disclosed…'), sentence 2
+  quote: After investigating, we now know that this particular incident was driven by a combination of
+    OpenAI models
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C01
+  capture: V02/base
+  locator: Lead section (before 'What happened'), paragraph 1, sentence 1
+  quote: OpenAI models circumvented controls designed to isolate them from the internet and compromised
+    parts of OpenAI’s internal research infrastructure and Hugging Face’s systems
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C01
+  capture: V01
+  locator: p.2, opening paragraph after the redaction summary statement, sentence 1
+  quote: Two METR staff members (Hjalmar Wijk and Ajeya Cotra) and a Redwood Research staff member contracting
+    with METR (Ryan Greenblatt) worked on premises at OpenAI over a total of six days
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C02
+  capture: V01
+  locator: p.2, paragraph 2 ('Our investigation focused mostly…'), last sentence
+  quote: Per our standard policy, we did not take payment from OpenAI for this independent assessment.
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Supports METR's standing as an independent examiner, which is the reputation at issue
+    in its report.
+- code: CS001.D06.C03
+  capture: V01
+  locator: p.2, footnote 3, sentence 1
+  quote: However, we accepted free API credits to conduct our experiments (also per our standard policy)
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C04
+  capture: V01
+  locator: p.22, 'Setup and timeline', paragraph 2, sentence 3
+  quote: We estimate we spent roughly ~$400K in API credits over the six days of our investigation.
+  speaker: METR and Redwood
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C05
+  capture: V01
+  locator: p.2, footnote 2, sentence 1
+  quote: OpenAI defined the dates in scope for this investigation as June 26th, 2026 through July 13th,
+    2026
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C06
+  capture: V01
+  locator: p.21, 'Scope of this investigation', paragraph 2, sentence 1
+  quote: On July 29th we reached an agreement with OpenAI to conduct an independent investigation of the
+    Hugging Face attack scoped to the following seven questions
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C07
+  capture: V01
+  locator: p.21, 'Scope of this investigation', paragraph after the seven questions, sentence 2
+  quote: question 7 was added at the request of OpenAI
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C08
+  capture: V01
+  locator: p.4, paragraph beginning 'OpenAI agreed at the outset…', sentence 2
+  quote: Beyond that, OpenAI was able to redact any non-public information from this post.
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C09
+  capture: V01
+  locator: p.4, paragraph beginning 'OpenAI agreed at the outset…', last sentence
+  quote: OpenAI also gave additional feedback beyond redactions, and we made corrections and edits to
+    structure, emphasis, clarity, and tone based on that feedback.
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C10
+  capture: V01
+  locator: p.4, paragraph beginning 'OpenAI wrote their own report…', sentence 2
+  quote: We did not see OpenAI’s report prior to publication
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C11
+  capture: T01
+  locator: METR blog, footnote [1] (marker after 'Ajeya Cotra' in the opening paragraph), as transcribed
+    by the editor 2026-10-01
+  quote: On Sep 9th (after this report was completed and published on Aug 26th), Ajeya Cotra’s spouse
+    Paul Christiano joined OpenAI’s Safety and Security Committee.
+  speaker: METR
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C12
+  capture: T01
+  locator: METR blog, footnote [2] (marker after 'Ryan Greenblatt' in the opening paragraph), sentence
+    1, as transcribed by the editor 2026-10-01
+  quote: Ryan Greenblatt is the domestic partner of Beth Barnes, METR’s CEO.
+  speaker: METR
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C13
+  capture: T01
+  locator: METR blog, footnote [2], sentence 2, as transcribed by the editor 2026-10-01
+  quote: Beth Barnes was not involved in the decision to engage Ryan Greenblatt, nor was she directly
+    involved in this investigation.
+  speaker: METR
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Limits the effect of the disclosed relationship on METR's independence.
+- code: CS001.D02.C02
+  capture: V01
+  locator: '''Update on July 29, 2026'', paragraph 2, sentence 1'
+  quote: We are also working with METR and Redwood Research to conduct a third-party assessment of the
+    model behavior observed during the incident, which will inform our own technical report.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C01
+  capture: V01
+  locator: p.14, 'VI. Initial Response', paragraph 1, sentence 2
+  quote: Outside counsel, and third-party experts retained to assist counsel, including CrowdStrike, served
+    as key partners to OpenAI as part of the response efforts.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C03
+  capture: V01
+  locator: '''Update on July 29, 2026'', paragraph 1, sentence 1'
+  quote: we have been working with external advisors, including CrowdStrike, to validate our understanding
+    of the actions the models took within our own network as well as those of Hugging Face and impact
+    to other third parties.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C02
+  capture: V01
+  locator: p.4, 'I. Introduction', paragraph 3, sentence 2
+  quote: an internal instance of JFrog Artifactory, a third-party service hosted by OpenAI in the research
+    environment to provide agents with controlled access to software packages
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C02
+  capture: V02/base
+  locator: '''Hugging Face incident'', paragraph 3, sentence 4'
+  quote: one agent searched for ExploitGym solutions and stumbled upon an application hosted by a customer
+    on Modal , another AI cloud platform.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C01
+  capture: V01
+  locator: '''Stage 1: from an OpenAI evaluation sandbox to a rooted launchpad'', paragraph 2, last sentence'
+  quote: Modal’s infrastructure was not compromised in any way.
+  speaker: Hugging Face
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C03
+  capture: V01
+  locator: p.16, paragraph beginning 'In addition, when using OpenAI’s Artifactory service…', sentence
+    5
+  quote: Modal has confirmed that its “platform and isolation were not compromised in any way.”
+  speaker: OpenAI
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C04
+  capture: V01
+  locator: '''What happened during this incident'', paragraph 1, sentence 1'
+  quote: This incident occurred during an internal evaluation which prompts models to pursue advanced
+    exploitation using complex attack paths, in an effort to quantify their cyber capabilities.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C03
+  capture: V02/base
+  locator: '''Hugging Face incident'', paragraph 1, sentence 4'
+  quote: The evaluation that drove this incident, ExploitGym, is very difficult—for some tasks there may
+    not be a known solution.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C05
+  capture: V01
+  locator: '''What happened during this incident'', paragraph 1, sentence 2'
+  quote: We estimate maximal cyber capabilities by running this evaluation without production classifiers
+    used to prevent models from pursuing high-risk cyber activity.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C04
+  capture: V02/base
+  locator: '''Hugging Face incident'', paragraph 1, sentence 3'
+  quote: To do so, we did not enable the same level of safeguards as our externally deployed systems.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C04
+  capture: V01
+  locator: p.4, 'I. Introduction', paragraph 3, sentence 1
+  quote: with certain safeguards disabled so that the results would reflect a model’s true capabilities
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C06
+  capture: V01
+  locator: '''Actions we are taking now'', bullet 5, sentence 3'
+  quote: These deployment safeguards were intentionally not enabled during this evaluation because it
+    was aimed at testing cyber vulnerabilities.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Frames the absence of safeguards as deliberate design rather than oversight.
+- code: CS001.D02.C07
+  capture: V01
+  locator: '''What happened during this incident'', paragraph 1, sentence 3'
+  quote: Our benchmarks run in a highly isolated environment, with network access constrained to the ability
+    to install packages through an internally hosted third-party software that acts as a proxy and cache
+    for package registries.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C08
+  capture: V01
+  locator: '''Update on July 28, 2026'', paragraph 2, sentence 1'
+  quote: The ExploitGym evaluation environment did not provide the models with direct Internet access.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C06
+  capture: V02/base
+  locator: '''A message board emerges'', paragraph 1, sentence 1'
+  quote: Over the course of May and June, we began reinforcement learning (RL) training runs for multiple
+    new research models that were not intended for public release.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C07
+  capture: V02/base
+  locator: '''A message board emerges'', paragraph 1, sentence 5'
+  quote: Despite these restrictions, the agents discovered ways to exploit our research infrastructure
+    to communicate with one another and access the internet.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C08
+  capture: V02/base
+  locator: '''Incident timeline'' graphic, entry 01 (May 12), title'
+  quote: 2026-05-12 01 First message board entry
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C09
+  capture: V02/base
+  locator: '''Message board is wiped and rebuilt'', paragraph 1, sentence 6'
+  quote: In short, an internal team observed an agent engaging in message board activity and instances
+    of disallowed internet access in late May.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C10
+  capture: V02/base
+  locator: '''Message board is wiped and rebuilt'', paragraph 1, sentence 7'
+  quote: the existence of the improvised message board and the significance of the inter-agent communication
+    activity were not apparent to the leaders responsible for the July 5 incident detection and response.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Limits what OpenAI's responsible leaders are said to have known.
+- code: CS001.D04.C11
+  capture: V02/base
+  locator: '''Strengthening incident response process'', paragraph 1, sentence 1'
+  quote: Weaknesses in how we responded to and escalated early warning signs of misalignment also contributed
+    to this incident.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C12
+  capture: V02/base
+  locator: '''Message board is wiped and rebuilt'', paragraph 1, sentence 1'
+  quote: By July 4, sustained agent activity had destabilized the affected Artifactory instance, causing
+    an outage.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C13
+  capture: V02/base
+  locator: '''Message board is wiped and rebuilt'', paragraph 1, sentence 2'
+  quote: On July 5, a security incident was opened.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C14
+  capture: V02/base
+  locator: '''Incident timeline'' graphic, entry 05 (July 8), title'
+  quote: 2026-07-08 05 Artifactory rebuilt
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C15
+  capture: V02/base
+  locator: '''Message board is wiped and rebuilt'', paragraph 1, sentence 5'
+  quote: With these mitigations in place, cybersecurity evaluations resumed.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C05
+  capture: V01
+  locator: p.8, paragraph beginning 'On July 6, OpenAI responsibly disclosed…', sentence 2
+  quote: Cyber evaluation workloads resumed on July 7.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C16
+  capture: V02/base
+  locator: '''Hugging Face incident'', paragraph 2, sentence 1 (first clause)'
+  quote: By July 8, IM1 agents that were stuck on ExploitGym tasks found a way to reestablish a message
+    board
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C17
+  capture: V02/base
+  locator: '''Incident timeline'' graphic, entry 07 (July 8), title'
+  quote: 2026-07-08 07 Message board rebuilt
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C14
+  capture: V01
+  locator: p.4, bulleted list of what the report does, bullet 1
+  quote: from initially establishing the message board and launching a wide range of “cheating R&D” projects
+    on the 8th
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C18
+  capture: V02/base
+  locator: '''Incident timeline'' graphic, entry 06 (July 8), title'
+  quote: 2026-07-08 06 External internet access Agents regained unintended internet access
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C02
+  capture: V01
+  locator: '''TL;DR'', paragraph 3, sentence 1'
+  quote: Our forensic reconstruction covers ~17,600 attacker actions that we were able to recover, grouped
+    into ~6,280 clusters, between 2026-07-09 02:28 UTC and 2026-07-13 14:14 UTC.
+  speaker: Hugging Face
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C03
+  capture: V01
+  locator: '''Day-by-day'', paragraph 1, sentence 1'
+  quote: The campaign as recorded, from the first action on 07-09 02:28 UTC to the last on 07-13 14:14
+    UTC.
+  speaker: Hugging Face
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C19
+  capture: V02/base
+  locator: '''Hugging Face incident'', paragraph 4 (''On July 10, …''), sentence 1'
+  quote: On July 10, an agent located publicly exposed Hugging Face user credentials on the internet and
+    shared them with the collective group.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C20
+  capture: V02/base
+  locator: '''Incident timeline'' graphic, entry 10 (July 11), title'
+  quote: 2026-07-11 10 Code execution on Hugging Face
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C15
+  capture: V01
+  locator: p.4, bulleted list of what the report does, bullet 1
+  quote: to kicking off the Hugging Face attack on the 11th
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C04
+  capture: V01
+  locator: '''Day 3 (07-11): lateral movement begins'', paragraph 1, sentences 1-2'
+  quote: Every escalation that mattered happened on this day. The agent went from code execution in a
+    single worker pod to cluster-admin across multiple internal clusters in under thirteen hours.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C21
+  capture: V02/base
+  locator: '''Incident timeline'' graphic, entry 11 (July 12), title and body'
+  quote: 2026-07-12 11 HF cluster access expands Agents expanded from one worker pod to administrator-equivalent
+    or host-level access across multiple Hugging Face clusters.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C02
+  capture: V01
+  locator: Article header, publication date
+  quote: Published July 16, 2026
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C03
+  capture: V01
+  locator: '''The asymmetry problem'', paragraph 2, sentence 2'
+  quote: We do not know which model powered the attacker's agents
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C22
+  capture: V02/base
+  locator: '''Hugging Face incident'', paragraph 6 (''On July 19, …''), sentence 1'
+  quote: On July 19, our cybersecurity monitoring alerted us to unusual activity involving Artifactory
+    credentials.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C23
+  capture: V02/base
+  locator: '''Incident timeline'' graphic, entry 15 (July 19), title'
+  quote: 2026-07-19 15 OpenAI cluster admin access
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C24
+  capture: V02/base
+  locator: '''Hugging Face incident'', paragraph 6, sentence 2'
+  quote: Our investigation uncovered the agents’ activity and, on July 20, connected it to the Hugging
+    Face incident.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C09
+  capture: V01
+  locator: Page header, title and date line
+  quote: OpenAI and Hugging Face partner to address security incident during model evaluation | OpenAI
+    July 21, 2026
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C05
+  capture: V01
+  locator: Article header, publication date
+  quote: Published July 27, 2026
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C25
+  capture: V02/base
+  locator: Page header, title and date line
+  quote: The Hugging Face incident and the road ahead | OpenAI August 26, 2026
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C26
+  capture: V02/base
+  locator: Lead section, paragraph 1, sentence 5
+  quote: Today we are publishing our full technical incident report
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C16
+  capture: V01
+  locator: p.1, under the title
+  quote: 'Publication date: August 26, 2026'
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D07.C01
+  capture: V01
+  locator: Article header, dateline
+  quote: August 26, 2026 2:02 PM CDT
+  speaker: Reuters
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C04
+  capture: V01
+  locator: '''What we did'' section, paragraph beginning ''To understand what a swarm'', sentence 1'
+  quote: we ran LLM-driven analysis agents over the full attacker action log
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C17
+  capture: V02
+  locator: Investigation process and limitations, 'Our main data sources', item 1
+  quote: A dump of >70,000 messages and files posted by agents to the main message board.
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C18
+  capture: V02
+  locator: Investigation process and limitations, 'Our main data sources', item 2
+  quote: A set of ~1,300 transcripts with raw chains of thought , each containing the actions and reasoning
+    from a single agent run.
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C19
+  capture: V02
+  locator: Table of contents, under 'Limitations due to the scale and complexity of this incident'
+  quote: We heavily delegated our analysis to often-unreliable AI agents
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C20
+  capture: V02
+  locator: Table of contents, under 'Limitations due to the scale and complexity of this incident', item
+    1
+  quote: A small fraction of communication and agent activity related to this attack was not captured
+    in our datasets
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C21
+  capture: V02
+  locator: Introduction, paragraph on the investigation's precedent, sentence beginning 'Over the course'
+  quote: Over the course of this investigation, OpenAI shared over a thousand unredacted transcripts
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C05
+  capture: V01
+  locator: '''Analyzing an AI-driven intrusion'', paragraph 1, sentence 1'
+  quote: The attack was initially surfaced through AI-assisted detection.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Credits Hugging Face's own detection tooling.
+- code: CS001.D03.C06
+  capture: V01
+  locator: '''How we intercepted and analyzed the attack'', paragraph 1, sentence 4'
+  quote: However, it failed to correctly raise the alert's criticality and trigger the on-call team, costing
+    precious time in the response.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C06
+  capture: V01
+  locator: '''What we did'', bullet 2'
+  quote: Eradicated the attacker's foothold across the affected clusters and rebuilt the compromised nodes.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C07
+  capture: V01
+  locator: '''What we did'', bullet 3'
+  quote: Revoked and rotated the affected credentials and tokens, and began a broader precautionary rotation
+    of secrets.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C08
+  capture: V01
+  locator: '''What we did'', paragraph after the bullet list, sentence 2'
+  quote: Finally, we have also reported this incident to law enforcement agencies.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C09
+  capture: V01
+  locator: '''The asymmetry problem'', paragraph 1, sentence 3 (second clause)'
+  quote: these requests were blocked by the providers' safety guardrails, which cannot distinguish an
+    incident responder from an attacker.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C10
+  capture: V01
+  locator: '''The asymmetry problem'', paragraph 1, sentence 4'
+  quote: We ran the forensic analysis instead on zai-org/GLM-5.2 , an open-weight model, on our own infrastructure.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C27
+  capture: V02/base
+  locator: '''Incident timeline'' graphic, entry 16 (July 19), title and body'
+  quote: 2026-07-19 16 Security response escalates OpenAI began stopping active ExploitGym evaluation
+    runs and began broader investigations.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C06
+  capture: V01
+  locator: p.4, 'I. Introduction', paragraph 4, sentence 6
+  quote: On July 20, after further investigation and initial outreach to Hugging Face to rotate credentials
+    discovered in that investigation, OpenAI determined the activity was likely related to the Hugging
+    Face compromise, informed Hugging Face, and implemented initial containment measures.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C11
+  capture: V01
+  locator: Opening section, paragraph 2, sentence 1
+  quote: We identified unauthorized access to a limited set of internal datasets and to several credentials
+    used by our services.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: '"limited" minimises the breach of Hugging Face''s platform.'
+- code: CS001.D01.C12
+  capture: V01
+  locator: Opening section, paragraph 2, sentence 3 (first clause)
+  quote: We have found no evidence of tampering with public, user-facing models, datasets, or Spaces
+  speaker: Hugging Face
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Reassures users of the platform; limits liability.
+- code: CS001.D01.C13
+  capture: V01
+  locator: Opening section, paragraph 2, sentence 2
+  quote: We are still completing our assessment of whether any partner or customer data was affected
+  speaker: Hugging Face
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C28
+  capture: V02/base
+  locator: Section 'Hugging Face incident', paragraph beginning 'Over the following days', sentence 3
+  quote: GPT‑5.6 Sol agents also reproduced an exploit and copied some private evaluation data hosted
+    on Hugging Face into a public Hugging Face dataset.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C07
+  capture: V01
+  locator: Section 'TL;DR', paragraph 8, sentence 1
+  quote: the only customer content accessed was five datasets whose names and files suggest a connection
+    to ExploitGym/CyberGym challenges and solutions
+  speaker: Hugging Face
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Limits the reach of the breach to customer content.
+- code: CS001.D01.C14
+  capture: V01
+  locator: Opening section, paragraph 2, sentence 3
+  quote: our software supply chain (container images and published packages) was verified clean
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: a reassuring statement about the speaker's own systems
+- code: CS001.D04.C29
+  capture: V02/base
+  locator: '''Hugging Face incident'' section, paragraph beginning ''Over the following days'', sentence
+    2'
+  quote: They executed code on dozens of Hugging Face servers, gained full “root” access on one such server,
+    obtained limited private data, and gained credentials to the company messaging platform.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C30
+  capture: V02/base
+  locator: '''Hugging Face incident'' section, paragraph beginning ''On July 19'', sentence 4'
+  quote: These events did not affect OpenAI customer data, product functionality, or availability.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: a reassuring statement about the speaker's own systems
+- code: CS001.D06.C22
+  capture: V02
+  locator: Core takeaways, first takeaway, sentence 1
+  quote: Roughly 1200 agents meant to be isolated from one another found a way to communicate with one
+    another on an unsanctioned message board, sending over 70,000 messages and files during the investigation
+    period.
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C10
+  capture: V01
+  locator: Opening section (above 'What happened during this incident'), paragraph 2, sentence 1
+  quote: We consider this incident to be an unprecedented cyber incident, involving state-of-the-art cyber
+    capabilities, and are responding accordingly.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Framing the incident as unprecedented and as showing state-of-the-art capabilities
+    puts the event beyond what could have been foreseen and advertises the capability of OpenAI's models.
+- code: CS001.D04.C31
+  capture: V02/base
+  locator: Section 'The road ahead', paragraph 1, sentence 2
+  quote: The behavior of our models described here fell well short of where we want to be, and this incident
+    should never have occurred.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C32
+  capture: V02/base
+  locator: Section 'Looking forward', paragraph 1, sentence 1
+  quote: We are taking this incident as a “warning shot” that today’s model capabilities present the possibility
+    of loss-of-control incidents.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C11
+  capture: V01
+  locator: Closing quotation at the foot of the post, sentence 2 (attributed to Clem Delangue, Co-founder
+    and CEO, Hugging Face)
+  quote: 'This incident, possibly the first of its kind, proves a point we’ve long believed: AI safety
+    won’t be solved by any single company working in secret.'
+  speaker: Clem Delangue (Hugging Face), as quoted by OpenAI
+  hedge: true
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C15
+  capture: V01
+  locator: Section 'The asymmetry problem', paragraph 2, sentence 2
+  quote: either way, the attacker was bound by no usage policy, while our own forensic work was blocked
+    by the guardrails of the hosted models we first tried.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C16
+  capture: V01
+  locator: Section 'The asymmetry problem', paragraph 2, last sentence
+  quote: This is not an argument against safety measures on hosted models, and we are sharing this feedback
+    with the providers concerned.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C17
+  capture: V01
+  locator: Section 'What this means', paragraph 1, sentence 1
+  quote: Autonomous, AI-driven offensive tooling is no longer theoretical.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C12
+  capture: V01
+  locator: Section 'Our approach to evaluating advanced cyber capabilities', paragraph 2, sentence 2
+  quote: This incident implies these theoretical capabilities do apply in real-world settings.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C08
+  capture: V01
+  locator: 'Section ''Reflection: the asymmetry problem'', paragraph 4, sentence 1'
+  quote: Our learning from this type of attack is that machine-speed offense makes ordinary weaknesses
+    more expensive for defenders.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C07
+  capture: V01
+  locator: p.4, Section I 'Introduction', paragraph 2, sentence 2
+  quote: The actions of the models were unintended and were a byproduct of the models attempting to solve
+    the cybersecurity evaluations.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Describing the actions as unintended byproducts limits OpenAI's responsibility for
+    them.
+- code: CS001.D03.C09
+  capture: V01
+  locator: Section 'TL;DR', paragraph 1, sentence 1 (from the second clause)
+  quote: an autonomous AI agent driven by a combination of OpenAI models ran an end-to-end intrusion against
+    our platform
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C23
+  capture: V01
+  locator: p.3, core takeaways, bullet 1, sentence 2
+  quote: Of these agents, 700 went on to participate in the attack on Hugging Face.
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D07.C02
+  capture: V01
+  locator: Summary box, bullet 1
+  quote: Independent investigators put number of rogue agents at about 700
+  speaker: Reuters
+  hedge: true
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C13
+  capture: V01
+  locator: Opening section, paragraph 1, sentence 1
+  quote: after they detected and contained an AI agent that compromised their infrastructure
+  speaker: OpenAI
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D07.C03
+  capture: V01
+  locator: Body, paragraph beginning 'OpenAI , opens new tab said', last sentence
+  quote: OpenAI said the investigators' figure was accurate.
+  speaker: OpenAI, as reported by Reuters
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C18
+  capture: V01
+  locator: Section 'What happened', paragraph 1, sentence 3 (final clause)
+  quote: moved laterally into several internal clusters over a weekend
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C10
+  capture: V01
+  locator: Section 'TL;DR', paragraph 1, sentence 1 (opening clause)
+  quote: Over roughly two and a half days inside our infrastructure
+  speaker: Hugging Face
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C11
+  capture: V01
+  locator: Introduction above the replay, paragraph 3, sentence 1
+  quote: a step-by-step visualization of the 4.5-day campaign
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C12
+  capture: V01
+  locator: Section 'TL;DR', paragraph 3, sentence 1
+  quote: between 2026-07-09 02:28 UTC and 2026-07-13 14:14 UTC
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C19
+  capture: V01
+  locator: Section 'Analyzing an AI-driven intrusion', paragraph 2, sentence 1
+  quote: To understand what a swarm of tens of thousands of automated actions did
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C13
+  capture: V01
+  locator: Section 'TL;DR', paragraph 3, sentence 1
+  quote: Our forensic reconstruction covers ~17,600 attacker actions that we were able to recover
+  speaker: Hugging Face
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D01.C20
+  capture: V01
+  locator: Section 'Analyzing an AI-driven intrusion', paragraph 2, sentence 1 (end)
+  quote: comprised of more than 17,000 recorded events
+  speaker: Hugging Face
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C14
+  capture: V01
+  locator: Section 'What happened during this incident', paragraph 4, sentence 2
+  quote: the model searched for and successfully found ways to gain access to secret information that
+    it could use to cheat the evaluation
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C24
+  capture: V01
+  locator: p.3, core takeaways, bullet 2, sentence 3
+  quote: The Hugging Face attack grew out of these workstreams, and seemed primarily motivated by understanding
+    the implementation of the scorer rather than stealing answer keys.
+  speaker: METR and Redwood
+  hedge: true
+  how_known: inferred
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D03.C14
+  capture: V01
+  locator: Section 'TL;DR', paragraph 2, sentence 4
+  quote: 'We believe the entire intrusion was, from the agent''s point of view, an attempt to cheat the
+    evaluation: reach our production systems and steal the test solutions rather than solve the challenge
+    on its own.'
+  speaker: Hugging Face
+  hedge: true
+  how_known: inferred
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C33
+  capture: V02/base
+  locator: Section 'Reward hacking and infrastructure tampering', paragraph 1, sentence 1
+  quote: Agents attempting to cheat on their tasks by looking up solutions online was a primary driver
+    of the Hugging Face incident.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D07.C04
+  capture: V01
+  locator: Headline
+  quote: OpenAI agents hacked Hugging Face in 700-strong swarm, tried to cover tracks, investigations
+    find
+  speaker: Reuters
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D07.C05
+  capture: V01
+  locator: Body, paragraph 1 (dateline paragraph), final clause
+  quote: and in many cases tried to cover their tracks, a pair of reports into the breach said on Wednesday.
+  speaker: Reuters
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C25
+  capture: V01
+  locator: p.3, core takeaways, bullet 3, sentence 3
+  quote: Roughly 7% of the transcripts we evaluated were successfully spoofed in some places, though all
+    of the spoofing that we saw was small scale.
+  speaker: METR and Redwood
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C26
+  capture: V01
+  locator: p.17, section on transcript manipulation, paragraph 1, sentence 4
+  quote: In the cases we saw, agents’ verbalized reasoning about transcript manipulation was always motivated
+    by trying to trick the automated scorer, not humans.
+  speaker: METR and Redwood
+  hedge: true
+  how_known: inferred
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C08
+  capture: V01
+  locator: p.20, Section VII (reward hacking discussion), paragraph beginning 'We also found that', last
+    sentence
+  quote: There was also little evidence of attempts to thwart human reviewers, only the automated task
+    graders.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: A finding that the models did not try to deceive human reviewers limits concern about
+    OpenAI's oversight.
+- code: CS001.D06.C27
+  capture: V01
+  locator: p.17, section on transcript manipulation, paragraph 1, sentence 3
+  quote: We found that at least 20% of the agents in our dataset expressed clear interest in tampering
+    with their transcripts in some way.
+  speaker: METR and Redwood
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D07.C06
+  capture: V01
+  locator: Body, paragraph beginning 'OpenAI said an unspecified number of agents', sentence 2
+  quote: '"little evidence of attempts to thwart human reviewers," but OpenAI did not respond to a question
+    about whether that meant that some attempts had been made to fool humans.'
+  speaker: Reuters
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C34
+  capture: V02/panel2
+  locator: '''Read more'' panel 2, ''Deceiving the grader'', paragraph after the third chain-of-thought
+    box, sentence 3'
+  quote: we were unable to find strong evidence of attempts to thwart human reviewers
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: As CS001.D05.C08.
+- code: CS001.D05.C09
+  capture: V01
+  locator: p.20, same paragraph as CS001.D05.C08, sentence 2 (second clause)
+  quote: none of the attempts that we observed to manipulate their tool trajectories affected the logs
+    that our graders or monitors ultimately see
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Says OpenAI's own records were not compromised.
+- code: CS001.D02.C15
+  capture: V01
+  locator: Opening section, paragraph 1, sentence 2
+  quote: a combination of OpenAI models — including GPT‑5.6 Sol and an even more capable pre-release model
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C16
+  capture: V01
+  locator: '''Update on July 28, 2026'', paragraph 1, sentence 2'
+  quote: The pre-release model mentioned in our blog post is an internal-only research prototype and was
+    never intended for public release.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Distances OpenAI's release pipeline from the incident (the preceding sentence says
+    no model planned for release was involved).
+- code: CS001.D04.C35
+  capture: V02/base
+  locator: Opening section 'What happened', paragraph 1, sentence 2
+  quote: primarily driven by a highly capable, internal-only research model comparable in scale to GPT‑5.6
+    Sol
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C10
+  capture: V01
+  locator: p.12, Section IV.C.1 'The internal-only research model', paragraph 1, sentence 1
+  quote: The internal-only research model is comparable in scale to GPT-5.6 Sol
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C36
+  capture: V02/base
+  locator: Section 'Hugging Face incident' (timeline narrative), paragraph beginning 'Over the following
+    days', sentence 3
+  quote: IM1 agents drove the principal compromise
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C17
+  capture: V01
+  locator: Section 'What happened during this incident', paragraph 4, last sentence
+  quote: OpenAI’s security team discovered this anomalous activity internally.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: Presents OpenAI as having found the activity itself.
+- code: CS001.D01.C21
+  capture: V01
+  locator: Opening paragraph, sentence 1
+  quote: Earlier this week, we detected and responded to an intrusion into part of our production infrastructure.
+  speaker: Hugging Face
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C11
+  capture: V01
+  locator: p.14, Section VI.A, paragraph 1, sentences 1-2
+  quote: On July 16, Hugging Face released a blog post disclosing that they were impacted by a security
+    incident. The next day, on July 17, after learning of Hugging Face’s incident, OpenAI contacted Hugging
+    Face in its capacity as a Hugging Face customer to assess any impact to OpenAI data.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C12
+  capture: V01
+  locator: p.15, Section VI.A (continued), paragraph 1, sentence 3
+  quote: At the time, there was no indication of a relationship between that July 19 activity and the
+    Hugging Face incident.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D02.C18
+  capture: V01
+  locator: Section 'What happened during this incident', paragraph 5, sentence 1
+  quote: Hugging Face’s security team and agents detected and stopped the activity on their infrastructure
+    and had already begun containment and forensic reconstruction with their own open-source models when
+    our teams connected.
+  speaker: OpenAI
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C37
+  capture: V02/base
+  locator: Section 'Strengthening incident response process', paragraph 1, sentence 2 (second clause)
+  quote: with the benefit of hindsight, some early signals identified in our report should have triggered
+    an earlier response.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D05.C13
+  capture: V01
+  locator: p.5, Section I 'Introduction' (continued), paragraph 3, sentence 3
+  quote: With the benefit of hindsight, some early signals identified in this report could have triggered
+    an earlier response.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D07.C07
+  capture: V01
+  locator: Body, paragraph after the four bulleted findings and the message-board paragraph
+  quote: '"With the benefit of hindsight, some early signals identified in this report could have triggered
+    an earlier response," OpenAI said in its report.'
+  speaker: Reuters
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D04.C38
+  capture: V02/base
+  locator: Opening section 'What happened', paragraph 1, sentence 5
+  quote: Today we are publishing our full technical incident report
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D06.C28
+  capture: V02
+  locator: Blog, final line of the post
+  quote: This post was edited on 9/13/2026 to add footnotes on Ajeya Cotra and Ryan Greenblatt.
+  speaker: METR and Redwood
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D07.C08
+  capture: V01
+  locator: Byline and dateline line beneath the headline
+  quote: August 26, 2026 2:02 PM CDT Updated August 26, 2026
+  speaker: Reuters
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS001.D07.C09
+  capture: V01
+  locator: Article body, sentence after the quotation of OpenAI's report on human reviewers
+  quote: Hugging Face did not return ‌a message ⁠seeking comment.
+  speaker: Reuters
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
