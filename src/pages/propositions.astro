@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
+import MagazineLayout from "../layouts/MagazineLayout.astro";
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
@@ -69,26 +69,29 @@ const chipFor = (id) => {
 };
 ---
 
-<BaseLayout
+<MagazineLayout
   title="Propositions | Applied AI Case Study Library"
   description="Claims that hold across more than one case in the library, each with its supporting cases, their evidence grades, and the finding that would break it."
+  active="propositions"
 >
-  <header class="shell page-head">
-    <p class="eyebrow">Cross-case synthesis</p>
+  <section class="mg-hero mg-hero-page" slot="hero">
+   <div class="mg-wrap">
+    <p class="mg-tags"><span>Cross-case synthesis</span></p>
     <h1>Propositions</h1>
-    <p class="lede">
+    <p class="mg-dek">
       Claims that hold across more than one case in this library, each with the cases underneath it, the evidence grade
       of each, and the finding that would break it. A proposition is a standing invitation to be proved wrong, not a
       conclusion.
     </p>
-    <p class="synthesis-meta">
+    <p class="mg-hero-meta">
       Derived from {stats.cases} published cases across {stats.industries} industries, {stats.geographies} countries
       and {stats.patterns} deployment patterns. Recomputed at every build; last editorial review {longDate(lastReviewed)}.
     </p>
-  </header>
+   </div>
+  </section>
 
-  <section class="shell contract">
-    <h2>How to read a proposition</h2>
+  <section class="mg-wrap mg-sec contract">
+    <h2 class="mg-h"><span>01</span>How to read a proposition</h2>
     <div class="contract-grid">
       {strengthNotes.map(({ key, note }) => (
         <div>
@@ -105,7 +108,7 @@ const chipFor = (id) => {
     </p>
   </section>
 
-  <section class="shell">
+  <section class="mg-wrap mg-sec">
     <ol class="props">
       {propositions.map((entry) => {
         const Body = bodies.get(entry.id);
@@ -199,9 +202,10 @@ const chipFor = (id) => {
     </ol>
   </section>
 
-  <section class="shell disagree">
-    <h2>Where the library disagrees with itself</h2>
-    <p class="lede">
+  <section class="disagree">
+   <div class="mg-wrap">
+    <h2 class="mg-h mg-h-inv"><span>02</span>Where the library disagrees with itself</h2>
+    <p class="mg-lede">
       A synthesis that only finds agreement is not reading carefully. These are the places where the record points in
       two directions, kept on the page rather than dropped from it.
     </p>
@@ -226,5 +230,80 @@ const chipFor = (id) => {
         );
       })}
     </div>
+   </div>
   </section>
-</BaseLayout>
+</MagazineLayout>
+
+<style is:global>
+  .mg-hero-page { padding: 4.2rem 0 3.4rem; }
+  .mg-hero-meta { margin: 2rem 0 0; padding-top: 1rem; border-top: 1px solid #333; max-width: 52rem; font: 700 .72rem/1.6 var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; color: #9a9aa0; }
+  .mg-lede { font: 400 1.15rem/1.55 var(--mg-serif); color: #b8b8bd; max-width: 46rem; margin: 0 0 2.5rem; }
+
+  .contract-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .contract-grid > div { border: 2px solid var(--mg-ink); padding: 1.4rem; }
+  .contract-grid h3 { margin: 0 0 .8rem; }
+  .contract-grid p { margin: 0; font: 400 1rem/1.55 var(--mg-serif); }
+  .rule-note { margin: 1.6rem 0 0; padding: 1.2rem 1.4rem; background: var(--mg-lime); font: 400 1.05rem/1.55 var(--mg-serif); max-width: 60rem; }
+  .rule-note strong { font-weight: 600; }
+
+  .strength { display: inline-block; font: 800 .68rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; padding: .3rem .55rem; border: 2px solid var(--mg-ink); }
+  .strength[data-s="recurrent"] { background: var(--mg-ink); color: #fff; }
+  .strength[data-s="emerging"] { background: var(--mg-violet); border-color: var(--mg-violet); color: #fff; }
+  .strength[data-s="conjecture"] { border-style: dashed; color: var(--mg-ink); }
+  .scope { font: 800 .66rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-grey); }
+
+  .props { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4rem; }
+  .prop { border-top: 6px solid var(--mg-ink); padding-top: 1.4rem; scroll-margin-top: 1rem; }
+  .prop.feature { background: var(--mg-soft); border-top-color: var(--mg-pink); padding: 1.6rem 1.8rem 1.8rem; }
+  .prop-head { display: flex; align-items: baseline; gap: .6rem 1.2rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+  .prop-head .pid { font: 400 2.6rem/1 var(--mg-display); letter-spacing: -.04em; color: var(--mg-violet); text-decoration: none; }
+  .prop-head h2 { flex: 1 1 24ch; margin: 0; font: 400 clamp(1.5rem, 2.8vw, 2.1rem)/1.1 var(--mg-display); letter-spacing: -.025em; text-wrap: balance; }
+  .prop-body { max-width: 46rem; font: 400 1.15rem/1.65 var(--mg-serif); }
+  .prop-body p { margin: 0 0 1rem; }
+  .prop-body p:last-child { margin-bottom: 0; }
+
+  .matrix-wrap { margin: 1.8rem 0; overflow-x: auto; }
+  .matrix-wrap figcaption { font: 800 .7rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-grey); margin-bottom: .7rem; }
+  table.matrix { border-collapse: collapse; min-width: 30rem; font: 500 1rem var(--mg-sans); font-variant-numeric: tabular-nums; background: #fff; }
+  table.matrix th, table.matrix td { border: 1px solid #ccc; padding: .65rem .9rem; text-align: center; }
+  table.matrix thead th { background: var(--mg-ink); color: #fff; border-color: var(--mg-ink); font: 800 .66rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; }
+  table.matrix tbody th { font: 400 1.1rem var(--mg-display); }
+  table.matrix td.zero { color: #aaa; }
+  table.matrix td.n { font: 400 1.15rem var(--mg-display); }
+  table.matrix td.gap { background: var(--mg-pink); color: var(--mg-ink); outline: 3px solid var(--mg-ink); outline-offset: -3px; }
+  .matrix-key { display: flex; gap: .6rem; align-items: center; margin: .8rem 0 0; font: 500 .92rem var(--mg-sans); }
+  .matrix-key span { width: 1rem; height: 1rem; background: var(--mg-pink); outline: 2px solid var(--mg-ink); flex: none; }
+
+  .operator { margin: 1.8rem 0 0; padding: 1.3rem 1.5rem; background: var(--mg-violet); color: #fff; max-width: 52rem; font: 400 1.08rem/1.55 var(--mg-serif); }
+  .operator strong { display: block; margin-bottom: .45rem; font: 800 .7rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-lime); }
+
+  .ledger { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.6rem 2.2rem; margin-top: 1.8rem; padding-top: 1.4rem; border-top: 1px solid #ddd; }
+  .ledger h3 { margin: 0 0 .7rem; font: 800 .7rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-pink); }
+  .ledger p { margin: 0; font: 400 1rem/1.55 var(--mg-serif); }
+
+  .cases { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .45rem; }
+  .cases li { max-width: 100%; min-width: 0; }
+  .chip { display: inline-flex; align-items: stretch; max-width: 100%; text-decoration: none; border: 2px solid var(--mg-ink); background: #fff; color: var(--mg-ink) !important; font: 700 .74rem var(--mg-sans); }
+  .chip b { display: grid; place-items: center; min-width: 1.6rem; background: var(--mg-ink); color: #fff; font: 400 .85rem var(--mg-display); }
+  .chip[data-grade="A"] b { background: var(--mg-ink); }
+  .chip[data-grade="B"] b { background: var(--mg-violet); }
+  .chip[data-grade="C"] b { background: var(--mg-pink); color: var(--mg-ink); }
+  .chip span { padding: .35rem .55rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .chip:hover { background: var(--mg-lime); }
+  .chip.counter { border-style: dashed; }
+
+  .disagree { background: var(--mg-ink); color: #fff; margin-top: 4.5rem; padding: 4rem 0 4.5rem; }
+  .pairs { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; }
+  .pairs article { border: 2px solid #fff; padding: 1.6rem; font: 400 1.02rem/1.6 var(--mg-serif); color: #e4e4e7; }
+  .pairs h3 { margin: 0 0 .9rem; font: 400 1.5rem/1.1 var(--mg-display); letter-spacing: -.02em; color: #fff; }
+  .pairs article p { margin: 0 0 1rem; }
+  .pairs .cases { margin-top: 1rem; }
+
+  @media (max-width: 860px) {
+    .contract-grid, .ledger { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .prop.feature { padding: 1.2rem 1rem 1.4rem; }
+    .prop-head .pid { font-size: 2rem; }
+  }
+</style>
