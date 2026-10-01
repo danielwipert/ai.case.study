@@ -1,0 +1,32 @@
+---
+// A case card in the magazine style. Carries the same data-* attributes as
+// CaseCard, so the Explore filters work on it unchanged.
+const { entry, rebuilt = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const d = entry.data;
+const outcomeLabels = { positive: "Positive", negative: "Negative", mixed: "Mixed", inconclusive: "Inconclusive", unknown: "Unknown" };
+const words = (value) => value.replaceAll("-", " ");
+---
+
+<article
+  class="mg-case"
+  data-card
+  data-industry={d.industry.join(" ")}
+  data-function={d.business_function.join(" ")}
+  data-case-type={d.case_type}
+  data-outcome={d.outcome}
+  data-grade={d.evidence_grade}
+  data-search={`${d.title} ${d.organization.join(" ")} ${d.summary} ${d.industry.join(" ")} ${d.business_function.join(" ")} ${d.tags.join(" ")}`.toLowerCase()}
+>
+  <p class="mg-case-kicker">
+    <span>{words(d.case_type)}</span>
+    <span class="mg-case-flags">
+      <span class={`mg-outcome mg-${d.outcome}`}>{outcomeLabels[d.outcome]}</span>
+      <span class="mg-grade" title={`Evidence grade ${d.evidence_grade}`}>{d.evidence_grade}</span>
+    </span>
+  </p>
+  {rebuilt && <p class="mg-case-new">New case format</p>}
+  <h3><a href={`${base}/cases/${entry.id}/`}>{d.title}</a></h3>
+  <p class="mg-case-sum">{d.summary}</p>
+  <p class="mg-case-meta">{words(d.deployment_stage)} · {d.industry.map(words).join(", ")}</p>
+</article>

@@ -1,7 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import BaseLayout from "../layouts/BaseLayout.astro";
-import CaseCard from "../components/CaseCard.astro";
+import MagazineLayout from "../layouts/MagazineLayout.astro";
+import MagCaseCard from "../components/MagCaseCard.astro";
+import { recordedCaseIds } from "../record/lib/routes.mjs";
 
 const cases = (await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status)))
   .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
@@ -11,28 +12,37 @@ const functions = unique(cases.flatMap((entry) => entry.data.business_function))
 const types = unique(cases.map((entry) => entry.data.case_type));
 const outcomes = unique(cases.map((entry) => entry.data.outcome));
 const grades = unique(cases.map((entry) => entry.data.evidence_grade));
+const rebuilt = recordedCaseIds();
 ---
 
-<BaseLayout title="Explore cases | Applied AI Case Study Library">
-  <header class="shell page-head">
-    <p class="eyebrow">The library</p>
-    <h1>Explore cases</h1>
-    <p class="lede">Search by organization or subject, then narrow the record by industry, business function, case type, outcome, or evidence grade.</p>
-  </header>
-  <section class="shell">
-    <div class="filters" aria-label="Case filters">
-      <label class="search">Search<input id="search" type="search" placeholder="Organization, subject, or tag" /></label>
-      <label>Industry<select id="industry"><option value="">All</option>{industries.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
-      <label>Function<select id="function"><option value="">All</option>{functions.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
-      <label>Case type<select id="case-type"><option value="">All</option>{types.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
-      <label>Outcome<select id="outcome"><option value="">All</option>{outcomes.map((v) => <option value={v}>{v}</option>)}</select></label>
-      <label>Evidence<select id="grade"><option value="">All</option>{grades.map((v) => <option value={v}>Grade {v}</option>)}</select></label>
+<MagazineLayout title="Explore cases | Applied AI Case Study Library" active="explore">
+  <section class="mg-hero mg-hero-page" slot="hero">
+    <div class="mg-wrap">
+      <p class="mg-tags"><span>The library</span></p>
+      <h1>Explore cases</h1>
+      <p class="mg-dek">Search by organization or subject, then narrow the record by industry, business function, case type, outcome, or evidence grade.</p>
     </div>
-    <p class="result-status" id="result-status" aria-live="polite">Showing {cases.length} {cases.length === 1 ? "case" : "cases"}</p>
-    <div class="case-grid" id="results">
-      {cases.map((entry) => <CaseCard entry={entry} />)}
+  </section>
+
+  <section class="mg-filters-band">
+    <div class="mg-wrap">
+      <div class="mg-filters" aria-label="Case filters">
+        <label class="mg-search">Search<input id="search" type="search" placeholder="Organization, subject, or tag" /></label>
+        <label>Industry<select id="industry"><option value="">All</option>{industries.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
+        <label>Function<select id="function"><option value="">All</option>{functions.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
+        <label>Case type<select id="case-type"><option value="">All</option>{types.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
+        <label>Outcome<select id="outcome"><option value="">All</option>{outcomes.map((v) => <option value={v}>{v}</option>)}</select></label>
+        <label>Evidence<select id="grade"><option value="">All</option>{grades.map((v) => <option value={v}>Grade {v}</option>)}</select></label>
+      </div>
     </div>
-    <p class="empty" id="empty" hidden>No cases match those filters. Try broadening the search.</p>
+  </section>
+
+  <section class="mg-wrap mg-sec mg-results">
+    <p class="mg-status" id="result-status" aria-live="polite">Showing {cases.length} {cases.length === 1 ? "case" : "cases"}</p>
+    <div class="mg-case-grid mg-case-grid-3" id="results">
+      {cases.map((entry) => <MagCaseCard entry={entry} rebuilt={rebuilt.has(entry.data.case_id)} />)}
+    </div>
+    <p class="mg-empty" id="empty" hidden>No cases match those filters. Try broadening the search.</p>
   </section>
 
   <script>
@@ -66,4 +76,27 @@ const grades = unique(cases.map((entry) => entry.data.evidence_grade));
     }
     Object.values(controls).forEach((control) => control.addEventListener("input", filterCases));
   </script>
-</BaseLayout>
+</MagazineLayout>
+
+<style is:global>
+  .mg-hero-page { padding: 4.2rem 0 3.4rem; }
+  .mg-filters-band { background: var(--mg-lime); padding: 1.6rem 0; position: sticky; top: 0; z-index: 5; }
+  .mg-filters { display: grid; grid-template-columns: 2fr repeat(5, minmax(0, 1fr)); gap: .9rem; align-items: end; }
+  .mg-filters label { display: flex; flex-direction: column; gap: .4rem; font: 800 .66rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-ink); }
+  .mg-filters input, .mg-filters select { width: 100%; box-sizing: border-box; height: 2.8rem; padding: 0 .75rem; border: 2px solid var(--mg-ink); border-radius: 0; background: #fff; color: var(--mg-ink); font: 500 .95rem var(--mg-sans); text-transform: none; letter-spacing: 0; }
+  .mg-filters select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--mg-ink) 50%), linear-gradient(135deg, var(--mg-ink) 50%, transparent 50%); background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 1.8rem; text-transform: capitalize; }
+  .mg-filters input:focus, .mg-filters select:focus { outline: none; box-shadow: 4px 4px 0 var(--mg-pink); }
+  .mg-results { padding-top: 2.4rem; }
+  .mg-status { margin: 0 0 1.2rem; font: 800 .74rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-grey); }
+  .mg-empty { margin: 2rem 0; padding: 1.6rem; background: var(--mg-ink); color: #fff; font: 400 1.6rem/1.2 var(--mg-display); letter-spacing: -.02em; }
+  .mg-empty[hidden] { display: none; }
+
+  @media (max-width: 1000px) {
+    .mg-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .mg-search { grid-column: 1 / -1; }
+  }
+  @media (max-width: 600px) {
+    .mg-filters-band { position: static; padding: 1.2rem 0; }
+    .mg-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+  }
+</style>

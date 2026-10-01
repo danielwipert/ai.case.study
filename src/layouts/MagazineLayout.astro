@@ -1,0 +1,62 @@
+---
+// The page shell in the magazine style: fonts, header with the main menu,
+// and footer. Used by the home page and Explore; BaseLayout stays for the
+// pages not yet moved over.
+import "@fontsource/archivo-black/400.css";
+import "@fontsource/archivo/500.css";
+import "@fontsource/archivo/700.css";
+import "@fontsource/archivo/800.css";
+import "@fontsource/source-serif-4/400.css";
+import "@fontsource/source-serif-4/600.css";
+import "../styles/magazine.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  active?: "explore" | "propositions" | "methodology";
+}
+
+const {
+  title = "Applied AI Case Study Library",
+  description = "Evidence-first cases about how AI changes real organizations, work, economics, and risk.",
+  active
+} = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const menu = [
+  { key: "explore", label: "Explore cases", href: `${base}/explore/` },
+  { key: "propositions", label: "Propositions", href: `${base}/propositions/` },
+  { key: "methodology", label: "Methodology", href: `${base}/methodology/` }
+];
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+  <title>{title}</title>
+</head>
+<body class="mg">
+  <a class="mg-skip" href="#main">Skip to content</a>
+  <header class="mg-top">
+    <a class="mg-brand" href={`${base}/`}><b>Applied AI</b><span>Case Study Library</span></a>
+    <nav class="mg-tabs" aria-label="Main navigation">
+      {menu.map((item) => <a href={item.href} aria-current={item.key === active ? "page" : undefined}>{item.label}</a>)}
+      <a href="https://github.com/danielwipert/ai.case.study">Contribute ↗</a>
+    </nav>
+  </header>
+
+  <slot name="hero" />
+  <main id="main"><slot /></main>
+
+  <footer class="mg-foot">
+    <div class="mg-wrap mg-foot-row">
+      <span>An open, evidence-first record of AI in practice.</span>
+      <a href="https://github.com/danielwipert/ai.case.study">Source and revision history ↗</a>
+    </div>
+  </footer>
+</body>
+</html>
