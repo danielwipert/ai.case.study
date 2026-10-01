@@ -1,0 +1,84 @@
+# CS021 (AAI-2026-021): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS021
+public_id: AAI-2026-021
+fictional: false
+title: The LungIMPACT trial of AI prioritization for chest X-rays
+summary: The LungIMPACT randomized controlled trial of AI worklist prioritization for chest X-rays.
+status: published
+version: '1'
+case_grade: B
+grade:
+  value: B
+  plain: good evidence
+  rule: design-led
+  rule_text: A pre-registered randomized trial in a peer-reviewed journal starts at B. It reaches A with
+    a clean match against the trial's registry record, with any disputes resolved, or a second independent
+    examiner.
+  decided: 2026-10-01
+verified: '2026-10-01'
+next_review: null
+charter:
+  event: The LungIMPACT randomized controlled trial of AI worklist prioritization for chest X-rays.
+  actors:
+  - The five participating NHS trusts in England
+  - The sponsor, Nottingham University Hospitals NHS Trust
+  - The investigators
+  - The vendor, Qure.ai Technologies
+  - The funder, SBRI Healthcare
+  place_and_period: England. Recruitment 17 Jul 2023 to 31 Dec 2024. Follow-up to 5 Jun 2025. Published
+    24 Mar 2026.
+  exclusions:
+  - Other trials and evaluations of chest X-ray AI, including the three comparison studies cited on the
+    earlier version of this case page (radioX, the NEJM AI South West London evaluation and the RSNA silent
+    trial). They are background, not part of this record.
+  evidence_cutoff: 2026-09-22
+  selection_reason: 'To fill a gap in the library: a randomized controlled trial of AI in routine NHS
+    care, reported in a peer-reviewed journal.'
+  stopping_rule: Every document the trial report cites about the trial itself was looked for (the protocol,
+    the registry record, the data and code statements, the extended data), and searches were run for the
+    trial's name, its registry number and its title, as of 22 September 2026. This record rests on the
+    trial report alone; the registry record has not yet been compared with it, and the protocol has not
+    been read.
+headings:
+- n: 1
+  name: Summary of the record
+  status: populated
+- n: 2
+  name: Parties and roles
+  status: populated
+- n: 3
+  name: The system and its configuration
+  status: populated
+- n: 4
+  name: Conditions before the event
+  status: populated
+- n: 5
+  name: Sequence of events
+  status: not-applicable
+  reason: A randomized trial has no sequence of events in the sense of an incident; its conduct is the
+    trial design, under heading 6
+- n: 6
+  name: How the facts were established
+  status: populated
+- n: 7
+  name: Detection and response
+  status: not-applicable
+  reason: Nothing in D01 describes an event to be detected or responded to; safety arrangements are part
+    of the design under heading 6
+- n: 8
+  name: Outcomes and measured effects
+  status: populated
+- n: 9
+  name: Statements by the parties
+  status: populated
+- n: 10
+  name: Discrepancies in the record
+  status: populated
+- n: 11
+  name: What the record does not establish
+  status: populated
+- n: 12
+  name: Evidence still awaited
+  status: populated

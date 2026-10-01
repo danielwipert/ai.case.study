@@ -358,7 +358,9 @@ function checkHeadings(code, declared, rows) {
     if (["not-applicable", "not-yet-investigated"].includes(h.status) && own.length) fail(code, `heading ${h.n} is ${h.status} but has rows`);
     if (h.status === "nothing-found" && !own.some((r) => r.kind === "absence")) fail(code, `heading ${h.n}: nothing found must produce an Absence row`);
     // OPEN: heading 1 retells rows filed under other headings, so it has none of its own.
-    if (h.status === "populated" && h.n !== 1 && !own.length) fail(code, `heading ${h.n} is populated but has no rows`);
+    // Heading 10 may do the same: it sets side by side contradictions whose rows sit
+    // under the headings they concern (CS021).
+    if (h.status === "populated" && ![1, 10].includes(h.n) && !own.length) fail(code, `heading ${h.n} is populated but has no rows`);
     return { ...h, statusText: STATUS_TEXT[h.status], rows: own.map((r) => r.code) };
   });
 }
@@ -400,7 +402,12 @@ function parseNarrative(code, source, rowsByCode, headings) {
     if (last < body.length) tokens.push({ text: body.slice(last) });
     if (!declaration) {
       // A sentence ends at ". " (or the block's end) and must end in its codes.
-      const sentences = body.split(/(?<=[.?!]["”]?)\s+(?=[A-Z"“])/);
+      // A single capital before the full stop is a name's initial ("Madava G."), not an end.
+      // Full stops inside a quotation do not end the narrative's sentence: a quoted
+      // passage may hold several of the speaker's sentences (CS021).
+      const masked = body.replace(/"[^"]*"|“[^”]*”/g, (q) => q.replace(/[.?!]/g, "\u2024"));
+      const sentences = masked.split(/(?<!\b[A-Z]\.)(?<=[.?!]["”]?)\s+(?=[A-Z"“`])/)
+        .reduce((acc, s) => (acc.length && /^`\[/.test(s) ? [...acc.slice(0, -1), `${acc.at(-1)} ${s}`] : [...acc, s]), []);
       for (const sentence of sentences) {
         if (!/`\[[^\]]+\]`([.?!]["”]?)?\s*$/.test(sentence)) { // CS001 preview: a code may close a paragraph after a quoted sentence's own full stop
           fail(code, `narrative sentence has no row code: "${sentence.slice(0, 80)}…"`);

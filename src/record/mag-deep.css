@@ -70,3 +70,4 @@ body.mg-deep { --mg-ink: #0b0b0c; --mg-lime: #d2ef6b; --mg-pink: #e85a8e; --mg-v
 .mg-deep main { padding-top: 0 !important; }
 .mg-deep .md-hero { margin-bottom: 2rem; }
 .mg-deep .article-grid, .mg-deep .pv-ledger, .mg-deep .pv-docket { margin-top: 0 !important; padding-top: 0 !important; }
+.mg-deep .pv-statement, .mg-deep .pv-quote, .mg-deep .pv-claim blockquote, .mg-deep .pv-heading p { overflow-wrap: break-word; }
