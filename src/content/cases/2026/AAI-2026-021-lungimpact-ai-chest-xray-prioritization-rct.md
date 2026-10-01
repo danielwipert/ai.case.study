@@ -1,7 +1,7 @@
 ---
 case_id: AAI-2026-021
-title: "Thirteen hours sooner to the report, not one day sooner to the diagnosis"
-summary: "A randomized trial across five NHS trusts gave half its chest X-ray sessions to AI worklist prioritization and half to none, with the same AI available to reporters in both arms. Prioritization cut the median time from X-ray to report from 47 to 34.1 hours and moved nothing else: median time to CT was 53 days in both arms, against a national standard of 72 hours."
+title: "An AI that flagged chest X-rays sped up reports, not lung cancer diagnosis"
+summary: "In a randomized trial across five NHS trusts in England, an AI tool flagged chest X-rays it judged abnormal so they could be reported first. Reports came back sooner. The trial found no significant difference in how soon patients got a CT scan or a lung cancer diagnosis."
 organization:
   - Nottingham University Hospitals NHS Trust
   - University Hospitals of Leicester NHS Trust
@@ -16,11 +16,11 @@ business_function:
   - operations
 deployment_stage: scaled-production
 outcome: negative
-evidence_grade: A
+evidence_grade: B
 status: published
 created: 2026-09-15
 published: 2026-09-15
-last_verified: 2026-09-15
+last_verified: 2026-10-01
 next_review: 2027-03-15
 geography:
   - United Kingdom
@@ -29,6 +29,7 @@ deployment_pattern:
   - decision-support
   - human-in-the-loop-workflow
 causal_strength: causal
+evidence_upgrade_path: "A clean match between the trial report and its registry record (ISRCTN78987039), with the report's internal disagreements resolved, or a second independent examination of the trial data."
 related_cases:
   - AAI-2026-020
   - AAI-2026-006
@@ -340,6 +341,7 @@ A note on the outcome label, which is an editor's call. This case is filed `nega
 ## Revision notes
 
 - 2026-09-15 — Initial publication at Grade A, the library's fifth and the first whose evidence comes from a trial rather than from a regulator, a court, a prosecutor or an audited filing. Found while searching for a shadow-mode case; recorded in the previous session's handoff as the stronger story left on the table, and written next because the access problem turned out to be one-sided in the right direction: the randomized trial is fully readable at nature.com while the deployment reports it critiques are not. Sources span five families. The trial itself was read end to end; its pre-registration was retrieved through the ISRCTN XML API — the registry's own web page asks users not to scrape it and directs them there — and compared against the paper, confirming that the two primary outcomes reported are the two registered, and surfacing three discrepancies of scope that are recorded rather than resolved. The comparator trial, radioX, was read as an abstract carrying its full design and result. The two South West London deployment reports were read as abstracts only, because RSNA and NEJM AI both refuse this sandbox, and every claim taken from them is labelled `Attributed` accordingly. The case deliberately does not adopt the tempting reading that a rigorous trial debunked an enthusiastic deployment report: the two tested different interventions, and saying otherwise would repeat the confound the trial's authors warn about. `causal` is the correct strength here and is used sparingly in this library. The outcome is filed `negative` rather than `mixed` or `inconclusive`, argued in the evidence assessment. Related to AAI-2026-020 as the case where a proxy improved and the outcome went unmeasured, against this one where the outcome was measured and did not follow; and to AAI-2026-006 as a second healthcare case in which a proxy moved and the clinical outcome behind it did not.
+- 2026-10-01 — Rebuilt in the new case format (record CS021): a plain-English story, the full record in twelve headings, every checked fact with its exact quote, and the source. The new pages replace this one at the same address; this entry now supplies only the case card, filters and propositions. Title, summary and `last_verified` updated to match. Evidence grade lowered from A to B, as the rebuilt case grades it: a pre-registered randomized trial in a peer-reviewed journal starts at B, and reaches A with a clean match against its registry record or a second independent examiner.
 
 [^lungimpact]: Nick Woznitza, Lesley Smith, Janette Rawlinson, Iain Au-Yong, Bindu George, Madava G. Djearaman, Arjun Nair, Richard W. Lee, Neal Navani, Siyabonga Ndwandwe, Caroline S. Clarke, Andrew Creeden, Josh Newsome, Indrajeet Das, Sylvia Abaokporo, Richard Tucker, James Hathorn and David R. Baldwin, [“AI-based chest X-ray prioritization in the lung cancer diagnostic pathway: the LungIMPACT randomized controlled trial”](https://www.nature.com/articles/s41591-026-04253-5), *Nature Medicine*, 2026-03-24, doi:10.1038/s41591-026-04253-5. Read in full.
 

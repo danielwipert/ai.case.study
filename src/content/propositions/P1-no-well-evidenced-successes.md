@@ -18,7 +18,7 @@ falsifier: "One grade A case with a positive outcome. The likeliest source is a 
 limits: "A small, hand-assembled sample, and the library deliberately prefers cases that fill a gap in its taxonomy over the next available story. That selection rule is not neutral with respect to this finding. Treat it as a property of this collection first and of the evidence landscape only second. AAI-2026-021 also narrows what the proposition can claim: grade A evidence is now demonstrably producible without an adversary, so the scarcity of well-evidenced successes is better read as a scarcity of trials than as a structural impossibility."
 order: 1
 created: 2026-09-14
-last_reviewed: 2026-09-15
+last_reviewed: 2026-10-01
 ---
 
 No case in this library graded **A** reports a positive outcome. Every case that does report one is graded B or C.
@@ -27,6 +27,6 @@ This is not a claim that AI deployments fail. It is a claim about where good evi
 
 The asymmetry runs the other way too. The best-evidenced case here rests on a criminal Statement of Facts that the defendant stipulated to; the weakest rest on organisations describing their own results. What separates them is not the quality of the writing but whether anyone with opposing interests was ever in the room.
 
-There is now one exception to that mechanism, and it sharpens the proposition rather than weakening it. AAI-2026-021 is a grade A case with no adversary anywhere in it: a publicly funded, pre-registered randomized trial of chest X-ray AI across five NHS trusts, analysed by a statistician independent of the investigators, with the vendor excluded from design and analysis. It is precisely the study design this proposition's falsifier names as the likeliest source of a well-evidenced success. It was run, it was adequately powered, and it found that the deployment changed nothing a patient would notice.
+There is now one case that tests that mechanism, and it sharpens the proposition rather than weakening it. AAI-2026-021 has no adversary anywhere in it: a publicly funded, pre-registered randomized trial of chest X-ray AI across five NHS trusts. It is precisely the study design this proposition's falsifier names as the likeliest source of a well-evidenced success. It was run, and it found no significant difference in how soon patients got a CT scan or a lung cancer diagnosis. Rebuilt under the library's current method, it grades B, not A: the trial report is so far its only source, and in places the report contradicts itself.
 
-So grade A evidence does not require an adversary. It requires somebody to pay for a trial. The reason well-evidenced successes are missing from this library is not only that success summons no investigator — it is that almost nobody runs the experiment, and the one case here where somebody did came back null.
+So even a well-run trial does not reach grade A on its own. It needs somebody to pay for it, and then a second, independent check. The reason well-evidenced successes are missing from this library is not only that success summons no investigator — it is that almost nobody runs the experiment, and the one case here where somebody did came back null.
