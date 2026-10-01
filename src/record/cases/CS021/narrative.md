@@ -129,7 +129,7 @@ collaboration with Qure.ai" in Richard W. Lee's declaration is that grant
 
 ## 3. The system and its configuration
 
-> Scope note, not a finding: this section retells rows F044 to F054, with row F031 from heading 2 for the product's name. That the AI was applied in both arms at the time of image acquisition, and that immediate review was permitted in both arms, are retold under heading 6 (rows F083 and F084), not here. Whether the column headings of Extended Data Fig. 2 (row F051) sit at odds with row F083 is not recorded in the ledger as a contradiction.
+> Scope note, not a finding: this section retells rows F044 to F054, with row F031 from heading 2 for the product's name. That the AI was applied in both arms at the time of image acquisition, and that immediate review was permitted in both arms, are retold under heading 6 (rows F083 and F084), not here. Whether the column headings of Extended Data Fig. 2 (row F051) sit at odds with row F083 is not recorded in the ledger as a contradiction; this record has not decided it.
 
 > Unless marked otherwise, statements below come from D01, the LungIMPACT investigators' peer-reviewed trial report in Nature Medicine.
 
@@ -593,7 +593,7 @@ changes and the direct impact of AI." `[F126]`
 
 ## 10. Discrepancies in the record
 
-> Scope note, not a finding: this section sets side by side the places where D01 says different things about the same matter, as the ledger records them. It resolves none of them. Not in the ledger, and so not retold here: the vendor's name as the Reporting Summary gives it ("Qure.ai Technologies Limited, UK"), and the cross-reference to Table 3 in one of the investigators' statements for results that Table 2 holds. Whether the two trust names below refer to one trust is not established by D01. The comparison with the trial's registry record has not been made.
+> Scope note, not a finding: this section sets side by side the places where D01 says different things about the same matter, as the ledger records them. It resolves none of them. Not recorded as discrepancies, and so not retold here: the vendor's name as the Reporting Summary gives it ("Qure.ai Technologies Limited, UK"), and the cross-reference to Table 3 in one of the investigators' statements (row F144) for results that Table 2 holds. Whether the two trust names below refer to one trust is not established by D01. The comparison with the trial's registry record has not been made.
 
 > Unless marked otherwise, statements below come from D01, the LungIMPACT investigators' peer-reviewed trial report in Nature Medicine.
 

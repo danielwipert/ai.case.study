@@ -7,11 +7,12 @@ tags:
 - Trial
 checked: checked 1 Oct 2026
 headline: An AI that flagged chest X-rays sped up reports, not lung cancer diagnosis
-dek: In a randomized trial across five NHS trusts in England, an AI tool moved chest X-rays it judged
-  abnormal to the front of the reporting queue. Reports came back sooner. Patients did not get a CT scan
-  or a lung cancer diagnosis any sooner.
+dek: In a randomized trial across five NHS trusts in England, an AI tool flagged chest X-rays it judged
+  abnormal so they could be reported first. Reports came back sooner. The trial found no significant difference
+  in how soon patients got a CT scan or a lung cancer diagnosis.
 dek_rows:
 - F001
+- F070
 - F048
 - F023
 - F013
@@ -20,32 +21,37 @@ grade:
   letter: B
   plain: Good evidence
   explain: A randomized trial, registered before it began and reported in a peer-reviewed journal. That
-    starts at B. It would reach A with a clean match against the trial's registry record, not yet checked,
-    or a second independent examination.
+    starts at B. It would reach A with a clean match against the trial's registry record (not yet checked)
+    and the paper's internal disagreements resolved, or with a second independent examination.
   rows:
   - F119
   - F121
   - F001
 short_version:
-- text: Between July 2023 and December 2024, five NHS trusts in England took part in a trial covering
-    97,731 chest X-rays requested by GPs.
+- text: Between July 2023 and December 2024, five NHS trusts in England took part in a trial of chest
+    X-rays requested by GPs. Of 97,731 X-rays taken, 93,326 were analysed.
   rows:
   - F001
+  - F003
+  - F070
   - F071
+  - F113
 - text: On days chosen at random, an AI tool, qXR from Qure.ai, sent a notice to the reporting list for
     each X-ray it judged abnormal, so it could be reported first. On the other days the AI still marked
-    up every X-ray, but nothing was moved up the list.
+    up the X-rays, but sent no notice. On both kinds of day, staff could still review an X-ray straight
+    away under local procedure.
   rows:
   - F074
   - F031
   - F048
   - F083
+  - F084
 - text: 'On the AI days, X-rays were reported sooner: a median of 34.1 hours, against 47.0 hours on the
     other days.'
   rows:
   - F023
-- text: Patients did not get a CT scan or a lung cancer diagnosis any sooner. The median time from X-ray
-    to CT scan was 53 days either way.
+- text: The trial found no significant difference in how soon patients got a CT scan or a lung cancer
+    diagnosis. The median time from X-ray to CT scan was 53 days either way.
   rows:
   - F013
   - F016
@@ -56,7 +62,7 @@ short_version:
   - F125
 numbers:
 - figure: 97,731
-  label: chest X-rays performed during the trial
+  label: chest X-rays performed during the trial period
   rows:
   - F001
 - figure: 86,945
@@ -74,11 +80,11 @@ numbers:
 timeline_title: How the trial ran
 timeline:
 - date: 21 Feb 2023
-  text: An NHS research ethics committee approves the trial
+  text: A research ethics committee (Cambridge East) approves the trial
   rows:
   - F120
 - date: 7 Mar 2023
-  text: The trial is registered, 132 days before its first X-ray
+  text: The trial report gives this as the registration date, 132 days before its first X-ray
   rows:
   - F119
   - F121
@@ -144,8 +150,8 @@ what_they_say:
   rows:
   - F140
 unknowns:
-- text: What AI prioritization costs. The paper reports no cost figures; the investigators say a health
-    economics evaluation will be published separately.
+- text: What AI prioritization costs. The paper reports no cost figures for this trial; the investigators
+    say a health economics evaluation will be published separately.
   rows:
   - F153
   - F160

@@ -34,13 +34,12 @@ charter:
     earlier version of this case page (radioX, the NEJM AI South West London evaluation and the RSNA silent
     trial). They are background, not part of this record.
   evidence_cutoff: 2026-09-22
-  selection_reason: 'To fill a gap in the library: a randomized controlled trial of AI in routine NHS
-    care, reported in a peer-reviewed journal.'
-  stopping_rule: Every document the trial report cites about the trial itself was looked for (the protocol,
-    the registry record, the data and code statements, the extended data), and searches were run for the
-    trial's name, its registry number and its title, as of 22 September 2026. This record rests on the
-    trial report alone; the registry record has not yet been compared with it, and the protocol has not
-    been read.
+  selection_reason: To fill a gap in the library.
+  stopping_rule: 'The rule: look for every document the trial report and its registry record cite about
+    the trial itself (the protocol, the registry record, the data and code statements, the extended data),
+    and search for the trial''s name, its registry number and its title, as of 22 September 2026. This
+    record rests on the trial report alone; the registry record has not yet been compared with it, and
+    the protocol has not been read.'
 headings:
 - n: 1
   name: Summary of the record

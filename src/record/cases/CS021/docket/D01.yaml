@@ -19,7 +19,8 @@ interest_default: neutral
 commissioned_by: null
 method_note: The investigators' own report of the LungIMPACT trial, peer-reviewed and published open access
   in Nature Medicine. It includes the Extended Data and the journal's Reporting Summary; five Extended
-  Data tables are images, read by eye. Saved by the editor on 22 September 2026, as the journal's PDF.
+  Data tables and the Reporting Summary are images, read by eye. Saved by the editor on 22 September 2026,
+  as the journal's PDF.
 captures:
 - capture: V01
   captured_on: 2026-09-22

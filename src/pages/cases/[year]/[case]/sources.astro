@@ -31,7 +31,7 @@ const groups = [
   <section class="shell pv-docket">
     <div class="pv-intro">
       <h2>Docket</h2>
-      <p>{record.documents.length} documents and {record.claims.length} claims. The fingerprints are SHA-256 hashes of the private capture file and of its text layer{record.header.fictional ? "; in this fixture they are hashes of placeholder text" : ""}.</p>
+      <p>{record.documents.length} {record.documents.length === 1 ? "document" : "documents"} and {record.claims.length} claims. The fingerprints are SHA-256 hashes of the private capture file and of its text layer{record.header.fictional ? "; in this fixture they are hashes of placeholder text" : ""}.</p>
     </div>
 
     {groups.map((group) => (
