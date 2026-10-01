@@ -1,0 +1,34 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS001.D02
+title: OpenAI and Hugging Face partner to address security incident during model evaluation
+publisher: openai
+type: official-statement
+format: html
+grade: R3
+published: 2026-07-21
+original_url: https://openai.com/index/hugging-face-model-evaluation-security-incident/
+licence: unknown
+evidence_origin: openai-internal-records
+examiner: OpenAI
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: OpenAI's first public account, posted as a joint statement with Hugging Face and later updated
+  three times (28 July, 29 July and 26 August). The 28 July update says OpenAI was contributing to Hugging
+  Face's own write-up. Saved by the editor on 22 September 2026, with all three updates. The original
+  21 July version, before the updates, was not saved.
+captures:
+- capture: V01
+  captured_on: 2026-09-22
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete for the en-US text as served on 2026-09-21; audio and other locales not captured
+  public_snapshot: not recorded
+  capture_sha256: 18258793af9a825eff5b9415e6eda73e81a11e65e5408fc9f80b29ca16e62b88
+  text_sha256: 6a690c2948e0165f0809cf9f6e156d671281596d4891f95e11daf274c395cff8

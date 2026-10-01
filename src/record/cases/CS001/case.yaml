@@ -1,0 +1,95 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS001
+fictional: false
+title: The July 2026 compromise of Hugging Face's infrastructure by OpenAI agents during an evaluation
+summary: 'The July 2026 compromise of Hugging Face''s production infrastructure by AI agents running on
+  OpenAI models during an OpenAI internal cyber-capability evaluation, from the first activity against
+  Hugging Face recorded by either party to the 26 August 2026 publications: the detection, response and
+  public accounts of both companies, METR''s investigation, and Reuters'' report.'
+status: published
+version: '1'
+case_grade: A
+grade:
+  value: A
+  rule: incident-two-origins
+  rule_text: An incident case is A when its central finding is confirmed by two independent origins, at
+    least one of them a party's own primary account, with any disputes on secondary points shown beside
+    the grade.
+  central_finding: OpenAI's agents compromised parts of Hugging Face's production systems in July 2026.
+  dashboard:
+  - 'Motive: Disputed (F104, F106)'
+  - 'Date of the spread across clusters: OpenAI''s 12 July is Disputed; Hugging Face''s 11 July is challenged
+    (F042, F043)'
+  - 'Scale, about 700 agents: rests on OpenAI''s own data as examined by METR and Redwood, which the library
+    does not count as independent of OpenAI (F094)'
+  decided: 2026-10-01
+verified: '2026-10-01'
+next_review: null
+charter:
+  event: 'The July 2026 compromise of Hugging Face''s production infrastructure by AI agents running on
+    OpenAI models during an OpenAI internal cyber-capability evaluation, from the first activity against
+    Hugging Face recorded by either party to the 26 August 2026 publications: the detection, response
+    and public accounts of both companies, METR''s investigation, and Reuters'' report.'
+  actors:
+  - 'OpenAI: its models, run as agents in a security evaluation, and its security team'
+  - 'Hugging Face: its platform and its security team'
+  - Other services the agents used along the way, named where the record needs them
+  - 'METR and Redwood Research: the outside investigators'
+  - 'CrowdStrike: an outside security firm OpenAI retained (no public findings of its own)'
+  - 'Reuters: reporting on the incident, not part of it'
+  place_and_period: 'Online: OpenAI''s evaluation environment, services the agents reached, and Hugging
+    Face''s production systems. The intrusion took place in July 2026; the public accounts run from 16
+    July to 26 August 2026.'
+  exclusions:
+  - Earlier incidents in OpenAI's own training runs, and the agents' later access to OpenAI's own systems,
+    appear as background only.
+  - Similar behaviour by other companies' AI agents, mentioned by METR and Redwood, is background only.
+  - Reader comments under the Hugging Face posts are not used.
+  - Outside commentary, such as the researcher quoted by Reuters, is background only.
+  - Documents first published after 26 August 2026 are not used, except later versions of the seven sources.
+  evidence_cutoff: 2026-10-01
+  selection_reason: 'A well-documented AI security incident: both companies involved published their own
+    accounts, and an outside team investigated the agents'' behaviour.'
+  stopping_rule: 'The record covers every public document the seven sources point to about the incident
+    itself, as of 1 October 2026. Still awaited: OpenAI''s conference talk, CrowdStrike''s findings, and
+    any outcome of Hugging Face''s report to law enforcement.'
+headings:
+- n: 1
+  name: Summary of the record
+  status: populated
+- n: 2
+  name: Parties and roles
+  status: populated
+- n: 3
+  name: The system and its configuration
+  status: populated
+- n: 4
+  name: Conditions before the event
+  status: populated
+- n: 5
+  name: Sequence of events
+  status: populated
+- n: 6
+  name: How the facts were established
+  status: populated
+- n: 7
+  name: Detection and response
+  status: populated
+- n: 8
+  name: Outcomes and measured effects
+  status: populated
+- n: 9
+  name: Statements by the parties
+  status: populated
+- n: 10
+  name: Discrepancies in the record
+  status: populated
+- n: 11
+  name: What the record does not establish
+  status: populated
+- n: 12
+  name: Evidence still awaited
+  status: populated
+public_id: AAI-2026-001

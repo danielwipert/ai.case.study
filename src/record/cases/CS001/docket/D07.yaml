@@ -1,0 +1,33 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS001.D07
+title: OpenAI agents hacked Hugging Face in 700-strong swarm, tried to cover tracks, investigations find
+publisher: reuters
+type: news-report
+format: html
+grade: R1
+published: 2026-08-26
+original_url: https://www.reuters.com/business/openai-report-says-its-network-was-hacked-by-its-own-rogue-ai-agents-2026-08-26/
+licence: unknown
+evidence_origin: relayed
+examiner: none of its own for the incident facts
+how_known_default: told-by-someone
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: Reuters' news report on the two 26 August reports. It relays OpenAI's and METR and Redwood's
+  findings and adds no independent evidence of its own. Saved by the editor on 22 September 2026. Complete
+  for the article text.
+captures:
+- capture: V01
+  captured_on: 2026-09-22
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete for the article text
+  public_snapshot: not recorded
+  capture_sha256: 96239059cc1ae88678b002a738682ca1d8921a735a910f0ec18fc986b18800a0
+  text_sha256: f2b51653a29a3fde38dc82b5a08e6f16c572a8e8c3187d621c57597f6d7b3d17

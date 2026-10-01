@@ -1,0 +1,32 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS001.D05
+title: OpenAI – Hugging Face Incident Technical Report
+publisher: openai
+type: incident-report
+format: pdf
+grade: R2
+published: 2026-08-26
+original_url: https://cdn.openai.com/pdf/67869394-cb91-4c12-888c-5cbd85c7814c/OpenAI-Hugging-Face%20Incident-Technical-Report.pdf
+licence: unknown
+evidence_origin: openai-internal-records
+examiner: OpenAI
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: OpenAI's full technical report. It carries no publication date on its face; OpenAI's post
+  of 26 August says it was published that day. Saved by the editor on 22 September 2026. Complete as a
+  file; its figures are images, so their text is not searchable.
+captures:
+- capture: V01
+  captured_on: 2026-09-22
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: one '===== page N =====' marker inserted before each page's text; nothing else changed
+  completeness: complete as a file; partial as a text layer (figures are images)
+  public_snapshot: not recorded
+  capture_sha256: dd635cf6e5f39f0e1f646f08c36549090d77156ed89cbd3d733ed496648cae9c
+  text_sha256: 49f7d051bc8be590eb7235a503b918d2e2cd74d5390607f9760bd6a6560921b3

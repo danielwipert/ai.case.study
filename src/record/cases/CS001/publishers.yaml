@@ -1,0 +1,25 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+- id: hugging-face
+  name: Hugging Face
+  grades:
+    incident-report: R2
+    official-statement: R3
+  graded: '2026-10-01'
+- id: openai
+  name: OpenAI
+  grades:
+    incident-report: R2
+    official-statement: R3
+  graded: '2026-10-01'
+- id: metr
+  name: METR, with Redwood Research as co-publisher
+  grades:
+    investigation-report: R2
+  graded: '2026-10-01'
+- id: reuters
+  name: Reuters
+  grades:
+    news-report: R1
+  graded: '2026-10-01'

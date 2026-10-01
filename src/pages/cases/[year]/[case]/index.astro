@@ -1,0 +1,257 @@
+---
+// The reader layer ("the story"), magazine design. Plain English;
+// every statement tied to checked rows; technical detail one and two clicks down.
+import "@fontsource/archivo-black/400.css";
+import "@fontsource/archivo/500.css";
+import "@fontsource/archivo/700.css";
+import "@fontsource/archivo/800.css";
+import "@fontsource/source-serif-4/400.css";
+import "@fontsource/source-serif-4/400-italic.css";
+import "@fontsource/source-serif-4/600.css";
+import { load as parseYaml } from "js-yaml";
+import { loadCase, shortCode } from "../../../../record/lib/record.mjs";
+import { recordRoutes } from "../../../../record/lib/routes.mjs";
+
+export function getStaticPaths() {
+  return recordRoutes();
+}
+
+const stories = import.meta.glob("../../../../record/cases/*/story.yaml", { query: "?raw", import: "default", eager: true });
+const code = Astro.props.code;
+const story = parseYaml(stories[`../../../../record/cases/${code}/story.yaml`]);
+const record = loadCase(code);
+const byShort = new Map(record.rows.map((r) => [shortCode(r.code), r]));
+for (const list of [[story.grade], story.short_version, story.numbers, story.timeline, story.what_they_say, story.unknowns, ...story.disagreements.map((d) => [...d.sides, ...(d.note ? [d.note] : [])])])
+  for (const item of list) for (const r of item.rows) if (!byShort.has(r)) throw new Error(`story.yaml cites ${r}, which is not a live row`);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const root = `${base}/cases/${Astro.params.year}/${Astro.params.case}`;
+const tip = (rows) => rows.map((r) => `${r}: ${byShort.get(r).statement} [${byShort.get(r).label.display}]`).join("\n\n");
+const src = (rows) => `${root}/evidence/#${rows[0]}`;
+const docs = record.docket?.length ?? 7;
+const pad = (n) => String(n).padStart(2, "0");
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={story.dek} />
+  <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+  <title>{story.headline} | Applied AI Case Study Library</title>
+</head>
+<body class="mg">
+  <header class="mg-top">
+    <a class="mg-brand" href={`${base}/`}><b>Applied AI</b><span>Case Study Library</span></a>
+    <nav class="mg-tabs" aria-label="Layers of this case">
+      <a aria-current="page" href={`${root}/`}>The story</a>
+      <a href={`${root}/record/`}>Full record</a>
+      <a href={`${root}/evidence/`}>Evidence</a>
+      <a href={`${root}/sources/`}>Sources</a>
+    </nav>
+  </header>
+
+  <section class="mg-hero">
+    <div class="mg-wrap mg-hero-grid">
+      <div>
+        <p class="mg-tags"><span>AI security</span><span>Case 001</span><span>July 2026</span></p>
+        <h1>{story.headline}</h1>
+        <p class="mg-dek">{story.dek}</p>
+      </div>
+      <aside class="mg-stamp" aria-label={`Case grade ${story.grade.letter}: ${story.grade.plain}`}>
+        <span class="mg-stamp-letter">{story.grade.letter}</span>
+        <span class="mg-stamp-word">{story.grade.plain}</span>
+        <p>{story.grade.explain}</p>
+      </aside>
+    </div>
+    <div class="mg-wrap"><p class="mg-meta">{docs} public sources · every statement linked to its evidence · checked 1 Oct 2026</p></div>
+  </section>
+
+  <main>
+    <section class="mg-wrap mg-sec">
+      <h2 class="mg-h"><span>01</span>The short version</h2>
+      <ol class="mg-points">
+        {story.short_version.map((p, i) => (
+          <li><span class="mg-pn">{pad(i + 1)}</span><p>{p.text} <a class="mg-src" href={src(p.rows)} title={tip(p.rows)}>Source</a></p></li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="mg-numbers" aria-label="Key numbers">
+      <div class="mg-wrap mg-num-grid">
+        {story.numbers.map((n) => (
+          <a class="mg-num" href={src(n.rows)} title={tip(n.rows)}><strong>{n.figure}</strong><span>{n.label}</span></a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mg-wrap mg-sec">
+      <h2 class="mg-h"><span>02</span>Day by day</h2>
+      <ol class="mg-tl">
+        {story.timeline.map((t) => (
+          <li><time>{t.date}</time><p>{t.text}</p><a class="mg-src" href={src(t.rows)} title={tip(t.rows)}>Source</a></li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="mg-split-sec">
+      <div class="mg-wrap">
+        <h2 class="mg-h mg-h-inv"><span>03</span>Where the accounts disagree</h2>
+        <p class="mg-lede">Both sides, side by side. We don't pick one: the public record doesn't settle it.</p>
+      </div>
+      {story.disagreements.map((d) => (
+        <div class="mg-wrap mg-dispute">
+          <h3>{d.title}</h3>
+          <div class="mg-sides">
+            <div class="mg-side mg-a"><p class="mg-who">{d.sides[0].who}</p><p class="mg-says">{d.sides[0].says}</p><a class="mg-src" href={src(d.sides[0].rows)} title={tip(d.sides[0].rows)}>Source</a></div>
+            <span class="mg-vs" aria-hidden="true">vs</span>
+            <div class="mg-side mg-b"><p class="mg-who">{d.sides[1].who}</p><p class="mg-says">{d.sides[1].says}</p><a class="mg-src" href={src(d.sides[1].rows)} title={tip(d.sides[1].rows)}>Source</a></div>
+          </div>
+          {d.note && <p class="mg-dnote">{d.note.text} <a class="mg-src" href={src(d.note.rows)} title={tip(d.note.rows)}>Source</a></p>}
+        </div>
+      ))}
+    </section>
+
+    <section class="mg-wrap mg-sec">
+      <h2 class="mg-h"><span>04</span>In their own words</h2>
+      <div class="mg-quotes">
+        {story.what_they_say.map((q, i) => (
+          <figure class={`mg-quote ${i === 0 ? "mg-quote-big" : ""}`}><blockquote>{q.quote}</blockquote><figcaption>— {q.who} <a class="mg-src" href={src(q.rows)} title={tip(q.rows)}>Source</a></figcaption></figure>
+        ))}
+      </div>
+    </section>
+
+    <section class="mg-wrap mg-sec">
+      <h2 class="mg-h"><span>05</span>Still unknown</h2>
+      <ul class="mg-unknowns">
+        {story.unknowns.map((u) => (<li><span aria-hidden="true">?</span><p>{u.text} <a class="mg-src" href={src(u.rows)} title={tip(u.rows)}>Source</a></p></li>))}
+      </ul>
+    </section>
+
+    <section class="mg-deeper">
+      <div class="mg-wrap">
+        <h2 class="mg-h mg-h-inv"><span>06</span>Go deeper</h2>
+        <div class="mg-cards">
+          <a href={`${root}/record/`}><em>Read</em><strong>The full record</strong><span>The complete account in twelve sections, every sentence tied to its sources.</span></a>
+          <a href={`${root}/evidence/`}><em>Check</em><strong>The evidence</strong><span>{record.rows.length} checked facts, each with the exact quote it rests on.</span></a>
+          <a href={`${root}/sources/`}><em>Trace</em><strong>The sources</strong><span>The {docs} documents behind this case, and how far each can be trusted.</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="mg-foot"><div class="mg-wrap">Applied AI Case Study Library · {record.header.public_id} · version {record.header.version} · <a href={`${base}/`}>Back to the library</a></div></footer>
+</body>
+</html>
+
+<style is:global>
+  :root { --mg-ink: #0b0b0c; --mg-paper: #ffffff; --mg-soft: #f2f1ee; --mg-lime: #d2ef6b; --mg-pink: #e85a8e; --mg-violet: #4e3fd0; --mg-grey: #5f5f63;
+    --mg-display: "Archivo Black", "Archivo", system-ui, sans-serif; --mg-sans: "Archivo", system-ui, sans-serif; --mg-serif: "Source Serif 4", Georgia, serif; }
+  body.mg { margin: 0; background: var(--mg-paper); color: var(--mg-ink); font-family: var(--mg-serif); -webkit-font-smoothing: antialiased; }
+  .mg a { color: inherit; }
+  .mg-wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+  .mg-banner { background: var(--mg-lime); color: var(--mg-ink); text-align: center; font: 800 .72rem/1 var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; padding: .55rem; }
+  .mg-top { display: flex; flex-wrap: wrap; gap: .8rem 2rem; align-items: center; justify-content: space-between; max-width: 1160px; margin: 0 auto; padding: 1.1rem 32px; }
+  .mg-brand { text-decoration: none; display: flex; align-items: baseline; gap: .6rem; }
+  .mg-brand b { font: 400 1.25rem var(--mg-display); letter-spacing: -.02em; }
+  .mg-brand span { font: 700 .7rem var(--mg-sans); letter-spacing: .16em; text-transform: uppercase; color: var(--mg-grey); }
+  .mg-tabs { display: flex; gap: 1.6rem; overflow-x: auto; }
+  .mg-tabs a { flex: none; font: 700 .8rem var(--mg-sans); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; padding: .35rem 0; border-bottom: 3px solid transparent; }
+  .mg-tabs a[aria-current] { border-bottom-color: var(--mg-pink); }
+  .mg-tabs a:hover { border-bottom-color: var(--mg-ink); }
+
+  .mg-hero { background: var(--mg-ink); color: #fff; padding: 4.5rem 0 2.2rem; position: relative; overflow: hidden; }
+  .mg-hero::after { content: ""; position: absolute; right: -10%; top: -40%; width: 60%; height: 160%; background: radial-gradient(closest-side, rgb(78 63 208 / 35%), transparent); pointer-events: none; }
+  .mg-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 3rem; align-items: end; position: relative; z-index: 1; }
+  .mg-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.6rem; }
+  .mg-tags span { font: 800 .7rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; border: 1.5px solid #fff; padding: .35rem .6rem; }
+  .mg-tags span:first-child { background: var(--mg-pink); border-color: var(--mg-pink); }
+  .mg-hero h1 { font: 400 clamp(2.6rem, 7vw, 5.6rem)/.95 var(--mg-display); letter-spacing: -.035em; margin: 0 0 1.6rem; text-wrap: balance; }
+  .mg-dek { font: 400 clamp(1.1rem, 2vw, 1.4rem)/1.5 var(--mg-serif); color: #d6d6d8; max-width: 40rem; margin: 0; }
+  .mg-stamp { background: var(--mg-lime); color: var(--mg-ink); padding: 1.4rem 1.4rem 1.2rem; transform: rotate(-2deg); box-shadow: 10px 10px 0 var(--mg-pink); }
+  .mg-stamp-letter { display: block; font: 400 6.5rem/.8 var(--mg-display); letter-spacing: -.05em; }
+  .mg-stamp-word { display: block; font: 800 .82rem var(--mg-sans); letter-spacing: .16em; text-transform: uppercase; margin: .6rem 0 .7rem; }
+  .mg-stamp p { margin: 0; font: 500 .9rem/1.45 var(--mg-sans); }
+  .mg-meta { position: relative; z-index: 1; margin: 2.6rem 0 0; padding-top: 1rem; border-top: 1px solid #333; font: 700 .72rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; color: #9a9aa0; }
+
+  .mg-sec { padding: 4.5rem 32px 1rem; }
+  .mg-h { display: flex; align-items: baseline; gap: 1rem; font: 400 clamp(1.9rem, 4vw, 3rem)/1 var(--mg-display); letter-spacing: -.03em; margin: 0 0 2.2rem; padding-top: 1rem; border-top: 6px solid var(--mg-ink); }
+  .mg-h span { font: 800 .9rem var(--mg-sans); letter-spacing: .1em; color: var(--mg-pink); }
+  .mg-h-inv { border-top-color: #fff; color: #fff; }
+  .mg-src { display: inline-block; font: 800 .62rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; background: var(--mg-ink); color: #fff !important; padding: .2rem .45rem; vertical-align: .15em; white-space: nowrap; }
+  .mg-src:hover { background: var(--mg-pink); }
+
+  .mg-points { list-style: none; margin: 0; padding: 0; counter-reset: p; }
+  .mg-points li { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1.2rem; padding: 1.4rem 0; border-bottom: 1px solid #ddd; }
+  .mg-pn { font: 400 3.4rem/1 var(--mg-display); color: var(--mg-violet); letter-spacing: -.04em; }
+  .mg-points p { margin: 0; font: 400 1.32rem/1.55 var(--mg-serif); max-width: 46rem; }
+
+  .mg-numbers { background: var(--mg-violet); color: #fff; margin-top: 4rem; padding: 3.5rem 0; }
+  .mg-num-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
+  .mg-num { text-decoration: none; border-top: 3px solid var(--mg-lime); padding-top: 1rem; }
+  .mg-num strong { display: block; font: 400 clamp(2.6rem, 5vw, 4.2rem)/1 var(--mg-display); letter-spacing: -.04em; color: var(--mg-lime); margin-bottom: .8rem; }
+  .mg-num span { font: 500 1rem/1.4 var(--mg-sans); }
+
+  .mg-tl { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 0; border-left: 1px solid #ddd; }
+  .mg-tl li { padding: 1rem 1.2rem 1.4rem; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; gap: .5rem; }
+  .mg-tl time { font: 400 2rem/1 var(--mg-display); letter-spacing: -.03em; }
+  .mg-tl li:nth-child(5) time { color: var(--mg-pink); } .mg-tl li:nth-child(8) time { color: var(--mg-violet); }
+  .mg-tl p { margin: 0; flex: 1; font: 400 1.02rem/1.45 var(--mg-serif); }
+  .mg-tl .mg-src { align-self: flex-start; }
+
+  .mg-split-sec { background: var(--mg-ink); color: #fff; margin-top: 4.5rem; padding: 4rem 0 3rem; }
+  .mg-split-sec .mg-h { margin-bottom: 1rem; }
+  .mg-lede { font: 400 1.1rem var(--mg-serif); color: #b8b8bd; margin: 0 0 2.5rem; }
+  .mg-dispute { margin-bottom: 2.6rem; }
+  .mg-dispute h3 { font: 400 clamp(1.4rem, 3vw, 2rem)/1.1 var(--mg-display); letter-spacing: -.02em; margin: 0 0 1.2rem; }
+  .mg-sides { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; }
+  .mg-side { padding: 1.6rem; display: flex; flex-direction: column; gap: .8rem; }
+  .mg-a { background: var(--mg-pink); color: var(--mg-ink); } .mg-b { background: var(--mg-lime); color: var(--mg-ink); }
+  .mg-who { margin: 0; font: 800 .78rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; }
+  .mg-says { margin: 0; flex: 1; font: 600 1.3rem/1.35 var(--mg-serif); }
+  .mg-side .mg-src { align-self: flex-start; }
+  .mg-dnote { margin: 1rem 0 0; font: 400 1.05rem/1.5 var(--mg-serif); color: #cfcfd3; max-width: 52rem; }
+  .mg-dnote .mg-src { background: #fff; color: var(--mg-ink) !important; }
+  .mg-vs { align-self: center; font: 400 1.6rem var(--mg-display); padding: 0 1rem; color: #fff; }
+
+  .mg-quotes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 3rem; }
+  .mg-quote { margin: 0; }
+  .mg-quote-big { grid-column: 1 / -1; }
+  .mg-quote blockquote { margin: 0 0 .9rem; font: 400 1.5rem/1.35 var(--mg-serif); font-style: italic; position: relative; padding-left: 1.4rem; border-left: 6px solid var(--mg-pink); }
+  .mg-quote-big blockquote { font: 400 clamp(1.8rem, 3.6vw, 2.8rem)/1.2 var(--mg-display); font-style: normal; letter-spacing: -.02em; border-left-color: var(--mg-violet); }
+  .mg-quote figcaption { font: 800 .78rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; padding-left: 1.4rem; }
+
+  .mg-unknowns { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .mg-unknowns li { display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: 1rem; align-items: start; padding: 1.2rem 0; border-bottom: 1px solid #ddd; }
+  .mg-unknowns li > span { font: 400 3rem/1 var(--mg-display); color: var(--mg-pink); }
+  .mg-unknowns p { margin: .3rem 0 0; font: 400 1.2rem/1.5 var(--mg-serif); max-width: 46rem; }
+
+  .mg-deeper { background: var(--mg-ink); color: #fff; margin-top: 4.5rem; padding: 4rem 0 4.5rem; }
+  .mg-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+  .mg-cards a { text-decoration: none; border: 2px solid #fff; padding: 1.6rem; display: flex; flex-direction: column; gap: .6rem; transition: background .15s, color .15s; }
+  .mg-cards a:hover { background: var(--mg-lime); color: var(--mg-ink); border-color: var(--mg-lime); }
+  .mg-cards em { font: 800 .72rem var(--mg-sans); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--mg-pink); }
+  .mg-cards strong { font: 400 1.7rem/1.05 var(--mg-display); letter-spacing: -.02em; }
+  .mg-cards span { font: 400 1rem/1.5 var(--mg-serif); color: inherit; opacity: .85; }
+  .mg-foot { padding: 1.6rem 0; font: 700 .72rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--mg-grey); }
+
+  @media (max-width: 860px) {
+    .mg-hero-grid { grid-template-columns: 1fr; gap: 2.2rem; }
+    .mg-stamp { max-width: 320px; }
+    .mg-num-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .mg-cards { grid-template-columns: 1fr; }
+    .mg-quotes { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .mg-wrap, .mg-top { padding-left: 16px; padding-right: 16px; }
+    .mg-sec { padding: 3rem 16px .5rem; }
+    .mg-hero { padding: 2.6rem 0 1.6rem; }
+    .mg-stamp { transform: none; box-shadow: 6px 6px 0 var(--mg-pink); }
+    .mg-stamp-letter { font-size: 4.5rem; }
+    .mg-points li { grid-template-columns: 3rem minmax(0, 1fr); gap: .8rem; }
+    .mg-pn { font-size: 2rem; }
+    .mg-points p { font-size: 1.12rem; }
+    .mg-sides { grid-template-columns: 1fr; }
+    .mg-vs { justify-self: center; padding: .5rem; }
+    .mg-tabs { gap: 1.1rem; width: 100%; }
+    .mg-unknowns li { grid-template-columns: 2.4rem minmax(0, 1fr); }
+    .mg-unknowns li > span { font-size: 2.2rem; }
+  }
+</style>

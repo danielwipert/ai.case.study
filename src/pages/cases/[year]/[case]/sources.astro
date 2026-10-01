@@ -1,0 +1,108 @@
+---
+// The sources page (the Docket) (spec item H2): every document,
+// grouped by use. Use is not typed on the document; it is derived from what
+// cites it (spec §4 rule 9): rows make a Record use, Context statements a
+// Context use. Each entry shows its reliability grade, evidence origin and
+// examiner, its captures with their fingerprints, and its claims.
+import CaseLayout from "../../../../record/CaseLayout.astro";
+import { loadCase, shortCode } from "../../../../record/lib/record.mjs";
+import { recordRoutes } from "../../../../record/lib/routes.mjs";
+
+export function getStaticPaths() {
+  return recordRoutes();
+}
+
+
+const record = loadCase(Astro.props.code);
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const root = `${base}/cases/${Astro.params.year}/${Astro.params.case}`;
+const ledger = `${root}/evidence/`;
+
+const groups = [
+  { use: "record", title: "Record", note: "Documents cited by rows in the Record of Fact." },
+  { use: "both", title: "Record and Context", note: "Documents cited by both rows and Context statements." },
+  { use: "context", title: "Context", note: "Documents cited only by Context statements." },
+  { use: "uncited", title: "Docketed, not yet cited", note: "Documents on the Docket that nothing cites yet." }
+].map((group) => ({ ...group, documents: record.documents.filter((d) => d.use === group.use) }))
+  .filter((group) => group.documents.length > 0);
+---
+
+<CaseLayout title={`Sources · ${record.header.title}`} record={record} active="docket" root={root}>
+  <section class="shell pv-docket">
+    <div class="pv-intro">
+      <h2>Docket</h2>
+      <p>{record.documents.length} documents and {record.claims.length} claims. The fingerprints are SHA-256 hashes of the private capture file and of its text layer{record.header.fictional ? "; in this fixture they are hashes of placeholder text" : ""}.</p>
+    </div>
+
+    {groups.map((group) => (
+      <section class="pv-group">
+        <h3 class="pv-group-title">{group.title} <small>{group.documents.length}</small></h3>
+        <p class="pv-group-note">{group.note}</p>
+        <ol class="pv-docs">
+          {group.documents.map((doc) => (
+            <li class="pv-doc" id={shortCode(doc.code)}>
+              <p class="pv-doc-head">
+                <code>{doc.code}</code>
+                <span class="pv-grade" data-grade={doc.grade}>{doc.grade}</span>
+                <span class="pv-kind">{doc.type.replaceAll("-", " ")}</span>
+                <span class="pv-kind">{doc.format}</span>
+              </p>
+              <h4>{doc.title}</h4>
+              <p class="source-byline">{doc.publisherName}{doc.published && ` · ${doc.published}`} · <a href={doc.original_url} rel="nofollow noopener">original link</a></p>
+              <dl class="pv-meta">
+                <div><dt>Evidence origin</dt><dd><code>{doc.evidence_origin}</code></dd></div>
+                <div><dt>Examiner</dt><dd><code>{doc.examiner}</code></dd></div>
+                <div><dt>Licence</dt><dd>{doc.licence}</dd></div>
+                <div><dt>Commissioned by</dt><dd>{doc.commissioned_by ?? "—"}</dd></div>
+                <div><dt>Claim defaults</dt><dd>{doc.how_known_default} ({doc.how_known_default_basis}), interest {doc.interest_default}</dd></div>
+                <div><dt>Cited by</dt><dd>{[...doc.citedBy.record, ...doc.citedBy.context].map((c, i) => <>{i > 0 && ", "}<a href={`${ledger}#${shortCode(c)}`}>{shortCode(c)}</a></>)}</dd></div>
+                {doc.method_note && <div class="pv-wide"><dt>About this source</dt><dd>{doc.method_note}</dd></div>}
+              </dl>
+
+              <table class="pv-captures">
+                <caption>Captures</caption>
+                <thead><tr><th>Capture</th><th>Taken</th><th>How</th><th>Fingerprints (SHA-256)</th></tr></thead>
+                <tbody>
+                  {doc.captures.map((cap) => (
+                    <tr>
+                      <td><code>{cap.capture}</code></td>
+                      <td>{cap.captured_on} · {cap.captured_by}</td>
+                      <td>{cap.tool}, {cap.access}; {cap.transformations}; {cap.completeness}{cap.completeness_note && ` (${cap.completeness_note})`}; public snapshot: {cap.public_snapshot}</td>
+                      <td class="pv-hash"><span>file</span> <code>{cap.capture_sha256}</code><br /><span>text</span> <code>{cap.text_sha256}</code></td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+
+              <details class="pv-doc-claims">
+                <summary>{doc.claims.length} {doc.claims.length === 1 ? "claim" : "claims"}</summary>
+                <ul>
+                  {doc.claims.map((c) => (
+                    <li>
+                      <code>{shortCode(c.code)}</code> · {c.locator}
+                      <blockquote class="pv-quote">{c.quote}</blockquote>
+                      <span class="pv-small">Speaker {c.speaker} · interest {c.interest} · cited by {c.citedBy.map((r, i) => <>{i > 0 && ", "}<a href={`${ledger}#${shortCode(r)}`}>{shortCode(r)}</a></>)}</span>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
+          ))}
+        </ol>
+      </section>
+    ))}
+
+    <section class="pv-group">
+      <h3 class="pv-group-title">Publisher register <small>{record.publishers.length}</small></h3>
+      <p class="pv-group-note">A reliability grade belongs to a publisher and a document type. Every document of that kind inherits it.</p>
+      <table class="pv-captures">
+        <thead><tr><th>Publisher</th><th>Document type</th><th>Grade</th><th>Graded</th></tr></thead>
+        <tbody>
+          {record.publishers.flatMap((p) => Object.entries(p.grades).map(([type, grade]) => (
+            <tr><td>{p.name}</td><td>{type.replaceAll("-", " ")}</td><td><span class="pv-grade" data-grade={grade}>{grade}</span></td><td>{p.graded}</td></tr>
+          )))}
+        </tbody>
+      </table>
+    </section>
+  </section>
+</CaseLayout>

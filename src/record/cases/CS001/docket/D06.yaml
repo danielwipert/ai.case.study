@@ -1,0 +1,60 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS001.D06
+title: Brief independent investigation of agents’ behavior, reasoning and collaboration in the OpenAI
+  / Hugging Face hacking incident
+publisher: metr
+type: investigation-report
+format: pdf (V01) and html (V02)
+grade: R2
+published: 2026-08-26
+original_url: https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/
+licence: unknown
+evidence_origin: openai-internal-records
+examiner: the METR investigators
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: Engaged by OpenAI; agreement reached 29 July 2026. METR states it took no payment, per
+  its standard policy, and accepted free API credits from OpenAI.
+method_note: The outside investigation by METR and Redwood Research. It worked from data that OpenAI supplied;
+  OpenAI set its scope, could redact, and gave feedback that led to edits; and the library does not count
+  it as independent of OpenAI. Its blog version was edited on 13 September 2026 to add two disclosure
+  footnotes. Saved by the editor on 22 September 2026, as the report (PDF) and the blog post. The two
+  footnotes added on 13 September were typed from the live page by the editor and later matched word for
+  word against the live page.
+captures:
+- capture: V01
+  captured_on: 2026-09-22
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: one '===== page N =====' marker inserted before each page's text; nothing else changed
+  completeness: complete as a file; partial as a text layer (figures are images)
+  public_snapshot: not recorded
+  capture_sha256: f7e87133833363da6eee661df0c86926ef852f8b202ad87695ea6596b92d3c73
+  text_sha256: a7117f8095e526c970cc85e508542451c9f69387430717a1319a844958231c72
+- capture: V02
+  captured_on: 2026-09-22
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: partial (footnote texts absent)
+  public_snapshot: not recorded
+  capture_sha256: c73eee0f9f38e544c6837960b025ac8c925fc577276d211336e334a1edf91f85
+  text_sha256: 301841aab6c081ec8cdf4d04cfb04bd5a510e6c21d878ead445187a3c65b5bf8
+- capture: T01
+  captured_on: 2026-10-01
+  captured_by: the editor
+  tool: Typed from the live page by the editor (a transcription, not a saved copy); later matched word
+    for word against the live page
+  access: access state not recorded
+  transformations: typed by hand
+  completeness: blog footnotes [1] and [2] only
+  public_snapshot: none
+  capture_sha256: c8d17787a6c859c5a97629bb59122218eb37d426af960fe0111b29f9eb28a8f0
+  text_sha256: c8d17787a6c859c5a97629bb59122218eb37d426af960fe0111b29f9eb28a8f0
+examiner_counts_as: OpenAI

@@ -1,0 +1,128 @@
+---
+/**
+ * The shell for the deeper layers of a case in the new format (full record,
+ * evidence, sources): the magazine header with the four layer tabs. The story
+ * page has its own header. BaseLayout is left untouched.
+ */
+import "../styles/global.css";
+import "./record.css";
+import "./mag-deep.css";
+import "@fontsource/archivo-black/400.css";
+import "@fontsource/archivo/500.css";
+import "@fontsource/archivo/700.css";
+import "@fontsource/archivo/800.css";
+import "@fontsource/source-serif-4/400.css";
+import "@fontsource/source-serif-4/600.css";
+import "@fontsource/ibm-plex-sans/400.css";
+import "@fontsource/ibm-plex-sans/500.css";
+import "@fontsource/ibm-plex-sans/600.css";
+import "@fontsource/ibm-plex-serif/400.css";
+import "@fontsource/ibm-plex-serif/400-italic.css";
+import "@fontsource/ibm-plex-serif/500.css";
+import "@fontsource/ibm-plex-serif/600.css";
+
+interface Props {
+  title: string;
+  record: any;
+  active: "record" | "ledger" | "docket";
+  root: string;
+}
+
+const { title, record, active, root } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const h = record.header;
+const longDate = (value) =>
+  value ? new Date(`${value}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : "Not set";
+const mag = true;
+const tabs = mag ? [
+  { key: "story", label: "The story", href: `${root}/` },
+  { key: "record", label: "Full record", href: `${root}/record/` },
+  { key: "ledger", label: "Evidence", href: `${root}/evidence/` },
+  { key: "docket", label: "Sources", href: `${root}/sources/` }
+] : [
+  { key: "record", label: "Record of Fact", href: `${root}/` },
+  { key: "ledger", label: "Ledger", href: `${root}/ledger/` },
+  { key: "docket", label: "Docket", href: `${root}/docket/` }
+];
+const layerTitle = { record: "The full record", ledger: "The evidence", docket: "The sources" }[active];
+const layerDek = {
+  record: "The complete account in twelve sections. Every sentence ends in the codes of the checked facts it rests on; tap a code to see the fact and its exact quote.",
+  ledger: "Every checked fact in this case, with the exact quote it rests on, where that quote comes from, and how strongly the record supports it.",
+  docket: "The documents behind this case: who published each one, when, how it was saved, and how far it can be trusted."
+}[active];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={h.summary} />
+    <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+    <title>{title} | Applied AI Case Study Library</title>
+  </head>
+  <body class="preview mg-deep">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="wordmark" href={`${base}/`} aria-label="Applied AI Case Study Library home">
+        <span class="mark" aria-hidden="true"><span>A</span><small>AI</small></span>
+        <span>Applied AI<br /><small>Case Study Library</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href={`${base}/explore/`}>Explore cases</a>
+        <a href={`${base}/propositions/`}>Propositions</a>
+        <a href={`${base}/methodology/`}>Methodology</a>
+      </nav>
+    </header>
+
+    {mag && (
+      <header class="md-top">
+        <a class="md-brand" href={`${base}/`}><b>Applied AI</b><span>Case Study Library</span></a>
+        <nav class="md-tabs" aria-label="Layers of this case">
+          {tabs.map((tab) => (<a href={tab.href} aria-current={tab.key === active ? "page" : undefined}>{tab.label}</a>))}
+        </nav>
+      </header>
+      <section class="md-hero">
+        <div class="md-wrap">
+          <p class="md-kicker"><a href={`${root}/`}>{h.title}</a></p>
+          <h1>{layerTitle}</h1>
+          <p class="md-dek">{layerDek}</p>
+          <p class="md-meta">Grade {h.grade?.value} · {h.grade?.dashboard ? "well established" : ""} · evidence cutoff {longDate(h.charter.evidence_cutoff)} · <a href={`${root}/ledger.json`} download={`${record.code}-ledger.json`}>download the data (JSON)</a></p>
+        </div>
+      </section>
+    )}
+    {!mag && <header class="shell article-header pv-header">
+      <p class="eyebrow">{record.code} · {h.fixture_note}</p>
+      <h1>{h.title}</h1>
+      <p class="dek">{h.summary}</p>
+      <dl class="pv-facts">
+        <div><dt>Status</dt><dd>{h.status}</dd></div>
+        <div><dt>Version</dt><dd>{h.version}</dd></div>
+        <div><dt>Case grade</dt><dd>{h.case_grade ?? "Not set (rule open)"}</dd></div>
+        <div><dt>Verified</dt><dd>{longDate(h.verified)}</dd></div>
+        <div><dt>Next review</dt><dd>{longDate(h.next_review)}</dd></div>
+        <div><dt>Evidence cutoff</dt><dd>{longDate(h.charter.evidence_cutoff)}</dd></div>
+      </dl>
+      {h.grade?.dashboard && (
+        <aside class="pv-grade" aria-label="What the grade covers">
+          <p class="pv-grade-k">Grade {h.grade.value}: what it covers</p>
+          <p>{h.grade.central_finding}</p>
+          <p class="pv-grade-k">Not at that level</p>
+          <ul>{h.grade.dashboard.map((d) => <li>{d}</li>)}</ul>
+        </aside>
+      )}
+      <nav class="pv-tabs" aria-label="Case views">
+        {tabs.map((tab) => (
+          <a href={tab.href} aria-current={tab.key === active ? "page" : undefined}>{tab.label}</a>
+        ))}
+        <a href={`${root}/ledger.json`} download={`${record.code}-ledger.json`}>Download ledger (JSON)</a>
+      </nav>
+    </header>}
+
+    <main id="main"><slot /></main>
+    <footer>
+      <p>Applied AI Case Study Library · {h.public_id} · version {h.version}</p>
+      <p><a href={`${base}/`}>Back to the library</a></p>
+    </footer>
+  </body>
+</html>

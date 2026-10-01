@@ -1,0 +1,33 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS001.D03
+title: 'Anatomy of a Frontier Lab Agent Intrusion: A Technical Timeline of the July 2026 Incident'
+publisher: hugging-face
+type: incident-report
+format: html
+grade: R2
+published: 2026-07-27
+original_url: https://huggingface.co/blog/agent-intrusion-technical-timeline
+licence: unknown
+evidence_origin: huggingface-platform-logs + agent-logs-recovered-by-huggingface
+examiner: Hugging Face
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: 'Hugging Face''s detailed technical timeline. OpenAI says it contributed to this write-up
+  without saying which parts, so the library treats the whole document as coordinated with OpenAI. Saved
+  by the editor on 22 September 2026. Partial: an embedded interactive replay did not survive saving.'
+captures:
+- capture: V01
+  captured_on: 2026-09-22
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: partial (the embedded interactive replay survives only as a static shell)
+  public_snapshot: not recorded
+  capture_sha256: 0704b3e651f0f07e56460dd7b183471e2e779d4e7dcd07ae4e2a240e56ac27e7
+  text_sha256: b806c0f4671c399fd206a1d7b6576c7b43d944efb877dcb5d01e63beaea1679d
