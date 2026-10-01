@@ -136,6 +136,8 @@ export function loadCase(code) {
       how_known: claim.how_known ?? doc.how_known_default,
       how_known_basis: claim.how_known_basis ?? doc.how_known_default_basis,
       interest: claim.interest ?? doc.interest_default,
+      // The word shown for an interest value; a case may soften it (CS021, on legal advice).
+      interest_display: header.interest_words?.[claim.interest ?? doc.interest_default] ?? (claim.interest ?? doc.interest_default),
       interest_reason: claim.interest_reason ?? (claim.interest ? null : doc.interest_default_reason ?? null)
     };
   });
@@ -241,7 +243,7 @@ export function claimContribution(claim, doc, link) {
       ? { support: "Attributed", eligible: false, why: "relayed" }
       : { support: "None", eligible: false, why: "relay from R3: finding aid only" };
   }
-  if (claim.interest === "self-serving") return { support: "Attributed", eligible: false, why: "self-serving" };
+  if (claim.interest === "self-serving") return { support: "Attributed", eligible: false, why: claim.interest_display ?? "self-serving" };
   // OPEN: spec 5.7 says a claim whose how-known "does not say" cannot count
   // toward Verified, but not what else it can reach. Here it keeps the
   // single-source ceiling and simply does not count as an examiner.

@@ -155,8 +155,8 @@ unknowns:
   rows:
   - F153
   - F160
-- text: Whether Qure.ai received any part of the trial's grant, or was paid for the use of qXR. The paper
-    does not say.
+- text: The paper does not state whether Qure.ai received any part of the trial's grant or was paid for
+    the use of qXR.
   rows:
   - F043
 - text: How many of the X-rays the AI flagged were in fact reported straight away. The paper does not

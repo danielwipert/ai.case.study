@@ -81,7 +81,7 @@ const groups = [
                     <li>
                       <code>{shortCode(c.code)}</code> · {c.locator}
                       <blockquote class="pv-quote">{c.quote}</blockquote>
-                      <span class="pv-small">Speaker {c.speaker} · interest {c.interest} · cited by {c.citedBy.map((r, i) => <>{i > 0 && ", "}<a href={`${ledger}#${shortCode(r)}`}>{shortCode(r)}</a></>)}</span>
+                      <span class="pv-small">Speaker {c.speaker} · interest {c.interest_display ?? c.interest} · cited by {c.citedBy.map((r, i) => <>{i > 0 && ", "}<a href={`${ledger}#${shortCode(r)}`}>{shortCode(r)}</a></>)}</span>
                     </li>
                   ))}
                 </ul>
