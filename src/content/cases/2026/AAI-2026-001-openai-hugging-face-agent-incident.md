@@ -22,7 +22,7 @@ status: published
 created: 2026-09-10
 published: 2026-09-10
 last_verified: 2026-10-01
-next_review: 2027-03-10
+next_review: 2027-01-01
 geography:
   - United States
 environment: evaluation

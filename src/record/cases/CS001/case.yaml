@@ -26,7 +26,7 @@ grade:
     does not count as independent of OpenAI (F094)'
   decided: 2026-10-01
 verified: '2026-10-01'
-next_review: null
+next_review: '2027-01-01'
 charter:
   event: 'The July 2026 compromise of Hugging Face''s production infrastructure by AI agents running on
     OpenAI models during an OpenAI internal cyber-capability evaluation, from the first activity against
