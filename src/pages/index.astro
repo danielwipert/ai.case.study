@@ -1,22 +1,17 @@
 ---
 // The home page, in the magazine style of the rebuilt case pages: the same
 // palette, type and section pattern as the story page of a new-format case.
-import "@fontsource/archivo-black/400.css";
-import "@fontsource/archivo/500.css";
-import "@fontsource/archivo/700.css";
-import "@fontsource/archivo/800.css";
-import "@fontsource/source-serif-4/400.css";
-import "@fontsource/source-serif-4/600.css";
 import { getCollection } from "astro:content";
 import { load as parseYaml } from "js-yaml";
-import { recordRoutes } from "../record/lib/routes.mjs";
+import MagazineLayout from "../layouts/MagazineLayout.astro";
+import MagCaseCard from "../components/MagCaseCard.astro";
+import { recordRoutes, recordedCaseIds } from "../record/lib/routes.mjs";
 
 const cases = (await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status)))
   .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const grades = new Set(cases.map((entry) => entry.data.evidence_grade)).size;
-const outcomeLabels = { positive: "Positive", negative: "Negative", mixed: "Mixed", inconclusive: "Inconclusive", unknown: "Unknown" };
-const words = (value) => value.replaceAll("-", " ");
+const rebuilt = recordedCaseIds();
 
 // Featured: a case rebuilt in the new format, in its story's own words.
 const stories = import.meta.glob("../record/cases/*/story.yaml", { query: "?raw", import: "default", eager: true });
@@ -26,31 +21,10 @@ const featured = (await recordRoutes())
     story: parseYaml(stories[`../record/cases/${props.code}/story.yaml`])
   }))
   .at(-1);
-const canonical = new URL(Astro.url.pathname, Astro.site);
 ---
 
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Evidence-first cases about how AI changes real organizations, work, economics, and risk." />
-  <link rel="canonical" href={canonical} />
-  <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
-  <title>Applied AI Case Study Library</title>
-</head>
-<body class="mg">
-  <a class="mg-skip" href="#main">Skip to content</a>
-  <header class="mg-top">
-    <a class="mg-brand" href={`${base}/`}><b>Applied AI</b><span>Case Study Library</span></a>
-    <nav class="mg-tabs" aria-label="Main navigation">
-      <a href={`${base}/explore/`}>Explore cases</a>
-      <a href={`${base}/propositions/`}>Propositions</a>
-      <a href={`${base}/methodology/`}>Methodology</a>
-      <a href="https://github.com/danielwipert/ai.case.study">Contribute ↗</a>
-    </nav>
-  </header>
-
-  <section class="mg-hero">
+<MagazineLayout>
+  <section class="mg-hero" slot="hero">
     <div class="mg-wrap mg-hero-grid">
       <div>
         <p class="mg-tags"><span>An evidence-first collection</span></p>
@@ -61,104 +35,56 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     </div>
   </section>
 
-  <main id="main">
-    <section class="mg-numbers" aria-label="The library in numbers">
-      <div class="mg-wrap mg-num-grid">
-        <div class="mg-num"><strong>{cases.length}</strong><span>published {cases.length === 1 ? "case" : "cases"}</span></div>
-        <div class="mg-num"><strong>{grades}</strong><span>evidence {grades === 1 ? "grade" : "grades"} represented</span></div>
-        <div class="mg-num"><strong>Open</strong><span>methods, citations, and revision history</span></div>
-      </div>
-    </section>
-
-    {featured && (
-      <section class="mg-wrap mg-sec">
-        <h2 class="mg-h"><span>01</span>Featured case</h2>
-        <a class="mg-feature" href={featured.href}>
-          <div>
-            <p class="mg-feature-tag">New case format</p>
-            <h3>{featured.story.headline}</h3>
-            <p>{featured.story.dek}</p>
-            <span class="mg-more">Read the story <span aria-hidden="true">→</span></span>
-          </div>
-          <aside class="mg-stamp" aria-label={`Case grade ${featured.story.grade.letter}: ${featured.story.grade.plain}`}>
-            <span class="mg-stamp-letter">{featured.story.grade.letter}</span>
-            <span class="mg-stamp-word">{featured.story.grade.plain}</span>
-          </aside>
-        </a>
-      </section>
-    )}
-
-    <section class="mg-wrap mg-sec">
-      <div class="mg-h mg-h-row">
-        <h2><span>{featured ? "02" : "01"}</span>Latest cases</h2>
-        <a href={`${base}/explore/`}>View all and filter →</a>
-      </div>
-      <div class="mg-case-grid">
-        {cases.slice(0, 4).map((entry) => {
-          const d = entry.data;
-          return (
-            <article class="mg-case">
-              <p class="mg-case-kicker">
-                <span>{words(d.case_type)}</span>
-                <span class="mg-case-flags">
-                  <span class={`mg-outcome mg-${d.outcome}`}>{outcomeLabels[d.outcome]}</span>
-                  <span class="mg-grade" title={`Evidence grade ${d.evidence_grade}`}>{d.evidence_grade}</span>
-                </span>
-              </p>
-              <h3><a href={`${base}/cases/${entry.id}/`}>{d.title}</a></h3>
-              <p class="mg-case-sum">{d.summary}</p>
-              <p class="mg-case-meta">{words(d.deployment_stage)} · {d.industry.map(words).join(", ")}</p>
-            </article>
-          );
-        })}
-      </div>
-    </section>
-
-    <section class="mg-deeper" aria-labelledby="method-heading">
-      <div class="mg-wrap">
-        <h2 class="mg-h mg-h-inv" id="method-heading"><span>{featured ? "03" : "02"}</span>Built to be questioned</h2>
-        <div class="mg-cards">
-          <div><em>01</em><strong>Traceable claims</strong><span>Material facts point to the evidence closest to the event, not an unattributed summary.</span></div>
-          <div><em>02</em><strong>Calibrated conclusions</strong><span>Evidence grades and causal labels distinguish what happened from what the evidence can prove.</span></div>
-          <div><em>03</em><strong>Open revision</strong><span>Verification dates, correction notes, and Git history make change visible.</span></div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="mg-foot">
-    <div class="mg-wrap mg-foot-row">
-      <span>An open, evidence-first record of AI in practice.</span>
-      <a href="https://github.com/danielwipert/ai.case.study">Source and revision history ↗</a>
+  <section class="mg-numbers" aria-label="The library in numbers">
+    <div class="mg-wrap mg-num-grid">
+      <div class="mg-num"><strong>{cases.length}</strong><span>published {cases.length === 1 ? "case" : "cases"}</span></div>
+      <div class="mg-num"><strong>{grades}</strong><span>evidence {grades === 1 ? "grade" : "grades"} represented</span></div>
+      <div class="mg-num"><strong>Open</strong><span>methods, citations, and revision history</span></div>
     </div>
-  </footer>
-</body>
-</html>
+  </section>
+
+  {featured && (
+    <section class="mg-wrap mg-sec">
+      <h2 class="mg-h"><span>01</span>Featured case</h2>
+      <a class="mg-feature" href={featured.href}>
+        <div>
+          <p class="mg-feature-tag">New case format</p>
+          <h3>{featured.story.headline}</h3>
+          <p>{featured.story.dek}</p>
+          <span class="mg-more">Read the story <span aria-hidden="true">→</span></span>
+        </div>
+        <aside class="mg-stamp" aria-label={`Case grade ${featured.story.grade.letter}: ${featured.story.grade.plain}`}>
+          <span class="mg-stamp-letter">{featured.story.grade.letter}</span>
+          <span class="mg-stamp-word">{featured.story.grade.plain}</span>
+        </aside>
+      </a>
+    </section>
+  )}
+
+  <section class="mg-wrap mg-sec">
+    <div class="mg-h mg-h-row">
+      <h2><span>{featured ? "02" : "01"}</span>Latest cases</h2>
+      <a href={`${base}/explore/`}>View all and filter →</a>
+    </div>
+    <div class="mg-case-grid">
+      {cases.slice(0, 4).map((entry) => <MagCaseCard entry={entry} rebuilt={rebuilt.has(entry.data.case_id)} />)}
+    </div>
+  </section>
+
+  <section class="mg-deeper" aria-labelledby="method-heading">
+    <div class="mg-wrap">
+      <h2 class="mg-h mg-h-inv" id="method-heading"><span>{featured ? "03" : "02"}</span>Built to be questioned</h2>
+      <div class="mg-cards">
+        <div><em>01</em><strong>Traceable claims</strong><span>Material facts point to the evidence closest to the event, not an unattributed summary.</span></div>
+        <div><em>02</em><strong>Calibrated conclusions</strong><span>Evidence grades and causal labels distinguish what happened from what the evidence can prove.</span></div>
+        <div><em>03</em><strong>Open revision</strong><span>Verification dates, correction notes, and Git history make change visible.</span></div>
+      </div>
+    </div>
+  </section>
+</MagazineLayout>
 
 <style is:global>
-  :root { --mg-ink: #0b0b0c; --mg-paper: #ffffff; --mg-soft: #f2f1ee; --mg-lime: #d2ef6b; --mg-pink: #e85a8e; --mg-violet: #4e3fd0; --mg-grey: #5f5f63;
-    --mg-display: "Archivo Black", "Archivo", system-ui, sans-serif; --mg-sans: "Archivo", system-ui, sans-serif; --mg-serif: "Source Serif 4", Georgia, serif; }
-  body.mg { margin: 0; background: var(--mg-paper); color: var(--mg-ink); font-family: var(--mg-serif); -webkit-font-smoothing: antialiased; }
-  .mg a { color: inherit; }
-  .mg-skip { position: absolute; left: -999px; top: .5rem; background: var(--mg-lime); padding: .5rem .8rem; font: 800 .8rem var(--mg-sans); z-index: 10; }
-  .mg-skip:focus { left: .5rem; }
-  .mg-wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
-  .mg-top { display: flex; flex-wrap: wrap; gap: .8rem 2rem; align-items: center; justify-content: space-between; max-width: 1160px; margin: 0 auto; padding: 1.1rem 32px; }
-  .mg-brand { text-decoration: none; display: flex; align-items: baseline; gap: .6rem; }
-  .mg-brand b { font: 400 1.25rem var(--mg-display); letter-spacing: -.02em; }
-  .mg-brand span { font: 700 .7rem var(--mg-sans); letter-spacing: .16em; text-transform: uppercase; color: var(--mg-grey); }
-  .mg-tabs { display: flex; gap: 1.6rem; overflow-x: auto; }
-  .mg-tabs a { flex: none; font: 700 .8rem var(--mg-sans); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; padding: .35rem 0; border-bottom: 3px solid transparent; }
-  .mg-tabs a:hover { border-bottom-color: var(--mg-pink); }
-
-  .mg-hero { background: var(--mg-ink); color: #fff; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
-  .mg-hero::after { content: ""; position: absolute; right: -10%; top: -40%; width: 60%; height: 160%; background: radial-gradient(closest-side, rgb(78 63 208 / 35%), transparent); pointer-events: none; }
-  .mg-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 3rem; align-items: end; position: relative; z-index: 1; }
-  .mg-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.6rem; }
-  .mg-tags span { font: 800 .7rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; background: var(--mg-pink); padding: .35rem .6rem; }
-  .mg-hero h1 { font: 400 clamp(2.6rem, 7vw, 5.6rem)/.95 var(--mg-display); letter-spacing: -.035em; margin: 0 0 1.6rem; text-wrap: balance; }
-  .mg-hero h1 em { font-style: normal; color: var(--mg-lime); }
-  .mg-dek { font: 400 clamp(1.1rem, 2vw, 1.4rem)/1.5 var(--mg-serif); color: #d6d6d8; max-width: 40rem; margin: 0; }
+  .mg-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 3rem; align-items: end; }
   .mg-cta { display: block; background: var(--mg-lime); color: var(--mg-ink) !important; text-decoration: none; padding: 1.4rem; transform: rotate(-2deg); box-shadow: 10px 10px 0 var(--mg-pink); font: 400 1.6rem/1.1 var(--mg-display); letter-spacing: -.02em; transition: transform .15s; }
   .mg-cta:hover { transform: rotate(0); }
 
@@ -168,39 +94,17 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   .mg-num strong { display: block; font: 400 clamp(2.6rem, 5vw, 4.2rem)/1 var(--mg-display); letter-spacing: -.04em; color: var(--mg-lime); margin-bottom: .8rem; }
   .mg-num span { font: 500 1rem/1.4 var(--mg-sans); }
 
-  .mg-sec { padding: 4.5rem 32px 1rem; }
-  .mg-h { display: flex; align-items: baseline; gap: 1rem; font: 400 clamp(1.9rem, 4vw, 3rem)/1 var(--mg-display); letter-spacing: -.03em; margin: 0 0 2.2rem; padding-top: 1rem; border-top: 6px solid var(--mg-ink); }
-  .mg-h span { font: 800 .9rem var(--mg-sans); letter-spacing: .1em; color: var(--mg-pink); }
-  .mg-h-inv { border-top-color: #fff; color: #fff; }
-  .mg-h-row { justify-content: space-between; flex-wrap: wrap; }
-  .mg-h-row h2 { display: flex; align-items: baseline; gap: 1rem; margin: 0; font: inherit; letter-spacing: inherit; }
-  .mg-h-row > a { font: 800 .78rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; border-bottom: 3px solid var(--mg-pink); padding-bottom: .2rem; }
-
   .mg-feature { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 3rem; align-items: center; text-decoration: none; background: var(--mg-ink); color: #fff !important; padding: 2.6rem; position: relative; overflow: hidden; }
   .mg-feature::after { content: ""; position: absolute; left: -15%; bottom: -60%; width: 60%; height: 160%; background: radial-gradient(closest-side, rgb(232 90 142 / 28%), transparent); pointer-events: none; }
   .mg-feature > * { position: relative; z-index: 1; }
-  .mg-feature-tag { display: inline-block; margin: 0 0 1.2rem; font: 800 .7rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-ink); background: var(--mg-lime); padding: .35rem .6rem; }
   .mg-feature h3 { font: 400 clamp(1.9rem, 4vw, 3.2rem)/1 var(--mg-display); letter-spacing: -.03em; margin: 0 0 1rem; text-wrap: balance; }
   .mg-feature p { font: 400 1.15rem/1.55 var(--mg-serif); color: #d6d6d8; margin: 0 0 1.4rem; max-width: 42rem; }
-  .mg-feature .mg-feature-tag { color: var(--mg-ink); font: 800 .7rem var(--mg-sans); margin: 0 0 1.2rem; }
+  .mg-feature .mg-feature-tag { display: inline-block; margin: 0 0 1.2rem; font: 800 .7rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-ink); background: var(--mg-lime); padding: .35rem .6rem; }
   .mg-more { font: 800 .8rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; border-bottom: 3px solid var(--mg-pink); padding-bottom: .2rem; }
   .mg-feature:hover .mg-more { border-bottom-color: var(--mg-lime); }
   .mg-stamp { background: var(--mg-lime); color: var(--mg-ink); padding: 1.4rem 1.4rem 1.2rem; transform: rotate(-2deg); box-shadow: 10px 10px 0 var(--mg-pink); }
   .mg-stamp-letter { display: block; font: 400 6.5rem/.8 var(--mg-display); letter-spacing: -.05em; }
   .mg-stamp-word { display: block; font: 800 .82rem var(--mg-sans); letter-spacing: .16em; text-transform: uppercase; margin-top: .6rem; }
-
-  .mg-case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border-left: 1px solid #ddd; border-top: 1px solid #ddd; }
-  .mg-case { padding: 1.6rem 1.6rem 1.8rem; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; gap: .9rem; }
-  .mg-case-kicker { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin: 0; font: 800 .68rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-grey); }
-  .mg-case-flags { display: flex; gap: .4rem; align-items: center; }
-  .mg-outcome { padding: .25rem .5rem; color: var(--mg-ink); background: var(--mg-soft); }
-  .mg-negative { background: var(--mg-pink); } .mg-positive { background: var(--mg-lime); }
-  .mg-grade { display: inline-grid; place-items: center; width: 1.7rem; height: 1.7rem; background: var(--mg-ink); color: #fff; font: 400 .95rem var(--mg-display); }
-  .mg-case h3 { margin: 0; font: 400 clamp(1.4rem, 2.4vw, 1.9rem)/1.05 var(--mg-display); letter-spacing: -.025em; text-wrap: balance; }
-  .mg-case h3 a { text-decoration: none; }
-  .mg-case h3 a:hover { box-shadow: inset 0 -.35em 0 var(--mg-lime); }
-  .mg-case-sum { margin: 0; flex: 1; font: 400 1.05rem/1.55 var(--mg-serif); color: #333; }
-  .mg-case-meta { margin: 0; padding-top: .8rem; border-top: 1px solid #eee; font: 700 .68rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--mg-grey); }
 
   .mg-deeper { background: var(--mg-ink); color: #fff; margin-top: 4.5rem; padding: 4rem 0 4.5rem; }
   .mg-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
@@ -208,23 +112,16 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   .mg-cards em { font: 800 .72rem var(--mg-sans); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--mg-pink); }
   .mg-cards strong { font: 400 1.7rem/1.05 var(--mg-display); letter-spacing: -.02em; }
   .mg-cards span { font: 400 1rem/1.5 var(--mg-serif); opacity: .85; }
-  .mg-foot { padding: 1.6rem 0; font: 700 .72rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--mg-grey); }
-  .mg-foot-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .8rem 2rem; }
 
   @media (max-width: 860px) {
     .mg-hero-grid, .mg-feature { grid-template-columns: 1fr; gap: 2.2rem; }
     .mg-cta, .mg-stamp { max-width: 320px; }
-    .mg-case-grid, .mg-cards { grid-template-columns: 1fr; }
+    .mg-cards { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
-    .mg-wrap, .mg-top { padding-left: 16px; padding-right: 16px; }
-    .mg-sec { padding: 3rem 16px .5rem; }
-    .mg-hero { padding: 2.6rem 0 2.6rem; }
     .mg-cta, .mg-stamp { transform: none; box-shadow: 6px 6px 0 var(--mg-pink); }
     .mg-stamp-letter { font-size: 4.5rem; }
     .mg-num-grid { grid-template-columns: 1fr; gap: 1.4rem; }
     .mg-feature { padding: 1.6rem; }
-    .mg-tabs { gap: 1.1rem; width: 100%; }
-    .mg-case { padding: 1.3rem 1.1rem 1.5rem; }
   }
 </style>
