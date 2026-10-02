@@ -36,7 +36,7 @@ written ahead of its evidence.
 
 | Repo | Visibility | Holds | Role today |
 | --- | --- | --- | --- |
-| `danielwipert/ai.case.study` | **Public** | The live site (Astro, GitHub Pages): 21 published cases, 2 of them rebuilt in the **new** format, the rest still **legacy**; the propositions; the validator | **Publishes released cases.** A rebuilt case replaces its legacy page at the same address. No new cases in the legacy format |
+| `danielwipert/ai.case.study` | **Public** | The live site (Astro, GitHub Pages): 21 published cases, 2 of them rebuilt in the **new** format, the rest still **legacy**; the validator. The propositions page is withdrawn (§4) | **Publishes released cases.** A rebuilt case replaces its legacy page at the same address. No new cases in the legacy format |
 | `danielwipert/ai.case.study.private` | **Private, always** | Captured copies of sources, the specs, and every case's working record | **Where the work happens** |
 
 - Captured copies are private because most sources are copyrighted. At
@@ -100,6 +100,13 @@ rule, never by feel). Example trace: `CS021.F009` → `CS021.D01.C09` →
 
 **Case numbering:** `CSnnn` is the same number as the live site's
 `AAI-2026-nnn`, and numbers never restart.
+
+**Propositions withdrawn** (2026-10-02, Dan). The propositions page is taken
+down, with its links and the "cited in" boxes on case pages. Patterns across
+cases (level 2) return only after the live cases have been rebuilt under the
+new method, and are to be rethought from those rebuilt cases, not carried over.
+The old proposition and tension files stay in the public repo's
+`src/content/` as history; nothing renders them.
 
 **Decided against** (2026-10-01, Dan): a legacy banner on the old pages, and
 restyling them before they are rebuilt. Each is rebuilt in full instead.
