@@ -105,7 +105,9 @@ rule, never by feel). Example trace: `CS021.F009` → `CS021.D01.C09` →
 down, with its links and the "cited in" boxes on case pages. Patterns across
 cases (level 2) return only after the live cases have been rebuilt under the
 new method, and are to be rethought from those rebuilt cases, not carried over.
-The old proposition and tension files stay in the public repo's
+Methodology's "Which half of the error rate is missing?" section, a
+cross-case pattern too, was removed the same day. The rebuild order below is
+kept. The old proposition and tension files stay in the public repo's
 `src/content/` as history; nothing renders them.
 
 **Decided against** (2026-10-01, Dan): a legacy banner on the old pages, and
