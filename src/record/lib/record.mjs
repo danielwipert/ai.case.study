@@ -404,11 +404,12 @@ function parseNarrative(code, source, rowsByCode, headings) {
     if (last < body.length) tokens.push({ text: body.slice(last) });
     if (!declaration) {
       // A sentence ends at ". " (or the block's end) and must end in its codes.
-      // A single capital before the full stop is a name's initial ("Madava G."), not an end.
+      // A single capital before the full stop is a name's initial ("Madava G."), not an end;
+      // nor is the "v." of a case name ("Mobley v. Workday", CS005).
       // Full stops inside a quotation do not end the narrative's sentence: a quoted
       // passage may hold several of the speaker's sentences (CS021).
       const masked = body.replace(/"[^"]*"|“[^”]*”/g, (q) => q.replace(/[.?!]/g, "\u2024"));
-      const sentences = masked.split(/(?<!\b[A-Z]\.)(?<=[.?!]["”]?)\s+(?=[A-Z"“`])/)
+      const sentences = masked.split(/(?<!\b[A-Z]\.)(?<!\bv\.)(?<=[.?!]["”]?)\s+(?=[A-Z"“`])/)
         .reduce((acc, s) => (acc.length && /^`\[/.test(s) ? [...acc.slice(0, -1), `${acc.at(-1)} ${s}`] : [...acc, s]), []);
       for (const sentence of sentences) {
         if (!/`\[[^\]]+\]`([.?!]["”]?)?\s*$/.test(sentence)) { // CS001 preview: a code may close a paragraph after a quoted sentence's own full stop

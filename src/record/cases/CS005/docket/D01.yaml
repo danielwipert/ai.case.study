@@ -1,0 +1,32 @@
+# CS005 (AAI-2026-005): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS005.D01
+title: 'Discovery Order Re: ECF Nos. 310, 314, 319'
+publisher: us-district-court-nd-cal
+type: court-ruling
+format: pdf
+grade: R1
+published: '2026-05-29'
+original_url: https://storage.courtlistener.com/recap/gov.uscourts.cand.408645/gov.uscourts.cand.408645.340.0.pdf
+licence: US federal court record; not subject to copyright (17 U.S.C. 105)
+evidence_origin: the-court
+examiner: the court (Magistrate Judge Beeler)
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: The court's discovery order of 28 May 2026 (filed 29 May 2026, document 340), resolving three
+  discovery disputes. Saved by the editor on 2 October 2026 from CourtListener's copy of the court's file;
+  not matched against the court's own PACER record.
+captures:
+- capture: V01
+  captured_on: '2026-10-02'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: one '===== page N =====' marker inserted before each page's text; nothing else changed
+  completeness: complete (13 pages; text layer from the court's PDF)
+  public_snapshot: Wayback not attempted (CourtListener copy is itself an archive)
+  capture_sha256: 08cc56ce2b06d3fe4b1a0e7406343005493a825a58b03533aa1bd08edf6d48b0
+  text_sha256: db89d96153661d5bba54fb65891a27d683d2f5d3ff815bccdc8182da99e03682

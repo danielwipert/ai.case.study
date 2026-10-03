@@ -1,0 +1,100 @@
+# CS005 (AAI-2026-005): generated from the library's case files.
+# Do not edit by hand.
+
+tags: ["AI hiring", "Case 005", "May 2026"]
+checked: "checked 3 Oct 2026"
+
+headline: "A court let Workday withhold its own AI bias-testing data from the people suing it"
+dek: >-
+  In May 2026, a federal judge ruled that Workday did not have to hand over
+  its own bias-testing data to the people suing it. The court's reason:
+  Workday's lawyers curated the data and used the results to give legal advice. The same order made Workday produce
+  its EEO-1 and OFCCP records. The lawsuit's discrimination claims are untried.
+dek_rows: [F001, F003, F006, F004]
+
+grade:
+  letter: B
+  plain: "Well supported"
+  explain: >-
+    What the court decided comes from the court's own order. We read a public
+    copy of it and have not matched that copy against the court's official record, so what the court decided
+    rests on one copy of one document.
+  rows: [F001, F003, F006]
+
+short_version:
+  - text: "The plaintiffs are suing Workday. The court describes their claim as an AI screening system that is more likely to reject applicants who are African American, have disabilities, or are over forty. The claims have not been tried."
+    rows: [F001, F018]
+  - text: "The plaintiffs asked the court to make Workday hand over its bias-testing data and its customers' applicant data. The court said no to both."
+    rows: [F019, F003]
+  - text: "The court's reason for the bias-testing data: attorney-client privilege applies, because Workday's lawyers curated the data and used the results to give legal advice. The order says Workday represented that its lawyers curated the data and that the testing's purpose was legal advice."
+    rows: [F006, F007]
+  - text: "On bias-testing data, the order says it addresses only the data Workday claims is privileged. On customers' data, the court said it could not order production on the record before it."
+    rows: [F011, F013]
+  - text: "The court did order Workday to produce its EEO-1 and OFCCP records, saying Workday uses the same AI tools as its customers."
+    rows: [F004, F015]
+
+numbers:
+  - figure: "14,000+"
+    label: "people who had joined the case as opt-in plaintiffs by May 2026, by the plaintiffs' count (Workday says 15,000)"
+    rows: [F032, F033]
+  - figure: "216,622"
+    label: "anonymized IDs of people who applied for jobs at Workday itself, in the data Workday produced, by the plaintiffs' count"
+    rows: [F031]
+  - figure: "3"
+    label: "external bias audits of Workday's tools that the plaintiffs list: 2023, 2024 and 2026"
+    rows: [F026]
+
+timeline:
+  - date: "Sep 2024"
+    text: "An external auditor finishes a bias test of Spotlight and, Workday's page says, finds no evidence of disparate impact"
+    rows: [F041]
+  - date: "Mar 2026"
+    text: "Another analysis, by Secretariat, finishes. Workday's page reports the same finding"
+    rows: [F043]
+  - date: "6 Apr 2026"
+    text: "Workday first claims privilege over its bias-testing code, data files and results \"in the formats now claimed as privileged\", in a fourth privilege log, the plaintiffs say"
+    rows: [F023]
+  - date: "20 Apr 2026"
+    text: "The plaintiffs ask the court to force Workday to hand the data over"
+    rows: [F019]
+  - date: "7 May 2026"
+    text: "The two sides file a letter fighting over applicant names"
+    rows: [F030]
+  - date: "28 May 2026"
+    text: "The judge signs the order: bias-testing data stays privileged; EEO-1 and OFCCP records must be produced"
+    rows: [F001, F003, F004, F006]
+  - date: "27 Aug 2026"
+    text: "Workday's quarterly report says it is defending a lawsuit alleging that certain of its AI-related products and services enable discrimination, and believes the claims lack merit; on our reading, as of 2 October 2026, it does not name the lawsuit"
+    rows: [F038, F039]
+
+disagreements:
+  - title: "What data was Workday's 2026 bias analysis run on?"
+    sides:
+      - who: "Workday"
+        says: "A sample of Workday's own applicant data, from its own use of Spotlight."
+        rows: [F045, F043]
+      - who: "The plaintiffs"
+        says: "All three audits, 2026 included, were based on \"10 Global Large Customers data\", which Workday has not handed over."
+        rows: [F046]
+    note:
+      text: "For the 2024 test there is no disagreement: Workday's own archived page also says \"10 Global Large Customers data\"."
+      rows: [F041, F046]
+
+what_they_say:
+  - who: "The court"
+    quote: "Attorney-client privilege applies to the bias-testing data because Workday's attorneys curated the underlying data and used the results in providing legal advice."
+    rows: [F006]
+  - who: "The plaintiffs"
+    quote: "[T]he materials themselves are technical and statistical artifacts, not legal communications."
+    rows: [F020]
+  - who: "Workday (10-Q, which does not name the lawsuit)"
+    quote: "We are currently defending against a lawsuit alleging that certain of our AI-related products and services enable discrimination, and although we believe that such claims lack merit, and the majority of the claims have been dismissed, legal proceedings can be lengthy, expensive, and disruptive to our operations and customers"
+    rows: [F038, F039]
+
+unknowns:
+  - text: "Workday's own court filings on privilege were not read; what Workday argued is known only from the court's order and the plaintiffs' quotes."
+    rows: [F007, F036]
+  - text: "Which data the words \"strategic curation\", which the plaintiffs quote from Workday's brief, referred to. The plaintiffs apply the words to the applicant data; the documents we read do not settle it."
+    rows: [F036]
+  - text: "On our reading, as of 2 October 2026, Workday's quarterly report does not name this lawsuit or mention the ruling."
+    rows: [F039]

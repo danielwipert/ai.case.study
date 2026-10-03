@@ -1,0 +1,46 @@
+# CS005 (AAI-2026-005): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS005.D05
+title: Responsible AI and Bias Mitigation (Workday web page)
+publisher: workday
+type: official-statement
+format: html
+grade: R2
+published: null
+original_url: https://www.workday.com/en-us/legal/responsible-ai-and-bias-mitigation.html
+licence: Workday copyright; quote only
+evidence_origin: workday
+examiner: 'Workday, reporting its testers'' findings (V01: an unnamed external consultant; V02: Secretariat)'
+how_known_default: told-by-someone
+how_known_default_basis: inferred
+interest_default: self-serving
+commissioned_by: null
+method_note: Workday's public page on its Spotlight bias testing. The page carries no date. V01 is the
+  Internet Archive's copy of 5 September 2025; V02 is the live page as saved on 2 October 2026. Both versions
+  saved by the editor on 2 October 2026. The live page's impact-ratio table is an image and is not quoted.
+captures:
+- capture: V01
+  captured_on: '2026-10-02'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete (SingleFile of the Wayback copy dated 5 Sep 2025; saved 2026-10-02 20:43:16 CDT)
+  public_snapshot: this capture is itself of the Wayback copy 20250905123425
+  capture_sha256: b2da45cdeb8268c9007436b14ff0756d32b0c871559415b803aa4aa39fe7de30
+  text_sha256: bef852c0d1043edc254a3be7400daee52e32cc96049a1b3e0e7da6e8ff606f18
+- capture: V02
+  captured_on: '2026-10-02'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete (SingleFile, saved 2026-10-02 20:35:16 CDT)
+  public_snapshot: not recorded
+  capture_sha256: cac0a162f949695ef33f2919eb355235cacdbf872959d21999b82a9253a789fd
+  text_sha256: beed7cc5b7b81c13a7598cdcd011cdd469be0291e24f459e8e77359daf865333
+interest_default_reason: a finding of no disparate impact helps Workday's product and its position in
+  the lawsuit

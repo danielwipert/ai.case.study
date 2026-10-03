@@ -1,0 +1,34 @@
+# CS005 (AAI-2026-005): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS005.D03
+title: Discovery letter brief on applicant names (plaintiffs' letter, Workday's position, plaintiffs'
+  reply)
+publisher: mobley-plaintiffs-counsel
+type: court-filing
+format: pdf
+grade: R2
+published: '2026-05-07'
+original_url: https://storage.courtlistener.com/recap/gov.uscourts.cand.408645/gov.uscourts.cand.408645.319.0.pdf
+licence: court filing; public record. Quote only
+evidence_origin: mobley-plaintiffs
+examiner: plaintiffs' counsel; Workday's section, Workday
+how_known_default: told-by-someone
+how_known_default_basis: inferred
+interest_default: self-serving
+commissioned_by: null
+method_note: The discovery letter of 7 May 2026 on applicant names (document 319), filed by plaintiffs'
+  counsel, with a section headed "Workday's Position" (pages 4 to 5) and the plaintiffs' letter and reply.
+  Saved by the editor on 2 October 2026 from CourtListener's copy of the court's file.
+captures:
+- capture: V01
+  captured_on: '2026-10-02'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: one '===== page N =====' marker inserted before each page's text; nothing else changed
+  completeness: complete (8 pages)
+  public_snapshot: Wayback not attempted (CourtListener copy)
+  capture_sha256: 3ecc318a16f4e4997e3456030061f2be8dbbbe438323c16410fc29b093975bce
+  text_sha256: b80e3026d0c2759b174b0d39f8b9504cdec4258d38cba5dcc538f00cf543c44f
+interest_default_reason: each side argues for its own client
