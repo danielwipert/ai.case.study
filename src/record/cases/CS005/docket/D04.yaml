@@ -1,0 +1,32 @@
+# CS005 (AAI-2026-005): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS005.D04
+title: Workday, Inc. Form 10-Q for the quarterly period ended July 31, 2026
+publisher: workday
+type: statutory-filing
+format: html
+grade: R2
+published: '2026-08-27'
+original_url: https://www.sec.gov/Archives/edgar/data/1327811/000132781126000044/wday-20260731.htm
+licence: SEC filing; public record
+evidence_origin: workday
+examiner: Workday
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: Workday's quarterly report to the SEC for the quarter ended 31 July 2026, signed 27 August
+  2026. Saved by the editor on 2 October 2026 from SEC EDGAR.
+captures:
+- capture: V01
+  captured_on: '2026-10-02'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete (SingleFile, saved 2026-10-02 20:34:43 CDT)
+  public_snapshot: not recorded
+  capture_sha256: db992da882ddc98be55ff89e842b6d87fcd8cb777d0427b5fe36b77f2b75cf60
+  text_sha256: 99a8c8c02e5b6fac917f505b977bc1c694e4095a006638df8e3c32987f52b20b

@@ -1,0 +1,33 @@
+# CS005 (AAI-2026-005): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS005.D02
+title: Plaintiffs' Motion to Compel Production of Requested Documents and Discovery
+publisher: mobley-plaintiffs-counsel
+type: court-filing
+format: pdf
+grade: R2
+published: '2026-04-20'
+original_url: https://storage.courtlistener.com/recap/gov.uscourts.cand.408645/gov.uscourts.cand.408645.310.0.pdf
+licence: court filing; public record. Copyright status of a brief is unsettled; quote only
+evidence_origin: mobley-plaintiffs
+examiner: plaintiffs' counsel
+how_known_default: told-by-someone
+how_known_default_basis: inferred
+interest_default: self-serving
+commissioned_by: null
+method_note: 'The plaintiffs'' motion to compel of 20 April 2026 (document 310): the plaintiffs'' arguments
+  and their account of the dispute. Saved by the editor on 2 October 2026 from CourtListener''s copy of
+  the court''s file.'
+captures:
+- capture: V01
+  captured_on: '2026-10-02'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: one '===== page N =====' marker inserted before each page's text; nothing else changed
+  completeness: complete (31 pages)
+  public_snapshot: Wayback not attempted (CourtListener copy)
+  capture_sha256: 065b9099dd9bbc18b3bcc1060c2bbb65047acc9125a0fea5ae26d5975d5924bd
+  text_sha256: a5d851b0c10e783de1faa0124541085bc4efc9c4ded02399df61a7b456e9e401
+interest_default_reason: the plaintiffs gain if the court accepts the argument

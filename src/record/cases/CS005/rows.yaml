@@ -1,0 +1,1085 @@
+# CS005 (AAI-2026-005): generated from the library's case files.
+# Do not edit by hand.
+
+- code: CS005.F001
+  kind: event
+  heading: 5
+  statement: On 28 May 2026, United States Magistrate Judge Laurel Beeler signed a discovery order in
+    Mobley v. Workday, Inc. (N.D. Cal., No. 3:23-cv-00770-RFL (LB)), and the court filing system shows
+    the order filed on 29 May 2026 as document 340.
+  date: '2026-05-28'
+  precision: day
+  timezone: null
+  links:
+  - claim: CS005.D01.C24
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 17844c564fb9ccd4
+  - claim: CS005.D01.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: b240016193d8be7c
+  - claim: CS005.D01.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 00ab4b20e7e69067
+  - claim: CS005.D01.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 1ea22ee4519c4637
+- code: CS005.F002
+  kind: statement
+  heading: 5
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday states that it resolves three discovery
+    disputes, filed as ECF Nos. 310, 314 and 319.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: This order resolves ECF Nos. 310, 314, and 319.
+  links:
+  - claim: CS005.D01.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 795e83067e0dca88
+- code: CS005.F003
+  kind: event
+  heading: 8
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday denied the plaintiffs' motion to
+    compel Workday to produce its bias-testing data and its customers' applicant data.
+  date: '2026-05-28'
+  precision: day
+  timezone: null
+  links:
+  - claim: CS005.D01.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 55a04b501e8ba509
+- code: CS005.F004
+  kind: event
+  heading: 8
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday ordered Workday to produce its EEO-1
+    and OFCCP documents.
+  date: '2026-05-28'
+  precision: day
+  timezone: null
+  links:
+  - claim: CS005.D01.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 79da0905c363e07c
+- code: CS005.F005
+  kind: event
+  heading: 8
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday terminated as moot the letter brief
+    on deanonymizing applicant data, stating that the plaintiffs had admitted they do not need applicant
+    names.
+  date: '2026-05-28'
+  precision: day
+  timezone: null
+  links:
+  - claim: CS005.D01.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 324cba6ad5134664
+  - claim: CS005.D01.C19
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: c2a7743b6d47c168
+- code: CS005.F006
+  kind: statement
+  heading: 8
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday states that attorney-client privilege
+    applies to Workday's bias-testing data because Workday's attorneys curated the underlying data and
+    used the results in providing legal advice.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: Attorney-client privilege applies to the bias-testing data because Workday’s attorneys curated
+    the underlying data and used the results in providing legal advice.
+  links:
+  - claim: CS005.D01.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 6786c4bfb363e270
+  - claim: CS005.D01.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 2a7fd8234fe2fa12
+- code: CS005.F007
+  kind: statement
+  heading: 6
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday states that Workday represented that
+    its attorneys curated the data used in the bias testing, that the testing's overall purpose was to
+    provide legal advice and not to be used in a business capacity, and that Workday has not submitted
+    the data to a regulatory body.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: Here, Workday has represented that its attorneys curated the data it used in the bias testing,
+    the overall purpose of the testing was to provide legal advice and not to be used in a business capacity,
+    and it has not submitted the data to a regulatory body.
+  links:
+  - claim: CS005.D01.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: a4ff6ff40f85b4d0
+- code: CS005.F008
+  kind: statement
+  heading: 6
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday reports Workday's contention that
+    it conducted bias testing of Candidate Skills Match at the direction and under the guidance of its
+    legal counsel, for the purpose of legal advice about that product.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: Workday contends that it conducted bias testing of Candidate Skills Match at the direction and
+    under the guidance of its legal counsel for the purpose of rendering legal advice regarding this product.
+  links:
+  - claim: CS005.D01.C20
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: edf1465ee00b454b
+- code: CS005.F009
+  kind: statement
+  heading: 9
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday reports the plaintiffs' argument
+    that Workday waived privilege by relying on an "AI Fact Sheet" which states that Workday performs
+    bias testing.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: They contend that Workday has waived privilege by using the bias-testing data offensively by
+    relying on an “AI Fact Sheet,” which states that Workday performs bias testing.
+  links:
+  - claim: CS005.D01.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 02ac0b96dcf7afa9
+- code: CS005.F010
+  kind: statement
+  heading: 8
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday states that Workday's invoking the
+    mere existence of its bias testing outside of litigation is not enough to waive privilege.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: Workday’s invoking the mere existence of its bias testing outside of litigation is not enough
+    to waive privilege.
+  links:
+  - claim: CS005.D01.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 375657cc7d7df304
+- code: CS005.F011
+  kind: statement
+  heading: 8
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday states that the plaintiffs had not
+    shown that disclosing the HiredScore testing data to auditors waived privilege over all of Workday's
+    bias-testing data, and that the order addresses only the bias-testing data over which Workday claims
+    privilege.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: But that is not the data at issue. Workday’s own bias-testing data is what the plaintiffs moved
+    to compel. The problem is that plaintiffs have not shown that a waiver of bias-testing data in one
+    context (here, by disclosing the HiredScore testing data to auditors) warrants a waiver of all bias-testing
+    data.
+  links:
+  - claim: CS005.D01.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: af5c8c69bce8c9c2
+  - claim: CS005.D01.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: b450162758636e84
+- code: CS005.F012
+  kind: statement
+  heading: 8
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday states that Workday's argument that
+    its bias-testing data was not relevant was unpersuasive, and that even if the data is not the best
+    evidence of disparate impact it has at least some probative value.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: Workday’s relevance argument is unpersuasive. Even assuming that Workday’s bias-testing data
+    is not the best evidence of disparate impact, it has at least some probative value.
+  links:
+  - claim: CS005.D01.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: cc338e8394c68375
+- code: CS005.F013
+  kind: statement
+  heading: 8
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday states that, on the record before
+    it, the court could not compel production of Workday's customers' data, and that given some third
+    parties' apparent position that Workday is the better source, the parties should be able to work together
+    to resolve the issue.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: On this record, the court cannot compel production of Workday’s customers’ data. But given the
+    apparent position of some of the third parties that Workday is the better source of production, the
+    parties should be able to work together to resolve this issue.
+  links:
+  - claim: CS005.D01.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 221eb08b2eb21195
+- code: CS005.F014
+  kind: statement
+  heading: 9
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday reports the plaintiffs' reply that
+    they had subpoenaed thirty-five third parties and that at least some of them objected that the plaintiffs
+    should seek production from Workday.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: The plaintiffs reply that (1) they have subpoenaed thirty-five third parties, (2) at least some
+    of them have objected on grounds that the plaintiffs should seek production from Workday,
+  links:
+  - claim: CS005.D01.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: fb8f22e9c41cdcfb
+- code: CS005.F015
+  kind: statement
+  heading: 8
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday states that Workday uses the same
+    AI tools as its customers, and that Workday's EEO-1 and OFCCP documents are therefore relevant to
+    its knowledge of potential demographic disparities when using AI tools.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: The plaintiffs have met their initial burden on relevance. Workday uses the same AI tools as
+    its customers, and thus, under either their agent or direct-employer theory, Workday’s EEO-1 and OFCCP
+    documents are relevant to its knowledge of potential demographic disparities when utilizing AI tools.
+  links:
+  - claim: CS005.D01.C18
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 725d3f3e636fa813
+- code: CS005.F016
+  kind: statement
+  heading: 3
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday states that customers who buy Workday
+    Recruiting have access to Candidate Skills Match, an algorithmic feature that determines how far an
+    applicant's skills match the role applied for.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: Customers who purchase Workday Recruiting have access to Candidate Skills Match, an algorithmic
+    feature that determines the extent to which an applicant’s skills match the role to which they applied.
+  links:
+  - claim: CS005.D01.C22
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 6b236378acc690ff
+- code: CS005.F017
+  kind: statement
+  heading: 3
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday states that in 2023 Workday engaged
+    an external consultant to test its product Spotlight using the impact-ratio approach described in
+    New York City Local Law 144.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: In 2023, Workday engaged an external consultant to conduct testing of its product Spotlight using
+    the impact ratios approach described in NYC Local Law 144.
+  links:
+  - claim: CS005.D01.C21
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 08a0ecf6d311585f
+- code: CS005.F018
+  kind: statement
+  heading: 2
+  statement: The discovery order of 28 May 2026 in Mobley v. Workday describes the case as one in which
+    the plaintiffs are suing Workday, Inc., "for utilizing an AI screening system that is more likely
+    to deny applicants who are African American, suffer from disabilities, or are over forty years old."
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  quote: The plaintiffs in this employment-discrimination case and putative class action are suing Workday,
+    Inc., for utilizing an AI screening system that is more likely to deny applicants who are African
+    American, suffer from disabilities, or are over forty years old.
+  links:
+  - claim: CS005.D01.C23
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 7cb2ba4674e4cdbb
+- code: CS005.F019
+  kind: event
+  heading: 5
+  statement: On 20 April 2026, the plaintiffs in Mobley v. Workday filed a motion to compel Workday to
+    produce requested documents, data and discovery; the court filing system shows it as document 310.
+  date: '2026-04-20'
+  precision: day
+  timezone: null
+  links:
+  - claim: CS005.D02.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 372accf1e5312b65
+  - claim: CS005.D02.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 4995add796310fb7
+- code: CS005.F020
+  kind: statement
+  heading: 9
+  statement: The plaintiffs' motion to compel of 20 April 2026 (Dkt. 310) argues that Workday's bias-testing
+    materials are technical and statistical artifacts, not legal communications, and that neither attorney-client
+    privilege nor the work product doctrine protects them.
+  speaker: the plaintiffs (through counsel)
+  quote: Second, the materials themselves are technical and statistical artifacts, not legal communications.
+    Neither attorney-client privilege nor the work product doctrine protects them.
+  links:
+  - claim: CS005.D02.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: da8f42b24448ce34
+  - claim: CS005.D02.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: c343195d0784ea08
+- code: CS005.F021
+  kind: statement
+  heading: 9
+  statement: The plaintiffs' motion to compel of 20 April 2026 (Dkt. 310) argues that any work-product
+    protection was waived when Workday publicly disclosed the existence and conclusions of its bias testing
+    program through its AI Fact Sheet, its public website, external auditors and executives' public statements.
+  speaker: the plaintiffs (through counsel)
+  quote: Third, to the extent work product is even arguable for some entries, that protection was waived
+    when Workday publicly disclosed the existence and conclusions of its bias testing program through
+    its AI Fact Sheet and its public website, external auditors and executives’ public statements.
+  links:
+  - claim: CS005.D02.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: c998cd50f8355267
+- code: CS005.F022
+  kind: statement
+  heading: 4
+  statement: The plaintiffs' motion to compel of 20 April 2026 (Dkt. 310) states that class certification
+    briefing begins in July 2026 and that the plaintiffs' statistical expert needs the bias testing data,
+    code and results for the analysis behind the certification motion.
+  speaker: the plaintiffs (through counsel)
+  quote: Class certification briefing begins in July 2026. Plaintiffs’ statistical expert requires access
+    to the bias testing data, code, and results to complete the analysis underlying the certification
+    motion.
+  links:
+  - claim: CS005.D02.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 3a5e648d241f9318
+- code: CS005.F023
+  kind: statement
+  heading: 4
+  statement: The plaintiffs' motion to compel of 20 April 2026 (Dkt. 310) states that Workday produced
+    privilege logs in January 2025, on 13 March 2025 and on 31 December 2025; that none of those three
+    logs identified privilege log entries 488, 489 or 490 or disclosed the withholding of Python bias
+    testing code, JSON data files or bias testing results "in the formats now claimed as privileged";
+    and that Workday first asserted privilege over those three categories on 6 April 2026, in a fourth
+    privilege log.
+  speaker: the plaintiffs (through counsel)
+  quote: Workday produced its First Privilege Log in January 2025, its Second Privilege Log on March 13,
+    2025, and its Court-ordered Third Privilege Log on December 31, 2025 more than six months after the
+    Court’s May 2025 order requiring a compliant log.
+  links:
+  - claim: CS005.D02.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: b813b305cbbe9d08
+  - claim: CS005.D02.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: dbf8c234cf4978df
+  - claim: CS005.D02.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: fe77cf695614a3b6
+- code: CS005.F024
+  kind: statement
+  heading: 4
+  statement: The plaintiffs' motion to compel of 20 April 2026 (Dkt. 310) says that Workday's AI Fact
+    Sheet, a discovery document, describes bias testing as a standard component of Workday's "ML Trust
+    Program", its "lifecycle review process" and its product development obligations under NYC Local Law
+    144 and OFCCP guidance.
+  speaker: the plaintiffs (through counsel)
+  quote: Workday’s own AI Fact Sheet—produced at Bates WORKDAY_MOB_00002741–46— describes bias testing
+    as a standard component of Workday’s “ML Trust Program,” its “lifecycle review process,” and its product
+    development obligations under NYC Local Law 144 and OFCCP guidance.
+  links:
+  - claim: CS005.D02.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 9f2c8490895906e9
+- code: CS005.F025
+  kind: statement
+  heading: 4
+  statement: The plaintiffs' motion to compel of 20 April 2026 (Dkt. 310) states that Workday's third
+    privilege log lists bias testing activities as early as July 2019.
+  speaker: the plaintiffs (through counsel)
+  quote: Workday’s own Third Privilege Log lists bias testing activities as early as July 2019.
+  links:
+  - claim: CS005.D02.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: be9d03c000b6e788
+- code: CS005.F026
+  kind: statement
+  heading: 4
+  statement: The plaintiffs' motion to compel of 20 April 2026 (Dkt. 310) states that Workday's external
+    auditor conducted bias audits in July 2023, in September 2024, and on 20 March 2026 for the period
+    1 September 2025 to 28 February 2026, and that Workday had not produced the data underlying those
+    audits.
+  speaker: the plaintiffs (through counsel)
+  quote: Workday’s external auditor conducted such bias audits in July 2023, (Workday_Mob-00003871-3872
+    and 00002745), September 2024 (https://www.workday.com/en-us/legal/responsible-ai-and-bias-mitigation.html)
+    and March 20, 2026 for the period from September 1, 2025 to February 28, 2026.
+  links:
+  - claim: CS005.D02.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 08e642b2d07f6dd7
+  - claim: CS005.D02.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 99c3043e5b3c350c
+  - claim: CS005.D02.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 370a92203777b1b7
+- code: CS005.F027
+  kind: statement
+  heading: 9
+  statement: The plaintiffs' motion to compel of 20 April 2026 (Dkt. 310) states that Workday at first
+    denied that the external bias audits existed and amended its response on 19 December 2025, after the
+    plaintiffs had found the audits themselves.
+  speaker: the plaintiffs (through counsel)
+  quote: Rather than comply with that request or claim any confidentiality or privilege in its Privilege
+    Logs for such externally disclosed data and bias audits, Workday initially responded by denying that
+    they existed and only amended that response a year later on December 19, 2025 after the Plaintiffs’
+    independently discovered such external audits existed.
+  links:
+  - claim: CS005.D02.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: ea6fe8127ceaad0f
+- code: CS005.F028
+  kind: statement
+  heading: 4
+  statement: 'The plaintiffs'' motion to compel of 20 April 2026 (Dkt. 310) states that Workday''s response
+    to the court''s 6 April 2026 production deadline was a single sentence from counsel: "We are also
+    confirming our document production is complete."'
+  speaker: the plaintiffs (through counsel)
+  quote: 'Workday’s April 6 response to that order consisted of a single sentence from counsel: “We are
+    also confirming our document production is complete.”'
+  links:
+  - claim: CS005.D02.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 6b4c3a3ae5113971
+- code: CS005.F029
+  kind: statement
+  heading: 9
+  statement: The plaintiffs' motion to compel of 20 April 2026 (Dkt. 310) states that Workday concedes
+    it possesses and hosts the customer applicant data at issue.
+  speaker: the plaintiffs (through counsel)
+  quote: Workday concedes it possesses and hosts the customer applicant data at issue.
+  links:
+  - claim: CS005.D02.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 75b82bd18e41a4ef
+- code: CS005.F030
+  kind: event
+  heading: 5
+  statement: On 7 May 2026, a discovery letter about the names of people who applied for jobs at Workday
+    was filed in Mobley v. Workday, with a section headed "Workday's Position" and one headed "Plaintiffs'
+    Reply"; the court filing system shows it as document 319, and the court's order of 28 May 2026 says
+    the parties filed a letter brief on whether Workday should supply the deanonymized information.
+  date: '2026-05-07'
+  precision: day
+  timezone: null
+  links:
+  - claim: CS005.D03.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: b65ac044a01b30bd
+  - claim: CS005.D03.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: ff8736e15c11b631
+  - claim: CS005.D03.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: b2182d59620a44f7
+  - claim: CS005.D03.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 8e9bae5fd081d168
+  - claim: CS005.D01.C25
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 483f59b11e71b91b
+- code: CS005.F031
+  kind: statement
+  heading: 9
+  statement: In the discovery letter of 7 May 2026 (Dkt. 319), the plaintiffs state that Workday produced
+    only anonymized data on people who applied for jobs at Workday, with the names removed, which prevents
+    each opt-in plaintiff from identifying which of the 216,622 anonymized candidate IDs is theirs.
+  speaker: the plaintiffs (through counsel)
+  quote: Workday, however, has only produced “anonymized” applicant data that redacts the requested name
+    of the applicant to whom each such anonymized datapoint applies and belongs,
+  links:
+  - claim: CS005.D03.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 11118a834938d5e1
+  - claim: CS005.D03.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 642d64f37f19d645
+  - claim: CS005.D03.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 5efee7578961fd48
+- code: CS005.F032
+  kind: quantity
+  heading: 2
+  statement: In the discovery letter of 7 May 2026 (Dkt. 319), the plaintiffs state that more than 14,000
+    opt-in plaintiffs have filed consent forms to take part in the case.
+  unit: opt-in plaintiffs
+  counts: opt-in plaintiffs who filed consent forms, as of 7 May 2026, per the plaintiffs
+  links:
+  - claim: CS005.D03.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 70a38591f58e7fb0
+- code: CS005.F033
+  kind: statement
+  heading: 9
+  statement: In the discovery letter of 7 May 2026 (Dkt. 319), Workday states that the plaintiffs seek
+    the names of more than 215,000 applicants to Workday, that at least 200,000 of them are not parties
+    to the case, and that there are only 15,000 opt-in plaintiffs.
+  speaker: Workday (through counsel)
+  quote: Plaintiffs seek to compel the names of more than 215,000 applicants to Workday, invading the
+    privacy of hundreds of thousands of non-parties.
+  links:
+  - claim: CS005.D03.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 63e5095484eae86e
+  - claim: CS005.D03.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 96b8db11368c5123
+- code: CS005.F034
+  kind: statement
+  heading: 9
+  statement: In the discovery letter of 7 May 2026 (Dkt. 319), Workday states that it has repeatedly offered
+    to de-anonymize data for any specific opt-in plaintiff, and that the plaintiffs refuse to provide
+    the identifying information needed to do so.
+  speaker: Workday (through counsel)
+  quote: And Workday has repeatedly offered to de-anonymize data for any specific Opt-In Plaintiff, but
+    Plaintiffs inexplicably refuse to provide the unique identifying information necessary to do so.
+  links:
+  - claim: CS005.D03.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: da7908c7dcdeb519
+- code: CS005.F035
+  kind: statement
+  heading: 9
+  statement: In the discovery letter of 7 May 2026 (Dkt. 319), Workday states that it does not contend
+    it is unable to link applicant names to application records, and that it decided not to produce name-identified
+    data to protect the privacy of non-party applicants.
+  speaker: Workday (through counsel)
+  quote: Workday does not contend that it is unable to link applicant names to application records. Rather,
+    Workday has made a reasonable, necessary decision not to produce name-identified data to protect third-party
+    applicant privacy.
+  links:
+  - claim: CS005.D03.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 77d706de55f0ee69
+- code: CS005.F036
+  kind: statement
+  heading: 9
+  statement: In the discovery letter of 7 May 2026 (Dkt. 319), the plaintiffs argue that the applicant
+    data Workday produced cannot be taken at face value, and quote Workday's opposition brief (ECF No.
+    315 at 14) as admitting that it "reflect[s] Workday's counsel's strategic curation of data to be tested."
+  speaker: the plaintiffs (through counsel)
+  quote: The data as it exists cannot be taken at face value because Workday admits that it “reflect[s]
+    Workday’s counsel’s strategic curation of data to be tested.” ECF 315 at 14.
+  links:
+  - claim: CS005.D03.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: e178e86736776df9
+- code: CS005.F037
+  kind: statement
+  heading: 9
+  statement: In the discovery letter of 7 May 2026 (Dkt. 319), the plaintiffs state that the applicant
+    data Workday produced in March 2026 was found to be corrupted and incomplete, and that its replacement,
+    delivered on 15 April 2026, shows similar deficiencies.
+  speaker: the plaintiffs (through counsel)
+  quote: The first iteration of the applicant data produced in March 2026 has already been found to be
+    corrupted and incomplete and its replacement delivered April 15, 2026 is presenting similar deficiencies
+    and unreliability.
+  links:
+  - claim: CS005.D03.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 409f6d38db8a05ca
+- code: CS005.F038
+  kind: statement
+  heading: 9
+  statement: 'Workday''s Form 10-Q for the quarter ended 31 July 2026, dated 27 August 2026, states: "We
+    are currently defending against a lawsuit alleging that certain of our AI-related products and services
+    enable discrimination, and although we believe that such claims lack merit, and the majority of the
+    claims have been dismissed, legal proceedings can be lengthy, expensive, and disruptive to our operations
+    and customers."'
+  speaker: Workday, Inc.
+  quote: For the quarterly period ended July 31, 2026
+  links:
+  - claim: CS005.D04.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 21fff96e51a2c0a1
+  - claim: CS005.D04.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: c697b44adf384e4c
+  - claim: CS005.D04.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 379a84d3aa22a6da
+- code: CS005.F039
+  kind: absence
+  heading: 11
+  statement: Workday's Form 10-Q for the quarter ended 31 July 2026 does not name Derek Mobley or Mobley
+    v. Workday and does not mention the discovery order of 28 May 2026.
+  documents_read:
+  - CS005.D04
+  as_of: '2026-10-02'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-03'
+- code: CS005.F040
+  kind: statement
+  heading: 4
+  statement: Workday's page "HiredScore's Focus on Responsible AI and Bias Mitigation", as archived by
+    the Internet Archive on 5 September 2025, states that Workday commissioned an external auditor to
+    test the Spotlight AI using the approach and formulas in New York City's law for its "bias audits",
+    and that the purpose of the testing furthers Workday and HiredScore's commitments to identify and
+    mitigate potential bias.
+  speaker: Workday, Inc.
+  quote: Workday commissioned an external auditor to conduct testing of the Spotlight AI using the approach
+    and formulas as provided in the NYC law for its “bias audits.”
+  links:
+  - claim: CS005.D05.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 887e8b61faf7e55e
+  - claim: CS005.D05.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 9b9a8f66ea0a3c18
+  - claim: CS005.D05.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 228b6d8354f7a4fa
+- code: CS005.F041
+  kind: result
+  heading: 4
+  statement: Workday's page "HiredScore's Focus on Responsible AI and Bias Mitigation", as archived by
+    the Internet Archive on 5 September 2025, reports that the external auditor's test of Spotlight, completed
+    on 21 September 2024, used "a random sample of 10 Global Large Customers data over the last 12 months
+    of reqs and candidates, covering requisitions that were opened and/or filled between Sep 2023 to Sep
+    2024", and found "no evidence of disparate impact" on the calculated impact ratios.
+  test: impact ratios under the approach of New York City Local Law 144, standalone and intersectional
+  outcome: no evidence of disparate impact
+  figures: not in the captured text (the page links a summary of results, not captured)
+  links:
+  - claim: CS005.D05.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: faca0546637ebfa8
+  - claim: CS005.D05.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: e7430e1aaadbeca2
+  - claim: CS005.D05.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 8cac1dc5e489c033
+  - claim: CS005.D05.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: a4a1f63455d50185
+- code: CS005.F042
+  kind: statement
+  heading: 3
+  statement: Workday's page "HiredScore's Focus on Responsible AI and Bias Mitigation", as archived on
+    5 September 2025, states that the Spotlight functionality was not designed as nor intended to be an
+    automated employment decision tool as defined under New York City's law.
+  speaker: Workday, Inc.
+  quote: The Spotlight functionality was not designed as nor intended to be an AEDT as defined under the
+    NYC Law.
+  links:
+  - claim: CS005.D05.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: a7355f84c3819fc3
+  - claim: CS005.D05.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 9bddef29148e1385
+- code: CS005.F043
+  kind: result
+  heading: 4
+  statement: Workday's page "Responsible AI and Bias Mitigation for HiredScore Spotlight", as captured
+    on 2 October 2026, reports that Secretariat, which Workday calls an independent third party, analysed
+    a sample of Workday's own applicant flow data from its deployment of Spotlight (applications from
+    U.S. residents for New York City-area positions, 1 September 2025 to 28 February 2026; the five highest-volume
+    job profiles, only those with enough applicants in each group, and excluding applicants who gave no
+    or conflicting gender or race information), completed the analysis on 20 March 2026, and found "no
+    evidence of disparate impact"; the page says the results are specific to Workday's implementation
+    of Spotlight and that outcomes may differ in other settings.
+  test: impact ratios across demographic groups
+  outcome: no evidence of disparate impact
+  figures: in an image on the page (finding F30); not quoted
+  links:
+  - claim: CS005.D05.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 9770aeec95968406
+  - claim: CS005.D05.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 167ad9f72f4f745b
+  - claim: CS005.D05.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: d57ffbc29e51aa86
+  - claim: CS005.D05.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 4b7bd7478f77ea9c
+  - claim: CS005.D05.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: bcab557d6b64c53e
+  - claim: CS005.D05.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 4b51e592d95b58de
+  - claim: CS005.D05.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: eee608d0c3e79a9e
+  - claim: CS005.D05.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 558888d1c51da87b
+- code: CS005.F044
+  kind: statement
+  heading: 3
+  statement: Workday's page "Responsible AI and Bias Mitigation for HiredScore Spotlight", as captured
+    on 2 October 2026, states that it is provided for transparency only, is not intended to satisfy any
+    customer-specific legal or regulatory obligation, and does not suggest that Spotlight is or is not
+    an automated employment decision tool under any particular law.
+  speaker: Workday, Inc.
+  quote: This page is provided for transparency purposes only. It is not intended to satisfy any customer-specific
+    legal or regulatory obligation, nor does it suggest or imply that HiredScore Spotlight is or is not
+    an automated employment decision tool under any particular law.
+  links:
+  - claim: CS005.D05.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: e44de9ce5d6374f7
+  - claim: CS005.D05.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 91983946ee4334c7
+- code: CS005.F045
+  kind: state
+  heading: 4
+  statement: Workday's bias analysis of Spotlight completed on 20 March 2026, covering 1 September 2025
+    to 28 February 2026, used a sample of Workday's own applicant flow data, according to Workday's page
+    as captured on 2 October 2026.
+  start: null
+  end: null
+  links:
+  - claim: CS005.D05.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: be3ecc00697adf0b
+  - claim: CS005.D05.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 01513446dfeabf28
+  - claim: CS005.D05.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 820eac8e35be3dc3
+  - claim: CS005.D05.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: c2d4599b5fcfcbb3
+  - claim: CS005.D02.C12
+    relation: contradicts
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 17c9c9a05ff2ee7f
+- code: CS005.F046
+  kind: statement
+  heading: 9
+  statement: The plaintiffs' motion to compel of 20 April 2026 (Dkt. 310) dates Workday's external bias
+    audits to July 2023, September 2024 and 20 March 2026, and states that Workday has not produced "any
+    of those three iterations of '10 Global Large Customers data'" that was the basis for the publicly
+    announced results of those audits.
+  speaker: the plaintiffs (through counsel)
+  quote: Workday’s external auditor conducted such bias audits in July 2023, (Workday_Mob-00003871-3872
+    and 00002745), September 2024 (https://www.workday.com/en-us/legal/responsible-ai-and-bias-mitigation.html)
+    and March 20, 2026 for the period from September 1, 2025 to February 28, 2026.
+  links:
+  - claim: CS005.D02.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: c10e90140dd374c7
+  - claim: CS005.D02.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-03'
+      fingerprint: 0fa1cee6c8fdb9c9

@@ -1,0 +1,101 @@
+# CS005 (AAI-2026-005): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS005
+public_id: AAI-2026-005
+fictional: false
+title: The May 2026 discovery ruling in Mobley v. Workday on Workday's AI bias-testing data
+summary: The discovery order of 28 May 2026 in Mobley v. Workday, Inc., which held Workday's own AI bias-testing
+  data privileged and refused it to the plaintiffs, declined to order production of customers' applicant
+  data, and ordered Workday's EEO-1 and OFCCP documents produced; with the filings it resolved and what
+  the parties said about the case up to 2 October 2026.
+status: published
+version: '1'
+case_grade: B
+grade:
+  value: B
+  plain: well supported
+  rule: ruling-single-copy
+  rule_text: A case built on a court's ruling rests on the order itself. It is B while the order is read
+    from one public copy not matched against the court's official record, and can reach A once that copy
+    is matched.
+  central_finding: On 28 May 2026 the court denied the plaintiffs' motion to compel Workday's bias-testing
+    data and its customers' applicant data, holding the bias-testing data privileged.
+  dashboard:
+  - 'What data Workday''s 2026 bias analysis used: Workday''s page and the plaintiffs'' motion give different
+    accounts (F045, F046)'
+  - Workday's own filings on privilege are not captured; its position is known from the order and the
+    plaintiffs' quotes (F007, F008, F036)
+  decided: '2026-10-03'
+interest_words:
+  self-serving: about the speaker's own conduct
+verified: '2026-10-03'
+next_review: '2027-01-01'
+charter:
+  event: The discovery order of 28 May 2026 in Mobley v. Workday, Inc. (N.D. Cal., No. 3:23-cv-00770-RFL
+    (LB)), which held Workday's own AI bias-testing data privileged and refused it to the plaintiffs,
+    ruled on their requests for customers' applicant data, and ordered some of Workday's own compliance
+    records produced; and what the parties said about it up to the evidence cutoff.
+  actors:
+  - Derek Mobley, the named plaintiff, and the plaintiffs who joined the case (as the court documents
+    name them), and their counsel
+  - 'Workday, Inc., the defendant: its recruiting software (Candidate Skills Match; HiredScore''s Spotlight,
+    as the documents name them) and its lawyers'
+  - 'The United States District Court for the Northern District of California: the magistrate judge who
+    decided the discovery dispute'
+  - Workday's customers, as holders of applicant data (not named unless a document names them)
+  place_and_period: United States (N.D. Cal.). The lawsuit was filed in 2023; the record runs from the
+    discovery dispute the order resolved, in April and May 2026, to the evidence cutoff.
+  exclusions:
+  - Other lawsuits and regulatory actions about AI hiring tools, including other claims against Workday,
+    unless a captured document ties them to this ruling.
+  - 'The merits of the discrimination claims, which are untried: the record states what each party alleges
+    or says, never whether it is true.'
+  evidence_cutoff: '2026-10-02'
+  selection_reason: A court ruling on who may see an AI vendor's own bias testing, in a discrimination
+    lawsuit over AI hiring software.
+  stopping_rule: The order from the court's docket; the plaintiffs' motion and the discovery letter it
+    resolved; Workday's quarterly report to the SEC; and Workday's public page on its Spotlight bias testing,
+    in an archived 2025 copy and the live 2026 copy. Workday's own filings on privilege are not yet captured.
+headings:
+- n: 1
+  name: Summary of the record
+  status: populated
+- n: 2
+  name: Parties and roles
+  status: populated
+- n: 3
+  name: The system and its configuration
+  status: populated
+- n: 4
+  name: Conditions before the event
+  status: populated
+- n: 5
+  name: Sequence of events
+  status: populated
+- n: 6
+  name: How the facts were established
+  status: populated
+- n: 7
+  name: Detection and response
+  status: not-applicable
+  reason: A court ruling on a discovery dispute has no detection of, or response to, an incident
+- n: 8
+  name: Outcomes and measured effects
+  status: populated
+- n: 9
+  name: Statements by the parties
+  status: populated
+- n: 10
+  name: Discrepancies in the record
+  status: populated
+- n: 11
+  name: What the record does not establish
+  status: populated
+- n: 12
+  name: Evidence still awaited
+  status: not-yet-investigated
+  reason: Not yet looked for. The order rests on filings this case has not captured, among them Workday's
+    opposition (ECF No. 315), the declarations filed with it, the plaintiffs' reply and supplement, and
+    the letter brief on Workday's EEO-1 and OFCCP documents (ECF No. 314); the summary of results of the
+    September 2024 audit, linked from Workday's archived page, is not captured either

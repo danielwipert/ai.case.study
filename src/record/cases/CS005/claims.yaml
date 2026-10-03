@@ -1,0 +1,841 @@
+# CS005 (AAI-2026-005): generated from the library's case files.
+# Do not edit by hand.
+
+- code: CS005.D01.C01
+  capture: V01
+  locator: Signature block, after 'IT IS SO ORDERED.' (p. 13)
+  quote: 'Dated: May 28, 2026'
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C02
+  capture: V01
+  locator: Signature block, name and title under the signature line (p. 13)
+  quote: LAUREL BEELER United States Magistrate Judge
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C03
+  capture: V01
+  locator: Footer stamped on every page by the court filing system (CM/ECF), page 1 (p. 1)
+  quote: Case 3:23-cv-00770-RFL Document 340 Filed 05/29/26 Page 1 of 13
+  speaker: the court filing system (CM/ECF)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C04
+  capture: V01
+  locator: Conclusion, paragraph 1, sentence 4 (p. 13)
+  quote: This order resolves ECF Nos. 310, 314, and 319.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C05
+  capture: V01
+  locator: Conclusion, paragraph 1, sentence 1 (p. 13)
+  quote: The court denies the motion to compel production of Workday’s bias-testing data and its customers’
+    applicant data.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C06
+  capture: V01
+  locator: Conclusion, paragraph 1, sentence 2 (p. 13)
+  quote: The court orders production of Workday’s EEO-1 and OFCCP documents.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C07
+  capture: V01
+  locator: Conclusion, paragraph 1, sentence 3 (p. 13)
+  quote: The court terminates the letter brief addressing deanonymizing applicant data as moot.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C08
+  capture: V01
+  locator: Introduction, paragraph 2, sentence 2 (p. 2)
+  quote: Attorney-client privilege applies to the bias-testing data because Workday’s attorneys curated
+    the underlying data and used the results in providing legal advice.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C09
+  capture: V01
+  locator: Analysis 1.1 'Attorney-Client Privilege', paragraph 3, sentence 1 (p. 7)
+  quote: Here, Workday has represented that its attorneys curated the data it used in the bias testing,
+    the overall purpose of the testing was to provide legal advice and not to be used in a business capacity,
+    and it has not submitted the data to a regulatory body.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C10
+  capture: V01
+  locator: Analysis 1.1, paragraph 3, sentences 3 and 4 (p. 7)
+  quote: Workday has shown more than mere direction by its attorneys. Thus, the bias-testing data is privileged.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C11
+  capture: V01
+  locator: Analysis 1.1, paragraph 5 ('The plaintiffs’ arguments on waiver…', continued), sentence 1 on
+    page 8 (p. 8)
+  quote: Workday’s invoking the mere existence of its bias testing outside of litigation is not enough
+    to waive privilege.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C12
+  capture: V01
+  locator: Analysis 1.1, paragraph 5, sentence 2 (p. 7)
+  quote: They contend that Workday has waived privilege by using the bias-testing data offensively by
+    relying on an “AI Fact Sheet,” which states that Workday performs bias testing.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C13
+  capture: V01
+  locator: Analysis 1.1, paragraph 7, sentences 2 to 4 (p. 8)
+  quote: But that is not the data at issue. Workday’s own bias-testing data is what the plaintiffs moved
+    to compel. The problem is that plaintiffs have not shown that a waiver of bias-testing data in one
+    context (here, by disclosing the HiredScore testing data to auditors) warrants a waiver of all bias-testing
+    data.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C14
+  capture: V01
+  locator: Analysis 1.1, paragraph 7, last sentence (p. 8)
+  quote: This order addresses only the bias-testing data that Workday is claiming is privileged.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C15
+  capture: V01
+  locator: Analysis 1, paragraph 3, sentences 1 and 2 (p. 5)
+  quote: Workday’s relevance argument is unpersuasive. Even assuming that Workday’s bias-testing data
+    is not the best evidence of disparate impact, it has at least some probative value.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C16
+  capture: V01
+  locator: Analysis 1.2 'Control Over Customer Data', paragraph 2, sentence 1 (p. 9)
+  quote: The plaintiffs reply that (1) they have subpoenaed thirty-five third parties, (2) at least some
+    of them have objected on grounds that the plaintiffs should seek production from Workday,
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C17
+  capture: V01
+  locator: Analysis 1.2, paragraph 4, sentences 2 and 3 (p. 10)
+  quote: On this record, the court cannot compel production of Workday’s customers’ data. But given the
+    apparent position of some of the third parties that Workday is the better source of production, the
+    parties should be able to work together to resolve this issue.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C18
+  capture: V01
+  locator: Analysis 2 'ECF No. 314', paragraph 3, sentences 1 and 2 (p. 11)
+  quote: The plaintiffs have met their initial burden on relevance. Workday uses the same AI tools as
+    its customers, and thus, under either their agent or direct-employer theory, Workday’s EEO-1 and OFCCP
+    documents are relevant to its knowledge of potential demographic disparities when utilizing AI tools.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C19
+  capture: V01
+  locator: Analysis 3 'ECF No. 319', paragraph 1, last two sentences (p. 12)
+  quote: The plaintiffs have admitted that they do not need applicant names. Thus, the court terminates
+    the letter brief as moot.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C20
+  capture: V01
+  locator: Statement, paragraph 4 (page 3), sentence 1 (p. 3)
+  quote: Workday contends that it conducted bias testing of Candidate Skills Match at the direction and
+    under the guidance of its legal counsel for the purpose of rendering legal advice regarding this product.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C21
+  capture: V01
+  locator: Statement, paragraph 4 (page 3), sentence 3 (p. 3)
+  quote: In 2023, Workday engaged an external consultant to conduct testing of its product Spotlight using
+    the impact ratios approach described in NYC Local Law 144.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C22
+  capture: V01
+  locator: Statement, paragraph 1, sentences 2 to 4 (p. 2)
+  quote: Customers who purchase Workday Recruiting have access to Candidate Skills Match, an algorithmic
+    feature that determines the extent to which an applicant’s skills match the role to which they applied.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C23
+  capture: V01
+  locator: Introduction, paragraph 1, sentence 1 (p. 1)
+  quote: The plaintiffs in this employment-discrimination case and putative class action are suing Workday,
+    Inc., for utilizing an AI screening system that is more likely to deny applicants who are African
+    American, suffer from disabilities, or are over forty years old.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D01.C24
+  capture: V01
+  locator: Caption, page 1 (p. 1)
+  quote: 'UNITED STATES DISTRICT COURT NORTHERN DISTRICT OF CALIFORNIA San Francisco Division DEREK L.
+    MOBLEY, et al., Plaintiffs, v. WORKDAY, INC., Defendant. Case No. 23-cv-00770-RFL (LB) DISCOVERY ORDER
+    Re: ECF Nos. 310, 314, 319'
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D02.C01
+  capture: V01
+  locator: Footer stamped by the court filing system (CM/ECF), page 1 (p. 1)
+  quote: Case 3:23-cv-00770-RFL Document 310 Filed 04/20/26 Page 1 of 31
+  speaker: the court filing system
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D02.C02
+  capture: V01
+  locator: Notice of motion, paragraph 1, sentence 1 (p. 7)
+  quote: Plaintiffs Derek L. Mobley, et al (“Plaintiffs”) will and hereby do move this Court pursuant
+    to Federal Rule of Civil Procedure 37(a)(3)(B) and Civil Local Rules to compel production of requested
+    documents, data and discovery identified below.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D02.C03
+  capture: V01
+  locator: I. Introduction, paragraph 1, sentences 4 and 5 (p. 8)
+  quote: Second, the materials themselves are technical and statistical artifacts, not legal communications.
+    Neither attorney-client privilege nor the work product doctrine protects them.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: the plaintiffs gain if the court accepts it'
+- code: CS005.D02.C04
+  capture: V01
+  locator: I. Introduction, paragraph 1, sentence 6 (p. 8)
+  quote: Third, to the extent work product is even arguable for some entries, that protection was waived
+    when Workday publicly disclosed the existence and conclusions of its bias testing program through
+    its AI Fact Sheet and its public website, external auditors and executives’ public statements.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: the plaintiffs gain if the court accepts it'
+- code: CS005.D02.C05
+  capture: V01
+  locator: I. Introduction, paragraph 2, sentences 2 and 3 (p. 8)
+  quote: Class certification briefing begins in July 2026. Plaintiffs’ statistical expert requires access
+    to the bias testing data, code, and results to complete the analysis underlying the certification
+    motion.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: unclear
+  interest_reason: 'mixed: the schedule fact is neutral; the expert''s need is argued for expedited relief'
+- code: CS005.D02.C06
+  capture: V01
+  locator: II.A 'Workday's Serial Non-Compliance', paragraph 1, sentence 4 (p. 8)
+  quote: Workday produced its First Privilege Log in January 2025, its Second Privilege Log on March 13,
+    2025, and its Court-ordered Third Privilege Log on December 31, 2025 more than six months after the
+    Court’s May 2025 order requiring a compliant log.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: part of the plaintiffs' charge of "serial non-compliance" against Workday
+- code: CS005.D02.C07
+  capture: V01
+  locator: II.A, paragraph 1, last sentence (p. 8)
+  quote: The first time Workday asserted privilege over those three categories was April 6, 2026, in its
+    Fourth Privilege Log.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: part of the plaintiffs' charge of "serial non-compliance" against Workday
+- code: CS005.D02.C08
+  capture: V01
+  locator: IV.B, paragraph 3, sentence 1 (p. 11)
+  quote: Workday’s own AI Fact Sheet—produced at Bates WORKDAY_MOB_00002741–46— describes bias testing
+    as a standard component of Workday’s “ML Trust Program,” its “lifecycle review process,” and its product
+    development obligations under NYC Local Law 144 and OFCCP guidance.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: the plaintiffs gain if the court accepts it'
+- code: CS005.D02.C09
+  capture: V01
+  locator: IV.C.2, paragraph 1, sentence 2 (p. 13)
+  quote: 'The primary purpose of Python bias testing code is technical: to execute a statistical computation
+    measuring whether Workday’s AI tool produces different selection outcomes across demographic groups.'
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: the plaintiffs gain if the court accepts it'
+- code: CS005.D02.C10
+  capture: V01
+  locator: IV.D, paragraph 1, sentence 2 (p. 16)
+  quote: Workday’s own Third Privilege Log lists bias testing activities as early as July 2019.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: the plaintiffs gain if the court accepts it'
+- code: CS005.D02.C11
+  capture: V01
+  locator: IV.E, paragraph 1, sentence 3 (p. 18)
+  quote: Nor has Workday produced the unprivileged bias testing data underlying the external bias audit
+    that it publicly posted on its Webpage as an advertisement announcing that “Workday commissioned an
+    external auditor to conduct testing . . . for its ‘bias audits,’” and that this audit was based on
+    “a random sample of 10 Global Large Customers data over the last 12 months . . . between Sep 2023
+    to Sep 2024.”
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: the plaintiffs gain if the court accepts it'
+- code: CS005.D02.C12
+  capture: V01
+  locator: IV.E, paragraph 1, sentence 5 (p. 18)
+  quote: Despite having never asserted that such bias testing data given to such “external auditor” was
+    in any way confidential or privileged once it was disclosed in that manner on at least three different
+    occasions in 2023, 2024 and 2026, Workday has not produced any of those three iterations of “10 Global
+    Large Customers data” that was the basis for the publicly announced results of those three “external”
+    bias audits.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: the plaintiffs gain if the court accepts it'
+- code: CS005.D02.C13
+  capture: V01
+  locator: IV.E, footnote 5 (p. 18)
+  quote: Workday’s external auditor conducted such bias audits in July 2023, (Workday_Mob-00003871-3872
+    and 00002745), September 2024 (https://www.workday.com/en-us/legal/responsible-ai-and-bias-mitigation.html)
+    and March 20, 2026 for the period from September 1, 2025 to February 28, 2026.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D02.C14
+  capture: V01
+  locator: IV.E, paragraph 2, sentence 3 (p. 18)
+  quote: Rather than comply with that request or claim any confidentiality or privilege in its Privilege
+    Logs for such externally disclosed data and bias audits, Workday initially responded by denying that
+    they existed and only amended that response a year later on December 19, 2025 after the Plaintiffs’
+    independently discovered such external audits existed.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: an accusation against the opposing party
+- code: CS005.D02.C15
+  capture: V01
+  locator: IV.E, paragraph 2 (continued on page 19), sentence 2 (p. 19)
+  quote: 'Workday’s April 6 response to that order consisted of a single sentence from counsel: “We are
+    also confirming our document production is complete.”'
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: part of the plaintiffs' charge of non-production
+- code: CS005.D02.C16
+  capture: V01
+  locator: IV.F, paragraph 1, sentence 1 (p. 22)
+  quote: Workday concedes it possesses and hosts the customer applicant data at issue.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: the plaintiffs gain if the court accepts it'
+- code: CS005.D03.C01
+  capture: V01
+  locator: Footer stamped by the court filing system (CM/ECF), page 1 (p. 1)
+  quote: Case 3:23-cv-00770-RFL Document 319 Filed 05/07/26 Page 1 of 8
+  speaker: the court filing system
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D03.C02
+  capture: V01
+  locator: Plaintiffs' section, 'The Discovery At Issue', paragraph 1, sentence 3 (p. 2)
+  quote: Workday, however, has only produced “anonymized” applicant data that redacts the requested name
+    of the applicant to whom each such anonymized datapoint applies and belongs,
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: the plaintiffs gain if the court accepts it'
+- code: CS005.D03.C03
+  capture: V01
+  locator: Plaintiffs' section, paragraph 1, sentence 6 (p. 2)
+  quote: That prevents each applicant opt-in from being able to identify which of the 216,622 anonymized
+    Candidate ID# applies to them,
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: the plaintiffs gain if the court accepts it'
+- code: CS005.D03.C04
+  capture: V01
+  locator: Plaintiffs' section, page 3, paragraph 1, sentence 1 (p. 3)
+  quote: The more than 14,000 opt-in plaintiffs in this action have each filed consent forms authorizing
+    their participation in this litigation and authorizing counsel to pursue their claims on their behalf.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: unclear
+  interest_reason: the plaintiffs use the count of consents to argue the opt-ins waived privacy; a larger
+    count helps their side
+- code: CS005.D03.C05
+  capture: V01
+  locator: Workday's Position, paragraph 1, sentence 1 (p. 4)
+  quote: Plaintiffs seek to compel the names of more than 215,000 applicants to Workday, invading the
+    privacy of hundreds of thousands of non-parties.
+  speaker: Workday (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: Workday gains if the court accepts it'
+- code: CS005.D03.C06
+  capture: V01
+  locator: Workday's Position, B, sentence 1 (p. 4)
+  quote: At least 200,000 of the applicants for whom Workday has produced data are not parties to this
+    case, considering there are only 15,000 opt-in plaintiffs (who may or may not have applied to work
+    at Workday).
+  speaker: Workday (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: Workday gains if the court accepts it'
+- code: CS005.D03.C07
+  capture: V01
+  locator: Workday's Position, paragraph 1, sentence 4 (p. 4)
+  quote: And Workday has repeatedly offered to de-anonymize data for any specific Opt-In Plaintiff, but
+    Plaintiffs inexplicably refuse to provide the unique identifying information necessary to do so.
+  speaker: Workday (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: Workday gains if the court accepts it'
+- code: CS005.D03.C08
+  capture: V01
+  locator: Workday's Position, E, sentences 3 and 4 (p. 5)
+  quote: Workday does not contend that it is unable to link applicant names to application records. Rather,
+    Workday has made a reasonable, necessary decision not to produce name-identified data to protect third-party
+    applicant privacy.
+  speaker: Workday (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: unclear
+  interest_reason: 'cuts both ways: concedes it can link names (against interest) while defending the
+    decision (self-serving)'
+- code: CS005.D03.C09
+  capture: V01
+  locator: Plaintiffs' Reply, 'Plaintiffs Cannot Verify…', sentence 4 (p. 6)
+  quote: The data as it exists cannot be taken at face value because Workday admits that it “reflect[s]
+    Workday’s counsel’s strategic curation of data to be tested.” ECF 315 at 14.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: 'an advocate''s argument: the plaintiffs gain if the court accepts it'
+- code: CS005.D03.C10
+  capture: V01
+  locator: Plaintiffs' Reply, 'Plaintiffs Cannot Verify…', sentence 5 (p. 6)
+  quote: The first iteration of the applicant data produced in March 2026 has already been found to be
+    corrupted and incomplete and its replacement delivered April 15, 2026 is presenting similar deficiencies
+    and unreliability.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: an accusation against the opposing party; "found" by whom is not said
+- code: CS005.D04.C01
+  capture: V01
+  locator: Cover page
+  quote: For the quarterly period ended July 31, 2026
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D04.C02
+  capture: V01
+  locator: Signatures
+  quote: 'Workday, Inc. Dated: August 27, 2026'
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D04.C03
+  capture: V01
+  locator: Part II, Item 1A 'Risk Factors', the risk factor on AI, paragraph 2, sentence 1
+  quote: We are currently defending against a lawsuit alleging that certain of our AI-related products
+    and services enable discrimination, and although we believe that such claims lack merit, and the majority
+    of the claims have been dismissed, legal proceedings can be lengthy, expensive, and disruptive to
+    our operations and customers (particularly where, as in the present litigation, the plaintiff may
+    seek to also litigate against certain of Workday’s customers).
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: '"we believe that such claims lack merit" and "the majority of the claims have been
+    dismissed" favour Workday'
+- code: CS005.D05.C01
+  capture: V01
+  locator: '''Results of Bias Testing Spotlight According to NYC''s Approach'', sentence 1'
+  quote: Workday commissioned an external auditor to conduct testing of the Spotlight AI using the approach
+    and formulas as provided in the NYC law for its “bias audits.”
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D05.C02
+  capture: V01
+  locator: Same section, 'Date of Testing Completion'
+  quote: 'Date of Testing Completion: 21 September 2024'
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D05.C03
+  capture: V01
+  locator: Same section, 'Data Collected Description', sentence 2
+  quote: For this audit it includes a random sample of 10 Global Large Customers data over the last 12
+    months of reqs and candidates, covering requisitions that were opened and/or filled between Sep 2023
+    to Sep 2024.
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D05.C04
+  capture: V01
+  locator: Same section, 'Audit Outcome'
+  quote: 'Audit Outcome: There is no evidence of disparate impact based on the calculated impact ratios
+    as well as the data analyzed for the standalone and intersectional analysis.'
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: a finding of no disparate impact helps Workday's product and its position in the lawsuit
+- code: CS005.D05.C05
+  capture: V01
+  locator: '''NYC Local Law 144 Context and Definitions'', paragraph 1, last sentences'
+  quote: While Workday engaged an external consultant to conduct the bias testing of the Spotlight AI
+    tool using the impact ratio approach as described in the NYC Law, the purpose of this testing is in
+    furtherance of Workday/HiredScore’s commitments to identify and mitigate potential bias.
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: states a purpose that presents Workday well
+- code: CS005.D05.C06
+  capture: V01
+  locator: '''NYC Local Law 144 Context and Definitions'', paragraph 1, sentence 2'
+  quote: The Spotlight functionality was not designed as nor intended to be an AEDT as defined under the
+    NYC Law.
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: if accepted, Spotlight falls outside the law's audit duty
+- code: CS005.D05.C07
+  capture: V02
+  locator: Introduction, paragraph 1, sentence 2
+  quote: As part of that commitment, we asked Secretariat , an independent third party, to conduct an
+    analysis of Workday’s deployment of HiredScore Spotlight using Workday’s own applicant flow data.
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: unclear
+  interest_reason: calling Secretariat "an independent third party" presents Workday's testing well
+- code: CS005.D05.C08
+  capture: V02
+  locator: '''Analytic Results Summary'''
+  quote: 'Date of Testing Completion: March 20, 2026'
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D05.C09
+  capture: V02
+  locator: '''Analytic Results Summary'', ''Data Collected Description'', paragraph 2, sentences 1 and
+    2'
+  quote: The analytic dataset includes applications from U.S. residents for positions in the greater New
+    York City area submitted between September 1, 2025 and February 28, 2026. For this analysis, we only
+    included the five job profiles with the highest volume of applications.
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D05.C10
+  capture: V02
+  locator: '''Analytic Results Summary'', ''Audit Outcome'''
+  quote: 'Audit Outcome: There is no evidence of disparate impact based on the calculated impact ratios
+    presented below.'
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: told-by-someone
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: a finding of no disparate impact helps Workday's product and its position in the lawsuit
+- code: CS005.D05.C11
+  capture: V02
+  locator: Introduction, paragraph 3
+  quote: This page is provided for transparency purposes only. It is not intended to satisfy any customer-specific
+    legal or regulatory obligation, nor does it suggest or imply that HiredScore Spotlight is or is not
+    an automated employment decision tool under any particular law.
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: limits what the page can be held to
+- code: CS005.D01.C25
+  capture: V01
+  locator: Analysis 3 'ECF No. 319', paragraph 1, sentence 3 (p. 12)
+  quote: The parties filed a letter brief disputing whether Workday should be required to supply the deanonymized
+    information.
+  speaker: the court (Magistrate Judge Laurel Beeler)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D02.C17
+  capture: V01
+  locator: II.A, paragraph 1, sentence 5 (p. 8)
+  quote: None of those three logs identified PrivLogIDs 488, 489, or 490, or disclosed the withholding
+    of Python bias testing code, JSON data files, or bias testing results in the formats now claimed as
+    privileged.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: part of the plaintiffs' charge of "serial non-compliance" against Workday
+- code: CS005.D03.C11
+  capture: V01
+  locator: Plaintiffs' section, 'The Discovery At Issue', paragraph 1, sentence 2 (p. 2)
+  quote: The Request seeks production of each such applicant’s name and other application and resume data
+    and information that they submitted to Workday in the process of applying and being screened for hiring,
+    promotion or employment as a Workday employee.
+  speaker: the plaintiffs (through counsel)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D03.C12
+  capture: V01
+  locator: Section heading, page 4 (p. 4)
+  quote: Workday’s Position
+  speaker: the document (section heading)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D03.C13
+  capture: V01
+  locator: Section heading, page 6 (p. 6)
+  quote: Plaintiffs’ Reply
+  speaker: the document (section heading)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D05.C12
+  capture: V01
+  locator: Page heading (H1)
+  quote: HiredScore’s Focus on Responsible AI and Bias Mitigation
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D05.C13
+  capture: V02
+  locator: Page heading (H1)
+  quote: Responsible AI and Bias Mitigation for HiredScore Spotlight
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D05.C14
+  capture: V02
+  locator: Introduction, paragraph 6 ('Because these results…')
+  quote: Because these results are based on Workday’s own deployment context and data, they should be
+    understood as specific to Workday’s implementation of Spotlight during the relevant time period. Outcomes
+    may differ in other settings depending on job requirements, candidate pools, workflow design, configuration
+    choices, and human review processes.
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: unclear
+  interest_reason: 'mixed: it limits how far the favourable result reaches (against interest), but it
+    also ties outcomes elsewhere to customers'' configuration and human review, which distances Workday
+    from customer outcomes (self-serving); if torn, unclear'
+- code: CS005.D05.C15
+  capture: V02
+  locator: '''Analytic Results Summary'', ''Data Collected Description'', paragraph 1, sentence 2'
+  quote: The analysis was conducted on a sample of Workday's own applicant data from the most recent six
+    (6) months of Spotlight deployment at the time of analysis.
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+- code: CS005.D05.C16
+  capture: V02
+  locator: '''Analytic Results Summary'', ''Data Collected Description'', paragraph 2, sentences 3 and
+    4'
+  quote: Furthermore, we only included job profiles where there were enough applicants in each group to
+    support a meaningful comparison. We excluded applicants who did not provide gender or race information
+    or who provided conflicting information across multiple applications.
+  speaker: Workday, Inc.
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null

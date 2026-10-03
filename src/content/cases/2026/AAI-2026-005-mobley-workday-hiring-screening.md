@@ -1,7 +1,7 @@
 ---
 case_id: AAI-2026-005
-title: "The bias testing a court agreed nobody gets to see"
-summary: "In a collective action alleging that Workday's AI applicant screening disparately rejected Black, older, and disabled candidates, a federal court held the company's own bias-testing data privileged because its lawyers had curated it for legal advice."
+title: "A court let Workday withhold its own AI bias-testing data from the people suing it"
+summary: "In May 2026, a federal judge ruled that Workday did not have to hand over its own bias-testing data to the people suing it. The court's reason: Workday's lawyers curated the data and used the results to give legal advice. The same order made Workday produce its EEO-1 and OFCCP records. The lawsuit's discrimination claims are untried."
 organization:
   - Workday
 case_type: governance-regulatory
@@ -14,12 +14,12 @@ business_function:
   - legal-compliance
 deployment_stage: scaled-production
 outcome: unknown
-evidence_grade: A
+evidence_grade: B
 status: published
 created: 2026-09-12
 published: 2026-09-12
-last_verified: 2026-09-13
-next_review: 2027-03-13
+last_verified: 2026-10-03
+next_review: 2027-01-01
 geography:
   - United States
 environment: production

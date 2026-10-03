@@ -1,0 +1,20 @@
+# CS005 (AAI-2026-005): generated from the library's case files.
+# Do not edit by hand.
+
+- id: us-district-court-nd-cal
+  name: United States District Court for the Northern District of California
+  grades:
+    court-ruling: R1
+  graded: '2026-10-03'
+- id: mobley-plaintiffs-counsel
+  name: Counsel for the plaintiffs in Mobley v. Workday (Winston Cooks, LLC; Wiggins, Childs, Pantazis,
+    Fisher & Goldfarb, LLC)
+  grades:
+    court-filing: R2
+  graded: '2026-10-03'
+- id: workday
+  name: Workday, Inc.
+  grades:
+    statutory-filing: R2
+    official-statement: R2
+  graded: '2026-10-03'
