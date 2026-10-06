@@ -1,6 +1,6 @@
 # Project guide — Applied AI Case Study Library
 
-**Current as of 2026-10-02.** Read this first, in any session, in either repo.
+**Current as of 2026-10-06.** Read this first, in any session, in either repo.
 It says what the project is, which documents govern it, where the work stands,
 and which older instructions to ignore.
 
@@ -36,7 +36,7 @@ written ahead of its evidence.
 
 | Repo | Visibility | Holds | Role today |
 | --- | --- | --- | --- |
-| `danielwipert/ai.case.study` | **Public** | The live site (Astro, GitHub Pages): 21 published cases, 2 of them rebuilt in the **new** format, the rest still **legacy**; the validator. The propositions page is withdrawn (§4) | **Publishes released cases.** A rebuilt case replaces its legacy page at the same address. No new cases in the legacy format |
+| `danielwipert/ai.case.study` | **Public** | The live site (Astro, GitHub Pages): 21 published cases, 3 of them rebuilt in the **new** format, the rest still **legacy**; the validator. The propositions page is withdrawn (§4) | **Publishes released cases.** A rebuilt case replaces its legacy page at the same address. No new cases in the legacy format |
 | `danielwipert/ai.case.study.private` | **Private, always** | Captured copies of sources, the specs, and every case's working record | **Where the work happens** |
 
 - Captured copies are private because most sources are copyrighted. At
@@ -79,12 +79,13 @@ rule, never by feel). Example trace: `CS021.F009` → `CS021.D01.C09` →
 | --- | --- | --- |
 | CS001 / AAI-2026-001 | The OpenAI agents' intrusion into Hugging Face (the paradigm) | **Live** 2026-10-01, grade A |
 | CS021 / AAI-2026-021 | The LungIMPACT trial (the control) | **Live** 2026-10-01, grade B (graded A under the legacy method; propositions P1 and P4 updated) |
-| CS005 / AAI-2026-005 | Mobley v. Workday: the May 2026 ruling on bias-test data | **Started.** Charter drafted, boundary decided (the ruling). Waiting on Dan's captures (`planning/CS005_capture_lead_list.md`) |
-| The other 18 | Legacy pages, still live | To rebuild one at a time, in the spec's order: P6's cases (009, 010, 011, 016, 019), then P5's (006, 013, 014, 022), then the rest. 004 is an unpublished lead |
+| CS005 / AAI-2026-005 | Mobley v. Workday: the May 2026 ruling on bias-test data | **Live** 2026-10-03, grade B (5 documents, 74 claims, 46 rows). The first case rebuilt after the pilot |
+| Next | Not yet picked | The next case in the order below. Waiting on Dan to choose it and capture its sources |
+| The other 17 | Legacy pages, still live | To rebuild one at a time, in the spec's order: P6's cases (009, 010, 011, 016, 019), then P5's (006, 013, 014, 022), then the rest. 004 is an unpublished lead |
 
 **How each case is rebuilt** (the process the pilot settled):
 
-1. Dan captures the sources from his browser into `inbox/`; `tools/ingest.py` fingerprints them.
+1. Dan captures the sources from his browser into `inbox/` (single-file HTML saves); `tools/ingest.py` fingerprints them. This is the slow step, and it stays manual: no faster way has been found.
 2. Claude drafts claims (exact quotes) and rows (plain sentences).
 3. An independent checker session checks every link.
 4. Dan reviews the high-stakes rows and a random 1 in 10.
@@ -152,7 +153,7 @@ case in the legacy format.
 | Public `HANDOFF.md`, before 2026-09-25 | "The better next move is probably … another case" | Superseded by pilot-first (spec decision 20) | §4 above |
 | Public `CLAUDE.md`, before 2026-09-25 | Work on `claude/loving-ride-c4lddg` | Branches are assigned per session | The branch the session names |
 | Private `planning/Case_Study_Spec_v0.5.md` and `_v0.7.md` | Specs v0.5 and v0.7 | Superseded: v0.7 changed the label model, v0.8 added the pilot's findings | v0.8 |
-| Public `HANDOFF.md` and `CLAUDE.md`, "maintenance only" | The public repo takes no new work | It now publishes rebuilt cases | §2 and §4 above |
+| Public `CLAUDE.md`, "maintenance only" | The public repo takes no new work | It now publishes rebuilt cases | §2 and §4 above |
 | Private `planning/Review_2026-09-22.md` | The first review and its questions | A dated snapshot. Every question in it has since been answered | `pilot/log/decisions.md` |
 
 **Still good in the public repo:** the network and PDF notes in `CLAUDE.md`,

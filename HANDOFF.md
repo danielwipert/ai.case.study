@@ -1,63 +1,72 @@
 # Handoff
 
-*Replaced wholesale 2026-09-25. Read `PROJECT_GUIDE.md` first; this file only
+*Replaced wholesale 2026-10-06. Read `PROJECT_GUIDE.md` first; this file only
 covers this repo.*
 
 ## Where things stand
 
-Twenty-two case records, twenty-one published (004 is still an unpublished
-lead), eight propositions and three tensions. **All of it is merged to `main`,**
-including AAI-2026-022, P8 and the P5 edit, which the previous handoff listed as
-unmerged. The site builds clean and deploys to
-https://danielwipert.github.io/ai.case.study/.
+Twenty-one cases are live at https://danielwipert.github.io/ai.case.study/.
+**Three are rebuilt in the new format** (Case Study Spec v0.8), each replacing
+its legacy page at the same address:
 
-**This repo is in maintenance only.** The case format is being rebuilt under
-Case Study Spec v0.7, and the rebuild is being piloted by hand in the private
-repo `ai.case.study.private`, on the control case (AAI-2026-021 / CS021) first,
-then the Hugging Face case (AAI-2026-001 / CS001). See the guide §4.
+| Case | What | Live | Grade |
+| --- | --- | --- | --- |
+| CS001 / AAI-2026-001 | OpenAI agents' intrusion into Hugging Face | 2026-10-01 | A |
+| CS021 / AAI-2026-021 | The LungIMPACT trial (the control) | 2026-10-01 | B |
+| CS005 / AAI-2026-005 | Mobley v. Workday, the May 2026 ruling | 2026-10-03 | B |
 
-## What not to do
+The other eighteen are legacy pages (004 is an unpublished lead). Everything is
+merged to `main`; the last commit is the CS005 release (`be5d35b`).
 
-- **Do not add a new case in the legacy format.** The previous handoff ended
-  with "the better next move is probably not another gap" and pointed at a
-  third case for P8. Both are superseded by pilot-first (spec decision 20). The
-  P8 lead below is kept for when new cases resume in the new format.
-- Do not move anything from the private repo into this one. Pilot files are
-  published only at the relaunch, after a legal review.
+The public repo is **no longer maintenance only**: it publishes each rebuilt
+case once Dan approves the release. The work itself happens in the private repo
+`ai.case.study.private`. The propositions page is withdrawn (2026-10-02) and
+stays down until the cases are rebuilt.
 
-## Waiting on Dan, for this repo
+## Where to pick up
 
-Each is a spec v0.7 item and needs Dan's go-ahead before anyone starts it.
+1. **Dan picks the next case.** The planned order is P6's cases first (009,
+   010, 011, 016, 019), then P5's (006, 013, 014, 022), then the rest.
+2. **Dan captures its sources** from his browser into the private repo's
+   `inbox/`, as single-file HTML saves. This is the bottleneck and stays
+   manual; no faster way has been found.
+3. Then the eight-step process in the guide §4: draft, checker, Dan's review,
+   narrative and story, legal review, release approval, public pull request.
 
-- **J7 / H3 — the legacy banner** on the live cases: "Legacy format, written
-  before spec v1, migration in progress." Its wording is H3.
-- **J4 — archive every source** across the live cases: 85 sources, none with an
-  archive link today.
-- **J5 — re-check every Verified label** against the new basis rule and
-  downgrade any that rest on a single source. Expect some grades to fall; spec
-  §13 says that is the design working. The control case, graded A today, is the
-  first expected to be questioned.
+## Still open
 
-## Parked from the last library session
+- The 3–5 readers for the label test (pilot decision 4).
+- Reuters' two policy links, for CS001's publisher grade.
 
-Kept so nothing is lost. None is active work.
+## Waiting on Dan's go-ahead (do not start without it)
 
-- **P8 needs a third case to reach `recurrent`.** Likely candidates: the
-  investigation by Anthropic's evaluation partner (Irregular), or METR's review
-  of both incidents, if either publishes.
-- **Candidate proposition, still two halves of one observation** (016, 017):
-  the quality of a record and the disinterest of its keeper trade against each
-  other. 022 complicates it: a disinterested body produced a candid record of
-  its own failure.
-- `conjecture` is defined and unused across eight propositions. Either one earns
-  it or the label goes.
-- A case cannot argue *against* a proposition it supports; the footer links one
-  way only.
-- Remaining taxonomy gaps: `deployment_stage` has no `prototype` or `pilot`;
+- **J4: archive every source** on the legacy pages (85 sources, none archived).
+- **J5: re-check every Verified label** on the legacy pages against the new
+  basis rule.
+- Any new case in the legacy format: never.
+
+Decided against (2026-10-01): a legacy banner on the old pages, and restyling
+them before they are rebuilt.
+
+## Parked
+
+Kept so nothing is lost; none is active work. Patterns across cases are to be
+rethought from the rebuilt cases, so these may not survive.
+
+- P8 needed a third case to reach `recurrent` (candidates: Irregular's
+  investigation, or METR's review of both incidents, if either publishes).
+- A candidate pattern from 016 and 017: the quality of a record and the
+  disinterest of its keeper trade against each other. 022 complicates it.
+- Taxonomy gaps: `deployment_stage` has no `prototype` or `pilot`;
   `environment` has no `laboratory`; `business_function` has no
   `sales-marketing` or `supply-chain`.
 
+## Keep in step
+
+`PROJECT_GUIDE.md` must be identical in both repos. It was updated here on
+2026-10-06 for CS005; **the private copy needs the same edit** if it was not
+made in the same session.
+
 ## Branch
 
-This handoff was written on `claude/dreamy-sagan-r4hcry`, as part of a
-documentation push across both repos. Branches are assigned per session.
+Written on `claude/busy-sagan-qcae3w`. Branches are assigned per session.
