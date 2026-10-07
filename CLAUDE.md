@@ -120,6 +120,28 @@ pix.save(f"p{i+1:02d}.png")
 
 **Second-tier warnings cover the synthesis too:** a published case cited by no proposition and no tension, and a proposition whose supporting cases were verified after it was last reviewed. Neither fails the build; both mean the synthesis has drifted behind the library.
 
+## The story page and its optional `story.yaml` fields
+
+A rebuilt case's reader page is `src/pages/cases/[year]/[case]/index.astro`, fed
+by `src/record/cases/CSnnn/story.yaml`. That file is generated from the private
+repo, so any change to it must also be made there, or the next regeneration
+drops it. Three optional fields were added on 2026-10-06 (public PRs #34, #35):
+
+- **`timeline_key`**: a list of `{mark, label, color}`, drawn as a legend under
+  the timeline. `color` is one of `pink`, `violet`, `grey`, `ink`.
+- **`mark`** on a timeline entry: names a `timeline_key` entry and colours that
+  date. Without marks every event is black. Colour follows the event, never its
+  position in the list (the old template coloured the 5th and 8th entries
+  whatever they were). The build fails on an unknown mark or colour.
+- **`by`** on a number entry: adds a small "Counted by …" line under the figure.
+
+Design rules Dan set for this page: both sides of a disagreement look identical,
+so neither appears endorsed; sourcing stays present but recessive, especially
+under the numbers, where the figures and labels must stand out; quotes are
+shown at equal size. The timeline is drawn to scale from the dates: dates are
+parsed as "8 Jul", "Sep 2024" or "6 Apr 2026", and one that does not parse turns
+the scaling off rather than failing.
+
 ## Grading against a second chain that does not reach the numbers
 
 A recurring decision in this library, settled the same way three times and worth settling the same way again. When a second, independent source corroborates a case's *lesson* but cannot test its *headline figures* — a different firm, a different population, a different outcome measure — it does not lift the grade. AAI-2026-002 has a randomized replication at another company that never measures issues resolved per hour; AAI-2026-006 has a multicentre validation of the same vendor's adult model that says nothing about the pediatric numbers; AAI-2026-008 has an enterprise trial pointing the other way that tests nothing METR claimed. All three stayed where they were. Add the source, say in the evidence assessment exactly what it reaches and what it does not, and flag the decision as a judgment call — a mechanical reading of the source-family count would allow a promotion in each case, and the count is not the argument.
