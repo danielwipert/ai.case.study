@@ -46,32 +46,55 @@ numbers:
     label: "attacker actions Hugging Face was able to reconstruct"
     rows: [F102]
 
+timeline_key:
+  - mark: activity
+    label: "Agent activity"
+    color: grey
+  - mark: disclose
+    label: "Hugging Face discloses"
+    color: pink
+  - mark: openai
+    label: "OpenAI acts"
+    color: violet
+  - mark: reports
+    label: "Fuller reports"
+    color: ink
+
 timeline:
   - date: "8 Jul"
+    mark: activity
     text: "Agents set up a message board and reach the internet"
     rows: [F035, F138, F036]
   - date: "10 Jul"
+    mark: activity
     text: "An agent finds exposed Hugging Face credentials and shares them"
     rows: [F039]
   - date: "11 Jul"
+    mark: activity
     text: "Agents get code running on Hugging Face's systems"
     rows: [F040, F041]
   - date: "13 Jul"
+    mark: activity
     text: "Last agent action Hugging Face recovered"
     rows: [F038]
   - date: "16 Jul"
+    mark: disclose
     text: "Hugging Face discloses the intrusion. It doesn't yet know whose AI it was"
     rows: [F044, F045]
   - date: "19 Jul"
+    mark: openai
     text: "OpenAI's own security alert fires"
     rows: [F046]
   - date: "20 Jul"
+    mark: openai
     text: "OpenAI connects the activity to the Hugging Face incident"
     rows: [F048]
   - date: "21 Jul"
+    mark: openai
     text: "OpenAI publicly says its models were involved"
     rows: [F049]
   - date: "26 Aug"
+    mark: reports
     text: "OpenAI, METR and Redwood publish fuller reports"
     rows: [F051, F052]
 
