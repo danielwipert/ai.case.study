@@ -1,6 +1,6 @@
 # Handoff
 
-*Replaced wholesale 2026-10-06. Read `PROJECT_GUIDE.md` first; this file only
+*Replaced wholesale 2026-10-07. Read `PROJECT_GUIDE.md` first; this file only
 covers this repo.*
 
 ## Where things stand
@@ -16,56 +16,75 @@ its legacy page at the same address:
 | CS005 / AAI-2026-005 | Mobley v. Workday, the May 2026 ruling | 2026-10-03 | B |
 
 The other eighteen are legacy pages (004 is an unpublished lead). Everything is
-merged to `main`; the last commit is the CS005 release (`be5d35b`).
+merged to `main`. The propositions page stays withdrawn until the cases are
+rebuilt.
 
-The public repo is **no longer maintenance only**: it publishes each rebuilt
-case once Dan approves the release. The work itself happens in the private repo
-`ai.case.study.private`. The propositions page is withdrawn (2026-10-02) and
-stays down until the cases are rebuilt.
+## Case page redesign (2026-10-06 and 07, live)
+
+The story page template (`src/pages/cases/[year]/[case]/index.astro`) was
+revised from a mockup Dan approved (public PRs #34 and #35). It applies to every
+rebuilt case.
+
+- **Disagreements:** both sides share one neutral style. The old pink and lime
+  made one side look endorsed (lime is the grade card's colour).
+- **Source links:** a quiet underlined "Source ↗" replaces the black chip.
+- **Numbers:** a small, faded source line sits well below each figure. Dan's
+  rule: the numbers and labels pop; sourcing is present but recessive.
+- **Quotes:** all at equal size. The first quote is no longer the page's
+  largest text.
+- **Timeline drawn to scale:** spaced by real time, gaps labelled, long gaps
+  drawn as a dashed break, and a one-square-per-day strip for timelines of a
+  month or less (only CS001 today).
+- **Bug fixed:** the timeline used to colour the 5th and 8th entries whatever
+  they were.
+
+**New optional `story.yaml` fields** (the template fails the build on bad values):
+
+- `timeline_key`: list of `{mark, label, color}`; color is `pink`, `violet`,
+  `grey` or `ink`. Drawn as a legend under the timeline.
+- `mark` on a timeline entry: names a `timeline_key` entry and colours that date.
+  Without marks, every event is black.
+- `by` on a number entry: optional "Counted by …" line. Unused so far.
+
+CS001 has marks (grey agent activity, pink disclosure, violet OpenAI, black
+fuller reports). CS005 and CS021 have none yet; their timelines are black.
+
+## Waiting on the private repo (prompt drafted for Dan)
+
+1. **CS001's private `story.yaml` needs the same marks.** They were added to the
+   public copy first (PR #35) to go live; a regeneration without them turns the
+   timeline black again. Check that the make_public script passes `timeline_key`,
+   `mark` and `by` through.
+2. **`PROJECT_GUIDE.md` must match the public copy** (updated 2026-10-06).
+3. Document the three new fields in the private spec or tooling notes.
 
 ## Where to pick up
 
-1. **Dan picks the next case.** The planned order is P6's cases first (009,
-   010, 011, 016, 019), then P5's (006, 013, 014, 022), then the rest.
-2. **Dan captures its sources** from his browser into the private repo's
-   `inbox/`, as single-file HTML saves. This is the bottleneck and stays
-   manual; no faster way has been found.
-3. Then the eight-step process in the guide §4: draft, checker, Dan's review,
-   narrative and story, legal review, release approval, public pull request.
+1. **Dan picks the next case.** Order: P6's cases (009, 010, 011, 016, 019),
+   then P5's (006, 013, 014, 022), then the rest.
+2. **Dan captures its sources** into the private repo's `inbox/` as single-file
+   HTML saves. This is the bottleneck and stays manual.
+3. Then the eight steps in the guide §4. When drafting `story.yaml`, add
+   timeline marks and a key if a few events deserve colour.
+
+Optional: marks for CS005 and CS021.
 
 ## Still open
 
 - The 3–5 readers for the label test (pilot decision 4).
 - Reuters' two policy links, for CS001's publisher grade.
-
-## Waiting on Dan's go-ahead (do not start without it)
-
-- **J4: archive every source** on the legacy pages (85 sources, none archived).
-- **J5: re-check every Verified label** on the legacy pages against the new
-  basis rule.
-- Any new case in the legacy format: never.
-
-Decided against (2026-10-01): a legacy banner on the old pages, and restyling
-them before they are rebuilt.
+- Not to start without Dan: J4 (archive every legacy source), J5 (re-check every
+  Verified label), any new legacy-format case.
 
 ## Parked
 
-Kept so nothing is lost; none is active work. Patterns across cases are to be
-rethought from the rebuilt cases, so these may not survive.
+None is active work; patterns are to be rethought from the rebuilt cases.
 
-- P8 needed a third case to reach `recurrent` (candidates: Irregular's
-  investigation, or METR's review of both incidents, if either publishes).
-- A candidate pattern from 016 and 017: the quality of a record and the
-  disinterest of its keeper trade against each other. 022 complicates it.
-- Taxonomy gaps: `deployment_stage` has no `prototype` or `pilot`;
-  `environment` has no `laboratory`; `business_function` has no
-  `sales-marketing` or `supply-chain`.
-
-## Keep in step
-
-`PROJECT_GUIDE.md` must be identical in both repos. It was updated here on
-2026-10-06 for CS005; **the private copy needs the same edit** if it was not
-made in the same session.
+- P8 needed a third case to reach `recurrent` (Irregular's or METR's review).
+- Candidate pattern from 016 and 017: record quality and keeper disinterest
+  trade off. 022 complicates it.
+- Taxonomy gaps: no `prototype`/`pilot` stage, no `laboratory` environment, no
+  `sales-marketing` or `supply-chain` function.
 
 ## Branch
 
