@@ -55,7 +55,9 @@ fuller reports). CS005 and CS021 have none yet; their timelines are black.
    public copy first (PR #35) to go live; a regeneration without them turns the
    timeline black again. Check that the make_public script passes `timeline_key`,
    `mark` and `by` through.
-2. **`PROJECT_GUIDE.md` must match the public copy** (updated 2026-10-06).
+2. **`PROJECT_GUIDE.md` must match the public copy** (updated 2026-10-06, and
+   again 2026-10-11 with rule 8, logic gates). The private `CLAUDE.md` needs the
+   same "Logic gates" section as this repo's.
 3. Document the three new fields in the private spec or tooling notes.
 
 ## Where to pick up
