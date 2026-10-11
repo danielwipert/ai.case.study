@@ -145,8 +145,8 @@ case in the legacy format.
    needs Dan is broken into small gates, asked one at a time. Each gate has
    three options, A, B and C, readable in about a minute. Claude marks one as
    recommended, with a few words on why, and gives each option one or two lines
-   on what it means and what it leads to. With several gates, Claude shows the
-   path first. After each answer, Claude locks it in with one line, then moves
+   on what it means and what it leads to, worded so a one-letter reply cannot
+   be read two ways. With several gates, Claude shows the path first. After each answer, Claude locks it in with one line, then moves
    on. Dan may adjust an option ("A, but …") or ask for a gate to be split or
    reframed. When the gates are done, the decisions go into
    `pilot/log/decisions.md` (date, decision, why, where it lives). The full

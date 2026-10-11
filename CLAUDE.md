@@ -33,6 +33,11 @@ the end.
   move on. If none of the options fit, reframe the gate; if a gate is too big,
   split it.
 - Keep background out of the gate. It belongs in documents.
+- Never let an option's label collide with its content. When the choices are
+  themselves letters or grades, word each option so a one-letter reply cannot
+  be read two ways (for example "Option A: grade B"), and if a reply could
+  still mean two things, confirm before locking it in (added 2026-10-11, after
+  a reply of "B" was misread as grade A).
 - When the gates are done, **record the decisions** in the decision log (date,
   decision, why, where it lives): the private repo's `pilot/log/decisions.md`.
   From this repo, which cannot reach it, list the decisions in the pull request
