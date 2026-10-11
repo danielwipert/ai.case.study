@@ -14,6 +14,36 @@ orientation for the whole project and is identical in the private repo.
 
 **`HANDOFF.md`** It is the previous session's snapshot: current state, open items, and where to pick up. At the end of each session, replace it wholesale — it is never appended to and never grows past a page. Durable knowledge belongs in this file or in `docs/`, because `HANDOFF.md` is erased every time.
 
+## Logic gates (how to ask Dan for decisions)
+
+Dan's standing preference since 2026-10-11 (guide §5, rule 8). When a path
+forward needs his decision, don't write one long answer with a big decision at
+the end.
+
+- Break the decision into small **gates**, one at a time. Never stack several
+  decisions in one message.
+- Each gate gives **three options**, labelled A, B and C, readable in about a
+  minute. Mark one **(recommended)** and say why in a few words.
+- Keep each option to one or two lines: what it means and what it leads to.
+- When there are several gates, show the path first (a numbered list with the
+  current gate marked: "4 gates: 1. Scope ← now, 2. …").
+- After Dan picks, **lock it in** with one line ("Locked in: B, …"), then move
+  to the next gate.
+- Accept mixed or adjusted answers ("A, but …"): restate the result clearly and
+  move on. If none of the options fit, reframe the gate; if a gate is too big,
+  split it.
+- Keep background out of the gate. It belongs in documents.
+- When the gates are done, **record the decisions** in the decision log (date,
+  decision, why, where it lives): the private repo's `pilot/log/decisions.md`.
+  From this repo, which cannot reach it, list the decisions in the pull request
+  description and in `HANDOFF.md`, and say they still need copying to the log.
+
+This is the format for the editorial calls the rules below reserve for Dan
+(grades, claim labels, causal-strength labels): the recommended option is
+Claude's proposal, and its few words of reasoning are the flag that it is a
+judgment call. Choices with an obvious default are not gates. Take them and say
+so in one line.
+
 ## Editorial rules that are not negotiable
 
 - Cite only sources actually read. If the original is paywalled or blocked, cite the readable relay and say in the case that it is a relay.

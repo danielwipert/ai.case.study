@@ -1,6 +1,6 @@
 # Project guide — Applied AI Case Study Library
 
-**Current as of 2026-10-06.** Read this first, in any session, in either repo.
+**Current as of 2026-10-11.** Read this first, in any session, in either repo.
 It says what the project is, which documents govern it, where the work stands,
 and which older instructions to ignore.
 
@@ -141,6 +141,16 @@ case in the legacy format.
    and `claude/cs021-hostile` in the private repo, stay as the record.
 7. **Whatever breaks is the result.** A rule that fails on real material is
    logged as a finding (`pilot/log/findings.md`), not worked around quietly.
+8. **Decisions go to Dan as logic gates** (since 2026-10-11). Any decision that
+   needs Dan is broken into small gates, asked one at a time. Each gate has
+   three options, A, B and C, readable in about a minute. Claude marks one as
+   recommended, with a few words on why, and gives each option one or two lines
+   on what it means and what it leads to. With several gates, Claude shows the
+   path first. After each answer, Claude locks it in with one line, then moves
+   on. Dan may adjust an option ("A, but …") or ask for a gate to be split or
+   reframed. When the gates are done, the decisions go into
+   `pilot/log/decisions.md` (date, decision, why, where it lives). The full
+   rules are in each repo's `CLAUDE.md`.
 
 ---
 
