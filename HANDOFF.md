@@ -1,6 +1,6 @@
 # Handoff
 
-*Replaced wholesale 2026-10-07. Read `PROJECT_GUIDE.md` first; this file only
+*Replaced wholesale 2026-10-07, updated 2026-10-11. Read `PROJECT_GUIDE.md` first; this file only
 covers this repo.*
 
 ## Where things stand
@@ -49,27 +49,31 @@ rebuilt case.
 CS001 has marks (grey agent activity, pink disclosure, violet OpenAI, black
 fuller reports). CS005 and CS021 have none yet; their timelines are black.
 
-## Waiting on the private repo (prompt drafted for Dan)
+The private repo was synced on 2026-10-11 (Dan confirmed): CS001's marks, the
+guide, the logic-gates section and the three new fields.
 
-1. **CS001's private `story.yaml` needs the same marks.** They were added to the
-   public copy first (PR #35) to go live; a regeneration without them turns the
-   timeline black again. Check that the make_public script passes `timeline_key`,
-   `mark` and `by` through.
-2. **`PROJECT_GUIDE.md` must match the public copy** (updated 2026-10-06, and
-   again 2026-10-11 with rule 8, logic gates). The private `CLAUDE.md` needs the
-   same "Logic gates" section as this repo's.
-3. Document the three new fields in the private spec or tooling notes.
+## Decisions, 2026-10-11 (logic gates; copy to private `pilot/log/decisions.md`)
 
-## Where to pick up
+| Gate | Decision | Why |
+| --- | --- | --- |
+| Next case | **A: CS016**, fake legal citations (AAI-2026-016, grade B) | 4 sources, broad audience for Dan's content network |
+| What to capture | **A: the same four sources** as the legacy case | Fewest captures, fastest to live; replacing the law-firm relay with the six federal decisions stays an upgrade path |
 
-1. **Dan picks the next case.** Order: P6's cases (009, 010, 011, 016, 019),
-   then P5's (006, 013, 014, 022), then the rest.
-2. **Dan captures its sources** into the private repo's `inbox/` as single-file
-   HTML saves. This is the bottleneck and stays manual.
-3. Then the eight steps in the guide §4. When drafting `story.yaml`, add
-   timeline marks and a key if a few events deserve colour.
+## Where to pick up: CS016
 
-Optional: marks for CS005 and CS021.
+1. **Dan captures the four sources** into the private repo's `inbox/`:
+   - the Charlotin database page *and* its CSV, on the same day (the database
+     grows; the case's "one in nine" figure depends on the snapshot date). The
+     CSV is CC BY 4.0, so its copy may be publishable, unlike most captures.
+   - *Prososki v. Regan* (Nebraska Supreme Court) and the New Mexico *Aarons*
+     contempt order: PDF downloads, no single-file HTML needed.
+   - Norton Rose Fulbright's 2026 sanctions update: single-file HTML. It is a
+     relay of six federal decisions and must be labelled as one.
+2. Then the eight steps in the guide §4. When drafting `story.yaml`, consider
+   timeline marks and a key.
+
+After CS016: 019, 010, 009, 011, then P5's (006, 013, 014, 022). Optional:
+marks for CS005 and CS021.
 
 ## Still open
 
