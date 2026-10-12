@@ -96,6 +96,7 @@ rule, never by feel). Example trace: `CS021.F009` → `CS021.D01.C09` →
 8. Dan approves the release (`python3 tools/sign.py release CASE --by DW`).
 9. Claude opens the public pull request, using the case's public-data script, and merges it when Dan says so.
 10. **The launch package** (since 2026-10-12): once the deploy succeeds, Claude runs `python3 tools/distribution.py intake CASE` and the whole workflow in `distribution/README.md`: brief, channel choice (a gate), drafts, carousel, checks, an independent fact check, and the private review page. Dan approves each output and posts by hand. Every rebuilt case gets one (spec `planning/Publication_Workflow_Spec_v1.1.md`).
+11. **The one-page summary** (since 2026-10-12): Claude writes the case's "Why it matters" in `distribution/onepagers/CASE.yaml` (two sentences, the second labelled as the library's reading), has a separate checker session check it, then runs `python3 tools/onepager.py CASE --public ../ai.case.study` and commits `public/onepagers/` to the public repo. The case page shows download buttons at the top and bottom; the build warns if the story changes after the PDF was made.
 
 **Still open:**
 
