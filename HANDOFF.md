@@ -1,7 +1,8 @@
 # Handoff
 
-*Replaced wholesale 2026-10-07, updated 2026-10-11. Read `PROJECT_GUIDE.md` first; this file only
-covers this repo.*
+*Replaced wholesale 2026-10-12. Read `PROJECT_GUIDE.md` first; this file only
+covers this repo. The case work lives in the private repo; its `HANDOFF.md` has
+the detail.*
 
 ## Where things stand
 
@@ -19,68 +20,45 @@ The other eighteen are legacy pages (004 is an unpublished lead). Everything is
 merged to `main`. The propositions page stays withdrawn until the cases are
 rebuilt.
 
-## Case page redesign (2026-10-06 and 07, live)
+## In progress: CS016, fake legal citations (AAI-2026-016)
 
-The story page template (`src/pages/cases/[year]/[case]/index.astro`) was
-revised from a mockup Dan approved (public PRs #34 and #35). It applies to every
-rebuilt case.
+**Step 6 of 8: waiting on the legal review.** Built in the private repo
+(branch `claude/busy-sagan-qcae3w` there, not yet merged to private `main`):
+five captures, 67 claims, 41 rows, story and narrative, all checked by
+independent checker sessions and reviewed by Dan. **Grade B.** The legal review
+pack went to Dan on 2026-10-12.
 
-- **Disagreements:** both sides share one neutral style. The old pink and lime
-  made one side look endorsed (lime is the grade card's colour).
-- **Source links:** a quiet underlined "Source ↗" replaces the black chip.
-- **Numbers:** a small, faded source line sits well below each figure. Dan's
-  rule: the numbers and labels pop; sourcing is present but recessive.
-- **Quotes:** all at equal size. The first quote is no longer the page's
-  largest text.
-- **Timeline drawn to scale:** spaced by real time, gaps labelled, long gaps
-  drawn as a dashed break, and a one-square-per-day strip for timelines of a
-  month or less (only CS001 today).
-- **Bug fixed:** the timeline used to colour the 5th and 8th entries whatever
-  they were.
+To publish (step 8), as for CS005: write `make_public_cs016.py` in the private
+repo, generate `src/record/cases/CS016/`, update the legacy 016 entry's title,
+summary, grade and dates from the story, and open a public PR. The story uses
+timeline marks (grey database, pink Nebraska, violet New Mexico) and the new
+`headline_rows` field, which the template ignores.
 
-**New optional `story.yaml` fields** (the template fails the build on bad values):
+Rules Dan set for this case: neither lawyer is named; case titles are allowed;
+counts say what the database *lists*, never what happened in each court.
 
-- `timeline_key`: list of `{mark, label, color}`; color is `pink`, `violet`,
-  `grey` or `ink`. Drawn as a legend under the timeline.
-- `mark` on a timeline entry: names a `timeline_key` entry and colours that date.
-  Without marks, every event is black.
-- `by` on a number entry: optional "Counted by …" line. Unused so far.
+## The case page (2026-10-06 and 07, live)
 
-CS001 has marks (grey agent activity, pink disclosure, violet OpenAI, black
-fuller reports). CS005 and CS021 have none yet; their timelines are black.
+The story page template was revised from a mockup Dan approved (public PRs #34
+and #35); `CLAUDE.md` holds its optional `story.yaml` fields and design rules.
+CS001 has timeline marks; CS005 and CS021 have none yet.
 
-The private repo was synced on 2026-10-11 (Dan confirmed): CS001's marks, the
-guide, the logic-gates section and the three new fields.
+## Decision workflow
 
-## Decisions, 2026-10-11 (logic gates; copy to private `pilot/log/decisions.md`)
-
-| Gate | Decision | Why |
-| --- | --- | --- |
-| Next case | **A: CS016**, fake legal citations (AAI-2026-016, grade B) | 4 sources, broad audience for Dan's content network |
-| What to capture | **A: the same four sources** as the legacy case | Fewest captures, fastest to live; replacing the law-firm relay with the six federal decisions stays an upgrade path |
-
-## Where to pick up: CS016
-
-1. **Dan captures the four sources** into the private repo's `inbox/`:
-   - the Charlotin database page *and* its CSV, on the same day (the database
-     grows; the case's "one in nine" figure depends on the snapshot date). The
-     CSV is CC BY 4.0, so its copy may be publishable, unlike most captures.
-   - *Prososki v. Regan* (Nebraska Supreme Court) and the New Mexico *Aarons*
-     contempt order: PDF downloads, no single-file HTML needed.
-   - Norton Rose Fulbright's 2026 sanctions update: single-file HTML. It is a
-     relay of six federal decisions and must be labelled as one.
-2. Then the eight steps in the guide §4. When drafting `story.yaml`, consider
-   timeline marks and a key.
-
-After CS016: 019, 010, 009, 011, then P5's (006, 013, 014, 022). Optional:
-marks for CS005 and CS021.
+Dan's decisions go through logic gates (`CLAUDE.md`, guide rule 8). Since
+2026-10-11, options are worded so a one-letter reply cannot be read two ways
+(public PR #39), after a reply of "B" was misread as grade A.
 
 ## Still open
 
+- The legal review of CS016, then Dan's release approval and publishing.
 - The 3–5 readers for the label test (pilot decision 4).
 - Reuters' two policy links, for CS001's publisher grade.
 - Not to start without Dan: J4 (archive every legacy source), J5 (re-check every
   Verified label), any new legacy-format case.
+
+After CS016: 019, 010, 009, 011, then P5's (006, 013, 014, 022). Optional:
+marks for CS005 and CS021.
 
 ## Parked
 
