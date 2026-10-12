@@ -1,0 +1,32 @@
+# CS016 (AAI-2026-016): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS016.D01
+title: AI Hallucination Cases Database (CSV download)
+publisher: charlotin-hallucination-database
+type: dataset-or-repository
+format: dataset
+grade: R2
+published: '2026-10-10'
+original_url: https://www.damiencharlotin.com/hallucinations/
+licence: CC BY 4.0 (Damien Charlotin); may be republished with attribution
+evidence_origin: the-compiler
+examiner: Damien Charlotin
+how_known_default: second-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-10'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public download (CC BY 4.0)
+  transformations: 'UTF-8 byte-order mark dropped; one ''===== row N ====='' marker before each data row;
+    each cell written as ''Column: value'' in header order; values unchanged'
+  completeness: complete (all rows of the download; the CSV's row for the New Mexico order has an empty
+    Date)
+  public_snapshot: none
+  capture_sha256: 144b5f4afa8c8e00e13b64bbeeafec7df2b9068c89ab691825ed5ec992a3993b
+  text_sha256: 79a93e9144e03a1090f86dbc7347dec230c8a3adbc3e5a6fb0ca1648cd030a0c

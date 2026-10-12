@@ -1,0 +1,31 @@
+# CS016 (AAI-2026-016): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS016.D04
+title: Dispositional Order of Direct Contempt, State v. Sandoval (No. S-1-SC-40845)
+publisher: new-mexico-supreme-court
+type: court-ruling
+format: pdf
+grade: R1
+published: null
+original_url: https://www.damiencharlotin.com/documents/3059/New_Mexico_sanctions_order_-_AI.pdf
+licence: Supreme Court of New Mexico order; public record, not subject to copyright (copy hosted by the
+  database)
+evidence_origin: the-court
+examiner: the Supreme Court of New Mexico
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: Not selected for publication (stated on its face, Rule 12-405 NMRA)
+captures:
+- capture: V01
+  captured_on: '2026-10-10'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public court record (copy hosted by the database)
+  transformations: one '===== page N =====' marker inserted before each page's text; nothing else changed
+  completeness: complete (4 pages)
+  public_snapshot: none
+  capture_sha256: b0d3317fc853790e0fe54cee9dcfeb675087e442a0bc5b083d0bfe7914756397
+  text_sha256: 43d76f588ad54fae5cb72c2de1654d6d8d60faecc4869a4a9418261f14149cd4

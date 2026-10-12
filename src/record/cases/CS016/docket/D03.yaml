@@ -1,0 +1,30 @@
+# CS016 (AAI-2026-016): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS016.D03
+title: Prososki v. Regan, 321 Neb. 38 (No. S-25-295)
+publisher: nebraska-supreme-court
+type: court-ruling
+format: pdf
+grade: R1
+published: '2026-03-20'
+original_url: https://www.damiencharlotin.com/documents/1699/N00013081PUB.pdf
+licence: Nebraska Supreme Court opinion; public record, not subject to copyright (copy hosted by the database)
+evidence_origin: the-court
+examiner: the Nebraska Supreme Court
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-10'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public court record (copy hosted by the database)
+  transformations: one '===== page N =====' marker inserted before each page's text; nothing else changed
+  completeness: complete (27 pages, text layer on every page)
+  public_snapshot: none
+  capture_sha256: 4aa7c5ba491fe63b0278939ac26824f439da88e0def8c1604be4599303199b98
+  text_sha256: 16b8e8d8d451c8b21f9ae2c76db371cc48d09486710f95f5b754d835c2a3d461

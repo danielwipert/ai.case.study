@@ -1,0 +1,33 @@
+# CS016 (AAI-2026-016): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS016.D02
+title: AI Hallucination Cases (database page)
+publisher: charlotin-hallucination-database
+type: dataset-or-repository
+format: html
+grade: R2
+published: '2026-10-10'
+original_url: https://www.damiencharlotin.com/hallucinations/
+licence: Damien Charlotin's web page; its databases are CC BY 4.0 (D02 text); page text private copy only
+evidence_origin: the-compiler
+examiner: Damien Charlotin
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: States '2184 cases identified so far'; D01 has 2,185 data rows. A one-row discrepancy for
+  heading 10
+captures:
+- capture: V01
+  captured_on: '2026-10-10'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: partial (the table shows only part of the rows; the full data is D01)
+  public_snapshot: none
+  capture_sha256: 546046756b7a245384b18b157b053fc70f10507d37a78d77525fe33fd36187c9
+  text_sha256: cdacd8dba5056c83990a07a3ce240388f74bc115cc95049f35152555638c7464
+interest_default_reason: the compiler says he built a commercial reference checker, PelAIkan, on the database

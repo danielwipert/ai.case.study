@@ -1,0 +1,23 @@
+# CS016 (AAI-2026-016): generated from the library's case files.
+# Do not edit by hand.
+
+- id: charlotin-hallucination-database
+  name: AI Hallucination Cases Database (Damien Charlotin)
+  grades:
+    dataset-or-repository: R2
+  graded: '2026-10-11'
+- id: nebraska-supreme-court
+  name: Nebraska Supreme Court
+  grades:
+    court-ruling: R1
+  graded: '2026-10-11'
+- id: new-mexico-supreme-court
+  name: Supreme Court of the State of New Mexico
+  grades:
+    court-ruling: R1
+  graded: '2026-10-11'
+- id: norton-rose-fulbright
+  name: Norton Rose Fulbright US LLP
+  grades:
+    commentary: R2
+  graded: '2026-10-11'

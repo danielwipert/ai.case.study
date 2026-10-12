@@ -1,0 +1,923 @@
+# CS016 (AAI-2026-016): generated from the library's case files.
+# Do not edit by hand.
+
+- code: CS016.F001
+  kind: event
+  heading: 5
+  statement: On 20 March 2026 the Nebraska Supreme Court filed its opinion in Prososki v. Regan, 321 Neb.
+    38 (No. S-25-295).
+  date: '2026-03-20'
+  precision: day
+  timezone: null
+  links:
+  - claim: CS016.D03.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 079f99c7ff448427
+  - claim: CS016.D03.C18
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: d32e516c492fcabb
+- code: CS016.F002
+  kind: statement
+  heading: 5
+  statement: The Nebraska Supreme Court says it moved the appeal in Prososki v. Regan to its own docket
+    to address numerous nonexistent or inaccurate case citations and quotations in the appellant's brief,
+    which the appellee asserted were the product of generative AI.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  quote: We moved this appeal of a decree of dissolution of marriage to our docket to address numerous
+    nonexistent or inaccurate case citations and quotations in the appellant's brief, which the appellee/cross-appellant
+    asserts are the product of generative artificial intelligence (AI).
+  links:
+  - claim: CS016.D03.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 5d0ad0617bbbd631
+- code: CS016.F003
+  kind: statement
+  heading: 9
+  statement: The Nebraska Supreme Court records that the appellant's lawyer told it the brief's citations
+    were "sloppy" from "copying and pasting . . . from Westlaw without verifying the official reporter."
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  quote: Jason's counsel stated the citations in the original brief were "sloppy" due to "copying and
+    pasting . . . from Westlaw without verifying the official reporter."
+  links:
+  - claim: CS016.D03.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 2ea19e4cfc5d8667
+- code: CS016.F004
+  kind: statement
+  heading: 9
+  statement: The Nebraska Supreme Court records that the appellant's lawyer asserted he did not invent
+    cases, did not rely on AI, and did not attempt to mislead the court.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  quote: Jason's counsel asserted he did not invent cases, did not rely on AI, and did not attempt to
+    mislead the court.
+  links:
+  - claim: CS016.D03.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 03fc0b0f23c30656
+- code: CS016.F005
+  kind: statement
+  heading: 9
+  statement: The Nebraska Supreme Court records that the appellant's lawyer attributed the fictitious
+    cases and quotations to a screen crack on his laptop and to filing the wrong draft of the brief.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  quote: Jason's counsel attributed the fictitious cases and quotations in his brief to a screen crack
+    on his laptop and his filing the wrong draft of the brief.
+  links:
+  - claim: CS016.D03.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 627b08d8e10b2e1e
+- code: CS016.F006
+  kind: statement
+  heading: 6
+  statement: 'The Nebraska Supreme Court found the "Kennedy v. Kennedy" authority in the appellant''s
+    brief fictitious: it borrows the name of a real 2019 unpublished Nebraska Court of Appeals opinion
+    that does not correspond to the citation given, and the court said the case relied on "is not a real
+    case".'
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  quote: the "Kennedy v. Kennedy" case relied upon is not a real case
+  links:
+  - claim: CS016.D03.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 1ec65a915360e9ef
+  - claim: CS016.D03.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 765075e80707f33a
+- code: CS016.F007
+  kind: statement
+  heading: 6
+  statement: The Nebraska Supreme Court said the lawyer's explanation that the citations were "sloppy"
+    from copying from Westlaw could account for a handful of citations but not the numerous fictitious
+    quotations, nor how a few cases appear to be made up entirely, and it found his assertion that he
+    filed the wrong draft lacks credibility.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  quote: explanation that his citations were "sloppy" due to "copying and pasting . . . from Westlaw"
+    could apply to a handful of citations where the reporter information is slightly off but cannot explain
+    the numerous fictitious quotations
+  links:
+  - claim: CS016.D03.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: dfe1bde906a6c76b
+  - claim: CS016.D03.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 37807f3568f57b05
+  - claim: CS016.D03.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 2549ca05a5f7b3ca
+- code: CS016.F008
+  kind: statement
+  heading: 6
+  statement: The Nebraska Supreme Court did not decide whether AI was used to prepare the appellant's
+    brief; it said its analysis is the same either way. It described the case as involving "fictitious,
+    potentially AI-generated" cases, holdings and quotations.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  quote: Regardless of whether AI was used in the preparation of Jason's appellate brief, our analysis
+    in this case is ultimately the same.
+  links:
+  - claim: CS016.D03.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: c0f02f0699c5795a
+  - claim: CS016.D03.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 5ba7ca97882703d1
+- code: CS016.F009
+  kind: statement
+  heading: 6
+  statement: The Nebraska Supreme Court records that the appellant's lawyer conceded at oral argument,
+    only after questioning from the bench, that the authority cited in his brief was not properly grounded
+    in Nebraska law.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  quote: Jason's counsel conceded, only after being pressed by questioning from the bench, that the authority
+    cited in his brief was not properly grounded in Nebraska law
+  links:
+  - claim: CS016.D03.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: a30bbcd8e9664253
+- code: CS016.F010
+  kind: statement
+  heading: 8
+  statement: The Nebraska Supreme Court held that submitting fictitious authority to a court, whether
+    through generative AI or not, can be resolved under its existing rules of professional conduct and
+    court rules.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  quote: We hold that the submission of fictitious authority to a court, whether through generative AI
+    or not, can be resolved by application of our existing rules of professional conduct and court rules.
+  links:
+  - claim: CS016.D03.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 858f4767ab8ec988
+- code: CS016.F011
+  kind: event
+  heading: 8
+  statement: In Prososki v. Regan the Nebraska Supreme Court struck the appellant's brief, dismissed his
+    appeal, and referred his lawyer to the Counsel for Discipline of the Nebraska Supreme Court.
+  date: '2026-03-20'
+  precision: day
+  timezone: null
+  links:
+  - claim: CS016.D03.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: d64b8227752d8f6e
+  - claim: CS016.D03.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: e1db74ede5195ee2
+  - claim: CS016.D03.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: efe658146464c44a
+- code: CS016.F012
+  kind: statement
+  heading: 5
+  statement: The Supreme Court of New Mexico acted on its own motion, ordering the appellant's lawyer
+    in State v. Sandoval to show cause why he should not be held in contempt and referred to the Disciplinary
+    Board for factual and legal misrepresentations in his brief in chief.
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  quote: this matter came on for consideration by the Court upon its own motion to show cause
+  links:
+  - claim: CS016.D04.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: adb5600914260b1d
+  - claim: CS016.D04.C18
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 3301f8a3e5ec30ba
+  - claim: CS016.D04.C21
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 446b43f564d20b1a
+  - claim: CS016.D04.C20
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: d40d46d7ce2b2104
+- code: CS016.F013
+  kind: event
+  heading: 5
+  statement: On 21 August 2026 the lawyer appeared and argued before the Supreme Court of New Mexico on
+    the misrepresentations in his brief.
+  date: '2026-08-21'
+  precision: day
+  timezone: null
+  links:
+  - claim: CS016.D04.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 114f9f564c3742e7
+- code: CS016.F014
+  kind: statement
+  heading: 6
+  statement: The Supreme Court of New Mexico records that the lawyer acknowledged, in his written response
+    and at oral argument, that he used ChatGPT to prepare the brief in chief.
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  quote: Respondent acknowledged to the Court in his written response and oral argument that he used the
+    generative artificial intelligence (AI) tool ChatGPT in the preparation of the brief in chief he filed
+    with the Court
+  links:
+  - claim: CS016.D04.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: ad97e4e9a3baf7a6
+- code: CS016.F015
+  kind: statement
+  heading: 6
+  statement: The Supreme Court of New Mexico records that the lawyer admitted the brief contained false
+    testimony from wholly fabricated witnesses and misrepresented legal authority in two named New Mexico
+    cases.
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  quote: Respondent admitted to the Court that the brief in chief contained false testimony from wholly
+    fabricated witnesses
+  links:
+  - claim: CS016.D04.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: e6951cbb0f0c5e76
+  - claim: CS016.D04.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 7a73bfa4def9304a
+- code: CS016.F016
+  kind: statement
+  heading: 6
+  statement: The Supreme Court of New Mexico records that the lawyer admitted he did not verify the brief's
+    factual claims and legal authority before signing and filing it.
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  quote: Respondent admitted to the Court that he did not verify the factual claims and legal authority
+    in his AI-generated brief before signing it and filing it with the Court
+  links:
+  - claim: CS016.D04.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 549a0192d293ffc6
+- code: CS016.F017
+  kind: statement
+  heading: 6
+  statement: The Supreme Court of New Mexico records that the lawyer admitted he did not tell his client
+    about the show-cause proceedings.
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  quote: Respondent also admitted to the Court that he did not inform his client of the order to show
+    cause proceedings
+  links:
+  - claim: CS016.D04.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 696cc6f983b529bf
+- code: CS016.F018
+  kind: statement
+  heading: 6
+  statement: The Supreme Court of New Mexico concluded that the lawyer demonstrated a lack of remorse
+    and a lack of concern for his client.
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  quote: concludes that Respondent demonstrated a lack of remorse and a lack of concern for his client
+  links:
+  - claim: CS016.D04.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 94834b338e11a933
+- code: CS016.F019
+  kind: statement
+  heading: 8
+  statement: The Supreme Court of New Mexico, with five justices concurring, found the lawyer in direct
+    contempt, referred him to the Disciplinary Board, barred him from appearing before it pending that
+    outcome, struck all briefing in the appeal, and appointed the Law Office of the Public Defender for
+    his client.
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  quote: Chief Justice Julie J. Vargas, Justice Michael E. Vigil, Justice C. Shannon Bacon, Justice David
+    K. Thomson, and Justice Briana H. Zamora concurring
+  links:
+  - claim: CS016.D04.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 5a69ce51f847d130
+  - claim: CS016.D04.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 482dcaf877635b8a
+  - claim: CS016.D04.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 8c6168928ebf718c
+  - claim: CS016.D04.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: c1fd9de70368bc44
+  - claim: CS016.D04.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: d8eaa2a2069e9ad3
+  - claim: CS016.D04.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: ff2d422dd180a405
+- code: CS016.F020
+  kind: quantity
+  heading: 8
+  statement: As a sanction for direct contempt, the Supreme Court of New Mexico ordered the lawyer to
+    pay $5,000 to the State Bar of New Mexico Client Protection Fund.
+  unit: USD
+  counts: the monetary sanction for direct contempt
+  links:
+  - claim: CS016.D04.C19
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: e6b289b393fb6fd8
+  - claim: CS016.D04.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 83c778d2d9607f65
+- code: CS016.F021
+  kind: state
+  heading: 6
+  statement: 'The Supreme Court of New Mexico''s order is non-precedential: it was not selected for publication,
+    and the court chose a nonprecedential order over a formal opinion.'
+  start: null
+  end: null
+  links:
+  - claim: CS016.D04.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 43bce73fd0bfd4c7
+  - claim: CS016.D04.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 5fb8059239684ae1
+- code: CS016.F022
+  kind: statement
+  heading: 3
+  statement: 'Damien Charlotin, who compiles the AI Hallucination Cases Database, says it covers decisions
+    where AI use, "whether established or merely alleged", is addressed by a court or tribunal, but "does
+    not cover mere allegations of hallucinations": only cases where the court found or implied that a
+    party relied on hallucinated content.'
+  speaker: Damien Charlotin, compiler of the database
+  quote: This database tracks legal decisions
+  links:
+  - claim: CS016.D02.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 6c9beb9069677b26
+  - claim: CS016.D02.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: f8157f7f97abeb87
+  - claim: CS016.D02.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 9998090ea0da6057
+- code: CS016.F038
+  kind: statement
+  heading: 10
+  statement: 'The database''s page describes its scope two ways: its main sentence speaks of cases "where
+    generative AI produced hallucinated content", while its note says it covers decisions where AI use
+    is established or merely alleged.'
+  speaker: Damien Charlotin, compiler of the database
+  quote: in cases where generative AI produced hallucinated content
+  links:
+  - claim: CS016.D02.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: fd24f1fc2c11054f
+  - claim: CS016.D02.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 96085389837cc06c
+- code: CS016.F023
+  kind: statement
+  heading: 6
+  statement: Charlotin says the database also includes some decisions where AI use was alleged but not
+    confirmed, which he calls a judgment call on his part.
+  speaker: Damien Charlotin, compiler of the database
+  quote: As an exception, the database also covers some judicial decisions where AI use was alleged but
+    not confirmed. This is a judgment call on my part.
+  links:
+  - claim: CS016.D02.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: c530ca9b4a3f116b
+- code: CS016.F024
+  kind: statement
+  heading: 11
+  statement: Charlotin says the database does not track the wider universe of all fake citations or uses
+    of AI in court filings.
+  speaker: Damien Charlotin, compiler of the database
+  quote: It does not track the (necessarily wider) universe of all fake citations or use of AI in court
+    filings.
+  links:
+  - claim: CS016.D02.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 1350eafcd59d31b0
+- code: CS016.F025
+  kind: quantity
+  heading: 3
+  statement: The database's page, as captured on 10 October 2026, states that 2,184 cases have been identified
+    so far.
+  unit: cases
+  counts: cases the page says the database has identified
+  links:
+  - claim: CS016.D02.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: d5b76e8dfff36ae8
+- code: CS016.F026
+  kind: statement
+  heading: 2
+  statement: Charlotin says he has built an automated reference checker, PelAIkan, on the database.
+  speaker: Damien Charlotin, compiler of the database
+  quote: 'Based on this database, I have developed an automated reference checker that also detects hallucinations:
+    PelAIkan.'
+  links:
+  - claim: CS016.D02.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 93212c752ed55c16
+- code: CS016.F027
+  kind: quantity
+  heading: 3
+  statement: The AI Hallucination Cases Database, as downloaded on 10 October 2026, lists 2,185 decisions,
+    dated from 14 April 2023 to 8 October 2026; one entry has no date.
+  unit: decisions
+  counts: entries in the database
+  working: 'the library''s counting script: rows = 2185, date_earliest = 2023-04-14, date_latest = 2026-10-08,
+    date_empty = 1'
+  links:
+  - claim: CS016.D01.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 86b97ed7db0eb4c1
+  - claim: CS016.D01.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 3bcf52b3ef42c11b
+  - claim: CS016.D01.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: a18b04bcfbe78657
+- code: CS016.F028
+  kind: quantity
+  heading: 2
+  statement: The database, as downloaded on 10 October 2026, lists "Pro Se Litigant" in its Party(ies)
+    column, headed "Party Using AI" on its page, in 1,259 entries and "Lawyer" in 865; it lists government
+    lawyers, prosecutors and others separately.
+  unit: decisions
+  counts: entries by party coded
+  working: 'the library''s counting script: party_pro_se_litigant = 1259, party_lawyer = 865, party_empty
+    = 11'
+  links:
+  - claim: CS016.D01.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: a2a301d864fdb060
+  - claim: CS016.D01.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 74ac9201830d30cf
+  - claim: CS016.D02.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 8ebaa6b4a4efa502
+- code: CS016.F029
+  kind: quantity
+  heading: 2
+  statement: The database, as downloaded on 10 October 2026, lists "Judge" in its Party(ies) column in
+    32 entries, 6 of them alongside another party.
+  unit: decisions
+  counts: entries listing a judge
+  working: 'the library''s counting script: party_judge = 32, party_judge_shared = 6'
+  links:
+  - claim: CS016.D01.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 0e22c95b5cef8d28
+  - claim: CS016.D02.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 92039d5a3ae65991
+- code: CS016.F030
+  kind: quantity
+  heading: 6
+  statement: The database, as downloaded on 10 October 2026, names a specific tool in its AI Tool column
+    in 234 of its 2,185 entries; 8 more hold another value such as "Unknown" or "Gen AI", 1,470 say "Implied",
+    455 say "Unidentified", and 18 are empty.
+  unit: decisions
+  counts: entries by how the AI tool is coded
+  working: 'the library''s counting script: tool_specific = 234, tool_no_specific_product = 8, tool_implied
+    = 1470, tool_unidentified = 455, tool_empty = 18'
+  links:
+  - claim: CS016.D01.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: f0718c901a358f6f
+  - claim: CS016.D01.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 67b0902f0feab971
+- code: CS016.F031
+  kind: quantity
+  heading: 6
+  statement: The database, as downloaded on 10 October 2026, lists ChatGPT as the only tool in 114 entries
+    and names it in 136 in all, alone or with other tools, more than any other product; Claude, the next,
+    is named in 18.
+  unit: decisions
+  counts: entries naming ChatGPT
+  working: 'the library''s counting script: tool_chatgpt = 114, tool_chatgpt_any = 136, tool_claude_any
+    = 18'
+  links:
+  - claim: CS016.D01.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 942ad50750683813
+- code: CS016.F039
+  kind: statement
+  heading: 6
+  statement: The database's page notes that "the mention of a specific tool does not necessarily mean
+    that tool was responsible for the hallucinations in question."
+  speaker: Damien Charlotin, compiler of the database
+  quote: The mention of a specific tool does not necessarily mean that tool was responsible for the hallucinations
+    in question.
+  links:
+  - claim: CS016.D02.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 4515c8925c1d3665
+- code: CS016.F032
+  kind: quantity
+  heading: 8
+  statement: The AI Hallucination Cases Database, as downloaded on 10 October 2026, records a professional
+    sanction in 164 entries and a monetary penalty in 380.
+  unit: decisions
+  counts: entries with a professional sanction; entries with any monetary penalty
+  working: 'the library''s counting script: professional_sanction_yes = 164, monetary_penalty_recorded
+    = 380'
+  links:
+  - claim: CS016.D01.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 3dbfb9fbeccc9fa0
+  - claim: CS016.D01.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: f9053e38e0b54d48
+- code: CS016.F033
+  kind: quantity
+  heading: 3
+  statement: The database, as downloaded on 10 October 2026, lists USA as the only country in 1,492 entries,
+    and alongside another in one more.
+  unit: decisions
+  counts: entries with State(s) = USA
+  working: 'the library''s counting script: country_usa = 1492, country_usa_any = 1493'
+  links:
+  - claim: CS016.D01.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 19623821e903275d
+- code: CS016.F034
+  kind: quantity
+  heading: 6
+  statement: 'The database, as downloaded on 10 October 2026, marks 22 entries "Alleged: Yes"; its page
+    flags such entries "Alleged AI Use" and does not define the term further.'
+  unit: decisions
+  counts: entries with Alleged = Yes
+  working: 'the library''s counting script: alleged_yes = 22'
+  links:
+  - claim: CS016.D01.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 0cf1f29da0b1cdc4
+  - claim: CS016.D02.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 2fb532fa1399b0e9
+- code: CS016.F035
+  kind: computed
+  heading: 6
+  statement: In the database as downloaded on 10 October 2026, a specific tool is named in about one entry
+    in nine (234 of 2,185, 10.7 percent).
+  inputs:
+  - CS016.F027
+  - CS016.F030
+  working: 234 / 2,185 = 0.1071, about one in nine (1/9 = 0.111)
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-12'
+- code: CS016.F036
+  kind: statement
+  heading: 10
+  statement: The database's page, captured on 10 October 2026, states 2,184 cases identified and lists
+    "Lawyer (864)" in its Party filter; the CSV downloaded the same evening lists 2,185 entries and "Lawyer"
+    in 865.
+  speaker: Damien Charlotin, compiler of the database
+  quote: While seeking to be exhaustive ( 2184 cases identified so far), it is a work in progress
+  links:
+  - claim: CS016.D02.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: fb859e4ab3ce214e
+  - claim: CS016.D02.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 068b822cf483302f
+  - claim: CS016.D01.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 5be38516df47cfb4
+  - claim: CS016.D01.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 02fe663648881b90
+- code: CS016.F037
+  kind: state
+  heading: 12
+  statement: The database's entry for the New Mexico contempt order (No. S-1-SC-40845) leaves its Date
+    field empty.
+  start: null
+  end: null
+  links:
+  - claim: CS016.D01.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 0df0817a22369bbc
+  - claim: CS016.D04.C21
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 44a295fabab5a1a2
+- code: CS016.F040
+  kind: absence
+  heading: 12
+  statement: On the library's reading of the Supreme Court of New Mexico's order (D04), as of 10 October
+    2026, the order states no filing date; the only date it gives for the matter is the hearing, 21 August
+    2026, and it refers to the court's 2026-2027 term.
+  documents_read:
+  - CS016.D04
+  as_of: '2026-10-10'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-12'
+- code: CS016.F041
+  kind: statement
+  heading: 10
+  statement: 'The database, as downloaded on 10 October 2026, lists the Nebraska decision, Prososki v.
+    Regan, with "Lawyer" in its Party(ies) column, headed "Party Using AI" on its page, "Unidentified"
+    as the AI tool, and "Alleged: No", although the Nebraska Supreme Court did not decide whether AI was
+    used.'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  quote: 'Case Name: Prososki v. Regan Court: SC Nebraska State(s): USA Date: 2026-03-20 Party(ies): Lawyer
+    AI Tool: Unidentified'
+  links:
+  - claim: CS016.D01.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 0967d70f8c2457b4
+  - claim: CS016.D01.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 6390ccda9e2f0714
+  - claim: CS016.D02.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 4cf14c18f86dd91a
+  - claim: CS016.D03.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-12'
+      fingerprint: 09af02c9a2b94ad2

@@ -1,0 +1,92 @@
+# CS016 (AAI-2026-016): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS016
+public_id: AAI-2026-016
+fictional: false
+title: Court decisions on AI-hallucinated content in filings
+summary: 'A researcher''s database lists 2,185 court decisions in which, he says, a court found or implied
+  that a party relied on hallucinated content. More than half of its entries list a self-represented litigant,
+  and about one entry in nine names a specific tool. Two state supreme courts show the range: in Nebraska
+  the lawyer said he did not rely on AI and the court did not decide; in New Mexico the lawyer admitted
+  using ChatGPT.'
+status: published
+version: '1'
+case_grade: B
+grade:
+  value: B
+  plain: well supported
+  rule: database-and-rulings
+  rule_text: The two rulings were read whole, from copies the database hosts, not the courts' own records,
+    and every count was made from the database file as downloaded on 10 October 2026, with the working
+    kept. The counts show what the database lists, one researcher's coding of court decisions, not what
+    happened in each court.
+  decided: '2026-10-11'
+interest_words:
+  self-serving: about the speaker's own conduct
+verified: '2026-10-12'
+next_review: '2027-03-14'
+charter:
+  event: 'Court and tribunal decisions addressing filings that relied on fabricated or misrepresented
+    material (invented cases, quotations, holdings or evidence, and real authority misstated), as recorded
+    in Damien Charlotin''s AI Hallucination Cases Database up to the cutoff; and two state supreme court
+    decisions read in full: Prososki v. Regan, 321 Neb. 38 (Nebraska Supreme Court, filed 20 March 2026),
+    and the dispositional order of direct contempt in State v. Sandoval, No. S-1-SC-40845 (Supreme Court
+    of New Mexico; heard 21 August 2026; filing date unknown).'
+  actors:
+  - Damien Charlotin (HEC Paris), compiler of the database, and the coding choices he states on its face
+  - The courts and tribunals whose decisions the database records, as the database codes them
+  - The Nebraska Supreme Court, and the appellant's lawyer in Prososki v. Regan (not named)
+  - The Supreme Court of New Mexico, and the appellant's lawyer it held in contempt (lawyers are not named)
+  - Norton Rose Fulbright, as a commentator only
+  place_and_period: 'Worldwide, as the database records it; the database begins on 14 April 2023 (per
+    the legacy page, to be confirmed from the capture). The two decisions: Nebraska and New Mexico, 2026.'
+  exclusions:
+  - 'Whether a given filing was in fact produced by AI, beyond what the court found or the party admitted:
+    the Record states what each decision establishes, implies or leaves open.'
+  - Decisions not in the database at the cutoff, and the six federal decisions Norton Rose reads, except
+    as Norton Rose reports them.
+  - Court rules and standing orders on AI use, unless a captured decision applies one.
+  evidence_cutoff: '2026-10-10'
+  selection_reason: Proposition P6 (as the order was set before the propositions were withdrawn), and
+    a large, independently compiled record of how courts establish, or fail to establish, the cause of
+    confidently wrong work product.
+  stopping_rule: The database page and its CSV as of the cutoff; the two supreme court decisions in full;
+    Norton Rose Fulbright's 2026 update. No further searches.
+headings:
+- n: 1
+  name: Summary of the record
+  status: populated
+- n: 2
+  name: Parties and roles
+  status: populated
+- n: 3
+  name: The system and its configuration
+  status: populated
+- n: 4
+  name: Conditions before the event
+  status: populated
+- n: 5
+  name: Sequence of events
+  status: populated
+- n: 6
+  name: How the facts were established
+  status: populated
+- n: 7
+  name: Detection and response
+  status: populated
+- n: 8
+  name: Outcomes and measured effects
+  status: populated
+- n: 9
+  name: Statements by the parties
+  status: populated
+- n: 10
+  name: Discrepancies in the record
+  status: populated
+- n: 11
+  name: What the record does not establish
+  status: populated
+- n: 12
+  name: Evidence still awaited
+  status: populated
