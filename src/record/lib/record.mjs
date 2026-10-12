@@ -197,7 +197,7 @@ export function loadCase(code) {
     }));
   }
 
-  const headings = checkHeadings(code, header.headings, rows);
+  const headings = checkHeadings(code, header.headings, rows, citedInNarrative(read(code, "narrative.md")));
   const narrative = parseNarrative(code, read(code, "narrative.md"), rowsByCode, headings);
 
   return {
@@ -350,7 +350,19 @@ function finish(label) {
 }
 
 /** Heading statuses (decision 31), checked against the rows. */
-function checkHeadings(code, declared, rows) {
+/** Heading numbers whose narrative cites at least one row code. */
+function citedInNarrative(source) {
+  const cited = new Set();
+  let n = null;
+  for (const line of source.replace(/<!--[\s\S]*?-->/g, "").split("\n")) {
+    const heading = line.match(/^## (\d+)\. /);
+    if (heading) n = Number(heading[1]);
+    else if (n && /`\[[^\]]+\]`/.test(line)) cited.add(n);
+  }
+  return cited;
+}
+
+function checkHeadings(code, declared, rows, cited = new Set()) {
   if (!Array.isArray(declared) || declared.length !== 12) fail(code, "case.yaml must list all twelve headings");
   return declared.map((h, index) => {
     if (h.n !== index + 1 || h.name !== HEADING_NAMES[index]) fail(code, `heading ${index + 1} must be "${HEADING_NAMES[index]}", in order`);
@@ -361,8 +373,11 @@ function checkHeadings(code, declared, rows) {
     if (h.status === "nothing-found" && !own.some((r) => r.kind === "absence")) fail(code, `heading ${h.n}: nothing found must produce an Absence row`);
     // OPEN: heading 1 retells rows filed under other headings, so it has none of its own.
     // Heading 10 may do the same: it sets side by side contradictions whose rows sit
-    // under the headings they concern (CS021).
-    if (h.status === "populated" && ![1, 10].includes(h.n) && !own.length) fail(code, `heading ${h.n} is populated but has no rows`);
+    // under the headings they concern (CS021). Any other heading may too, if its
+    // narrative cites at least one row (editor's decision 2026-10-12, CS016 headings 4 and 7).
+    if (h.status === "populated" && ![1, 10].includes(h.n) && !own.length && !cited.has(h.n)) {
+      fail(code, `heading ${h.n} is populated but has no rows, and its narrative cites none`);
+    }
     return { ...h, statusText: STATUS_TEXT[h.status], rows: own.map((r) => r.code) };
   });
 }
