@@ -128,8 +128,12 @@ case in the legacy format.
    grades. An independent checker session marks rows; Dan reviews the
    high-stakes rows and a 1-in-10 sample, and approves each release. Captures
    are Dan's, from his browser.
-3. **Nothing is published before a legal review and Dan's release approval.**
-   A case's files stay in the private repo until then. Only reader-facing text
+3. **Nothing is published before the automated legal check and Dan's release
+   approval.** `python3 tools/legal_check.py CSnnn` (private repo) warns on
+   unattributed damaging words, names on the case's do-not-name list, heavy
+   quoting and missing licences; it never blocks, and Dan reads its report
+   before approving. It replaced the lawyer's review on 2026-10-12 (CS001 and
+   CS021 had one). A case's files stay in the private repo until then. Only reader-facing text
    goes public: no initials, decision notes or internal comments (each case's
    public-data script refuses to run if any are left).
 4. **Append-only.** Rows and claims are superseded, never deleted. Codes are
