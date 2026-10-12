@@ -9,6 +9,9 @@ import "@fontsource/source-serif-4/400.css";
 import "@fontsource/source-serif-4/400-italic.css";
 import "@fontsource/source-serif-4/600.css";
 import { load as parseYaml } from "js-yaml";
+import { createHash } from "node:crypto";
+import fs from "node:fs";
+import path from "node:path";
 import { loadCase, shortCode } from "../../../../record/lib/record.mjs";
 import { recordRoutes } from "../../../../record/lib/routes.mjs";
 
@@ -28,6 +31,18 @@ const root = `${base}/cases/${Astro.params.year}/${Astro.params.case}`;
 const tip = (rows) => rows.map((r) => `${r}: ${byShort.get(r).statement} [${byShort.get(r).label.display}]`).join("\n\n");
 const src = (rows) => `${root}/evidence/#${rows[0]}`;
 const docs = record.documents.length;
+
+// The one-page summary PDF (public/onepagers/), made in the private repo by tools/onepager.py.
+// Shown only when the case has one; the build warns when the story changed after the PDF was made.
+const onepagerManifest = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(process.cwd(), "public/onepagers/manifest.json"), "utf8")); } catch { return {}; }
+})();
+const onepager = onepagerManifest[code] ?? null;
+const onepagerHref = onepager ? `${base}/onepagers/${onepager.pdf}` : null;
+if (onepager) {
+  const storySha = createHash("sha256").update(stories[`../../../../record/cases/${code}/story.yaml`]).digest("hex");
+  if (storySha !== onepager.story_sha256) console.warn(`[onepager] ${code}: story.yaml changed after the one-page summary was made; rebuild it with tools/onepager.py`);
+}
 const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 // Section numbers follow the sections a story actually has.
 const order = ["short", "timeline", ...(story.disagreements?.length ? ["disagree"] : []), "quotes", "unknowns", "deeper"];
@@ -117,6 +132,7 @@ const first = story.timeline[0].date, last = story.timeline[story.timeline.lengt
       <a href={`${root}/record/`}>Full record</a>
       <a href={`${root}/evidence/`}>Evidence</a>
       <a href={`${root}/sources/`}>Sources</a>
+      {onepagerHref && <a class="mg-dl mg-dl-nav" href={onepagerHref} download>One-page summary <span>PDF</span></a>}
     </nav>
   </header>
 
@@ -126,6 +142,7 @@ const first = story.timeline[0].date, last = story.timeline[story.timeline.lengt
         <p class="mg-tags">{story.tags.map((tag) => <span>{tag}</span>)}</p>
         <h1>{story.headline}</h1>
         <p class="mg-dek">{story.dek}</p>
+        {onepagerHref && <a class="mg-dl" href={onepagerHref} download>Download the one-page summary <span>PDF</span></a>}
       </div>
       <aside class="mg-stamp" aria-label={`Case grade ${story.grade.letter}: ${story.grade.plain}`}>
         <span class="mg-stamp-letter">{story.grade.letter}</span>
@@ -223,6 +240,7 @@ const first = story.timeline[0].date, last = story.timeline[story.timeline.lengt
           <a href={`${root}/evidence/`}><em>Check</em><strong>The evidence</strong><span>{record.rows.length} checked facts, each with the exact quote it rests on.</span></a>
           <a href={`${root}/sources/`}><em>Trace</em><strong>The sources</strong><span>{docs === 1 ? "The document behind this case, and how far it can be trusted." : `The ${docs} documents behind this case, and how far each can be trusted.`}</span></a>
         </div>
+        {onepagerHref && <p class="mg-dl-row"><a class="mg-dl" href={onepagerHref} download>Download the one-page summary <span>PDF</span></a><span>The case on one page, to print or share.</span></p>}
       </div>
     </section>
   </main>
@@ -330,6 +348,11 @@ const first = story.timeline[0].date, last = story.timeline[story.timeline.lengt
   .mg-unknowns li > span { font: 400 3rem/1 var(--mg-display); color: var(--mg-pink); }
   .mg-unknowns p { margin: .3rem 0 0; font: 400 1.2rem/1.5 var(--mg-serif); max-width: 46rem; }
 
+  .mg-dl { display: inline-flex; align-items: center; gap: .7rem; background: var(--mg-lime); color: var(--mg-ink) !important; text-decoration: none; font: 800 .8rem var(--mg-sans); letter-spacing: .08em; text-transform: uppercase; padding: .8rem 1.1rem; position: relative; z-index: 1; }
+  .mg-tabs a.mg-dl-nav { padding: .45rem .7rem; font-size: .7rem; border: 0; }
+  .mg-dl span { border: 1.5px solid var(--mg-ink); padding: .1rem .35rem; font-size: .68rem; }
+  .mg-dl:hover, .mg-dl:focus-visible { background: #fff; outline: 3px solid var(--mg-lime); outline-offset: 2px; }
+  .mg-dl-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.2rem; margin: 2.4rem 0 0; font: 700 .78rem var(--mg-sans); letter-spacing: .06em; text-transform: uppercase; color: #9a9aa0; }
   .mg-deeper { background: var(--mg-ink); color: #fff; margin-top: 4.5rem; padding: 4rem 0 4.5rem; }
   .mg-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
   .mg-cards a { text-decoration: none; border: 2px solid #fff; padding: 1.6rem; display: flex; flex-direction: column; gap: .6rem; transition: background .15s, color .15s; }
