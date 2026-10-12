@@ -80,7 +80,8 @@ rule, never by feel). Example trace: `CS021.F009` → `CS021.D01.C09` →
 | CS001 / AAI-2026-001 | The OpenAI agents' intrusion into Hugging Face (the paradigm) | **Live** 2026-10-01, grade A |
 | CS021 / AAI-2026-021 | The LungIMPACT trial (the control) | **Live** 2026-10-01, grade B (graded A under the legacy method; propositions P1 and P4 updated) |
 | CS005 / AAI-2026-005 | Mobley v. Workday: the May 2026 ruling on bias-test data | **Live** 2026-10-03, grade B (5 documents, 74 claims, 46 rows). The first case rebuilt after the pilot |
-| Next | Not yet picked | The next case in the order below. Waiting on Dan to choose it and capture its sources |
+| CS016 / AAI-2026-016 | Court decisions on AI-hallucinated content (a database and two rulings) | **Live** 2026-10-12, grade B (5 documents, 67 claims, 41 rows). The first case with a launch package |
+| Next | 019 | Then 010, 009, 011, then P5's (006, 013, 014, 022) |
 | The other 17 | Legacy pages, still live | To rebuild one at a time, in the spec's order: P6's cases (009, 010, 011, 016, 019), then P5's (006, 013, 014, 022), then the rest. 004 is an unpublished lead |
 
 **How each case is rebuilt** (the process the pilot settled):
@@ -90,9 +91,11 @@ rule, never by feel). Example trace: `CS021.F009` → `CS021.D01.C09` →
 3. An independent checker session checks every link.
 4. Dan reviews the high-stakes rows and a random 1 in 10.
 5. Claude drafts the narrative and the plain-English story (`story.yaml`); the checker checks them.
-6. A lawyer reviews (Claude prepares the pack, Dan sends it).
-7. Dan approves the release (`python3 tools/sign.py release CASE --by DW`).
-8. Claude opens the public pull request, using the case's public-data script, and merges it when Dan says so.
+6. The automated legal check runs (`python3 tools/legal_check.py CASE`); Dan reads its report (since 2026-10-12; it replaced the lawyer's review).
+7. Every link carries a passing checker mark in its current wording, recorded with `sign.py check` (a row edited after its check is checked again first).
+8. Dan approves the release (`python3 tools/sign.py release CASE --by DW`).
+9. Claude opens the public pull request, using the case's public-data script, and merges it when Dan says so.
+10. **The launch package** (since 2026-10-12): once the deploy succeeds, Claude runs `python3 tools/distribution.py intake CASE` and the whole workflow in `distribution/README.md`: brief, channel choice (a gate), drafts, carousel, checks, an independent fact check, and the private review page. Dan approves each output and posts by hand. Every rebuilt case gets one (spec `planning/Publication_Workflow_Spec_v1.1.md`).
 
 **Still open:**
 
