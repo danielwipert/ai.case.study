@@ -423,9 +423,11 @@ function parseNarrative(code, source, rowsByCode, headings) {
       // nor is the "v." of a case name ("Mobley v. Workday", CS005).
       // Full stops inside a quotation do not end the narrative's sentence: a quoted
       // passage may hold several of the speaker's sentences (CS021).
-      const masked = body.replace(/"[^"]*"|“[^”]*”/g, (q) => q.replace(/[.?!]/g, "\u2024"));
-      const sentences = masked.split(/(?<!\b[A-Z]\.)(?<!\bv\.)(?<=[.?!]["”]?)\s+(?=[A-Z"“`])/)
-        .reduce((acc, s) => (acc.length && /^`\[/.test(s) ? [...acc.slice(0, -1), `${acc.at(-1)} ${s}`] : [...acc, s]), []);
+      // A bulleted list is checked item by item: each item must end in its codes (CS016).
+      const items = block.split(/\n(?=- )/).map((i) => i.replace(/^- /, "").replace(/\s+/g, " "));
+      const masked = items.map((i) => i.replace(/"[^"]*"|“[^”]*”/g, (q) => q.replace(/[.?!]/g, "\u2024")));
+      const sentences = masked.flatMap((m) => m.split(/(?<!\b[A-Z]\.)(?<!\bv\.)(?<=[.?!]["”]?)\s+(?=[A-Z"“`])/)
+        .reduce((acc, s) => (acc.length && /^`\[/.test(s) ? [...acc.slice(0, -1), `${acc.at(-1)} ${s}`] : [...acc, s]), []));
       for (const sentence of sentences) {
         if (!/`\[[^\]]+\]`([.?!]["”]?)?\s*$/.test(sentence)) { // CS001 preview: a code may close a paragraph after a quoted sentence's own full stop
           fail(code, `narrative sentence has no row code: "${sentence.slice(0, 80)}…"`);
