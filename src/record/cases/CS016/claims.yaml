@@ -1,0 +1,787 @@
+# CS016 (AAI-2026-016): generated from the library's case files.
+# Do not edit by hand.
+
+- code: CS016.D01.C01
+  capture: V01
+  locator: Row 2185, the last data row, column Case Name; counts.py key rows
+  quote: 'Case Name: Nº 0600814-85.2022.6.00.0000'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C02
+  capture: V01
+  locator: Every row, column 'Date'; counted by the library's counting script, key date_earliest
+  quote: 'Date: 2023-04-14'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C03
+  capture: V01
+  locator: Every row, column 'Date'; counted by the library's counting script, key date_latest
+  quote: 'Date: 2026-10-08'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C04
+  capture: V01
+  locator: Every row, column 'Party(ies)'; counted by the library's counting script, key party_pro_se_litigant
+  quote: 'Party(ies): Pro Se Litigant'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C05
+  capture: V01
+  locator: Every row, column 'Party(ies)'; counted by the library's counting script, key party_lawyer;
+    the page heads this column 'Party Using AI' (D02)
+  quote: 'Party(ies): Lawyer'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C06
+  capture: V01
+  locator: Every row, column 'Party(ies)'; counted by the library's counting script, key party_judge;
+    the page heads this column 'Party Using AI' (D02)
+  quote: 'Party(ies): Judge'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C07
+  capture: V01
+  locator: Every row, column 'AI Tool'; counted by the library's counting script, keys tool_specific,
+    tool_no_specific_product, tool_implied, tool_unidentified, tool_empty
+  quote: 'AI Tool: Implied'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C08
+  capture: V01
+  locator: Every row, column 'AI Tool'; counted by the library's counting script, key tool_unidentified
+  quote: 'AI Tool: Unidentified'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C09
+  capture: V01
+  locator: Every row, column 'AI Tool'; counted by the library's counting script, keys tool_chatgpt, tool_chatgpt_any,
+    tool_claude_any
+  quote: 'AI Tool: ChatGPT'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C10
+  capture: V01
+  locator: Every row, column 'Professional Sanction'; counted by the library's counting script, key professional_sanction_yes
+  quote: 'Professional Sanction: Yes'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C11
+  capture: V01
+  locator: Every row, column 'Monetary Penalty', any non-empty cell; counted by the library's counting
+    script, key monetary_penalty_recorded. The quote is one example. 64 cells hold the placeholder '1'
+    (amount unknown, key monetary_penalty_placeholder_1) and 33 give no currency
+  quote: 'Monetary Penalty: 5000 USD'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C12
+  capture: V01
+  locator: Every row, column 'State(s)'; counted by the library's counting script, key country_usa
+  quote: 'State(s): USA'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C13
+  capture: V01
+  locator: Every row, column 'Alleged'; counted by the library's counting script, key alleged_yes; on
+    the page, such entries carry the flag 'Alleged AI Use', not defined further
+  quote: 'Alleged: Yes'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C14
+  capture: V01
+  locator: Row 1 (the New Mexico contempt order), column Source; its Date line is empty
+  quote: 'Source: /documents/3059/New_Mexico_sanctions_order_-_AI.pdf'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D02.C01
+  capture: V01
+  locator: Introduction, first sentence and its note 1
+  quote: This database tracks legal decisions
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D02.C02
+  capture: V01
+  locator: Introduction, note 1
+  quote: Notably, this does not cover mere allegations of hallucinations, but only cases where the court
+    or tribunal has explicitly found (or implied) that a party relied on hallucinated content or material.
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D02.C03
+  capture: V01
+  locator: Introduction, note 1
+  quote: As an exception, the database also covers some judicial decisions where AI use was alleged but
+    not confirmed. This is a judgment call on my part.
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D02.C04
+  capture: V01
+  locator: Introduction, second paragraph
+  quote: It does not track the (necessarily wider) universe of all fake citations or use of AI in court
+    filings.
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D02.C05
+  capture: V01
+  locator: Introduction, third paragraph
+  quote: While seeking to be exhaustive ( 2184 cases identified so far), it is a work in progress
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D02.C06
+  capture: V01
+  locator: Introduction, after the media list
+  quote: 'Based on this database, I have developed an automated reference checker that also detects hallucinations:
+    PelAIkan.'
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D03.C01
+  capture: V01
+  locator: Page 1 (reporter p. 38), caption
+  quote: Filed March 20, 2026. No. S-25-295.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C02
+  capture: V01
+  locator: Page 2 (reporter p. 39), Introduction, first sentence
+  quote: We moved this appeal of a decree of dissolution of marriage to our docket to address numerous
+    nonexistent or inaccurate case citations and quotations in the appellant's brief, which the appellee/cross-appellant
+    asserts are the product of generative artificial intelligence (AI).
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C03
+  capture: V01
+  locator: Page 3 (reporter p. 40), Introduction
+  quote: We now strike the appellant's brief, dismiss the appellant's appeal, and refer the appellant's
+    counsel to the Counsel for Discipline of the Nebraska Supreme Court.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C04
+  capture: V01
+  locator: Page 7 (reporter p. 44), Background
+  quote: Jason's counsel stated the citations in the original brief were "sloppy" due to "copying and
+    pasting . . . from Westlaw without verifying the official reporter."
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C05
+  capture: V01
+  locator: Page 7 (reporter p. 44), Background
+  quote: Jason's counsel asserted he did not invent cases, did not rely on AI, and did not attempt to
+    mislead the court.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C06
+  capture: V01
+  locator: Page 14 (reporter p. 51), Analysis, first paragraph
+  quote: 'This matter presents a novel issue for Nebraska courts: the use of fictitious, potentially AI-generated
+    cases, holdings, and quotations.'
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C07
+  capture: V01
+  locator: Page 14 (reporter p. 51), Analysis, first paragraph
+  quote: Jason's counsel attributed the fictitious cases and quotations in his brief to a screen crack
+    on his laptop and his filing the wrong draft of the brief.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C08
+  capture: V01
+  locator: Page 14 (reporter p. 51), Analysis, first paragraph
+  quote: Regardless of whether AI was used in the preparation of Jason's appellate brief, our analysis
+    in this case is ultimately the same.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C09
+  capture: V01
+  locator: Page 15 (reporter p. 52), the holding
+  quote: We hold that the submission of fictitious authority to a court, whether through generative AI
+    or not, can be resolved by application of our existing rules of professional conduct and court rules.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C10
+  capture: V01
+  locator: Page 17 (reporter p. 54)
+  quote: the "Kennedy v. Kennedy" case relied upon is not a real case
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C11
+  capture: V01
+  locator: Page 18 (reporter p. 55)
+  quote: Jason's counsel conceded, only after being pressed by questioning from the bench, that the authority
+    cited in his brief was not properly grounded in Nebraska law
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C12
+  capture: V01
+  locator: Page 18 (reporter p. 55)
+  quote: We refer Jason's counsel to the Counsel for Discipline to investigate the filing of Jason's appellate
+    brief rife with fictitious and misrepresented authority.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C13
+  capture: V01
+  locator: Page 19 (reporter p. 56)
+  quote: It also does not explain how a few cases appear to be made up entirely.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C14
+  capture: V01
+  locator: Page 19 (reporter p. 56)
+  quote: Jason's counsel's assertion that he simply filed the wrong draft of the appellate brief lacks
+    credibility.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C15
+  capture: V01
+  locator: Page 19 (reporter p. 56)
+  quote: we, pursuant to our inherent authority, order Jason's appellate brief stricken and his appeal
+    dismissed.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C01
+  capture: V01
+  locator: Page 1, notice above the caption
+  quote: This decision of the Supreme Court of New Mexico was not selected for publication in the New
+    Mexico Appellate Reports.
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C02
+  capture: V01
+  locator: Page 2, paragraph {1}
+  quote: this matter came on for consideration by the Court upon its own motion to show cause
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C03
+  capture: V01
+  locator: Page 2, paragraph {2}
+  quote: Respondent appeared and presented argument before the Court on August 21, 2026, regarding the
+    misrepresentations he made to the Court
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C04
+  capture: V01
+  locator: Page 2, paragraph {3}
+  quote: Respondent acknowledged to the Court in his written response and oral argument that he used the
+    generative artificial intelligence (AI) tool ChatGPT in the preparation of the brief in chief he filed
+    with the Court
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C05
+  capture: V01
+  locator: Page 2, paragraph {4}
+  quote: Respondent admitted to the Court that the brief in chief contained false testimony from wholly
+    fabricated witnesses
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C06
+  capture: V01
+  locator: Page 2, paragraph {4}, end
+  quote: misrepresented legal authority in State v. Lopez, 2005-NMSC-018, 138 N.M. 9, 116 P.3d 80 and
+    State v. Manus, 1979-NMSC-035, 93 N.M. 95, 597 P. 2d 280
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C07
+  capture: V01
+  locator: Page 2, paragraph {5}
+  quote: Respondent admitted to the Court that he did not verify the factual claims and legal authority
+    in his AI-generated brief before signing it and filing it with the Court
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C08
+  capture: V01
+  locator: Page 2, paragraph {6}
+  quote: Respondent also admitted to the Court that he did not inform his client of the order to show
+    cause proceedings
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C09
+  capture: V01
+  locator: Page 2, paragraph {7}
+  quote: concludes that Respondent demonstrated a lack of remorse and a lack of concern for his client
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C10
+  capture: V01
+  locator: Page 3, paragraph {10}
+  quote: Chief Justice Julie J. Vargas, Justice Michael E. Vigil, Justice C. Shannon Bacon, Justice David
+    K. Thomson, and Justice Briana H. Zamora concurring
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C11
+  capture: V01
+  locator: Page 3, paragraph {11} (the respondent's name, which comes before this, is left out)
+  quote: is found in DIRECT CONTEMPT OF COURT
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C12
+  capture: V01
+  locator: Page 3, paragraph {12}
+  quote: this matter, with respect to Respondent, is hereby referred to the Disciplinary Board for further
+    consideration
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C13
+  capture: V01
+  locator: Page 3, paragraph {13}
+  quote: Respondent is barred from appearing before this Court, pending the outcome of the investigation
+    and proceedings, if any, before the Disciplinary Board
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C14
+  capture: V01
+  locator: Page 3, paragraph {15}
+  quote: the Law Office of the Public Defender is hereby appointed to represent Defendant-Appellant in
+    this appeal
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C15
+  capture: V01
+  locator: Page 3, paragraph {16}
+  quote: all briefing filed in this matter is hereby STRICKEN
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C16
+  capture: V01
+  locator: Page 3, paragraph {18}
+  quote: pay a sum of five thousand dollars ($5,000) to the State Bar of New Mexico Client Protection
+    Fund
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C17
+  capture: V01
+  locator: Page 3, paragraph {19}
+  quote: by nonprecedential order rather than a formal opinion
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C16
+  capture: V01
+  locator: Page 8 (reporter p. 45), Background, the Kennedy example
+  quote: is the name of a real case decided by the Nebraska Court of Appeals in an unpublished memorandum
+    opinion filed in 2019, which does not correspond to the citation given.
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C17
+  capture: V01
+  locator: Page 19 (reporter p. 56), first paragraph
+  quote: explanation that his citations were "sloppy" due to "copying and pasting . . . from Westlaw"
+    could apply to a handful of citations where the reporter information is slightly off but cannot explain
+    the numerous fictitious quotations
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C18
+  capture: V01
+  locator: Page 2, paragraph {1}, the order to show cause (the respondent is the appellant's attorney,
+    named earlier in {1})
+  quote: directing him to show cause in person before the Court on August 21, 2026, why he should not
+    be held in contempt and referred to the Disciplinary Board for the factual and legal misrepresentations
+    he made to the Court in his brief in chief
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C19
+  capture: V01
+  locator: Page 3, paragraph {18}, opening words
+  quote: as a sanction for direct contempt
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D02.C07
+  capture: V01
+  locator: Introduction, note 1, first sentence
+  quote: I.e., all documents where the use of AI, whether established or merely alleged, is addressed
+    in more than a passing reference by the court or tribunal.
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D02.C08
+  capture: V01
+  locator: Introduction, main sentence, after note 1
+  quote: in cases where generative AI produced hallucinated content
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D02.C09
+  capture: V01
+  locator: Table header, note on the 'AI Tool' column
+  quote: The mention of a specific tool does not necessarily mean that tool was responsible for the hallucinations
+    in question.
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D02.C10
+  capture: V01
+  locator: 'Table header: the heading of the column the CSV calls ''Party(ies)'''
+  quote: Party Using AI
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D02.C11
+  capture: V01
+  locator: Filter panel, 'Party' list
+  quote: Lawyer (864)
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D02.C12
+  capture: V01
+  locator: 'Table, the entry for Nantongo v. Nationwide Mortgage Bankers: the red flag the page shows
+    on entries coded ''Alleged: Yes'''
+  quote: Alleged AI Use
+  speaker: Damien Charlotin, compiler of the database
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: false
+- code: CS016.D04.C20
+  capture: V01
+  locator: Page 2, paragraph {1}, stopping before the attorney's name
+  quote: Respondent, Defendant-Appellant's attorney
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D04.C21
+  capture: V01
+  locator: Page 1, caption
+  quote: No. S-1-SC-40845
+  speaker: the court (Supreme Court of New Mexico, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D03.C18
+  capture: V01
+  locator: Page 1 (reporter p. 38), running head
+  quote: PROSOSKI v. REGAN Cite as 321 Neb. 38
+  speaker: the court (Nebraska Supreme Court, per curiam)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS016.D01.C15
+  capture: V01
+  locator: Row 870 (the Nebraska decision), columns Case Name to AI Tool
+  quote: 'Case Name: Prososki v. Regan Court: SC Nebraska State(s): USA Date: 2026-03-20 Party(ies): Lawyer
+    AI Tool: Unidentified'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true
+- code: CS016.D01.C16
+  capture: V01
+  locator: Row 870 (the Nebraska decision), columns Professional Sanction to Vendor Disputed
+  quote: 'Professional Sanction: Yes Alleged: No Vendor Disputed: No'
+  speaker: the database (Damien Charlotin's coding of court decisions)
+  hedge: false
+  how_known: second-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: neutral, PelAIkan disclosed
+  inspectable: true

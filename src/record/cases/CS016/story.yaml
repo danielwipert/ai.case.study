@@ -1,0 +1,205 @@
+# CS016 (AAI-2026-016): generated from the library's case files.
+# Do not edit by hand.
+
+tags:
+- AI in the courts
+- Case 016
+- October 2026
+checked: checked 11 Oct 2026
+headline: A database lists 2,185 court decisions on AI-hallucinated content; about one entry in nine names
+  a specific tool
+headline_rows:
+- F022
+- F027
+- F035
+dek: 'A researcher''s database lists 2,185 court decisions in which, he says, a court found or implied
+  that a party relied on hallucinated content. More than half of its entries list a self-represented litigant,
+  and about one entry in nine names a specific tool. Two state supreme courts show the range: in Nebraska
+  the lawyer said he did not rely on AI and the court did not decide; in New Mexico the lawyer admitted
+  using ChatGPT.'
+dek_rows:
+- F022
+- F027
+- F028
+- F035
+- F004
+- F008
+- F014
+grade:
+  letter: B
+  plain: Well supported
+  explain: The two rulings were read whole, from copies the database hosts, not the courts' own records,
+    and every count was made from the database file as downloaded on 10 October 2026, with the working
+    kept. The counts show what the database lists, one researcher's coding of court decisions, not what
+    happened in each court.
+  rows:
+  - F022
+  - F027
+  - F030
+  - F011
+  - F019
+  - F040
+short_version:
+- text: Damien Charlotin keeps a database of court and tribunal decisions which, he says, covers only
+    cases where the court found or implied that a party relied on hallucinated content. As downloaded
+    on 10 October 2026 it lists 2,185 decisions, the oldest from April 2023.
+  rows:
+  - F022
+  - F027
+- text: More than half of the entries list a self-represented litigant as the party involved; 865 list
+    a lawyer, and 32 list a judge.
+  rows:
+  - F027
+  - F028
+  - F029
+- text: Only 234 entries name a specific tool. Most say the tool is "Implied" or "Unidentified", and the
+    database itself warns that naming a tool does not necessarily mean that tool was responsible.
+  rows:
+  - F030
+  - F039
+- text: 'In Nebraska, a lawyer whose brief cited a case that does not exist said he did not rely on AI.
+    The state''s Supreme Court did not decide whether he had: it struck the brief, dismissed the appeal
+    and referred him for discipline, saying its analysis was the same either way.'
+  rows:
+  - F004
+  - F006
+  - F008
+  - F011
+- text: In New Mexico, the state's Supreme Court records that a lawyer admitted using ChatGPT for a brief
+    with invented witnesses and testimony. The court held him in contempt, ordered him to pay $5,000 and
+    referred him for discipline.
+  rows:
+  - F014
+  - F015
+  - F019
+  - F020
+numbers:
+- figure: 2,185
+  label: court and tribunal decisions the database lists, April 2023 to October 2026
+  rows:
+  - F027
+- figure: 1,259
+  label: entries that list a self-represented litigant, against 865 that list a lawyer
+  rows:
+  - F028
+- figure: About 1 in 9
+  label: entries that name a specific tool (234 of 2,185)
+  rows:
+  - F035
+  - F030
+- figure: '164'
+  label: entries that record a professional sanction; 380 record a monetary penalty
+  rows:
+  - F032
+timeline_key:
+- mark: database
+  label: The database
+  color: grey
+- mark: nebraska
+  label: Nebraska Supreme Court
+  color: pink
+- mark: newmexico
+  label: Supreme Court of New Mexico
+  color: violet
+timeline:
+- date: 14 Apr 2023
+  mark: database
+  text: The oldest decision the database lists
+  rows:
+  - F027
+- date: 20 Mar 2026
+  mark: nebraska
+  text: Nebraska's Supreme Court strikes a brief with fictitious citations and refers the lawyer for discipline,
+    without deciding whether AI was used
+  rows:
+  - F001
+  - F011
+  - F008
+- date: 21 Aug 2026
+  mark: newmexico
+  text: A New Mexico lawyer argues before the state's Supreme Court; the court records that he acknowledged
+    using ChatGPT. Its contempt order states no date
+  rows:
+  - F013
+  - F014
+  - F019
+  - F040
+- date: 8 Oct 2026
+  mark: database
+  text: The newest decision the database lists
+  rows:
+  - F027
+- date: 10 Oct 2026
+  mark: database
+  text: 'The database''s page and file are captured for this case: the page says 2,184 cases, the file
+    holds 2,185'
+  rows:
+  - F036
+disagreements:
+- title: Did the Nebraska lawyer use AI?
+  sides:
+  - who: The lawyer, as the court records
+    says: He did not invent cases and did not rely on AI; the errors came from copying from Westlaw and
+      filing the wrong draft.
+    rows:
+    - F004
+    - F003
+    - F005
+  - who: The Nebraska Supreme Court
+    says: It did not decide. It found the wrong-draft explanation not credible and said its analysis was
+      the same either way.
+    rows:
+    - F007
+    - F008
+  note:
+    text: 'The database lists this case under "Party Using AI", with the tool "Unidentified" and "Alleged:
+      No", although the court did not decide whether AI was used.'
+    rows:
+    - F041
+- title: How many cases does the database hold?
+  sides:
+  - who: The database's page
+    says: 2,184 cases identified so far, and "Lawyer (864)" in its Party filter.
+    rows:
+    - F025
+    - F036
+  - who: The database's file, the same evening
+    says: 2,185 entries, 865 of them listing "Lawyer".
+    rows:
+    - F027
+    - F028
+    - F036
+what_they_say:
+- who: The Nebraska Supreme Court
+  quote: We hold that the submission of fictitious authority to a court, whether through generative AI
+    or not, can be resolved by application of our existing rules of professional conduct and court rules.
+  rows:
+  - F010
+- who: The Supreme Court of New Mexico
+  quote: Respondent acknowledged to the Court in his written response and oral argument that he used the
+    generative artificial intelligence (AI) tool ChatGPT in the preparation of the brief in chief he filed
+    with the Court
+  rows:
+  - F014
+- who: The database's page
+  quote: The mention of a specific tool does not necessarily mean that tool was responsible for the hallucinations
+    in question.
+  rows:
+  - F039
+unknowns:
+- text: Whether AI produced the fictitious citations in the Nebraska brief. The court did not decide,
+    and the lawyer denied it.
+  rows:
+  - F008
+  - F004
+- text: 'Which tool, if any, lies behind most entries: 1,925 of them say only "Implied" or "Unidentified".'
+  rows:
+  - F030
+- text: How many fake citations or uses of AI in court filings the database does not capture. The compiler
+    says it does not track that wider universe.
+  rows:
+  - F024
+- text: The date of the New Mexico order. It states none, and the database leaves the date blank.
+  rows:
+  - F040
+  - F037

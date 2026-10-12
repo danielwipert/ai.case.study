@@ -1,7 +1,7 @@
 ---
 case_id: AAI-2026-016
-title: "Two thousand rulings about fake citations, and the tool named in one in nine"
-summary: "A public database records 2,042 court decisions worldwide addressing fabricated legal authority in filings. Most involve self-represented litigants rather than lawyers, nine in ten never establish which tool produced the text, and in one of the two supreme court decisions read here the lawyer denied using AI at all."
+title: "A database lists 2,185 court decisions on AI-hallucinated content; about one entry in nine names a specific tool"
+summary: "A researcher's database lists 2,185 court decisions in which, he says, a court found or implied that a party relied on hallucinated content. More than half of its entries list a self-represented litigant, and about one entry in nine names a specific tool. Two state supreme courts show the range: in Nebraska the lawyer said he did not rely on AI and the court did not decide; in New Mexico the lawyer admitted using ChatGPT."
 organization:
   - Nebraska Supreme Court
   - Supreme Court of the State of New Mexico
@@ -20,7 +20,7 @@ evidence_grade: B
 status: published
 created: 2026-09-14
 published: 2026-09-14
-last_verified: 2026-09-14
+last_verified: 2026-10-12
 next_review: 2027-03-14
 geography:
   - United States
