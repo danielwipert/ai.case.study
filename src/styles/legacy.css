@@ -1,0 +1,30 @@
+/* The legacy case pages in the library style. global.css keeps the layout;
+   its variables are pointed at the library's paper, type and theme colour. */
+body.lb-legacy {
+  --ink: var(--lb-ink); --ink-soft: var(--lb-ink-2); --paper: var(--lb-paper); --paper-deep: var(--lb-track);
+  --card: var(--pop-tint); --line: var(--lb-rule); --line-dark: var(--lb-ink-3);
+  --wine: var(--pop-text); --wine-dark: var(--pop-text); --wine-wash: var(--pop-tint);
+  --serif: var(--lb-serif); --sans: var(--lb-sans);
+  background: var(--lb-paper); background-image: none; font: 400 1.06rem/1.65 var(--lb-serif);
+}
+.lb-legacy a:hover { color: var(--pop-text); }
+.lb-legacy footer.lb-foot { width: auto; margin: 4rem 0 0; }
+.lb-legacy footer.lb-foot::before { content: none; }
+
+/* The band that opens each legacy case, in its theme colour */
+.lg-band { max-width: 1160px; margin: 2rem auto 0; padding: 0 32px; }
+.lg-band > div { background: var(--pop); color: var(--pop-on); padding: 1rem 1.4rem; display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem 1.5rem; font: 800 .74rem/1.4 var(--lb-sans); letter-spacing: .14em; text-transform: uppercase; }
+.lg-note { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+.lg-note p { margin: 0; padding: .75rem 1.4rem; background: var(--pop-tint); font: 400 .9rem/1.5 var(--lb-sans); color: var(--lb-ink-2); }
+.lg-note b { color: var(--lb-ink); font-weight: 700; }
+
+.lb-legacy .article-header h1 { font-weight: 500; font-variation-settings: "opsz" 72; letter-spacing: -.012em; }
+.lb-legacy .eyebrow { color: var(--pop-text); font-weight: 700; }
+.lb-legacy .prose h2 { font-weight: 500; }
+.lb-legacy .sidebar { background: var(--pop-tint); border: 0; border-top: 6px solid var(--pop); box-shadow: none; outline: 0; }
+.lb-legacy .sidebar::before { content: none; }
+.lb-legacy .sidebar dt { color: var(--pop-text); }
+
+@media (max-width: 600px) {
+  .lg-band, .lg-note { padding-left: 16px; padding-right: 16px; }
+}

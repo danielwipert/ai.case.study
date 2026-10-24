@@ -179,18 +179,21 @@ shown at equal size. The timeline is drawn to scale from the dates: dates are
 parsed as "8 Jul", "Sep 2024" or "6 Apr 2026", and one that does not parse turns
 the scaling off rather than failing.
 
-**The library style (redesign of 2026-10-24).** Dan's five gates, logged in the
+**The library style (redesign of 2026-10-24).** Dan's gates, logged in the
 private repo's `pilot/log/decisions.md`: Economist/FT restraint in the type
 (Newsreader for headlines and text, Libre Franklin for labels, warm paper) with
 DK *Big Ideas* teaching apparatus (In context box, numbered exhibits, drop cap,
-See also, cite this case) and **one colour per subject, used in solid fields**,
+See also, cite this case) and **one colour per theme, used in solid fields**,
 so a page appeals before it is read. Shared tokens are in
-`src/styles/library.css`; each rebuilt case's subject is set in
-`src/record/subjects.mjs` (a site choice, not part of the record, so not in
-`story.yaml`), and the build fails on a case without one. The colour field opens
-on the story's **first** number, so its order in `story.yaml` matters. Rolled out
-in three steps: a mock-up, the four rebuilt case pages, then home, Explore,
-Methodology and the legacy cases.
+`src/styles/library.css`. Every case belongs to one of **six themes** (Law &
+regulation, Work & productivity, Healthcare, Public services, Testing & safety,
+Infrastructure), set by case ID in `src/record/subjects.mjs`: a site choice, not
+part of the record, so not in `story.yaml` or a case's front matter. The build
+fails on a case without a theme, so **a new case needs a line there**. A rebuilt
+case's colour field opens on the story's **first** number, so its order in
+`story.yaml` matters. Legacy case pages keep their content and global.css
+layout, re-skinned through `src/styles/legacy.css`, with a band in their theme
+colour and an "Older format" note; the note goes when the case is rebuilt.
 
 ## Grading against a second chain that does not reach the numbers
 

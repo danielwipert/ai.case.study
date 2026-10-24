@@ -1,14 +1,9 @@
 ---
-// The page shell in the magazine style: fonts, header with the main menu,
-// and footer. Used by the home page and Explore; BaseLayout stays for the
-// pages not yet moved over.
-import "@fontsource/archivo-black/400.css";
-import "@fontsource/archivo/500.css";
-import "@fontsource/archivo/700.css";
-import "@fontsource/archivo/800.css";
-import "@fontsource/source-serif-4/400.css";
-import "@fontsource/source-serif-4/600.css";
-import "../styles/magazine.css";
+// The page shell in the library style: masthead with the main menu, the theme
+// strip, and footer. Used by the home page, Explore and Methodology; the case
+// pages have their own shells.
+import "../styles/library.css";
+import { THEMES } from "../record/subjects.mjs";
 
 interface Props {
   title?: string;
@@ -38,21 +33,23 @@ const menu = [
   <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
   <title>{title}</title>
 </head>
-<body class="mg">
-  <a class="mg-skip" href="#main">Skip to content</a>
-  <header class="mg-top">
-    <a class="mg-brand" href={`${base}/`}><b>Applied AI</b><span>Case Study Library</span></a>
-    <nav class="mg-tabs" aria-label="Main navigation">
-      {menu.map((item) => <a href={item.href} aria-current={item.key === active ? "page" : undefined}>{item.label}</a>)}
-      <a href="https://github.com/danielwipert/ai.case.study">Contribute ↗</a>
-    </nav>
+<body class="lb">
+  <a class="lb-skip" href="#main">Skip to content</a>
+  <header class="lb-wrap">
+    <div class="lb-mast">
+      <a class="lb-brand" href={`${base}/`}><b>Applied AI</b><span>Case Study Library</span></a>
+      <nav class="lb-tabs" aria-label="Main navigation">
+        {menu.map((item) => <a href={item.href} aria-current={item.key === active ? "page" : undefined}>{item.label}</a>)}
+        <a href="https://github.com/danielwipert/ai.case.study">Contribute ↗</a>
+      </nav>
+    </div>
+    <div class="lb-strip" aria-hidden="true">{Object.keys(THEMES).map((t) => <i data-subj={t}></i>)}</div>
   </header>
 
-  <slot name="hero" />
   <main id="main"><slot /></main>
 
-  <footer class="mg-foot">
-    <div class="mg-wrap mg-foot-row">
+  <footer class="lb-foot">
+    <div class="lb-wrap">
       <span>An open, evidence-first record of AI in practice.</span>
       <a href="https://github.com/danielwipert/ai.case.study">Source and revision history ↗</a>
     </div>

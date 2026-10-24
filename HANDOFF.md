@@ -6,34 +6,28 @@ the detail.*
 
 ## Where things stand
 
-The site is being redesigned. Dan found the magazine look (Archivo Black, lime,
-pink and violet, black hero) too flashy for the cases' academic weight, and
-settled the new look in five gates on 2026-10-24:
+The whole site has been redesigned in three steps (Dan's gates of 2026-10-24,
+all logged in the private repo's `pilot/log/decisions.md` on branch
+`claude/dazzling-pascal-lbbtpt`; see `CLAUDE.md`, "The library style"):
 
-1. Register: Economist/FT restraint with academic touches.
-2. Textbook layer: DK *Big Ideas* apparatus (In context, See also, numbered
-   exhibits, drop caps); flow diagrams deferred, since each is a causal claim.
-3. Type: Newsreader + Libre Franklin.
-4. Colour: first oxblood on warm paper; after the mock-up ("too Financial
-   Times"), **one colour per subject in solid fields**, DK-style.
-5. Rollout in three steps.
+1. A mock-up: claude.ai/artifact/YAgnJLpQtaXKpfSQc5nvGH.
+2. The four rebuilt cases' pages: PR #43.
+3. Home, Explore, Methodology and the 17 legacy case pages, on the six themes:
+   the PR after #43. Home has the theme mosaic (each tile opens Explore filtered
+   by `?theme=`); Explore gained a Theme filter; legacy pages carry an "Older
+   format" note.
 
-All five are in the private repo's `pilot/log/decisions.md` (branch
-`claude/dazzling-pascal-lbbtpt`). Mock-up: claude.ai/artifact/YAgnJLpQtaXKpfSQc5nvGH.
-
-**Step 2 is done on `claude/dazzling-pascal-lbbtpt`**: the four rebuilt cases'
-story, full record, evidence and sources pages in the new style. See
-`CLAUDE.md`, "The library style".
+`magazine.css`, `MagazineLayout` and the Archivo and Source Serif font packages
+are gone; `LibraryLayout`, `LibraryCard` and `legacy.css` replace them.
 
 ## Still open
 
-- **Step 3**: home, Explore, Methodology and the legacy case pages. Needs a gate
-  on how the 21 cases group into subject colours.
 - Per-case charts (bar charts, pictograms) and a pull quote: new per-case data,
   and the pull quote is an editorial choice. Later, case by case.
 - Pre-existing: the full-record page shows literal `**` around bold text in
-  bulleted narrative lists (seen in CS016 headings 2, 5, 6, 8, 10). Not caused by
-  the redesign.
+  bulleted narrative lists (seen in CS016 headings 2, 5, 6, 8, 10).
+- The propositions page is still withdrawn; when it returns it needs the
+  library style.
 - From before: the 3–5 readers for the label test; Reuters' two policy links
   for CS001's publisher grade; P6's review warning. Not to start without Dan:
   J4, J5, any new legacy-format case.

@@ -9,8 +9,8 @@ import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { loadCase, shortCode } from "../../../../record/lib/record.mjs";
-import { recordRoutes, recordedCaseIds } from "../../../../record/lib/routes.mjs";
-import { SUBJECTS, subjectOf } from "../../../../record/subjects.mjs";
+import { recordRoutes } from "../../../../record/lib/routes.mjs";
+import { THEMES, themeOf } from "../../../../record/subjects.mjs";
 
 export function getStaticPaths() {
   return recordRoutes();
@@ -114,20 +114,18 @@ const strip = (() => {
 })();
 const first = story.timeline[0].date, last = story.timeline[story.timeline.length - 1].date;
 
-// The subject colour, the hero figure (the story's first number) and the related cases.
-const subj = subjectOf(code);
+// The theme colour, the hero figure (the story's first number) and the related cases.
+const subj = themeOf(record.header.public_id);
 const hero = story.numbers[0];
 const caseNo = record.header.public_id.slice(-3);
 const entries = await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status));
 const self = entries.find((e) => e.data.case_id === record.header.public_id);
-const rebuilt = recordedCaseIds();
 const related = (self?.data.related_cases ?? [])
   .map((id) => entries.find((e) => e.data.case_id === id))
   .filter(Boolean)
   .map((e) => {
-    const c = rebuilt.get(e.data.case_id);
-    const s = c ? subjectOf(c) : null;
-    return { href: `${base}/cases/${e.id}/`, title: e.data.title, subj: s ?? "none", label: `${s ? `${SUBJECTS[s]} · ` : ""}Case ${e.data.case_id.slice(-3)}` };
+    const t = themeOf(e.data.case_id);
+    return { href: `${base}/cases/${e.id}/`, title: e.data.title, subj: t, label: `${THEMES[t]} · Case ${e.data.case_id.slice(-3)}` };
   });
 const docTitles = record.documents.map((d) => d.title);
 const cutoff = record.header.charter?.evidence_cutoff;
@@ -156,13 +154,13 @@ const [lede, ...points] = story.short_version;
         {onepagerHref && <a class="lb-dl" href={onepagerHref} download>One-page summary <span>PDF</span></a>}
       </nav>
     </div>
-    <div class="lb-strip" aria-hidden="true">{Object.keys(SUBJECTS).map((s) => <i data-subj={s}></i>)}</div>
+    <div class="lb-strip" aria-hidden="true">{Object.keys(THEMES).map((t) => <i data-subj={t}></i>)}</div>
   </header>
 
   <main class="lb-wrap">
     <div class="cs-opener">
       <div class="cs-field">
-        <p class="cs-field-top"><span>{story.tags[0]}</span><span>Case {caseNo}</span></p>
+        <p class="cs-field-top"><span>{THEMES[subj]}</span><span>Case {caseNo}</span></p>
         <div class="cs-field-fig">
           <strong>{hero.figure}</strong>
           <span>{hero.label}</span>
@@ -294,8 +292,8 @@ const [lede, ...points] = story.short_version;
         <div class="cs-context">
           <h2>In context</h2>
           <dl>
-            <dt>Subject</dt>
-            <dd>{SUBJECTS[subj]}</dd>
+            <dt>Theme</dt>
+            <dd>{THEMES[subj]}</dd>
             <dt>{docs === 1 ? "The source read" : `The ${docs} sources read`}</dt>
             {docTitles.map((t) => <dd>{t}</dd>)}
             <dt>Period covered</dt>

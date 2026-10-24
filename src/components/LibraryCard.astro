@@ -1,0 +1,38 @@
+---
+// A case card in the library style: a block in the case's theme colour, then
+// the title and summary. Carries the data-* attributes the Explore filters read.
+import { THEMES, themeOf } from "../record/subjects.mjs";
+
+const { entry, rebuilt = false } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const d = entry.data;
+const theme = themeOf(d.case_id);
+const href = `${base}/cases/${entry.id}/`;
+const outcomeLabels = { positive: "Positive", negative: "Negative", mixed: "Mixed", inconclusive: "Inconclusive", unknown: "Unknown" };
+const words = (value) => value.replaceAll("-", " ");
+---
+
+<article
+  class="lb-card"
+  data-subj={theme}
+  data-card
+  data-theme={theme}
+  data-industry={d.industry.join(" ")}
+  data-function={d.business_function.join(" ")}
+  data-case-type={d.case_type}
+  data-outcome={d.outcome}
+  data-grade={d.evidence_grade}
+  data-search={`${d.title} ${d.organization.join(" ")} ${d.summary} ${THEMES[theme]} ${d.industry.join(" ")} ${d.business_function.join(" ")} ${d.tags.join(" ")}`.toLowerCase()}
+>
+  <a class="lb-card-top" href={href} tabindex="-1" aria-hidden="true">
+    <span>{THEMES[theme]} · {words(d.case_type)}</span>
+    <strong>{d.case_id.slice(-3)}</strong>
+  </a>
+  <h3><a href={href}>{d.title}</a></h3>
+  <p class="lb-card-sum">{d.summary}</p>
+  <p class="lb-card-meta">
+    <b title={`Evidence grade ${d.evidence_grade}`}>{d.evidence_grade}</b>
+    <span>Grade {d.evidence_grade} · {outcomeLabels[d.outcome]} outcome</span>
+    {rebuilt && <span class="lb-card-new">Rebuilt</span>}
+  </p>
+</article>
