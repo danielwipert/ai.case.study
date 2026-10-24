@@ -14,21 +14,21 @@
 
 :root {
   --lb-paper: #fbf8f2; --lb-ink: #1c1915; --lb-ink-2: #554e45; --lb-ink-3: #8a8277; --lb-rule: #d8cfbf; --lb-track: #ebe4d7;
-  /* Subject colours. Text on amber is ink, on the others white. */
-  --lb-courts: #c4306e; --lb-health: #0e8a84; --lb-employment: #2f5bd3; --lb-security: #e39b12; --lb-synthesis: #5b4b8a; --lb-media: #d4552b;
+  /* Theme colours (src/record/subjects.mjs). Text on amber is ink, on the others white. */
+  --lb-law: #c4306e; --lb-work: #2f5bd3; --lb-health: #0e8a84; --lb-public: #5b4b8a; --lb-testing: #e39b12; --lb-infra: #c2471f;
   --lb-serif: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
   --lb-sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
 }
 
-/* A subject scope: --pop fills blocks, --pop-on is text on it, --pop-text is
+/* A theme scope (data-subj): --pop fills blocks, --pop-on is text on it, --pop-text is
    the colour as text on paper, --pop-tint and --pop-mid are panel and rule tints. */
 [data-subj] { --pop: var(--lb-ink); --pop-on: #fff; }
-[data-subj="courts"] { --pop: var(--lb-courts); }
+[data-subj="law"] { --pop: var(--lb-law); }
+[data-subj="work"] { --pop: var(--lb-work); }
 [data-subj="health"] { --pop: var(--lb-health); }
-[data-subj="employment"] { --pop: var(--lb-employment); }
-[data-subj="security"] { --pop: var(--lb-security); --pop-on: var(--lb-ink); }
-[data-subj="synthesis"] { --pop: var(--lb-synthesis); }
-[data-subj="media"] { --pop: var(--lb-media); }
+[data-subj="public"] { --pop: var(--lb-public); }
+[data-subj="testing"] { --pop: var(--lb-testing); --pop-on: var(--lb-ink); }
+[data-subj="infra"] { --pop: var(--lb-infra); }
 [data-subj] {
   --pop-text: color-mix(in srgb, var(--pop) 72%, var(--lb-ink));
   --pop-deep: color-mix(in srgb, var(--pop) 55%, var(--lb-ink));
@@ -68,3 +68,36 @@ body.lb { margin: 0; background: var(--lb-paper); color: var(--lb-ink); font: 40
   .lb-wrap { padding-left: 16px; padding-right: 16px; }
   body.lb { font-size: 1.06rem; }
 }
+
+.lb-skip { position: absolute; left: -999px; top: .5rem; background: var(--lb-ink); color: var(--lb-paper); padding: .5rem .8rem; font: 700 .8rem var(--lb-sans); z-index: 10; }
+.lb-skip:focus { left: .5rem; }
+
+/* Page openers for Explore and Methodology: kicker, headline, standfirst */
+.lb-pagehead { padding-block: 2.6rem 2rem; display: grid; gap: .9rem; max-width: 50rem; }
+.lb-kicker { margin: 0; font: 800 .74rem var(--lb-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--lb-ink-2); }
+.lb-pagehead h1 { font-size: clamp(2.3rem, 5vw, 3.6rem); line-height: 1.05; letter-spacing: -.015em; font-variation-settings: "opsz" 72; }
+.lb-pagehead h1 em { font-style: italic; }
+.lb-standfirst { margin: 0; font-size: 1.2rem; line-height: 1.5; color: var(--lb-ink-2); }
+
+/* Section headings on Home and Explore */
+.lb-sec-h { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin: 3.2rem 0 1.2rem; padding-top: .7rem; border-top: 2px solid var(--lb-ink); }
+.lb-sec-h h2 { font-size: 1.6rem; }
+.lb-sec-h a { font: 600 .85rem var(--lb-sans); }
+
+/* Case cards */
+.lb-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.2rem 1.6rem; }
+.lb-card { display: flex; flex-direction: column; gap: .7rem; min-width: 0; }
+.lb-card[hidden] { display: none; }
+.lb-card-top { background: var(--pop); color: var(--pop-on) !important; height: 8rem; padding: .8rem 1rem; display: grid; align-content: space-between; text-decoration: none; }
+.lb-card-top span { font: 800 .66rem/1.4 var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; }
+.lb-card-top strong { font: 500 2.7rem/1 var(--lb-serif); font-variant-numeric: lining-nums; }
+.lb-card h3 { font-size: 1.32rem; line-height: 1.25; }
+.lb-card h3 a { text-decoration: none; }
+.lb-card h3 a:hover, .lb-card:has(.lb-card-top:hover) h3 a { text-decoration: underline; text-decoration-color: var(--pop); text-decoration-thickness: 2px; }
+.lb-card-sum { margin: 0; flex: 1; font-size: 1rem; line-height: 1.5; color: var(--lb-ink-2); }
+.lb-card-meta { margin: 0; display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; font: 500 .78rem var(--lb-sans); color: var(--lb-ink-2); }
+.lb-card-meta b { display: inline-grid; place-items: center; width: 1.5rem; height: 1.5rem; border-radius: 50%; background: var(--pop); color: var(--pop-on); font: 600 .8rem var(--lb-serif); }
+.lb-card-new { font: 700 .64rem var(--lb-sans); letter-spacing: .1em; text-transform: uppercase; border: 1px solid var(--lb-ink-3); padding: .1rem .4rem; color: var(--lb-ink); }
+
+@media (max-width: 920px) { .lb-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .lb-cards { grid-template-columns: 1fr; } }

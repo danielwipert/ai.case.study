@@ -3,6 +3,7 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import EvidencePanel from "../../components/EvidencePanel.astro";
 import { recordedCaseIds } from "../../record/lib/routes.mjs";
+import { THEMES, themeOf } from "../../record/subjects.mjs";
 
 export async function getStaticPaths() {
   // A case rebuilt in the new format is served by cases/[year]/[case]/ at the
@@ -20,11 +21,14 @@ const byCaseId = new Map(allCases.map((item) => [item.data.case_id, item]));
 const related = data.related_cases.map((id) => byCaseId.get(id)).filter(Boolean);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const chainCount = new Set(data.sources.map((source) => source.source_family ?? `single:${source.id}`)).size;
+const theme = themeOf(data.case_id);
 const displayDate = (date) => new Intl.DateTimeFormat("en", { year: "numeric", month: "short", day: "numeric", timeZone: "UTC" }).format(date);
 
 ---
 
-<BaseLayout title={`${data.title} | Applied AI Case Study Library`} description={data.summary}>
+<BaseLayout title={`${data.title} | Applied AI Case Study Library`} description={data.summary} theme={theme}>
+  <div class="lg-band"><div><span>{THEMES[theme]}</span><span>Case {data.case_id.slice(-3)}</span></div></div>
+  <div class="lg-note"><p><b>Older format.</b> This case is being rebuilt to the library's new standard, where every sentence is tied to the checked evidence it rests on. Until then it stays in the format it was published in.</p></div>
   <header class="shell article-header">
     <p class="eyebrow">{data.case_id} · {data.case_type.replaceAll("-", " ")}</p>
     <h1>{data.title}</h1>

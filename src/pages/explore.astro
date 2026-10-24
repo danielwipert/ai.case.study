@@ -1,8 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import MagazineLayout from "../layouts/MagazineLayout.astro";
-import MagCaseCard from "../components/MagCaseCard.astro";
+import LibraryLayout from "../layouts/LibraryLayout.astro";
+import LibraryCard from "../components/LibraryCard.astro";
 import { recordedCaseIds } from "../record/lib/routes.mjs";
+import { THEMES } from "../record/subjects.mjs";
 
 const cases = (await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status)))
   .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
@@ -15,19 +16,20 @@ const grades = unique(cases.map((entry) => entry.data.evidence_grade));
 const rebuilt = recordedCaseIds();
 ---
 
-<MagazineLayout title="Explore cases | Applied AI Case Study Library" active="explore">
-  <section class="mg-hero mg-hero-page" slot="hero">
-    <div class="mg-wrap">
-      <p class="mg-tags"><span>The library</span></p>
+<LibraryLayout title="Explore cases | Applied AI Case Study Library" active="explore">
+  <div class="lb-wrap">
+    <div class="lb-pagehead">
+      <p class="lb-kicker">The library</p>
       <h1>Explore cases</h1>
-      <p class="mg-dek">Search by organization or subject, then narrow the record by industry, business function, case type, outcome, or evidence grade.</p>
+      <p class="lb-standfirst">Search by organization or subject, then narrow the record by theme, industry, business function, case type, outcome, or evidence grade.</p>
     </div>
-  </section>
+  </div>
 
-  <section class="mg-filters-band">
-    <div class="mg-wrap">
-      <div class="mg-filters" aria-label="Case filters">
-        <label class="mg-search">Search<input id="search" type="search" placeholder="Organization, subject, or tag" /></label>
+  <section class="ex-filters-band">
+    <div class="lb-wrap">
+      <div class="ex-filters" aria-label="Case filters">
+        <label class="ex-search">Search<input id="search" type="search" placeholder="Organization, subject, or tag" /></label>
+        <label>Theme<select id="theme"><option value="">All</option>{Object.entries(THEMES).map(([k, v]) => <option value={k}>{v}</option>)}</select></label>
         <label>Industry<select id="industry"><option value="">All</option>{industries.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
         <label>Function<select id="function"><option value="">All</option>{functions.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
         <label>Case type<select id="case-type"><option value="">All</option>{types.map((v) => <option value={v}>{v.replaceAll("-", " ")}</option>)}</select></label>
@@ -37,17 +39,18 @@ const rebuilt = recordedCaseIds();
     </div>
   </section>
 
-  <section class="mg-wrap mg-sec mg-results">
-    <p class="mg-status" id="result-status" aria-live="polite">Showing {cases.length} {cases.length === 1 ? "case" : "cases"}</p>
-    <div class="mg-case-grid mg-case-grid-3" id="results">
-      {cases.map((entry) => <MagCaseCard entry={entry} rebuilt={rebuilt.has(entry.data.case_id)} />)}
+  <section class="lb-wrap ex-results">
+    <p class="ex-status" id="result-status" aria-live="polite">Showing {cases.length} {cases.length === 1 ? "case" : "cases"}</p>
+    <div class="lb-cards" id="results">
+      {cases.map((entry) => <LibraryCard entry={entry} rebuilt={rebuilt.has(entry.data.case_id)} />)}
     </div>
-    <p class="mg-empty" id="empty" hidden>No cases match those filters. Try broadening the search.</p>
+    <p class="ex-empty" id="empty" hidden>No cases match those filters. Try broadening the search.</p>
   </section>
 
   <script>
     const controls = {
       search: document.querySelector("#search"),
+      theme: document.querySelector("#theme"),
       industry: document.querySelector("#industry"),
       function: document.querySelector("#function"),
       caseType: document.querySelector("#case-type"),
@@ -63,6 +66,7 @@ const rebuilt = recordedCaseIds();
       let count = 0;
       cards.forEach((card) => {
         const visible = (!query || card.dataset.search.includes(query))
+          && (!controls.theme.value || card.dataset.theme === controls.theme.value)
           && (!controls.industry.value || card.dataset.industry.split(" ").includes(controls.industry.value))
           && (!controls.function.value || card.dataset.function.split(" ").includes(controls.function.value))
           && (!controls.caseType.value || card.dataset.caseType === controls.caseType.value)
@@ -75,28 +79,32 @@ const rebuilt = recordedCaseIds();
       empty.hidden = count !== 0;
     }
     Object.values(controls).forEach((control) => control.addEventListener("input", filterCases));
+    // The home page's theme tiles link here as ?theme=<key>.
+    const wanted = new URLSearchParams(location.search).get("theme");
+    if (wanted && [...controls.theme.options].some((o) => o.value === wanted)) {
+      controls.theme.value = wanted;
+      filterCases();
+    }
   </script>
-</MagazineLayout>
+</LibraryLayout>
 
 <style is:global>
-  .mg-hero-page { padding: 4.2rem 0 3.4rem; }
-  .mg-filters-band { background: var(--mg-lime); padding: 1.6rem 0; position: sticky; top: 0; z-index: 5; }
-  .mg-filters { display: grid; grid-template-columns: 2fr repeat(5, minmax(0, 1fr)); gap: .9rem; align-items: end; }
-  .mg-filters label { display: flex; flex-direction: column; gap: .4rem; font: 800 .66rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-ink); }
-  .mg-filters input, .mg-filters select { width: 100%; box-sizing: border-box; height: 2.8rem; padding: 0 .75rem; border: 2px solid var(--mg-ink); border-radius: 0; background: #fff; color: var(--mg-ink); font: 500 .95rem var(--mg-sans); text-transform: none; letter-spacing: 0; }
-  .mg-filters select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--mg-ink) 50%), linear-gradient(135deg, var(--mg-ink) 50%, transparent 50%); background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 1.8rem; text-transform: capitalize; }
-  .mg-filters input:focus, .mg-filters select:focus { outline: none; box-shadow: 4px 4px 0 var(--mg-pink); }
-  .mg-results { padding-top: 2.4rem; }
-  .mg-status { margin: 0 0 1.2rem; font: 800 .74rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-grey); }
-  .mg-empty { margin: 2rem 0; padding: 1.6rem; background: var(--mg-ink); color: #fff; font: 400 1.6rem/1.2 var(--mg-display); letter-spacing: -.02em; }
-  .mg-empty[hidden] { display: none; }
+  .ex-filters-band { background: var(--lb-track); padding: 1.2rem 0; position: sticky; top: 0; z-index: 5; border-block: 1px solid var(--lb-rule); }
+  .ex-filters { display: grid; grid-template-columns: 2fr repeat(6, minmax(0, 1fr)); gap: .8rem; align-items: end; }
+  .ex-filters label { display: flex; flex-direction: column; gap: .35rem; font: 700 .66rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--lb-ink-2); min-width: 0; }
+  .ex-filters input, .ex-filters select { width: 100%; box-sizing: border-box; height: 2.6rem; padding: 0 .7rem; border: 1px solid var(--lb-ink-3); border-radius: 0; background: var(--lb-paper); color: var(--lb-ink); font: 500 .92rem var(--lb-sans); text-transform: none; letter-spacing: 0; }
+  .ex-filters select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--lb-ink) 50%), linear-gradient(135deg, var(--lb-ink) 50%, transparent 50%); background-position: calc(100% - 16px) 50%, calc(100% - 11px) 50%; background-size: 5px 5px; background-repeat: no-repeat; padding-right: 1.8rem; text-transform: capitalize; }
+  .ex-filters input:focus, .ex-filters select:focus { outline: 2px solid var(--lb-ink); outline-offset: 1px; }
+  .ex-results { padding-top: 2rem; }
+  .ex-status { margin: 0 0 1.4rem; font: 700 .74rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--lb-ink-2); }
+  .ex-empty { margin: 2rem 0; padding: 1.4rem; background: var(--lb-track); font: 500 1.4rem/1.3 var(--lb-serif); }
 
   @media (max-width: 1000px) {
-    .mg-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .mg-search { grid-column: 1 / -1; }
+    .ex-filters { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .ex-search { grid-column: 1 / -1; }
   }
   @media (max-width: 600px) {
-    .mg-filters-band { position: static; padding: 1.2rem 0; }
-    .mg-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+    .ex-filters-band { position: static; }
+    .ex-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; }
   }
 </style>

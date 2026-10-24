@@ -1,21 +1,23 @@
 ---
+// The shell for the legacy case pages, in the library style (step 3 of the
+// 2026-10-24 redesign, Dan's option A: a new skin, same content). global.css
+// still lays the page out; library.css and the overrides in legacy.css give it
+// the library's paper, type and the case's theme colour.
 import "../styles/global.css";
-import "@fontsource/ibm-plex-sans/400.css";
-import "@fontsource/ibm-plex-sans/500.css";
-import "@fontsource/ibm-plex-sans/600.css";
-import "@fontsource/ibm-plex-serif/400.css";
-import "@fontsource/ibm-plex-serif/400-italic.css";
-import "@fontsource/ibm-plex-serif/500.css";
-import "@fontsource/ibm-plex-serif/600.css";
+import "../styles/library.css";
+import "../styles/legacy.css";
+import { THEMES } from "../record/subjects.mjs";
 
 interface Props {
   title?: string;
   description?: string;
+  theme?: string;
 }
 
 const {
   title = "Applied AI Case Study Library",
-  description = "Evidence-first cases about how AI changes real organizations, work, economics, and risk."
+  description = "Evidence-first cases about how AI changes real organizations, work, economics, and risk.",
+  theme
 } = Astro.props;
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -25,29 +27,31 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
     <title>{title}</title>
   </head>
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <a class="wordmark" href={`${base}/`} aria-label="Applied AI Case Study Library home">
-        <span class="mark" aria-hidden="true"><span>A</span><small>AI</small></span>
-        <span>Applied AI<br /><small>Case Study Library</small></span>
-      </a>
-      <nav aria-label="Main navigation">
-        <a href={`${base}/explore/`}>Explore cases</a>
-        <a href={`${base}/methodology/`}>Methodology</a>
-        <a href="https://github.com/danielwipert/ai.case.study">Contribute ↗</a>
-      </nav>
+  <body class="lb lb-legacy" data-subj={theme}>
+    <a class="lb-skip" href="#main">Skip to content</a>
+    <header class="lb-wrap">
+      <div class="lb-mast">
+        <a class="lb-brand" href={`${base}/`}><b>Applied AI</b><span>Case Study Library</span></a>
+        <nav class="lb-tabs" aria-label="Main navigation">
+          <a href={`${base}/explore/`}>Explore cases</a>
+          <a href={`${base}/methodology/`}>Methodology</a>
+          <a href="https://github.com/danielwipert/ai.case.study">Contribute ↗</a>
+        </nav>
+      </div>
+      <div class="lb-strip" aria-hidden="true">{Object.keys(THEMES).map((t) => <i data-subj={t}></i>)}</div>
     </header>
     <main id="main"><slot /></main>
-    <footer>
-      <p>An open, evidence-first record of AI in practice.</p>
-      <p><a href="https://github.com/danielwipert/ai.case.study">Source and revision history ↗</a></p>
+    <footer class="lb-foot">
+      <div class="lb-wrap">
+        <span>An open, evidence-first record of AI in practice.</span>
+        <a href="https://github.com/danielwipert/ai.case.study">Source and revision history ↗</a>
+      </div>
     </footer>
   </body>
 </html>

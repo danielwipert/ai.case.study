@@ -1,127 +1,136 @@
 ---
-// The home page, in the magazine style of the rebuilt case pages: the same
-// palette, type and section pattern as the story page of a new-format case.
+// The home page in the library style: the six themes as a colour mosaic, the
+// featured rebuilt case on its colour field, the latest cases, and the method.
 import { getCollection } from "astro:content";
 import { load as parseYaml } from "js-yaml";
-import MagazineLayout from "../layouts/MagazineLayout.astro";
-import MagCaseCard from "../components/MagCaseCard.astro";
+import LibraryLayout from "../layouts/LibraryLayout.astro";
+import LibraryCard from "../components/LibraryCard.astro";
 import { recordRoutes, recordedCaseIds } from "../record/lib/routes.mjs";
+import { loadCase } from "../record/lib/record.mjs";
+import { THEMES, themeOf } from "../record/subjects.mjs";
 
 const cases = (await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status)))
   .sort((a, b) => b.data.published.valueOf() - a.data.published.valueOf());
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const grades = new Set(cases.map((entry) => entry.data.evidence_grade)).size;
 const rebuilt = recordedCaseIds();
+const perTheme = Object.keys(THEMES).map((key) => ({ key, label: THEMES[key], count: cases.filter((e) => themeOf(e.data.case_id) === key).length }));
 
-// Featured: a case rebuilt in the new format, in its story's own words.
+// Featured: a case rebuilt in the new format, opening on its story's first number.
 const stories = import.meta.glob("../record/cases/*/story.yaml", { query: "?raw", import: "default", eager: true });
 const featured = (await recordRoutes())
-  .map(({ params, props }) => ({
-    href: `${base}/cases/${params.year}/${params.case}/`,
-    story: parseYaml(stories[`../record/cases/${props.code}/story.yaml`])
-  }))
+  .map(({ params, props }) => {
+    const story = parseYaml(stories[`../record/cases/${props.code}/story.yaml`]);
+    const id = loadCase(props.code).header.public_id;
+    return { href: `${base}/cases/${params.year}/${params.case}/`, story, id, theme: themeOf(id) };
+  })
   .at(-1);
 ---
 
-<MagazineLayout>
-  <section class="mg-hero" slot="hero">
-    <div class="mg-wrap mg-hero-grid">
+<LibraryLayout>
+  <div class="lb-wrap">
+    <section class="hm-lead">
       <div>
-        <p class="mg-tags"><span>An evidence-first collection</span></p>
-        <h1>A reading room for <em>applied intelligence.</em></h1>
-        <p class="mg-dek">Case studies of deployments, failures, economics, governance, and organizational change—written for people making real decisions.</p>
+        <p class="lb-kicker">An evidence-first collection</p>
+        <h1>A reading room for applied intelligence</h1>
+        <p class="lb-standfirst">Case studies of deployments, failures, economics, governance, and organizational change, written for people making real decisions.</p>
+        <p class="hm-cta"><a href={`${base}/explore/`}>Explore all {cases.length} cases <span aria-hidden="true">→</span></a></p>
       </div>
-      <a class="mg-cta" href={`${base}/explore/`}>Explore the library&nbsp;<span aria-hidden="true">→</span></a>
-    </div>
-  </section>
-
-  <section class="mg-numbers" aria-label="The library in numbers">
-    <div class="mg-wrap mg-num-grid">
-      <div class="mg-num"><strong>{cases.length}</strong><span>published {cases.length === 1 ? "case" : "cases"}</span></div>
-      <div class="mg-num"><strong>{grades}</strong><span>evidence {grades === 1 ? "grade" : "grades"} represented</span></div>
-      <div class="mg-num"><strong>Open</strong><span>methods, citations, and revision history</span></div>
-    </div>
-  </section>
-
-  {featured && (
-    <section class="mg-wrap mg-sec">
-      <h2 class="mg-h"><span>01</span>Featured case</h2>
-      <a class="mg-feature" href={featured.href}>
-        <div>
-          <p class="mg-feature-tag">New case format</p>
-          <h3>{featured.story.headline}</h3>
-          <p>{featured.story.dek}</p>
-          <span class="mg-more">Read the story <span aria-hidden="true">→</span></span>
-        </div>
-        <aside class="mg-stamp" aria-label={`Case grade ${featured.story.grade.letter}: ${featured.story.grade.plain}`}>
-          <span class="mg-stamp-letter">{featured.story.grade.letter}</span>
-          <span class="mg-stamp-word">{featured.story.grade.plain}</span>
-        </aside>
-      </a>
+      <nav class="hm-mosaic" aria-label="The library's six themes">
+        {perTheme.map((t) => (
+          <a class="hm-tile" data-subj={t.key} href={`${base}/explore/?theme=${t.key}`}>
+            <span>{t.label}</span>
+            <strong>{t.count}</strong>
+            <small>{t.count === 1 ? "case" : "cases"}</small>
+          </a>
+        ))}
+      </nav>
     </section>
-  )}
 
-  <section class="mg-wrap mg-sec">
-    <div class="mg-h mg-h-row">
-      <h2><span>{featured ? "02" : "01"}</span>Latest cases</h2>
-      <a href={`${base}/explore/`}>View all and filter →</a>
-    </div>
-    <div class="mg-case-grid">
-      {cases.slice(0, 4).map((entry) => <MagCaseCard entry={entry} rebuilt={rebuilt.has(entry.data.case_id)} />)}
-    </div>
-  </section>
+    <section class="hm-stats" aria-label="The library in numbers">
+      <div><strong>{cases.length}</strong><span>published {cases.length === 1 ? "case" : "cases"}</span></div>
+      <div><strong>{rebuilt.size}</strong><span>rebuilt to the new standard, every sentence tied to its evidence</span></div>
+      <div><strong>{grades}</strong><span>evidence {grades === 1 ? "grade" : "grades"} represented</span></div>
+    </section>
 
-  <section class="mg-deeper" aria-labelledby="method-heading">
-    <div class="mg-wrap">
-      <h2 class="mg-h mg-h-inv" id="method-heading"><span>{featured ? "03" : "02"}</span>Built to be questioned</h2>
-      <div class="mg-cards">
-        <div><em>01</em><strong>Traceable claims</strong><span>Material facts point to the evidence closest to the event, not an unattributed summary.</span></div>
-        <div><em>02</em><strong>Calibrated conclusions</strong><span>Evidence grades and causal labels distinguish what happened from what the evidence can prove.</span></div>
-        <div><em>03</em><strong>Open revision</strong><span>Verification dates, correction notes, and Git history make change visible.</span></div>
+    {featured && (
+      <section>
+        <div class="lb-sec-h"><h2>Featured case</h2><a href={featured.href}>Read the story</a></div>
+        <a class="hm-feature" data-subj={featured.theme} href={featured.href}>
+          <div class="hm-field">
+            <p><span>{THEMES[featured.theme]}</span><span>Case {featured.id.slice(-3)}</span></p>
+            <div><strong>{featured.story.numbers[0].figure}</strong><span>{featured.story.numbers[0].label}</span></div>
+          </div>
+          <div class="hm-feature-text">
+            <p class="hm-feature-kicker">Grade {featured.story.grade.letter} · {featured.story.grade.plain}</p>
+            <h3>{featured.story.headline}</h3>
+            <p>{featured.story.dek}</p>
+          </div>
+        </a>
+      </section>
+    )}
+
+    <section>
+      <div class="lb-sec-h"><h2>Latest cases</h2><a href={`${base}/explore/`}>View all and filter</a></div>
+      <div class="lb-cards">
+        {cases.slice(0, 6).map((entry) => <LibraryCard entry={entry} rebuilt={rebuilt.has(entry.data.case_id)} />)}
       </div>
-    </div>
-  </section>
-</MagazineLayout>
+    </section>
+
+    <section aria-labelledby="method-heading">
+      <div class="lb-sec-h"><h2 id="method-heading">Built to be questioned</h2><a href={`${base}/methodology/`}>How the library works</a></div>
+      <div class="hm-method">
+        <div><em>1</em><strong>Traceable claims</strong><span>Material facts point to the evidence closest to the event, not an unattributed summary.</span></div>
+        <div><em>2</em><strong>Calibrated conclusions</strong><span>Evidence grades and causal labels distinguish what happened from what the evidence can prove.</span></div>
+        <div><em>3</em><strong>Open revision</strong><span>Verification dates, correction notes, and Git history make change visible.</span></div>
+      </div>
+    </section>
+  </div>
+</LibraryLayout>
 
 <style is:global>
-  .mg-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 3rem; align-items: end; }
-  .mg-cta { display: block; background: var(--mg-lime); color: var(--mg-ink) !important; text-decoration: none; padding: 1.4rem; transform: rotate(-2deg); box-shadow: 10px 10px 0 var(--mg-pink); font: 400 1.6rem/1.1 var(--mg-display); letter-spacing: -.02em; transition: transform .15s; }
-  .mg-cta:hover { transform: rotate(0); }
+  .hm-lead { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 3rem; padding-block: 2.6rem 2.4rem; align-items: center; }
+  .hm-lead h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.04; letter-spacing: -.015em; font-variation-settings: "opsz" 72; margin: .8rem 0 1.2rem; }
+  .hm-cta { margin: 1.6rem 0 0; }
+  .hm-cta a { display: inline-block; background: var(--lb-ink); color: var(--lb-paper); text-decoration: none; font: 700 .9rem var(--lb-sans); padding: .8rem 1.1rem; }
+  .hm-cta a:hover { background: var(--lb-ink-2); }
+  .hm-mosaic { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 8rem; gap: 6px; }
+  .hm-tile { background: var(--pop); color: var(--pop-on); padding: .8rem .9rem; display: grid; grid-template-rows: 1fr auto auto; text-decoration: none; min-width: 0; }
+  .hm-tile span { font: 800 .66rem/1.35 var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; }
+  .hm-tile strong { font: 500 2.4rem/1 var(--lb-serif); font-variant-numeric: lining-nums; }
+  .hm-tile small { font: 500 .78rem var(--lb-sans); opacity: .85; }
+  .hm-tile:hover strong { text-decoration: underline; text-decoration-thickness: 2px; }
 
-  .mg-numbers { background: var(--mg-violet); color: #fff; padding: 3.2rem 0; }
-  .mg-num-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
-  .mg-num { border-top: 3px solid var(--mg-lime); padding-top: 1rem; }
-  .mg-num strong { display: block; font: 400 clamp(2.6rem, 5vw, 4.2rem)/1 var(--mg-display); letter-spacing: -.04em; color: var(--mg-lime); margin-bottom: .8rem; }
-  .mg-num span { font: 500 1rem/1.4 var(--mg-sans); }
+  .hm-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .hm-stats div { padding: 1rem 1.2rem; background: var(--lb-track); }
+  .hm-stats strong { display: block; font: 500 2.2rem/1.1 var(--lb-serif); font-variant-numeric: lining-nums; }
+  .hm-stats span { font: 500 .86rem/1.4 var(--lb-sans); color: var(--lb-ink-2); }
 
-  .mg-feature { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 3rem; align-items: center; text-decoration: none; background: var(--mg-ink); color: #fff !important; padding: 2.6rem; position: relative; overflow: hidden; }
-  .mg-feature::after { content: ""; position: absolute; left: -15%; bottom: -60%; width: 60%; height: 160%; background: radial-gradient(closest-side, rgb(232 90 142 / 28%), transparent); pointer-events: none; }
-  .mg-feature > * { position: relative; z-index: 1; }
-  .mg-feature h3 { font: 400 clamp(1.9rem, 4vw, 3.2rem)/1 var(--mg-display); letter-spacing: -.03em; margin: 0 0 1rem; text-wrap: balance; }
-  .mg-feature p { font: 400 1.15rem/1.55 var(--mg-serif); color: #d6d6d8; margin: 0 0 1.4rem; max-width: 42rem; }
-  .mg-feature .mg-feature-tag { display: inline-block; margin: 0 0 1.2rem; font: 800 .7rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--mg-ink); background: var(--mg-lime); padding: .35rem .6rem; }
-  .mg-more { font: 800 .8rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; border-bottom: 3px solid var(--mg-pink); padding-bottom: .2rem; }
-  .mg-feature:hover .mg-more { border-bottom-color: var(--mg-lime); }
-  .mg-stamp { background: var(--mg-lime); color: var(--mg-ink); padding: 1.4rem 1.4rem 1.2rem; transform: rotate(-2deg); box-shadow: 10px 10px 0 var(--mg-pink); }
-  .mg-stamp-letter { display: block; font: 400 6.5rem/.8 var(--mg-display); letter-spacing: -.05em; }
-  .mg-stamp-word { display: block; font: 800 .82rem var(--mg-sans); letter-spacing: .16em; text-transform: uppercase; margin-top: .6rem; }
+  .hm-feature { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); text-decoration: none; }
+  .hm-field { background: var(--pop); color: var(--pop-on); padding: 1.5rem 1.7rem 1.7rem; display: grid; align-content: space-between; gap: 2rem; min-height: 17rem; }
+  .hm-field p { margin: 0; display: flex; justify-content: space-between; gap: 1rem; font: 800 .74rem var(--lb-sans); letter-spacing: .14em; text-transform: uppercase; }
+  .hm-field strong { display: block; font: 500 clamp(3.4rem, 8vw, 6.5rem)/.92 var(--lb-serif); font-variation-settings: "opsz" 72; letter-spacing: -.03em; font-variant-numeric: lining-nums; overflow-wrap: anywhere; }
+  .hm-field div span { display: block; margin-top: .6rem; font: 500 1.05rem/1.35 var(--lb-serif); max-width: 22rem; }
+  .hm-feature-text { padding: .4rem 0 0 2.4rem; display: grid; gap: .9rem; align-content: start; }
+  .hm-feature-kicker { margin: 0; font: 800 .74rem var(--lb-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--pop-text); }
+  .hm-feature h3 { font-size: clamp(1.6rem, 3vw, 2.3rem); line-height: 1.15; }
+  .hm-feature:hover h3 { text-decoration: underline; text-decoration-color: var(--pop); text-decoration-thickness: 3px; }
+  .hm-feature-text > p:last-child { margin: 0; color: var(--lb-ink-2); }
 
-  .mg-deeper { background: var(--mg-ink); color: #fff; margin-top: 4.5rem; padding: 4rem 0 4.5rem; }
-  .mg-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-  .mg-cards > div { border: 2px solid #fff; padding: 1.6rem; display: flex; flex-direction: column; gap: .6rem; }
-  .mg-cards em { font: 800 .72rem var(--mg-sans); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--mg-pink); }
-  .mg-cards strong { font: 400 1.7rem/1.05 var(--mg-display); letter-spacing: -.02em; }
-  .mg-cards span { font: 400 1rem/1.5 var(--mg-serif); opacity: .85; }
+  .hm-method { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .hm-method div { background: var(--lb-ink); color: var(--lb-paper); padding: 1.2rem 1.3rem 1.3rem; display: flex; flex-direction: column; gap: .4rem; }
+  .hm-method em { font: 500 1.6rem/1 var(--lb-serif); font-style: normal; opacity: .6; }
+  .hm-method strong { font: 500 1.35rem/1.2 var(--lb-serif); }
+  .hm-method span { font: 400 .95rem/1.5 var(--lb-sans); opacity: .85; }
 
-  @media (max-width: 860px) {
-    .mg-hero-grid, .mg-feature { grid-template-columns: 1fr; gap: 2.2rem; }
-    .mg-cta, .mg-stamp { max-width: 320px; }
-    .mg-cards { grid-template-columns: 1fr; }
+  @media (max-width: 920px) {
+    .hm-lead, .hm-feature { grid-template-columns: 1fr; }
+    .hm-feature-text { padding: 1.4rem 0 0; }
+    .hm-field { min-height: 0; }
+    .hm-method { grid-template-columns: 1fr; }
   }
   @media (max-width: 600px) {
-    .mg-cta, .mg-stamp { transform: none; box-shadow: 6px 6px 0 var(--mg-pink); }
-    .mg-stamp-letter { font-size: 4.5rem; }
-    .mg-num-grid { grid-template-columns: 1fr; gap: 1.4rem; }
-    .mg-feature { padding: 1.6rem; }
+    .hm-stats { grid-template-columns: 1fr; }
+    .hm-mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 7rem; }
   }
 </style>

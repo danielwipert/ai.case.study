@@ -2,14 +2,14 @@
 /**
  * The shell for the deeper layers of a case in the new format (full record,
  * evidence, sources): the library masthead with the four layer tabs, then a
- * band in the case's subject colour. The story page has its own header.
+ * band in the case's theme colour. The story page has its own header.
  * BaseLayout is left untouched.
  */
 import "../styles/global.css";
 import "./record.css";
 import "../styles/library.css";
 import "./mag-deep.css";
-import { SUBJECTS, subjectOf } from "./subjects.mjs";
+import { THEMES, themeOf } from "./subjects.mjs";
 import "@fontsource/ibm-plex-sans/400.css";
 import "@fontsource/ibm-plex-sans/500.css";
 import "@fontsource/ibm-plex-sans/600.css";
@@ -31,7 +31,7 @@ const h = record.header;
 const longDate = (value) =>
   value ? new Date(`${value}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : "Not set";
 const mag = true;
-const subj = subjectOf(record.code);
+const subj = themeOf(h.public_id);
 const tabs = mag ? [
   { key: "story", label: "The story", href: `${root}/` },
   { key: "record", label: "Full record", href: `${root}/record/` },
@@ -80,7 +80,7 @@ const layerDek = {
             {tabs.map((tab) => (<a href={tab.href} aria-current={tab.key === active ? "page" : undefined}>{tab.label}</a>))}
           </nav>
         </div>
-        <div class="lb-strip" aria-hidden="true">{Object.keys(SUBJECTS).map((s) => <i data-subj={s}></i>)}</div>
+        <div class="lb-strip" aria-hidden="true">{Object.keys(THEMES).map((t) => <i data-subj={t}></i>)}</div>
       </header>
       <section class="md-hero">
         <div class="md-wrap">
