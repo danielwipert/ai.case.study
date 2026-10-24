@@ -1,18 +1,15 @@
 ---
 /**
  * The shell for the deeper layers of a case in the new format (full record,
- * evidence, sources): the magazine header with the four layer tabs. The story
- * page has its own header. BaseLayout is left untouched.
+ * evidence, sources): the library masthead with the four layer tabs, then a
+ * band in the case's subject colour. The story page has its own header.
+ * BaseLayout is left untouched.
  */
 import "../styles/global.css";
 import "./record.css";
+import "../styles/library.css";
 import "./mag-deep.css";
-import "@fontsource/archivo-black/400.css";
-import "@fontsource/archivo/500.css";
-import "@fontsource/archivo/700.css";
-import "@fontsource/archivo/800.css";
-import "@fontsource/source-serif-4/400.css";
-import "@fontsource/source-serif-4/600.css";
+import { SUBJECTS, subjectOf } from "./subjects.mjs";
 import "@fontsource/ibm-plex-sans/400.css";
 import "@fontsource/ibm-plex-sans/500.css";
 import "@fontsource/ibm-plex-sans/600.css";
@@ -34,6 +31,7 @@ const h = record.header;
 const longDate = (value) =>
   value ? new Date(`${value}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : "Not set";
 const mag = true;
+const subj = subjectOf(record.code);
 const tabs = mag ? [
   { key: "story", label: "The story", href: `${root}/` },
   { key: "record", label: "Full record", href: `${root}/record/` },
@@ -61,7 +59,7 @@ const layerDek = {
     <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
     <title>{title} | Applied AI Case Study Library</title>
   </head>
-  <body class="preview mg-deep">
+  <body class="preview mg-deep lb" data-subj={subj}>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <a class="wordmark" href={`${base}/`} aria-label="Applied AI Case Study Library home">
@@ -74,12 +72,15 @@ const layerDek = {
       </nav>
     </header>
 
-    {mag && (
-      <header class="md-top">
-        <a class="md-brand" href={`${base}/`}><b>Applied AI</b><span>Case Study Library</span></a>
-        <nav class="md-tabs" aria-label="Layers of this case">
-          {tabs.map((tab) => (<a href={tab.href} aria-current={tab.key === active ? "page" : undefined}>{tab.label}</a>))}
-        </nav>
+    {mag && (<>
+      <header class="lb-wrap">
+        <div class="lb-mast">
+          <a class="lb-brand" href={`${base}/`}><b>Applied AI</b><span>Case Study Library</span></a>
+          <nav class="lb-tabs" aria-label="Layers of this case">
+            {tabs.map((tab) => (<a href={tab.href} aria-current={tab.key === active ? "page" : undefined}>{tab.label}</a>))}
+          </nav>
+        </div>
+        <div class="lb-strip" aria-hidden="true">{Object.keys(SUBJECTS).map((s) => <i data-subj={s}></i>)}</div>
       </header>
       <section class="md-hero">
         <div class="md-wrap">
@@ -89,7 +90,7 @@ const layerDek = {
           <p class="md-meta">Grade {h.grade?.value} · {h.grade?.plain ?? ""} · evidence cutoff {longDate(h.charter.evidence_cutoff)} · <a href={`${root}/ledger.json`} download={`${record.code}-ledger.json`}>download the data (JSON)</a></p>
         </div>
       </section>
-    )}
+    </>)}
     {!mag && <header class="shell article-header pv-header">
       <p class="eyebrow">{record.code} · {h.fixture_note}</p>
       <h1>{h.title}</h1>
