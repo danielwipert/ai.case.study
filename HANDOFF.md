@@ -1,49 +1,43 @@
 # Handoff
 
-*Replaced wholesale 2026-10-12. Read `PROJECT_GUIDE.md` first; this file only
+*Replaced wholesale 2026-10-24. Read `PROJECT_GUIDE.md` first; this file only
 covers this repo. The case work lives in the private repo; its `HANDOFF.md` has
 the detail.*
 
 ## Where things stand
 
-Four cases are rebuilt in the new format (Case Study Spec v0.8), each replacing
-its legacy page at the same address:
+The site is being redesigned. Dan found the magazine look (Archivo Black, lime,
+pink and violet, black hero) too flashy for the cases' academic weight, and
+settled the new look in five gates on 2026-10-24:
 
-| Case | What | Live | Grade |
-| --- | --- | --- | --- |
-| CS001 / AAI-2026-001 | OpenAI agents' intrusion into Hugging Face | 2026-10-01 | A |
-| CS021 / AAI-2026-021 | The LungIMPACT trial (the control) | 2026-10-01 | B |
-| CS005 / AAI-2026-005 | Mobley v. Workday, the May 2026 ruling | 2026-10-03 | B |
-| CS016 / AAI-2026-016 | Court decisions on AI-hallucinated content | **PR open** | B |
+1. Register: Economist/FT restraint with academic touches.
+2. Textbook layer: DK *Big Ideas* apparatus (In context, See also, numbered
+   exhibits, drop caps); flow diagrams deferred, since each is a causal claim.
+3. Type: Newsreader + Libre Franklin.
+4. Colour: first oxblood on warm paper; after the mock-up ("too Financial
+   Times"), **one colour per subject in solid fields**, DK-style.
+5. Rollout in three steps.
 
-CS016 was released by Dan on 2026-10-12. Its public files are on
-`claude/eloquent-ramanujan-gzfr5w`, in a pull request waiting for Dan to merge.
-The propositions page stays withdrawn until the cases are rebuilt.
+All five are in the private repo's `pilot/log/decisions.md` (branch
+`claude/dazzling-pascal-lbbtpt`). Mock-up: claude.ai/artifact/YAgnJLpQtaXKpfSQc5nvGH.
 
-## Changed this session
-
-- **Legal review replaced** by the private repo's automated
-  `tools/legal_check.py` (guide rule 3, both repos).
-- **Loader** (`src/record/lib/record.mjs`): a populated heading may have no rows
-  of its own if its narrative cites one (Dan, option A); bulleted narrative
-  lists are checked item by item.
-
-## Decisions to copy into the private decision log
-
-Already copied (this session could reach the private repo): legal review
-replaced (option B); CS016's New Mexico story sentence attributed (option B);
-headings 4 and 7 (option A); CS016 release approved (option A).
+**Step 2 is done on `claude/dazzling-pascal-lbbtpt`**: the four rebuilt cases'
+story, full record, evidence and sources pages in the new style. See
+`CLAUDE.md`, "The library style".
 
 ## Still open
 
-- Merge the CS016 PR.
-- The 3–5 readers for the label test (pilot decision 4).
-- Reuters' two policy links, for CS001's publisher grade.
-- P6 now warns that AAI-2026-016 was verified after it was last reviewed.
-- Not to start without Dan: J4, J5, any new legacy-format case.
-
-Next after CS016: 019, 010, 009, 011, then P5's (006, 013, 014, 022).
+- **Step 3**: home, Explore, Methodology and the legacy case pages. Needs a gate
+  on how the 21 cases group into subject colours.
+- Per-case charts (bar charts, pictograms) and a pull quote: new per-case data,
+  and the pull quote is an editorial choice. Later, case by case.
+- Pre-existing: the full-record page shows literal `**` around bold text in
+  bulleted narrative lists (seen in CS016 headings 2, 5, 6, 8, 10). Not caused by
+  the redesign.
+- From before: the 3–5 readers for the label test; Reuters' two policy links
+  for CS001's publisher grade; P6's review warning. Not to start without Dan:
+  J4, J5, any new legacy-format case.
 
 ## Branch
 
-Written on `claude/eloquent-ramanujan-gzfr5w`. Branches are assigned per session.
+Written on `claude/dazzling-pascal-lbbtpt`. Branches are assigned per session.

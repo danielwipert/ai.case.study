@@ -1,19 +1,16 @@
 ---
-// The reader layer ("the story"), magazine design. Plain English;
-// every statement tied to checked rows; technical detail one and two clicks down.
-import "@fontsource/archivo-black/400.css";
-import "@fontsource/archivo/500.css";
-import "@fontsource/archivo/700.css";
-import "@fontsource/archivo/800.css";
-import "@fontsource/source-serif-4/400.css";
-import "@fontsource/source-serif-4/400-italic.css";
-import "@fontsource/source-serif-4/600.css";
+// The reader layer ("the story"), in the library style of 2026-10-24: a
+// colour field per subject, serif type, numbers and dates as exhibits. Plain
+// English; every statement tied to checked rows; detail one and two clicks down.
+import "../../../../styles/library.css";
+import { getCollection } from "astro:content";
 import { load as parseYaml } from "js-yaml";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { loadCase, shortCode } from "../../../../record/lib/record.mjs";
-import { recordRoutes } from "../../../../record/lib/routes.mjs";
+import { recordRoutes, recordedCaseIds } from "../../../../record/lib/routes.mjs";
+import { SUBJECTS, subjectOf } from "../../../../record/subjects.mjs";
 
 export function getStaticPaths() {
   return recordRoutes();
@@ -46,11 +43,12 @@ if (onepager) {
 const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 // Section numbers follow the sections a story actually has.
 const order = ["short", "timeline", ...(story.disagreements?.length ? ["disagree"] : []), "quotes", "unknowns", "deeper"];
-const num = (key) => pad(order.indexOf(key) + 1);
+const num = (key) => order.indexOf(key) + 1;
 const pad = (n) => String(n).padStart(2, "0");
 
 // Timeline marks: an entry may name a `mark` from `timeline_key`, which gives it a colour and a legend line.
-// Colour follows the event, never its position in the list.
+// Colour follows the event, never its position in the list. The names predate the redesign: pink is now the
+// case's subject colour, violet a deeper shade of it, grey and ink stay neutral.
 const MARK_COLORS = new Set(["pink", "violet", "grey", "ink"]);
 const key = story.timeline_key ?? [];
 for (const k of key) if (!MARK_COLORS.has(k.color)) throw new Error(`timeline_key colour "${k.color}" is not one of ${[...MARK_COLORS].join(", ")}`);
@@ -115,6 +113,28 @@ const strip = (() => {
   }));
 })();
 const first = story.timeline[0].date, last = story.timeline[story.timeline.length - 1].date;
+
+// The subject colour, the hero figure (the story's first number) and the related cases.
+const subj = subjectOf(code);
+const hero = story.numbers[0];
+const caseNo = record.header.public_id.slice(-3);
+const entries = await getCollection("cases", ({ data }) => ["published", "archived"].includes(data.status));
+const self = entries.find((e) => e.data.case_id === record.header.public_id);
+const rebuilt = recordedCaseIds();
+const related = (self?.data.related_cases ?? [])
+  .map((id) => entries.find((e) => e.data.case_id === id))
+  .filter(Boolean)
+  .map((e) => {
+    const c = rebuilt.get(e.data.case_id);
+    const s = c ? subjectOf(c) : null;
+    return { href: `${base}/cases/${e.id}/`, title: e.data.title, subj: s ?? "none", label: `${s ? `${SUBJECTS[s]} · ` : ""}Case ${e.data.case_id.slice(-3)}` };
+  });
+const docTitles = record.documents.map((d) => d.title);
+const cutoff = record.header.charter?.evidence_cutoff;
+const longDate = (d) => d ? new Date(`${d}T00:00:00Z`).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }) : null;
+const pageUrl = Astro.site ? new URL(`${root}/`, Astro.site).href : `${root}/`;
+const citation = `Applied AI Case Study Library. \u201c${story.headline}.\u201d Case ${record.header.public_id}, version ${record.header.version}, ${story.checked}. ${pageUrl}`;
+const [lede, ...points] = story.short_version;
 ---
 <!doctype html>
 <html lang="en">
@@ -124,262 +144,330 @@ const first = story.timeline[0].date, last = story.timeline[story.timeline.lengt
   <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
   <title>{story.headline} | Applied AI Case Study Library</title>
 </head>
-<body class="mg">
-  <header class="mg-top">
-    <a class="mg-brand" href={`${base}/`}><b>Applied AI</b><span>Case Study Library</span></a>
-    <nav class="mg-tabs" aria-label="Layers of this case">
-      <a aria-current="page" href={`${root}/`}>The story</a>
-      <a href={`${root}/record/`}>Full record</a>
-      <a href={`${root}/evidence/`}>Evidence</a>
-      <a href={`${root}/sources/`}>Sources</a>
-      {onepagerHref && <a class="mg-dl mg-dl-nav" href={onepagerHref} download>One-page summary <span>PDF</span></a>}
-    </nav>
+<body class="lb" data-subj={subj}>
+  <header class="lb-wrap">
+    <div class="lb-mast">
+      <a class="lb-brand" href={`${base}/`}><b>Applied AI</b><span>Case Study Library</span></a>
+      <nav class="lb-tabs" aria-label="Layers of this case">
+        <a aria-current="page" href={`${root}/`}>The story</a>
+        <a href={`${root}/record/`}>Full record</a>
+        <a href={`${root}/evidence/`}>Evidence</a>
+        <a href={`${root}/sources/`}>Sources</a>
+        {onepagerHref && <a class="lb-dl" href={onepagerHref} download>One-page summary <span>PDF</span></a>}
+      </nav>
+    </div>
+    <div class="lb-strip" aria-hidden="true">{Object.keys(SUBJECTS).map((s) => <i data-subj={s}></i>)}</div>
   </header>
 
-  <section class="mg-hero">
-    <div class="mg-wrap mg-hero-grid">
-      <div>
-        <p class="mg-tags">{story.tags.map((tag) => <span>{tag}</span>)}</p>
-        <h1>{story.headline}</h1>
-        <p class="mg-dek">{story.dek}</p>
-        {onepagerHref && <a class="mg-dl" href={onepagerHref} download>Download the one-page summary <span>PDF</span></a>}
+  <main class="lb-wrap">
+    <div class="cs-opener">
+      <div class="cs-field">
+        <p class="cs-field-top"><span>{story.tags[0]}</span><span>Case {caseNo}</span></p>
+        <div class="cs-field-fig">
+          <strong>{hero.figure}</strong>
+          <span>{hero.label}</span>
+          <a class="cs-src" href={src(hero.rows)} title={tip(hero.rows)}>Source</a>
+        </div>
       </div>
-      <aside class="mg-stamp" aria-label={`Case grade ${story.grade.letter}: ${story.grade.plain}`}>
-        <span class="mg-stamp-letter">{story.grade.letter}</span>
-        <span class="mg-stamp-word">{story.grade.plain}</span>
-        <p>{story.grade.explain}</p>
+      <div class="cs-head">
+        <p class="cs-kicker">{story.tags.join(" · ")}</p>
+        <h1>{story.headline}</h1>
+        <p class="cs-standfirst">{story.dek}</p>
+        <p class="cs-byline">
+          <span><b>Evidence grade {story.grade.letter}</b>, {story.grade.plain.toLowerCase()}</span>
+          <span>{story.checked[0].toUpperCase() + story.checked.slice(1)}</span>
+          <span>{record.header.public_id} · version {record.header.version}</span>
+          <span>{plural(docs, "public source", "public sources")}</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="cs-body">
+      <article class="cs-col">
+        <section>
+          <div class="cs-sec"><span class="cs-n">{num("short")}</span><h2>The short version</h2></div>
+          <p class="cs-lede">{lede.text} <a class="cs-src" href={src(lede.rows)} title={tip(lede.rows)}>Source</a></p>
+          {points.length > 0 && (
+            <ol class="cs-points">
+              {points.map((p) => (<li><p>{p.text} <a class="cs-src" href={src(p.rows)} title={tip(p.rows)}>Source</a></p></li>))}
+            </ol>
+          )}
+        </section>
+
+        <figure class="cs-ex" aria-labelledby="ex-numbers">
+          <figcaption id="ex-numbers"><b>Exhibit 1</b><span>The numbers</span></figcaption>
+          <div class="cs-figs">
+            {story.numbers.map((n) => (
+              <div class="cs-fig"><strong>{n.figure}</strong><span>{n.label}</span><p class="cs-fig-src">{n.by && `Counted by ${n.by} · `}<a class="cs-src" href={src(n.rows)} title={tip(n.rows)}>Source</a></p></div>
+            ))}
+          </div>
+        </figure>
+
+        <figure class="cs-ex" aria-labelledby="ex-timeline">
+          <figcaption id="ex-timeline"><b>Exhibit 2</b><span>{story.timeline_title ?? "Day by day"}</span></figcaption>
+          {strip && (
+            <div class="cs-strip-wrap" role="img" aria-label={`Calendar from ${first} to ${last}, one square per day. Filled squares are the days in the list below.`}>
+              <div class="cs-cal">
+                {strip.map((seg) => (<>
+                  {seg.gap && <div class="cs-day cs-day-gap">{seg.gap}</div>}
+                  {seg.days.map((d) => <div class={`cs-day${d.color ? ` c-${d.color}` : ""}`}>{d.label}<i></i></div>)}
+                </>))}
+              </div>
+            </div>
+          )}
+          {key.length > 0 && (
+            <ul class="cs-key">{key.map((k) => <li><i class={`c-${k.color}`}></i>{k.label}</li>)}</ul>
+          )}
+          <ol class="cs-tl">
+            {story.timeline.map((t, i) => (
+              <li class={colorOf(t) ? `c-${colorOf(t)}` : undefined}>
+                {gaps[i] && (isBreak(gaps[i])
+                  ? <p class="cs-gap cs-gap-break" aria-hidden="true">{gaps[i].text}</p>
+                  : <p class="cs-gap" style={`padding-block: ${gapPad(gaps[i])}`} aria-hidden="true">{gaps[i].text}</p>)}
+                <time>{t.date}</time><p>{t.text} <a class="cs-src" href={src(t.rows)} title={tip(t.rows)}>Source</a></p>
+              </li>
+            ))}
+          </ol>
+        </figure>
+
+        {story.disagreements?.length > 0 && (
+          <section>
+            <div class="cs-sec"><span class="cs-n">{num("disagree")}</span><h2>{story.disagreements_title ?? "Where the accounts disagree"}</h2></div>
+            <p class="cs-intro">{story.disagreements_lede ?? "Both sides, side by side. We don't pick one: the public record doesn't settle it."}</p>
+            {story.disagreements.map((d) => (
+              <div class="cs-dis">
+                <h3>{d.title}</h3>
+                <div class="cs-sides">
+                  {d.sides.map((side) => (
+                    <div class="cs-side"><p class="lb-label">{side.who}</p><p>{side.says}</p><a class="cs-src" href={src(side.rows)} title={tip(side.rows)}>Source</a></div>
+                  ))}
+                </div>
+                {d.note && <p class="cs-note">{d.note.text} <a class="cs-src" href={src(d.note.rows)} title={tip(d.note.rows)}>Source</a></p>}
+              </div>
+            ))}
+          </section>
+        )}
+
+        <section>
+          <div class="cs-sec"><span class="cs-n">{num("quotes")}</span><h2>In their own words</h2></div>
+          <div class="cs-quotes">
+            {story.what_they_say.map((q) => (
+              <figure class="cs-quote"><blockquote>{q.quote}</blockquote><figcaption>{q.who} <a class="cs-src" href={src(q.rows)} title={tip(q.rows)}>Source</a></figcaption></figure>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <div class="cs-sec"><span class="cs-n">{num("unknowns")}</span><h2>Still unknown</h2></div>
+          <ul class="cs-unknowns">
+            {story.unknowns.map((u) => (<li><span aria-hidden="true">?</span><p>{u.text} <a class="cs-src" href={src(u.rows)} title={tip(u.rows)}>Source</a></p></li>))}
+          </ul>
+        </section>
+
+        <section>
+          <div class="cs-sec"><span class="cs-n">{num("deeper")}</span><h2>Go deeper</h2></div>
+          <div class="cs-deeper">
+            <a href={`${root}/record/`}><em>Read</em><strong>The full record</strong><span>The complete account in twelve sections, every sentence tied to its sources.</span></a>
+            <a href={`${root}/evidence/`}><em>Check</em><strong>The evidence</strong><span>{record.rows.length} checked facts, each with the exact quote it rests on.</span></a>
+            <a href={`${root}/sources/`}><em>Trace</em><strong>The sources</strong><span>{docs === 1 ? "The document behind this case, and how far it can be trusted." : `The ${docs} documents behind this case, and how far each can be trusted.`}</span></a>
+          </div>
+          {onepagerHref && <p class="cs-dl-row"><a class="lb-dl" href={onepagerHref} download>Download the one-page summary <span>PDF</span></a><span>The case on one page, to print or share.</span></p>}
+        </section>
+
+        {related.length > 0 && (
+          <nav class="cs-seealso" aria-label="See also">
+            <p class="lb-label">See also</p>
+            <div class="cs-chips">
+              {related.map((r) => (<a class="cs-chip" data-subj={r.subj} href={r.href}><span class="lb-label">{r.label}</span><span>{r.title}</span></a>))}
+            </div>
+          </nav>
+        )}
+
+        <div class="cs-cite">
+          <p class="lb-label">How to cite this case</p>
+          <p id="cs-cite-text">{citation}</p>
+          <button type="button" id="cs-cite-copy" hidden>Copy citation</button>
+        </div>
+      </article>
+
+      <aside class="cs-rail" aria-label="In context">
+        <div class="cs-context">
+          <h2>In context</h2>
+          <dl>
+            <dt>Subject</dt>
+            <dd>{SUBJECTS[subj]}</dd>
+            <dt>{docs === 1 ? "The source read" : `The ${docs} sources read`}</dt>
+            {docTitles.map((t) => <dd>{t}</dd>)}
+            <dt>Period covered</dt>
+            <dd>{first} to {last}</dd>
+            {cutoff && <><dt>Evidence cutoff</dt><dd>{longDate(cutoff)}</dd></>}
+            <dt>Checked</dt>
+            <dd>{story.checked.replace(/^checked /, "")}, version {record.header.version}</dd>
+          </dl>
+        </div>
+        <div class="cs-grade">
+          <span class="cs-grade-letter">{story.grade.letter}</span>
+          <span class="lb-label">Evidence grade</span>
+          <b>{story.grade.plain}</b>
+          <p>{story.grade.explain} <a class="cs-src" href={src(story.grade.rows)} title={tip(story.grade.rows)}>Source</a></p>
+        </div>
       </aside>
     </div>
-    <div class="mg-wrap"><p class="mg-meta">{plural(docs, "public source", "public sources")} · every statement linked to its evidence · {story.checked}</p></div>
-  </section>
-
-  <main>
-    <section class="mg-wrap mg-sec">
-      <h2 class="mg-h"><span>{num("short")}</span>The short version</h2>
-      <ol class="mg-points">
-        {story.short_version.map((p, i) => (
-          <li><span class="mg-pn">{pad(i + 1)}</span><p>{p.text} <a class="mg-src" href={src(p.rows)} title={tip(p.rows)}>Source</a></p></li>
-        ))}
-      </ol>
-    </section>
-
-    <section class="mg-numbers" aria-label="Key numbers">
-      <div class="mg-wrap mg-num-grid">
-        {story.numbers.map((n) => (
-          <div class="mg-num"><strong>{n.figure}</strong><span>{n.label}</span><p class="mg-num-src">{n.by && `Counted by ${n.by} · `}<a class="mg-src" href={src(n.rows)} title={tip(n.rows)}>Source</a></p></div>
-        ))}
-      </div>
-    </section>
-
-    <section class="mg-wrap mg-sec">
-      <h2 class="mg-h"><span>{num("timeline")}</span>{story.timeline_title ?? "Day by day"}</h2>
-      {strip && (
-        <div class="mg-strip-wrap" role="img" aria-label={`Calendar from ${first} to ${last}, one square per day. Filled squares are the days in the list below.`}>
-          <div class="mg-strip">
-            {strip.map((seg) => (<>
-              {seg.gap && <div class="mg-day mg-day-gap">{seg.gap}</div>}
-              {seg.days.map((d) => <div class={`mg-day${d.color ? ` mg-c-${d.color}` : ""}`}>{d.label}<i></i></div>)}
-            </>))}
-          </div>
-        </div>
-      )}
-      {key.length > 0 && (
-        <ul class="mg-key">{key.map((k) => <li><i class={`mg-c-${k.color}`}></i>{k.label}</li>)}</ul>
-      )}
-      <ol class="mg-tl">
-        {story.timeline.map((t, i) => (
-          <li class={colorOf(t) ? `mg-c-${colorOf(t)}` : undefined}>
-            {gaps[i] && (isBreak(gaps[i])
-              ? <p class="mg-gap mg-gap-break" aria-hidden="true">{gaps[i].text}</p>
-              : <p class="mg-gap" style={`padding-block: ${gapPad(gaps[i])}`} aria-hidden="true">{gaps[i].text}</p>)}
-            <time>{t.date}</time><p>{t.text} <a class="mg-src" href={src(t.rows)} title={tip(t.rows)}>Source</a></p>
-          </li>
-        ))}
-      </ol>
-    </section>
-
-    {story.disagreements?.length > 0 && <section class="mg-split-sec">
-      <div class="mg-wrap">
-        <h2 class="mg-h mg-h-inv"><span>{num("disagree")}</span>{story.disagreements_title ?? "Where the accounts disagree"}</h2>
-        <p class="mg-lede">{story.disagreements_lede ?? "Both sides, side by side. We don't pick one: the public record doesn't settle it."}</p>
-      </div>
-      {story.disagreements.map((d) => (
-        <div class="mg-wrap mg-dispute">
-          <h3>{d.title}</h3>
-          <div class="mg-sides">
-            <div class="mg-side"><p class="mg-who">{d.sides[0].who}</p><p class="mg-says">{d.sides[0].says}</p><a class="mg-src" href={src(d.sides[0].rows)} title={tip(d.sides[0].rows)}>Source</a></div>
-            <span class="mg-vs" aria-hidden="true">vs</span>
-            <div class="mg-side"><p class="mg-who">{d.sides[1].who}</p><p class="mg-says">{d.sides[1].says}</p><a class="mg-src" href={src(d.sides[1].rows)} title={tip(d.sides[1].rows)}>Source</a></div>
-          </div>
-          {d.note && <p class="mg-dnote">{d.note.text} <a class="mg-src" href={src(d.note.rows)} title={tip(d.note.rows)}>Source</a></p>}
-        </div>
-      ))}
-    </section>}
-
-    <section class="mg-wrap mg-sec">
-      <h2 class="mg-h"><span>{num("quotes")}</span>In their own words</h2>
-      <div class="mg-quotes">
-        {story.what_they_say.map((q) => (
-          <figure class="mg-quote"><blockquote>{q.quote}</blockquote><figcaption>— {q.who} <a class="mg-src" href={src(q.rows)} title={tip(q.rows)}>Source</a></figcaption></figure>
-        ))}
-      </div>
-    </section>
-
-    <section class="mg-wrap mg-sec">
-      <h2 class="mg-h"><span>{num("unknowns")}</span>Still unknown</h2>
-      <ul class="mg-unknowns">
-        {story.unknowns.map((u) => (<li><span aria-hidden="true">?</span><p>{u.text} <a class="mg-src" href={src(u.rows)} title={tip(u.rows)}>Source</a></p></li>))}
-      </ul>
-    </section>
-
-    <section class="mg-deeper">
-      <div class="mg-wrap">
-        <h2 class="mg-h mg-h-inv"><span>{num("deeper")}</span>Go deeper</h2>
-        <div class="mg-cards">
-          <a href={`${root}/record/`}><em>Read</em><strong>The full record</strong><span>The complete account in twelve sections, every sentence tied to its sources.</span></a>
-          <a href={`${root}/evidence/`}><em>Check</em><strong>The evidence</strong><span>{record.rows.length} checked facts, each with the exact quote it rests on.</span></a>
-          <a href={`${root}/sources/`}><em>Trace</em><strong>The sources</strong><span>{docs === 1 ? "The document behind this case, and how far it can be trusted." : `The ${docs} documents behind this case, and how far each can be trusted.`}</span></a>
-        </div>
-        {onepagerHref && <p class="mg-dl-row"><a class="mg-dl" href={onepagerHref} download>Download the one-page summary <span>PDF</span></a><span>The case on one page, to print or share.</span></p>}
-      </div>
-    </section>
   </main>
-  <footer class="mg-foot"><div class="mg-wrap">Applied AI Case Study Library · {record.header.public_id} · version {record.header.version} · <a href={`${base}/`}>Back to the library</a></div></footer>
+
+  <footer class="lb-foot"><div class="lb-wrap"><span>Applied AI Case Study Library · {record.header.public_id} · version {record.header.version}</span><a href={`${base}/`}>Back to the library</a></div></footer>
+
+  <script>
+    // Copy the citation; the button stays hidden where the clipboard is unavailable.
+    const btn = document.getElementById("cs-cite-copy");
+    const text = document.getElementById("cs-cite-text");
+    if (btn && text && navigator.clipboard) {
+      btn.hidden = false;
+      btn.addEventListener("click", () => {
+        navigator.clipboard.writeText(text.textContent ?? "").then(() => {
+          btn.textContent = "Copied";
+          setTimeout(() => { btn.textContent = "Copy citation"; }, 1600);
+        }, () => {});
+      });
+    }
+  </script>
 </body>
 </html>
 
 <style is:global>
-  :root { --mg-ink: #0b0b0c; --mg-paper: #ffffff; --mg-soft: #f2f1ee; --mg-lime: #d2ef6b; --mg-pink: #e85a8e; --mg-violet: #4e3fd0; --mg-grey: #5f5f63;
-    --mg-display: "Archivo Black", "Archivo", system-ui, sans-serif; --mg-sans: "Archivo", system-ui, sans-serif; --mg-serif: "Source Serif 4", Georgia, serif; }
-  body.mg { margin: 0; background: var(--mg-paper); color: var(--mg-ink); font-family: var(--mg-serif); -webkit-font-smoothing: antialiased; }
-  .mg a { color: inherit; }
-  .mg-wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
-  .mg-banner { background: var(--mg-lime); color: var(--mg-ink); text-align: center; font: 800 .72rem/1 var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; padding: .55rem; }
-  .mg-top { display: flex; flex-wrap: wrap; gap: .8rem 2rem; align-items: center; justify-content: space-between; max-width: 1160px; margin: 0 auto; padding: 1.1rem 32px; }
-  .mg-brand { text-decoration: none; display: flex; align-items: baseline; gap: .6rem; }
-  .mg-brand b { font: 400 1.25rem var(--mg-display); letter-spacing: -.02em; }
-  .mg-brand span { font: 700 .7rem var(--mg-sans); letter-spacing: .16em; text-transform: uppercase; color: var(--mg-grey); }
-  .mg-tabs { display: flex; gap: 1.6rem; overflow-x: auto; }
-  .mg-tabs a { flex: none; font: 700 .8rem var(--mg-sans); letter-spacing: .1em; text-transform: uppercase; text-decoration: none; padding: .35rem 0; border-bottom: 3px solid transparent; }
-  .mg-tabs a[aria-current] { border-bottom-color: var(--mg-pink); }
-  .mg-tabs a:hover { border-bottom-color: var(--mg-ink); }
+  /* Opener: the subject's colour field with the story's lead figure, beside the headline */
+  .cs-opener { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); margin-top: 2rem; }
+  .cs-field { background: var(--pop); color: var(--pop-on); padding: 1.6rem 1.8rem 1.8rem; display: grid; align-content: space-between; gap: 2.5rem; min-height: 22rem; }
+  .cs-field-top { margin: 0; display: flex; justify-content: space-between; gap: 1rem; font: 800 .74rem var(--lb-sans); letter-spacing: .14em; text-transform: uppercase; }
+  .cs-field-fig strong { display: block; font: 500 clamp(3.6rem, 9vw, 7.5rem)/.92 var(--lb-serif); font-variation-settings: "opsz" 72; letter-spacing: -.03em; font-variant-numeric: lining-nums; overflow-wrap: anywhere; }
+  .cs-field-fig > span { display: block; margin-top: .7rem; font: 500 1.12rem/1.35 var(--lb-serif); max-width: 22rem; }
+  .cs-field .cs-src { color: inherit !important; opacity: .8; margin: .6rem 0 0; display: inline-block; text-decoration-color: currentColor; }
+  .cs-head { padding: .6rem 0 0 2.4rem; display: grid; gap: 1.1rem; align-content: start; }
+  .cs-kicker { margin: 0; font: 800 .74rem var(--lb-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--pop-text); }
+  .cs-head h1 { font-size: clamp(2rem, 4vw, 3.05rem); line-height: 1.08; letter-spacing: -.012em; font-variation-settings: "opsz" 72; }
+  .cs-standfirst { margin: 0; font-size: 1.2rem; line-height: 1.5; color: var(--lb-ink-2); }
+  .cs-byline { margin: 0; padding-top: .9rem; border-top: 1px solid var(--lb-rule); display: flex; flex-wrap: wrap; gap: .3rem 1.2rem; font: 400 .82rem var(--lb-sans); color: var(--lb-ink-2); }
+  .cs-byline b { font-weight: 700; color: var(--lb-ink); }
 
-  .mg-hero { background: var(--mg-ink); color: #fff; padding: 4.5rem 0 2.2rem; position: relative; overflow: hidden; }
-  .mg-hero::after { content: ""; position: absolute; right: -10%; top: -40%; width: 60%; height: 160%; background: radial-gradient(closest-side, rgb(78 63 208 / 35%), transparent); pointer-events: none; }
-  .mg-hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 3rem; align-items: end; position: relative; z-index: 1; }
-  .mg-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 0 0 1.6rem; }
-  .mg-tags span { font: 800 .7rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; border: 1.5px solid #fff; padding: .35rem .6rem; }
-  .mg-tags span:first-child { background: var(--mg-pink); border-color: var(--mg-pink); }
-  .mg-hero h1 { font: 400 clamp(2.6rem, 7vw, 5.6rem)/.95 var(--mg-display); letter-spacing: -.035em; margin: 0 0 1.6rem; text-wrap: balance; }
-  .mg-dek { font: 400 clamp(1.1rem, 2vw, 1.4rem)/1.5 var(--mg-serif); color: #d6d6d8; max-width: 40rem; margin: 0; }
-  .mg-stamp { background: var(--mg-lime); color: var(--mg-ink); padding: 1.4rem 1.4rem 1.2rem; transform: rotate(-2deg); box-shadow: 10px 10px 0 var(--mg-pink); }
-  .mg-stamp-letter { display: block; font: 400 6.5rem/.8 var(--mg-display); letter-spacing: -.05em; }
-  .mg-stamp-word { display: block; font: 800 .82rem var(--mg-sans); letter-spacing: .16em; text-transform: uppercase; margin: .6rem 0 .7rem; }
-  .mg-stamp p { margin: 0; font: 500 .9rem/1.45 var(--mg-sans); }
-  .mg-meta { position: relative; z-index: 1; margin: 2.6rem 0 0; padding-top: 1rem; border-top: 1px solid #333; font: 700 .72rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; color: #9a9aa0; }
+  /* Source links: present but recessive */
+  .cs-src { font: 600 .66rem var(--lb-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--lb-ink-3) !important; text-decoration: underline; text-decoration-color: var(--lb-rule); text-underline-offset: 3px; white-space: nowrap; margin-left: .2rem; }
+  .cs-src::after { content: " \2197"; }
+  .cs-src:hover { color: var(--pop-text) !important; text-decoration-color: currentColor; }
 
-  .mg-sec { padding: 4.5rem 32px 1rem; }
-  .mg-h { display: flex; align-items: baseline; gap: 1rem; font: 400 clamp(1.9rem, 4vw, 3rem)/1 var(--mg-display); letter-spacing: -.03em; margin: 0 0 2.2rem; padding-top: 1rem; border-top: 6px solid var(--mg-ink); }
-  .mg-h span { font: 800 .9rem var(--mg-sans); letter-spacing: .1em; color: var(--mg-pink); }
-  .mg-h-inv { border-top-color: #fff; color: #fff; }
-  .mg-src { font: 700 .68rem var(--mg-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--mg-grey) !important; text-decoration: underline; text-decoration-color: #bdbdc2; text-underline-offset: 3px; white-space: nowrap; margin-left: .25rem; }
-  .mg-src::after { content: " \2197"; }
-  .mg-src:hover { color: var(--mg-violet) !important; text-decoration-color: var(--mg-violet); }
-  .mg-split-sec .mg-src { color: #c4c4ca !important; text-decoration-color: #66666c; }
-  .mg-split-sec .mg-src:hover { color: var(--mg-lime) !important; text-decoration-color: var(--mg-lime); }
+  /* Body: reading column + In context rail */
+  .cs-body { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 3.5rem; padding-block: 3rem 1rem; }
+  .cs-col { min-width: 0; max-width: 42rem; display: grid; gap: 3.2rem; }
+  .cs-sec { display: flex; gap: .9rem; align-items: center; margin-bottom: 1.1rem; }
+  .cs-n { flex: none; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; background: var(--pop); color: var(--pop-on); font: 500 1.35rem/1 var(--lb-serif); }
+  .cs-sec h2 { font-size: 1.7rem; line-height: 1.15; }
+  .cs-intro { margin: 0 0 1.2rem; color: var(--lb-ink-2); }
+  .cs-lede { margin: 0; }
+  .cs-lede::first-letter { float: left; font: 500 4.4rem/.8 var(--lb-serif); font-variation-settings: "opsz" 72; padding: .4rem .55rem 0 0; color: var(--pop-text); }
+  .cs-points { list-style: none; margin: 1rem 0 0; padding: 0; counter-reset: p; }
+  .cs-points li { counter-increment: p; display: grid; grid-template-columns: 2.2rem minmax(0, 1fr); padding-block: .8rem; border-top: 1px solid var(--lb-rule); }
+  .cs-points li::before { content: counter(p); font: 500 1.5rem/1.1 var(--lb-serif); color: var(--pop-text); }
+  .cs-points p { margin: 0; }
 
-  .mg-points { list-style: none; margin: 0; padding: 0; counter-reset: p; }
-  .mg-points li { display: grid; grid-template-columns: 5.5rem minmax(0, 1fr); gap: 1.2rem; padding: 1.4rem 0; border-bottom: 1px solid #ddd; }
-  .mg-pn { font: 400 3.4rem/1 var(--mg-display); color: var(--mg-violet); letter-spacing: -.04em; }
-  .mg-points p { margin: 0; font: 400 1.32rem/1.55 var(--mg-serif); max-width: 46rem; }
+  /* Exhibits */
+  .cs-ex { margin: 0; background: var(--pop-tint); padding: 1.3rem 1.4rem 1.3rem; border-top: 6px solid var(--pop); min-width: 0; }
+  .cs-ex figcaption { display: grid; gap: .25rem; margin-bottom: 1.2rem; }
+  .cs-ex figcaption b { font: 800 .72rem var(--lb-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--pop-text); }
+  .cs-ex figcaption span { font: 500 1.3rem/1.3 var(--lb-serif); }
+  .cs-figs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .cs-fig { background: var(--lb-paper); padding: 1rem 1.1rem 1rem; display: flex; flex-direction: column; min-width: 0; }
+  .cs-fig strong { display: block; font: 500 clamp(2rem, 4vw, 2.7rem)/1.05 var(--lb-serif); font-variation-settings: "opsz" 72; font-variant-numeric: lining-nums; color: var(--pop-text); overflow-wrap: anywhere; }
+  .cs-fig > span { display: block; margin-top: .45rem; font: 400 .9rem/1.45 var(--lb-sans); color: var(--lb-ink); }
+  .cs-fig-src { margin: auto 0 0; padding-top: .8rem; font: 400 .74rem/1.4 var(--lb-sans); color: var(--lb-ink-2); }
+  .cs-fig-src .cs-src { margin-left: 0; }
 
-  .mg-numbers { background: var(--mg-violet); color: #fff; margin-top: 4rem; padding: 3.5rem 0; }
-  .mg-num-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 2rem; }
-  .mg-num { border-top: 3px solid var(--mg-lime); padding-top: 1rem; display: flex; flex-direction: column; min-width: 0; }
-  .mg-num strong { display: block; font: 400 clamp(2.6rem, 5vw, 4.2rem)/1 var(--mg-display); letter-spacing: -.04em; color: var(--mg-lime); margin-bottom: .8rem; }
-  .mg-num span { font: 500 1rem/1.4 var(--mg-sans); }
-  .mg-num-src { margin: auto 0 0; padding-top: 1.4rem; font: 500 .7rem/1.4 var(--mg-sans); letter-spacing: .02em; color: rgb(255 255 255 / 55%); }
-  .mg-num-src .mg-src { font: inherit; letter-spacing: inherit; text-transform: none; margin-left: 0; color: inherit !important; text-decoration-color: rgb(255 255 255 / 30%); }
-  .mg-num-src .mg-src:hover { color: var(--mg-lime) !important; text-decoration-color: var(--mg-lime); }
+  /* Timeline colours: mark names predate the redesign (pink = subject, violet = deeper subject) */
+  .c-pink { --mark: var(--pop); } .c-violet { --mark: var(--pop-deep); } .c-grey { --mark: var(--lb-ink-3); } .c-ink { --mark: var(--lb-ink); }
+  .cs-strip-wrap { overflow-x: auto; margin-bottom: 1rem; }
+  .cs-cal { display: flex; border-top: 1px solid var(--pop-mid); }
+  .cs-day { flex: 1 1 0; min-width: 2.2rem; border-right: 1px solid var(--pop-mid); padding: .5rem .2rem .4rem; text-align: center; font: 700 .72rem var(--lb-sans); color: var(--lb-ink-2); white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .cs-day i { display: block; height: 2.2rem; margin-top: .4rem; background: var(--lb-paper); }
+  .cs-day[class*="c-"] i { background: var(--mark); }
+  .cs-day-gap { flex: 0 0 4rem; display: flex; align-items: center; justify-content: center; border-right-style: dashed; font-weight: 500; font-style: italic; white-space: normal; }
+  .cs-key { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin: 0 0 1rem; padding: 0; list-style: none; font: 500 .82rem var(--lb-sans); color: var(--lb-ink-2); }
+  .cs-key li { display: flex; align-items: center; gap: .45rem; }
+  .cs-key i { width: .8rem; height: .8rem; border-radius: 50%; display: inline-block; background: var(--mark, var(--lb-ink)); }
+  .cs-tl { list-style: none; margin: 1rem 0 0 .45rem; padding: 0 0 0 1.4rem; border-left: 2px solid var(--lb-ink-2); }
+  .cs-tl li { position: relative; }
+  .cs-tl time { position: relative; display: block; font: 700 .85rem/1.5 var(--lb-sans); font-variant-numeric: tabular-nums; color: var(--lb-ink); }
+  .cs-tl time::before { content: ""; position: absolute; left: calc(-1.4rem - 8px); top: .25rem; width: 14px; height: 14px; border-radius: 50%; background: var(--mark, var(--lb-paper)); border: 2px solid var(--mark, var(--lb-ink-2)); box-sizing: border-box; box-shadow: 0 0 0 2px var(--pop-tint); }
+  .cs-tl li[class*="c-"] time { color: var(--mark); }
+  .cs-tl li.c-pink time, .cs-tl li.c-violet time { color: color-mix(in srgb, var(--mark) 80%, var(--lb-ink)); }
+  .cs-tl p { margin: .1rem 0 0; font-size: 1rem; line-height: 1.5; }
+  .cs-tl p.cs-gap { margin: 0; font: 700 .68rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--lb-ink-3); }
+  .cs-tl p.cs-gap-break { padding-block: 2.4rem; margin-left: calc(-1.4rem - 2px); padding-left: 1.4rem; border-left: 2px dashed var(--lb-ink-2); background: linear-gradient(var(--pop-tint), var(--pop-tint)) left / 2px 100% no-repeat; }
 
-  .mg-strip-wrap { overflow-x: auto; margin-bottom: 1rem; }
-  .mg-strip { display: flex; border-top: 1px solid #ddd; }
-  .mg-day { flex: 1 1 0; min-width: 2.2rem; border-right: 1px solid #ddd; padding: .5rem .2rem .4rem; text-align: center; font: 700 .72rem var(--mg-sans); color: var(--mg-grey); white-space: nowrap; font-variant-numeric: tabular-nums; }
-  .mg-day i { display: block; height: 2.2rem; margin-top: .4rem; background: var(--mg-soft); }
-  .mg-day.mg-c-ink i { background: var(--mg-ink); } .mg-day.mg-c-grey i { background: var(--mg-grey); }
-  .mg-day.mg-c-pink i { background: var(--mg-pink); } .mg-day.mg-c-violet i { background: var(--mg-violet); }
-  .mg-day-gap { flex: 0 0 4rem; display: flex; align-items: center; justify-content: center; border-right-style: dashed; font-weight: 500; font-style: italic; white-space: normal; }
-  .mg-key { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin: 0 0 2.4rem; padding: 0; list-style: none; font: 500 .85rem var(--mg-sans); color: var(--mg-grey); }
-  .mg-key li { display: flex; align-items: center; gap: .45rem; }
-  .mg-key i { width: .9rem; height: .9rem; display: inline-block; background: var(--mg-ink); }
-  .mg-key i.mg-c-grey { background: var(--mg-grey); } .mg-key i.mg-c-pink { background: var(--mg-pink); } .mg-key i.mg-c-violet { background: var(--mg-violet); }
-  .mg-tl { list-style: none; margin: 1.4rem 0 0; padding: 0 0 0 1.6rem; border-left: 3px solid var(--mg-ink); max-width: 46rem; }
-  .mg-tl li { position: relative; }
-  .mg-tl time { position: relative; display: block; font: 400 1.6rem/1.2 var(--mg-display); letter-spacing: -.03em; }
-  .mg-tl time::before { content: ""; position: absolute; left: calc(-1.6rem - 8px); top: .45rem; width: 13px; height: 13px; border-radius: 50%; background: var(--mg-paper); border: 3px solid var(--mg-ink); box-sizing: border-box; }
-  .mg-tl li.mg-c-pink time { color: var(--mg-pink); } .mg-tl li.mg-c-pink time::before { background: var(--mg-pink); border-color: var(--mg-pink); }
-  .mg-tl li.mg-c-violet time { color: var(--mg-violet); } .mg-tl li.mg-c-violet time::before { background: var(--mg-violet); border-color: var(--mg-violet); }
-  .mg-tl li.mg-c-grey time::before { background: var(--mg-grey); border-color: var(--mg-grey); }
-  .mg-tl li.mg-c-ink time::before { background: var(--mg-ink); }
-  .mg-tl p { margin: .2rem 0 0; font: 400 1.12rem/1.5 var(--mg-serif); }
-  .mg-tl p.mg-gap { margin: 0; font: 700 .72rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--mg-grey); }
-  .mg-tl p.mg-gap-break { padding-block: 2.8rem; margin-left: calc(-1.6rem - 3px); padding-left: 1.6rem; border-left: 3px dashed var(--mg-ink); background: linear-gradient(var(--mg-paper), var(--mg-paper)) left / 3px 100% no-repeat; }
+  /* Disagreements: both sides identical, so neither looks endorsed */
+  .cs-dis + .cs-dis { margin-top: 1.8rem; }
+  .cs-dis h3 { display: flex; gap: .7rem; align-items: center; font-size: 1.25rem; line-height: 1.3; margin-bottom: .8rem; }
+  .cs-dis h3::before { content: "?"; flex: none; display: grid; place-items: center; width: 1.9rem; height: 1.9rem; border-radius: 50%; border: 2px solid var(--pop); color: var(--pop-text); font: 800 1rem var(--lb-sans); }
+  .cs-sides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .cs-side { background: var(--pop-tint); padding: 1rem 1.1rem 1.1rem; min-width: 0; display: flex; flex-direction: column; gap: .4rem; }
+  .cs-side .lb-label { margin: 0; color: var(--lb-ink); }
+  .cs-side p { margin: 0; font-size: 1rem; line-height: 1.5; flex: 1; }
+  .cs-side .cs-src { align-self: flex-start; margin-left: 0; }
+  .cs-note { margin: .7rem 0 0; font: 400 .88rem/1.5 var(--lb-sans); color: var(--lb-ink-2); }
 
-  .mg-split-sec { background: var(--mg-ink); color: #fff; margin-top: 4.5rem; padding: 4rem 0 3rem; }
-  .mg-split-sec .mg-h { margin-bottom: 1rem; }
-  .mg-lede { font: 400 1.1rem var(--mg-serif); color: #b8b8bd; margin: 0 0 2.5rem; }
-  .mg-dispute { margin-bottom: 2.6rem; }
-  .mg-dispute h3 { font: 400 clamp(1.4rem, 3vw, 2rem)/1.1 var(--mg-display); letter-spacing: -.02em; margin: 0 0 1.2rem; }
-  .mg-sides { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: stretch; }
-  .mg-side { background: #1b1b1e; border: 1.5px solid #4a4a50; border-top: 4px solid #fff; padding: 1.6rem; display: flex; flex-direction: column; gap: .8rem; min-width: 0; }
-  .mg-who { margin: 0; font: 800 .78rem var(--mg-sans); letter-spacing: .14em; text-transform: uppercase; color: #c4c4ca; }
-  .mg-says { margin: 0; flex: 1; font: 600 1.3rem/1.4 var(--mg-serif); }
-  .mg-side .mg-src { align-self: flex-start; margin-left: 0; }
-  .mg-dnote { margin: 1rem 0 0; font: 400 1.05rem/1.5 var(--mg-serif); color: #cfcfd3; max-width: 52rem; }
-  .mg-vs { align-self: center; font: 400 1.4rem var(--mg-display); padding: 0 1rem; color: #8a8a90; }
+  /* Quotes at equal size */
+  .cs-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 6px; }
+  .cs-quote { margin: 0; padding: 1rem 1.1rem; border-top: 4px solid var(--pop); background: var(--pop-tint); display: flex; flex-direction: column; justify-content: space-between; gap: .8rem; min-width: 0; }
+  .cs-quote blockquote { margin: 0; font: italic 400 1rem/1.5 var(--lb-serif); }
+  .cs-quote blockquote::before { content: "\201C"; } .cs-quote blockquote::after { content: "\201D"; }
+  .cs-quote figcaption { font: 800 .68rem var(--lb-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--lb-ink-2); }
 
-  .mg-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 2.5rem; }
-  .mg-quote { margin: 0; min-width: 0; }
-  .mg-quote blockquote { margin: 0 0 .9rem; font: italic 400 1.4rem/1.4 var(--mg-serif); padding-left: 1.2rem; border-left: 5px solid var(--mg-ink); }
-  .mg-quote figcaption { font: 800 .78rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; padding-left: 1.2rem; }
+  .cs-unknowns { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .cs-unknowns li { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: .8rem; align-items: start; padding: .8rem 1rem .8rem .8rem; background: var(--pop-tint); }
+  .cs-unknowns li > span { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; background: var(--pop); color: var(--pop-on); font: 500 1.6rem/1 var(--lb-serif); }
+  .cs-unknowns p { margin: .1rem 0 0; font-size: 1rem; line-height: 1.5; }
 
-  .mg-unknowns { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
-  .mg-unknowns li { display: grid; grid-template-columns: 4rem minmax(0, 1fr); gap: 1rem; align-items: start; padding: 1.2rem 0; border-bottom: 1px solid #ddd; }
-  .mg-unknowns li > span { font: 400 3rem/1 var(--mg-display); color: var(--mg-pink); }
-  .mg-unknowns p { margin: .3rem 0 0; font: 400 1.2rem/1.5 var(--mg-serif); max-width: 46rem; }
+  /* Go deeper, see also, cite */
+  .cs-deeper { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .cs-deeper a { padding: 1.1rem 1.2rem; text-decoration: none; display: flex; flex-direction: column; gap: .3rem; background: var(--lb-ink); color: var(--lb-paper); }
+  .cs-deeper em { font: 800 .68rem var(--lb-sans); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--pop-mid); }
+  .cs-deeper strong { font: 500 1.25rem var(--lb-serif); }
+  .cs-deeper span { font: 400 .86rem/1.45 var(--lb-sans); opacity: .8; }
+  .cs-deeper a:hover { background: var(--pop); color: var(--pop-on); }
+  .cs-deeper a:hover em { color: inherit; }
+  .cs-dl-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.2rem; margin: 1.2rem 0 0; font: 500 .82rem var(--lb-sans); color: var(--lb-ink-2); }
+  .cs-seealso .lb-label { margin: 0 0 .6rem; color: var(--lb-ink); }
+  .cs-chips { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 6px; }
+  .cs-chip { display: grid; gap: .3rem; align-content: start; padding: .8rem .9rem; background: var(--pop-tint); border-left: 6px solid var(--pop); text-decoration: none; font: 500 1rem/1.35 var(--lb-serif); }
+  .cs-chip .lb-label { margin: 0; color: var(--pop-text); font-size: .64rem; }
+  .cs-chip:hover span:last-child { text-decoration: underline; }
+  .cs-cite { padding: 1rem 1.2rem; border: 1px solid var(--lb-rule); display: grid; gap: .6rem; }
+  .cs-cite p { margin: 0; }
+  .cs-cite #cs-cite-text { font: 400 .92rem/1.55 var(--lb-serif); color: var(--lb-ink-2); overflow-wrap: anywhere; }
+  .cs-cite button { justify-self: start; font: 700 .76rem var(--lb-sans); color: var(--lb-ink); background: none; border: 1px solid var(--lb-ink-3); padding: .4rem .8rem; cursor: pointer; }
+  .cs-cite button:hover { border-color: var(--lb-ink); }
 
-  .mg-dl { display: inline-flex; align-items: center; gap: .7rem; background: var(--mg-lime); color: var(--mg-ink) !important; text-decoration: none; font: 800 .8rem var(--mg-sans); letter-spacing: .08em; text-transform: uppercase; padding: .8rem 1.1rem; position: relative; z-index: 1; }
-  .mg-tabs a.mg-dl-nav { padding: .45rem .7rem; font-size: .7rem; border: 0; }
-  .mg-dl span { border: 1.5px solid var(--mg-ink); padding: .1rem .35rem; font-size: .68rem; }
-  .mg-dl:hover, .mg-dl:focus-visible { background: #fff; outline: 3px solid var(--mg-lime); outline-offset: 2px; }
-  .mg-dl-row { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.2rem; margin: 2.4rem 0 0; font: 700 .78rem var(--mg-sans); letter-spacing: .06em; text-transform: uppercase; color: #9a9aa0; }
-  .mg-deeper { background: var(--mg-ink); color: #fff; margin-top: 4.5rem; padding: 4rem 0 4.5rem; }
-  .mg-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-  .mg-cards a { text-decoration: none; border: 2px solid #fff; padding: 1.6rem; display: flex; flex-direction: column; gap: .6rem; transition: background .15s, color .15s; }
-  .mg-cards a:hover { background: var(--mg-lime); color: var(--mg-ink); border-color: var(--mg-lime); }
-  .mg-cards em { font: 800 .72rem var(--mg-sans); font-style: normal; letter-spacing: .14em; text-transform: uppercase; color: var(--mg-pink); }
-  .mg-cards strong { font: 400 1.7rem/1.05 var(--mg-display); letter-spacing: -.02em; }
-  .mg-cards span { font: 400 1rem/1.5 var(--mg-serif); color: inherit; opacity: .85; }
-  .mg-foot { padding: 1.6rem 0; font: 700 .72rem var(--mg-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--mg-grey); }
+  /* In context rail */
+  .cs-rail { min-width: 0; display: grid; gap: 1.6rem; align-content: start; }
+  .cs-context { background: var(--pop-tint); font: 400 .93rem/1.5 var(--lb-serif); }
+  .cs-context h2 { background: var(--pop); color: var(--pop-on); padding: .7rem 1.2rem; font: 800 .82rem var(--lb-sans) !important; letter-spacing: .14em; text-transform: uppercase; }
+  .cs-context dl { margin: 0; padding: .4rem 1.2rem 1.3rem; }
+  .cs-context dt { margin-top: .9rem; padding-top: .75rem; border-top: 1px solid var(--pop-mid); font: 700 .68rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--pop-text); }
+  .cs-context dt:first-child { border-top: 0; }
+  .cs-context dd { margin: .3rem 0 0; }
+  .cs-grade { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .2rem 1rem; padding: 1.1rem 1.2rem 1.2rem; border: 2px solid var(--pop); }
+  .cs-grade-letter { grid-row: span 2; display: grid; place-items: center; width: 3.6rem; height: 3.6rem; border-radius: 50%; background: var(--pop); color: var(--pop-on); font: 500 2.2rem/1 var(--lb-serif); }
+  .cs-grade .lb-label { align-self: end; }
+  .cs-grade b { font: 600 1.1rem var(--lb-serif); }
+  .cs-grade p { grid-column: 1 / -1; margin: .6rem 0 0; font-size: .92rem; line-height: 1.5; color: var(--lb-ink-2); }
 
-  @media (max-width: 860px) {
-    .mg-hero-grid { grid-template-columns: 1fr; gap: 2.2rem; }
-    .mg-stamp { max-width: 320px; }
-    .mg-cards { grid-template-columns: 1fr; }
+  @media (max-width: 920px) {
+    .cs-opener { grid-template-columns: 1fr; }
+    .cs-field { min-height: 0; gap: 1.6rem; }
+    .cs-head { padding: 1.4rem 0 0; }
+    .cs-body { grid-template-columns: 1fr; gap: 2.2rem; }
+    .cs-rail { order: -1; }
   }
   @media (max-width: 600px) {
-    .mg-wrap, .mg-top { padding-left: 16px; padding-right: 16px; }
-    .mg-sec { padding: 3rem 16px .5rem; }
-    .mg-hero { padding: 2.6rem 0 1.6rem; }
-    .mg-stamp { transform: none; box-shadow: 6px 6px 0 var(--mg-pink); }
-    .mg-stamp-letter { font-size: 4.5rem; }
-    .mg-points li { grid-template-columns: 3rem minmax(0, 1fr); gap: .8rem; }
-    .mg-pn { font-size: 2rem; }
-    .mg-points p { font-size: 1.12rem; }
-    .mg-sides { grid-template-columns: 1fr; }
-    .mg-vs { justify-self: center; padding: .5rem; }
-    .mg-tabs { gap: 1.1rem; width: 100%; }
-    .mg-unknowns li { grid-template-columns: 2.4rem minmax(0, 1fr); }
-    .mg-unknowns li > span { font-size: 2.2rem; }
+    .cs-figs, .cs-sides, .cs-deeper { grid-template-columns: 1fr; }
+    .cs-field { padding: 1.2rem 1.2rem 1.4rem; }
+    .cs-ex { padding: 1.1rem 1rem; }
   }
 </style>

@@ -1,0 +1,70 @@
+/* The library style (redesign of 2026-10-24, decisions in the private repo's
+   pilot/log/decisions.md): serif type on warm paper, with one colour per
+   subject used in solid fields, as a DK reference book gives each chapter its
+   colour. Shared by the rebuilt case pages; home, Explore and Methodology move
+   to it in step 3. Light only, deliberately: the rest of the site has no dark
+   mode yet. */
+@import "@fontsource-variable/newsreader/opsz.css";
+@import "@fontsource-variable/newsreader/opsz-italic.css";
+@import "@fontsource/libre-franklin/400.css";
+@import "@fontsource/libre-franklin/500.css";
+@import "@fontsource/libre-franklin/600.css";
+@import "@fontsource/libre-franklin/700.css";
+@import "@fontsource/libre-franklin/800.css";
+
+:root {
+  --lb-paper: #fbf8f2; --lb-ink: #1c1915; --lb-ink-2: #554e45; --lb-ink-3: #8a8277; --lb-rule: #d8cfbf; --lb-track: #ebe4d7;
+  /* Subject colours. Text on amber is ink, on the others white. */
+  --lb-courts: #c4306e; --lb-health: #0e8a84; --lb-employment: #2f5bd3; --lb-security: #e39b12; --lb-synthesis: #5b4b8a; --lb-media: #d4552b;
+  --lb-serif: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
+  --lb-sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* A subject scope: --pop fills blocks, --pop-on is text on it, --pop-text is
+   the colour as text on paper, --pop-tint and --pop-mid are panel and rule tints. */
+[data-subj] { --pop: var(--lb-ink); --pop-on: #fff; }
+[data-subj="courts"] { --pop: var(--lb-courts); }
+[data-subj="health"] { --pop: var(--lb-health); }
+[data-subj="employment"] { --pop: var(--lb-employment); }
+[data-subj="security"] { --pop: var(--lb-security); --pop-on: var(--lb-ink); }
+[data-subj="synthesis"] { --pop: var(--lb-synthesis); }
+[data-subj="media"] { --pop: var(--lb-media); }
+[data-subj] {
+  --pop-text: color-mix(in srgb, var(--pop) 72%, var(--lb-ink));
+  --pop-deep: color-mix(in srgb, var(--pop) 55%, var(--lb-ink));
+  --pop-tint: color-mix(in srgb, var(--pop) 14%, var(--lb-paper));
+  --pop-mid: color-mix(in srgb, var(--pop) 32%, var(--lb-paper));
+}
+
+body.lb { margin: 0; background: var(--lb-paper); color: var(--lb-ink); font: 400 1.125rem/1.6 var(--lb-serif); -webkit-font-smoothing: antialiased; }
+.lb a { color: inherit; text-underline-offset: .18em; }
+.lb :focus-visible { outline: 2px solid var(--lb-ink); outline-offset: 3px; }
+.lb h1, .lb h2, .lb h3 { font-family: var(--lb-serif); font-weight: 500; text-wrap: balance; margin: 0; }
+.lb-wrap { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+.lb-label { font: 700 .7rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--lb-ink-2); }
+
+/* Masthead and the subject strip under it */
+.lb-mast { display: flex; flex-wrap: wrap; gap: .6rem 2rem; align-items: center; justify-content: space-between; padding-block: 1.2rem .9rem; }
+.lb-brand { text-decoration: none; display: flex; align-items: baseline; gap: .7rem; }
+.lb-brand b { font: 600 1.6rem/1 var(--lb-serif); letter-spacing: -.01em; }
+.lb-brand span { font: 600 .72rem var(--lb-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--lb-ink-2); }
+.lb-tabs { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; align-items: center; }
+.lb-tabs a { font: 600 .85rem var(--lb-sans); text-decoration: none; color: var(--lb-ink-2); padding-bottom: .2rem; border-bottom: 3px solid transparent; }
+.lb-tabs a:hover { color: var(--lb-ink); border-bottom-color: var(--lb-rule); }
+.lb-tabs a[aria-current] { color: var(--lb-ink); border-bottom-color: var(--pop, var(--lb-ink)); }
+.lb-strip { display: grid; grid-template-columns: repeat(6, 1fr); height: 6px; }
+.lb-strip i { background: var(--pop); }
+
+/* The PDF download, used in the masthead and lower on the page */
+.lb-dl { display: inline-flex; align-items: center; gap: .6rem; background: var(--lb-ink); color: var(--lb-paper) !important; text-decoration: none; font: 700 .78rem var(--lb-sans); padding: .55rem .85rem; }
+.lb-dl span { border: 1px solid currentColor; padding: .05rem .3rem; font-size: .66rem; letter-spacing: .06em; }
+.lb-dl:hover { background: var(--pop, var(--lb-ink)); color: var(--pop-on, var(--lb-paper)) !important; }
+.lb-tabs a.lb-dl { color: var(--lb-paper); padding: .4rem .7rem; border: 0; font-size: .74rem; }
+
+.lb-foot { margin-top: 4rem; border-top: 2px solid var(--lb-ink); }
+.lb-foot .lb-wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-block: 1.2rem 2rem; font: 500 .8rem var(--lb-sans); color: var(--lb-ink-2); }
+
+@media (max-width: 600px) {
+  .lb-wrap { padding-left: 16px; padding-right: 16px; }
+  body.lb { font-size: 1.06rem; }
+}

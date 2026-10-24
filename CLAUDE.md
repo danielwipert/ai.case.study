@@ -163,7 +163,9 @@ repo, so any change to it must also be made there, or the next regeneration
 drops it. Three optional fields were added on 2026-10-06 (public PRs #34, #35):
 
 - **`timeline_key`**: a list of `{mark, label, color}`, drawn as a legend under
-  the timeline. `color` is one of `pink`, `violet`, `grey`, `ink`.
+  the timeline. `color` is one of `pink`, `violet`, `grey`, `ink`. Since the
+  2026-10-24 redesign the names are kept but `pink` draws in the case's subject
+  colour and `violet` in a deeper shade of it.
 - **`mark`** on a timeline entry: names a `timeline_key` entry and colours that
   date. Without marks every event is black. Colour follows the event, never its
   position in the list (the old template coloured the 5th and 8th entries
@@ -176,6 +178,19 @@ under the numbers, where the figures and labels must stand out; quotes are
 shown at equal size. The timeline is drawn to scale from the dates: dates are
 parsed as "8 Jul", "Sep 2024" or "6 Apr 2026", and one that does not parse turns
 the scaling off rather than failing.
+
+**The library style (redesign of 2026-10-24).** Dan's five gates, logged in the
+private repo's `pilot/log/decisions.md`: Economist/FT restraint in the type
+(Newsreader for headlines and text, Libre Franklin for labels, warm paper) with
+DK *Big Ideas* teaching apparatus (In context box, numbered exhibits, drop cap,
+See also, cite this case) and **one colour per subject, used in solid fields**,
+so a page appeals before it is read. Shared tokens are in
+`src/styles/library.css`; each rebuilt case's subject is set in
+`src/record/subjects.mjs` (a site choice, not part of the record, so not in
+`story.yaml`), and the build fails on a case without one. The colour field opens
+on the story's **first** number, so its order in `story.yaml` matters. Rolled out
+in three steps: a mock-up, the four rebuilt case pages, then home, Explore,
+Methodology and the legacy cases.
 
 ## Grading against a second chain that does not reach the numbers
 
