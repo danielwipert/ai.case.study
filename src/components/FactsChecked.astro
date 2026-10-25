@@ -1,0 +1,14 @@
+---
+// The "Facts checked in this section" dropdown that ends a section of a case page:
+// every checked row the section uses, once, in order of first use, each linking to the evidence page.
+interface Props { rows: string[]; byShort: Map<string, any>; root: string; }
+const { rows, byShort, root } = Astro.props;
+const facts = [...new Set(rows)].map((code) => ({ code, href: `${root}/evidence/#${code}`, row: byShort.get(code) }));
+---
+
+{facts.length > 0 && (
+  <details class="cs-facts">
+    <summary>Facts checked in this section <span>({facts.length})</span></summary>
+    <ol>{facts.map((f) => <li><a href={f.href}>{f.code}</a> {f.row.statement} <span class="cs-facts-label">{f.row.label.display}</span></li>)}</ol>
+  </details>
+)}

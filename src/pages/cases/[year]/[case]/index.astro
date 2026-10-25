@@ -12,6 +12,7 @@ import { loadCase, shortCode } from "../../../../record/lib/record.mjs";
 import { recordRoutes } from "../../../../record/lib/routes.mjs";
 import { THEMES, themeOf } from "../../../../record/subjects.mjs";
 import FeatureExhibit from "../../../../components/FeatureExhibit.astro";
+import FactsChecked from "../../../../components/FactsChecked.astro";
 
 export function getStaticPaths() {
   return recordRoutes();
@@ -46,10 +47,10 @@ if (feature) {
   });
 }
 const chapters = (feature?.chapters ?? []).filter((c) => !c.reading);
-// Each chapter lists its checked facts once, at its end, in order of first use (Dan, 2026-10-25: per-paragraph
-// source links broke up the flow).
-const chapterFacts = (c) => [...new Set([...c.paras.flatMap((p) => p.rows), ...((c.exhibit?.items ?? c.exhibit?.rows_data ?? []).flatMap((it) => it.rows))])]
-  .map((r) => ({ code: r, href: `${root}/evidence/#${r}`, row: byShort.get(r) }));
+// Every section of the reading column lists its checked facts once, at its end, in order of first use, in place of
+// a Source link after each item (Dan, 2026-10-25: the links broke up the flow). The colour field and the rail keep theirs.
+const rowsOf = (items) => items.flatMap((it) => it.rows ?? []);
+const chapterRows = (c) => [...rowsOf(c.paras), ...rowsOf(c.exhibit?.items ?? c.exhibit?.rows_data ?? [])];
 const readings = (feature?.chapters ?? []).filter((c) => c.reading);
 // The story's own numbers exhibit gives way to a feature that draws its own figures.
 const showNumbers = !chapters.some((c) => c.exhibit?.kind === "figures");
@@ -218,12 +219,13 @@ const [lede, ...points] = story.short_version;
       <article class="cs-col">
         <section>
           <div class="cs-sec"><span class="cs-n">{num("short")}</span><h2>The short version</h2></div>
-          <p class="cs-lede">{lede.text} <a class="cs-src" href={src(lede.rows)} title={tip(lede.rows)}>Source</a></p>
+          <p class="cs-lede">{lede.text}</p>
           {points.length > 0 && (
             <ol class="cs-points">
-              {points.map((p) => (<li><p>{p.text} <a class="cs-src" href={src(p.rows)} title={tip(p.rows)}>Source</a></p></li>))}
+              {points.map((p) => (<li><p>{p.text}</p></li>))}
             </ol>
           )}
+          <FactsChecked rows={rowsOf(story.short_version)} byShort={byShort} root={root} />
         </section>
 
         {chapters.map((c, i) => (
@@ -231,10 +233,7 @@ const [lede, ...points] = story.short_version;
             <div class="cs-sec"><span class="cs-n">{num(`ch${i}`)}</span><h2>{c.title}</h2></div>
             {c.paras.map((p) => (<p class="cs-para">{p.text}</p>))}
             {c.exhibit && <FeatureExhibit exhibit={c.exhibit} n={exhibitNo.get(c)} src={src} tip={tip} links={false} />}
-            <details class="cs-facts">
-              <summary>Facts checked in this section <span>({chapterFacts(c).length})</span></summary>
-              <ol>{chapterFacts(c).map((f) => <li><a href={f.href}>{f.code}</a> {f.row.statement} <span class="cs-facts-label">{f.row.label.display}</span></li>)}</ol>
-            </details>
+            <FactsChecked rows={chapterRows(c)} byShort={byShort} root={root} />
           </section>
         ))}
 
@@ -243,9 +242,10 @@ const [lede, ...points] = story.short_version;
             <figcaption id="ex-numbers"><b>Exhibit {numbersNo}</b><span>The numbers</span></figcaption>
             <div class="cs-figs">
               {story.numbers.map((n) => (
-                <div class="cs-fig"><strong>{n.figure}</strong><span>{n.label}</span><p class="cs-fig-src">{n.by && `Counted by ${n.by} · `}<a class="cs-src" href={src(n.rows)} title={tip(n.rows)}>Source</a></p></div>
+                <div class="cs-fig"><strong>{n.figure}</strong><span>{n.label}</span>{n.by && <p class="cs-fig-src">Counted by {n.by}</p>}</div>
               ))}
             </div>
+            <FactsChecked rows={rowsOf(story.numbers)} byShort={byShort} root={root} />
           </figure>
         )}
 
@@ -270,10 +270,11 @@ const [lede, ...points] = story.short_version;
                 {gaps[i] && (isBreak(gaps[i])
                   ? <p class="cs-gap cs-gap-break" aria-hidden="true">{gaps[i].text}</p>
                   : <p class="cs-gap" style={`padding-block: ${gapPad(gaps[i])}`} aria-hidden="true">{gaps[i].text}</p>)}
-                <time>{t.date}</time><p>{t.text} <a class="cs-src" href={src(t.rows)} title={tip(t.rows)}>Source</a></p>
+                <time>{t.date}</time><p>{t.text}</p>
               </li>
             ))}
           </ol>
+          <FactsChecked rows={rowsOf(story.timeline)} byShort={byShort} root={root} />
         </figure>
 
         {story.disagreements?.length > 0 && (
@@ -285,12 +286,13 @@ const [lede, ...points] = story.short_version;
                 <h3>{d.title}</h3>
                 <div class="cs-sides">
                   {d.sides.map((side) => (
-                    <div class="cs-side"><p class="lb-label">{side.who}</p><p>{side.says}</p><a class="cs-src" href={src(side.rows)} title={tip(side.rows)}>Source</a></div>
+                    <div class="cs-side"><p class="lb-label">{side.who}</p><p>{side.says}</p></div>
                   ))}
                 </div>
-                {d.note && <p class="cs-note">{d.note.text} <a class="cs-src" href={src(d.note.rows)} title={tip(d.note.rows)}>Source</a></p>}
+                {d.note && <p class="cs-note">{d.note.text}</p>}
               </div>
             ))}
+            <FactsChecked rows={story.disagreements.flatMap((d) => [...rowsOf(d.sides), ...(d.note?.rows ?? [])])} byShort={byShort} root={root} />
           </section>
         )}
 
@@ -298,16 +300,18 @@ const [lede, ...points] = story.short_version;
           <div class="cs-sec"><span class="cs-n">{num("quotes")}</span><h2>In their own words</h2></div>
           <div class="cs-quotes">
             {story.what_they_say.map((q) => (
-              <figure class="cs-quote"><blockquote>{q.quote}</blockquote><figcaption>{q.who} <a class="cs-src" href={src(q.rows)} title={tip(q.rows)}>Source</a></figcaption></figure>
+              <figure class="cs-quote"><blockquote>{q.quote}</blockquote><figcaption>{q.who}</figcaption></figure>
             ))}
           </div>
+          <FactsChecked rows={rowsOf(story.what_they_say)} byShort={byShort} root={root} />
         </section>
 
         <section>
           <div class="cs-sec"><span class="cs-n">{num("unknowns")}</span><h2>Still unknown</h2></div>
           <ul class="cs-unknowns">
-            {story.unknowns.map((u) => (<li><span aria-hidden="true">?</span><p>{u.text} <a class="cs-src" href={src(u.rows)} title={tip(u.rows)}>Source</a></p></li>))}
+            {story.unknowns.map((u) => (<li><span aria-hidden="true">?</span><p>{u.text}</p></li>))}
           </ul>
+          <FactsChecked rows={rowsOf(story.unknowns)} byShort={byShort} root={root} />
         </section>
 
         {readings.map((c, i) => (
@@ -315,10 +319,7 @@ const [lede, ...points] = story.short_version;
             <div class="cs-sec"><span class="cs-n">{num(`rd${i}`)}</span><h2>{c.title}</h2></div>
             <p class="cs-reading-label">The library's reading</p>
             {c.paras.map((p) => (<p class="cs-para">{p.text}</p>))}
-            <details class="cs-facts">
-              <summary>Facts checked in this section <span>({chapterFacts(c).length})</span></summary>
-              <ol>{chapterFacts(c).map((f) => <li><a href={f.href}>{f.code}</a> {f.row.statement} <span class="cs-facts-label">{f.row.label.display}</span></li>)}</ol>
-            </details>
+            <FactsChecked rows={chapterRows(c)} byShort={byShort} root={root} />
           </section>
         ))}
 
@@ -471,7 +472,7 @@ const [lede, ...points] = story.short_version;
   .cs-facts summary { cursor: pointer; font: 700 .72rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--lb-ink-2); width: fit-content; }
   .cs-facts summary span { font-weight: 500; letter-spacing: 0; }
   .cs-facts summary:hover { color: var(--pop-text); }
-  .cs-facts ol { margin: .7rem 0 0; padding-left: 1.2rem; display: grid; gap: .45rem; }
+  .cs-facts ol { margin: .7rem 0 0; padding-left: 2rem; display: grid; gap: .45rem; }
   .cs-facts a { font-weight: 700; color: var(--pop-text); text-decoration: none; margin-right: .2rem; }
   .cs-facts a:hover { text-decoration: underline; }
   .cs-facts-label { font: 600 .66rem var(--lb-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--lb-ink-3); white-space: nowrap; }
