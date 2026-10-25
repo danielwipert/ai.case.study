@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-019
-title: "Three days from a questionnaire to a chatbot switched off in Italy"
+title: "Italy ordered DeepSeek to stop processing Italian users' data two days after its first request"
 summary: "Italy's data protection authority asked DeepSeek for information on a Tuesday, got an answer on the Wednesday saying the company did not operate in Italy and EU law did not apply, and on the Thursday ordered it to stop processing Italian users' data. The investigation it opened alongside the order has still not concluded."
 organization:
   - Hangzhou DeepSeek Artificial Intelligence Co., Ltd.

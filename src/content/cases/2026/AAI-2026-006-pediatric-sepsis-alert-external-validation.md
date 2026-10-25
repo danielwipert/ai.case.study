@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-006
-title: "The sepsis alert that reached one case in five"
+title: "A children's hospital's sepsis alert caught 18% of cases in practice; the vendor reported 91%"
 summary: "A pediatric health system deployed a vendor-built sepsis prediction model across two emergency departments, then measured it: sensitivity fell from the vendor's reported 91% to 64% locally, 41% at the threshold the hospital chose, and 18% as the alert actually fired in practice."
 organization:
   - Children's Healthcare of Atlanta

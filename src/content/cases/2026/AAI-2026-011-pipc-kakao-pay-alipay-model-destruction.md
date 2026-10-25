@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-011
-title: "The regulator that ordered a model destroyed"
+title: "Korea's privacy regulator fined Kakaopay and ordered a credit-scoring model built on 40 million users' data destroyed"
 summary: "Korea's data protection regulator found that a payment app had sent 40 million users' data across borders every day for five years so that a third company could score their likelihood of running out of money. It fined the sender and the beneficiary — and ordered the company that built the scoring model to destroy it."
 organization:
   - Personal Information Protection Commission (Korea)

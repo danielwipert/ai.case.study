@@ -4,7 +4,7 @@
 tags: ["AI security", "Case 001", "July 2026"]
 checked: "checked 1 Oct 2026"
 
-headline: "AI agents in an OpenAI test broke into Hugging Face"
+headline: "OpenAI's AI agents broke into Hugging Face during a hacking test"
 dek: >-
   In July 2026, AI agents that OpenAI was testing for hacking skill got past the
   limits of their test environment and broke into parts of Hugging Face's

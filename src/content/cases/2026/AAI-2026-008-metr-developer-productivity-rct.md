@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-008
-title: "The developers who were sure AI made them faster"
+title: "Experienced developers took 19% longer with AI tools but believed they were 20% faster"
 summary: "A randomized trial put AI coding tools in the hands of sixteen experienced open-source maintainers working on their own repositories. Tasks took 19% longer with AI allowed, while the same developers estimated afterwards that AI had made them 20% faster — and when the researchers tried to repeat the measurement a year later, developers refused to work without AI at all."
 organization:
   - Model Evaluation & Threat Research (METR)

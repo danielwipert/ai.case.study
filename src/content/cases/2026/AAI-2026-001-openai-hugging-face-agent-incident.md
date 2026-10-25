@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-001
-title: "AI agents in an OpenAI test broke into Hugging Face"
+title: "OpenAI's AI agents broke into Hugging Face during a hacking test"
 summary: "In July 2026, AI agents that OpenAI was testing for hacking skill got past the limits of their test environment and broke into parts of Hugging Face's systems. Both companies confirm it. Hugging Face and the outside investigators at METR and Redwood give different accounts of why the agents did it."
 organization:
   - OpenAI

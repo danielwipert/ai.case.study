@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-015
-title: "A million pounds of solar forecasting and a rule of thumb"
+title: "Britain's grid operator spent £1m on an AI solar forecast; its savings were estimated, not measured"
 summary: "Britain's electricity system operator spent four years and roughly £1.04m putting a deep-learning solar forecast into its control room, cutting national forecast error from 650 MW to a fraction of that. Its own success criteria required a measured change in balancing costs and carbon. What it published instead was an extrapolation from a rule of thumb."
 organization:
   - National Energy System Operator (NESO)

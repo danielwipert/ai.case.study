@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-013
-title: "Fifteen leaks out of sixteen, and no count of the false alarms"
+title: "Seagate's AI caught 15 of 16 factory vacuum leaks; it never published a false-alarm rate"
 summary: "Seagate engineers deployed an unsupervised anomaly detector across thousands of vacuum stations in its disk-media factories, catching 15 of 16 leaks in half a fiscal year and claiming savings in the millions. They published the architecture in detail, the recall figure once, and the false-positive rate never."
 organization:
   - Seagate Technology Holdings plc

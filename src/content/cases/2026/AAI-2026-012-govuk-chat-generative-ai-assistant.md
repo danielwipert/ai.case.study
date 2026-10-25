@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-012
-title: "Two and a half years of shipping a government chatbot slowly"
+title: "The UK's GOV.UK chatbot reports 90% accuracy after two pilots; nobody outside the team has checked"
 summary: "The UK Government Digital Service built a retrieval-augmented assistant on GOV.UK, tested it on more than 10,000 members of the public across two pilots, raised its self-assessed accuracy from 76% to 90%, and published the numbers itself. Nobody outside the team has checked any of them."
 organization:
   - Government Digital Service

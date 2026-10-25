@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-020
-title: "A dialysis forecast ran twice in shadow mode and disagreed with itself"
+title: "A Toronto dialysis forecast tied its baseline in one of two silent trials; the paper reported only the combined gain"
 summary: "Four Toronto hospitals ran a seven-day forecast of urgent dialysis demand live, twice, without showing it to anyone. In the first silent period it exactly matched the static average it was meant to beat; in the second it beat it comfortably. The published paper reports the two periods combined as a 26.7% improvement and does not mention the tie."
 organization:
   - University Health Network

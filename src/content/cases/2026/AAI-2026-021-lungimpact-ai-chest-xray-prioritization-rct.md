@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-021
-title: "An AI that flagged chest X-rays sped up reports, not lung cancer diagnosis"
+title: "In an NHS trial, AI triage of chest X-rays sped up reports but not lung cancer diagnosis"
 summary: "In a randomized trial across five NHS trusts in England, an AI tool flagged chest X-rays it judged abnormal so they could be reported first. Reports came back sooner. The trial found no significant difference in how soon patients got a CT scan or a lung cancer diagnosis."
 organization:
   - Nottingham University Hospitals NHS Trust

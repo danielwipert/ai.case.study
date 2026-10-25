@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-005
-title: "A court let Workday withhold its own AI bias-testing data from the people suing it"
+title: "Court lets Workday keep its AI bias-testing data from the people suing it"
 summary: "In May 2026, a federal judge ruled that Workday did not have to hand over its own bias-testing data to the people suing it. The court's reason: Workday's lawyers curated the data and used the results to give legal advice. The same order made Workday produce its EEO-1 and OFCCP records. The lawsuit's discrimination claims are untried."
 organization:
   - Workday

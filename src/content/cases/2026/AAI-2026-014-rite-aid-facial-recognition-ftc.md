@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-014
-title: "Eight years of face matching without a false-alarm rate"
+title: "Rite Aid accepted a five-year facial-recognition ban after the FTC alleged it misidentified customers"
 summary: "The FTC alleged that a US pharmacy chain ran facial recognition in hundreds of stores from 2012 to 2020, never tested its accuracy, kept no record of how often it was wrong, and let employees search, expel, and call the police on customers it misidentified. Rite Aid settled without admitting anything and accepted a five-year ban."
 organization:
   - Rite Aid Corporation

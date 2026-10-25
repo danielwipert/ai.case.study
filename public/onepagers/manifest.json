@@ -1,33 +1,33 @@
 {
  "CS001": {
-  "made": "2026-10-12",
+  "made": "2026-10-25",
   "pdf": "aai-2026-001.pdf",
   "public_id": "AAI-2026-001",
-  "story_sha256": "7e3e9ba1762d83124739702759731d983a369f83124fbe2db592cb6535377144",
+  "story_sha256": "686f46a274c6401b6c433c0a47a96b5a3d61fc17b419ffa9574efda2d1425887",
   "type_scale": 1.0,
   "why_sha256": "84a0f1fc400911a1899f1e212b0ba8ac476e079d65a783e06ec4ac11a3fbd219"
  },
  "CS005": {
-  "made": "2026-10-12",
+  "made": "2026-10-25",
   "pdf": "aai-2026-005.pdf",
   "public_id": "AAI-2026-005",
-  "story_sha256": "d1b47ac2ae7cc0dc722977af8ad89423211a2ad6c68cf8f7e11a9cebdab568a9",
+  "story_sha256": "46c6d972419a42c53ce9cab13d6fa4dc9f4a562750a19ad7fe0b0d5ce49f4619",
   "type_scale": 0.95,
   "why_sha256": "7a1f147b577f8becb386f745c29f2b99134ffa68257910f834261b31a192b404"
  },
  "CS016": {
-  "made": "2026-10-12",
+  "made": "2026-10-25",
   "pdf": "aai-2026-016.pdf",
   "public_id": "AAI-2026-016",
-  "story_sha256": "c7a13121c2bfa8693528c898e275b8314e1e8b54f2e45f34f70120345097731d",
+  "story_sha256": "b8f2f998dfe24c58349204ca8ba3b9ea152f1a63e5fa06ad5c162a2f129143b8",
   "type_scale": 0.9,
   "why_sha256": "a8ee57787fdf6487f34172301b575192ee076c8d606369697abc1748e7eba7db"
  },
  "CS021": {
-  "made": "2026-10-12",
+  "made": "2026-10-25",
   "pdf": "aai-2026-021.pdf",
   "public_id": "AAI-2026-021",
-  "story_sha256": "cb2d72789b53007bcb087bd7669c34859b8d9d758069af2f20899f1cbca01e27",
+  "story_sha256": "47937dbd6fa0108fe745a282f45bd0d98dac02213d91b586128ed0e55ecbd468",
   "type_scale": 1.0,
   "why_sha256": "3b72ca8856e105acc3bafe471a363cd9cec925537b923c594aa362a3832f8538"
  }

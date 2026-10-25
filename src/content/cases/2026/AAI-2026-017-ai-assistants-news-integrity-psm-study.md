@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-017
-title: "Everyone measuring the assistants owns the content they get wrong"
+title: "Public broadcasters rated 45% of AI assistants' news answers as having a significant issue"
 summary: "Twenty-two public service broadcasters had 271 journalists rate 2,709 AI assistant answers about the news. Forty-five per cent had a significant issue, sourcing most of all, and a BBC-to-BBC rerun showed the rate falling from 51% to 37% in six months. Every measurement in the record was made by a publisher whose own content was being cited."
 organization:
   - British Broadcasting Corporation

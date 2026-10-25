@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-009
-title: "Three neutral criteria and eleven years of home visits"
+title: "Dutch regulator ruled DUO's student-fraud scoring unlawful; the state set aside €80 million in compensation"
 summary: "The Dutch student finance agency scored every grant recipient for fraud risk using age, type of education, and distance to the parental address. Over eleven years the profile sent inspectors disproportionately to students with a non-European migration background; the data protection regulator found the scoring itself unlawful, and the state set aside €80 million to compensate roughly 25,000 people."
 organization:
   - Dienst Uitvoering Onderwijs (DUO)
