@@ -1,0 +1,14 @@
+---
+// The story's disagreements: both sides in identical form, so neither looks endorsed (Dan's design rule).
+interface Props { items: any[]; }
+const { items } = Astro.props;
+---
+{items.map((d) => (
+  <div class="cs-dis">
+    <h3>{d.title}</h3>
+    <div class="cs-sides">
+      {d.sides.map((side) => (<div class="cs-side"><p class="lb-label">{side.who}</p><p>{side.says}</p></div>))}
+    </div>
+    {d.note && <p class="cs-note">{d.note.text}</p>}
+  </div>
+))}

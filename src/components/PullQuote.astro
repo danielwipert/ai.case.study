@@ -1,0 +1,6 @@
+---
+// One of the story's quotes as a pull quote. Every quote on a page is set at the same size (Dan's design rule).
+interface Props { q: any; }
+const { q } = Astro.props;
+---
+<figure class="cs-pull"><blockquote>{q.quote}</blockquote><figcaption>{q.who}</figcaption></figure>

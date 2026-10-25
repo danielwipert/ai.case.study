@@ -1,0 +1,29 @@
+---
+// The close of a case page: the three deeper layers, the one-page PDF, See also and How to cite.
+interface Props { root: string; facts: number; docs: number; onepagerHref: string | null; related: any[]; citation: string; n?: number | null; }
+const { root, facts, docs, onepagerHref, related, citation, n = null } = Astro.props;
+---
+<section>
+  <div class="cs-sec">{n != null && <span class="cs-n">{n}</span>}<h2>Go deeper</h2></div>
+  <div class="cs-deeper">
+    <a href={`${root}/record/`}><em>Read</em><strong>The full record</strong><span>The complete account in twelve sections, every sentence tied to its sources.</span></a>
+    <a href={`${root}/evidence/`}><em>Check</em><strong>The evidence</strong><span>{facts} checked facts, each with the exact quote it rests on.</span></a>
+    <a href={`${root}/sources/`}><em>Trace</em><strong>The sources</strong><span>{docs === 1 ? "The document behind this case, and how far it can be trusted." : `The ${docs} documents behind this case, and how far each can be trusted.`}</span></a>
+  </div>
+  {onepagerHref && <p class="cs-dl-row"><a class="lb-dl" href={onepagerHref} download>Download the one-page summary <span>PDF</span></a><span>The case on one page, to print or share.</span></p>}
+</section>
+
+{related.length > 0 && (
+  <nav class="cs-seealso" aria-label="See also">
+    <p class="lb-label">See also</p>
+    <div class="cs-chips">
+      {related.map((r) => (<a class="cs-chip" data-subj={r.subj} href={r.href}><span class="lb-label">{r.label}</span><span>{r.title}</span></a>))}
+    </div>
+  </nav>
+)}
+
+<div class="cs-cite">
+  <p class="lb-label">How to cite this case</p>
+  <p id="cs-cite-text">{citation}</p>
+  <button type="button" id="cs-cite-copy" hidden>Copy citation</button>
+</div>

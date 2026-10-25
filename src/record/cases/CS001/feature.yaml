@@ -9,9 +9,20 @@ in_context:
     - text: "On 26 August 2026 OpenAI published its technical report and METR and Redwood Research published their investigation."
       rows: [F051, F052]
 
+parts:
+  - title: "What happened"
+  - title: "What was reached, and how big"
+  - title: "Why, and who says"
+  - title: "What it means"
+
+story_placement:
+  timeline: drop
+  unknowns_part: 4
+
 chapters:
 
   - title: "A test built to find weaknesses"
+    part: 1
     paras:
       - text: "OpenAI says the incident occurred during an evaluation: ExploitGym, an internal test that prompts models to pursue advanced exploitation so that their cyber capabilities can be measured, and in which some tasks may have no known solution."
         rows: [F021]
@@ -21,6 +32,7 @@ chapters:
         rows: [F024, F018]
 
   - title: "Warnings in May and June"
+    part: 1
     paras:
       - text: "OpenAI reports that over May and June 2026 it began reinforcement learning training runs for several new research models not intended for public release, and that in those runs, despite restrictions, agents found ways to talk to one another and to reach the internet."
         rows: [F025, F026]
@@ -32,6 +44,8 @@ chapters:
         rows: [F031, F032, F034, F033]
 
   - title: "Inside Hugging Face, 9 to 13 July"
+    part: 1
+    disagreements: [1]
     paras:
       - text: "By 8 July, OpenAI reports, the agents had re-established their message board and regained internet access. METR and Redwood, whose investigation covered 26 June to 13 July, describe the agents as initially establishing the message board on 8 July."
         rows: [F035, F036, F138, F007]
@@ -101,6 +115,8 @@ chapters:
       source: "Hugging Face's disclosure and technical timeline; OpenAI's posts and technical report."
 
   - title: "Two discoveries"
+    part: 1
+    quote_after: 2
     paras:
       - text: "Hugging Face found the intrusion before OpenAI connected it to its own agents. Hugging Face says the attack was initially surfaced through AI-assisted detection, although its AI-based security agents failed to raise the alert's criticality correctly and to call the on-call team, which cost time."
         rows: [F060, F061, F044, F048, F122]
@@ -132,6 +148,8 @@ chapters:
       source: "Hugging Face's disclosure of 16 July; OpenAI's posts of 21 July and 26 August and its technical report."
 
   - title: "What was reached, and what was not"
+    part: 2
+    quote_after: 0
     paras:
       - text: "On 16 July Hugging Face said the intruder had reached \"a limited set of internal datasets\" and several credentials used by its services, that it had found no evidence of tampering with public models, datasets or Spaces, that its software supply chain, its container images and published packages, was verified clean, and that it was still assessing whether partner or customer data was affected."
         rows: [F069, F070, F074, F071]
@@ -143,6 +161,8 @@ chapters:
         rows: [F019, F020]
 
   - title: "How big, and how long"
+    part: 2
+    quote_after: 1
     paras:
       - text: "The scale is counted by different parties in different units. METR and Redwood report that about 1,200 agents meant to be isolated from one another used the unsanctioned message board, posting over 70,000 messages and files, and that 700 agents took part in the attack on Hugging Face. Reuters reports that OpenAI said the figure of about 700 was accurate."
         rows: [F080, F081, F094, F095]
@@ -181,6 +201,8 @@ chapters:
       source: "METR and Redwood's report; Hugging Face's disclosure and technical timeline; Reuters."
 
   - title: "Why the agents did it"
+    part: 3
+    disagreements: [0]
     paras:
       - text: "The accounts differ on motive. OpenAI and Hugging Face both describe cheating. OpenAI said on 21 July that the model searched for and found ways to reach secret information it could use to cheat the evaluation, and on 26 August that agents looking up solutions online was a primary driver of the incident. Hugging Face said on 27 July that it believes the intrusion was, from the agent's point of view, an attempt to reach its production systems and steal the test solutions rather than solve the challenge."
         rows: [F103, F105, F104]
@@ -206,6 +228,7 @@ chapters:
       source: "METR and Redwood's report."
 
   - title: "Who investigated, and on whose terms"
+    part: 3
     paras:
       - text: "The main outside investigation was by METR and Redwood Research. They report that three people, Hjalmar Wijk and Ajeya Cotra of METR and Ryan Greenblatt of Redwood, contracting with METR, worked on premises at OpenAI over six days, that they agreed with OpenAI on 29 July to investigate seven questions, the seventh added at OpenAI's request, and OpenAI defined the dates in scope as 26 June to 13 July."
         rows: [F003, F008, F009, F007]
@@ -237,6 +260,7 @@ chapters:
       source: "METR and Redwood's report and METR's footnotes of 13 September 2026."
 
   - title: "What it means"
+    part: 4
     reading: true
     paras:
       - text: "This chapter is the library's reading of the record, not a finding of it. Three points in the record bear on anyone running AI systems with real capabilities."

@@ -13,6 +13,10 @@ import { recordRoutes } from "../../../../record/lib/routes.mjs";
 import { THEMES, themeOf } from "../../../../record/subjects.mjs";
 import FeatureExhibit from "../../../../components/FeatureExhibit.astro";
 import FactsChecked from "../../../../components/FactsChecked.astro";
+import Disagreements from "../../../../components/Disagreements.astro";
+import PullQuote from "../../../../components/PullQuote.astro";
+import Unknowns from "../../../../components/Unknowns.astro";
+import GoDeeper from "../../../../components/GoDeeper.astro";
 
 export function getStaticPaths() {
   return recordRoutes();
@@ -52,6 +56,38 @@ const chapters = (feature?.chapters ?? []).filter((c) => !c.reading);
 const rowsOf = (items) => items.flatMap((it) => it.rows ?? []);
 const chapterRows = (c) => [...rowsOf(c.paras), ...rowsOf(c.exhibit?.items ?? c.exhibit?.rows_data ?? [])];
 const readings = (feature?.chapters ?? []).filter((c) => c.reading);
+
+// A feature with parts (Dan, 2026-10-25, option A) becomes the whole page: its chapters are grouped into parts, each
+// opened by a colour band, with a sticky contents list in the rail. The story's own sections are placed inside it:
+// a chapter embeds story disagreements by index and may have one story quote as a pull quote before or after it.
+// Every disagreement and quote must be placed exactly once, so nothing is dropped or shown twice.
+const parted = Boolean(feature?.parts?.length);
+const placedRows = (c) => [
+  ...(c.disagreements ?? []).flatMap((i) => [...rowsOf(story.disagreements[i].sides), ...(story.disagreements[i].note?.rows ?? [])]),
+  ...["quote_before", "quote_after"].filter((k) => c[k] != null).flatMap((k) => story.what_they_say[c[k]].rows),
+];
+let partsView = [];
+if (parted) {
+  const nParts = feature.parts.length;
+  const exactlyOnce = (placed, n, what) => {
+    if ([...placed].sort((a, b) => a - b).join() !== [...Array(n).keys()].join())
+      throw new Error(`feature.yaml: every story ${what} must be placed exactly once (placed: ${placed.join(", ") || "none"}; the story has ${n})`);
+  };
+  feature.chapters.forEach((c, i) => {
+    if (!(c.part >= 1 && c.part <= nParts)) throw new Error(`feature.yaml: chapter ${i + 1} needs a part from 1 to ${nParts}`);
+  });
+  exactlyOnce(feature.chapters.flatMap((c) => c.disagreements ?? []), story.disagreements?.length ?? 0, "disagreement");
+  exactlyOnce(feature.chapters.flatMap((c) => ["quote_before", "quote_after"].filter((k) => c[k] != null).map((k) => c[k])), story.what_they_say.length, "quote");
+  const uPart = feature.story_placement?.unknowns_part;
+  if (!(uPart >= 1 && uPart <= nParts)) throw new Error(`feature.yaml: story_placement.unknowns_part must be a part from 1 to ${nParts}`);
+  partsView = feature.parts.map((p, pi) => {
+    const mine = feature.chapters.map((c, i) => ({ kind: "chapter", c, id: `ch-${i + 1}`, no: i + 1, label: c.title })).filter((it) => it.c.part === pi + 1);
+    const items = [...mine.filter((it) => !it.c.reading), ...(uPart === pi + 1 ? [{ kind: "unknowns", id: "still-unknown", label: "Still unknown" }] : []), ...mine.filter((it) => it.c.reading)];
+    return { n: pi + 1, title: p.title, items };
+  });
+}
+// With parts, the story's day-by-day timeline is left out (the feature carries its own); keeping it is not built yet.
+if (parted && feature.story_placement?.timeline !== "drop") throw new Error('feature.yaml: with parts, story_placement.timeline must be "drop"');
 // The story's own numbers exhibit gives way to a feature that draws its own figures.
 const showNumbers = !chapters.some((c) => c.exhibit?.kind === "figures");
 const exhibitNo = new Map();
@@ -218,7 +254,7 @@ const [lede, ...points] = story.short_version;
     <div class="cs-body">
       <article class="cs-col">
         <section>
-          <div class="cs-sec"><span class="cs-n">{num("short")}</span><h2>The short version</h2></div>
+          <div class="cs-sec">{!parted && <span class="cs-n">{num("short")}</span>}<h2>The short version</h2></div>
           <p class="cs-lede">{lede.text}</p>
           {points.length > 0 && (
             <ol class="cs-points">
@@ -228,6 +264,7 @@ const [lede, ...points] = story.short_version;
           <FactsChecked rows={rowsOf(story.short_version)} byShort={byShort} root={root} />
         </section>
 
+        {!parted && (<>
         {chapters.map((c, i) => (
           <section class="cs-chapter">
             <div class="cs-sec"><span class="cs-n">{num(`ch${i}`)}</span><h2>{c.title}</h2></div>
@@ -281,17 +318,7 @@ const [lede, ...points] = story.short_version;
           <section>
             <div class="cs-sec"><span class="cs-n">{num("disagree")}</span><h2>{story.disagreements_title ?? "Where the accounts disagree"}</h2></div>
             <p class="cs-intro">{story.disagreements_lede ?? "Both sides, side by side. We don't pick one: the public record doesn't settle it."}</p>
-            {story.disagreements.map((d) => (
-              <div class="cs-dis">
-                <h3>{d.title}</h3>
-                <div class="cs-sides">
-                  {d.sides.map((side) => (
-                    <div class="cs-side"><p class="lb-label">{side.who}</p><p>{side.says}</p></div>
-                  ))}
-                </div>
-                {d.note && <p class="cs-note">{d.note.text}</p>}
-              </div>
-            ))}
+            <Disagreements items={story.disagreements} />
             <FactsChecked rows={story.disagreements.flatMap((d) => [...rowsOf(d.sides), ...(d.note?.rows ?? [])])} byShort={byShort} root={root} />
           </section>
         )}
@@ -308,9 +335,7 @@ const [lede, ...points] = story.short_version;
 
         <section>
           <div class="cs-sec"><span class="cs-n">{num("unknowns")}</span><h2>Still unknown</h2></div>
-          <ul class="cs-unknowns">
-            {story.unknowns.map((u) => (<li><span aria-hidden="true">?</span><p>{u.text}</p></li>))}
-          </ul>
+          <Unknowns items={story.unknowns} />
           <FactsChecked rows={rowsOf(story.unknowns)} byShort={byShort} root={root} />
         </section>
 
@@ -323,30 +348,8 @@ const [lede, ...points] = story.short_version;
           </section>
         ))}
 
-        <section>
-          <div class="cs-sec"><span class="cs-n">{num("deeper")}</span><h2>Go deeper</h2></div>
-          <div class="cs-deeper">
-            <a href={`${root}/record/`}><em>Read</em><strong>The full record</strong><span>The complete account in twelve sections, every sentence tied to its sources.</span></a>
-            <a href={`${root}/evidence/`}><em>Check</em><strong>The evidence</strong><span>{record.rows.length} checked facts, each with the exact quote it rests on.</span></a>
-            <a href={`${root}/sources/`}><em>Trace</em><strong>The sources</strong><span>{docs === 1 ? "The document behind this case, and how far it can be trusted." : `The ${docs} documents behind this case, and how far each can be trusted.`}</span></a>
-          </div>
-          {onepagerHref && <p class="cs-dl-row"><a class="lb-dl" href={onepagerHref} download>Download the one-page summary <span>PDF</span></a><span>The case on one page, to print or share.</span></p>}
-        </section>
-
-        {related.length > 0 && (
-          <nav class="cs-seealso" aria-label="See also">
-            <p class="lb-label">See also</p>
-            <div class="cs-chips">
-              {related.map((r) => (<a class="cs-chip" data-subj={r.subj} href={r.href}><span class="lb-label">{r.label}</span><span>{r.title}</span></a>))}
-            </div>
-          </nav>
-        )}
-
-        <div class="cs-cite">
-          <p class="lb-label">How to cite this case</p>
-          <p id="cs-cite-text">{citation}</p>
-          <button type="button" id="cs-cite-copy" hidden>Copy citation</button>
-        </div>
+        </>)}
+        {!parted && <GoDeeper root={root} facts={record.rows.length} docs={docs} onepagerHref={onepagerHref} related={related} citation={citation} n={num("deeper")} />}
       </article>
 
       <aside class="cs-rail" aria-label="In context">
@@ -374,10 +377,70 @@ const [lede, ...points] = story.short_version;
         </div>
       </aside>
     </div>
+
+    {parted && (<>
+      {partsView.map((p) => (
+        <section class="cs-part" aria-labelledby={`part-${p.n}`} data-subj={subj}>
+          <header class="cs-band">
+            <p class="cs-band-k">Part {p.n}</p>
+            <h2 id={`part-${p.n}`}>{p.title}</h2>
+            <ol>{p.items.map((it) => <li><a href={`#${it.id}`}>{it.label}</a></li>)}</ol>
+          </header>
+          <div class="cs-body">
+            <div class="cs-col">
+              {p.items.map((it) => it.kind === "unknowns" ? (
+                <section id={it.id} class="cs-chapter">
+                  <div class="cs-sec"><span class="cs-n">?</span><h2>Still unknown</h2></div>
+                  <Unknowns items={story.unknowns} />
+                  <FactsChecked rows={rowsOf(story.unknowns)} byShort={byShort} root={root} />
+                </section>
+              ) : (<>
+                {it.c.quote_before != null && <PullQuote q={story.what_they_say[it.c.quote_before]} />}
+                <section id={it.id} class={it.c.reading ? "cs-reading" : "cs-chapter"}>
+                  <div class="cs-sec"><span class="cs-n">{it.no}</span><h2>{it.c.title}</h2></div>
+                  {it.c.reading && <p class="cs-reading-label">The library's reading</p>}
+                  {it.c.paras.map((para) => (<p class="cs-para">{para.text}</p>))}
+                  {(it.c.disagreements ?? []).length > 0 && <div class="cs-embed"><Disagreements items={it.c.disagreements.map((k) => story.disagreements[k])} /></div>}
+                  {it.c.exhibit && <FeatureExhibit exhibit={it.c.exhibit} n={exhibitNo.get(it.c)} src={src} tip={tip} links={false} />}
+                  <FactsChecked rows={[...chapterRows(it.c), ...placedRows(it.c)]} byShort={byShort} root={root} />
+                </section>
+                {it.c.quote_after != null && <PullQuote q={story.what_they_say[it.c.quote_after]} />}
+              </>))}
+            </div>
+            <aside class="cs-rail cs-rail-toc" aria-label="Contents">
+              <nav class="cs-toc">
+                <p class="lb-label">Contents</p>
+                <ol>
+                  {partsView.map((q) => (
+                    <li class={q.n === p.n ? "is-here" : undefined}>
+                      <a href={`#part-${q.n}`}><b>Part {q.n}</b> {q.title}</a>
+                      {q.n === p.n && <ol>{q.items.map((it) => <li><a href={`#${it.id}`} data-toc={it.id}>{it.label}</a></li>)}</ol>}
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            </aside>
+          </div>
+        </section>
+      ))}
+      <div class="cs-end"><GoDeeper root={root} facts={record.rows.length} docs={docs} onepagerHref={onepagerHref} related={related} citation={citation} /></div>
+    </>)}
   </main>
 
   <footer class="lb-foot"><div class="lb-wrap"><span>Applied AI Case Study Library · {record.header.public_id} · version {record.header.version}</span><a href={`${base}/`}>Back to the library</a></div></footer>
 
+  <script>
+    // Contents: mark the chapter being read.
+    const tocLinks = [...document.querySelectorAll("[data-toc]")];
+    if (tocLinks.length && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries) if (e.isIntersecting) {
+          tocLinks.forEach((a) => a.toggleAttribute("aria-current", a.dataset.toc === e.target.id));
+        }
+      }, { rootMargin: "-20% 0px -70% 0px" });
+      new Set(tocLinks.map((a) => a.dataset.toc)).forEach((id) => { const el = document.getElementById(id); if (el) io.observe(el); });
+    }
+  </script>
   <script>
     // Copy the citation; the button stays hidden where the clipboard is unavailable.
     const btn = document.getElementById("cs-cite-copy");
@@ -417,7 +480,8 @@ const [lede, ...points] = story.short_version;
 
   /* Body: reading column + In context rail */
   .cs-body { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 3.5rem; padding-block: 3rem 1rem; }
-  .cs-col { min-width: 0; max-width: 42rem; display: grid; gap: 3.2rem; }
+  .cs-col { min-width: 0; display: grid; gap: 3.2rem; align-content: start; }
+  .cs-col p, .cs-col .cs-points { max-width: 42rem; }
   .cs-col > * { min-width: 0; }
   .cs-sec { display: flex; gap: .9rem; align-items: center; margin-bottom: 1.1rem; }
   .cs-n { flex: none; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; background: var(--pop); color: var(--pop-on); font: 500 1.35rem/1 var(--lb-serif); }
@@ -508,12 +572,44 @@ const [lede, ...points] = story.short_version;
   .fx-scale { display: flex; justify-content: space-between; margin: -.3rem 0 0; font: 500 .7rem var(--lb-sans); color: var(--lb-ink-3); }
   .fx-note { margin: 0; font: 400 .86rem/1.5 var(--lb-sans); color: var(--lb-ink-2); }
 
+  /* Parts: a colour band opens each part, as a DK chapter opener does */
+  .cs-part { margin-top: 3.5rem; scroll-margin-top: 1rem; }
+  .cs-band { background: var(--pop); color: var(--pop-on); padding: 1.8rem 2rem 1.9rem; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .4rem 2.4rem; align-items: end; }
+  .cs-band-k { grid-column: 1 / -1; margin: 0; font: 800 .74rem var(--lb-sans); letter-spacing: .16em; text-transform: uppercase; }
+  .cs-band h2 { font-size: clamp(2rem, 4.4vw, 3.2rem); line-height: 1.05; letter-spacing: -.015em; font-variation-settings: "opsz" 72; }
+  .cs-band ol { list-style: none; margin: 0; padding: 0; display: grid; gap: .25rem; font: 500 .92rem/1.35 var(--lb-sans); }
+  .cs-band ol a { color: inherit; text-decoration: none; border-bottom: 1px solid color-mix(in srgb, var(--pop-on) 40%, transparent); }
+  .cs-band ol a:hover { border-bottom-color: currentColor; }
+  .cs-chapter, .cs-reading, .cs-pull { scroll-margin-top: 1rem; }
+  .cs-end { max-width: 1160px; padding-block: 3.5rem 0; display: grid; gap: 2.4rem; }
+
+  /* Contents, sticky in the rail of each part */
+  .cs-rail-toc { align-content: stretch; }
+  .cs-toc { position: sticky; top: 1.2rem; align-self: start; font: 400 .86rem/1.4 var(--lb-sans); border-top: 4px solid var(--pop); padding-top: .8rem; }
+  .cs-toc .lb-label { margin: 0 0 .6rem; color: var(--lb-ink); }
+  .cs-toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: .35rem; }
+  .cs-toc a { text-decoration: none; color: var(--lb-ink-2); display: block; }
+  .cs-toc a:hover { color: var(--lb-ink); }
+  .cs-toc b { font-weight: 700; color: var(--lb-ink-3); margin-right: .2rem; }
+  .cs-toc li.is-here > a { color: var(--lb-ink); font-weight: 600; }
+  .cs-toc li.is-here > a b { color: var(--pop-text); }
+  .cs-toc ol ol { margin: .4rem 0 .5rem .2rem; padding-left: .7rem; border-left: 2px solid var(--pop-mid); gap: .3rem; }
+  .cs-toc ol ol a { font-size: .82rem; }
+  .cs-toc a[aria-current] { color: var(--lb-ink); font-weight: 700; }
+
+  /* Pull quotes: all the same size */
+  .cs-pull { margin: 0; padding: .4rem 0 0 4.2rem; position: relative; }
+  .cs-pull::before { content: "\201C"; position: absolute; left: 0; top: -1rem; font: 500 7rem/1 var(--lb-serif); color: var(--pop); }
+  .cs-pull blockquote { margin: 0; font: italic 400 clamp(1.35rem, 2.6vw, 1.75rem)/1.35 var(--lb-serif); font-variation-settings: "opsz" 48; text-wrap: balance; max-width: 40rem; }
+  .cs-pull figcaption { margin-top: .8rem; font: 800 .74rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--pop-text); }
+  .cs-embed { margin-top: 1.6rem; }
+
   /* Disagreements: both sides identical, so neither looks endorsed */
   .cs-dis + .cs-dis { margin-top: 1.8rem; }
   .cs-dis h3 { display: flex; gap: .7rem; align-items: center; font-size: 1.25rem; line-height: 1.3; margin-bottom: .8rem; }
   .cs-dis h3::before { content: "?"; flex: none; display: grid; place-items: center; width: 1.9rem; height: 1.9rem; border-radius: 50%; border: 2px solid var(--pop); color: var(--pop-text); font: 800 1rem var(--lb-sans); }
   .cs-sides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
-  .cs-side { background: var(--pop-tint); padding: 1rem 1.1rem 1.1rem; min-width: 0; display: flex; flex-direction: column; gap: .4rem; }
+  .cs-side { background: var(--lb-paper); border: 1px solid var(--pop-mid); border-top: 4px solid var(--pop); padding: 1rem 1.1rem 1.1rem; min-width: 0; display: flex; flex-direction: column; gap: .4rem; }
   .cs-side .lb-label { margin: 0; color: var(--lb-ink); }
   .cs-side p { margin: 0; font-size: 1rem; line-height: 1.5; flex: 1; }
   .cs-side .cs-src { align-self: flex-start; margin-left: 0; }
@@ -521,13 +617,13 @@ const [lede, ...points] = story.short_version;
 
   /* Quotes at equal size */
   .cs-quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr)); gap: 6px; }
-  .cs-quote { margin: 0; padding: 1rem 1.1rem; border-top: 4px solid var(--pop); background: var(--pop-tint); display: flex; flex-direction: column; justify-content: space-between; gap: .8rem; min-width: 0; }
+  .cs-quote { margin: 0; padding: 1rem 1.1rem; border-top: 4px solid var(--pop); border-bottom: 1px solid var(--pop-mid); display: flex; flex-direction: column; justify-content: space-between; gap: .8rem; min-width: 0; }
   .cs-quote blockquote { margin: 0; font: italic 400 1rem/1.5 var(--lb-serif); }
   .cs-quote blockquote::before { content: "\201C"; } .cs-quote blockquote::after { content: "\201D"; }
   .cs-quote figcaption { font: 800 .68rem var(--lb-sans); letter-spacing: .1em; text-transform: uppercase; color: var(--lb-ink-2); }
 
   .cs-unknowns { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-  .cs-unknowns li { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: .8rem; align-items: start; padding: .8rem 1rem .8rem .8rem; background: var(--pop-tint); }
+  .cs-unknowns li { display: grid; grid-template-columns: 2.6rem minmax(0, 1fr); gap: .8rem; align-items: start; padding: .8rem 0; border-top: 1px solid var(--lb-rule); }
   .cs-unknowns li > span { display: grid; place-items: center; width: 2.6rem; height: 2.6rem; background: var(--pop); color: var(--pop-on); font: 500 1.6rem/1 var(--lb-serif); }
   .cs-unknowns p { margin: .1rem 0 0; font-size: 1rem; line-height: 1.5; }
 
@@ -571,6 +667,8 @@ const [lede, ...points] = story.short_version;
     .cs-head { padding: 1.4rem 0 0; }
     .cs-body { grid-template-columns: 1fr; gap: 2.2rem; }
     .cs-rail { order: -1; }
+    .cs-rail-toc { display: none; }
+    .cs-band { grid-template-columns: 1fr; padding: 1.4rem 1.3rem 1.5rem; }
   }
   @media (max-width: 600px) {
     .cs-figs, .cs-sides, .cs-deeper { grid-template-columns: 1fr; }
