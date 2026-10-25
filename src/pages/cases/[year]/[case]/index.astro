@@ -11,6 +11,7 @@ import path from "node:path";
 import { loadCase, shortCode } from "../../../../record/lib/record.mjs";
 import { recordRoutes } from "../../../../record/lib/routes.mjs";
 import { THEMES, themeOf } from "../../../../record/subjects.mjs";
+import FeatureExhibit from "../../../../components/FeatureExhibit.astro";
 
 export function getStaticPaths() {
   return recordRoutes();
@@ -23,6 +24,35 @@ const record = loadCase(code);
 const byShort = new Map(record.rows.map((r) => [shortCode(r.code), r]));
 for (const list of [[story.grade], ...(story.dek_rows ? [[{ rows: story.dek_rows }]] : []), story.short_version, story.numbers, story.timeline, story.what_they_say, story.unknowns, ...(story.disagreements ?? []).map((d) => [...d.sides, ...(d.note ? [d.note] : [])])])
   for (const item of list) for (const r of item.rows) if (!byShort.has(r)) throw new Error(`story.yaml cites ${r}, which is not a live row`);
+
+// The feature (feature.yaml, optional): the long-form explanation in chapters with exhibits, below the short
+// version. Every paragraph and exhibit item cites live rows; only the library's reading may open with a
+// paragraph that cites none (its framing sentence).
+const features = import.meta.glob("../../../../record/cases/*/feature.yaml", { query: "?raw", import: "default", eager: true });
+const featureRaw = features[`../../../../record/cases/${code}/feature.yaml`];
+const feature = featureRaw ? parseYaml(featureRaw) : null;
+if (feature) {
+  const cite = (where, rows, emptyOk = false) => {
+    if (!Array.isArray(rows) || (!rows.length && !emptyOk)) throw new Error(`feature.yaml: ${where} cites no rows`);
+    for (const r of rows) if (!byShort.has(r)) throw new Error(`feature.yaml: ${where} cites ${r}, which is not a live row`);
+  };
+  for (const side of ["before", "after"]) for (const it of feature.in_context?.[side] ?? []) cite(`in_context.${side}`, it.rows);
+  feature.chapters.forEach((c, i) => {
+    c.paras.forEach((p, j) => cite(`chapter ${i + 1} paragraph ${j + 1}`, p.rows, c.reading && j === 0));
+    const ex = c.exhibit;
+    if (!ex) return;
+    if (!["figures", "lanes", "table", "bars"].includes(ex.kind)) throw new Error(`feature.yaml: chapter ${i + 1} exhibit kind "${ex.kind}" is unknown`);
+    for (const it of ex.items ?? ex.rows_data) cite(`chapter ${i + 1} exhibit`, it.rows);
+  });
+}
+const chapters = (feature?.chapters ?? []).filter((c) => !c.reading);
+const readings = (feature?.chapters ?? []).filter((c) => c.reading);
+// The story's own numbers exhibit gives way to a feature that draws its own figures.
+const showNumbers = !chapters.some((c) => c.exhibit?.kind === "figures");
+const exhibitNo = new Map();
+for (const c of chapters) if (c.exhibit) exhibitNo.set(c, exhibitNo.size + 1);
+const numbersNo = exhibitNo.size + 1;
+const timelineNo = numbersNo + (showNumbers ? 1 : 0);
 const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 const root = `${base}/cases/${Astro.params.year}/${Astro.params.case}`;
 const tip = (rows) => rows.map((r) => `${r}: ${byShort.get(r).statement} [${byShort.get(r).label.display}]`).join("\n\n");
@@ -42,7 +72,7 @@ if (onepager) {
 }
 const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 // Section numbers follow the sections a story actually has.
-const order = ["short", "timeline", ...(story.disagreements?.length ? ["disagree"] : []), "quotes", "unknowns", "deeper"];
+const order = ["short", ...chapters.map((_, i) => `ch${i}`), ...(story.disagreements?.length ? ["disagree"] : []), "quotes", "unknowns", ...readings.map((_, i) => `rd${i}`), "deeper"];
 const num = (key) => order.indexOf(key) + 1;
 const pad = (n) => String(n).padStart(2, "0");
 
@@ -192,17 +222,27 @@ const [lede, ...points] = story.short_version;
           )}
         </section>
 
-        <figure class="cs-ex" aria-labelledby="ex-numbers">
-          <figcaption id="ex-numbers"><b>Exhibit 1</b><span>The numbers</span></figcaption>
-          <div class="cs-figs">
-            {story.numbers.map((n) => (
-              <div class="cs-fig"><strong>{n.figure}</strong><span>{n.label}</span><p class="cs-fig-src">{n.by && `Counted by ${n.by} · `}<a class="cs-src" href={src(n.rows)} title={tip(n.rows)}>Source</a></p></div>
-            ))}
-          </div>
-        </figure>
+        {chapters.map((c, i) => (
+          <section class="cs-chapter">
+            <div class="cs-sec"><span class="cs-n">{num(`ch${i}`)}</span><h2>{c.title}</h2></div>
+            {c.paras.map((p) => (<p class="cs-para">{p.text} {p.rows.length > 0 && <a class="cs-src" href={src(p.rows)} title={tip(p.rows)}>Source</a>}</p>))}
+            {c.exhibit && <FeatureExhibit exhibit={c.exhibit} n={exhibitNo.get(c)} src={src} tip={tip} />}
+          </section>
+        ))}
+
+        {showNumbers && (
+          <figure class="cs-ex" aria-labelledby="ex-numbers">
+            <figcaption id="ex-numbers"><b>Exhibit {numbersNo}</b><span>The numbers</span></figcaption>
+            <div class="cs-figs">
+              {story.numbers.map((n) => (
+                <div class="cs-fig"><strong>{n.figure}</strong><span>{n.label}</span><p class="cs-fig-src">{n.by && `Counted by ${n.by} · `}<a class="cs-src" href={src(n.rows)} title={tip(n.rows)}>Source</a></p></div>
+              ))}
+            </div>
+          </figure>
+        )}
 
         <figure class="cs-ex" aria-labelledby="ex-timeline">
-          <figcaption id="ex-timeline"><b>Exhibit 2</b><span>{story.timeline_title ?? "Day by day"}</span></figcaption>
+          <figcaption id="ex-timeline"><b>Exhibit {timelineNo}</b><span>{story.timeline_title ?? "Day by day"}</span></figcaption>
           {strip && (
             <div class="cs-strip-wrap" role="img" aria-label={`Calendar from ${first} to ${last}, one square per day. Filled squares are the days in the list below.`}>
               <div class="cs-cal">
@@ -262,6 +302,14 @@ const [lede, ...points] = story.short_version;
           </ul>
         </section>
 
+        {readings.map((c, i) => (
+          <section class="cs-reading">
+            <div class="cs-sec"><span class="cs-n">{num(`rd${i}`)}</span><h2>{c.title}</h2></div>
+            <p class="cs-reading-label">The library's reading</p>
+            {c.paras.map((p) => (<p class="cs-para">{p.text} {p.rows.length > 0 && <a class="cs-src" href={src(p.rows)} title={tip(p.rows)}>Source</a>}</p>))}
+          </section>
+        ))}
+
         <section>
           <div class="cs-sec"><span class="cs-n">{num("deeper")}</span><h2>Go deeper</h2></div>
           <div class="cs-deeper">
@@ -294,6 +342,8 @@ const [lede, ...points] = story.short_version;
           <dl>
             <dt>Theme</dt>
             <dd>{THEMES[subj]}</dd>
+            {feature?.in_context?.before?.length > 0 && <><dt>Before</dt>{feature.in_context.before.map((it) => <dd>{it.text} <a class="cs-src" href={src(it.rows)} title={tip(it.rows)}>Source</a></dd>)}</>}
+            {feature?.in_context?.after?.length > 0 && <><dt>After</dt>{feature.in_context.after.map((it) => <dd>{it.text} <a class="cs-src" href={src(it.rows)} title={tip(it.rows)}>Source</a></dd>)}</>}
             <dt>{docs === 1 ? "The source read" : `The ${docs} sources read`}</dt>
             {docTitles.map((t) => <dd>{t}</dd>)}
             <dt>Period covered</dt>
@@ -355,6 +405,7 @@ const [lede, ...points] = story.short_version;
   /* Body: reading column + In context rail */
   .cs-body { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 3.5rem; padding-block: 3rem 1rem; }
   .cs-col { min-width: 0; max-width: 42rem; display: grid; gap: 3.2rem; }
+  .cs-col > * { min-width: 0; }
   .cs-sec { display: flex; gap: .9rem; align-items: center; margin-bottom: 1.1rem; }
   .cs-n { flex: none; display: grid; place-items: center; width: 2.4rem; height: 2.4rem; background: var(--pop); color: var(--pop-on); font: 500 1.35rem/1 var(--lb-serif); }
   .cs-sec h2 { font-size: 1.7rem; line-height: 1.15; }
@@ -398,6 +449,42 @@ const [lede, ...points] = story.short_version;
   .cs-tl p { margin: .1rem 0 0; font-size: 1rem; line-height: 1.5; }
   .cs-tl p.cs-gap { margin: 0; font: 700 .68rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--lb-ink-3); }
   .cs-tl p.cs-gap-break { padding-block: 2.4rem; margin-left: calc(-1.4rem - 2px); padding-left: 1.4rem; border-left: 2px dashed var(--lb-ink-2); background: linear-gradient(var(--pop-tint), var(--pop-tint)) left / 2px 100% no-repeat; }
+
+  /* Feature chapters, exhibits and the library's reading */
+  .cs-para { margin: 0 0 1rem; }
+  .cs-para:last-of-type { margin-bottom: 0; }
+  .cs-chapter > .cs-ex { margin-top: 1.6rem; }
+  .cs-ex-source { margin: 1.1rem 0 0; padding-top: .6rem; border-top: 1px solid var(--pop-mid); font: 400 .76rem/1.45 var(--lb-sans); color: var(--lb-ink-2); }
+  .cs-reading { background: var(--pop-tint); padding: 1.3rem 1.4rem 1.4rem; border-left: 6px solid var(--pop); }
+  .cs-reading-label { display: inline-block; margin: 0 0 1rem; padding: .25rem .55rem; background: var(--lb-ink); color: var(--lb-paper); font: 700 .66rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; }
+
+  .fx-lanes-head, .fx-lanes li { display: grid; grid-template-columns: 4.2rem minmax(0, 1fr) minmax(0, 1fr); gap: 6px; }
+  .fx-lanes-head { margin-bottom: 6px; }
+  .fx-lanes-head span { font: 700 .68rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--lb-ink); padding: .4rem .6rem; background: var(--lb-paper); }
+  .fx-lanes-head span:first-child { background: none; }
+  .fx-lanes ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  .fx-lanes time { font: 700 .82rem/1.4 var(--lb-sans); font-variant-numeric: tabular-nums; padding-top: .55rem; }
+  .fx-on { background: var(--lb-paper); border-top: 3px solid var(--pop); padding: .5rem .7rem .6rem; min-width: 0; }
+  .fx-on p { margin: 0; font-size: .95rem; line-height: 1.45; }
+  .fx-off { border-top: 1px dashed var(--pop-mid); }
+  .fx-lane-name { display: none; }
+
+  .fx-table-wrap { overflow-x: auto; }
+  .fx-table { width: 100%; border-collapse: collapse; font-size: .95rem; line-height: 1.45; background: var(--lb-paper); }
+  .fx-table th, .fx-table td { text-align: left; vertical-align: top; padding: .6rem .7rem; border-bottom: 1px solid var(--pop-mid); }
+  .fx-table thead th { background: var(--pop); color: var(--pop-on); font: 700 .68rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; border: 0; }
+  .fx-table tbody th { font: 700 .82rem var(--lb-sans); white-space: nowrap; }
+  .fx-table .fx-src { white-space: nowrap; width: 1%; }
+  .fx-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+  .fx-bars { display: grid; gap: .9rem; }
+  .fx-bar { display: grid; grid-template-columns: minmax(0, 1fr); gap: .35rem; }
+  .fx-bar-label { font: 500 .92rem/1.35 var(--lb-sans); }
+  .fx-bar-track { position: relative; height: 1.6rem; background: var(--lb-paper); border-radius: 0 4px 4px 0; }
+  .fx-bar-track i { position: absolute; inset: 0 auto 0 0; background: var(--pop); border-radius: 0 4px 4px 0; min-width: 3px; }
+  .fx-bar-n { font: 700 .9rem var(--lb-sans); }
+  .fx-scale { display: flex; justify-content: space-between; margin: -.3rem 0 0; font: 500 .7rem var(--lb-sans); color: var(--lb-ink-3); }
+  .fx-note { margin: 0; font: 400 .86rem/1.5 var(--lb-sans); color: var(--lb-ink-2); }
 
   /* Disagreements: both sides identical, so neither looks endorsed */
   .cs-dis + .cs-dis { margin-top: 1.8rem; }
@@ -465,6 +552,12 @@ const [lede, ...points] = story.short_version;
   }
   @media (max-width: 600px) {
     .cs-figs, .cs-sides, .cs-deeper { grid-template-columns: 1fr; }
+    .fx-lanes-head { display: none; }
+    .fx-lanes li { grid-template-columns: 1fr; gap: 0; }
+    .fx-lanes time { padding-top: 0; }
+    .fx-off { display: none; }
+    .fx-lane-name { display: block; margin-bottom: .2rem; font: 700 .64rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--pop-text); }
+    .cs-reading { padding: 1.1rem 1rem; }
     .cs-field { padding: 1.2rem 1.2rem 1.4rem; }
     .cs-ex { padding: 1.1rem 1rem; }
   }

@@ -1,0 +1,69 @@
+---
+// One exhibit in a case's feature (feature.yaml): big figures, two parallel
+// timelines, a table, or bars out of a whole. Every item links to its rows.
+interface Props { exhibit: any; n: number; src: (rows: string[]) => string; tip: (rows: string[]) => string; }
+const { exhibit: ex, n, src, tip } = Astro.props;
+const id = `ex-${n}`;
+---
+
+<figure class="cs-ex" aria-labelledby={id}>
+  <figcaption id={id}><b>Exhibit {n}</b><span>{ex.caption}</span></figcaption>
+
+  {ex.kind === "figures" && (
+    <div class="cs-figs">
+      {ex.items.map((f) => (
+        <div class="cs-fig"><strong>{f.figure}</strong><span>{f.label}</span><p class="cs-fig-src">{f.by && `Counted by ${f.by} · `}<a class="cs-src" href={src(f.rows)} title={tip(f.rows)}>Source</a></p></div>
+      ))}
+    </div>
+  )}
+
+  {ex.kind === "lanes" && (
+    <div class="fx-lanes">
+      <div class="fx-lanes-head" aria-hidden="true"><span></span>{ex.lanes.map((l) => <span>{l}</span>)}</div>
+      <ol>
+        {ex.items.map((it) => (
+          <li>
+            <time>{it.date}</time>
+            {ex.lanes.map((l, i) => (
+              <div class={i === it.lane ? "fx-on" : "fx-off"}>
+                {i === it.lane && <><span class="fx-lane-name">{l}</span><p>{it.text} <a class="cs-src" href={src(it.rows)} title={tip(it.rows)}>Source</a></p></>}
+              </div>
+            ))}
+          </li>
+        ))}
+      </ol>
+    </div>
+  )}
+
+  {ex.kind === "table" && (
+    <div class="fx-table-wrap">
+      <table class="fx-table">
+        <thead><tr>{ex.head.map((h) => <th scope="col">{h}</th>)}<th><span class="fx-sr">Source</span></th></tr></thead>
+        <tbody>
+          {ex.rows_data.map((r) => (
+            <tr>
+              {r.cells.map((c, i) => (i === 0 ? <th scope="row">{c}</th> : <td>{c}</td>))}
+              <td class="fx-src"><a class="cs-src" href={src(r.rows)} title={tip(r.rows)}>Source</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )}
+
+  {ex.kind === "bars" && (
+    <div class="fx-bars">
+      {ex.items.map((b) => (
+        <div class="fx-bar" title={`${b.label}: ${b.display}`}>
+          <span class="fx-bar-label">{b.label}</span>
+          <span class="fx-bar-track"><i style={`width:${Math.max(0, Math.min(100, b.value))}%`}></i></span>
+          <span class="fx-bar-n">{b.display} <a class="cs-src" href={src(b.rows)} title={tip(b.rows)}>Source</a></span>
+        </div>
+      ))}
+      <p class="fx-scale" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></p>
+      {ex.note && <p class="fx-note">{ex.note}</p>}
+    </div>
+  )}
+
+  {ex.source && <p class="cs-ex-source">{ex.source}</p>}
+</figure>
