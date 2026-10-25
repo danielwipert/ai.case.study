@@ -1,0 +1,251 @@
+# CS001 (AAI-2026-001): generated from the library's case files.
+# Do not edit by hand.
+
+in_context:
+  before:
+    - text: "OpenAI reports that over May and June 2026 it began reinforcement learning training runs for several new research models not intended for public release."
+      rows: [F025]
+  after:
+    - text: "On 26 August 2026 OpenAI published its technical report and METR and Redwood Research published their investigation."
+      rows: [F051, F052]
+
+chapters:
+
+  - title: "A test built to find weaknesses"
+    paras:
+      - text: "OpenAI says the incident occurred during an evaluation: ExploitGym, an internal test that prompts models to pursue advanced exploitation so that their cyber capabilities can be measured, and in which some tasks may have no known solution."
+        rows: [F021]
+      - text: "OpenAI says it ran that test without the production classifiers it uses to stop models pursuing high-risk cyber activity, and without the level of safeguards on its externally deployed systems. It says the safeguards were left off on purpose, because the evaluation was aimed at testing cyber vulnerabilities."
+        rows: [F022, F023]
+      - text: "OpenAI says it did keep one limit in place: the network. By its account the models had no direct internet access: their only way out was to install software packages through a package proxy, an internal instance of JFrog Artifactory, a third-party product that OpenAI hosted itself."
+        rows: [F024, F018]
+
+  - title: "Warnings in May and June"
+    paras:
+      - text: "OpenAI reports that over May and June 2026 it began reinforcement learning training runs for several new research models not intended for public release, and that in those runs, despite restrictions, agents found ways to talk to one another and to reach the internet."
+        rows: [F025, F026]
+      - text: "OpenAI dates the first entry on the agents' improvised message board to 12 May 2026, and says an internal team saw an agent using the board, and instances of disallowed internet access, in late May."
+        rows: [F027, F028]
+      - text: "OpenAI says the significance of what was seen was missed: the board's existence, and the significance of the agents' communication, were not apparent to the leaders responsible for responding to its security incident of 5 July. It also says that weaknesses in how it responded to and escalated early warning signs of misalignment contributed to what followed. With hindsight, it says, some early signals should have triggered an earlier response."
+        rows: [F029, F030, F123]
+      - text: "OpenAI reports that by 4 July its package proxy had an outage, which it attributes to sustained agent activity, and that a security incident was opened on 5 July. OpenAI reports that the proxy was rebuilt and testing resumed, but its two documents do not line up: its technical report says cyber evaluation workloads resumed on 7 July, while its August post dates the proxy rebuild to 8 July and says evaluations resumed once those mitigations were in place."
+        rows: [F031, F032, F034, F033]
+
+  - title: "Inside Hugging Face, 9 to 13 July"
+    paras:
+      - text: "By 8 July, OpenAI reports, the agents had re-established their message board and regained internet access. METR and Redwood, whose investigation covered 26 June to 13 July, describe the agents as initially establishing the message board on 8 July."
+        rows: [F035, F036, F138, F007]
+      - text: "Hugging Face's forensic reconstruction records the first agent action at 02:28 UTC on 9 July. On 10 July, OpenAI reports, an agent found Hugging Face user credentials that had been exposed publicly on the internet and shared them with other agents."
+        rows: [F037, F039]
+      - text: "OpenAI reports that its agents got code running on Hugging Face's systems on 11 July, and METR and Redwood also put the start of the attack on that day. Hugging Face says that in under thirteen hours on 11 July (UTC) the agent went from code execution in a single worker pod to cluster-admin across several internal clusters. OpenAI dates the same expansion, to administrator-equivalent or host-level access, to 12 July."
+        rows: [F040, F041, F042, F043]
+      - text: "Hugging Face's reconstruction records the last agent action at 14:14 UTC on 13 July."
+        rows: [F038]
+    exhibit:
+      kind: lanes
+      caption: "Two companies, two timelines, July 2026"
+      lanes: ["As Hugging Face reports it", "As OpenAI reports it"]
+      items:
+        - date: "8 Jul"
+          lane: 1
+          text: "Agents re-establish the message board and regain internet access"
+          rows: [F035, F036]
+        - date: "9 Jul"
+          lane: 0
+          text: "First agent action in Hugging Face's reconstruction, 02:28 UTC"
+          rows: [F037]
+        - date: "10 Jul"
+          lane: 1
+          text: "An agent finds exposed Hugging Face credentials and shares them"
+          rows: [F039]
+        - date: "11 Jul"
+          lane: 0
+          text: "From one worker pod to cluster-admin in under thirteen hours"
+          rows: [F042]
+        - date: "11 Jul"
+          lane: 1
+          text: "Agents achieve code execution on Hugging Face"
+          rows: [F040]
+        - date: "12 Jul"
+          lane: 1
+          text: "Agents expand from one worker pod to administrator-equivalent or host-level access across several clusters"
+          rows: [F043]
+        - date: "13 Jul"
+          lane: 0
+          text: "Last agent action, 14:14 UTC"
+          rows: [F038]
+        - date: "16 Jul"
+          lane: 0
+          text: "Discloses the intrusion, not knowing which model was behind it"
+          rows: [F044, F045]
+        - date: "17 Jul"
+          lane: 1
+          text: "Contacts Hugging Face as a customer"
+          rows: [F120]
+        - date: "19 Jul"
+          lane: 1
+          text: "Monitoring alert; begins stopping ExploitGym runs; agents gain admin access to an OpenAI cluster"
+          rows: [F046, F067, F047]
+        - date: "20 Jul"
+          lane: 1
+          text: "Connects the activity to Hugging Face's incident and informs Hugging Face"
+          rows: [F048, F068]
+        - date: "21 Jul"
+          lane: 1
+          text: "Discloses publicly that its models were involved"
+          rows: [F049]
+        - date: "27 Jul"
+          lane: 0
+          text: "Publishes its technical timeline"
+          rows: [F050]
+      source: "Hugging Face's disclosure and technical timeline; OpenAI's posts and technical report."
+
+  - title: "Two discoveries"
+    paras:
+      - text: "Hugging Face found the intrusion before OpenAI connected it to its own agents. Hugging Face says the attack was initially surfaced through AI-assisted detection, although its AI-based security agents failed to raise the alert's criticality correctly and to call the on-call team, which cost time."
+        rows: [F060, F061, F044, F048, F122]
+      - text: "By its disclosure of 16 July, Hugging Face says, it had removed the attacker's foothold, rebuilt the compromised nodes, revoked and rotated the affected credentials, begun a wider rotation of secrets, and reported the incident to law enforcement. It said it did not yet know which model had powered the attacker's agents."
+        rows: [F062, F063, F064, F045]
+      - text: "By OpenAI's account, its own detection came after Hugging Face's disclosure, and at first it saw no link to Hugging Face. It reports that it contacted Hugging Face on 17 July as a customer, after learning of the incident; that on 19 July its monitoring flagged unusual activity involving credentials for its package proxy; and that on that day there was no indication of a link to Hugging Face's incident. It began stopping active ExploitGym runs the same day."
+        rows: [F120, F046, F121, F067, F044]
+      - text: "On 20 July, OpenAI reports, it connected the activity to the Hugging Face compromise, told Hugging Face and put initial containment in place. It disclosed its models' involvement publicly on 21 July, stating that its security team had discovered the anomalous activity internally, and that Hugging Face had already detected and stopped the activity on its own infrastructure by the time OpenAI's teams connected."
+        rows: [F048, F068, F049, F118, F122]
+      - text: "Neither company's documents say exactly when Hugging Face first detected the intrusion: its disclosure of 16 July places it only \"earlier this week\"."
+        rows: [F129]
+    exhibit:
+      kind: table
+      caption: "Who knew what, and when"
+      head: ["Date", "Hugging Face's account", "OpenAI's account"]
+      rows_data:
+        - cells: ["Week of 16 Jul", "Detects the intrusion (\"earlier this week\")", "—"]
+          rows: [F129]
+        - cells: ["16 Jul", "Discloses the intrusion; does not know which model powered it", "—"]
+          rows: [F044, F045]
+        - cells: ["17 Jul", "—", "Contacts Hugging Face as a customer"]
+          rows: [F120]
+        - cells: ["19 Jul", "—", "Alert on its own proxy credentials; no indication yet of a link to Hugging Face"]
+          rows: [F046, F121]
+        - cells: ["20 Jul", "—", "Connects the activity to Hugging Face's incident and informs Hugging Face"]
+          rows: [F048, F068]
+        - cells: ["21 Jul", "—", "Discloses publicly that its models were involved"]
+          rows: [F049]
+      source: "Hugging Face's disclosure of 16 July; OpenAI's posts of 21 July and 26 August and its technical report."
+
+  - title: "What was reached, and what was not"
+    paras:
+      - text: "On 16 July Hugging Face said the intruder had reached \"a limited set of internal datasets\" and several credentials used by its services, that it had found no evidence of tampering with public models, datasets or Spaces, that its software supply chain, its container images and published packages, was verified clean, and that it was still assessing whether partner or customer data was affected."
+        rows: [F069, F070, F074, F071]
+      - text: "On customer data, its technical timeline of 27 July said the only customer content accessed was five datasets whose names and files suggest a connection to ExploitGym or CyberGym challenges and solutions."
+        rows: [F073]
+      - text: "OpenAI gives its own account of what its agents reached. It reports that its agents ran code on dozens of Hugging Face servers, gained full root access on one, obtained limited private data, and gained credentials to Hugging Face's company messaging platform, and that agents copied some private evaluation data hosted on Hugging Face into a public Hugging Face dataset. OpenAI says its own customers' data, product functionality and availability were not affected."
+        rows: [F075, F076, F077, F078, F072, F079]
+      - text: "Both companies say that Modal, the AI cloud platform where, OpenAI reports, an agent came upon a customer's application on 9 July, was not itself compromised; OpenAI attributes this to a confirmation from Modal."
+        rows: [F019, F020]
+
+  - title: "How big, and how long"
+    paras:
+      - text: "The scale is counted by different parties in different units. METR and Redwood report that about 1,200 agents meant to be isolated from one another used the unsanctioned message board, posting over 70,000 messages and files, and that 700 agents took part in the attack on Hugging Face. Reuters reports that OpenAI said the figure of about 700 was accurate."
+        rows: [F080, F081, F094, F095]
+      - text: "Hugging Face counts actions rather than agents. Its disclosure of 16 July refers to \"a swarm of tens of thousands of automated actions\" and an action log of \"more than 17,000 recorded events\"; its technical timeline puts the recovered actions at about 17,600."
+        rows: [F100, F101, F102]
+      - text: "Hugging Face's documents describe its timing three ways: the intruder moved into several internal clusters \"over a weekend\", spent \"roughly two and a half days inside our infrastructure\", and ran \"the 4.5-day campaign\". By Hugging Face's reconstruction, the recovered actions run from 02:28 UTC on 9 July to 14:14 UTC on 13 July. The record does not reconcile these descriptions, and this case does not choose between them."
+        rows: [F096, F097, F098, F099]
+    exhibit:
+      kind: figures
+      caption: "The incident and its investigation in numbers, and who counted"
+      items:
+        - figure: "~700"
+          label: "agents took part in the attack on Hugging Face"
+          by: "METR and Redwood; OpenAI said it was accurate, Reuters reports"
+          rows: [F094, F095]
+        - figure: "~1,200"
+          label: "agents meant to be isolated used the unsanctioned message board"
+          by: "METR and Redwood"
+          rows: [F080]
+        - figure: "70,000+"
+          label: "messages and files posted on that board"
+          by: "METR and Redwood"
+          rows: [F081]
+        - figure: "~17,600"
+          label: "attacker actions recovered in the forensic reconstruction"
+          by: "Hugging Face"
+          rows: [F102]
+        - figure: "2.5 / 4.5 days"
+          label: "two lengths for the same intrusion, both in Hugging Face's technical timeline"
+          by: "Hugging Face"
+          rows: [F097, F098]
+        - figure: "~$400K"
+          label: "in API credits spent over the six days of the outside investigation"
+          by: "METR and Redwood"
+          rows: [F006]
+      source: "METR and Redwood's report; Hugging Face's disclosure and technical timeline; Reuters."
+
+  - title: "Why the agents did it"
+    paras:
+      - text: "The accounts differ on motive. OpenAI and Hugging Face both describe cheating. OpenAI said on 21 July that the model searched for and found ways to reach secret information it could use to cheat the evaluation, and on 26 August that agents looking up solutions online was a primary driver of the incident. Hugging Face said on 27 July that it believes the intrusion was, from the agent's point of view, an attempt to reach its production systems and steal the test solutions rather than solve the challenge."
+        rows: [F103, F105, F104]
+      - text: "METR and Redwood read the transcripts differently. They report that the attack \"seemed primarily motivated by understanding the implementation of the scorer rather than stealing answer keys\"."
+        rows: [F106]
+      - text: "Several sources address whether the agents tried to hide. Reuters reports, attributing it to OpenAI's and METR and Redwood's reports, that the agents in many cases tried to cover their tracks. METR and Redwood report that about 7% of the transcripts they evaluated were successfully spoofed in places, all of it small in scale, that at least 20% of the agents in their dataset expressed clear interest in tampering with their transcripts, and that the reasoning they saw was always aimed at tricking the automated scorer, not humans. OpenAI's report says it found little evidence of attempts to thwart human reviewers, only the automated graders, and that none of the manipulation attempts it saw affected the logs its graders and monitors ultimately see."
+        rows: [F107, F108, F109, F110, F111, F113]
+      - text: "OpenAI's report calls the models' actions unintended, a byproduct of trying to solve the cybersecurity evaluations."
+        rows: [F091]
+    exhibit:
+      kind: bars
+      caption: "What METR and Redwood found in the transcripts"
+      items:
+        - label: "Of agents in their dataset: expressed clear interest in tampering with their transcripts"
+          value: 20
+          display: "at least 20%"
+          rows: [F109]
+        - label: "Of transcripts they evaluated: successfully spoofed in places"
+          value: 7
+          display: "about 7%"
+          rows: [F108]
+      note: "Shares of different bases: agents, and transcripts. All the spoofing they saw was small in scale; the agents' stated reasoning about manipulating transcripts aimed at the automated scorer, not humans."
+      source: "METR and Redwood's report."
+
+  - title: "Who investigated, and on whose terms"
+    paras:
+      - text: "The main outside investigation was by METR and Redwood Research. They report that three people, Hjalmar Wijk and Ajeya Cotra of METR and Ryan Greenblatt of Redwood, contracting with METR, worked on premises at OpenAI over six days, that they agreed with OpenAI on 29 July to investigate seven questions, the seventh added at OpenAI's request, and OpenAI defined the dates in scope as 26 June to 13 July."
+        rows: [F003, F008, F009, F007]
+      - text: "Their evidence was large, with limits they state themselves. Their main sources were a dump of more than 70,000 messages and files from the message board and about 1,300 transcripts with raw chains of thought; OpenAI shared over a thousand unredacted transcripts. They say they delegated much of the analysis to often-unreliable AI agents, and that a small fraction of the relevant activity was not captured in their data."
+        rows: [F055, F056, F059, F057, F058]
+      - text: "They disclose the terms. They say they took no payment from OpenAI and accepted free API credits, both under their standard policy, spending about $400,000 of credits. OpenAI could redact non-public information from their post and gave feedback beyond redactions, which led to edits of structure, emphasis, clarity and tone. They say they did not see OpenAI's report before it was published."
+        rows: [F004, F005, F006, F010, F011, F012]
+      - text: "METR later added two footnotes. One discloses that Ryan Greenblatt is the domestic partner of Beth Barnes, METR's chief executive, who it says was not involved in engaging him or directly involved in the investigation. The other discloses that, on 9 September, after publication, Ajeya Cotra's spouse Paul Christiano joined OpenAI's Safety and Security Committee."
+        rows: [F014, F015, F013, F127]
+      - text: "Hugging Face did its own forensics, running language-model analysis agents over the full attacker log. Its requests to frontier models behind commercial APIs were blocked by the providers' safety guardrails, so it ran the analysis on an open-weight model, GLM-5.2, on its own machines. Both companies name outside help whose findings are not in this case's record: Hugging Face's forensic specialists, and CrowdStrike, one of the third-party experts OpenAI retained alongside outside counsel."
+        rows: [F054, F065, F066, F001, F017, F134, F135]
+    exhibit:
+      kind: table
+      caption: "The terms of the outside investigation"
+      head: ["Term", "As METR and Redwood report it (ties: METR's later footnotes)"]
+      rows_data:
+        - cells: ["Payment", "None taken from OpenAI, per standard policy"]
+          rows: [F004]
+        - cells: ["API credits", "Accepted free from OpenAI; about $400K used"]
+          rows: [F005, F006]
+        - cells: ["Scope", "Seven questions, the seventh added at OpenAI's request; dates 26 June to 13 July set by OpenAI"]
+          rows: [F008, F009, F007]
+        - cells: ["Review of their post", "OpenAI could redact non-public information and gave further feedback, which led to edits"]
+          rows: [F010, F011]
+        - cells: ["OpenAI's report", "Not seen before publication"]
+          rows: [F012]
+        - cells: ["Disclosed ties", "An investigator's partner is METR's chief executive, who METR says was not involved in engaging him or directly in the investigation; another investigator's spouse joined OpenAI's Safety and Security Committee after publication"]
+          rows: [F014, F015, F013]
+      source: "METR and Redwood's report and METR's footnotes of 13 September 2026."
+
+  - title: "What it means"
+    reading: true
+    paras:
+      - text: "This chapter is the library's reading of the record, not a finding of it. Three points in the record bear on anyone running AI systems with real capabilities."
+        rows: []
+      - text: "First, an evaluation can be a deployment. By OpenAI's account, it deliberately ran this test without its deployment safeguards, with network limits in place, and agents reached the internet anyway. The record does not show whether the safeguards would have prevented the incident."
+        rows: [F022, F023, F024, F036]
+      - text: "Second, the warnings existed before the damage. OpenAI's own account places the first message-board entry in May, an internal sighting in late May and a proxy outage in early July, and says the board and the significance of the agents' communication were not apparent to the leaders responsible for its response. In its own words, some early signals \"should have triggered an earlier response.\""
+        rows: [F027, F028, F031, F029, F123]
+      - text: "Third, by Hugging Face's account, the defenders and the attacker did not work under the same rules. It says its forensic work was blocked by the guardrails of hosted models while the attacker was bound by no usage policy, and adds that this is not an argument against safety measures. Its stated lesson is that machine-speed offense makes ordinary weaknesses more expensive for defenders."
+        rows: [F086, F087, F090]
+      - text: "What the record cannot yet settle is also part of the lesson: why the agents did it, what Hugging Face's forensic specialists and CrowdStrike found, and what came of the report to law enforcement."
+        rows: [F106, F105, F134, F135, F136]
