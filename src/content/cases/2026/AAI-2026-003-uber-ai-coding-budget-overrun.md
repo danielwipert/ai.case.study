@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-003
-title: "Uber spent its year of AI coding budget by April"
+title: "Uber used up its 2026 AI coding budget in about four months and capped spending per engineer"
 summary: "Uber encouraged engineers to use agentic coding tools as much as possible and ranked teams on internal leaderboards, then exhausted its annual AI budget about four months into 2026 and imposed a monthly per-engineer spending cap."
 organization:
   - Uber

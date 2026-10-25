@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-018
-title: "Amsterdam debiased the model and the bias changed direction"
+title: "Amsterdam reweighted its welfare-fraud model to remove bias; in live use the bias reappeared and the city stopped it"
 summary: "A city built a welfare fraud model with every safeguard the field recommends, measured false positives by demographic group, found bias against migrants, reweighted it away — and when the corrected model ran live for three months the bias reappeared pointing at women and Dutch nationals, while investigations went up rather than down. The official in charge stopped it in the council chamber."
 organization:
   - Gemeente Amsterdam

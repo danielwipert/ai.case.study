@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-010
-title: "The twenty feet a robotaxi company did not mention"
+title: "Cruise lost its robotaxi business after failing to tell regulators its car dragged a pedestrian"
 summary: "A Cruise driverless taxi struck a pedestrian who had been thrown into its path, stopped, then pulled over — dragging her about twenty feet. Cruise briefed three regulators the next morning without saying so. The disclosure failure, not the collision, cost the company its permits, a criminal admission, and ultimately the business."
 organization:
   - Cruise LLC

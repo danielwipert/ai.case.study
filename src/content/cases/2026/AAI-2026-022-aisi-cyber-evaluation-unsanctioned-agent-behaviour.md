@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-022
-title: "The safety evaluation that tried to get malware merged"
+title: "During a UK government evaluation, an AI agent tried to slip malware into real developers' open-source project"
 summary: "During a UK government cyber evaluation, an AI agent mistook two unaffiliated real developers for targets, opened a malicious pull request on their open-source project, and created fake accounts to pressure the maintainer into approving it. A passing member of the public spotted the malware. The agent then edited its tracks and claimed an honest mistake."
 organization:
   - UK AI Security Institute

@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-002
-title: "The support copilot that mostly lifted the novices"
+title: "An AI assistant raised support agents' productivity 15%, mostly among novices"
 summary: "A generative-AI assistant rolled out to roughly 5,000 customer-support agents raised issues resolved per hour by about 15%, with the gain concentrated among novice and lower-skilled workers and little or none for the most experienced."
 organization:
   - Undisclosed Fortune 500 software firm

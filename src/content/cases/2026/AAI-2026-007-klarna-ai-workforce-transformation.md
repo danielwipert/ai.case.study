@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-007
-title: "Klarna cut a third of its staff and filed the reason"
+title: "Klarna told the SEC that AI let it cut a third of its staff; its audited figures support that only in part"
 summary: "Klarna's annual report tells the SEC that full-time employees fell from 4,352 to 2,831 in two years as a result of leveraging AI, that its assistant handles 80% of customer service chats, and that headcount will keep falling — claims audited financial statements support only in part."
 organization:
   - Klarna Group plc

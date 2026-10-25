@@ -1,6 +1,6 @@
 ---
 case_id: AAI-2026-016
-title: "A database lists 2,185 court decisions on AI-hallucinated content; about one entry in nine names a specific tool"
+title: "One researcher's database lists 2,185 court rulings on AI-hallucinated filings"
 summary: "A researcher's database lists 2,185 court decisions in which, he says, a court found or implied that a party relied on hallucinated content. More than half of its entries list a self-represented litigant, and about one entry in nine names a specific tool. Two state supreme courts show the range: in Nebraska the lawyer said he did not rely on AI and the court did not decide; in New Mexico the lawyer admitted using ChatGPT."
 organization:
   - Nebraska Supreme Court
