@@ -264,6 +264,13 @@ const [lede, ...points] = story.short_version;
           <FactsChecked rows={rowsOf(story.short_version)} byShort={byShort} root={root} />
         </section>
 
+        <div class="cs-grade">
+          <span class="cs-grade-letter">{story.grade.letter}</span>
+          <span class="lb-label">Evidence grade</span>
+          <b>{story.grade.plain}</b>
+          <p>{story.grade.explain} <a class="cs-src" href={src(story.grade.rows)} title={tip(story.grade.rows)}>Source</a></p>
+        </div>
+
         {!parted && (<>
         {chapters.map((c, i) => (
           <section class="cs-chapter">
@@ -360,20 +367,19 @@ const [lede, ...points] = story.short_version;
             <dd>{THEMES[subj]}</dd>
             {feature?.in_context?.before?.length > 0 && <><dt>Before</dt>{feature.in_context.before.map((it) => <dd>{it.text} <a class="cs-src" href={src(it.rows)} title={tip(it.rows)}>Source</a></dd>)}</>}
             {feature?.in_context?.after?.length > 0 && <><dt>After</dt>{feature.in_context.after.map((it) => <dd>{it.text} <a class="cs-src" href={src(it.rows)} title={tip(it.rows)}>Source</a></dd>)}</>}
-            <dt>{docs === 1 ? "The source read" : `The ${docs} sources read`}</dt>
-            {docTitles.map((t) => <dd>{t}</dd>)}
+            <dt>Sources read</dt>
+            <dd>
+              <details class="cs-docs">
+                <summary>{docs === 1 ? "1 document" : `${docs} documents`}</summary>
+                <ol>{docTitles.map((t) => <li>{t}</li>)}</ol>
+              </details>
+            </dd>
             <dt>Period covered</dt>
             <dd>{first} to {last}</dd>
             {cutoff && <><dt>Evidence cutoff</dt><dd>{longDate(cutoff)}</dd></>}
             <dt>Checked</dt>
             <dd>{story.checked.replace(/^checked /, "")}, version {record.header.version}</dd>
           </dl>
-        </div>
-        <div class="cs-grade">
-          <span class="cs-grade-letter">{story.grade.letter}</span>
-          <span class="lb-label">Evidence grade</span>
-          <b>{story.grade.plain}</b>
-          <p>{story.grade.explain} <a class="cs-src" href={src(story.grade.rows)} title={tip(story.grade.rows)}>Source</a></p>
         </div>
       </aside>
     </div>
@@ -655,11 +661,15 @@ const [lede, ...points] = story.short_version;
   .cs-context dt { margin-top: .9rem; padding-top: .75rem; border-top: 1px solid var(--pop-mid); font: 700 .68rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--pop-text); }
   .cs-context dt:first-child { border-top: 0; }
   .cs-context dd { margin: .3rem 0 0; }
-  .cs-grade { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .2rem 1rem; padding: 1.1rem 1.2rem 1.2rem; border: 2px solid var(--pop); }
-  .cs-grade-letter { grid-row: span 2; display: grid; place-items: center; width: 3.6rem; height: 3.6rem; border-radius: 50%; background: var(--pop); color: var(--pop-on); font: 500 2.2rem/1 var(--lb-serif); }
+  .cs-docs summary { cursor: pointer; font: 600 .86rem var(--lb-sans); width: fit-content; }
+  .cs-docs summary:hover { color: var(--pop-text); }
+  .cs-docs ol { margin: .5rem 0 0; padding-left: 1.1rem; display: grid; gap: .35rem; font-size: .88rem; line-height: 1.4; }
+  /* The grade: a wide strip under the short version (Dan, 2026-10-25: it filled the gap before Part 1 better than the rail) */
+  .cs-grade { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .15rem 1.2rem; padding: 1.1rem 1.3rem 1.2rem; border: 2px solid var(--pop); align-items: center; }
+  .cs-grade-letter { grid-row: 1 / span 3; align-self: start; display: grid; place-items: center; width: 3.6rem; height: 3.6rem; border-radius: 50%; background: var(--pop); color: var(--pop-on); font: 500 2.2rem/1 var(--lb-serif); }
   .cs-grade .lb-label { align-self: end; }
   .cs-grade b { font: 600 1.1rem var(--lb-serif); }
-  .cs-grade p { grid-column: 1 / -1; margin: .6rem 0 0; font-size: .92rem; line-height: 1.5; color: var(--lb-ink-2); }
+  .cs-grade p { grid-column: 2; margin: .35rem 0 0; max-width: none !important; font-size: .92rem; line-height: 1.5; color: var(--lb-ink-2); }
 
   @media (max-width: 920px) {
     .cs-opener { grid-template-columns: 1fr; }
