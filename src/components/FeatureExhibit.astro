@@ -1,8 +1,9 @@
 ---
 // One exhibit in a case's feature (feature.yaml): big figures, two parallel
 // timelines, a table, or bars out of a whole. Every item links to its rows.
-interface Props { exhibit: any; n: number; src: (rows: string[]) => string; tip: (rows: string[]) => string; }
-const { exhibit: ex, n, src, tip } = Astro.props;
+// With links={false} the per-item Source links are left out: the chapter lists its checked facts once, at its end.
+interface Props { exhibit: any; n: number; src: (rows: string[]) => string; tip: (rows: string[]) => string; links?: boolean; }
+const { exhibit: ex, n, src, tip, links = true } = Astro.props;
 const id = `ex-${n}`;
 ---
 
@@ -12,7 +13,7 @@ const id = `ex-${n}`;
   {ex.kind === "figures" && (
     <div class="cs-figs">
       {ex.items.map((f) => (
-        <div class="cs-fig"><strong>{f.figure}</strong><span>{f.label}</span><p class="cs-fig-src">{f.by && `Counted by ${f.by} · `}<a class="cs-src" href={src(f.rows)} title={tip(f.rows)}>Source</a></p></div>
+        <div class="cs-fig"><strong>{f.figure}</strong><span>{f.label}</span><p class="cs-fig-src">{f.by && `Counted by ${f.by} · `}{links && <a class="cs-src" href={src(f.rows)} title={tip(f.rows)}>Source</a>}</p></div>
       ))}
     </div>
   )}
@@ -26,7 +27,7 @@ const id = `ex-${n}`;
             <time>{it.date}</time>
             {ex.lanes.map((l, i) => (
               <div class={i === it.lane ? "fx-on" : "fx-off"}>
-                {i === it.lane && <><span class="fx-lane-name">{l}</span><p>{it.text} <a class="cs-src" href={src(it.rows)} title={tip(it.rows)}>Source</a></p></>}
+                {i === it.lane && <><span class="fx-lane-name">{l}</span><p>{it.text} {links && <a class="cs-src" href={src(it.rows)} title={tip(it.rows)}>Source</a>}</p></>}
               </div>
             ))}
           </li>
@@ -38,12 +39,12 @@ const id = `ex-${n}`;
   {ex.kind === "table" && (
     <div class="fx-table-wrap">
       <table class="fx-table">
-        <thead><tr>{ex.head.map((h) => <th scope="col">{h}</th>)}<th><span class="fx-sr">Source</span></th></tr></thead>
+        <thead><tr>{ex.head.map((h) => <th scope="col">{h}</th>)}{links && <th><span class="fx-sr">Source</span></th>}</tr></thead>
         <tbody>
           {ex.rows_data.map((r) => (
             <tr>
               {r.cells.map((c, i) => (i === 0 ? <th scope="row">{c}</th> : <td>{c}</td>))}
-              <td class="fx-src"><a class="cs-src" href={src(r.rows)} title={tip(r.rows)}>Source</a></td>
+              {links && <td class="fx-src"><a class="cs-src" href={src(r.rows)} title={tip(r.rows)}>Source</a></td>}
             </tr>
           ))}
         </tbody>
@@ -57,7 +58,7 @@ const id = `ex-${n}`;
         <div class="fx-bar" title={`${b.label}: ${b.display}`}>
           <span class="fx-bar-label">{b.label}</span>
           <span class="fx-bar-track"><i style={`width:${Math.max(0, Math.min(100, b.value))}%`}></i></span>
-          <span class="fx-bar-n">{b.display} <a class="cs-src" href={src(b.rows)} title={tip(b.rows)}>Source</a></span>
+          <span class="fx-bar-n">{b.display} {links && <a class="cs-src" href={src(b.rows)} title={tip(b.rows)}>Source</a>}</span>
         </div>
       ))}
       <p class="fx-scale" aria-hidden="true"><span>0%</span><span>50%</span><span>100%</span></p>
