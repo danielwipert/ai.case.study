@@ -46,6 +46,10 @@ if (feature) {
   });
 }
 const chapters = (feature?.chapters ?? []).filter((c) => !c.reading);
+// Each chapter lists its checked facts once, at its end, in order of first use (Dan, 2026-10-25: per-paragraph
+// source links broke up the flow).
+const chapterFacts = (c) => [...new Set([...c.paras.flatMap((p) => p.rows), ...((c.exhibit?.items ?? c.exhibit?.rows_data ?? []).flatMap((it) => it.rows))])]
+  .map((r) => ({ code: r, href: `${root}/evidence/#${r}`, row: byShort.get(r) }));
 const readings = (feature?.chapters ?? []).filter((c) => c.reading);
 // The story's own numbers exhibit gives way to a feature that draws its own figures.
 const showNumbers = !chapters.some((c) => c.exhibit?.kind === "figures");
@@ -225,8 +229,12 @@ const [lede, ...points] = story.short_version;
         {chapters.map((c, i) => (
           <section class="cs-chapter">
             <div class="cs-sec"><span class="cs-n">{num(`ch${i}`)}</span><h2>{c.title}</h2></div>
-            {c.paras.map((p) => (<p class="cs-para">{p.text} {p.rows.length > 0 && <a class="cs-src" href={src(p.rows)} title={tip(p.rows)}>Source</a>}</p>))}
-            {c.exhibit && <FeatureExhibit exhibit={c.exhibit} n={exhibitNo.get(c)} src={src} tip={tip} />}
+            {c.paras.map((p) => (<p class="cs-para">{p.text}</p>))}
+            {c.exhibit && <FeatureExhibit exhibit={c.exhibit} n={exhibitNo.get(c)} src={src} tip={tip} links={false} />}
+            <details class="cs-facts">
+              <summary>Facts checked in this section <span>({chapterFacts(c).length})</span></summary>
+              <ol>{chapterFacts(c).map((f) => <li><a href={f.href}>{f.code}</a> {f.row.statement} <span class="cs-facts-label">{f.row.label.display}</span></li>)}</ol>
+            </details>
           </section>
         ))}
 
@@ -306,7 +314,11 @@ const [lede, ...points] = story.short_version;
           <section class="cs-reading">
             <div class="cs-sec"><span class="cs-n">{num(`rd${i}`)}</span><h2>{c.title}</h2></div>
             <p class="cs-reading-label">The library's reading</p>
-            {c.paras.map((p) => (<p class="cs-para">{p.text} {p.rows.length > 0 && <a class="cs-src" href={src(p.rows)} title={tip(p.rows)}>Source</a>}</p>))}
+            {c.paras.map((p) => (<p class="cs-para">{p.text}</p>))}
+            <details class="cs-facts">
+              <summary>Facts checked in this section <span>({chapterFacts(c).length})</span></summary>
+              <ol>{chapterFacts(c).map((f) => <li><a href={f.href}>{f.code}</a> {f.row.statement} <span class="cs-facts-label">{f.row.label.display}</span></li>)}</ol>
+            </details>
           </section>
         ))}
 
@@ -455,6 +467,15 @@ const [lede, ...points] = story.short_version;
   .cs-para:last-of-type { margin-bottom: 0; }
   .cs-chapter > .cs-ex { margin-top: 1.6rem; }
   .cs-ex-source { margin: 1.1rem 0 0; padding-top: .6rem; border-top: 1px solid var(--pop-mid); font: 400 .76rem/1.45 var(--lb-sans); color: var(--lb-ink-2); }
+  .cs-facts { margin-top: 1.2rem; border-top: 1px solid var(--lb-rule); padding-top: .7rem; font: 400 .86rem/1.5 var(--lb-sans); color: var(--lb-ink-2); }
+  .cs-facts summary { cursor: pointer; font: 700 .72rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; color: var(--lb-ink-2); width: fit-content; }
+  .cs-facts summary span { font-weight: 500; letter-spacing: 0; }
+  .cs-facts summary:hover { color: var(--pop-text); }
+  .cs-facts ol { margin: .7rem 0 0; padding-left: 1.2rem; display: grid; gap: .45rem; }
+  .cs-facts a { font-weight: 700; color: var(--pop-text); text-decoration: none; margin-right: .2rem; }
+  .cs-facts a:hover { text-decoration: underline; }
+  .cs-facts-label { font: 600 .66rem var(--lb-sans); letter-spacing: .08em; text-transform: uppercase; color: var(--lb-ink-3); white-space: nowrap; }
+  .cs-reading .cs-facts { border-top-color: var(--pop-mid); }
   .cs-reading { background: var(--pop-tint); padding: 1.3rem 1.4rem 1.4rem; border-left: 6px solid var(--pop); }
   .cs-reading-label { display: inline-block; margin: 0 0 1rem; padding: .25rem .55rem; background: var(--lb-ink); color: var(--lb-paper); font: 700 .66rem var(--lb-sans); letter-spacing: .12em; text-transform: uppercase; }
 
