@@ -1,0 +1,8 @@
+---
+// The story's "Still unknown" list.
+interface Props { items: any[]; }
+const { items } = Astro.props;
+---
+<ul class="cs-unknowns">
+  {items.map((u) => (<li><span aria-hidden="true">?</span><p>{u.text}</p></li>))}
+</ul>
