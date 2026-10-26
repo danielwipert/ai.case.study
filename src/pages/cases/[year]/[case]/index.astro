@@ -111,6 +111,18 @@ if (onepager) {
   const storySha = createHash("sha256").update(stories[`../../../../record/cases/${code}/story.yaml`]).digest("hex");
   if (storySha !== onepager.story_sha256) console.warn(`[onepager] ${code}: story.yaml changed after the one-page summary was made; rebuild it with tools/onepager.py`);
 }
+// The full report PDF (public/reports/), the page printed by tools/report_pdf.py in the private repo. Same warning when
+// the story or feature changed after it was made.
+const reportManifest = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(process.cwd(), "public/reports/manifest.json"), "utf8")); } catch { return {}; }
+})();
+const report = reportManifest[code] ?? null;
+const reportHref = report ? `${base}/reports/${report.pdf}` : null;
+if (report) {
+  const sha = (raw) => (raw == null ? null : createHash("sha256").update(raw).digest("hex"));
+  if (sha(stories[`../../../../record/cases/${code}/story.yaml`]) !== report.story_sha256 || sha(featureRaw) !== report.feature_sha256)
+    console.warn(`[report] ${code}: the story or feature changed after the full report was made; rebuild it with tools/report_pdf.py`);
+}
 const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 // Section numbers follow the sections a story actually has.
 const order = ["short", ...chapters.map((_, i) => `ch${i}`), ...(story.disagreements?.length ? ["disagree"] : []), "quotes", "unknowns", ...readings.map((_, i) => `rd${i}`), "deeper"];
@@ -222,7 +234,8 @@ const [lede, ...points] = story.short_version;
         <a href={`${root}/record/`}>Full record</a>
         <a href={`${root}/evidence/`}>Evidence</a>
         <a href={`${root}/sources/`}>Sources</a>
-        {onepagerHref && <a class="lb-dl" href={onepagerHref} download>One-page summary <span>PDF</span></a>}
+        {onepagerHref && <a class="lb-dl" href={onepagerHref} download>One-page <span>PDF</span></a>}
+        {reportHref && <a class="lb-dl" href={reportHref} download>Full report <span>PDF</span></a>}
       </nav>
     </div>
     <div class="lb-strip" aria-hidden="true">{Object.keys(THEMES).map((t) => <i data-subj={t}></i>)}</div>
@@ -356,7 +369,7 @@ const [lede, ...points] = story.short_version;
         ))}
 
         </>)}
-        {!parted && <GoDeeper root={root} facts={record.rows.length} docs={docs} onepagerHref={onepagerHref} related={related} citation={citation} n={num("deeper")} />}
+        {!parted && <GoDeeper root={root} facts={record.rows.length} docs={docs} onepagerHref={onepagerHref} reportHref={reportHref} related={related} citation={citation} n={num("deeper")} />}
       </article>
 
       <aside class="cs-rail" aria-label="In context">
@@ -429,7 +442,7 @@ const [lede, ...points] = story.short_version;
           </div>
         </section>
       ))}
-      <div class="cs-end"><GoDeeper root={root} facts={record.rows.length} docs={docs} onepagerHref={onepagerHref} related={related} citation={citation} /></div>
+      <div class="cs-end"><GoDeeper root={root} facts={record.rows.length} docs={docs} onepagerHref={onepagerHref} reportHref={reportHref} related={related} citation={citation} /></div>
     </>)}
   </main>
 
@@ -670,6 +683,31 @@ const [lede, ...points] = story.short_version;
   .cs-grade .lb-label { align-self: end; }
   .cs-grade b { font: 600 1.1rem var(--lb-serif); }
   .cs-grade p { grid-column: 2; margin: .35rem 0 0; max-width: none !important; font-size: .92rem; line-height: 1.5; color: var(--lb-ink-2); }
+
+  /* The full report PDF is this page printed (tools/report_pdf.py in the private repo). Web-only controls go, each part
+     starts a page, blocks are not split, and the script opens every dropdown first so each section's facts are on paper. */
+  .cs-print-only { display: none; }
+  @media print {
+    body.lb { background: #fff; }
+    .lb-tabs, .cs-rail-toc, .cs-src, .cs-dl-row, .lb-dl, #cs-cite-copy, .cs-deeper, .cs-seealso, .lb-foot,
+    section:has(> .cs-deeper) { display: none !important; }
+    .cs-print-only { display: block; }
+    .cs-opener { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr) !important; margin-top: 1rem; }
+    .cs-head { padding: .2rem 0 0 1.8rem !important; }
+    .cs-field { min-height: 0 !important; }
+    /* Grid layouts do not split cleanly across printed pages in Chromium (blocks overlap), so print stacks them as blocks. */
+    .cs-body { display: block !important; padding-block: 2rem 0 !important; }
+    .cs-col { display: block !important; }
+    .cs-col > * + *, .cs-rail { margin-top: 2.2rem; }
+    .cs-rail { display: block !important; }
+    .cs-rail.cs-rail-toc { display: none !important; }
+    .cs-part { break-before: page; margin-top: 0; }
+    .cs-band { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
+    .cs-ex, .cs-side, .cs-pull, .cs-grade, .cs-fig, .cs-context, .cs-dis, .cs-quote, .fx-lanes li, .fx-table tr, .cs-unknowns li, .cs-facts li { break-inside: avoid; }
+    .cs-sec, h2, h3, figcaption, .cs-band { break-after: avoid; }
+    .cs-facts summary { list-style: none; }
+    .cs-facts summary::-webkit-details-marker { display: none; }
+  }
 
   @media (max-width: 920px) {
     .cs-opener { grid-template-columns: 1fr; }

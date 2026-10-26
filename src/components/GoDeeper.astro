@@ -1,7 +1,7 @@
 ---
 // The close of a case page: the three deeper layers, the one-page PDF, See also and How to cite.
-interface Props { root: string; facts: number; docs: number; onepagerHref: string | null; related: any[]; citation: string; n?: number | null; }
-const { root, facts, docs, onepagerHref, related, citation, n = null } = Astro.props;
+interface Props { root: string; facts: number; docs: number; onepagerHref: string | null; reportHref?: string | null; related: any[]; citation: string; n?: number | null; }
+const { root, facts, docs, onepagerHref, reportHref = null, related, citation, n = null } = Astro.props;
 ---
 <section>
   <div class="cs-sec">{n != null && <span class="cs-n">{n}</span>}<h2>Go deeper</h2></div>
@@ -10,7 +10,13 @@ const { root, facts, docs, onepagerHref, related, citation, n = null } = Astro.p
     <a href={`${root}/evidence/`}><em>Check</em><strong>The evidence</strong><span>{facts} checked facts, each with the exact quote it rests on.</span></a>
     <a href={`${root}/sources/`}><em>Trace</em><strong>The sources</strong><span>{docs === 1 ? "The document behind this case, and how far it can be trusted." : `The ${docs} documents behind this case, and how far each can be trusted.`}</span></a>
   </div>
-  {onepagerHref && <p class="cs-dl-row"><a class="lb-dl" href={onepagerHref} download>Download the one-page summary <span>PDF</span></a><span>The case on one page, to print or share.</span></p>}
+  {(onepagerHref || reportHref) && (
+    <p class="cs-dl-row">
+      {onepagerHref && <a class="lb-dl" href={onepagerHref} download>One-page <span>PDF</span></a>}
+      {reportHref && <a class="lb-dl" href={reportHref} download>Full report <span>PDF</span></a>}
+      <span>The case on one page, or the whole case as a printable report.</span>
+    </p>
+  )}
 </section>
 
 {related.length > 0 && (
@@ -25,5 +31,6 @@ const { root, facts, docs, onepagerHref, related, citation, n = null } = Astro.p
 <div class="cs-cite">
   <p class="lb-label">How to cite this case</p>
   <p id="cs-cite-text">{citation}</p>
+  <p class="cs-print-only">Printed from the live case, where every statement links to its evidence.</p>
   <button type="button" id="cs-cite-copy" hidden>Copy citation</button>
 </div>
