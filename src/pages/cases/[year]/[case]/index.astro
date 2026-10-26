@@ -699,6 +699,8 @@ const [lede, ...points] = story.short_version;
     .cs-body { display: block !important; padding-block: 2rem 0 !important; }
     .cs-col { display: block !important; }
     .cs-col > * + *, .cs-rail { margin-top: 2.2rem; }
+    /* On paper the text runs the full width of the page; the web's reading measure would leave a blank right margin. */
+    .cs-col p, .cs-col .cs-points, .cs-pull blockquote { max-width: none !important; }
     .cs-rail { display: block !important; }
     .cs-rail.cs-rail-toc { display: none !important; }
     .cs-part { break-before: page; margin-top: 0; }
