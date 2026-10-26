@@ -1,0 +1,34 @@
+{
+ "CS001": {
+  "feature_sha256": "84195d65ddf8057538945d1ad8c652f88cc719f45ed12458034ae2e7d87764db",
+  "made": "2026-10-26",
+  "pages": 18,
+  "pdf": "aai-2026-001.pdf",
+  "public_id": "AAI-2026-001",
+  "story_sha256": "686f46a274c6401b6c433c0a47a96b5a3d61fc17b419ffa9574efda2d1425887"
+ },
+ "CS005": {
+  "feature_sha256": null,
+  "made": "2026-10-26",
+  "pages": 7,
+  "pdf": "aai-2026-005.pdf",
+  "public_id": "AAI-2026-005",
+  "story_sha256": "46c6d972419a42c53ce9cab13d6fa4dc9f4a562750a19ad7fe0b0d5ce49f4619"
+ },
+ "CS016": {
+  "feature_sha256": null,
+  "made": "2026-10-26",
+  "pages": 7,
+  "pdf": "aai-2026-016.pdf",
+  "public_id": "AAI-2026-016",
+  "story_sha256": "b8f2f998dfe24c58349204ca8ba3b9ea152f1a63e5fa06ad5c162a2f129143b8"
+ },
+ "CS021": {
+  "feature_sha256": null,
+  "made": "2026-10-26",
+  "pages": 7,
+  "pdf": "aai-2026-021.pdf",
+  "public_id": "AAI-2026-021",
+  "story_sha256": "47937dbd6fa0108fe745a282f45bd0d98dac02213d91b586128ed0e55ecbd468"
+ }
+}

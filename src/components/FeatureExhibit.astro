@@ -13,7 +13,7 @@ const id = `ex-${n}`;
   {ex.kind === "figures" && (
     <div class="cs-figs">
       {ex.items.map((f) => (
-        <div class="cs-fig"><strong>{f.figure}</strong><span>{f.label}</span><p class="cs-fig-src">{f.by && `Counted by ${f.by} · `}{links && <a class="cs-src" href={src(f.rows)} title={tip(f.rows)}>Source</a>}</p></div>
+        <div class="cs-fig"><strong>{f.figure}</strong><span>{f.label}</span>{(f.by || links) && <p class="cs-fig-src">{f.by && `Counted by ${f.by}`}{f.by && links && " · "}{links && <a class="cs-src" href={src(f.rows)} title={tip(f.rows)}>Source</a>}</p>}</div>
       ))}
     </div>
   )}
