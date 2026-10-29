@@ -30,5 +30,13 @@
   "pdf": "aai-2026-021.pdf",
   "public_id": "AAI-2026-021",
   "story_sha256": "47937dbd6fa0108fe745a282f45bd0d98dac02213d91b586128ed0e55ecbd468"
+ },
+ "CS023": {
+  "feature_sha256": "6e5b15aeacea75602de0824b159e2dfa7d3c50efbf4f04ab17e988d1f3a11672",
+  "made": "2026-10-29",
+  "pages": 23,
+  "pdf": "aai-2026-023.pdf",
+  "public_id": "AAI-2026-023",
+  "story_sha256": "77ee0a051739a7ff7126df5d0b90617ec2ee292631d8329ab5ec18c20a268f27"
  }
 }
