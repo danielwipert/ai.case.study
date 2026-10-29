@@ -1,0 +1,31 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D10
+title: Suppressing misalignment monitoring alerts and disabling misalignment monitoring
+publisher: openai
+type: incident-report
+format: html
+grade: R2
+published: '2026-10-20'
+original_url: https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/
+licence: unknown
+evidence_origin: openai
+examiner: OpenAI
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-26'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: e1c386f79ab4fd14e4315ac43cd000f36dce9b28f734b70ac200519f50d5b74f
+  text_sha256: 4970727e0a6fd3cf05c44102f90583a5f7abf716a10a46f9e22538da9980eb2f

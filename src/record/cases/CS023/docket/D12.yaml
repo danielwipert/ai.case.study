@@ -1,0 +1,31 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D12
+title: Securing our frontier model training environment
+publisher: openai
+type: official-statement
+format: html
+grade: R3
+published: '2026-10-23'
+original_url: https://openai.com/index/securing-our-frontier-model-training-environment/
+licence: unknown
+evidence_origin: openai
+examiner: OpenAI
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-26'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: dcad04f7c6e9a7f89b026c6c85f91a06148d463c97e6e62820c72415b4789744
+  text_sha256: d65d67567c85aaa43957a1da683899945167f66a02cb3df67bc2f25382140c3e

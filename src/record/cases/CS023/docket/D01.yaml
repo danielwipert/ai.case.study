@@ -1,0 +1,31 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D01
+title: Kata Container to Guest micro VM privilege escalation (CVE-2026-24834, GHSA-wwj6-vghv-5p64)
+publisher: github-advisory-database
+type: registry-record
+format: html
+grade: R2
+published: '2026-02-19'
+original_url: https://github.com/advisories/GHSA-wwj6-vghv-5p64
+licence: unknown
+evidence_origin: kata-maintainers
+examiner: GitHub Advisory Database
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-28'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: dfe783eaa7c1a6b55920f16d329f23b172ef5cc235bcf1e0a4b6f181d24f4a10
+  text_sha256: f4dd2056b330205f958e8f8ee450c748570612e8f4c51ef9f08e1b874f1a78ae

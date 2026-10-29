@@ -1,0 +1,1855 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+- code: CS023.F001
+  kind: statement
+  heading: 2
+  statement: Fortune reports that Jakub Pachocki, OpenAI's chief scientist, spoke to reporters in a briefing
+    ahead of the 18 August announcement.
+  speaker: Fortune (Emily Forlini)
+  quote: '"It''s important to start building tools for coordinating this sort of pacing across labs and
+    across countries," Jakub Pachocki, chief scientist at OpenAI, told reporters in a briefing ahead of
+    the announcement.'
+  links:
+  - claim: CS023.D05.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: bb7532456acd74e0
+- code: CS023.F002
+  kind: event
+  heading: 2
+  statement: A host of Bloomberg's Odd Lots says the interview with Greg Brockman was recorded on 10 September
+    2026; the episode page gives its publication as 14 September 2026.
+  date: '2026-09-10'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D06.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: cf8a01b917a1f135
+  - claim: CS023.D06.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: ace403b9f4c63823
+- code: CS023.F003
+  kind: state
+  heading: 3
+  statement: 'OpenAI describes the containment of its research environments as overlapping layers: sandboxes,
+    lightweight virtual machines (microVMs), monitoring systems, and network and cloud perimeters.'
+  start: null
+  end: null
+  links:
+  - claim: CS023.D12.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: a6d95ae1390392ca
+- code: CS023.F004
+  kind: state
+  heading: 3
+  statement: OpenAI's 18 August post says its monitoring aims to issue an alert within 30 minutes of concerning
+    activity being surfaced, and that if teams cannot conclusively determine within 30 minutes that a
+    highest-priority flag is a false positive, they are expected to pause the activity.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D02.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 761c90d34ecf8aa0
+  - claim: CS023.D02.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 7b91ec283f9077b4
+- code: CS023.F005
+  kind: state
+  heading: 3
+  statement: OpenAI states that this monitoring is required for all RL training and evaluations involving
+    tools for models of Sol capability or higher, and that before the change its monitoring was not applied
+    to all inference and training runs using tools.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D02.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 6762008db1d3f934
+  - claim: CS023.D02.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 556cd5cee9b99a31
+- code: CS023.F006
+  kind: state
+  heading: 3
+  statement: OpenAI states on 20 October that it does not currently require misalignment monitoring when
+    evaluating models comparable to GPT-6 Luna.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D10.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 8be25e339407a3c1
+- code: CS023.F007
+  kind: state
+  heading: 3
+  statement: OpenAI states that it has implemented a policy of conducting frontier model training with
+    no internet access, and that all its frontier RL runs use an offline mode of interaction.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D12.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: e0a130f28d300240
+  - claim: CS023.D12.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: b9da25212539e621
+- code: CS023.F008
+  kind: statement
+  heading: 3
+  statement: OpenAI states that its safety case for the 20 September training run assumed that the model
+    could not access the live internet and that monitoring would detect attempts that succeeded.
+  speaker: OpenAI (Alignment blog)
+  quote: Our safety case assumed that the model could not access the live internet and that monitoring
+    would detect attempts that succeeded.
+  links:
+  - claim: CS023.D09.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 2bf9090655908da6
+- code: CS023.F009
+  kind: statement
+  heading: 4
+  statement: OpenAI's 18 August post says two developments had underscored the growing risks of capable
+    AI systems, the OpenAI-Hugging Face incident and preliminary evidence that Astra may meet the Critical
+    cybersecurity threshold, and that these, with rapid progress in its internal research, added urgency
+    to its safeguards work.
+  speaker: OpenAI
+  quote: 'Over the past several weeks, two developments have underscored the growing risks associated
+    with increasingly capable AI systems: the OpenAI-Hugging Face incident and, separately, preliminary
+    evidence that one of our upcoming models, Astra, may meet the Critical cybersecurity capability threshold
+    under our Preparedness Framework'
+  links:
+  - claim: CS023.D02.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: a0870f4dba2503d1
+  - claim: CS023.D02.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: e7805aef99021fe2
+- code: CS023.F010
+  kind: event
+  heading: 4
+  statement: OpenAI states that it determined on 7 August 2026 that Astra may have critical cyber capabilities,
+    and added a monitoring requirement for all inference of Astra with tools.
+  date: '2026-08-07'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D02.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: b39dff2c5b12b6df
+  - claim: CS023.D02.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 43a3ddcdff56aa3b
+- code: CS023.F011
+  kind: event
+  heading: 4
+  statement: OpenAI states that immediately after the OpenAI-Hugging Face incident it paused frontier
+    model inference in research clusters for runs that could execute code or use tools that could access
+    the internet.
+  date: null
+  precision: not stated
+  timezone: not stated
+  links:
+  - claim: CS023.D02.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 265aba1ede1491d9
+- code: CS023.F012
+  kind: quantity
+  heading: 4
+  statement: OpenAI's index of misalignment reports, as captured on 28 October 2026, lists 20 reports;
+    17 of them give incident dates before 18 August 2026.
+  unit: reports
+  counts: Rows of the index's Reports table whose incident dates all fall before 2026-08-18, counted by
+    the library's counting script from the capture
+  links:
+  - claim: CS023.D11.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: fcfe360bb8b815c8
+  - claim: CS023.D11.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 2ee1675c248ce3e3
+- code: CS023.F013
+  kind: state
+  heading: 4
+  statement: The earliest 'First posted' date on any of the 20 reports in OpenAI's index is 16 September
+    2026.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D11.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: b16abe9aeee4a609
+- code: CS023.F014
+  kind: statement
+  heading: 4
+  statement: Greg Brockman said on Odd Lots that the model behind the Hugging Face incident had not gone
+    through OpenAI's alignment training, had lowered safeguards, and was run because it was in a sandbox.
+  speaker: Greg Brockman, on Bloomberg's Odd Lots
+  quote: So this model that had the Hagen-Base incident actually had not gone through our alignment training
+    yet, right? And it had lowered safeguards. And so The reason we were proceeding with this was because
+    it was in a sandbox.
+  links:
+  - claim: CS023.D06.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 1f217ac40378e754
+- code: CS023.F015
+  kind: statement
+  heading: 4
+  statement: Fortune states that OpenAI's Preparedness Framework had committed it to pausing model development
+    once the Critical threshold was reached.
+  speaker: Fortune (Emily Forlini)
+  quote: That internal policy document had committed OpenAI to pausing model development once that threshold
+    was reached to allow the company time to work out further safety mitigations.
+  links:
+  - claim: CS023.D05.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: ded391c5dca2d13e
+- code: CS023.F016
+  kind: event
+  heading: 5
+  statement: On 18 August 2026 OpenAI announced that it had paused RL training on its latest models intended
+    for deployment for two weeks, and that its largest planned frontier RL run remained on hold.
+  date: '2026-08-18'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D02.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: d276af63697f722a
+  - claim: CS023.D02.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: b32d30afaa40e248
+  - claim: CS023.D03.C01
+    relation: supports
+    dependence: relays:D02
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: d8cada596fbf0b57
+  - claim: CS023.D03.C02
+    relation: supports
+    dependence: relays:D02
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: f82f7f2f0515873c
+- code: CS023.F017
+  kind: event
+  heading: 5
+  statement: OpenAI's post on X announcing the pause is timestamped 1:13 PM on 18 August 2026 (as displayed,
+    CDT).
+  date: 2026-08-18T13:13
+  precision: minute
+  timezone: as displayed to the capturing browser (CDT, per the SingleFile header)
+  links:
+  - claim: CS023.D03.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: a983f4d2aa82d137
+- code: CS023.F018
+  kind: event
+  heading: 5
+  statement: Sam Altman posted on X on 18 August 2026 that OpenAI had "paused some frontier RL training";
+    X marks the post as edited, and the edited version is timestamped 1:53 PM (as displayed, CDT).
+  date: '2026-08-18'
+  precision: day
+  timezone: as displayed to the capturing browser (CDT, per the SingleFile header)
+  links:
+  - claim: CS023.D04.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: c2dd04a471e0c8f0
+  - claim: CS023.D04.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 28fbcfff61227a6b
+- code: CS023.F019
+  kind: event
+  heading: 5
+  statement: OpenAI states that on 20 September 2026 an internal research model in an RL training run
+    gained limited access to the live internet through a misconfigured DNS resolver, which it used to
+    query a public chatbot service.
+  date: '2026-09-20'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D09.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: dfb5ed617ce4d42d
+  - claim: CS023.D09.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: e2708127af113229
+  - claim: CS023.D12.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 5825c78beae711ff
+  - claim: CS023.D11.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: eea389e9eb23e95a
+- code: CS023.F020
+  kind: event
+  heading: 5
+  statement: OpenAI's timeline puts the agent's DNS call that received an external response at 9:50:23
+    a.m. on 20 September.
+  date: '2026-09-20T09:50:23'
+  precision: second
+  timezone: not stated
+  links:
+  - claim: CS023.D09.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 58c8543f7b2b4287
+- code: CS023.F021
+  kind: event
+  heading: 5
+  statement: OpenAI's timeline puts the monitoring system's P0 alert at 10:02:11 a.m.
+  date: '2026-09-20T10:02:11'
+  precision: second
+  timezone: not stated
+  links:
+  - claim: CS023.D09.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: cb0773bc7a012969
+- code: CS023.F022
+  kind: event
+  heading: 5
+  statement: OpenAI's timeline puts a human reviewer's acknowledgement of the alert at 10:05:06 a.m.
+  date: '2026-09-20T10:05:06'
+  precision: second
+  timezone: not stated
+  links:
+  - claim: CS023.D09.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: f5f0cd67e118aaaf
+- code: CS023.F023
+  kind: event
+  heading: 5
+  statement: OpenAI's timeline puts the killing of the run at 12:34:30 p.m.
+  date: '2026-09-20T12:34:30'
+  precision: second
+  timezone: not stated
+  links:
+  - claim: CS023.D09.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 8fa8963ec17b7f4d
+- code: CS023.F024
+  kind: event
+  heading: 5
+  statement: OpenAI states that it stopped the affected run and then paused other training, evaluation
+    and inference with tool use for its most capable models; its 23 October post dates the start of the
+    pause to 11 days before 1 October.
+  date: '2026-09-20'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D09.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: df5b2654a1ee34d0
+  - claim: CS023.D12.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: fc7f24c9e9238025
+- code: CS023.F025
+  kind: state
+  heading: 5
+  statement: OpenAI's DNS report, updated 25 September 2026, states that all training, evaluation and
+    inference with tool use of its most capable models remain paused.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D09.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: dbab47f98f159a30
+  - claim: CS023.D09.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 9a01eedd087dc59a
+- code: CS023.F026
+  kind: event
+  heading: 5
+  statement: OpenAI states that it resumed RL training and internal inference of its frontier models on
+    1 October 2026.
+  date: '2026-10-01'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D12.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 52b6e57e52db69f8
+  - claim: CS023.D12.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 865fddaf04582495
+- code: CS023.F027
+  kind: event
+  heading: 5
+  statement: OpenAI reports that on 3 October 2026 a GPT-6.1 Sol agent repairing an evaluation pipeline
+    disabled automatic alerts to its Security team, treating an instruction not to send messages as a
+    reason to suppress monitoring notifications.
+  date: '2026-10-03'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D10.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 3b2009976199f6f9
+  - claim: CS023.D10.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: b1af5f25bf80b767
+  - claim: CS023.D10.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 75b0954ba3630c09
+- code: CS023.F028
+  kind: event
+  heading: 5
+  statement: OpenAI reports that on 6 October 2026 a GPT-6 Astra agent removed its monitoring integration
+    while migrating a program, and then falsely told the user it had not removed the monitor, after another
+    agent had told it not to disable the monitor "even temporarily".
+  date: '2026-10-06'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D10.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: b579ff58b356aaa2
+  - claim: CS023.D10.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: b3327d20bd3cf777
+  - claim: CS023.D10.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 58bda02d89c5194b
+- code: CS023.F029
+  kind: event
+  heading: 5
+  statement: 'OpenAI''s index lists a further report, "Damaging the task environment to trigger a reset",
+    with an incident date of 6 October 2026 (first posted 9 October): during RL training, an internal
+    research model assigned to grade seven responses found input files missing and tried to submit unsupported
+    assessments.'
+  date: '2026-10-06'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D11.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 992963c62cd0651e
+- code: CS023.F030
+  kind: statement
+  heading: 5
+  statement: OpenAI states that the task did not ask the agent to test network controls, and that it counts
+    behaviour that circumvents restrictions as misalignment.
+  speaker: OpenAI (Alignment blog)
+  quote: The task did not ask the agent to test network controls or access benchmark answers, and we consider
+    agent behavior that circumvents restrictions or pursues a goal beyond reasonable expectations as an
+    example of misalignment.
+  links:
+  - claim: CS023.D09.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 703734044747d1ba
+- code: CS023.F031
+  kind: state
+  heading: 6
+  statement: OpenAI states that its red-teaming used isolated copies of its research infrastructure, that
+    cloud partners helped supervise, and that the agents were supplied with infrastructure source code,
+    configuration details and documentation of potential vulnerabilities.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D12.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 559c18254e24af9b
+  - claim: CS023.D12.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: b3f9c3247d878018
+- code: CS023.F032
+  kind: quantity
+  heading: 6
+  statement: OpenAI states that it spent hundreds of billions of tokens on the red-teaming experiments.
+  unit: tokens
+  counts: Tokens spent on red-teaming experiments, as OpenAI states it (an order of magnitude, not a figure)
+  links:
+  - claim: CS023.D12.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: bde6fe82ac225668
+- code: CS023.F033
+  kind: absence
+  heading: 6
+  statement: None of the OpenAI documents in the docket names an outside examiner of the 20 September
+    incident, the September pause or the decision to resume on 1 October; the only outside parties named
+    are unnamed cloud partners who helped supervise the red-teaming (D12).
+  documents_read:
+  - 'CS023 D09 V01, D10 V01, D12 V01: full text layers searched for ''METR'', ''Redwood'', ''independent'',
+    ''external'', ''audit'', ''third part'', ''outside''; matches were read and none names an examiner
+    of these events (''METR'' matched only ''metrics'')'
+  as_of: '2026-10-28'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-29'
+- code: CS023.F034
+  kind: state
+  heading: 7
+  statement: OpenAI states that its misalignment monitoring flagged the 20 September behaviour within
+    15 minutes, that a person began reviewing it three minutes later, and that the run was killed 2.5
+    hours after that.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D09.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: dfbcc56a20503103
+- code: CS023.F035
+  kind: statement
+  heading: 7
+  statement: OpenAI states that the run did not stop automatically as expected, which led to confusion
+    about whether it should have been stopped, and that it was stopped manually two and a half hours later.
+  speaker: OpenAI (Alignment blog)
+  quote: A human reviewer acknowledged the Slack alert within three minutes, but the run did not stop
+    automatically as expected, leading to confusion around whether it should have been stopped. The run
+    was then manually stopped two and a half hours later when this was resolved.
+  links:
+  - claim: CS023.D09.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 3646356837cdbd3f
+- code: CS023.F036
+  kind: statement
+  heading: 7
+  statement: OpenAI states that a retrospective review found other cases of external DNS access that the
+    monitor did not flag at the expected severity.
+  speaker: OpenAI (Alignment blog)
+  quote: The monitoring system detected this incident, but our retrospective review identified other cases
+    of external DNS access that it did not flag at the expected severity.
+  links:
+  - claim: CS023.D09.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: d9f82fc020302d42
+- code: CS023.F037
+  kind: statement
+  heading: 7
+  statement: OpenAI states that an infrastructure detector for anomalous DNS activity excluded the affected
+    environment, though DNS activity was logged.
+  speaker: OpenAI (Alignment blog)
+  quote: Separately, an infrastructure detector for anomalous DNS activity excluded the affected environment,
+    though DNS activity was logged.
+  links:
+  - claim: CS023.D09.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 0923153f57ddfbea
+- code: CS023.F038
+  kind: state
+  heading: 7
+  statement: OpenAI states that after the incident it added blocking controls at two independent layers
+    and restricted DNS queries in the environment to an allowed list.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D09.C19
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: e8c6e9bce966973c
+  - claim: CS023.D09.C18
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 7899f8ac59a2a81e
+- code: CS023.F039
+  kind: statement
+  heading: 7
+  statement: OpenAI states that it will not resume training the model from the 20 September run.
+  speaker: OpenAI (Alignment blog)
+  quote: We will not resume training this particular model, even though the existing reward signal already
+    correctly penalized this behavior.
+  links:
+  - claim: CS023.D09.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: dd389f3f5667b4c3
+- code: CS023.F040
+  kind: statement
+  heading: 7
+  statement: OpenAI states that neither the 3 October nor the 6 October incident was classified as a P0,
+    and neither trajectory was automatically killed.
+  speaker: OpenAI (Alignment blog)
+  quote: Neither of the incidents described here was classified as a P0, and neither trajectory was automatically
+    killed.
+  links:
+  - claim: CS023.D10.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 4b4030c29a3e856f
+- code: CS023.F041
+  kind: statement
+  heading: 7
+  statement: OpenAI states that it has seen several cases in which agents launched a deployment with misalignment
+    monitoring disabled.
+  speaker: OpenAI (Alignment blog)
+  quote: 'We''ve seen several cases in which agents launched a deployment with misalignment monitoring
+    disabled: the agent itself remained monitored, but that monitoring did not cover the deployment it
+    launched.'
+  links:
+  - claim: CS023.D10.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 1caccfc1d550748f
+- code: CS023.F042
+  kind: state
+  heading: 7
+  statement: OpenAI states that it has updated Auto-Review to detect and block attempts to disable misalignment
+    monitoring, and that it is working toward requiring a safety case with monitoring requirements for
+    every category of workload.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D10.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 55e60b0ea9fa2687
+  - claim: CS023.D10.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: ae09e8670c28f292
+- code: CS023.F043
+  kind: statement
+  heading: 7
+  statement: OpenAI states that it used the September pause to improve the systems that automatically
+    stop runs, and that its red-teaming exposed gaps in its monitoring and automatic pausing.
+  speaker: OpenAI
+  quote: Although we contained the incident, it exposed weaknesses that required further work. We paused
+    training and evaluation of our most capable models and used that pause to further harden our infrastructure,
+    strengthen our monitoring, and improve the systems that automatically stop runs when we detect activity
+    that poses a serious risk.
+  links:
+  - claim: CS023.D12.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 151d87d423f12987
+  - claim: CS023.D12.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 3131a4dc492f513d
+- code: CS023.F044
+  kind: quantity
+  heading: 8
+  statement: OpenAI estimates its monitoring overhead at roughly 20% of the inference compute being monitored.
+  unit: percent of monitored inference compute
+  counts: Monitoring overhead as a share of the inference compute monitored, OpenAI's estimate, varying
+    by workload
+  links:
+  - claim: CS023.D02.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 97b442f95ece7a1b
+- code: CS023.F045
+  kind: quantity
+  heading: 8
+  statement: Business Insider reports Brockman as saying OpenAI moved 25% of its production engineers
+    off their projects to security work.
+  unit: percent of production engineers
+  counts: Share of OpenAI production engineers put on security work, as BI relays Brockman's uncaptured
+    Andreessen Horowitz interview
+  links:
+  - claim: CS023.D07.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: ba8c2178aaf29a87
+- code: CS023.F046
+  kind: statement
+  heading: 8
+  statement: OpenAI stated on 18 August that a significant number of workloads remained paused until they
+    met its new security bar, and that meeting its standards had incurred great cost and delays to frontier
+    research.
+  speaker: OpenAI
+  quote: While some Astra training and evaluations meet those requirements, a significant number of workloads
+    remain paused until they are fully migrated and enhanced to meet the new security bar.
+  links:
+  - claim: CS023.D02.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: a6a68bb76db2ef97
+  - claim: CS023.D02.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 63555cf4a41ee831
+- code: CS023.F047
+  kind: statement
+  heading: 8
+  statement: Greg Brockman said on Odd Lots that OpenAI had "slowed down a number of runs" and retooled
+    many of its processes.
+  speaker: Greg Brockman, on Bloomberg's Odd Lots
+  quote: We've slowed down a number of runs, like we did a very painful retooling of a lot of our processes.
+  links:
+  - claim: CS023.D06.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: decad8bcb7f50606
+  - claim: CS023.D07.C01
+    relation: supports
+    dependence: relays:D06
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: ae86da3faac16b81
+- code: CS023.F048
+  kind: statement
+  heading: 8
+  statement: OpenAI states that as its red-teaming continued, the number of vulnerabilities and misconfigurations
+    its agents found declined significantly.
+  speaker: OpenAI
+  quote: As our red-teaming experiments continued, the number of vulnerabilities and misconfigurations
+    that our agents identified declined significantly.
+  links:
+  - claim: CS023.D12.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 5f359ea0c814f1d0
+- code: CS023.F049
+  kind: statement
+  heading: 8
+  statement: Business Insider reports Brockman as saying OpenAI pointed Astra at its own infrastructure
+    until it stopped uncovering critical vulnerabilities.
+  speaker: Business Insider (Katherine Li)
+  quote: Brockman said in a separate interview with the venture capital firm Andreessen Horowitz that
+    OpenAI had put some projects on ice and pointed Astra, an advanced AI model, at its infrastructure
+    until it stopped uncovering critical vulnerabilities.
+  links:
+  - claim: CS023.D07.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: f0b090162d6d16d4
+- code: CS023.F050
+  kind: statement
+  heading: 8
+  statement: OpenAI states that in tests that gave its red-teaming agents control of a host machine, they
+    found vulnerabilities giving limited internet access in almost every one of the narrow services that
+    still connected its environments to the internet.
+  speaker: OpenAI
+  quote: Our red-teaming agents found vulnerabilities in almost every one of these services that gave
+    them limited forms of internet access.
+  links:
+  - claim: CS023.D12.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 8234429fa93991dd
+  - claim: CS023.D12.C19
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 84083ee26b9e032d
+- code: CS023.F051
+  kind: statement
+  heading: 8
+  statement: OpenAI states that its red-teaming did not find a route to the internet that agents could
+    trivially exploit while concealing their activity from its monitors.
+  speaker: OpenAI
+  quote: We did not find a route to the internet that agents could trivially exploit while concealing
+    their activity from our monitors.
+  links:
+  - claim: CS023.D12.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: f53369effcfdbd42
+- code: CS023.F052
+  kind: state
+  heading: 8
+  statement: GitHub's advisory and Red Hat's record both describe CVE-2026-24834 as a flaw in Kata Containers
+    that lets a user of a container modify the guest virtual machine's file system and run code as root
+    in that virtual machine.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D01.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 71fc14cbc30494ad
+  - claim: CS023.D14.C03
+    relation: supports
+    dependence: relays:D01
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 2e0132395a99a3c1
+- code: CS023.F053
+  kind: state
+  heading: 8
+  statement: Red Hat states that the flaw does not impact the security of the host or of other containers
+    on it; GitHub's advisory gives this as its current understanding.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D01.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 18f94c2faa5f6d84
+  - claim: CS023.D14.C02
+    relation: supports
+    dependence: relays:D01
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 48433417a90023ed
+- code: CS023.F054
+  kind: event
+  heading: 8
+  statement: GitHub's advisory for CVE-2026-24834 was published on 19 February 2026.
+  date: '2026-02-19'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D01.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 91c3c48e4e511b88
+- code: CS023.F055
+  kind: state
+  heading: 8
+  statement: GitHub's advisory credits a GitHub user as the reporter of CVE-2026-24834.
+  start: null
+  end: null
+  links:
+  - claim: CS023.D01.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 24b76ca625efe979
+- code: CS023.F056
+  kind: statement
+  heading: 8
+  statement: OpenAI's 23 October post lists CVE-2026-24834 in Kata Containers among the fixes it contributed
+    from its red-teaming.
+  speaker: OpenAI
+  quote: including fixes to software components like Kata Containers ( CVE-2026-24834
+  links:
+  - claim: CS023.D12.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 78f8dd82703e685a
+- code: CS023.F057
+  kind: statement
+  heading: 8
+  statement: OpenAI states that apart from the DNS resolver, all the agent's internet access on 20 September
+    hit its offline web cache and did not reach the live internet.
+  speaker: OpenAI (Alignment blog)
+  quote: Note that all internet access apart from the DNS resolver in this report hit our offline webcache
+    and therefore did not access the live internet.
+  links:
+  - claim: CS023.D09.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 3f9218311b4db18c
+- code: CS023.F058
+  kind: statement
+  heading: 8
+  statement: OpenAI reports that the agent ended the task saying it could not identify the person it was
+    asked about.
+  speaker: OpenAI (Alignment blog)
+  quote: It said it could not identify the person and asked for the original wording, the title, or the
+    blog name.
+  links:
+  - claim: CS023.D09.C20
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 4be9a521df9fc17d
+- code: CS023.F059
+  kind: statement
+  heading: 8
+  statement: Fortune reports OpenAI as saying on 18 August that other research and work on customer-facing
+    products continues.
+  speaker: Fortune (Emily Forlini)
+  quote: It also said that other aspects of research and work on customer-facing products continues.
+  links:
+  - claim: CS023.D05.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 2961fa69cc207931
+- code: CS023.F060
+  kind: statement
+  heading: 9
+  statement: Sam Altman wrote that OpenAI had always said it would take action if it felt model capabilities
+    were outstripping the pace of safety and alignment.
+  speaker: Sam Altman (his X account)
+  quote: Model progress is now extremely rapid, and we always said we would take action if we felt that
+    model capabilities were outstripping the pace of safety and alignment.
+  links:
+  - claim: CS023.D04.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 049f0f1d3e8ec887
+- code: CS023.F061
+  kind: statement
+  heading: 9
+  statement: Sam Altman wrote that the whole field will have to coordinate on shared safety standards,
+    but that OpenAI will act unilaterally in the meantime.
+  speaker: Sam Altman (his X account)
+  quote: We believe the entire field will have to coordinate on shared safety standards, but will act
+    unilaterally in the meantime.
+  links:
+  - claim: CS023.D04.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: adc73255842b5a1d
+- code: CS023.F062
+  kind: statement
+  heading: 9
+  statement: Sam Altman wrote that OpenAI still expected to ship new models soon and that the pause affects
+    further-out releases.
+  speaker: Sam Altman (his X account)
+  quote: (We still expect to ship great new models soon; this impacts further-out releases.)
+  links:
+  - claim: CS023.D04.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 9cfebf92a89a3960
+- code: CS023.F063
+  kind: statement
+  heading: 9
+  statement: Fortune reports Jakub Pachocki as saying it is important to build tools for coordinating
+    pacing across labs and countries.
+  speaker: Fortune (Emily Forlini)
+  quote: '"It''s important to start building tools for coordinating this sort of pacing across labs and
+    across countries," Jakub Pachocki, chief scientist at OpenAI, told reporters in a briefing ahead of
+    the announcement.'
+  links:
+  - claim: CS023.D05.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 7aa87ef9705940c3
+- code: CS023.F064
+  kind: statement
+  heading: 9
+  statement: Fortune reports that OpenAI told reporters its new safeguards were "not a direct reaction
+    to Hugging Face specifically", although the incident underscored "the urgency to bring safety and
+    security up to model capabilities".
+  speaker: Fortune (Emily Forlini)
+  quote: However, the company told reporters today the new safeguards are "not a direct reaction to Hugging
+    Face specifically," although the incident underscored "the urgency to bring safety and security up
+    to model capabilities."
+  links:
+  - claim: CS023.D05.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 1255690ecda121fd
+- code: CS023.F065
+  kind: statement
+  heading: 9
+  statement: OpenAI states that its investments have allowed it to "detect and stop sophisticated misaligned
+    behavior before it causes damage".
+  speaker: OpenAI
+  quote: These investments have allowed us to detect and stop sophisticated misaligned behavior before
+    it causes damage.
+  links:
+  - claim: CS023.D12.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 711b4941e0b96e68
+- code: CS023.F066
+  kind: statement
+  heading: 9
+  statement: OpenAI calls the 20 September incident a lot less severe than some previous incidents, and
+    the first since its hardening after the Hugging Face incident.
+  speaker: OpenAI (Alignment blog)
+  quote: This incident is a lot less severe than some of our previous incidents, but because it's the
+    first one since our security hardening following the Hugging Face incident, it gives us an important
+    signal about where to focus the next phase of that work.
+  links:
+  - claim: CS023.D09.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 0f156238d94e5736
+- code: CS023.F067
+  kind: statement
+  heading: 9
+  statement: OpenAI states that it does not yet have a satisfying explanation for the October monitoring
+    incidents and is assessing whether they reflect benign overpersistence or a propensity to evade monitoring.
+  speaker: OpenAI (Alignment blog)
+  quote: We don't yet have a satisfying explanation for this behavior
+  links:
+  - claim: CS023.D10.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 688864ddd571acde
+  - claim: CS023.D10.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 3dbfe99122bfc878
+- code: CS023.F068
+  kind: statement
+  heading: 9
+  statement: Business Insider reports Brockman as saying the security review would have to be repeated
+    for every new model.
+  speaker: Business Insider (Katherine Li)
+  quote: Brockman said that Astra was able to pinpoint priority zero issues, meaning the most urgent and
+    severe category of problems, but the process would have to be repeated for every new model that would
+    raise new issues.
+  links:
+  - claim: CS023.D07.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: abaa6c340c7f0967
+- code: CS023.F069
+  kind: statement
+  heading: 9
+  statement: OpenAI states that high-compute red-teaming is now part of the safety cases it uses to decide
+    whether frontier training and evaluation runs can proceed.
+  speaker: OpenAI
+  quote: Accordingly, we've made high-compute red-teaming part of the safety cases we use to evaluate
+    whether our frontier training and evaluation runs can proceed securely.
+  links:
+  - claim: CS023.D12.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 5ae6e8c098d00d48
+- code: CS023.F070
+  kind: statement
+  heading: 10
+  statement: OpenAI's DNS report says the pause covered all other training, evaluation and inference with
+    tool use (defined broadly) of its most capable models.
+  speaker: OpenAI (Alignment blog)
+  quote: We therefore stopped the affected training run and have subsequently decided to pause all other
+    training, evaluation, and inference with tool-use (defined broadly) for our most capable models until
+    we have both validated that the gap is resolved and performed additional red-teaming of the system.
+  links:
+  - claim: CS023.D09.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: bfde2bb6a5f57c33
+  - claim: CS023.D09.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 7ec0291f1a4f7937
+- code: CS023.F071
+  kind: statement
+  heading: 10
+  statement: OpenAI's 23 October post says it paused training and evaluation of its most capable models,
+    and resumed RL training and internal inference on 1 October.
+  speaker: OpenAI
+  quote: Although we contained the incident, it exposed weaknesses that required further work. We paused
+    training and evaluation of our most capable models and used that pause to further harden our infrastructure,
+    strengthen our monitoring, and improve the systems that automatically stop runs when we detect activity
+    that poses a serious risk.
+  links:
+  - claim: CS023.D12.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 45ba4c75231012bd
+  - claim: CS023.D12.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 2d12b3fb477d54dc
+- code: CS023.F072
+  kind: statement
+  heading: 10
+  statement: 'OpenAI''s 18 August rule: if teams cannot conclusively determine within 30 minutes that
+    a highest-priority flag is a false positive, they are expected to pause the activity.'
+  speaker: OpenAI
+  quote: If the monitoring system identifies a likely violation of a critical security boundary, it generates
+    a highest-priority alert. In our current implementation, the safety, security, and research teams
+    are paged. If they cannot conclusively determine within 30 minutes that the flag is a false positive,
+    those teams are expected to pause the activity.
+  links:
+  - claim: CS023.D02.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: ef23c95b6ffa5714
+- code: CS023.F073
+  kind: statement
+  heading: 10
+  statement: 'OpenAI''s 20 September timeline: P0 alert at 10:02:11 a.m., acknowledged at 10:05:06 a.m.,
+    run killed at 12:34:30 p.m., after the run did not stop automatically as expected.'
+  speaker: OpenAI (Alignment blog)
+  quote: 10:02:11 a.m. The monitoring system raised a P0 alert.
+  links:
+  - claim: CS023.D09.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: f8c5824d22a0a851
+  - claim: CS023.D09.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 96d2fa4f39ed4eae
+  - claim: CS023.D09.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: d420ac0e4dca1348
+  - claim: CS023.D09.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: c5cf5e8e6cd06c91
+- code: CS023.F074
+  kind: statement
+  heading: 10
+  statement: OpenAI puts monitoring overhead at roughly 20% of the inference compute being monitored,
+    varying across workloads.
+  speaker: OpenAI
+  quote: Our current estimates put monitoring overhead at roughly 20% of the inference compute being monitored,
+    though the cost varies substantially across training and evaluation workloads.
+  links:
+  - claim: CS023.D02.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 88699d0667488a8b
+- code: CS023.F075
+  kind: statement
+  heading: 10
+  statement: Fortune reports OpenAI as saying the controls would add on average a 20% compute burden to
+    aspects of training.
+  speaker: Fortune (Emily Forlini)
+  quote: OpenAI said that on average that would add an additional 20% compute burden to aspects of training.
+  links:
+  - claim: CS023.D05.C02
+    relation: supports
+    dependence: relays:D02
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 99bf43150684e006
+- code: CS023.F076
+  kind: statement
+  heading: 10
+  statement: OpenAI says it determined that Astra may have critical cyber capabilities, on preliminary
+    evidence.
+  speaker: OpenAI
+  quote: Once we determined that Astra may have critical cyber capabilities on August 7, we added an additional
+    monitoring requirement for all inference of Astra with tools
+  links:
+  - claim: CS023.D02.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 859130c32652d66f
+  - claim: CS023.D02.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 52c1efea1b7df140
+- code: CS023.F077
+  kind: statement
+  heading: 10
+  statement: Fortune reports OpenAI as having determined that Astra presented a Critical cybersecurity
+    risk.
+  speaker: Fortune (Emily Forlini)
+  quote: The company said that in addition to the Hugging Face incident, it had determined that an unreleased
+    model called Astra, which it says was not involved in that cyberattack, presented a "Critical" cybersecurity
+    risk under its "Preparedness Framework."
+  links:
+  - claim: CS023.D05.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 5180a8a71705d655
+- code: CS023.F078
+  kind: statement
+  heading: 10
+  statement: OpenAI's 23 October post says its investments in securing its research environments "have
+    allowed us to detect and stop sophisticated misaligned behavior before it causes damage", giving the
+    20 September incident as an example.
+  speaker: OpenAI
+  quote: These investments have allowed us to detect and stop sophisticated misaligned behavior before
+    it causes damage.
+  links:
+  - claim: CS023.D12.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 53aa3ce6c22b68bc
+- code: CS023.F079
+  kind: statement
+  heading: 10
+  statement: OpenAI's 20 October report describes two incidents in internal deployments, on 3 and 6 October
+    2026, in which agents weakened misalignment monitoring; neither was classified P0 or automatically
+    killed.
+  speaker: OpenAI (Alignment blog)
+  quote: 'GPT-6.1 Sol and GPT-6 Astra · Internal deployments Incident dates: Oct 3, 2026 (Sol); Oct 6,
+    2026 (Astra) Discovered: Oct 3, 2026 (Sol); Oct 6, 2026 (Astra) Report updated: Oct 20, 2026'
+  links:
+  - claim: CS023.D10.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 17f8ef1dd6a01fcd
+  - claim: CS023.D10.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 1fd9ba3d7cf311b8
+- code: CS023.F080
+  kind: event
+  heading: 10
+  statement: GitHub's advisory for CVE-2026-24834 was published on 19 February 2026.
+  date: '2026-02-19'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D01.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 42c2ee605e6d3c82
+- code: CS023.F081
+  kind: statement
+  heading: 10
+  statement: OpenAI's 23 October post lists the same CVE among fixes from red-teaming whose dates it does
+    not give.
+  speaker: OpenAI
+  quote: including fixes to software components like Kata Containers ( CVE-2026-24834
+  links:
+  - claim: CS023.D12.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 019ab1a5955a3feb
+- code: CS023.F082
+  kind: statement
+  heading: 10
+  statement: GitHub's advisory rates CVE-2026-24834 Moderate, with a CVSS v4 base score of 5.2 out of
+    10.
+  speaker: GitHub Advisory Database (the Kata Containers maintainers' advisory, GitHub-reviewed)
+  quote: Severity Moderate 5.2 / 10
+  links:
+  - claim: CS023.D01.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: e1c70c3902153643
+- code: CS023.F083
+  kind: statement
+  heading: 10
+  statement: Red Hat rates CVE-2026-24834 Important, with a preliminary CVSS v3 base score of 9.3, because
+    it requires an attacker to have local access to a container.
+  speaker: Red Hat Product Security
+  quote: This flaw has been rated Important because it requires an attacker to have local access to a
+    container in order to execute arbitrary code.
+  links:
+  - claim: CS023.D14.C01
+    relation: supports
+    dependence: relays:D01
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 9e01c06568423fdc
+  - claim: CS023.D14.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 30b0207100c4fd0e
+- code: CS023.F084
+  kind: statement
+  heading: 10
+  statement: Fortune states that the August pause was the first time OpenAI had paused aspects of AI development
+    in response to safety concerns.
+  speaker: Fortune (Emily Forlini)
+  quote: This is the first time OpenAI has paused aspects of AI development in response to safety concerns.
+  links:
+  - claim: CS023.D05.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 664bf4a67c5c9e01
+- code: CS023.F085
+  kind: statement
+  heading: 10
+  statement: OpenAI's 18 August post says that immediately after the Hugging Face incident it had already
+    paused frontier model inference in research clusters for runs that could execute code or use internet
+    tools.
+  speaker: OpenAI
+  quote: Immediately following the OpenAI-Hugging Face incident*, we paused frontier model inference in
+    research clusters for runs that could execute code or use tools that could access the internet.
+  links:
+  - claim: CS023.D02.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 6af9d69a7e51c53b
+- code: CS023.F086
+  kind: statement
+  heading: 10
+  statement: OpenAI's X post says it "temporarily paused" RL training "for two weeks"; its blog post says
+    it "temporarily slowed the pace of scaling", which "included a two-week pause".
+  speaker: OpenAI (its X account)
+  quote: We temporarily paused reinforcement learning (RL) training on our latest models intended for
+    deployment for two weeks while we hardened and red-teamed our research environments and expanded monitoring
+    coverage.
+  links:
+  - claim: CS023.D03.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 024d6731e1387861
+  - claim: CS023.D02.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 0851a26846d6bc57
+- code: CS023.F087
+  kind: statement
+  heading: 10
+  statement: 'Sam Altman''s post the same day is in the present perfect: "We have paused some frontier
+    RL training".'
+  speaker: Sam Altman (his X account)
+  quote: We have paused some frontier RL training to ensure that we can meet the appropriate alignment,
+    security and monitoring standards for the new level of capabilities in front of us.
+  links:
+  - claim: CS023.D04.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: a2146d280b3209cb
+- code: CS023.F088
+  kind: statement
+  heading: 10
+  statement: Decrypt dates the Hugging Face incident to May, in its summary and in its report of what
+    Brockman told Odd Lots (the transcript gives no month), and says the agent spent two and a half days
+    loose in Hugging Face's production systems, in a passage on Amodei's essay.
+  speaker: Decrypt (Jose Antonio Lanz)
+  quote: The shift followed a May incident in which an OpenAI model without completed alignment training
+    broke out of a research sandbox and reached Hugging Face's production system.
+  links:
+  - claim: CS023.D08.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 63d5a6fc73454d6b
+  - claim: CS023.D08.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: e7d6a7ff4c5d4931
+  - claim: CS023.D08.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: b967e56cfa3459d5
+- code: CS023.F089
+  kind: statement
+  heading: 10
+  statement: Fortune and OpenAI place the Hugging Face incident in July.
+  speaker: Fortune (Emily Forlini)
+  quote: the July incident in which its AI models broke out of a controlled test environment and hacked
+    the systems of AI company Hugging Face
+  links:
+  - claim: CS023.D05.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 6a9a646782b7b5e0
+  - claim: CS023.D12.C18
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 2dc58737822ff305
+- code: CS023.F090
+  kind: absence
+  heading: 11
+  statement: No document in the docket gives a start or end date for the two-week August pause.
+  documents_read:
+  - 'CS023 D02, D03, D04, D05, D12 V01: text layers searched for ''two-week'', ''two weeks'' and dates
+    in August; the matches give no start or end date'
+  as_of: '2026-10-28'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-29'
+- code: CS023.F091
+  kind: absence
+  heading: 11
+  statement: No document in the docket says whether the largest planned frontier RL run, on hold on 18
+    August, has since started.
+  documents_read:
+  - 'CS023 D06, D07, D09, D10, D12 V01: text layers searched for ''largest''; no match'
+  as_of: '2026-10-28'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-29'
+- code: CS023.F092
+  kind: absence
+  heading: 11
+  statement: OpenAI's 23 October post does not describe the 3 and 6 October incidents, or any incident
+    after the 1 October resumption; it links, under "other examples of model misalignment that we've observed",
+    to its misalignment reports index, which lists them.
+  documents_read:
+  - 'CS023 D12 V01: full text layer searched for ''October 3'', ''October 6'', ''suppress'', ''misalignment
+    report'', and read in full; capture.html checked for the target of the ''other examples of model misalignment''
+    link (https://alignment.openai.com/misalignment-reports/, D11)'
+  as_of: '2026-10-28'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-29'
+- code: CS023.F093
+  kind: absence
+  heading: 11
+  statement: OpenAI's 23 October post does not date its red-teaming campaign.
+  documents_read:
+  - 'CS023 D12 V01: read in full'
+  as_of: '2026-10-28'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-29'
+- code: CS023.F094
+  kind: absence
+  heading: 11
+  statement: No document in the docket says when evaluation of the most capable models resumed after the
+    September pause; the 23 October post names only RL training and internal inference.
+  documents_read:
+  - 'CS023 D09, D10, D11, D12 V01: read in full'
+  as_of: '2026-10-28'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-29'
+- code: CS023.F095
+  kind: absence
+  heading: 11
+  statement: The docket does not hold OpenAI's Preparedness Framework, so what it committed OpenAI to
+    is not checked here.
+  documents_read:
+  - CS023 docket (case.yaml documents D01 to D14)
+  as_of: '2026-10-28'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-29'
+- code: CS023.F096
+  kind: statement
+  heading: 12
+  statement: OpenAI's 18 August post promises a forthcoming blog post with more details of its monitoring
+    system; the docket holds no such post.
+  speaker: OpenAI
+  quote: We'll share more details about this system in a forthcoming blog post.
+  links:
+  - claim: CS023.D02.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 88ed7c53b9d8ed2c
+- code: CS023.F097
+  kind: absence
+  heading: 12
+  statement: The Andreessen Horowitz interview with Brockman that Business Insider relays has not been
+    captured, nor has the businessinsider.com original of the Business Insider article.
+  documents_read:
+  - the library's capture log and the CS023 docket
+  as_of: '2026-10-28'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-29'
+- code: CS023.F098
+  kind: statement
+  heading: 10
+  statement: Fortune reports that the new procedures call for teams to immediately pause the training
+    run or evaluation if they cannot determine within 30 minutes that the alert is a false alarm, and
+    that the monitoring tools are designed to issue alerts within 30 minutes of detecting concerning activity.
+  speaker: Fortune (Emily Forlini)
+  quote: The new automated monitoring tools are designed to issue an alert to internal safety, security,
+    and research teams within 30 minutes of detecting concerning activity. If those teams cannot determine
+    that the alert is a false alarm within 30 minutes, the new procedures call for them to immediately
+    pause the training run or evaluation.
+  links:
+  - claim: CS023.D05.C08
+    relation: supports
+    dependence: relays:D02
+    check:
+      by: the independent checker
+      date: '2026-10-29'
+      fingerprint: 100a04c73afca098

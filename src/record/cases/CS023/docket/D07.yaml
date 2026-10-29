@@ -1,0 +1,31 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D07
+title: Greg Brockman says OpenAI has already slowed cutting-edge AI developments over safety concerns
+publisher: business-insider
+type: news-report
+format: html
+grade: R1
+published: '2026-09-14'
+original_url: https://tech.yahoo.com/ai/articles/greg-brockman-says-openai-already-041101346.html
+licence: unknown
+evidence_origin: openai
+examiner: Business Insider
+how_known_default: relayed
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-28'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: 10877a2a11983fb15e25c489a0c0eaa68f36816fdccdb26825356526267dda52
+  text_sha256: 9191f3a3d706e4af1f12e48392a0dab2eabdf4ba2353e71e6812b33c41b2278c

@@ -34,7 +34,8 @@ const CASE_THEME = {
   "AAI-2026-019": "law",
   "AAI-2026-020": "health",
   "AAI-2026-021": "health",
-  "AAI-2026-022": "testing"
+  "AAI-2026-022": "testing",
+  "AAI-2026-023": "testing"
 };
 
 /** The theme key for a library case ID (AAI-…); the build fails on a case without one. */

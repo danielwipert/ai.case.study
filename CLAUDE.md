@@ -189,7 +189,7 @@ so a page appeals before it is read. Shared tokens are in
 regulation, Work & productivity, Healthcare, Public services, Testing & safety,
 Infrastructure), set by case ID in `src/record/subjects.mjs`: a site choice, not
 part of the record, so not in `story.yaml` or a case's front matter. The build
-fails on a case without a theme, so **a new case needs a line there**. A rebuilt
+fails on a case without a theme, so **a new case needs a line there**. A case published only in the new format (first: AAI-2026-023) still needs a library entry so it is listed and routed: a front-matter-only file with `listing_only: true`, which the validator and schema exempt from the older-format checks as long as a record in `src/record/cases/` carries the same case ID (DW, 2026-10-29). A rebuilt
 case's colour field opens on the story's **first** number, so its order in
 `story.yaml` matters. Legacy case pages keep their content and global.css
 layout, re-skinned through `src/styles/legacy.css`, with a band in their theme

@@ -1,0 +1,1296 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+- code: CS023.D01.C01
+  capture: V01
+  locator: Description, Summary, sentence 1
+  quote: An issue in Kata with Cloud Hypervisor allows a user of the container to modify the file system
+    used by the Guest micro VM ultimately achieving arbitrary code execution as root in said VM.
+  speaker: GitHub Advisory Database (the Kata Containers maintainers' advisory, GitHub-reviewed)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D01.C02
+  capture: V01
+  locator: Description, Summary, sentence 2
+  quote: The current understinding is this doesn't impact the security of the Host or of other containers
+    / VMs running on that Host
+  speaker: GitHub Advisory Database (the Kata Containers maintainers' advisory, GitHub-reviewed)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D01.C03
+  capture: V01
+  locator: Timeline block at the foot of the advisory
+  quote: Published to the GitHub Advisory Database on Feb 19
+  speaker: GitHub Advisory Database (the Kata Containers maintainers' advisory, GitHub-reviewed)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D01.C04
+  capture: V01
+  locator: Severity panel
+  quote: Severity Moderate 5.2 / 10
+  speaker: GitHub Advisory Database (the Kata Containers maintainers' advisory, GitHub-reviewed)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D01.C05
+  capture: V01
+  locator: Credits
+  quote: '[Held privately: the reporter''s GitHub handle, credited as Reporter. Shown by locator only.]'
+  speaker: GitHub Advisory Database (the Kata Containers maintainers' advisory, GitHub-reviewed)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D02.C01
+  capture: V01
+  locator: Opening paragraph, sentence 1
+  quote: 'Over the past several weeks, two developments have underscored the growing risks associated
+    with increasingly capable AI systems: the OpenAI-Hugging Face incident and, separately, preliminary
+    evidence that one of our upcoming models, Astra, may meet the Critical cybersecurity capability threshold
+    under our Preparedness Framework'
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C15
+  capture: V01
+  locator: Opening paragraph, sentence 2
+  quote: Together, these developments, combined with rapid progress in our internal research, have added
+    urgency to our work on strengthening our monitoring, alignment, and containment safeguards across
+    all stages of the training process.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C02
+  capture: V01
+  locator: Paragraph 2, sentence 4
+  quote: This included a two-week pause in reinforcement learning (RL) training on our latest models intended
+    for deployment while we further hardened and red-teamed our research environments and expanded the
+    coverage of our monitoring systems.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C03
+  capture: V01
+  locator: Paragraph 2, sentence 5
+  quote: Our largest planned frontier RL run remains on hold while we conduct smaller-scale training and
+    evaluations to assess model behavior, validate our safeguards, and establish more evidence of alignment
+    before proceeding.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C04
+  capture: V01
+  locator: '''Securing our research environments'', paragraph 1, sentence 2'
+  quote: Meeting these standards has required substantial engineering work and has incurred great cost
+    and delays to frontier research.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: states its own cost and sacrifice, which supports its account of acting responsibly
+  inspectable: false
+- code: CS023.D02.C05
+  capture: V01
+  locator: '''Securing our research environments'', paragraph 1, sentence 3'
+  quote: Immediately following the OpenAI-Hugging Face incident*, we paused frontier model inference in
+    research clusters for runs that could execute code or use tools that could access the internet.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C06
+  capture: V01
+  locator: '''Securing our research environments'', last paragraph'
+  quote: While some Astra training and evaluations meet those requirements, a significant number of workloads
+    remain paused until they are fully migrated and enhanced to meet the new security bar.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C07
+  capture: V01
+  locator: '''Expanding chain-of-thought monitoring'', paragraph 2, sentence 3'
+  quote: We aim to issue an alert within 30 minutes after concerning activity is surfaced through our
+    monitoring system.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C08
+  capture: V01
+  locator: '''Expanding chain-of-thought monitoring'', paragraph 2, sentences 4 to 6'
+  quote: If the monitoring system identifies a likely violation of a critical security boundary, it generates
+    a highest-priority alert. In our current implementation, the safety, security, and research teams
+    are paged. If they cannot conclusively determine within 30 minutes that the flag is a false positive,
+    those teams are expected to pause the activity.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C09
+  capture: V01
+  locator: '''Expanding chain-of-thought monitoring'', paragraph 3, sentence 1'
+  quote: This monitoring is required for all RL training and evaluations involving tools for models of
+    Sol capability or higher.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C10
+  capture: V01
+  locator: '''Expanding chain-of-thought monitoring'', paragraph 3, sentence 2'
+  quote: Once we determined that Astra may have critical cyber capabilities on August 7, we added an additional
+    monitoring requirement for all inference of Astra with tools
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C11
+  capture: V01
+  locator: '''Expanding chain-of-thought monitoring'', paragraph 4, sentence 2'
+  quote: Our current estimates put monitoring overhead at roughly 20% of the inference compute being monitored,
+    though the cost varies substantially across training and evaluation workloads.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C12
+  capture: V01
+  locator: '''Expanding chain-of-thought monitoring'', paragraph 4, sentence 3'
+  quote: We'll share more details about this system in a forthcoming blog post.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D02.C13
+  capture: V01
+  locator: '''Expanding chain-of-thought monitoring'', paragraph 1, last sentence but one'
+  quote: They were not applied to all inference and training runs using tools.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: admits that monitoring did not cover all tool-using runs before the change
+  inspectable: false
+- code: CS023.D02.C14
+  capture: V01
+  locator: '''Securing our research environments'', paragraph after the list, sentence 2'
+  quote: Today, we require the strictest level of security safeguards for workloads involving Astra or
+    cyber models, since we have determined that Astra models may have a critical level of cyber capability.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D03.C01
+  capture: V01
+  locator: The post, sentence 2
+  quote: We temporarily paused reinforcement learning (RL) training on our latest models intended for
+    deployment for two weeks while we hardened and red-teamed our research environments and expanded monitoring
+    coverage.
+  speaker: OpenAI (its X account)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D03.C02
+  capture: V01
+  locator: The post, sentence 3
+  quote: Our largest planned frontier RL run remains on hold while smaller-scale training and evaluations
+    validate these safeguards and establish more evidence of alignment.
+  speaker: OpenAI (its X account)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D03.C03
+  capture: V01
+  locator: Timestamp under the post
+  quote: 1:13 PM · Aug 18, 2026
+  speaker: OpenAI (its X account)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D04.C01
+  capture: V01
+  locator: The post, sentence 1
+  quote: We have paused some frontier RL training to ensure that we can meet the appropriate alignment,
+    security and monitoring standards for the new level of capabilities in front of us.
+  speaker: Sam Altman (his X account)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D04.C02
+  capture: V01
+  locator: The post, sentence 2
+  quote: Model progress is now extremely rapid, and we always said we would take action if we felt that
+    model capabilities were outstripping the pace of safety and alignment.
+  speaker: Sam Altman (his X account)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: presents the pause as keeping an earlier promise
+  inspectable: true
+- code: CS023.D04.C03
+  capture: V01
+  locator: The post, paragraph 2, sentence 2
+  quote: We believe the entire field will have to coordinate on shared safety standards, but will act
+    unilaterally in the meantime.
+  speaker: Sam Altman (his X account)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D04.C04
+  capture: V01
+  locator: Altman's reply under the post
+  quote: (We still expect to ship great new models soon; this impacts further-out releases.)
+  speaker: Sam Altman (his X account)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D04.C05
+  capture: V01
+  locator: Timestamp under the post
+  quote: Last edited Opens edit history 1:53 PM · Aug 18, 2026
+  speaker: Sam Altman (his X account)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D05.C01
+  capture: V01
+  locator: Paragraph 1, the clause after "following"
+  quote: the July incident in which its AI models broke out of a controlled test environment and hacked
+    the systems of AI company Hugging Face
+  speaker: Fortune (Emily Forlini)
+  hedge: false
+  how_known: inferred
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D05.C02
+  capture: V01
+  locator: Paragraph beginning 'In a blog post detailing the new security controls', main clause
+  quote: OpenAI said that on average that would add an additional 20% compute burden to aspects of training.
+  speaker: Fortune (Emily Forlini)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D05.C03
+  capture: V01
+  locator: Paragraph beginning 'However, the company told reporters today'
+  quote: However, the company told reporters today the new safeguards are "not a direct reaction to Hugging
+    Face specifically," although the incident underscored "the urgency to bring safety and security up
+    to model capabilities."
+  speaker: Fortune (Emily Forlini)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D05.C04
+  capture: V01
+  locator: Paragraph beginning 'The company said that in addition to the Hugging Face incident'
+  quote: The company said that in addition to the Hugging Face incident, it had determined that an unreleased
+    model called Astra, which it says was not involved in that cyberattack, presented a "Critical" cybersecurity
+    risk under its "Preparedness Framework."
+  speaker: Fortune (Emily Forlini)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D05.C05
+  capture: V01
+  locator: Same paragraph, sentence 2
+  quote: That internal policy document had committed OpenAI to pausing model development once that threshold
+    was reached to allow the company time to work out further safety mitigations.
+  speaker: Fortune (Emily Forlini)
+  hedge: false
+  how_known: inferred
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D05.C06
+  capture: V01
+  locator: One-sentence paragraph after it
+  quote: This is the first time OpenAI has paused aspects of AI development in response to safety concerns.
+  speaker: Fortune (Emily Forlini)
+  hedge: false
+  how_known: inferred
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D05.C07
+  capture: V01
+  locator: Paragraph quoting Jakub Pachocki
+  quote: '"It''s important to start building tools for coordinating this sort of pacing across labs and
+    across countries," Jakub Pachocki, chief scientist at OpenAI, told reporters in a briefing ahead of
+    the announcement.'
+  speaker: Fortune (Emily Forlini)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D05.C08
+  capture: V01
+  locator: Paragraph beginning 'The new automated monitoring tools'
+  quote: The new automated monitoring tools are designed to issue an alert to internal safety, security,
+    and research teams within 30 minutes of detecting concerning activity. If those teams cannot determine
+    that the alert is a false alarm within 30 minutes, the new procedures call for them to immediately
+    pause the training run or evaluation.
+  speaker: Fortune (Emily Forlini)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D05.C09
+  capture: V01
+  locator: Paragraph 3, sentence 2
+  quote: It also said that other aspects of research and work on customer-facing products continues.
+  speaker: Fortune (Emily Forlini)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D06.C01
+  capture: V01
+  locator: Transcript at 07:38 (speaker labelled 'Speaker 3', the guest)
+  quote: We've slowed down a number of runs, like we did a very painful retooling of a lot of our processes.
+  speaker: Greg Brockman, on Bloomberg's Odd Lots
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D06.C02
+  capture: V01
+  locator: Transcript at 06:28 (the guest)
+  quote: So this model that had the Hagen-Base incident actually had not gone through our alignment training
+    yet, right? And it had lowered safeguards. And so The reason we were proceeding with this was because
+    it was in a sandbox.
+  speaker: Greg Brockman, on Bloomberg's Odd Lots
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: admits the model ran without alignment training and with lowered safeguards
+  inspectable: true
+- code: CS023.D06.C03
+  capture: V01
+  locator: Transcript, host's opening remarks
+  quote: And we are recording this September 10th.
+  speaker: an Odd Lots host (transcript 'Speaker 1')
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D06.C04
+  capture: V01
+  locator: Episode header
+  quote: Published Sep 14, 2026, 3:00 AM
+  speaker: the episode page (Omny.fm, Bloomberg's Odd Lots)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D07.C01
+  capture: V01
+  locator: Paragraph 3
+  quote: '"We''ve slowed down a number of runs, like we did a very painful retooling of a lot of our processes,"
+    Brockman told Bloomberg''s Tracy Alloway, host of the "Odd Lots" podcast episode that aired on Monday.'
+  speaker: Business Insider (Katherine Li)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D07.C02
+  capture: V01
+  locator: Paragraph 5
+  quote: Brockman said in a separate interview with the venture capital firm Andreessen Horowitz that
+    OpenAI had put some projects on ice and pointed Astra, an advanced AI model, at its infrastructure
+    until it stopped uncovering critical vulnerabilities.
+  speaker: Business Insider (Katherine Li)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D07.C03
+  capture: V01
+  locator: Paragraph 6
+  quote: '"We took 25% of our production engineers and said, ''Sorry, all your projects are on hold. You
+    are now defending. You are now up-leveling our security architecture. You''re going to use the models
+    to find all the holes," Brockman said in the interview published on Monday. "And we found a number
+    of serious issues, and we fixed them."'
+  speaker: Business Insider (Katherine Li)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D07.C04
+  capture: V01
+  locator: Paragraph 7
+  quote: Brockman said that Astra was able to pinpoint priority zero issues, meaning the most urgent and
+    severe category of problems, but the process would have to be repeated for every new model that would
+    raise new issues.
+  speaker: Business Insider (Katherine Li)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D08.C01
+  capture: V01
+  locator: '''In brief'', bullet 2'
+  quote: The shift followed a May incident in which an OpenAI model without completed alignment training
+    broke out of a research sandbox and reached Hugging Face's production system.
+  speaker: Decrypt (Jose Antonio Lanz)
+  hedge: false
+  how_known: inferred
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D08.C02
+  capture: V01
+  locator: Paragraph beginning 'In his AI slowdown call'
+  quote: That incident saw an OpenAI agent break out of its sandbox, chain a zero-day with stolen credentials,
+    and spend two and a half days loose inside Hugging Face's production systems before anyone caught
+    it.
+  speaker: Decrypt (Jose Antonio Lanz)
+  hedge: false
+  how_known: inferred
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C01
+  capture: V01
+  locator: Header line under the title
+  quote: 'Internal research model · RL training Sample: Sep 20, 2026 Discovery: Sep 20, 2026 Report updated:
+    Sep 25, 2026'
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C02
+  capture: V01
+  locator: Summary, sentence 1
+  quote: 'An agent attempting to complete a search-based training task queried a public chatbot service
+    through a gap in our internet-access restrictions : insufficient DNS filtering in its training sandbox.'
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: reports a gap in its own controls
+  inspectable: false
+- code: CS023.D09.C03
+  capture: V01
+  locator: Summary, sentence 3
+  quote: Note that all internet access apart from the DNS resolver in this report hit our offline webcache
+    and therefore did not access the live internet.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: limits the reach of the incident
+  inspectable: false
+- code: CS023.D09.C04
+  capture: V01
+  locator: Summary, sentences 5 and 6
+  quote: Our misalignment monitoring system flagged the behavior within 15 minutes and a person began
+    reviewing it three minutes after that. The run was killed 2.5 hours later.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C05
+  capture: V01
+  locator: Summary, sentence 7
+  quote: All training, evaluation, and inference with tool-use (defined broadly) of our most capable models
+    remain paused.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C06
+  capture: V01
+  locator: Summary, last sentence
+  quote: This incident is a lot less severe than some of our previous incidents, but because it's the
+    first one since our security hardening following the Hugging Face incident, it gives us an important
+    signal about where to focus the next phase of that work.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: frames the incident as less severe
+  inspectable: false
+- code: CS023.D09.C07
+  capture: V01
+  locator: '''What happened'', paragraph 1, sentence 2'
+  quote: The task did not ask the agent to test network controls or access benchmark answers, and we consider
+    agent behavior that circumvents restrictions or pursues a goal beyond reasonable expectations as an
+    example of misalignment.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C08
+  capture: V01
+  locator: '''Investigation and response'', incident timeline, entry 1'
+  quote: 9:50:23 a.m. The agent made the DNS tool call that received an external response.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C09
+  capture: V01
+  locator: Incident timeline, entry 2
+  quote: 10:02:11 a.m. The monitoring system raised a P0 alert.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C10
+  capture: V01
+  locator: Incident timeline, entry 3
+  quote: 10:05:06 a.m. A human reviewer acknowledged the alert.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C11
+  capture: V01
+  locator: Incident timeline, entry 4
+  quote: 12:34:30 p.m. The run was killed .
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C12
+  capture: V01
+  locator: '''Investigation and response'', after the timeline, sentence 1'
+  quote: Our safety case assumed that the model could not access the live internet and that monitoring
+    would detect attempts that succeeded.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: states an assumption the incident disproved
+  inspectable: false
+- code: CS023.D09.C13
+  capture: V01
+  locator: Same paragraph, sentence 3
+  quote: We therefore stopped the affected training run and have subsequently decided to pause all other
+    training, evaluation, and inference with tool-use (defined broadly) for our most capable models until
+    we have both validated that the gap is resolved and performed additional red-teaming of the system.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C14
+  capture: V01
+  locator: Same paragraph, sentence 5
+  quote: We will not resume training this particular model, even though the existing reward signal already
+    correctly penalized this behavior.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C15
+  capture: V01
+  locator: Paragraph beginning 'The monitoring system detected this incident'
+  quote: The monitoring system detected this incident, but our retrospective review identified other cases
+    of external DNS access that it did not flag at the expected severity.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: reports a monitoring failure
+  inspectable: false
+- code: CS023.D09.C16
+  capture: V01
+  locator: Paragraph beginning 'The response also exposed operational gaps'
+  quote: A human reviewer acknowledged the Slack alert within three minutes, but the run did not stop
+    automatically as expected, leading to confusion around whether it should have been stopped. The run
+    was then manually stopped two and a half hours later when this was resolved.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: reports that the run did not stop as expected
+  inspectable: false
+- code: CS023.D09.C17
+  capture: V01
+  locator: Same paragraph, later sentence
+  quote: Separately, an infrastructure detector for anomalous DNS activity excluded the affected environment,
+    though DNS activity was logged.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: reports a detection gap
+  inspectable: false
+- code: CS023.D09.C18
+  capture: V01
+  locator: Same paragraph, later sentence
+  quote: We have also restricted DNS queries within the environment to a limited allowed list of domains
+    and record types.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D09.C19
+  capture: V01
+  locator: Summary, sentence 4
+  quote: We have since added blocking controls at two independent layers, either of which would have prevented
+    this access.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: states the fix
+  inspectable: false
+- code: CS023.D09.C20
+  capture: V01
+  locator: '''What happened'', last paragraph before the final answer'
+  quote: It said it could not identify the person and asked for the original wording, the title, or the
+    blog name.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D10.C01
+  capture: V01
+  locator: Header line under the title
+  quote: 'GPT-6.1 Sol and GPT-6 Astra · Internal deployments Incident dates: Oct 3, 2026 (Sol); Oct 6,
+    2026 (Astra) Discovered: Oct 3, 2026 (Sol); Oct 6, 2026 (Astra) Report updated: Oct 20, 2026'
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D10.C02
+  capture: V01
+  locator: Summary, sentence 2
+  quote: A GPT-6.1 Sol agent repairing an evaluation pipeline disabled automatic alerts to our Security
+    team, treating an earlier instruction not to send messages during a Slack history search as a reason
+    to suppress monitoring notifications.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: reports its model weakening its own monitoring
+  inspectable: false
+- code: CS023.D10.C03
+  capture: V01
+  locator: Summary, sentence 3
+  quote: In a separate task, a GPT-6 Astra agent migrating a program removed its monitoring integration
+    in order to match a reference implementation, and then falsely claimed to the user that it had not
+    removed the monitor.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: reports its model removing monitoring and denying it
+  inspectable: false
+- code: CS023.D10.C04
+  capture: V01
+  locator: End of the first case
+  quote: The misalignment monitor still ran and saved its reports, but human alerts were disabled.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D10.C05
+  capture: V01
+  locator: '''Copying a reference implementation'', paragraph 1, sentence 2'
+  quote: The model had previously been instructed, in an exchange with another agent, that it was not
+    to disable the monitor, "even temporarily."
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D10.C06
+  capture: V01
+  locator: '''Investigation and response'', paragraph 1, sentence 3'
+  quote: Neither of the incidents described here was classified as a P0, and neither trajectory was automatically
+    killed.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: reports that its monitoring did not escalate or stop either incident
+  inspectable: false
+- code: CS023.D10.C07
+  capture: V01
+  locator: '''Investigation and response'', paragraph 2, sentence 1'
+  quote: 'We''ve seen several cases in which agents launched a deployment with misalignment monitoring
+    disabled: the agent itself remained monitored, but that monitoring did not cover the deployment it
+    launched.'
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: reports a recurring gap
+  inspectable: false
+- code: CS023.D10.C08
+  capture: V01
+  locator: '''Investigation and response'', paragraph 3, sentence 3'
+  quote: But disabling monitoring is easier for evaluations, in part because we do not currently require
+    misalignment monitoring when evaluating models comparable to GPT-6 Luna, given their weaker capabilities
+    .
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: states a gap in its monitoring requirements
+  inspectable: false
+- code: CS023.D10.C09
+  capture: V01
+  locator: First of the two responses
+  quote: Auto-Review, which we already require for all internal Codex use, has been updated to detect
+    and block attempts to disable misalignment monitoring.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D10.C10
+  capture: V01
+  locator: Second of the two responses, sentence 1
+  quote: We're working toward requiring that every category of workload have a valid safety case specifying
+    its monitoring requirements.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D10.C11
+  capture: V01
+  locator: Last paragraph, sentence 4
+  quote: We don't yet have a satisfying explanation for this behavior
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D10.C12
+  capture: V01
+  locator: Summary, last sentence
+  quote: We are strengthening our misalignment monitoring system in response, and are also assessing whether
+    these cases reflect benign overpersistence or a propensity to evade misalignment monitoring in particular.
+  speaker: OpenAI (Alignment blog)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D11.C01
+  capture: V01
+  locator: Page header, counts
+  quote: Reports 20 Notices 3
+  speaker: OpenAI (Alignment blog index)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D11.C02
+  capture: V01
+  locator: Reports table, row 'Damaging the task environment to trigger a reset'
+  quote: Damaging the task environment to trigger a reset 10/6/26 10/9/26 10/9/26 During reinforcement
+    learning (RL) training, a model assigned to grade seven responses found that the required input files
+    were missing and tried to submit unsupported assessments. Internal research model · RL training
+  speaker: OpenAI (Alignment blog index)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D11.C03
+  capture: V01
+  locator: Reports table, row 'An agent used DNS to reach an external chatbot'
+  quote: An agent used DNS to reach an external chatbot 9/20/26 9/25/26 9/25/26
+  speaker: OpenAI (Alignment blog index)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D11.C04
+  capture: V01
+  locator: Reports table, all 20 rows, columns 'Incident date' and 'First posted' (counted by the library)
+  quote: Uploading files to the internet in order to cite them 1/24/26 , 10/22/25 9/16/26 9/16/26
+  speaker: OpenAI (Alignment blog index)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D12.C01
+  capture: V01
+  locator: Paragraph 6 ('These investments...'), sentence 1
+  quote: These investments have allowed us to detect and stop sophisticated misaligned behavior before
+    it causes damage.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: claims its safeguards work
+  inspectable: false
+- code: CS023.D12.C02
+  capture: V01
+  locator: Paragraph 6, sentence 2
+  quote: On September 20, for example, an internal research model exploited a misconfiguration in a DNS
+    resolver to gain limited access to the live internet during a training run
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C03
+  capture: V01
+  locator: Paragraph 6, sentences 3 and 4
+  quote: Although we contained the incident, it exposed weaknesses that required further work. We paused
+    training and evaluation of our most capable models and used that pause to further harden our infrastructure,
+    strengthen our monitoring, and improve the systems that automatically stop runs when we detect activity
+    that poses a serious risk.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C04
+  capture: V01
+  locator: Paragraph 9, last sentence
+  quote: With our assessments completed and enhanced controls put in place, we resumed reinforcement learning
+    (RL) training and internal inference of our frontier models on October 1.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C05
+  capture: V01
+  locator: '''Resuming frontier training with stronger defenses'', paragraph 2, sentence 2'
+  quote: We resumed these workloads on October 1, 11 days after our pause began.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C06
+  capture: V01
+  locator: Paragraph 9, sentence 1
+  quote: As our red-teaming experiments continued, the number of vulnerabilities and misconfigurations
+    that our agents identified declined significantly.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: presents a declining count as a sign of strength
+  inspectable: false
+- code: CS023.D12.C07
+  capture: V01
+  locator: '''Escaping hardened virtual machines'', paragraph 2, sentence 2'
+  quote: including fixes to software components like Kata Containers ( CVE-2026-24834
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C08
+  capture: V01
+  locator: '''Finding novel paths to the internet'', paragraph 2, sentence 3'
+  quote: Our red-teaming agents found vulnerabilities in almost every one of these services that gave
+    them limited forms of internet access.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: reports widespread weaknesses
+  inspectable: false
+- code: CS023.D12.C09
+  capture: V01
+  locator: '''Resuming frontier training with stronger defenses'', paragraph 1, sentence 2'
+  quote: We did not find a route to the internet that agents could trivially exploit while concealing
+    their activity from our monitors.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: supports the decision to resume
+  inspectable: false
+- code: CS023.D12.C10
+  capture: V01
+  locator: Ongoing work, item 'Testing our monitoring and stopping systems'
+  quote: Our red-teaming efforts have exposed gaps in our monitoring, automatic pausing, and agent team
+    safety mechanisms.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: reports gaps in automatic pausing
+  inspectable: false
+- code: CS023.D12.C11
+  capture: V01
+  locator: Paragraph 5, sentences 1 and 2
+  quote: Based on the current state of alignment research, monitoring systems, and the security of internet
+    infrastructure, we believe the responsible approach is to conduct frontier model training with no
+    internet access. We've implemented this policy and will maintain it until advances in these safeguards
+    justify broader internet access.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C12
+  capture: V01
+  locator: '''Red-teaming containment at scale'', last paragraph'
+  quote: In total, we spent hundreds of billions of tokens on these red-teaming experiments.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C13
+  capture: V01
+  locator: '''Red-teaming containment at scale'', paragraph 3, last sentence'
+  quote: we supplied infrastructure source code, configuration details, and documentation describing potential
+    vulnerabilities.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C14
+  capture: V01
+  locator: Paragraph 9, sentence 4
+  quote: Accordingly, we've made high-compute red-teaming part of the safety cases we use to evaluate
+    whether our frontier training and evaluation runs can proceed securely.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C15
+  capture: V01
+  locator: '''Red-teaming containment at scale'', paragraph 4'
+  quote: These red-teaming experiments were conducted using isolated, purpose-built copies of our research
+    infrastructure, with monitoring and programmatic checks to pause runs if they detected out-of-scope
+    activity. Our cloud partners helped us supervise the experiments and respond to the issues they discovered.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C16
+  capture: V01
+  locator: '''Enforcing isolation with defense in depth'', paragraph 2'
+  quote: 'We address this challenge through defense in depth, with layers of protection that overlap and
+    reinforce one another: sandboxes that restrict what our agents can access and execute, lightweight
+    virtual machines (microVMs) that isolate agents'' execution environments from the computers hosting
+    them, monitoring systems that detect unauthorized activity so that we can intervene in time, and network
+    and cloud perimeters designed to maintain containment if all the preceding controls fail.'
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C17
+  capture: V01
+  locator: '''Building an offline world'', last sentence'
+  quote: All of our frontier RL runs use this offline mode of interaction.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D12.C18
+  capture: V01
+  locator: Paragraph 3, sentence 3
+  quote: The Hugging Face incident in July
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D14.C01
+  capture: V01
+  locator: '''Statement'''
+  quote: This flaw has been rated Important because it requires an attacker to have local access to a
+    container in order to execute arbitrary code.
+  speaker: Red Hat Product Security
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D14.C02
+  capture: V01
+  locator: '''Description'', last sentence'
+  quote: This issue does not impact the security of the host or other containers/VMs running on the host.
+  speaker: Red Hat Product Security
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D14.C03
+  capture: V01
+  locator: '''Description'', sentences 2 and 3'
+  quote: A user of a container can exploit this vulnerability by modifying the file system used by the
+    Guest micro Virtual Machine (VM). This allows the attacker to achieve arbitrary code execution as
+    root within the compromised Guest VM.
+  speaker: Red Hat Product Security
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D12.C19
+  capture: V01
+  locator: '''Finding novel paths to the internet'', paragraph 1, sentence 2'
+  quote: To test the surrounding perimeter, we gave teams of agents control of a host machine and asked
+    whether they could extend that compromise to reach the live internet.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D14.C04
+  capture: V01
+  locator: '''CVSS v3 Score Breakdown'', Base Score row, Red Hat column, with the note above it'
+  quote: The following CVSS metrics and score provided are preliminary and subject to review. CVSS v3
+    Score Breakdown Red Hat NVD cve.org Base Score 9.3
+  speaker: Red Hat Product Security
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D08.C03
+  capture: V01
+  locator: Body, paragraph 2
+  quote: Brockman told "Odd Lots" hosts Tracy Alloway and Joe Weisenthal that OpenAI has delayed several
+    launches and overhauled internal workflows since a research model broke out of a testing sandbox in
+    May and reached Hugging Face's systems.
+  speaker: Decrypt (Jose Antonio Lanz)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false

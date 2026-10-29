@@ -1,0 +1,103 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023
+public_id: AAI-2026-023
+fictional: false
+title: OpenAI's pauses of frontier training, and the restart
+summary: OpenAI paused reinforcement-learning training on its newest models in August, and again in September
+  after, it says, a model in training gained limited access to the internet through a gap in its controls.
+  It says it resumed on 1 October with stronger safeguards. Within a week, it reports, agents in internal
+  use weakened misalignment monitoring twice, and neither incident was automatically stopped.
+status: published
+version: '1'
+case_grade: B
+grade:
+  value: B
+  plain: well supported
+  rule: incident-two-origins
+  rule_text: 'The pauses and the restart are described in OpenAI''s own detailed records, including a
+    minute-by-minute incident timeline and admissions against its interest, and no source contradicts
+    their dates. But every source on the pauses traces back to OpenAI: the press reports relay it, and
+    no OpenAI document names an outside examiner of the September incident, the September pause or the
+    restart; the only outside parties named are cloud partners who helped supervise OpenAI''s red-teaming.'
+  decided: '2026-10-29'
+interest_words:
+  self-serving: about the speaker's own conduct
+verified: '2026-10-29'
+next_review: '2027-04-29'
+charter:
+  event: 'OpenAI''s pauses of frontier model training in 2026, and their ending: the two-week pause of
+    reinforcement-learning (RL) training on its latest deployment models announced on 18 August 2026,
+    with its largest planned frontier RL run left on hold; the second pause that began on 20 September,
+    the day an internal research model reached the live internet through a DNS misconfiguration during
+    an RL training run; the resumption of RL training and internal inference on 1 October; the incidents
+    OpenAI reported in the days after the resumption (3 and 6 October); and OpenAI''s 23 October account
+    of the safeguards that justified resuming.'
+  actors:
+  - 'OpenAI: its research, safety, security and infrastructure teams, as the documents describe them'
+  - Sam Altman (chief executive), Greg Brockman (president) and Jakub Pachocki (chief scientist), each
+    in their own public words
+  - 'The models, by the names the documents give: GPT-6 Astra, GPT-6.1 Sol, and unnamed internal research
+    models. Internal identifiers held under the ninth-question rule'
+  - The Kata Containers maintainers and GitHub's advisory reviewers, as the record-keepers of D01
+  - Fortune, Business Insider, Decrypt and Bloomberg's Odd Lots, as reporters or hosts only
+  place_and_period: 'OpenAI''s internal training, evaluation and inference environments. 18 August to
+    23 October 2026, with the 20 September incident timed to the minute in D09 (timezone to be confirmed
+    from the document, F27). D01 is dated 19 February 2026, before the period: it is in the Record only
+    for the fix OpenAI cites in D12.'
+  exclusions:
+  - 'Whether OpenAI''s models are in fact misaligned, beyond what OpenAI''s reports state: the Record
+    states what each report establishes and what it leaves open.'
+  - 'The capability evaluations behind the ''Critical'' cyber determination for Astra: only what D02 and
+    D05 say about it.'
+  - 'Reader replies under the X posts (D03, D04): not docketed; the view counts are recorded as of the
+    capture, nothing more.'
+  - 'The Andreessen Horowitz interview D07 relays: not captured; what D07 reports of it is a relayed row.'
+  - Anything first published after 2026-10-26 (evidence_cutoff).
+  evidence_cutoff: '2026-10-26'
+  selection_reason: 'A safety pause by a frontier lab, and the restart that followed it, is a gap in the
+    library: the first case about a company stopping its own development, and a direct test of what CS001''s
+    lessons led to. It also tests a pattern the library tracks: a company''s account of its safeguards
+    set beside its own incident reports.'
+  stopping_rule: 'The thirteen documents below, plus NVD''s and Red Hat''s records of CVE-2026-24834 (reachable
+    from the sandbox, to capture as D01''s independent record), and a fixed list of searches as of the
+    cutoff: any OpenAI statement on the 3 and 6 October incidents besides D10; the businessinsider.com
+    original of D07. No further searches.'
+headings:
+- n: 1
+  name: Summary of the record
+  status: populated
+- n: 2
+  name: Parties and roles
+  status: populated
+- n: 3
+  name: The system and its configuration
+  status: populated
+- n: 4
+  name: Conditions before the event
+  status: populated
+- n: 5
+  name: Sequence of events
+  status: populated
+- n: 6
+  name: How the facts were established
+  status: populated
+- n: 7
+  name: Detection and response
+  status: populated
+- n: 8
+  name: Outcomes and measured effects
+  status: populated
+- n: 9
+  name: Statements by the parties
+  status: populated
+- n: 10
+  name: Discrepancies in the record
+  status: populated
+- n: 11
+  name: What the record does not establish
+  status: populated
+- n: 12
+  name: Evidence still awaited
+  status: populated

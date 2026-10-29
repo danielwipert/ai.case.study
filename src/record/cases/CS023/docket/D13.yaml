@@ -1,0 +1,31 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D13
+title: 'Patch the Planet: a Daybreak initiative to support open source maintainers'
+publisher: openai
+type: official-statement
+format: html
+grade: R3
+published: '2026-06-22'
+original_url: https://openai.com/index/patch-the-planet/
+licence: unknown
+evidence_origin: openai
+examiner: OpenAI
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-26'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: ad4b90f1e1020d577a285680c25b8ea48d977157841843c250ba738250600ed7
+  text_sha256: b16ed249a4f03c726365fd83fa5e1af199314d7f0f21fd84f8ab4b0996a9e0a7

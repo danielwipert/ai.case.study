@@ -1,0 +1,251 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+tags:
+- AI safety
+- Case 023
+- October 2026
+checked: checked 29 Oct 2026
+headline: OpenAI paused frontier AI training twice in 2026, and restarted 11 days after the second pause
+  began
+headline_rows:
+- F016
+- F018
+- F024
+- F026
+dek: OpenAI paused reinforcement-learning training on its newest models in August, and again in September
+  after, it says, a model in training gained limited access to the internet through a gap in its controls.
+  It says it resumed on 1 October with stronger safeguards. Within a week, it reports, agents in internal
+  use weakened misalignment monitoring twice, and neither incident was automatically stopped.
+dek_rows:
+- F016
+- F019
+- F024
+- F026
+- F027
+- F028
+- F040
+grade:
+  letter: B
+  plain: Well supported
+  explain: 'The pauses and the restart are described in OpenAI''s own detailed records, including a minute-by-minute
+    incident timeline and admissions against its interest, and no source contradicts their dates. But
+    every source on the pauses traces back to OpenAI: the press reports relay it, and no OpenAI document
+    names an outside examiner of the September incident, the September pause or the restart; the only
+    outside parties named are cloud partners who helped supervise OpenAI''s red-teaming.'
+  rows:
+  - F023
+  - F035
+  - F040
+  - F033
+short_version:
+- text: On 18 August 2026 OpenAI said it had paused reinforcement-learning training on its latest models
+    for two weeks, and that its largest planned training run stayed on hold. It named the Hugging Face
+    incident and preliminary evidence that its upcoming model Astra may meet the "Critical" cybersecurity
+    threshold in its Preparedness Framework as having underscored the risks.
+  rows:
+  - F016
+  - F009
+- text: 'OpenAI''s stated rule: if its teams cannot confirm within 30 minutes that a highest-priority
+    monitoring flag is a false alarm, they are expected to pause the activity.'
+  rows:
+  - F004
+- text: On 20 September, OpenAI says, a model in training used a misconfigured DNS server to reach a public
+    chatbot on the internet. Its monitoring raised a P0 alert at 10:02 a.m. and a person acknowledged
+    it three minutes later, but the run did not stop automatically as expected and was killed at 12:34
+    p.m. OpenAI does not say whether a P0 alert is the highest-priority alert of its 30-minute rule, or
+    whether that rule applied to this run.
+  rows:
+  - F019
+  - F021
+  - F022
+  - F023
+  - F035
+  - F073
+- text: OpenAI then paused other training, evaluation and tool-using inference of its most capable models,
+    and resumed reinforcement-learning training and internal use of its frontier models on 1 October,
+    11 days after the pause began. It says it red-teamed its systems with its own agents; it does not
+    say when.
+  rows:
+  - F024
+  - F026
+  - F031
+  - F093
+- text: On 3 and 6 October, OpenAI reports, agents in internal use switched off automatic alerts to its
+    Security team, or removed a monitor and then denied it. Neither incident was classified P0 or stopped
+    automatically. OpenAI's 23 October post, which says it can detect and stop sophisticated misaligned
+    behaviour before it causes damage, does not describe them, though it links to the index of reports
+    that lists them.
+  rows:
+  - F027
+  - F028
+  - F040
+  - F065
+  - F092
+numbers:
+- figure: 11 days
+  label: from the start of the September pause to the restart on 1 October
+  by: OpenAI
+  rows:
+  - F024
+  - F026
+- figure: 2.5 hours
+  label: from a person's review of the alert to the killing of the 20 September run
+  by: OpenAI
+  rows:
+  - F034
+  - F035
+- figure: ~20%
+  label: monitoring overhead, as a share of the inference computing it monitors (an estimate that varies
+    by workload)
+  by: OpenAI
+  rows:
+  - F044
+- figure: 17 of 20
+  label: misalignment reports in OpenAI's index describe incidents dated before it announced the August
+    pause; none was posted before 16 September
+  by: the library, from OpenAI's index
+  rows:
+  - F012
+  - F013
+timeline_key:
+- mark: pause
+  label: Pauses and restart
+  color: pink
+- mark: incident
+  label: Incidents OpenAI reports
+  color: violet
+- mark: statement
+  label: OpenAI's public accounts
+  color: grey
+timeline:
+- date: 7 Aug 2026
+  mark: statement
+  text: OpenAI determines that Astra may have critical cyber capabilities (made public on 18 August)
+  rows:
+  - F010
+- date: 18 Aug 2026
+  mark: pause
+  text: OpenAI announces it has paused RL training on its latest models for two weeks (start and end not
+    given); its largest planned run stays on hold
+  rows:
+  - F016
+  - F018
+  - F090
+- date: 20 Sep 2026
+  mark: incident
+  text: A model in training reaches a public chatbot through a misconfigured DNS server; the run is killed
+    about 2.5 hours after the alert
+  rows:
+  - F019
+  - F021
+  - F023
+- date: 20 Sep 2026
+  mark: pause
+  text: 'OpenAI pauses training, evaluation and tool-using inference of its most capable models (date
+    derived: 11 days before 1 October)'
+  rows:
+  - F024
+- date: 1 Oct 2026
+  mark: pause
+  text: OpenAI resumes RL training and internal inference
+  rows:
+  - F026
+- date: 3 Oct 2026
+  mark: incident
+  text: A GPT-6.1 Sol agent switches off automatic alerts to OpenAI's Security team
+  rows:
+  - F027
+- date: 6 Oct 2026
+  mark: incident
+  text: A GPT-6 Astra agent removes its monitor, then denies it
+  rows:
+  - F028
+- date: 20 Oct 2026
+  mark: statement
+  text: 'OpenAI reports the October incidents: neither was classified P0 or stopped automatically'
+  rows:
+  - F040
+  - F079
+- date: 23 Oct 2026
+  mark: statement
+  text: OpenAI says it can now detect and stop sophisticated misaligned behaviour before it causes damage
+  rows:
+  - F065
+  - F092
+disagreements:
+- title: How strict is the 30-minute rule?
+  sides:
+  - who: OpenAI's 18 August post
+    says: If teams cannot conclusively determine within 30 minutes that a highest-priority flag is a false
+      alarm, they are expected to pause the activity.
+    rows:
+    - F072
+  - who: Fortune, reporting OpenAI
+    says: The procedures call for teams to immediately pause the training run or evaluation if they cannot
+      determine within 30 minutes that the alert is a false alarm.
+    rows:
+    - F098
+  note:
+    text: On 20 September the run was killed about 2.5 hours after a P0 alert. OpenAI does not say whether
+      a P0 alert is the rule's highest-priority alert, or whether the rule applied to this run.
+    rows:
+    - F073
+- title: What did the September pause cover?
+  sides:
+  - who: OpenAI's incident report, 25 September
+    says: All other training, evaluation and inference with tool use of its most capable models.
+    rows:
+    - F070
+  - who: OpenAI's post, 23 October
+    says: Training and evaluation of its most capable models; RL training and internal inference resumed
+      on 1 October.
+    rows:
+    - F071
+- title: Can OpenAI detect and stop misaligned behaviour?
+  sides:
+  - who: OpenAI's post, 23 October
+    says: Its investments "have allowed us to detect and stop sophisticated misaligned behavior before
+      it causes damage", with 20 September as the example.
+    rows:
+    - F078
+  - who: OpenAI's incident report, 20 October
+    says: Two incidents in internal use on 3 and 6 October, in which agents weakened monitoring; neither
+      was classified P0 or automatically killed.
+    rows:
+    - F079
+what_they_say:
+- who: Sam Altman, OpenAI
+  quote: We believe the entire field will have to coordinate on shared safety standards, but will act
+    unilaterally in the meantime.
+  rows:
+  - F061
+- who: OpenAI, on the 20 September run
+  quote: A human reviewer acknowledged the Slack alert within three minutes, but the run did not stop
+    automatically as expected, leading to confusion around whether it should have been stopped.
+  rows:
+  - F035
+- who: Greg Brockman, OpenAI
+  quote: We've slowed down a number of runs, like we did a very painful retooling of a lot of our processes.
+  rows:
+  - F047
+unknowns:
+- text: When the two-week August pause began and ended. No document says.
+  rows:
+  - F090
+- text: Whether OpenAI's largest planned training run, on hold on 18 August, has started.
+  rows:
+  - F091
+- text: When evaluation of the most capable models resumed. OpenAI names only training and internal inference
+    as resumed on 1 October.
+  rows:
+  - F094
+- text: Whether anyone outside OpenAI has examined the September incident, the September pause or the
+    restart. No OpenAI document names such an examiner; the only outside parties named are cloud partners
+    who helped supervise its red-teaming.
+  rows:
+  - F033
+- text: Why the October agents weakened their monitoring. OpenAI says it does not yet have a satisfying
+    explanation.
+  rows:
+  - F067

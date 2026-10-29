@@ -78,6 +78,19 @@ const taxonomy = parseYaml(await readFile(taxonomyPath, "utf8"));
 const controlled = taxonomy.controlled_fields ?? {};
 const aliases = taxonomy.deprecated_aliases ?? {};
 
+// Cases published in the new format (src/record/cases/CSnnn/case.yaml), by library case ID.
+// A library entry marked listing_only exists only so such a case is listed and routed;
+// its text lives in the record, so the older-format checks below do not apply to it.
+const recordRoot = new URL("../src/record/cases/", import.meta.url);
+const recordedIds = new Set();
+for (const dirent of await readdir(recordRoot, { withFileTypes: true })) {
+  if (!dirent.isDirectory()) continue;
+  try {
+    const header = parseYaml(await readFile(new URL(`${dirent.name}/case.yaml`, recordRoot), "utf8"));
+    if (header?.public_id) recordedIds.add(header.public_id);
+  } catch { /* a folder without case.yaml is not a record */ }
+}
+
 const files = await walk(root);
 const records = [];
 
@@ -155,6 +168,12 @@ for (const { filename, data, body, raw } of records) {
     const [earlierName, earlier] = order[index - 1];
     const [laterName, later] = order[index];
     if (later < earlier) fail(`${laterName} (${laterName === "created" ? "" : ""}${later.toISOString().slice(0, 10)}) is earlier than ${earlierName} (${earlier.toISOString().slice(0, 10)})`);
+  }
+
+  if (data.listing_only) {
+    if (!recordedIds.has(data.case_id)) fail("listing_only needs a new-format record with this case ID as public_id in src/record/cases/");
+    if (body.trim()) fail("a listing_only entry has no body: the case's text lives in its record");
+    continue;
   }
 
   // Citation integrity: footnotes, sources, and the ledger must agree.

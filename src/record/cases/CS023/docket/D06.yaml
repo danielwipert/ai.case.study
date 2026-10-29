@@ -1,0 +1,31 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D06
+title: OpenAI President Greg Brockman on Doing Business in the Wake of Hugging Face (Odd Lots, with transcript)
+publisher: bloomberg-odd-lots
+type: public-remarks
+format: html
+grade: R3
+published: '2026-09-14'
+original_url: https://omny.fm/shows/odd-lots/openai-president-greg-brockman-on-doing-business-in-the-wake-of-hugging-face
+licence: unknown
+evidence_origin: openai
+examiner: OpenAI
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-28'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: bdd8db86db47af167f454675cfe876e7a399a2269239444f29784d0cba2fd5d8
+  text_sha256: 74dc36e7cd4dbbcdd799bdaf42f92111d788caff888f8131e191967e3c692edd

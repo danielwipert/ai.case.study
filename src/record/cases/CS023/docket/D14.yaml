@@ -1,0 +1,33 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D14
+title: CVE-2026-24834 (Red Hat Customer Portal)
+publisher: red-hat
+type: registry-record
+format: html
+grade: R2
+published: null
+original_url: https://access.redhat.com/security/cve/CVE-2026-24834
+licence: unknown
+evidence_origin: kata-maintainers
+examiner: Red Hat Product Security
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: 'Red Hat rates the flaw Important; GitHub (D01) rates it Moderate 5.2. NVD''s page renders
+  only in JavaScript, so NVD is not docketed: its API gives published 2026-02-19T17:24:49, last modified
+  2026-07-15 (finding aid only)'
+captures:
+- capture: V01
+  captured_on: '2026-10-28'
+  captured_by: the library
+  tool: Fetched by the library with a browser user agent; page as served
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: 21cfeaad3ce2611551e71c28680be3cad14b6d8ca825187f6e3a51e6a4597815
+  text_sha256: e8e4e011f37ba640ce12f81ac4fc67b4a977c386f98ba6d873704d27812cdec3

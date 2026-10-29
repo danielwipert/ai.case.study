@@ -1,0 +1,31 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D11
+title: Misalignment Reports and Notices (index)
+publisher: openai
+type: dataset-or-repository
+format: html
+grade: R2
+published: null
+original_url: https://alignment.openai.com/misalignment-reports/
+licence: unknown
+evidence_origin: openai
+examiner: OpenAI
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-28'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: db08904ee1d5dbaff4860bdb2aaaeeb759c870812e6200ab70b317471e416e93
+  text_sha256: e57d1ac278ac3d0353b487d702890f46a48319a2d19ed7220506b07d65e0c192
