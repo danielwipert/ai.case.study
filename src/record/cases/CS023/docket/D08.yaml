@@ -1,0 +1,31 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D08
+title: OpenAI's Brockman Says Safety Concerns Have Already Slowed Its Most Advanced AI Work
+publisher: decrypt
+type: news-report
+format: html
+grade: R3
+published: '2026-09-15'
+original_url: https://decrypt.co/378300/openai-safety-concerns-slowed-most-advanced-ai-work
+licence: unknown
+evidence_origin: openai
+examiner: Decrypt
+how_known_default: relayed
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-28'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: 32b45a8b4cd22a126e183fda4933fdc6acc8e5681ce8f63d62e71514580f670f
+  text_sha256: 34750ed72bb0dcff635cd209a62f718c31dc3c486e49e41d55c473960b011f3c

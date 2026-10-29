@@ -1,0 +1,32 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D05
+title: OpenAI says it paused AI training for two weeks and announces new security protocols following
+  Hugging Face hack
+publisher: fortune
+type: news-report
+format: html
+grade: R1
+published: '2026-08-18'
+original_url: https://fortune.com/2026/08/18/openai-says-it-paused-ai-training-for-two-weeks-and-announces-new-security-protocols-following-hugging-face-hack/
+licence: unknown
+evidence_origin: openai
+examiner: Fortune
+how_known_default: relayed
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-28'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: 78102d7e1d6fb34d9c38b139f01b182bf495fddd22390959636de98d83036453
+  text_sha256: 84565c2a96f75b2214c019f772e33d66536600686d575359f90e92fcf8dfc912

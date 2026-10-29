@@ -1,0 +1,31 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D04
+title: 'Sam Altman on X: ''We have paused some frontier RL training…'''
+publisher: sam-altman
+type: public-remarks
+format: html
+grade: R3
+published: '2026-08-18'
+original_url: https://x.com/sama/status/2089787807611195475
+licence: unknown
+evidence_origin: openai
+examiner: OpenAI
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: ''
+captures:
+- capture: V01
+  captured_on: '2026-10-28'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: f46956a7a5319c37cfb0d8cbf491a1059858c9bd2ec5004f3a714067489d0943
+  text_sha256: 74072ee91897c154d231952fa0c6aaccb506f8f7372e2250e72fc6dd034321d7

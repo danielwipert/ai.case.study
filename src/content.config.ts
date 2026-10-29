@@ -88,7 +88,9 @@ const cases = defineCollection({
     sources: z.array(source).default([]),
     evidence_upgrade_path: z.string().min(20).optional(),
     single_chain_rationale: z.string().min(40).optional(),
-    tags: z.array(z.string()).default([])
+    tags: z.array(z.string()).default([]),
+    // Listed and routed only: the case is published in the new format (src/record/cases/).
+    listing_only: z.boolean().default(false)
   }).superRefine((data, ctx) => {
     if (["published", "archived"].includes(data.status)) {
       if (!data.published) {
@@ -100,7 +102,7 @@ const cases = defineCollection({
       if (data.evidence_grade === "D") {
         ctx.addIssue({ code: "custom", path: ["evidence_grade"], message: "Grade D leads cannot be published." });
       }
-      if (data.sources.length === 0) {
+      if (data.sources.length === 0 && !data.listing_only) {
         ctx.addIssue({ code: "custom", path: ["sources"], message: "Published cases require at least one structured source." });
       }
     }

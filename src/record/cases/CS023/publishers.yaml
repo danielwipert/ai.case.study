@@ -1,0 +1,45 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+- id: github-advisory-database
+  name: GitHub Advisory Database
+  grades:
+    registry-record: R2
+  graded: '2026-10-29'
+- id: openai
+  name: OpenAI
+  grades:
+    incident-report: R2
+    official-statement: R3
+    dataset-or-repository: R2
+  graded: '2026-10-29'
+- id: sam-altman
+  name: Sam Altman (on X)
+  grades:
+    public-remarks: R3
+  graded: '2026-10-29'
+- id: fortune
+  name: Fortune
+  grades:
+    news-report: R1
+  graded: '2026-10-29'
+- id: bloomberg-odd-lots
+  name: Bloomberg's Odd Lots podcast (via Omny.fm)
+  grades:
+    public-remarks: R3
+  graded: '2026-10-29'
+- id: business-insider
+  name: Business Insider (read via Yahoo syndication)
+  grades:
+    news-report: R1
+  graded: '2026-10-29'
+- id: decrypt
+  name: Decrypt
+  grades:
+    news-report: R3
+  graded: '2026-10-29'
+- id: red-hat
+  name: Red Hat Product Security
+  grades:
+    registry-record: R2
+  graded: '2026-10-29'
