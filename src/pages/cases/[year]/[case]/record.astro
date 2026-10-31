@@ -62,6 +62,20 @@ const statusNote = {
           </section>
         );
       })}
+      {record.superseded.length > 0 && (
+        <section class="pv-heading pv-superseded" id="superseded">
+          <h2>Superseded rows</h2>
+          <p class="pv-status"><span class="pv-status-reason">Rows published in an earlier version and since replaced. They are kept, marked, so a reader can see what changed and why; nothing above cites them.</span></p>
+          {record.superseded.map((s) => (
+            <div class="pv-superseded-row" id={s.short}>
+              <p><span class="pv-code pv-code-old">{s.short}</span> <span class="pv-old">{s.statement}</span></p>
+              <p class="pv-status-reason">Superseded {s.superseded_on} by {s.by.map((b, i) => (
+                <>{i > 0 && ", "}<a class="pv-code" data-label={b.row.label.word} href={`${ledger}#${b.short}`} title={b.row.label.display}>{b.short}</a></>
+              ))}. {s.reason}</p>
+            </div>
+          ))}
+        </section>
+      )}
     </article>
 
     <aside class="sidebar pv-sidebar" aria-label="Charter">
