@@ -32,11 +32,11 @@
   "why_sha256": "3b72ca8856e105acc3bafe471a363cd9cec925537b923c594aa362a3832f8538"
  },
  "CS023": {
-  "made": "2026-10-29",
+  "made": "2026-10-31",
   "pdf": "aai-2026-023.pdf",
   "public_id": "AAI-2026-023",
-  "story_sha256": "77ee0a051739a7ff7126df5d0b90617ec2ee292631d8329ab5ec18c20a268f27",
-  "type_scale": 0.8,
-  "why_sha256": "5e031b8535aac1916a2826eb41946ca0d98c36dd91ae851ff7a249da858487cc"
+  "story_sha256": "7738a3f44e1abeb2728a298b6e71aef481c554b114263f65e7f8b7de8a0486aa",
+  "type_scale": 0.75,
+  "why_sha256": "8015ccb2d2db7aa7a1b76d03a757b95a85fce629626610d35ac218559409f9cc"
  }
 }
