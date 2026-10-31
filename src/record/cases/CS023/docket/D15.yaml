@@ -1,0 +1,32 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D15
+title: How we detect frontier model misalignment
+publisher: openai
+type: official-statement
+format: html
+grade: R3
+published: '2026-10-29'
+original_url: https://openai.com/index/how-we-detect-frontier-model-misalignment/
+licence: unknown
+evidence_origin: openai
+examiner: OpenAI
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: 'Admitted after the cutoff by the amendment of 2026-10-30. Its charts are images: no figure
+  is taken from them, only from the text layer'
+captures:
+- capture: V01
+  captured_on: '2026-10-30'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: complete page as saved
+  public_snapshot: none
+  capture_sha256: 839d040ba1a1c082aa83be35050290317cd557e02f31e1fafbee5dfe8af02bc6
+  text_sha256: ffca1c4cb4854a560a2eb95264e0d21254ed1cb04fe313706de2d76f97b8718a

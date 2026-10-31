@@ -671,21 +671,6 @@
       by: the independent checker
       date: '2026-10-29'
       fingerprint: bde6fe82ac225668
-- code: CS023.F033
-  kind: absence
-  heading: 6
-  statement: None of the OpenAI documents in the docket names an outside examiner of the 20 September
-    incident, the September pause or the decision to resume on 1 October; the only outside parties named
-    are unnamed cloud partners who helped supervise the red-teaming (D12).
-  documents_read:
-  - 'CS023 D09 V01, D10 V01, D12 V01: full text layers searched for ''METR'', ''Redwood'', ''independent'',
-    ''external'', ''audit'', ''third part'', ''outside''; matches were read and none names an examiner
-    of these events (''METR'' matched only ''metrics'')'
-  as_of: '2026-10-28'
-  links: []
-  check:
-    by: the independent checker
-    date: '2026-10-29'
 - code: CS023.F034
   kind: state
   heading: 7
@@ -1740,11 +1725,13 @@
   documents_read:
   - 'CS023 D02, D03, D04, D05, D12 V01: text layers searched for ''two-week'', ''two weeks'' and dates
     in August; the matches give no start or end date'
-  as_of: '2026-10-28'
+  - 'CS023 D15 V01 (added 2026-10-30, D15 update): text layer searched for ''two-week'', ''two weeks'',
+    ''August'''
+  as_of: '2026-10-30'
   links: []
   check:
     by: the independent checker
-    date: '2026-10-29'
+    date: '2026-10-30'
 - code: CS023.F091
   kind: absence
   heading: 11
@@ -1790,11 +1777,13 @@
     September pause; the 23 October post names only RL training and internal inference.
   documents_read:
   - 'CS023 D09, D10, D11, D12 V01: read in full'
-  as_of: '2026-10-28'
+  - 'CS023 D15 V01 (added 2026-10-30, D15 update): text layer searched for ''resum'' and ''evaluat'';
+    it monitors every evaluation for Astra-level models, present tense, but dates no resumption'
+  as_of: '2026-10-30'
   links: []
   check:
     by: the independent checker
-    date: '2026-10-29'
+    date: '2026-10-30'
 - code: CS023.F095
   kind: absence
   heading: 11
@@ -1807,21 +1796,6 @@
   check:
     by: the independent checker
     date: '2026-10-29'
-- code: CS023.F096
-  kind: statement
-  heading: 12
-  statement: OpenAI's 18 August post promises a forthcoming blog post with more details of its monitoring
-    system; the docket holds no such post.
-  speaker: OpenAI
-  quote: We'll share more details about this system in a forthcoming blog post.
-  links:
-  - claim: CS023.D02.C12
-    relation: supports
-    dependence: none
-    check:
-      by: the independent checker
-      date: '2026-10-29'
-      fingerprint: 88ed7c53b9d8ed2c
 - code: CS023.F097
   kind: absence
   heading: 12
@@ -1853,3 +1827,1049 @@
       by: the independent checker
       date: '2026-10-29'
       fingerprint: 100a04c73afca098
+- code: CS023.F099
+  kind: event
+  heading: 5
+  statement: OpenAI published 'How we detect frontier model misalignment', an account of its misalignment
+    monitoring system, on 29 October 2026.
+  date: '2026-10-29'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D15.C20
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 0c85ffb3d39fb1ab
+- code: CS023.F100
+  kind: statement
+  heading: 12
+  statement: OpenAI's 18 August post promised a forthcoming blog post with more details of its monitoring
+    system; on 29 October OpenAI published a post describing its misalignment monitoring system.
+  speaker: OpenAI
+  quote: We'll share more details about this system in a forthcoming blog post.
+  links:
+  - claim: CS023.D02.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 8d4b43af0b72e332
+  - claim: CS023.D15.C20
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: fff4dd6b47396714
+- code: CS023.F101
+  kind: absence
+  heading: 11
+  statement: OpenAI's 29 October post does not say that it is the post promised on 18 August.
+  documents_read:
+  - 'CS023 D15 V01: text layer searched for ''August'', ''forthcoming'', ''promised'' and ''pacing'';
+    no match refers to the 18 August post'
+  - 'CS023 D15 V01 capture.html: every link read; none to the 18 August post; one, on ''monitoring our
+    internal coding agents'', to an earlier OpenAI monitoring post, undated in the capture and not fetched'
+  as_of: '2026-10-30'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-30'
+- code: CS023.F102
+  kind: statement
+  heading: 4
+  statement: OpenAI states that the Hugging Face incident began during internal cybersecurity evaluations
+    on which it was not running its misalignment monitors.
+  speaker: OpenAI
+  quote: 'While we’ve been monitoring our internal coding agents for some time, the Hugging Face incident
+    exposed a gap in our coverage: the incident began during internal cybersecurity evaluations on which
+    we were not running our monitors for misaligned behavior.'
+  links:
+  - claim: CS023.D15.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 4fbbe40d76d30fa1
+- code: CS023.F103
+  kind: statement
+  heading: 3
+  statement: OpenAI states that its misalignment monitors now cover its frontier models across a much
+    wider variety of surfaces, including training, evaluation and internal use, and, with modifications
+    by product, in external deployment.
+  speaker: OpenAI
+  quote: Our misalignment monitors now cover our frontier models across a much wider variety of surfaces,
+    including training, evaluation, internal use, and, with modifications depending on the product surface,
+    external deployment.
+  links:
+  - claim: CS023.D15.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: e7c57ccc9f5b5601
+- code: CS023.F104
+  kind: statement
+  heading: 7
+  statement: OpenAI states that when it replayed the Hugging Face incident with its strengthened monitors,
+    they alerted its security team about 30 minutes after the agents first escaped their sandbox, more
+    than 30 hours before Hugging Face's systems were breached.
+  speaker: OpenAI
+  quote: In order to see how this expanded system could have helped prevent the Hugging Face incident,
+    we replayed the behavior recorded in that episode with our strengthened monitors in place. In that
+    simulation, our monitoring system alerted our security team about 30 minutes after the agents first
+    escaped their sandbox—and more than 30 hours before Hugging Face’s systems were breached in the actual
+    incident.
+  links:
+  - claim: CS023.D15.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 930c171a31a0b0a2
+- code: CS023.F105
+  kind: statement
+  heading: 9
+  statement: OpenAI says it believes that warning would have given its responders time to interrupt the
+    activity well before its models could reach external services.
+  speaker: OpenAI
+  quote: We believe that this warning would have given our responders time to interrupt the activity well
+    before our models were able to access external services.
+  links:
+  - claim: CS023.D15.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: c9eadb1131268221
+- code: CS023.F106
+  kind: absence
+  heading: 11
+  statement: OpenAI's 29 October post does not date the sandbox escape or the breach of Hugging Face's
+    systems that its replay measures between.
+  documents_read:
+  - 'CS023 D15 V01: text layer searched for ''escape'', ''breach'', ''July'', ''May'' and dates; the replay
+    passage gives intervals only'
+  - '''July'' matched only the METR and Redwood red-teaming (''starting in July 2026''), not the replay'
+  as_of: '2026-10-30'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-30'
+- code: CS023.F107
+  kind: statement
+  heading: 10
+  statement: OpenAI's 29 October post says that in September, when a model reached the internet from an
+    environment meant to be isolated, its monitors flagged the breach within 15 minutes, a responder began
+    reviewing it three minutes later, and OpenAI then paused frontier reinforcement learning.
+  speaker: OpenAI
+  quote: In September, we saw how responders used an alert during a live training run. A model found a
+    way to reach the internet ⁠ (opens in a new window) from an environment that was meant to be isolated.
+    Our monitors flagged the breach within 15 minutes, and a responder began reviewing it three minutes
+    later. We then paused frontier reinforcement learning while we strengthened the systems that contain
+    our agents.
+  links:
+  - claim: CS023.D15.C05
+    relation: supports
+    dependence: relays:D09
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 3a76302bbdc46154
+- code: CS023.F108
+  kind: absence
+  heading: 11
+  statement: OpenAI's 29 October account of the September incident does not give the 2.5 hours from a
+    person's review to the kill, or say that the run did not stop automatically as expected.
+  documents_read:
+  - 'CS023 D15 V01: text layer searched for ''hours'', ''kill'', ''killed'', ''automatic'' and ''stop'';
+    the September passages (paragraph 4 and ''What our monitors have been finding'') give 15 and 3 minutes
+    only'
+  as_of: '2026-10-30'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-30'
+- code: CS023.F109
+  kind: statement
+  heading: 10
+  statement: OpenAI's 18 August post says this monitoring is required for all RL training and evaluations
+    involving tools for models of Sol capability or higher, and that once it determined on 7 August that
+    Astra may have critical cyber capabilities, it added a requirement for all inference of Astra with
+    tools.
+  speaker: OpenAI
+  quote: This monitoring is required for all RL training and evaluations involving tools for models of
+    Sol capability or higher.
+  links:
+  - claim: CS023.D02.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 95ebad14ae3956c6
+  - claim: CS023.D02.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 659a1c14bb5627fa
+- code: CS023.F110
+  kind: statement
+  heading: 10
+  statement: OpenAI's 29 October post says it monitors every RL run and evaluation, and any harness that
+    supports tool use, for models at least as capable as GPT-6 Astra; for most workloads it also monitors
+    models it assesses as more capable than GPT-5.5 Thinking; and it monitors all internal Codex traffic.
+  speaker: OpenAI
+  quote: For models at least as capable as GPT‑6 Astra, we monitor every reinforcement learning (RL) run
+    and evaluation, as well as any harness that supports tool use. For most workloads, including RL and
+    evaluations, we also monitor models we assess to be more capable than GPT‑5.5 Thinking.
+  links:
+  - claim: CS023.D15.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: bdf9f2aff9532019
+  - claim: CS023.D15.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 2cd3d9e7ae2663a3
+- code: CS023.F111
+  kind: statement
+  heading: 7
+  statement: OpenAI states that for frontier RL runs and internal Codex traffic its model-based reviewer
+    (layer 1) runs at the end of each turn and whenever the agent summarises its earlier work, and that
+    it is moving to a schedule with no more than 30 minutes between these checks.
+  speaker: OpenAI
+  quote: For frontier RL runs and internal Codex traffic, we run an L1 check at the end of each turn and
+    whenever the agent summarizes its earlier work to make room in its context window. We are now moving
+    to a schedule with no more than 30 minutes between these checks.
+  links:
+  - claim: CS023.D15.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 4382b85a73bb2bd8
+- code: CS023.F112
+  kind: statement
+  heading: 10
+  statement: OpenAI's 18 August post says that in its current implementation a highest-priority alert
+    pages the safety, security and research teams.
+  speaker: OpenAI
+  quote: If the monitoring system identifies a likely violation of a critical security boundary, it generates
+    a highest-priority alert. In our current implementation, the safety, security, and research teams
+    are paged. If they cannot conclusively determine within 30 minutes that the flag is a false positive,
+    those teams are expected to pause the activity.
+  links:
+  - claim: CS023.D02.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 91b704f354ac5240
+- code: CS023.F113
+  kind: statement
+  heading: 10
+  statement: OpenAI's 29 October post says false alarms have made it difficult to keep paging enabled
+    around the clock for every workload; for frontier RL runs a highest-priority alert can page a human
+    responder at any hour, for most other traffic paging is limited to business hours, and paging is currently
+    disabled for internal Codex traffic.
+  speaker: OpenAI
+  quote: False alarms have made it difficult to keep paging enabled around the clock for every workload.
+    For frontier RL runs, a highest-priority alert can page a human responder at any hour. For most other
+    traffic, we limit paging to business hours. Paging is currently disabled for internal Codex traffic.
+  links:
+  - claim: CS023.D15.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 9e3ec6d48f41c173
+- code: CS023.F114
+  kind: statement
+  heading: 7
+  statement: OpenAI states that when paging is enabled, its highest-priority security alerts typically
+    reach members of its security and training teams within 15 minutes of the initial alert.
+  speaker: OpenAI
+  quote: When paging is enabled, the highest-priority security alerts reach members of our security and
+    training teams, typically within 15 minutes of the initial alert.
+  links:
+  - claim: CS023.D15.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: a67bbe0881686da8
+- code: CS023.F115
+  kind: statement
+  heading: 7
+  statement: OpenAI states that some critical alerts can automatically pause the affected workload without
+    waiting for a responder.
+  speaker: OpenAI
+  quote: To limit potential harm while an alert is under review, some critical alerts can automatically
+    pause the affected workload without waiting for a responder to act.
+  links:
+  - claim: CS023.D15.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 1008c89fd9209f42
+- code: CS023.F116
+  kind: statement
+  heading: 10
+  statement: OpenAI's 29 October post says it is working toward a broader safeguard that would pause affected
+    activity if responders have not ruled out a highest-priority alert within 30 minutes of being paged.
+  speaker: OpenAI
+  quote: We’re working toward a broader safeguard that would pause affected activity if responders have
+    not ruled out a highest-priority alert within 30 minutes of being paged.
+  links:
+  - claim: CS023.D15.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: c10e48bd62605699
+- code: CS023.F117
+  kind: statement
+  heading: 10
+  statement: OpenAI's 29 October post says its monitoring system demands substantial compute, and gives
+    no figure for it.
+  speaker: OpenAI
+  quote: While this monitoring system demands substantial compute, we think that cost is worth paying
+    as our models become more capable and the potential consequences of model misalignment increase.
+  links:
+  - claim: CS023.D15.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: e91e0ec744e9c3d6
+- code: CS023.F118
+  kind: statement
+  heading: 6
+  statement: OpenAI states that METR and Redwood Research spent three weeks, starting in July 2026, independently
+    red-teaming its internal monitoring system, and have since published their findings.
+  speaker: OpenAI
+  quote: METR and Redwood Research spent three weeks, starting in July 2026, independently red-teaming
+    our internal monitoring system. They have since published their findings
+  links:
+  - claim: CS023.D15.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: d984a7cb7819aab8
+- code: CS023.F119
+  kind: statement
+  heading: 8
+  statement: OpenAI states that the METR and Redwood red-teaming found several vulnerabilities that affected
+    its monitoring stack at that time, that most have now been patched, and that one fix is still in progress.
+  speaker: OpenAI
+  quote: This red-teaming exercise identified several vulnerabilities that impacted our monitoring stack
+    at that time. Most of these have now been patched; one remaining fix is still in progress.
+  links:
+  - claim: CS023.D15.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 4a8bab0aea2ad7d3
+- code: CS023.F120
+  kind: statement
+  heading: 9
+  statement: OpenAI states that the METR and Redwood red-teaming was conducted before it expanded misalignment
+    monitoring across training, evaluation, internal use and external deployment.
+  speaker: OpenAI
+  quote: This pilot was conducted before we expanded our misalignment monitoring across model training,
+    evaluation, internal use, and external deployment.
+  links:
+  - claim: CS023.D15.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: ee7f1622f3b97659
+- code: CS023.F122
+  kind: statement
+  heading: 3
+  statement: OpenAI states that when a training sample triggers its misalignment monitors, it leaves the
+    sample's RL reward unchanged and keeps it in training.
+  speaker: OpenAI
+  quote: When a training sample triggers our misalignment monitors, we leave its RL reward alone and keep
+    the sample in training.
+  links:
+  - claim: CS023.D15.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 0895b28588f8a52b
+- code: CS023.F123
+  kind: statement
+  heading: 9
+  statement: OpenAI states that it may still pause, terminate or roll back a training run when monitors
+    uncover a serious problem, and that ending a run early can cut short its chance to study how misaligned
+    behaviour develops.
+  speaker: OpenAI
+  quote: We may still pause, terminate, or roll back a training run when the monitors uncover a serious
+    problem. That decision can still create an incentive for concealment, since runs in which concerning
+    behavior remains hidden may be more likely to continue, but it doesn’t provide direct feedback about
+    which individual samples triggered the monitors. Ending a run prematurely can also cut short our opportunity
+    to study how misaligned behavior develops.
+  links:
+  - claim: CS023.D15.C18
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: e472ee0fd92eece8
+- code: CS023.F124
+  kind: statement
+  heading: 9
+  statement: OpenAI states that it has made monitoring part of the safety cases it uses to assess the
+    safety of its frontier training runs.
+  speaker: OpenAI
+  quote: We believe that monitoring systems need to keep pace, and have made monitoring part of the safety
+    cases we use to assess the safety of our frontier training runs.
+  links:
+  - claim: CS023.D15.C19
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: eece7b7927a9e57d
+- code: CS023.F125
+  kind: statement
+  heading: 10
+  statement: OpenAI's 29 October post says that during the Hugging Face incident it quarantined the internal
+    model prototype, encrypted its weights and restricted access to them, and paused all relevant workloads
+    while it introduced additional safeguards.
+  speaker: OpenAI
+  quote: During the Hugging Face incident, we quarantined the internal model prototype, encrypted its
+    weights, and restricted access to them. We also paused all relevant workloads while we introduced
+    additional safeguards.
+  links:
+  - claim: CS023.D15.C21
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 8d230449a14b0676
+- code: CS023.F126
+  kind: statement
+  heading: 3
+  statement: OpenAI states that, unlike its internal system, its external misalignment monitoring does
+    not routinely escalate flagged cases to human reviewers at OpenAI.
+  speaker: OpenAI
+  quote: Unlike our internal system, our external misalignment monitoring does not routinely escalate
+    the cases it flags to human reviewers at OpenAI.
+  links:
+  - claim: CS023.D15.C22
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 06ebce39e9c98c24
+- code: CS023.F127
+  kind: statement
+  heading: 3
+  statement: OpenAI states that its external monitoring of API use does not cover Chat Completions API
+    requests.
+  speaker: OpenAI
+  quote: This monitoring system does not cover Chat Completions API requests.
+  links:
+  - claim: CS023.D15.C23
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 50b51fe933f7cbd1
+- code: CS023.F128
+  kind: statement
+  heading: 9
+  statement: OpenAI states that it has seen more advanced models, including Astra, gain greater control
+    over what their chains of thought reveal.
+  speaker: OpenAI
+  quote: However, we’ve seen more advanced models, including Astra, gain greater control over what their
+    chains of thought reveal.
+  links:
+  - claim: CS023.D15.C24
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 50aa6137a3a7355c
+- code: CS023.F129
+  kind: absence
+  heading: 6
+  statement: None of the OpenAI documents in the docket names an outside examiner of the 20 September
+    incident, the September pause or the decision to resume on 1 October; the outside parties they name
+    are unnamed cloud partners who helped supervise the red-teaming in OpenAI's 23 October post, and METR
+    and Redwood Research, named for an independent investigation of the Hugging Face incident (misalignment
+    reports index) and, OpenAI says, for red-teaming its monitoring system for three weeks from July 2026.
+  documents_read:
+  - 'CS023 D02, D03, D04, D09, D10, D11, D12, D13, D15 V01: text layers searched for ''METR'', ''Redwood'',
+    ''independent'', ''external organi'', ''third part'', ''audit'', ''cloud partner'', ''cloud provider'',
+    ''outside''; matches read'
+  - 'D11: ''METR and Redwood Research also published findings from their independent investigation of
+    the incident''s model alignment issues'' (the Hugging Face incident)'
+  - 'D02: ''We intend to involve external organizations'' (a plan, no party named); D15: METR and Redwood
+    as red-teamers of the monitoring system (F118)'
+  - 'Not outside examiners: D09''s third-party chatbot service (the agent''s target); D04 ''auditable''
+    and D13 ''independently'' (unrelated)'
+  as_of: '2026-10-30'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-30'
+- code: CS023.F130
+  kind: event
+  heading: 5
+  statement: METR published 'Red-Teaming OpenAI's Internal Agent Monitoring Systems' on 22 October 2026,
+    and revised it on 29 October 2026, adding a footnote in response to feedback from OpenAI and updating
+    the remediation status of the vulnerabilities.
+  date: '2026-10-22'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D16.C01
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: b8665be6a5727171
+  - claim: CS023.D16.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: b126dd2a65eb53b6
+  - claim: CS023.D16.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: e1f70a8f5648fafd
+- code: CS023.F131
+  kind: event
+  heading: 6
+  statement: METR reports that a METR employee and a Redwood Research employee stress-tested OpenAI's
+    internal misalignment monitoring system for three weeks, from 21 July to 11 August 2026, in a pilot
+    high-access exercise.
+  date: '2026-07-21'
+  precision: day
+  timezone: not stated
+  links:
+  - claim: CS023.D16.C04
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: fc82d39872206402
+  - claim: CS023.D16.C05
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: ed49c0bfcae76700
+- code: CS023.F132
+  kind: statement
+  heading: 6
+  statement: METR states that the exercise assessed the monitoring system as it existed on and before
+    21 July 2026, did not evaluate changes then in progress, and did not establish the expanded system's
+    current coverage.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: The exercise focused on the internal misalignment monitoring system as it existed on and before
+    July 21st, and did not evaluate changes that were in progress at the time of the exercise.
+  links:
+  - claim: CS023.D16.C06
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 4a226347389e52ba
+  - claim: CS023.D16.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 8f6afc0a02c10814
+- code: CS023.F133
+  kind: statement
+  heading: 6
+  statement: METR states that the METR and Redwood employees had access to OpenAI's internal codebase,
+    monitor prompts and configuration, and internal documentation, interviewed about a dozen OpenAI researchers
+    and engineers, and worked onsite on OpenAI-issued devices, accompanied while onsite.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: This exercise involved a deep level of access. The METR and Redwood employees had access to OpenAI’s
+    internal codebase, misalignment-monitor prompts / configuration details, and internal documentation,
+    and conducted technical interviews with approximately a dozen researchers and engineers across the
+    monitoring, safety-systems, and security teams. To enable this level of access, they worked on OpenAI-issued
+    devices, which never left the premises, and were accompanied while onsite.
+  links:
+  - claim: CS023.D16.C07
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 3f38f1c75d82d2c2
+- code: CS023.F134
+  kind: statement
+  heading: 10
+  statement: OpenAI's 29 October post says METR and Redwood Research spent three weeks, starting in July
+    2026, independently red-teaming its internal monitoring system.
+  speaker: OpenAI
+  quote: METR and Redwood Research spent three weeks, starting in July 2026, independently red-teaming
+    our internal monitoring system. They have since published their findings
+  links:
+  - claim: CS023.D15.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 06ec2edc8d633980
+- code: CS023.F135
+  kind: statement
+  heading: 10
+  statement: METR's post says METR, Redwood Research and OpenAI designed the exercise as a pilot for giving
+    external researchers deep access, not to provide robust public transparency about OpenAI's monitoring,
+    and that it agreed upfront with OpenAI to publish only a relatively brief, high-level public post.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: METR, Redwood Research, and OpenAI designed this exercise as a pilot for giving external researchers
+    deep access to internal infrastructure, not to provide robust public transparency about OpenAI’s monitoring
+    systems.
+  links:
+  - claim: CS023.D16.C08
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 1627b4ccb25b83e2
+  - claim: CS023.D16.C09
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 3021dc7fe5a77f11
+  - claim: CS023.D16.C33
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-31'
+      fingerprint: a889d57b0deb68ca
+- code: CS023.F136
+  kind: statement
+  heading: 8
+  statement: METR reports that the exercise found a number of novel vulnerabilities in OpenAI's asynchronous
+    internal misalignment monitoring system as it existed on and before 21 July 2026.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: discovered a number of novel vulnerabilities
+  links:
+  - claim: CS023.D16.C10
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 6eca5e7625799843
+  - claim: CS023.D16.C11
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 870f23b2c3d832db
+- code: CS023.F137
+  kind: statement
+  heading: 4
+  statement: METR estimated that roughly 75 to 94% of agentic internal Responses API traffic from models
+    at least as strong as GPT-5.5 was eligible for monitoring at the time of the exercise, with substantial
+    uncertainty in both directions, and 99.2% of the internal Codex subset.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: roughly 75–94% of agentic internal Responses API
+  links:
+  - claim: CS023.D16.C12
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: eee2a51162c754c6
+  - claim: CS023.D16.C13
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: dff0d63ea68d8193
+  - claim: CS023.D16.C14
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 4350de1a2a5d358a
+  - claim: CS023.D16.C31
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 95b28161741b20ef
+- code: CS023.F138
+  kind: statement
+  heading: 4
+  statement: METR reports that at the start of the exercise, on 21 July 2026, RL training runs were not
+    covered by OpenAI's monitoring system, although it was told that a subset of RL training rollouts
+    had been monitored for misalignment between March and June.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: at the start of the exercise RL training runs were not covered by the monitoring system
+  links:
+  - claim: CS023.D16.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 2e30655954d865e0
+  - claim: CS023.D16.C30
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: c78eb07103e1a279
+- code: CS023.F139
+  kind: statement
+  heading: 4
+  statement: METR estimated that not monitoring compaction events likely left on the order of 10% of eligible
+    internal Codex traffic unmonitored between May and July 2026, with substantial uncertainty; it says
+    OpenAI staff had identified this before the exercise and fixed it during the exercise.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: We estimated that not monitoring compaction events likely led to on the order of 10% of eligible
+    internal Codex traffic not being monitored between May and July 2026, although we have substantial
+    uncertainty about the precise fraction, because the information necessary to determine what fraction
+    of monitor calls are triggered by compaction had not historically been logged at the time of the exercise.
+  links:
+  - claim: CS023.D16.C16
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 9230a0d5966b1207
+  - claim: CS023.D16.C17
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 089cb66f882d423a
+- code: CS023.F140
+  kind: statement
+  heading: 4
+  statement: METR reports that information OpenAI showed it suggested the monitor errored on less than
+    0.2% of requests at the time of the exercise, with zero load-sheds in one 24-hour period during it.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: We were shown information about the error and load-shedding rates of the monitoring system—the
+    information we were given suggested that, at the time of the exercise, the monitor errored on less
+    than 0.2% of requests, and that in one 24-hour period during the exercise there were zero load-sheds.
+  links:
+  - claim: CS023.D16.C18
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 4f040076c1fd3d3e
+- code: CS023.F141
+  kind: statement
+  heading: 6
+  statement: METR states that it verified that, with a few minor exceptions, the monitor is shown the
+    full trajectory the agents see, and validated that the monitor prompts look for scheming, monitor
+    subversion, sabotage, data exfiltration, deception and prompt injection, among other categories.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: We verified that, with a few minor exceptions, the monitoring system is shown the full trajectory
+    that agents see.
+  links:
+  - claim: CS023.D16.C20
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: e59800b9445f4b3f
+  - claim: CS023.D16.C21
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 31f07b32b336563b
+- code: CS023.F142
+  kind: statement
+  heading: 6
+  statement: METR's post marks the details of one exploit as redacted by OpenAI.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: '[exploit details redacted by OpenAI]'
+  links:
+  - claim: CS023.D16.C19
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 61019f93cd2ffa95
+- code: CS023.F143
+  kind: statement
+  heading: 10
+  statement: OpenAI's 29 October post says most of the vulnerabilities METR and Redwood found have now
+    been patched and one remaining fix is still in progress.
+  speaker: OpenAI
+  quote: This red-teaming exercise identified several vulnerabilities that impacted our monitoring stack
+    at that time. Most of these have now been patched; one remaining fix is still in progress.
+  links:
+  - claim: CS023.D15.C15
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 8b42236edfd4a1ad
+- code: CS023.F144
+  kind: statement
+  heading: 10
+  statement: METR's post, as revised on 29 October, says OpenAI has stated that most of the vulnerabilities
+    have now been patched, that one fix is still in progress and that the remaining vulnerability does
+    not affect OpenAI's misuse safeguards stack; METR says it has not evaluated these claims.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: Since completing the exercise, OpenAI has stated that most of the vulnerabilities have now been
+    patched; one remaining fix is still in progress and the remaining vulnerability does not impact OpenAI’s
+    misuse safeguards stack.
+  links:
+  - claim: CS023.D16.C22
+    relation: supports
+    dependence: relays:D15
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: cba7f4b05cab7353
+  - claim: CS023.D16.C23
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: f7bf75457edae353
+- code: CS023.F145
+  kind: statement
+  heading: 10
+  statement: METR's update log, dated 29 October, says that in response to feedback from OpenAI it added
+    a footnote on the publication delay, and that it also updated the remediation status of the vulnerabilities;
+    the original sentence read that OpenAI had stated that all of the vulnerabilities identified that
+    impact its production safeguards stack had been patched.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: We also updated the remediation status
+  links:
+  - claim: CS023.D16.C03
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: ae95062284ff36d0
+  - claim: CS023.D16.C29
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 019f932865329d36
+  - claim: CS023.D16.C02
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: aad9d04919b83372
+  - claim: CS023.D16.C32
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 9c3ad96797622dcb
+- code: CS023.F146
+  kind: statement
+  heading: 9
+  statement: METR recommends that agents be monitored every N messages or minutes instead of waiting for
+    them to end their turns.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: Agents should be monitored every N messages/minutes instead of waiting for them to end their
+    turns.
+  links:
+  - claim: CS023.D16.C24
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 10adf699d7ba75dc
+- code: CS023.F147
+  kind: statement
+  heading: 6
+  statement: METR states that the exercise benefited substantially from its depth of access and from significant
+    logistics and technical support from OpenAI staff.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: The exercise benefited substantially from the depth of access described above, and from significant
+    logistics and technical support from OpenAI staff.
+  links:
+  - claim: CS023.D16.C25
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 252ff9888099f5a1
+- code: CS023.F148
+  kind: absence
+  heading: 11
+  statement: METR's post does not examine the 20 September incident, the August or September pauses, or
+    the 1 October resumption.
+  documents_read:
+  - 'CS023 D16 V01: text layer searched for ''September'', ''pause'', ''paus'', ''resum'', ''October'',
+    ''August'', ''DNS'', ''training run''; ''October'' matches only the post''s and update log''s dates,
+    ''August'' only the exercise''s end, ''RL training'' only F138''s finding'
+  as_of: '2026-10-30'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-30'
+- code: CS023.F149
+  kind: absence
+  heading: 12
+  statement: METR's footnotes [1] to [7], including the footnote on the delay between the exercise and
+    the post, are not in the capture.
+  documents_read:
+  - 'CS023 D16 V01: capture.yaml records the capture as partial; text layer has the markers [1] to [7]
+    with no footnote text'
+  as_of: '2026-10-30'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-30'
+- code: CS023.F150
+  kind: statement
+  heading: 6
+  statement: METR states that the exercise's output was a 61-page internal report shared with OpenAI researchers
+    and security staff, focused mainly on estimating the share of agentic inference that is monitored
+    and on whether agents could in principle disable or subvert the monitoring system.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: The output of this exercise was a 61-page internal report that was shared with OpenAI researchers
+    and security staff,
+  links:
+  - claim: CS023.D16.C26
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 9529818fc70512d8
+  - claim: CS023.D16.C27
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 2ce1baa57d327c94
+- code: CS023.F151
+  kind: statement
+  heading: 10
+  statement: METR's post says that for future versions of the exercise it expects to follow the transparency
+    and independence best practices described in its 'Our approach to working with AI companies'.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  quote: For future versions of this exercise we expect to follow the transparency and independence best
+    practices described in “ Our approach to working with AI companies ” to provide more robust public
+    transparency.
+  links:
+  - claim: CS023.D16.C28
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-30'
+      fingerprint: 399dc0fffc8c47aa
+- code: CS023.F152
+  kind: statement
+  heading: 10
+  statement: OpenAI's 29 October post says it reserves its highest-priority alerts, P0, for cases that
+    demand an urgent response.
+  speaker: OpenAI
+  quote: we reserve our highest-priority alerts, P0, for cases that demand an urgent response
+  links:
+  - claim: CS023.D15.C25
+    relation: supports
+    dependence: none
+    check:
+      by: the independent checker
+      date: '2026-10-31'
+      fingerprint: a3412904f9601671
+- code: CS023.F153
+  kind: absence
+  heading: 11
+  statement: OpenAI's 29 October post does not say whether its 18 August 30-minute rule applied to the
+    20 September run.
+  documents_read:
+  - 'CS023 D15 V01: text layer searched for ''30 minutes'', ''rule'', ''September'', ''P0'', ''pause''
+    and ''paged''; the 30-minute matches are the check schedule (F111), the safeguard being worked toward
+    (F116) and the Hugging Face replay (F104); the September passages (F107) mention no rule'
+  as_of: '2026-10-31'
+  links: []
+  check:
+    by: the independent checker
+    date: '2026-10-31'

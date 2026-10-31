@@ -1,0 +1,27 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+- code: CS023.F033
+  heading: 6
+  kind: absence
+  statement: None of the OpenAI documents in the docket names an outside examiner of the 20 September
+    incident, the September pause or the decision to resume on 1 October; the only outside parties named
+    are unnamed cloud partners who helped supervise the red-teaming (D12).
+  superseded_on: '2026-10-30'
+  superseded_by:
+  - CS023.F129
+  reason: Its second clause, that the only outside parties the OpenAI documents name are cloud partners,
+    did not record that OpenAI's misalignment reports index names METR and Redwood Research for an independent
+    investigation of the Hugging Face incident; OpenAI's 29 October post also names them as red-teamers
+    of its monitoring system.
+- code: CS023.F096
+  heading: 12
+  kind: statement
+  statement: OpenAI's 18 August post promises a forthcoming blog post with more details of its monitoring
+    system; the docket holds no such post.
+  superseded_on: '2026-10-30'
+  superseded_by:
+  - CS023.F100
+  - CS023.F101
+  reason: OpenAI published a post describing its misalignment monitoring system on 29 October 2026, so
+    the docket no longer lacks one; the post does not say it is the one promised on 18 August.
