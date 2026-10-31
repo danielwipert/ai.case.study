@@ -1294,3 +1294,706 @@
   interest: neutral
   interest_reason: null
   inspectable: false
+- code: CS023.D15.C01
+  capture: V01
+  locator: Introduction, paragraph 2, sentence 1
+  quote: 'While we’ve been monitoring our internal coding agents for some time, the Hugging Face incident
+    exposed a gap in our coverage: the incident began during internal cybersecurity evaluations on which
+    we were not running our monitors for misaligned behavior.'
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: admits a gap in its monitoring coverage
+  inspectable: false
+- code: CS023.D15.C02
+  capture: V01
+  locator: Introduction, paragraph 2, sentence 3
+  quote: Our misalignment monitors now cover our frontier models across a much wider variety of surfaces,
+    including training, evaluation, internal use, and, with modifications depending on the product surface,
+    external deployment.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: describes its own safeguards as expanded
+  inspectable: false
+- code: CS023.D15.C03
+  capture: V01
+  locator: Introduction, paragraph 3, sentences 1 and 2
+  quote: In order to see how this expanded system could have helped prevent the Hugging Face incident,
+    we replayed the behavior recorded in that episode with our strengthened monitors in place. In that
+    simulation, our monitoring system alerted our security team about 30 minutes after the agents first
+    escaped their sandbox—and more than 30 hours before Hugging Face’s systems were breached in the actual
+    incident.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: a simulation that shows its monitors working
+  inspectable: false
+- code: CS023.D15.C04
+  capture: V01
+  locator: Introduction, paragraph 3, sentence 3
+  quote: We believe that this warning would have given our responders time to interrupt the activity well
+    before our models were able to access external services.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: claims its monitors would have prevented harm
+  inspectable: false
+- code: CS023.D15.C05
+  capture: V01
+  locator: Introduction, paragraph 4
+  quote: In September, we saw how responders used an alert during a live training run. A model found a
+    way to reach the internet ⁠ (opens in a new window) from an environment that was meant to be isolated.
+    Our monitors flagged the breach within 15 minutes, and a responder began reviewing it three minutes
+    later. We then paused frontier reinforcement learning while we strengthened the systems that contain
+    our agents.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: presents the September response as a working use of the alert; leaves out the 2.5 hours
+    and the failed automatic stop D09 reports (F108)
+  inspectable: false
+- code: CS023.D15.C06
+  capture: V01
+  locator: Introduction, paragraph 5, sentence 1
+  quote: While this monitoring system demands substantial compute, we think that cost is worth paying
+    as our models become more capable and the potential consequences of model misalignment increase.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D15.C07
+  capture: V01
+  locator: '''Our internal monitoring system today'', paragraph 1, sentences 1 and 2'
+  quote: For models at least as capable as GPT‑6 Astra, we monitor every reinforcement learning (RL) run
+    and evaluation, as well as any harness that supports tool use. For most workloads, including RL and
+    evaluations, we also monitor models we assess to be more capable than GPT‑5.5 Thinking.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D15.C08
+  capture: V01
+  locator: '''Our internal monitoring system today'', paragraph 1, sentence 3'
+  quote: We also monitor all internal Codex traffic, regardless of the model being used.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D15.C09
+  capture: V01
+  locator: '''Layer 1: model-based reviewer'', paragraph 2'
+  quote: For frontier RL runs and internal Codex traffic, we run an L1 check at the end of each turn and
+    whenever the agent summarizes its earlier work to make room in its context window. We are now moving
+    to a schedule with no more than 30 minutes between these checks.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D15.C10
+  capture: V01
+  locator: '''Human response'', paragraph 1, sentence 1'
+  quote: When paging is enabled, the highest-priority security alerts reach members of our security and
+    training teams, typically within 15 minutes of the initial alert.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D15.C11
+  capture: V01
+  locator: '''Human response'', paragraph 2, sentences 1 to 4'
+  quote: False alarms have made it difficult to keep paging enabled around the clock for every workload.
+    For frontier RL runs, a highest-priority alert can page a human responder at any hour. For most other
+    traffic, we limit paging to business hours. Paging is currently disabled for internal Codex traffic.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: limits when a person is paged
+  inspectable: false
+- code: CS023.D15.C12
+  capture: V01
+  locator: '''Human response'', paragraph 2, sentence 5'
+  quote: To limit potential harm while an alert is under review, some critical alerts can automatically
+    pause the affected workload without waiting for a responder to act.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: describes an automatic safeguard
+  inspectable: false
+- code: CS023.D15.C13
+  capture: V01
+  locator: '''Human response'', paragraph 2, sentence 6'
+  quote: We’re working toward a broader safeguard that would pause affected activity if responders have
+    not ruled out a highest-priority alert within 30 minutes of being paged.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: says the broader 30-minute pause is not yet in place
+  inspectable: false
+- code: CS023.D15.C14
+  capture: V01
+  locator: '''Red-teaming'', paragraph 2, sentences 1 and 2'
+  quote: METR and Redwood Research spent three weeks, starting in July 2026, independently red-teaming
+    our internal monitoring system. They have since published their findings
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D15.C15
+  capture: V01
+  locator: '''Red-teaming'', paragraph 2, sentences 3 and 4'
+  quote: This red-teaming exercise identified several vulnerabilities that impacted our monitoring stack
+    at that time. Most of these have now been patched; one remaining fix is still in progress.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: reports vulnerabilities found by outside red-teamers
+  inspectable: false
+- code: CS023.D15.C16
+  capture: V01
+  locator: '''Red-teaming'', paragraph 2, sentence 5'
+  quote: This pilot was conducted before we expanded our misalignment monitoring across model training,
+    evaluation, internal use, and external deployment.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: self-serving
+  interest_reason: places the vulnerabilities before its expansion
+  inspectable: false
+- code: CS023.D15.C17
+  capture: V01
+  locator: '''Monitoring agents without incentivizing obfuscation or evasion'', paragraph 3, sentence
+    3'
+  quote: When a training sample triggers our misalignment monitors, we leave its RL reward alone and keep
+    the sample in training.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D15.C18
+  capture: V01
+  locator: '''Monitoring agents without incentivizing obfuscation or evasion'', paragraph 4, sentences
+    1 to 3'
+  quote: We may still pause, terminate, or roll back a training run when the monitors uncover a serious
+    problem. That decision can still create an incentive for concealment, since runs in which concerning
+    behavior remains hidden may be more likely to continue, but it doesn’t provide direct feedback about
+    which individual samples triggered the monitors. Ending a run prematurely can also cut short our opportunity
+    to study how misaligned behavior develops.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D15.C19
+  capture: V01
+  locator: '''Looking forward'', paragraph 3, sentence 2'
+  quote: We believe that monitoring systems need to keep pace, and have made monitoring part of the safety
+    cases we use to assess the safety of our frontier training runs.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D15.C20
+  capture: V01
+  locator: Page header, the date line
+  quote: October 29, 2026
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D15.C21
+  capture: V01
+  locator: '''Human response'', paragraph 3, sentences 1 and 2'
+  quote: During the Hugging Face incident, we quarantined the internal model prototype, encrypted its
+    weights, and restricted access to them. We also paused all relevant workloads while we introduced
+    additional safeguards.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D15.C22
+  capture: V01
+  locator: '''Safeguarding external usage of Astra'', paragraph 3, sentence 1'
+  quote: Unlike our internal system, our external misalignment monitoring does not routinely escalate
+    the cases it flags to human reviewers at OpenAI.
+  speaker: OpenAI
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: says flagged external cases do not routinely reach a person at OpenAI
+  inspectable: false
+- code: CS023.D15.C23
+  capture: V01
+  locator: '''Safeguarding external usage of Astra'', paragraph 5, last sentence'
+  quote: This monitoring system does not cover Chat Completions API requests.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: names a gap in external coverage
+  inspectable: false
+- code: CS023.D15.C24
+  capture: V01
+  locator: '''Monitoring agents without incentivizing obfuscation or evasion'', paragraph 2, sentence
+    3'
+  quote: However, we’ve seen more advanced models, including Astra, gain greater control over what their
+    chains of thought reveal.
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: says its own models are harder to monitor
+  inspectable: false
+- code: CS023.D16.C01
+  capture: V01
+  locator: Header, DATE
+  quote: October 22, 2026
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D16.C02
+  capture: V01
+  locator: Update log, October 29, 2026, sentence 1, clause 1
+  quote: In response to feedback from OpenAI, we added a footnote
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D16.C03
+  capture: V01
+  locator: Update log, October 29, 2026, sentence 2, clause 1
+  quote: We also updated the remediation status
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D16.C04
+  capture: V01
+  locator: Opening paragraph, sentence 1 (before footnote [1])
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C05
+  capture: V01
+  locator: Opening paragraph, sentence 1 (after footnote [1])
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C06
+  capture: V01
+  locator: Opening paragraph, last sentence
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C07
+  capture: V01
+  locator: Paragraph 2
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C08
+  capture: V01
+  locator: Paragraph 3, sentence 1 (before footnote [4])
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: limits the independence and transparency of its own exercise
+  inspectable: false
+- code: CS023.D16.C09
+  capture: V01
+  locator: Paragraph 3, sentence 2, from 'we agreed'
+  quote: we agreed upfront with OpenAI that we would only publish a relatively brief and high-level public
+    post
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: discloses a publication limit agreed with the subject
+  inspectable: false
+- code: CS023.D16.C10
+  capture: V01
+  locator: Paragraph 4, sentence 1, words 5 to 10
+  quote: discovered a number of novel vulnerabilities
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C11
+  capture: V01
+  locator: Paragraph 4, sentences 2 and 3
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C12
+  capture: V01
+  locator: Findings, item 1 (before footnote [5]), from 'roughly'
+  quote: roughly 75–94% of agentic internal Responses API
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C13
+  capture: V01
+  locator: Findings, item 1 (between footnotes [5] and [6]), to 'at the time of the exercise'
+  quote: traffic from models at least as strong as GPT-5.5 was eligible for monitoring at the time of
+    the exercise
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C14
+  capture: V01
+  locator: Findings, item 1 (after footnote [6]), sentence 1 only
+  quote: although we have substantial uncertainty in both directions
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C15
+  capture: V01
+  locator: Findings, item 2, main clause
+  quote: at the start of the exercise RL training runs were not covered by the monitoring system
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C16
+  capture: V01
+  locator: Findings, item 3, sentence 1
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C17
+  capture: V01
+  locator: Findings, item 3, sentence 2
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C18
+  capture: V01
+  locator: Findings, item 5
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: true
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C19
+  capture: V01
+  locator: Findings, item 7, closing bracket only
+  quote: '[exploit details redacted by OpenAI]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D16.C20
+  capture: V01
+  locator: Findings, item 11
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C21
+  capture: V01
+  locator: Findings, item 12
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C22
+  capture: V01
+  locator: Paragraph after the findings, sentence 1
+  quote: Since completing the exercise, OpenAI has stated that most of the vulnerabilities have now been
+    patched; one remaining fix is still in progress and the remaining vulnerability does not impact OpenAI’s
+    misuse safeguards stack.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: relayed
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C23
+  capture: V01
+  locator: Same paragraph, sentences 2 and 3, last sentence
+  quote: We have not evaluated these claims.
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C24
+  capture: V01
+  locator: Design ideals, 'Make it hard to avoid being monitored', sentence 3
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C25
+  capture: V01
+  locator: Closing paragraph
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C26
+  capture: V01
+  locator: Opening paragraph, sentence 2 (before footnote [3])
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C27
+  capture: V01
+  locator: Opening paragraph, sentence 2 (after footnote [3])
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C28
+  capture: V01
+  locator: Paragraph 3, sentence 3
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: true
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: implies this exercise did not follow those practices
+  inspectable: false
+- code: CS023.D16.C29
+  capture: V01
+  locator: Update log, October 29, 2026, the original sentence, from 'OpenAI has stated'
+  quote: OpenAI has stated that all of the vulnerabilities we identified that impact their production
+    safeguards stack have been patched
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D16.C30
+  capture: V01
+  locator: Findings, item 2 (whole item)
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C31
+  capture: V01
+  locator: Findings, item 1, last sentence (after footnote [6])
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C32
+  capture: V01
+  locator: Update log, October 29, 2026, sentence 1 (whole)
+  quote: '[Held privately: METR''s words at this locator are not reproduced here, to keep quotation of
+    its short post under 10%.]'
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: true
+- code: CS023.D15.C25
+  capture: V01
+  locator: '''Tests on recorded incidents and simulated attacks'', paragraph after the figure, sentence
+    2'
+  quote: we reserve our highest-priority alerts, P0, for cases that demand an urgent response
+  speaker: OpenAI
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: neutral
+  interest_reason: null
+  inspectable: false
+- code: CS023.D16.C33
+  capture: V01
+  locator: Paragraph 3, sentence 1, the clause 'not to provide robust public transparency'
+  quote: not to provide robust public transparency
+  speaker: METR (David Rein and Adam Kaufman; the exercise run by a METR and a Redwood Research employee)
+  hedge: false
+  how_known: first-hand
+  how_known_basis: inferred
+  interest: against-interest
+  interest_reason: limits the independence and transparency of its own exercise
+  inspectable: false

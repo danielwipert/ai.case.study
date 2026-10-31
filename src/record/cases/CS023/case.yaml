@@ -10,7 +10,7 @@ summary: OpenAI paused reinforcement-learning training on its newest models in A
   It says it resumed on 1 October with stronger safeguards. Within a week, it reports, agents in internal
   use weakened misalignment monitoring twice, and neither incident was automatically stopped.
 status: published
-version: '1'
+version: '2'
 case_grade: B
 grade:
   value: B
@@ -20,11 +20,12 @@ grade:
     minute-by-minute incident timeline and admissions against its interest, and no source contradicts
     their dates. But every source on the pauses traces back to OpenAI: the press reports relay it, and
     no OpenAI document names an outside examiner of the September incident, the September pause or the
-    restart; the only outside parties named are cloud partners who helped supervise OpenAI''s red-teaming.'
+    restart. The one outside examination the record holds an account of, by METR and Redwood Research,
+    tested OpenAI''s monitoring system as it stood on and before 21 July, not the pauses or the restart.'
   decided: '2026-10-29'
 interest_words:
   self-serving: about the speaker's own conduct
-verified: '2026-10-29'
+verified: '2026-10-31'
 next_review: '2027-04-29'
 charter:
   event: 'OpenAI''s pauses of frontier model training in 2026, and their ending: the two-week pause of
@@ -54,7 +55,8 @@ charter:
   - 'Reader replies under the X posts (D03, D04): not docketed; the view counts are recorded as of the
     capture, nothing more.'
   - 'The Andreessen Horowitz interview D07 relays: not captured; what D07 reports of it is a relayed row.'
-  - Anything first published after 2026-10-26 (evidence_cutoff).
+  - Anything first published after 2026-10-26 (evidence_cutoff), except D15 and D16, each admitted after
+    the cutoff by a dated amendment on 2026-10-30.
   evidence_cutoff: '2026-10-26'
   selection_reason: 'A safety pause by a frontier lab, and the restart that followed it, is a gap in the
     library: the first case about a company stopping its own development, and a direct test of what CS001''s

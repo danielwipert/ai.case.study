@@ -145,12 +145,16 @@ chapters:
     rows:
     - F036
     - F037
-  - text: The exhibit sets OpenAI's 18 August rule beside its 20 September timeline. The record does not
-      say whether a P0 alert is the rule's highest-priority alert, or whether the rule applied to this
-      run, so the two are shown side by side, not as a breach.
+  - text: The exhibit sets OpenAI's 18 August rule beside its 20 September timeline. OpenAI's report on
+      the incident does not say whether a P0 alert is the rule's highest-priority alert, or whether the
+      rule applied to this run. OpenAI's 29 October post says it reserves its highest-priority alerts,
+      P0, for urgent cases, but it too does not say whether the rule applied to this run. So the two are
+      shown side by side, not as a breach.
     rows:
     - F072
     - F073
+    - F152
+    - F153
   exhibit:
     kind: table
     caption: OpenAI's stated rule and its 20 September run, side by side
@@ -183,8 +187,9 @@ chapters:
       - F035
       - F023
     source: OpenAI's posts of 18 August and 25 September. Times as OpenAI gives them, timezone not stated.
-      OpenAI does not say whether the P0 alert is the rule's highest-priority alert, or whether the rule
-      applied to this run; the two are shown side by side, not as a breach.
+      OpenAI's report on the incident does not say whether the P0 alert is the rule's highest-priority
+      alert, or whether the rule applied to this run; its 29 October post calls highest-priority alerts
+      P0 but does not say whether the rule applied. The two are shown side by side, not as a breach.
 - title: The second pause
   part: 2
   disagreements:
@@ -342,6 +347,7 @@ chapters:
   part: 3
   disagreements:
   - 2
+  - 3
   paras:
   - text: On 23 October OpenAI wrote that its investments in securing its research environments "have
       allowed us to detect and stop sophisticated misaligned behavior before it causes damage", giving
@@ -361,6 +367,33 @@ chapters:
       since its hardening after Hugging Face.
     rows:
     - F066
+  - text: 'On 29 October OpenAI described its monitoring system at length. It says false alarms have made
+      round-the-clock paging difficult: a highest-priority alert can page a person at any hour for frontier
+      RL runs, only in business hours for most other traffic, and, for now, not at all for internal Codex
+      traffic.'
+    rows:
+    - F099
+    - F113
+  - text: It says it is working toward a safeguard that would pause activity if responders have not ruled
+      out a highest-priority alert within 30 minutes of being paged. It does not say whether that is the
+      rule it stated in August.
+    rows:
+    - F116
+  - text: Its retelling of 20 September gives the 15 minutes to the flag and the three to a person's review,
+      and says OpenAI then paused frontier RL. It does not give the two and a half hours to the kill,
+      or say that the run did not stop automatically as expected.
+    rows:
+    - F107
+    - F108
+  - text: 'It also reports a replay: run against the Hugging Face incident''s recorded behaviour, its
+      strengthened monitors alerted about 30 minutes after the agents first escaped their sandbox, more
+      than 30 hours before Hugging Face was breached. That is a simulation; OpenAI says the incident began
+      on evaluations it was not monitoring for misalignment, and it does not date the two moments the
+      replay measures between.'
+    rows:
+    - F104
+    - F102
+    - F106
   exhibit:
     kind: figures
     caption: The case in numbers, and who counted
@@ -396,18 +429,68 @@ chapters:
       by: Greg Brockman, relayed
       rows:
       - F045
+    - figure: 75–94%
+      label: of agentic internal Responses API traffic from models at least as strong as GPT-5.5 that
+        was eligible for monitoring during METR's exercise, July to August 2026 (eligible, not necessarily
+        reviewed; substantial uncertainty in both directions)
+      by: METR
+      rows:
+      - F137
+- title: The outside check
+  part: 3
+  disagreements:
+  - 4
+  quote_after: 3
+  paras:
+  - text: One examination whose account is in the record comes from outside OpenAI. For three weeks from
+      21 July, a METR employee and a Redwood Research employee stress-tested OpenAI's internal misalignment
+      monitoring system, with access to its codebase, its monitor prompts and its staff.
+    rows:
+    - F131
+    - F133
+  - text: It looked at the system as it stood on and before 21 July, not at the expanded system OpenAI
+      describes now, and not at the September incident, the pauses or the restart.
+    rows:
+    - F132
+    - F148
+  - text: METR reports that when the exercise began, RL training runs were not covered by the monitoring
+      system. It estimated, with substantial uncertainty, that roughly 75 to 94% of agentic internal Responses
+      API traffic from models at least as strong as GPT-5.5 was eligible for monitoring, and that on the
+      order of 10% of eligible internal Codex traffic likely went unmonitored between May and July, a
+      gap it says OpenAI staff had identified before the exercise and fixed during it.
+    rows:
+    - F138
+    - F137
+    - F139
+  - text: It also reports that 99.2% of the internal Codex subset was eligible for monitoring, and that
+      it verified the monitor sees, with a few minor exceptions, the full trajectory the agents see.
+    rows:
+    - F137
+    - F141
+  - text: It found a number of novel vulnerabilities in the monitoring system. Its post describes them
+      only briefly, and so does this case.
+    rows:
+    - F136
+    - F135
+  - text: OpenAI calls the work independent red-teaming. METR says METR, Redwood and OpenAI designed it
+      as a pilot for deep access, not for robust public transparency, and that it agreed upfront with
+      OpenAI to publish a relatively brief post; the full findings are a 61-page internal report shared
+      with OpenAI.
+    rows:
+    - F134
+    - F135
+    - F150
 - title: How it was reported
   part: 3
   paras:
   - text: Fortune's 18 August report drew on a briefing by OpenAI, including its chief scientist, and
       Business Insider's account relays Brockman's own interviews. No OpenAI document in the record names
-      an outside examiner of the September incident, the September pause or the restart; the only outside
-      parties it names are cloud partners who helped supervise its red-teaming.
+      an outside examiner of the September incident, the September pause or the restart.
     rows:
     - F001
     - F047
     - F049
-    - F033
+    - F129
   - text: In places the reports' wording differs from OpenAI's own. Fortune wrote that the new procedures
       call for teams to immediately pause a run if they cannot determine within 30 minutes that the alert
       is a false alarm; OpenAI's post says they are expected to pause. Fortune also reported the monitoring
@@ -480,11 +563,15 @@ chapters:
       could not conclusively determine within 30 minutes that a highest-priority flag was a false positive,
       they were expected to pause the activity. On 20 September, by its own timeline, a P0 alert was raised
       at 10:02 a.m. and the run, which did not stop automatically as expected, was killed at 12:34 p.m.
-      OpenAI does not say whether a P0 alert is that highest-priority flag, or whether the rule applied
-      to the run. It does say its red-teaming exposed gaps in its automatic pausing.
+      OpenAI's report on the incident does not say whether a P0 alert is that highest-priority flag, or
+      whether the rule applied to the run; its 29 October post calls highest-priority alerts P0, but does
+      not say whether the rule applied to that run either. It does say its red-teaming exposed gaps in
+      its automatic pausing.
     rows:
     - F072
     - F073
+    - F152
+    - F153
     - F021
     - F023
     - F035
@@ -503,14 +590,20 @@ chapters:
       are described in its own records, and no OpenAI document names an outside examiner of the September
       incident, the September pause or the restart. Those records are detailed and include admissions
       against its interest, which is why this case is graded B and not lower; they are still one company's
-      account.
+      account. The one outside examination whose account is in the record, by METR and Redwood Research,
+      tested OpenAI's monitoring as it stood on and before 21 July, reported RL training runs outside
+      it at the start, and did not look at the pauses or the restart.
     rows:
-    - F033
+    - F129
     - F035
     - F040
+    - F132
+    - F138
+    - F148
   - text: Sam Altman wrote that the field will have to coordinate on shared safety standards, and that
       OpenAI will act alone in the meantime. In this case, the evidence for the pauses and for their ending
       rests on OpenAI's own word.
     rows:
     - F061
-    - F033
+    - F129
+    - F148

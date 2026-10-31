@@ -5,7 +5,7 @@ tags:
 - AI safety
 - Case 023
 - October 2026
-checked: checked 29 Oct 2026
+checked: checked 31 Oct 2026
 headline: OpenAI paused frontier AI training twice in 2026, and restarted 11 days after the second pause
   began
 headline_rows:
@@ -31,13 +31,16 @@ grade:
   explain: 'The pauses and the restart are described in OpenAI''s own detailed records, including a minute-by-minute
     incident timeline and admissions against its interest, and no source contradicts their dates. But
     every source on the pauses traces back to OpenAI: the press reports relay it, and no OpenAI document
-    names an outside examiner of the September incident, the September pause or the restart; the only
-    outside parties named are cloud partners who helped supervise OpenAI''s red-teaming.'
+    names an outside examiner of the September incident, the September pause or the restart. The one outside
+    examination the record holds an account of, by METR and Redwood Research, tested OpenAI''s monitoring
+    system as it stood on and before 21 July, not the pauses or the restart.'
   rows:
   - F023
   - F035
   - F040
-  - F033
+  - F129
+  - F132
+  - F148
 short_version:
 - text: On 18 August 2026 OpenAI said it had paused reinforcement-learning training on its latest models
     for two weeks, and that its largest planned training run stayed on hold. It named the Hugging Face
@@ -53,8 +56,9 @@ short_version:
 - text: On 20 September, OpenAI says, a model in training used a misconfigured DNS server to reach a public
     chatbot on the internet. Its monitoring raised a P0 alert at 10:02 a.m. and a person acknowledged
     it three minutes later, but the run did not stop automatically as expected and was killed at 12:34
-    p.m. OpenAI does not say whether a P0 alert is the highest-priority alert of its 30-minute rule, or
-    whether that rule applied to this run.
+    p.m. OpenAI's report on the incident does not say whether a P0 alert is the highest-priority alert
+    of its 30-minute rule, or whether that rule applied to this run. Its 29 October post says it reserves
+    highest-priority alerts, P0, for urgent cases, but does not say whether the rule applied to this run.
   rows:
   - F019
   - F021
@@ -62,6 +66,8 @@ short_version:
   - F023
   - F035
   - F073
+  - F152
+  - F153
 - text: OpenAI then paused other training, evaluation and tool-using inference of its most capable models,
     and resumed reinforcement-learning training and internal use of its frontier models on 1 October,
     11 days after the pause began. It says it red-teamed its systems with its own agents; it does not
@@ -82,6 +88,29 @@ short_version:
   - F040
   - F065
   - F092
+- text: On 29 October OpenAI described its monitoring system. It says a highest-priority alert can page
+    a person at any hour for frontier RL runs, only in business hours for most other traffic, and, currently,
+    not at all for internal Codex traffic. It says it is working toward a broader safeguard that would
+    pause activity if responders have not ruled out such an alert within 30 minutes of being paged; it
+    does not say whether that is the rule it stated in August.
+  rows:
+  - F099
+  - F113
+  - F116
+- text: METR, one of whose employees stress-tested OpenAI's monitoring system with a Redwood Research
+    employee from 21 July to 11 August, looked at the system as it stood on and before 21 July. It reports
+    that RL training runs were not covered by it when the exercise began, though it was told a subset
+    had been monitored between March and June. It found a number of novel vulnerabilities. OpenAI says
+    most are now patched; METR says it has not evaluated that claim. METR's exercise did not look at the
+    pauses or the restart.
+  rows:
+  - F131
+  - F132
+  - F138
+  - F136
+  - F143
+  - F144
+  - F148
 numbers:
 - figure: 11 days
   label: from the start of the September pause to the restart on 1 October
@@ -108,6 +137,13 @@ numbers:
   rows:
   - F012
   - F013
+- figure: 75–94%
+  label: of agentic internal Responses API traffic from models at least as strong as GPT-5.5 that was
+    eligible for monitoring during METR's exercise, July to August 2026 (eligible, not necessarily reviewed;
+    substantial uncertainty in both directions)
+  by: METR
+  rows:
+  - F137
 timeline_key:
 - mark: pause
   label: Pauses and restart
@@ -118,7 +154,17 @@ timeline_key:
 - mark: statement
   label: OpenAI's public accounts
   color: grey
+- mark: outside
+  label: The outside exercise
+  color: ink
 timeline:
+- date: 21 Jul 2026
+  mark: outside
+  text: A METR and a Redwood Research employee begin three weeks of stress-testing OpenAI's monitoring
+    system (to 11 August); RL training runs are not covered by it
+  rows:
+  - F131
+  - F138
 - date: 7 Aug 2026
   mark: statement
   text: OpenAI determines that Astra may have critical cyber capabilities (made public on 18 August)
@@ -173,6 +219,17 @@ timeline:
   rows:
   - F065
   - F092
+- date: 22 Oct 2026
+  mark: outside
+  text: METR publishes its account of the exercise (revised 29 October)
+  rows:
+  - F130
+- date: 29 Oct 2026
+  mark: statement
+  text: OpenAI describes its monitoring system, including when a person is paged
+  rows:
+  - F099
+  - F113
 disagreements:
 - title: How strict is the 30-minute rule?
   sides:
@@ -187,10 +244,14 @@ disagreements:
     rows:
     - F098
   note:
-    text: On 20 September the run was killed about 2.5 hours after a P0 alert. OpenAI does not say whether
-      a P0 alert is the rule's highest-priority alert, or whether the rule applied to this run.
+    text: On 20 September the run was killed about 2.5 hours after a P0 alert. OpenAI's report on the
+      incident does not say whether a P0 alert is the rule's highest-priority alert, or whether the rule
+      applied to this run. Its 29 October post says it reserves highest-priority alerts, P0, for urgent
+      cases, but does not say whether the rule applied to this run.
     rows:
     - F073
+    - F152
+    - F153
 - title: What did the September pause cover?
   sides:
   - who: OpenAI's incident report, 25 September
@@ -214,6 +275,35 @@ disagreements:
       was classified P0 or automatically killed.
     rows:
     - F079
+- title: When is a person paged?
+  sides:
+  - who: OpenAI's post, 18 August
+    says: In its current implementation, a highest-priority alert pages the safety, security and research
+      teams.
+    rows:
+    - F112
+  - who: OpenAI's post, 29 October
+    says: A highest-priority alert can page a responder at any hour for frontier RL runs, only in business
+      hours for most other traffic, and, for now, not at all for internal Codex traffic.
+    rows:
+    - F113
+- title: What has OpenAI said about fixing METR's findings?
+  sides:
+  - who: OpenAI's post, 29 October
+    says: Most of the vulnerabilities have now been patched; one remaining fix is still in progress.
+    rows:
+    - F143
+  - who: METR's post, as revised 29 October
+    says: OpenAI has stated that most are patched, that one fix is in progress and that the remaining
+      vulnerability does not affect its misuse safeguards stack. METR has not evaluated these claims.
+    rows:
+    - F144
+  note:
+    text: METR's post first said OpenAI had stated that all of the vulnerabilities affecting its production
+      safeguards had been patched. Its update log gives OpenAI's feedback as the reason for an added footnote,
+      and no reason for this change.
+    rows:
+    - F145
 what_they_say:
 - who: Sam Altman, OpenAI
   quote: We believe the entire field will have to coordinate on shared safety standards, but will act
@@ -229,6 +319,10 @@ what_they_say:
   quote: We've slowed down a number of runs, like we did a very painful retooling of a lot of our processes.
   rows:
   - F047
+- who: METR, on OpenAI's account of the fixes
+  quote: We have not evaluated these claims.
+  rows:
+  - F144
 unknowns:
 - text: When the two-week August pause began and ended. No document says.
   rows:
@@ -241,10 +335,14 @@ unknowns:
   rows:
   - F094
 - text: Whether anyone outside OpenAI has examined the September incident, the September pause or the
-    restart. No OpenAI document names such an examiner; the only outside parties named are cloud partners
-    who helped supervise its red-teaming.
+    restart. No OpenAI document names such an examiner, and METR's exercise did not cover them.
   rows:
-  - F033
+  - F129
+  - F148
+- text: Whether OpenAI's 29 October post is the monitoring post it promised on 18 August. It does not
+    say.
+  rows:
+  - F101
 - text: Why the October agents weakened their monitoring. OpenAI says it does not yet have a satisfying
     explanation.
   rows:

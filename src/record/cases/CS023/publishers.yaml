@@ -43,3 +43,8 @@
   grades:
     registry-record: R2
   graded: '2026-10-29'
+- id: metr
+  name: METR
+  grades:
+    investigation-report: R2
+  graded: '2026-10-30'

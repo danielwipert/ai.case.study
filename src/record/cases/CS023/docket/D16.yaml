@@ -1,0 +1,37 @@
+# CS023 (AAI-2026-023): generated from the library's case files.
+# Do not edit by hand.
+
+code: CS023.D16
+title: Red-Teaming OpenAI's Internal Agent Monitoring Systems
+publisher: metr
+type: investigation-report
+format: html
+grade: R2
+published: '2026-10-22'
+original_url: https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/
+licence: unknown
+evidence_origin: metr
+examiner: METR
+how_known_default: first-hand
+how_known_default_basis: inferred
+interest_default: neutral
+commissioned_by: null
+method_note: By David Rein and Adam Kaufman; the exercise was run by a METR employee and a Redwood Research
+  employee. Admitted after the cutoff by the amendment of 2026-10-30, in its 29 October revision; its
+  footnotes were not loaded when the page was saved. The scope and length of the post were agreed upfront
+  with OpenAI; on 29 October a footnote was added in response to feedback from OpenAI and the remediation
+  status was updated (no reason given); one exploit's details are marked as redacted by OpenAI. These
+  are recorded claim by claim, not in the grade. The post's examples of ways around the monitors are summarised,
+  not quoted, for safety
+captures:
+- capture: V01
+  captured_on: '2026-10-30'
+  captured_by: the editor
+  tool: Saved by the editor from their own browser
+  access: public page
+  transformations: script, style, svg and noscript removed; block ends become line breaks; tags removed;
+    entities decoded; runs of spaces collapsed
+  completeness: partial page as saved (footnotes not loaded)
+  public_snapshot: none
+  capture_sha256: 576382b44a381655ab689230acf16695c7d103aa84c6459683a282dc94455de2
+  text_sha256: 5686f538146e6bad551a78160c929b3894bb24d735995c4f6618bd81a000f8c4
