@@ -60,6 +60,10 @@
 .pv-code[data-label="disputed"] { border-color: var(--wine); color: var(--wine-dark) !important; background: var(--wine-wash); }
 .pv-code[data-label="unknown"] { border-style: dashed; background: transparent; }
 a.pv-code:hover { text-decoration: underline; }
+/* Superseded rows (DW 2026-10-31): kept and marked, never cited. */
+.pv-superseded-row { border-top: 1px solid var(--rule, #ddd3c2); padding-top: .5rem; }
+.pv-superseded-row .pv-old { color: var(--ink-soft); }
+.pv-code-old { border-style: dashed; color: var(--ink-soft); }
 
 .pv-sidebar ul { margin: .2rem 0 0; padding-left: 1rem; }
 .pv-sidebar dd .pv-code { font-size: .68rem; }

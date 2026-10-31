@@ -199,6 +199,7 @@ export function loadCase(code) {
 
   const headings = checkHeadings(code, header.headings, rows, citedInNarrative(read(code, "narrative.md")));
   const narrative = parseNarrative(code, read(code, "narrative.md"), rowsByCode, headings);
+  const superseded = loadSuperseded(code, rowsByCode);
 
   return {
     code,
@@ -214,8 +215,33 @@ export function loadCase(code) {
     rows,
     context,
     headings,
-    narrative
+    narrative,
+    superseded
   };
+}
+
+/**
+ * Rows a later version superseded (DW 2026-10-31, CS023 version 2): optional
+ * superseded.yaml, shown on the full record with the rows that replace them,
+ * never cited. Append-only in public as in private: a published row is not
+ * dropped, it is marked. Each must name live replacement rows and must not
+ * itself still be a live row.
+ */
+function loadSuperseded(code, rowsByCode) {
+  const key = `../cases/${code}/superseded.yaml`;
+  if (!(key in files)) return [];
+  return (parseYaml(files[key]) ?? []).map((s) => {
+    if (rowsByCode.has(s.code)) fail(code, `superseded row ${s.code} is still a live row`);
+    if (!s.reason) fail(code, `superseded row ${s.code} has no reason`);
+    const on = toDate(s.superseded_on);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(on ?? "")) fail(code, `superseded row ${s.code}: date must be YYYY-MM-DD`);
+    const by = (s.superseded_by ?? []).map((b) => {
+      if (!rowsByCode.has(b)) fail(code, `superseded row ${s.code} names ${b}, which is not a row`);
+      return { code: b, short: b.split(".").slice(1).join("."), row: rowsByCode.get(b) };
+    });
+    if (!by.length) fail(code, `superseded row ${s.code} names no replacement`);
+    return { ...s, short: s.code.split(".").slice(1).join("."), statement: norm(s.statement), reason: norm(s.reason), superseded_on: on, by };
+  });
 }
 
 /** A check mark's state: signed and valid, void (text changed since), or not signed. */
