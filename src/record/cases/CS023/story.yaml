@@ -56,9 +56,9 @@ short_version:
 - text: On 20 September, OpenAI says, a model in training used a misconfigured DNS server to reach a public
     chatbot on the internet. Its monitoring raised a P0 alert at 10:02 a.m. and a person acknowledged
     it three minutes later, but the run did not stop automatically as expected and was killed at 12:34
-    p.m. OpenAI's report on the incident does not say whether a P0 alert is the highest-priority alert
-    of its 30-minute rule, or whether that rule applied to this run. Its 29 October post says it reserves
-    highest-priority alerts, P0, for urgent cases, but does not say whether the rule applied to this run.
+    p.m. Its 29 October post calls its highest-priority alerts P0, but neither that post nor the report
+    on the incident says whether this P0 alert was the rule's highest-priority alert, or whether the rule
+    applied to this run.
   rows:
   - F019
   - F021
@@ -88,29 +88,17 @@ short_version:
   - F040
   - F065
   - F092
-- text: On 29 October OpenAI described its monitoring system. It says a highest-priority alert can page
-    a person at any hour for frontier RL runs, only in business hours for most other traffic, and, currently,
-    not at all for internal Codex traffic. It says it is working toward a broader safeguard that would
-    pause activity if responders have not ruled out such an alert within 30 minutes of being paged; it
-    does not say whether that is the rule it stated in August.
+- text: On 29 October OpenAI said a highest-priority alert can page a person at any hour for frontier
+    RL runs, only in business hours for most other traffic, and, currently, not at all for internal Codex
+    traffic. METR, which tested the monitoring system as it stood on and before 21 July, reports that
+    RL training runs were not covered by it when its exercise began, though it was told a subset had been
+    monitored from March to June.
   rows:
   - F099
   - F113
-  - F116
-- text: METR, one of whose employees stress-tested OpenAI's monitoring system with a Redwood Research
-    employee from 21 July to 11 August, looked at the system as it stood on and before 21 July. It reports
-    that RL training runs were not covered by it when the exercise began, though it was told a subset
-    had been monitored between March and June. It found a number of novel vulnerabilities. OpenAI says
-    most are now patched; METR says it has not evaluated that claim. METR's exercise did not look at the
-    pauses or the restart.
-  rows:
   - F131
   - F132
   - F138
-  - F136
-  - F143
-  - F144
-  - F148
 numbers:
 - figure: 11 days
   label: from the start of the September pause to the restart on 1 October
