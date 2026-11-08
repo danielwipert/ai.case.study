@@ -2,7 +2,7 @@
 
 [![Deploy to GitHub Pages](https://github.com/danielwipert/ai.case.study/actions/workflows/deploy.yml/badge.svg)](https://github.com/danielwipert/ai.case.study/actions/workflows/deploy.yml)
 
-An evidence-first library about how AI changes real organizations: operations, economics, risk, work, and outcomes. The public site is generated from Markdown records in this repository and deployed through GitHub Pages.
+An evidence-first library about how AI changes real organizations: operations, economics, risk, work, and outcomes. The public site is generated from Markdown records in this repository and deployed through GitHub Pages at **https://casestudy.aioperationsmanagement.ai**, its permanent home since 2026-11-08 (see `docs/domain-move.md`).
 
 ## Session continuity
 

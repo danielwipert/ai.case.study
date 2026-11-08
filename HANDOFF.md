@@ -1,27 +1,28 @@
 # Handoff
 
-*Replaced wholesale 2026-10-24. Read `PROJECT_GUIDE.md` first; this file only
+*Replaced wholesale 2026-11-08. Read `PROJECT_GUIDE.md` first; this file only
 covers this repo. The case work lives in the private repo; its `HANDOFF.md` has
 the detail.*
 
 ## Where things stand
 
-The whole site has been redesigned in three steps (Dan's gates of 2026-10-24,
-all logged in the private repo's `pilot/log/decisions.md` on branch
-`claude/dazzling-pascal-lbbtpt`; see `CLAUDE.md`, "The library style"):
+**Domain move prepared, not live.** Dan chose https://casestudy.aioperationsmanagement.ai
+as the permanent address (2026-11-08; logged in the private repo's
+`pilot/log/decisions.md` on its branch `claude/elegant-fermat-qbocpr`). On this branch:
+`astro.config.mjs` (`site` = new address, `base` = `/`), the five one-pagers
+and five reports rebuilt with the new address, `docs/domain-move.md` (the
+step-by-step switch), and notes in `CLAUDE.md`, `README.md` and the guide.
+The build passes and all 4,204 internal links resolve.
 
-1. A mock-up: claude.ai/artifact/YAgnJLpQtaXKpfSQc5nvGH.
-2. The four rebuilt cases' pages: PR #43.
-3. Home, Explore, Methodology and the 17 legacy case pages, on the six themes:
-   the PR after #43. Home has the theme mosaic (each tile opens Explore filtered
-   by `?theme=`); Explore gained a Theme filter; legacy pages carry an "Older
-   format" note.
+**Do not merge until DNS resolves** (step 3 of `docs/domain-move.md`), or the
+site goes to an address that does not exist yet.
 
-`magazine.css`, `MagazineLayout` and the Archivo and Source Serif font packages
-are gone; `LibraryLayout`, `LibraryCard` and `legacy.css` replace them.
+The library redesign of 2026-10-24 is done (see `CLAUDE.md`, "The library style").
 
 ## Still open
 
+- Dan: the DNS record and the switch in `docs/domain-move.md`; then check an
+  old github.io link redirects.
 - Per-case charts (bar charts, pictograms) and a pull quote: new per-case data,
   and the pull quote is an editorial choice. Later, case by case.
 - Pre-existing: the full-record page shows literal `**` around bold text in
@@ -34,4 +35,4 @@ are gone; `LibraryLayout`, `LibraryCard` and `legacy.css` replace them.
 
 ## Branch
 
-Written on `claude/dazzling-pascal-lbbtpt`. Branches are assigned per session.
+Written on `claude/elegant-fermat-qbocpr`. Branches are assigned per session.

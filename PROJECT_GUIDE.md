@@ -36,7 +36,7 @@ written ahead of its evidence.
 
 | Repo | Visibility | Holds | Role today |
 | --- | --- | --- | --- |
-| `danielwipert/ai.case.study` | **Public** | The live site (Astro, GitHub Pages): 21 published cases, 3 of them rebuilt in the **new** format, the rest still **legacy**; the validator. The propositions page is withdrawn (§4) | **Publishes released cases.** A rebuilt case replaces its legacy page at the same address. No new cases in the legacy format |
+| `danielwipert/ai.case.study` | **Public** | The live site at https://casestudy.aioperationsmanagement.ai (since 2026-11-08; was danielwipert.github.io/ai.case.study, which redirects) (Astro, GitHub Pages): 21 published cases, 3 of them rebuilt in the **new** format, the rest still **legacy**; the validator. The propositions page is withdrawn (§4) | **Publishes released cases.** A rebuilt case replaces its legacy page at the same address. No new cases in the legacy format |
 | `danielwipert/ai.case.study.private` | **Private, always** | Captured copies of sources, the specs, and every case's working record | **Where the work happens** |
 
 - Captured copies are private because most sources are copyrighted. At
