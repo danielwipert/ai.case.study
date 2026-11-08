@@ -3,8 +3,10 @@ import { satteri } from "@astrojs/markdown-satteri";
 import caseTables from "./scripts/hast-case-tables.mjs";
 
 export default defineConfig({
-  site: "https://danielwipert.github.io",
-  base: "/ai.case.study",
+  // Permanent home since the domain move (DW 2026-11-08). GitHub Pages
+  // redirects the old danielwipert.github.io/ai.case.study/... addresses here.
+  site: "https://casestudy.aioperationsmanagement.ai",
+  base: "/",
   output: "static",
   trailingSlash: "always",
   markdown: {

@@ -57,6 +57,10 @@ so in one line.
 - An unproven allegation is `Attributed` or `Disputed`, never `Verified`. Grade D is never published.
 - Prefer a case that fills a gap in the taxonomy over the next available story.
 
+## The site's address
+
+The library's permanent home is **https://casestudy.aioperationsmanagement.ai** (DW, 2026-11-08). It is set in two lines of `astro.config.mjs` (`site`, and `base: "/"`, because a custom domain serves from the root) and the custom domain in the repository's Settings → Pages. Never hard-code the address or a `/ai.case.study` path in a page; build links from `import.meta.env.BASE_URL` and `Astro.site`. The old `danielwipert.github.io/ai.case.study/...` addresses redirect. In the private repo the address lives only in `distribution/config/channels.yaml`. The switch and its checklist: `docs/domain-move.md`.
+
 ## Validation
 
 `npm run build` runs `scripts/validate-content.mjs` and fails the build on: unknown taxonomy values, footnotes that do not match source ids, uncited sources, quotations missing a citation or `locator:`, fewer than two evidentiary chains on an A or B case without `single_chain_rationale`, a missing `evidence_upgrade_path` on B or C, unresolved `related_cases` or internal links, and dates out of order or not `YYYY-MM-DD`.
